@@ -404,6 +404,14 @@ math[display="block"] {
   margin: 1em 0;
 }
 
+img.math-inline {
+}
+
+img.math-display {
+  margin: 1em 0;
+  display: block;
+}
+
 /* Adapted from http://mxr.mozilla.org/mozilla-central/source/layout/mathml/mathml.css?raw=1 */
 mtd {
   padding-right: 0.5em;
