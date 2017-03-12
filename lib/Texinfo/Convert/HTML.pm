@@ -1771,8 +1771,11 @@ sub _convert_image_command($$$$)
       $objectwidth  = (sprintf("%.2f", ($1 * 67.0 / 776)) . "ex");  # 776px or 67ex is the column width at font size 170%.
       $objectheight = (sprintf("%.2f", ($2 * 67.0 / 776)) . "ex");
 
-      return "\n" . "<object style=\"width: $objectwidth; height: $objectheight;\" data=\"" . $self->protect_text($image_file) . 
-        "\" type=\"image/svg+xml\">SVG</object>";  # --> (A.R)
+      #return "\n" . "<object style=\"width: $objectwidth; height: $objectheight;\" data=\"" . $self->protect_text($image_file) . 
+      #  "\" type=\"image/svg+xml\">SVG</object>";  # --> (A.R)
+      return "\n" .
+             "<img style=\"width: $objectwidth; max-width: 100%; display: inline;\" " .
+             "src=\"" . $self->protect_text($image_file) . "\" />";
     }
   }
   return '';
