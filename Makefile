@@ -55,8 +55,13 @@ $(NEXUS): $(SRC) $(CONV) $(MATH) $(PRETTY) exercises.texi figures.texi
 	@grep -lZ 'This file redirects' $(HTML) | xargs -0 rm -f --
 	@echo "done."
 
-	@echo -n "Replacing LaTeX with MathML..."; \
+	@#echo -n "Replacing LaTeX with SVG (mathjax)..."; \
 	./get-math.js db.json $(HTML); \
+	./put-math.js db.json $(HTML); \
+	echo "done."
+
+	@echo -n "Replacing LaTeX with SVG (dvisvgm)..."; \
+	./get_math_latex.py db.json $(HTML); \
 	./put-math.js db.json $(HTML); \
 	echo "done."
 
