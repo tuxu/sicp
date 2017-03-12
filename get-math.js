@@ -5,11 +5,12 @@
 //    (existing file will be overwritten if math has changed in the source);
 //  file1, file2, ...: the input files to search for LaTeX strings.
 
-// This extracts LaTeX from given files and converts it to MathML using
+// This extracts LaTeX from given files and converts it to SVG using
 // MathJax. It then builds up a database of key/value pairs mapping from 
-// LaTeX to MathML. The result is a JSON object that is written to json_db. 
+// LaTeX to SVG. The result is a JSON object that is written to json_db. 
 // LaTeX must be delimited by \( \) (inline) or \[ \] (display math).
 
+// (c) 2017 Tino Wagner (adaptation to SVG)
 // (c) 2014 Andres Raba, GNU GPL v.3.
 
 var page = require("webpage").create(),
@@ -28,17 +29,17 @@ var loadPage = function(url) {
           page.evaluate(inject);  // inject an outside object into page context
           page.evaluate(function () {
             Object.keys(window.texobj).forEach(function (latex) {
-              ConvertToMML(latex);
+              ConvertToSVG(latex);
             });
             ConversionEnd();
           });
         } 
         else if (msg === "End") {
-          var mathml = page.evaluate(function () {
-            return window.mathml;
+          var svg = page.evaluate(function () {
+            return window.svg;
           });
-          Object.keys(mathml).forEach(function (latex) {
-            texobj[latex] = mathml[latex];
+          Object.keys(svg).forEach(function (latex) {
+            texobj[latex] = svg[latex];
           });
           var jsonObj = JSON.stringify(texobj, function(k,v){return v;}, 2);
           fs.write(db, jsonObj, 'w');
@@ -81,7 +82,7 @@ else {
     }
   });
   if (fs.exists(db)) {
-    var oldmath = JSON.parse(fs.read(db));  // reuse the old MathML database
+    var oldmath = JSON.parse(fs.read(db));  // reuse the old SVG database
   }
   else {
     var oldmath = {};
@@ -94,7 +95,7 @@ else {
     // A way to inject an object into the sandboxed page context, taken from:
     // http://stackoverflow.com/questions/8753169/copying-data-from-one-page-to-another-using-phantomjs
     var inject = new Function("window.texobj = " + JSON.stringify(delta));
-    loadPage('mathcell.xhtml'); // conversion to MathML happens here
+    loadPage('mathcell.xhtml'); // conversion to SVG happens here
   }
   else {
     page.close(); phantom.exit();

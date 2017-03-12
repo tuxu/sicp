@@ -1,40 +1,43 @@
 <!DOCTYPE html>
-<!-- LaTeX to MathML conversion script. Uses MathJax - licensed under Apache License. 
+<!-- LaTeX to SVG conversion script. Uses MathJax - licensed under Apache License. 
 Adapted from an example by Davide Cervone in: http://docs.mathjax.org/en/latest/typeset.html -->
 
-<!-- (c) 2014 Andres Raba, GNU GPL v.3. -->
+<!-- (c) 2017 Tino Wagner (SVG), 2014 Andres Raba (MathML), GNU GPL v.3. -->
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 
 <head>
-<title>LaTeX to MathML conversion</title>
+<title>LaTeX to SVG conversion</title>
 <meta charset="utf-8"/>
 
 <script type="text/x-mathjax-config">
 //<![CDATA[
+  MathJax.Hub.Config({
+    SVG: { useGlobalCache: false }
+  });
   MathJax.Hub.Queue([alert, 'Listening']);
   (function () {
-    // This exports ConvertToMML() that takes a string of LaTeX 
-    // and writes the resulting MathML to the hashmap window.mathml,
+    // This exports ConvertToSVG() that takes a string of LaTeX 
+    // and writes the resulting SVG to the hashmap window.svg,
     // using LaTeX string as key.
     var QUEUE = MathJax.Hub.queue,  // shorthand for the queue
         mathcell = "mathcell";  // element id of the conversion cell
-    window.mathml = {};  // this will hold the results
-    window.ConvertToMML = function (TeX) {
+    window.svg = {};  // this will hold the results
+    window.ConvertToSVG = function (TeX) {
       try {
         QUEUE.Push(function () {  // overwrite the conversion cell
           document.getElementById(mathcell).innerHTML = TeX;
         });
         QUEUE.Push(["Typeset", MathJax.Hub, mathcell]);  // retypeset the cell
-        QUEUE.Push(function () {  // get the jax and extract MathML from it
+        QUEUE.Push(function () {  // get the jax and extract SVG from it
           var math = MathJax.Hub.getAllJax(mathcell)[0];
           if (math) {
-            toMathML(math, function (mml) {
-              window.mathml[TeX] = mml;
+            toSVG(math, function (svg) {
+              window.svg[TeX] = svg;
             });
           } 
           else {  // TeX input was probably faulty, make it stand out
-            window.mathml[TeX] = "<span class='faulty'>" + TeX + "</span>";
+            window.svg[TeX] = "<span class='faulty'>" + TeX + "</span>";
           }
         });
         //QUEUE.Push([alert, 'Retypeset']);  // signal the end of single conversion
@@ -51,25 +54,38 @@ Adapted from an example by Davide Cervone in: http://docs.mathjax.org/en/latest/
         document.location.reload();
       }
     }
-    function toMathML(jax,callback) {  // extract MathML from jax
-      var mml;
+    function toSVG(jax,callback) {  // extract SVG from jax
+      var svg;
       try {
-        mml = jax.root.toMathML("");
+        var svgElem = document.getElementById(jax.root.inputID+'-Frame').firstChild;
+        svg = ElemToSVGCode(svgElem);
       } catch(err) {
         if (!err.restart) { throw err } // an actual error
-        return MathJax.Callback.After([toMathML,jax,callback],err.restart);
+        return MathJax.Callback.After([toSVG,jax,callback],err.restart);
       }
-      MathJax.Callback(callback)(mml);
+      MathJax.Callback(callback)(svg);
+    }
+    function ElemToSVGCode(svg) {
+      var temp = document.createElement('div');
+      var svgClone = svg.cloneNode(true);
+      height = svgClone.attributes['height'].value;
+      style = svgClone.attributes.removeNamedItem('style').value;
+      style += ' height: ' + height + ';';
+      svgClone.attributes.removeNamedItem('role');
+      svgClone.attributes.removeNamedItem('focusable');
+      svgClone.attributes.removeNamedItem('aria-hidden');
+      temp.appendChild(svgClone);
+      return {code: temp.innerHTML, style: style};
     }
   })();
 //]]>
 </script>
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML-full" type="text/javascript"></script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_SVG-full" type="text/javascript"></script>
 </head>
 
 <body>
 
-<!-- The conversion cell. Contents will be overwritten each time ConvertToMML() is called. -->
+<!-- The conversion cell. Contents will be overwritten each time ConvertToSVG() is called. -->
 <div id="mathcell"> 
 \[ \mathrm{e^{i\pi}} + 1 = 0 \]
 </div>
