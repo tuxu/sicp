@@ -4,6 +4,17 @@ SICP
 <img src="https://sicpebook.files.wordpress.com/2013/09/smile0.png"
  alt="Par smiling" align="right" />
 
+Note
+----
+
+This branch adapts the original EPUB3 and MathML version by @sarabander to simple e-ink readers which don't come with full EPUB3 and MathML support, such as the Kindle Paperwhite. Equations are prebaked as SVG images using LaTeX and [dvisvgm](http://dvisvgm.bplaced.net/).
+
+To build from source, you need Python 3.5 or later, LaTeX (including `newtx` package), Ghostscript, and dvisvgm in addition to the requirements stated below.
+
+For Kindle readers, you may pass the generated EPUB3 through [KindleGen](https://www.amazon.com/gp/feature.html?docId=1000765211) to create a Mobi file.
+
+---
+
 This is a new HTML5 and EPUB3 version of "Structure and Interpretation of Computer Programs" by Abelson, Sussman, and Sussman. It comes from the lineage of [Unofficial Texinfo Format](http://www.neilvandyke.org/sicp-texi) that was converted from the original [HTML version](https://mitpress.mit.edu/sicp) at The MIT Press.
 
 <b>In EPUB3 format: [sicp.epub](https://github.com/sarabander/sicp-epub/blob/master/sicp.epub?raw=true)</b>
