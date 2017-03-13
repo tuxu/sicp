@@ -22,7 +22,8 @@
 }
 
 /* Use higher contrast and text-weight for printable form. */
-@media print, projection {
+@media monochrome, amzn-kf8, print, projection {
+  .pln { color: #202020 }
   .str { color: #060 }
   .kwd { color: #006; font-weight: bold }
   .com { color: #600; font-style: italic }
