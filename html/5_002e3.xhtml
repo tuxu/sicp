@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" xml:lang="en" lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" xml:lang="en" xmlns:xml="http://www.w3.org/XML/1998/namespace" lang="en">
 <!-- Created by GNU Texinfo 5.1, http://www.gnu.org/software/texinfo/ -->
 <head>
 <title>Structure and Interpretation of Computer Programs, 2e: 5.3</title>
@@ -92,25 +92,11 @@ of time that is independent of the index.<a class="footnote_link" id="DOCF290" h
 primitive Scheme procedures for manipulating vectors:
 </p>
 <ul>
-<li> <code>(vector-ref ⟨<var>vector</var>⟩ ⟨<var>n</var>⟩)</code> returns the <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <msup>
-    <mi>n</mi>
-    <mrow class="MJX-TeXAtom-ORD">
-      <mtext>th</mtext>
-    </mrow>
-  </msup>
-</math>
+<li> <code>(vector-ref ⟨<var>vector</var>⟩ ⟨<var>n</var>⟩)</code> returns the <img src="fig/math/3b6c232f796b2d291446b22cb38c933e.svg" class="math-inline" style="height: 0.892em; vertical-align: -0.010em;" alt="\( n^{\text{th}} \)" />
 element of the vector.
 
 </li><li> <code>(vector-set! ⟨<var>vector</var>⟩ ⟨<var>n</var>⟩ ⟨<var>value</var>⟩)</code>
-sets the <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <msup>
-    <mi>n</mi>
-    <mrow class="MJX-TeXAtom-ORD">
-      <mtext>th</mtext>
-    </mrow>
-  </msup>
-</math> element of the vector to the designated value.
+sets the <img src="fig/math/3b6c232f796b2d291446b22cb38c933e.svg" class="math-inline" style="height: 0.892em; vertical-align: -0.010em;" alt="\( n^{\text{th}} \)" /> element of the vector to the designated value.
 
 </li></ul>
 
@@ -157,7 +143,7 @@ here).
 </p>
 <figure class="float">
 <a id="Figure-5_002e14"></a>
-<object style="width: 53.44ex; height: 41.96ex;" data="fig/chap5/Fig5.14b.std.svg" type="image/svg+xml">SVG</object>
+<img style="width: 53.44ex; max-width: 100%; display: inline;" src="fig/chap5/Fig5.14b.std.svg" />
 
 <figcaption class="float-caption">
 <p><strong>Figure 5.14:</strong> Box-and-pointer and memory-vector representations of the list <code>((1 2) 3 4)</code>.</p>
@@ -441,7 +427,7 @@ arrangement of memory just before and just after garbage collection.
 </p>
 <figure class="float">
 <a id="Figure-5_002e15"></a>
-<object style="width: 57.59ex; height: 44.47ex;" data="fig/chap5/Fig5.15c.std.svg" type="image/svg+xml">SVG</object>
+<img style="width: 57.59ex; max-width: 100%; display: inline;" src="fig/chap5/Fig5.15c.std.svg" />
 
 <figcaption class="float-caption">
 <p><strong>Figure 5.15:</strong> Reconfiguration of memory by the garbage-collection process.</p>
@@ -639,20 +625,7 @@ be ready to perform another garbage collection the next time memory runs out.
 <div id="FOOT290"><p><a class="footnote_backlink" href="#DOCF290"><sup>290</sup></a>
 We could represent memory as
 lists of items.  However, the access time would then not be independent of the
-index, since accessing the <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <msup>
-    <mi>n</mi>
-    <mrow class="MJX-TeXAtom-ORD">
-      <mtext>th</mtext>
-    </mrow>
-  </msup>
-</math> element of a list requires <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>n</mi>
-    <mo>−<!-- − --></mo>
-    <mn>1</mn>
-  </mrow>
-</math>
+index, since accessing the <img src="fig/math/3b6c232f796b2d291446b22cb38c933e.svg" class="math-inline" style="height: 0.892em; vertical-align: -0.010em;" alt="\( n^{\text{th}} \)" /> element of a list requires <img src="fig/math/81eb4f306db699a33b30b99343404a6c.svg" class="math-inline" style="height: 0.652em; vertical-align: -0.009em;" alt="\( {n - 1} \)" />
 <code>cdr</code> operations.</p>
 </div>
 <div id="FOOT291"><p><a class="footnote_backlink" href="#DOCF291"><sup>291</sup></a>
@@ -716,26 +689,8 @@ essentially the implementation of <code>cons</code> in terms of <code>set-car!</
 This may not be true eventually, because
 memories may get large enough so that it would be impossible to run out of free
 memory in the lifetime of the computer.  For example, there are about
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mn>3</mn>
-    <mo>⋅<!-- ⋅ --></mo>
-    <msup>
-      <mn>10</mn>
-      <mrow class="MJX-TeXAtom-ORD">
-        <mn>13</mn>
-      </mrow>
-    </msup>
-  </mrow>
-</math> microseconds in a year, so if we were to <code>cons</code> once per
-microsecond we would need about <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <msup>
-    <mn>10</mn>
-    <mrow class="MJX-TeXAtom-ORD">
-      <mn>15</mn>
-    </mrow>
-  </msup>
-</math> cells of memory to build a machine that
+<img src="fig/math/0651a966b037441ecc75f36f8e7d7fda.svg" class="math-inline" style="height: 0.845em;" alt="\( {3\cdot10^{13}} \)" /> microseconds in a year, so if we were to <code>cons</code> once per
+microsecond we would need about <img src="fig/math/41bc2aff4794a12dbe4ed08a935ceecb.svg" class="math-inline" style="height: 0.845em;" alt="\( 10^{15} \)" /> cells of memory to build a machine that
 could operate for 30 years without running out of memory.  That much memory
 seems absurdly large by today’s standards, but it is not physically impossible.
 On the other hand, processors are getting faster and a future computer may have

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" xml:lang="en" lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" xml:lang="en" xmlns:xml="http://www.w3.org/XML/1998/namespace" lang="en">
 <!-- Created by GNU Texinfo 5.1, http://www.gnu.org/software/texinfo/ -->
 <head>
 <title>Structure and Interpretation of Computer Programs, 2e: 3.4</title>
@@ -99,37 +99,13 @@ entails additional complexity in our understanding of time.
 <h4 class="subsection"><span class="secnum">3.4.1</span><span class="sectitle">The Nature of Time in Concurrent Systems</span></h4>
 
 <p>On the surface, time seems straightforward.  It is an ordering imposed on
-events.<a class="footnote_link" id="DOCF163" href="#FOOT163"><sup>163</sup></a>  For any events <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>A</mi>
-</math> and <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>B</mi>
-</math>, either <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>A</mi>
-</math> occurs before <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>B</mi>
-</math>,
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>A</mi>
-</math> and <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>B</mi>
-</math> are simultaneous, or <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>A</mi>
-</math> occurs after <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>B</mi>
-</math>.  For instance,
+events.<a class="footnote_link" id="DOCF163" href="#FOOT163"><sup>163</sup></a>  For any events <img src="fig/math/0795850a4e18ff44aa3a2868640c29a7.svg" class="math-inline" style="height: 0.656em; vertical-align: -0.004em;" alt="\( A \)" /> and <img src="fig/math/30728d9819efd7caec6b07dd841c7393.svg" class="math-inline" style="height: 0.645em;" alt="\( B \)" />, either <img src="fig/math/0795850a4e18ff44aa3a2868640c29a7.svg" class="math-inline" style="height: 0.656em; vertical-align: -0.004em;" alt="\( A \)" /> occurs before <img src="fig/math/30728d9819efd7caec6b07dd841c7393.svg" class="math-inline" style="height: 0.645em;" alt="\( B \)" />,
+<img src="fig/math/0795850a4e18ff44aa3a2868640c29a7.svg" class="math-inline" style="height: 0.656em; vertical-align: -0.004em;" alt="\( A \)" /> and <img src="fig/math/30728d9819efd7caec6b07dd841c7393.svg" class="math-inline" style="height: 0.645em;" alt="\( B \)" /> are simultaneous, or <img src="fig/math/0795850a4e18ff44aa3a2868640c29a7.svg" class="math-inline" style="height: 0.656em; vertical-align: -0.004em;" alt="\( A \)" /> occurs after <img src="fig/math/30728d9819efd7caec6b07dd841c7393.svg" class="math-inline" style="height: 0.645em;" alt="\( B \)" />.  For instance,
 returning to the bank account example, suppose that Peter withdraws $10 and
 Paul withdraws $25 from a joint account that initially contains $100, leaving
 $65 in the account.  Depending on the order of the two withdrawals, the
-sequence of balances in the account is either $100 <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mo stretchy="false">→<!-- → --></mo>
-</math> $90 <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mo stretchy="false">→<!-- → --></mo>
-</math> $65 or $100 <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mo stretchy="false">→<!-- → --></mo>
-</math> $75
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mo stretchy="false">→<!-- → --></mo>
-</math> $65.  In a computer implementation of the banking system, this changing
+sequence of balances in the account is either $100 <img src="fig/math/c769999cc2f0aacb248536ec9d4a4a5b.svg" class="math-inline" style="height: 0.467em;" alt="\( \to \)" /> $90 <img src="fig/math/c769999cc2f0aacb248536ec9d4a4a5b.svg" class="math-inline" style="height: 0.467em;" alt="\( \to \)" /> $65 or $100 <img src="fig/math/c769999cc2f0aacb248536ec9d4a4a5b.svg" class="math-inline" style="height: 0.467em;" alt="\( \to \)" /> $75
+<img src="fig/math/c769999cc2f0aacb248536ec9d4a4a5b.svg" class="math-inline" style="height: 0.467em;" alt="\( \to \)" /> $65.  In a computer implementation of the banking system, this changing
 sequence of balances could be modeled by successive assignments to a variable
 <code>balance</code>.
 </p>
@@ -186,7 +162,7 @@ the bank has $75.<a class="footnote_link" id="DOCF164" href="#FOOT164"><sup>164<
 </p>
 <figure class="float">
 <a id="Figure-3_002e29"></a>
-<object style="width: 60.18ex; height: 57.93ex;" data="fig/chap3/Fig3.29b.std.svg" type="image/svg+xml">SVG</object>
+<img style="width: 60.18ex; max-width: 100%; display: inline;" src="fig/chap3/Fig3.29b.std.svg" />
 
 <figcaption class="float-caption">
 <p><strong>Figure 3.29:</strong> Timing diagram showing how interleaving the order of events in two banking withdrawals can lead to an incorrect final balance.</p>
@@ -233,7 +209,7 @@ Peter’s withdrawal from the shared account.
 </p>
 <figure class="float">
 <a id="Figure-3_002e30"></a>
-<object style="width: 67.52ex; height: 52.84ex;" data="fig/chap3/Fig3.30c.std.svg" type="image/svg+xml">SVG</object>
+<img style="width: 67.52ex; max-width: 100%; display: inline;" src="fig/chap3/Fig3.30c.std.svg" />
 
 <figcaption class="float-caption">
 <p><strong>Figure 3.30:</strong> Concurrent deposits and withdrawals from a joint account in Bank1 and a private account in Bank2.</p>
@@ -297,28 +273,8 @@ to explain how these values can occur.
 <p>We’ve seen that the difficulty in dealing with concurrent processes is rooted
 in the need to consider the interleaving of the order of events in the
 different processes.  For example, suppose we have two processes, one with
-three ordered events <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mo stretchy="false">(</mo>
-    <mi>a</mi>
-    <mo>,</mo>
-    <mi>b</mi>
-    <mo>,</mo>
-    <mi>c</mi>
-    <mo stretchy="false">)</mo>
-  </mrow>
-</math> and one with three ordered events
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mo stretchy="false">(</mo>
-    <mi>x</mi>
-    <mo>,</mo>
-    <mi>y</mi>
-    <mo>,</mo>
-    <mi>z</mi>
-    <mo stretchy="false">)</mo>
-  </mrow>
-</math>.  If the two processes run concurrently, with no
+three ordered events <img src="fig/math/d5e77252f728c5ff335de726fad06b91.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.189em;" alt="\( {(a, b, c)} \)" /> and one with three ordered events
+<img src="fig/math/b9d8a91a251004a600eade98769783da.svg" class="math-inline" style="height: 0.933em; vertical-align: -0.225em;" alt="\( {(x, y, z)} \)" />.  If the two processes run concurrently, with no
 constraints on how their execution is interleaved, then there are 20 different
 possible orderings for the events that are consistent with the individual
 orderings for the two processes:
@@ -389,103 +345,23 @@ concurrently.<a class="footnote_link" id="DOCF168" href="#FOOT168"><sup>168</sup
 </span><span class="opn">(</span><span class="pln">parallel-execute </span><span class="opn">(</span><span class="kwd">lambda</span><span class="pln"> </span><span class="opn">(</span><span class="clo">)</span><span class="pln"> </span><span class="opn">(</span><span class="kwd">set</span><span class="pun">!</span><span class="pln"> x </span><span class="opn">(</span><span class="pun">*</span><span class="pln"> x x</span><span class="clo">)))</span><span class="pln">
                   </span><span class="opn">(</span><span class="kwd">lambda</span><span class="pln"> </span><span class="opn">(</span><span class="clo">)</span><span class="pln"> </span><span class="opn">(</span><span class="kwd">set</span><span class="pun">!</span><span class="pln"> x </span><span class="opn">(</span><span class="pun">+</span><span class="pln"> x </span><span class="lit">1</span><span class="clo">))))</span></pre></div>
 
-<p>This creates two concurrent processes—<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <msub>
-    <mi>P</mi>
-    <mn>1</mn>
-  </msub>
-</math>, which sets <code>x</code> to
-<code>x</code> times <code>x</code>, and <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <msub>
-    <mi>P</mi>
-    <mn>2</mn>
-  </msub>
-</math>, which increments <code>x</code>.  After
+<p>This creates two concurrent processes—<img src="fig/math/5a381de74cdf01dabc7cbdc48593893a.svg" class="math-inline" style="height: 0.797em; vertical-align: -0.144em;" alt="\( P_1 \)" />, which sets <code>x</code> to
+<code>x</code> times <code>x</code>, and <img src="fig/math/4c7e1eb37b5af1272939421d1e46d21d.svg" class="math-inline" style="height: 0.797em; vertical-align: -0.144em;" alt="\( P_2 \)" />, which increments <code>x</code>.  After
 execution is complete, <code>x</code> will be left with one of five possible values,
-depending on the interleaving of the events of <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <msub>
-    <mi>P</mi>
-    <mn>1</mn>
-  </msub>
-</math> and <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <msub>
-    <mi>P</mi>
-    <mn>2</mn>
-  </msub>
-</math>:
+depending on the interleaving of the events of <img src="fig/math/5a381de74cdf01dabc7cbdc48593893a.svg" class="math-inline" style="height: 0.797em; vertical-align: -0.144em;" alt="\( P_1 \)" /> and <img src="fig/math/4c7e1eb37b5af1272939421d1e46d21d.svg" class="math-inline" style="height: 0.797em; vertical-align: -0.144em;" alt="\( P_2 \)" />:
 </p>
 <div class="example">
-<pre class="example">101: <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <msub>
-    <mi>P</mi>
-    <mn>1</mn>
-  </msub>
-</math> sets <code>x</code> to 100 and then <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <msub>
-    <mi>P</mi>
-    <mn>2</mn>
-  </msub>
-</math> increments
+<pre class="example">101: <img src="fig/math/5a381de74cdf01dabc7cbdc48593893a.svg" class="math-inline" style="height: 0.797em; vertical-align: -0.144em;" alt="\( P_1 \)" /> sets <code>x</code> to 100 and then <img src="fig/math/4c7e1eb37b5af1272939421d1e46d21d.svg" class="math-inline" style="height: 0.797em; vertical-align: -0.144em;" alt="\( P_2 \)" /> increments
      <code>x</code> to 101.
-121: <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <msub>
-    <mi>P</mi>
-    <mn>2</mn>
-  </msub>
-</math> increments <code>x</code> to 11 and then <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <msub>
-    <mi>P</mi>
-    <mn>1</mn>
-  </msub>
-</math> sets
+121: <img src="fig/math/4c7e1eb37b5af1272939421d1e46d21d.svg" class="math-inline" style="height: 0.797em; vertical-align: -0.144em;" alt="\( P_2 \)" /> increments <code>x</code> to 11 and then <img src="fig/math/5a381de74cdf01dabc7cbdc48593893a.svg" class="math-inline" style="height: 0.797em; vertical-align: -0.144em;" alt="\( P_1 \)" /> sets
      <code>x</code> to <code>x</code> times <code>x</code>.
-110: <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <msub>
-    <mi>P</mi>
-    <mn>2</mn>
-  </msub>
-</math> changes <code>x</code> from 10 to 11 between the 
-     two times that <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <msub>
-    <mi>P</mi>
-    <mn>1</mn>
-  </msub>
-</math> accesses the value of 
+110: <img src="fig/math/4c7e1eb37b5af1272939421d1e46d21d.svg" class="math-inline" style="height: 0.797em; vertical-align: -0.144em;" alt="\( P_2 \)" /> changes <code>x</code> from 10 to 11 between the 
+     two times that <img src="fig/math/5a381de74cdf01dabc7cbdc48593893a.svg" class="math-inline" style="height: 0.797em; vertical-align: -0.144em;" alt="\( P_1 \)" /> accesses the value of 
      <code>x</code> during the evaluation of <code>(* x x)</code>.
- 11: <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <msub>
-    <mi>P</mi>
-    <mn>2</mn>
-  </msub>
-</math> accesses <code>x</code>, then <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <msub>
-    <mi>P</mi>
-    <mn>1</mn>
-  </msub>
-</math> sets <code>x</code> to 100, 
-     then <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <msub>
-    <mi>P</mi>
-    <mn>2</mn>
-  </msub>
-</math> sets <code>x</code>.
-100: <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <msub>
-    <mi>P</mi>
-    <mn>1</mn>
-  </msub>
-</math> accesses <code>x</code> (twice), then <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <msub>
-    <mi>P</mi>
-    <mn>2</mn>
-  </msub>
-</math> sets
-     <code>x</code> to 11, then <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <msub>
-    <mi>P</mi>
-    <mn>1</mn>
-  </msub>
-</math> sets <code>x</code>.
+ 11: <img src="fig/math/4c7e1eb37b5af1272939421d1e46d21d.svg" class="math-inline" style="height: 0.797em; vertical-align: -0.144em;" alt="\( P_2 \)" /> accesses <code>x</code>, then <img src="fig/math/5a381de74cdf01dabc7cbdc48593893a.svg" class="math-inline" style="height: 0.797em; vertical-align: -0.144em;" alt="\( P_1 \)" /> sets <code>x</code> to 100, 
+     then <img src="fig/math/4c7e1eb37b5af1272939421d1e46d21d.svg" class="math-inline" style="height: 0.797em; vertical-align: -0.144em;" alt="\( P_2 \)" /> sets <code>x</code>.
+100: <img src="fig/math/5a381de74cdf01dabc7cbdc48593893a.svg" class="math-inline" style="height: 0.797em; vertical-align: -0.144em;" alt="\( P_1 \)" /> accesses <code>x</code> (twice), then <img src="fig/math/4c7e1eb37b5af1272939421d1e46d21d.svg" class="math-inline" style="height: 0.797em; vertical-align: -0.144em;" alt="\( P_2 \)" /> sets
+     <code>x</code> to 11, then <img src="fig/math/5a381de74cdf01dabc7cbdc48593893a.svg" class="math-inline" style="height: 0.797em; vertical-align: -0.144em;" alt="\( P_1 \)" /> sets <code>x</code>.
 </pre></div>
 
 <p>We can constrain the concurrency by using serialized procedures, which are
@@ -506,17 +382,7 @@ procedures in the same set.
  </span><span class="opn">(</span><span class="pln">s </span><span class="opn">(</span><span class="kwd">lambda</span><span class="pln"> </span><span class="opn">(</span><span class="clo">)</span><span class="pln"> </span><span class="opn">(</span><span class="kwd">set</span><span class="pun">!</span><span class="pln"> x </span><span class="opn">(</span><span class="pun">+</span><span class="pln"> x </span><span class="lit">1</span><span class="clo">)))))</span></pre></div>
 
 <p>can produce only two possible values for <code>x</code>, 101 or 121.  The other
-possibilities are eliminated, because the execution of <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <msub>
-    <mi>P</mi>
-    <mn>1</mn>
-  </msub>
-</math> and <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <msub>
-    <mi>P</mi>
-    <mn>2</mn>
-  </msub>
-</math>
+possibilities are eliminated, because the execution of <img src="fig/math/5a381de74cdf01dabc7cbdc48593893a.svg" class="math-inline" style="height: 0.797em; vertical-align: -0.144em;" alt="\( P_1 \)" /> and <img src="fig/math/4c7e1eb37b5af1272939421d1e46d21d.svg" class="math-inline" style="height: 0.797em; vertical-align: -0.144em;" alt="\( P_2 \)" />
 cannot be interleaved.
 </p>
 <p>Here is a version of the <code>make-account</code> procedure from 
@@ -694,63 +560,13 @@ follows:<a class="footnote_link" id="DOCF169" href="#FOOT169"><sup>169</sup></a>
 
 <p>This procedure works well when only a single process is trying to do the
 exchange.  Suppose, however, that Peter and Paul both have access to accounts
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-<mrow class="MJX-TeXAtom-ORD">
-  <mi>a</mi>
-  <mn>1</mn>
-</mrow>
-</math>, <math xmlns="http://www.w3.org/1998/Math/MathML">
-<mrow class="MJX-TeXAtom-ORD">
-  <mi>a</mi>
-  <mn>2</mn>
-</mrow>
-</math>, and <math xmlns="http://www.w3.org/1998/Math/MathML">
-<mrow class="MJX-TeXAtom-ORD">
-  <mi>a</mi>
-  <mn>3</mn>
-</mrow>
-</math>, and that Peter exchanges <math xmlns="http://www.w3.org/1998/Math/MathML">
-<mrow class="MJX-TeXAtom-ORD">
-  <mi>a</mi>
-  <mn>1</mn>
-</mrow>
-</math> and <math xmlns="http://www.w3.org/1998/Math/MathML">
-<mrow class="MJX-TeXAtom-ORD">
-  <mi>a</mi>
-  <mn>2</mn>
-</mrow>
-</math> while
-Paul concurrently exchanges <math xmlns="http://www.w3.org/1998/Math/MathML">
-<mrow class="MJX-TeXAtom-ORD">
-  <mi>a</mi>
-  <mn>1</mn>
-</mrow>
-</math> and <math xmlns="http://www.w3.org/1998/Math/MathML">
-<mrow class="MJX-TeXAtom-ORD">
-  <mi>a</mi>
-  <mn>3</mn>
-</mrow>
-</math>.  Even with account deposits and
+<img src="fig/math/6741468ac0368d535bc3535a9b2c44d4.svg" class="math-inline" style="height: 0.652em; vertical-align: -0.009em;" alt="\( {a1} \)" />, <img src="fig/math/36ae81c078c9eaacc43be2cc4caefc2e.svg" class="math-inline" style="height: 0.652em; vertical-align: -0.009em;" alt="\( {a2} \)" />, and <img src="fig/math/77ddf79be0885b689e6b52ffdfaa478a.svg" class="math-inline" style="height: 0.652em; vertical-align: -0.009em;" alt="\( {a3} \)" />, and that Peter exchanges <img src="fig/math/6741468ac0368d535bc3535a9b2c44d4.svg" class="math-inline" style="height: 0.652em; vertical-align: -0.009em;" alt="\( {a1} \)" /> and <img src="fig/math/36ae81c078c9eaacc43be2cc4caefc2e.svg" class="math-inline" style="height: 0.652em; vertical-align: -0.009em;" alt="\( {a2} \)" /> while
+Paul concurrently exchanges <img src="fig/math/6741468ac0368d535bc3535a9b2c44d4.svg" class="math-inline" style="height: 0.652em; vertical-align: -0.009em;" alt="\( {a1} \)" /> and <img src="fig/math/77ddf79be0885b689e6b52ffdfaa478a.svg" class="math-inline" style="height: 0.652em; vertical-align: -0.009em;" alt="\( {a3} \)" />.  Even with account deposits and
 withdrawals serialized for individual accounts (as in the <code>make-account</code>
 procedure shown above in this section), <code>exchange</code> can still produce
 incorrect results.  For example, Peter might compute the difference in the
-balances for <math xmlns="http://www.w3.org/1998/Math/MathML">
-<mrow class="MJX-TeXAtom-ORD">
-  <mi>a</mi>
-  <mn>1</mn>
-</mrow>
-</math> and <math xmlns="http://www.w3.org/1998/Math/MathML">
-<mrow class="MJX-TeXAtom-ORD">
-  <mi>a</mi>
-  <mn>2</mn>
-</mrow>
-</math>, but then Paul might change the balance in
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-<mrow class="MJX-TeXAtom-ORD">
-  <mi>a</mi>
-  <mn>1</mn>
-</mrow>
-</math> before Peter is able to complete the exchange.<a class="footnote_link" id="DOCF170" href="#FOOT170"><sup>170</sup></a>  For correct behavior, we must arrange for the
+balances for <img src="fig/math/6741468ac0368d535bc3535a9b2c44d4.svg" class="math-inline" style="height: 0.652em; vertical-align: -0.009em;" alt="\( {a1} \)" /> and <img src="fig/math/36ae81c078c9eaacc43be2cc4caefc2e.svg" class="math-inline" style="height: 0.652em; vertical-align: -0.009em;" alt="\( {a2} \)" />, but then Paul might change the balance in
+<img src="fig/math/6741468ac0368d535bc3535a9b2c44d4.svg" class="math-inline" style="height: 0.652em; vertical-align: -0.009em;" alt="\( {a1} \)" /> before Peter is able to complete the exchange.<a class="footnote_link" id="DOCF170" href="#FOOT170"><sup>170</sup></a>  For correct behavior, we must arrange for the
 <code>exchange</code> procedure to lock out any other concurrent accesses to the
 accounts during the entire time of the exchange.
 </p>
@@ -985,13 +801,9 @@ allowing two processes to acquire the mutex at the same time.
 </p></blockquote>
 
 <blockquote>
-<p><strong><a id="Exercise-3_002e47"></a>Exercise 3.47:</strong> A semaphore (of size <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math>) is a
+<p><strong><a id="Exercise-3_002e47"></a>Exercise 3.47:</strong> A semaphore (of size <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" />) is a
 generalization of a mutex.  Like a mutex, a semaphore supports acquire and
-release operations, but it is more general in that up to <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math> processes can
+release operations, but it is more general in that up to <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" /> processes can
 acquire it concurrently.  Additional processes that attempt to acquire the
 semaphore must wait for release operations.  Give implementations of semaphores
 </p>
@@ -1008,59 +820,14 @@ semaphore must wait for release operations.  Give implementations of semaphores
 
 <p>Now that we have seen how to implement serializers, we can see that account
 exchanging still has a problem, even with the <code>serialized-exchange</code>
-procedure above.  Imagine that Peter attempts to exchange <math xmlns="http://www.w3.org/1998/Math/MathML">
-<mrow class="MJX-TeXAtom-ORD">
-  <mi>a</mi>
-  <mn>1</mn>
-</mrow>
-</math> with <math xmlns="http://www.w3.org/1998/Math/MathML">
-<mrow class="MJX-TeXAtom-ORD">
-  <mi>a</mi>
-  <mn>2</mn>
-</mrow>
-</math>
-while Paul concurrently attempts to exchange <math xmlns="http://www.w3.org/1998/Math/MathML">
-<mrow class="MJX-TeXAtom-ORD">
-  <mi>a</mi>
-  <mn>2</mn>
-</mrow>
-</math> with <math xmlns="http://www.w3.org/1998/Math/MathML">
-<mrow class="MJX-TeXAtom-ORD">
-  <mi>a</mi>
-  <mn>1</mn>
-</mrow>
-</math>.  Suppose that
+procedure above.  Imagine that Peter attempts to exchange <img src="fig/math/6741468ac0368d535bc3535a9b2c44d4.svg" class="math-inline" style="height: 0.652em; vertical-align: -0.009em;" alt="\( {a1} \)" /> with <img src="fig/math/36ae81c078c9eaacc43be2cc4caefc2e.svg" class="math-inline" style="height: 0.652em; vertical-align: -0.009em;" alt="\( {a2} \)" />
+while Paul concurrently attempts to exchange <img src="fig/math/36ae81c078c9eaacc43be2cc4caefc2e.svg" class="math-inline" style="height: 0.652em; vertical-align: -0.009em;" alt="\( {a2} \)" /> with <img src="fig/math/6741468ac0368d535bc3535a9b2c44d4.svg" class="math-inline" style="height: 0.652em; vertical-align: -0.009em;" alt="\( {a1} \)" />.  Suppose that
 Peter’s process reaches the point where it has entered a serialized procedure
-protecting <math xmlns="http://www.w3.org/1998/Math/MathML">
-<mrow class="MJX-TeXAtom-ORD">
-  <mi>a</mi>
-  <mn>1</mn>
-</mrow>
-</math> and, just after that, Paul’s process enters a serialized
-procedure protecting <math xmlns="http://www.w3.org/1998/Math/MathML">
-<mrow class="MJX-TeXAtom-ORD">
-  <mi>a</mi>
-  <mn>2</mn>
-</mrow>
-</math>.  Now Peter cannot proceed (to enter a serialized
-procedure protecting <math xmlns="http://www.w3.org/1998/Math/MathML">
-<mrow class="MJX-TeXAtom-ORD">
-  <mi>a</mi>
-  <mn>2</mn>
-</mrow>
-</math>) until Paul exits the serialized procedure
-protecting <math xmlns="http://www.w3.org/1998/Math/MathML">
-<mrow class="MJX-TeXAtom-ORD">
-  <mi>a</mi>
-  <mn>2</mn>
-</mrow>
-</math>.  Similarly, Paul cannot proceed until Peter exits the
-serialized procedure protecting <math xmlns="http://www.w3.org/1998/Math/MathML">
-<mrow class="MJX-TeXAtom-ORD">
-  <mi>a</mi>
-  <mn>1</mn>
-</mrow>
-</math>.  Each process is stalled forever,
+protecting <img src="fig/math/6741468ac0368d535bc3535a9b2c44d4.svg" class="math-inline" style="height: 0.652em; vertical-align: -0.009em;" alt="\( {a1} \)" /> and, just after that, Paul’s process enters a serialized
+procedure protecting <img src="fig/math/36ae81c078c9eaacc43be2cc4caefc2e.svg" class="math-inline" style="height: 0.652em; vertical-align: -0.009em;" alt="\( {a2} \)" />.  Now Peter cannot proceed (to enter a serialized
+procedure protecting <img src="fig/math/36ae81c078c9eaacc43be2cc4caefc2e.svg" class="math-inline" style="height: 0.652em; vertical-align: -0.009em;" alt="\( {a2} \)" />) until Paul exits the serialized procedure
+protecting <img src="fig/math/36ae81c078c9eaacc43be2cc4caefc2e.svg" class="math-inline" style="height: 0.652em; vertical-align: -0.009em;" alt="\( {a2} \)" />.  Similarly, Paul cannot proceed until Peter exits the
+serialized procedure protecting <img src="fig/math/6741468ac0368d535bc3535a9b2c44d4.svg" class="math-inline" style="height: 0.652em; vertical-align: -0.009em;" alt="\( {a1} \)" />.  Each process is stalled forever,
 waiting for the other.  This situation is called a <a id="index-deadlock"></a>
 <em>deadlock</em>.
 Deadlock is always a danger in systems that provide concurrent access to

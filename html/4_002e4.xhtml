@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" xml:lang="en" lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" xml:lang="en" xmlns:xml="http://www.w3.org/XML/1998/namespace" lang="en">
 <!-- Created by GNU Texinfo 5.1, http://www.gnu.org/software/texinfo/ -->
 <head>
 <title>Structure and Interpretation of Computer Programs, 2e: 4.4</title>
@@ -458,35 +458,7 @@ programmers:
 <pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">and</span><span class="pln"> ⟨</span><var><span class="pln">query</span><span class="pun">₁</span></var><span class="pln">⟩ ⟨</span><var><span class="pln">query</span><span class="pun">₂</span></var><span class="pln">⟩ </span><span class="roman"><span class="pun">…</span></span><span class="pln"> ⟨</span><var><span class="pln">query</span><span class="pun">ₙ</span></var><span class="pln">⟩</span><span class="clo">)</span></pre></div>
 
 <p>is satisfied by all sets of values for the pattern variables that
-simultaneously satisfy <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mo stretchy="false">⟨</mo>
-    <mspace width="0.1em"/>
-    <mi>q</mi>
-    <mi>u</mi>
-    <mi>e</mi>
-    <mi>r</mi>
-    <msub>
-      <mi>y</mi>
-      <mn>1</mn>
-    </msub>
-    <mo stretchy="false">⟩</mo>
-  </mrow>
-</math> <span class="roman">…</span> <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mo stretchy="false">⟨</mo>
-    <mspace width="0.1em"/>
-    <mi>q</mi>
-    <mi>u</mi>
-    <mi>e</mi>
-    <mi>r</mi>
-    <msub>
-      <mi>y</mi>
-      <mi>n</mi>
-    </msub>
-    <mo stretchy="false">⟩</mo>
-  </mrow>
-</math>.
+simultaneously satisfy <img src="fig/math/baacff7ca4bf7baeb71fc5d2eafe8913.svg" class="math-inline" style="height: 0.916em; vertical-align: -0.231em;" alt="\( {⟨\kern0.1em query_1⟩} \)" /> <span class="roman">…</span> <img src="fig/math/ba262d566665aeb17c9ee4908db5b62f.svg" class="math-inline" style="height: 0.916em; vertical-align: -0.231em;" alt="\( {⟨\kern0.1em query_n⟩} \)" />.
 </p>
 <p>As for simple queries, the system processes a compound query by finding all
 assignments to the pattern variables that satisfy the query, then displaying
@@ -528,35 +500,7 @@ example,
 <pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">or</span><span class="pln"> ⟨</span><var><span class="pln">query</span><span class="pun">₁</span></var><span class="pln">⟩ ⟨</span><var><span class="pln">query</span><span class="pun">₂</span></var><span class="pln">⟩ </span><span class="roman"><span class="pun">…</span></span><span class="pln"> ⟨</span><var><span class="pln">query</span><span class="pun">ₙ</span></var><span class="pln">⟩</span><span class="clo">)</span></pre></div>
 
 <p>is satisfied by all sets of values for the pattern variables that satisfy at
-least one of <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mo stretchy="false">⟨</mo>
-    <mspace width="0.1em"/>
-    <mi>q</mi>
-    <mi>u</mi>
-    <mi>e</mi>
-    <mi>r</mi>
-    <msub>
-      <mi>y</mi>
-      <mn>1</mn>
-    </msub>
-    <mo stretchy="false">⟩</mo>
-  </mrow>
-</math> <span class="roman">…</span> <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mo stretchy="false">⟨</mo>
-    <mspace width="0.1em"/>
-    <mi>q</mi>
-    <mi>u</mi>
-    <mi>e</mi>
-    <mi>r</mi>
-    <msub>
-      <mi>y</mi>
-      <mi>n</mi>
-    </msub>
-    <mo stretchy="false">⟩</mo>
-  </mrow>
-</math>.
+least one of <img src="fig/math/baacff7ca4bf7baeb71fc5d2eafe8913.svg" class="math-inline" style="height: 0.916em; vertical-align: -0.231em;" alt="\( {⟨\kern0.1em query_1⟩} \)" /> <span class="roman">…</span> <img src="fig/math/ba262d566665aeb17c9ee4908db5b62f.svg" class="math-inline" style="height: 0.916em; vertical-align: -0.231em;" alt="\( {⟨\kern0.1em query_n⟩} \)" />.
 </p>
 <p>Compound queries can also be formed with <code>not</code>. For example,
 </p>
@@ -571,21 +515,7 @@ In general,
 <pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="pln">not ⟨</span><var><span class="pln">query</span><span class="pun">₁</span></var><span class="pln">⟩</span><span class="clo">)</span></pre></div>
 
 <p>is satisfied by all assignments to the pattern variables that do not satisfy
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mo stretchy="false">⟨</mo>
-    <mspace width="0.1em"/>
-    <mi>q</mi>
-    <mi>u</mi>
-    <mi>e</mi>
-    <mi>r</mi>
-    <msub>
-      <mi>y</mi>
-      <mn>1</mn>
-    </msub>
-    <mo stretchy="false">⟩</mo>
-  </mrow>
-</math>.<a class="footnote_link" id="DOCF267" href="#FOOT267"><sup>267</sup></a>
+<img src="fig/math/baacff7ca4bf7baeb71fc5d2eafe8913.svg" class="math-inline" style="height: 0.916em; vertical-align: -0.231em;" alt="\( {⟨\kern0.1em query_1⟩} \)" />.<a class="footnote_link" id="DOCF267" href="#FOOT267"><sup>267</sup></a>
 </p>
 <p>The final combining form is called <code>lisp-value</code>.  When <code>lisp-value</code>
 is the first element of a pattern, it specifies that the next element is a Lisp
@@ -596,32 +526,8 @@ arguments.  In general,
 <pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="pln">lisp-value ⟨</span><var><span class="pln">predicate</span></var><span class="pln">⟩ ⟨</span><var><span class="pln">arg</span><span class="pun">₁</span></var><span class="pln">⟩ </span><span class="roman"><span class="pun">…</span></span><span class="pln"> ⟨</span><var><span class="pln">arg</span><span class="pun">ₙ</span></var><span class="pln">⟩</span><span class="clo">)</span></pre></div>
 
 <p>will be satisfied by assignments to the pattern variables for which the
-<code>⟨</code><var>predicate</var><code>⟩</code> applied to the instantiated <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mo stretchy="false">⟨</mo>
-    <mspace width="0.1em"/>
-    <mi>a</mi>
-    <mi>r</mi>
-    <msub>
-      <mi>g</mi>
-      <mn>1</mn>
-    </msub>
-    <mo stretchy="false">⟩</mo>
-  </mrow>
-</math> <span class="roman">…</span>
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mo stretchy="false">⟨</mo>
-    <mspace width="0.1em"/>
-    <mi>a</mi>
-    <mi>r</mi>
-    <msub>
-      <mi>g</mi>
-      <mi>n</mi>
-    </msub>
-    <mo stretchy="false">⟩</mo>
-  </mrow>
-</math> is true.  For example, to find all people whose salary is
+<code>⟨</code><var>predicate</var><code>⟩</code> applied to the instantiated <img src="fig/math/3a5899b123fcb6b0e738fa6bb1a237e4.svg" class="math-inline" style="height: 0.913em; vertical-align: -0.231em;" alt="\( {⟨\kern0.1em arg_1⟩} \)" /> <span class="roman">…</span>
+<img src="fig/math/9f0197828704a1ad5f51fd2e1cfc2048.svg" class="math-inline" style="height: 0.913em; vertical-align: -0.231em;" alt="\( {⟨\kern0.1em arg_n⟩} \)" /> is true.  For example, to find all people whose salary is
 greater than $30,000 we could write<a class="footnote_link" id="DOCF268" href="#FOOT268"><sup>268</sup></a>
 </p>
 <div class="lisp">
@@ -928,33 +834,9 @@ of Cain:
 </span><span class="opn">(</span><span class="pln">wife Lamech Ada</span><span class="clo">)</span><span class="pln"> </span><span class="opn">(</span><span class="pln">son Ada Jabal</span><span class="clo">)</span><span class="pln">
 </span><span class="opn">(</span><span class="pln">son Ada Jubal</span><span class="clo">)</span></pre></div>
 
-<p>Formulate rules such as “If <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>S</mi>
-</math> is the son of <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>f</mi>
-</math>, and <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>f</mi>
-</math> is the son of
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>G</mi>
-</math>, then <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>S</mi>
-</math> is the grandson of <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>G</mi>
-</math>” and “If <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>W</mi>
-</math> is the wife of
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>M</mi>
-</math>, and <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>S</mi>
-</math> is the son of <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>W</mi>
-</math>, then <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>S</mi>
-</math> is the son of <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>M</mi>
-</math>” (which
+<p>Formulate rules such as “If <img src="fig/math/fbd79508b7054f548dfce169e251714c.svg" class="math-inline" style="height: 0.664em; vertical-align: -0.013em;" alt="\( S \)" /> is the son of <img src="fig/math/7a8d165d31a04fc319968e0213091ff8.svg" class="math-inline" style="height: 0.929em; vertical-align: -0.234em;" alt="\( f \)" />, and <img src="fig/math/7a8d165d31a04fc319968e0213091ff8.svg" class="math-inline" style="height: 0.929em; vertical-align: -0.234em;" alt="\( f \)" /> is the son of
+<img src="fig/math/8b5bfff83f82985378fb3e4fb526d9ae.svg" class="math-inline" style="height: 0.664em; vertical-align: -0.013em;" alt="\( G \)" />, then <img src="fig/math/fbd79508b7054f548dfce169e251714c.svg" class="math-inline" style="height: 0.664em; vertical-align: -0.013em;" alt="\( S \)" /> is the grandson of <img src="fig/math/8b5bfff83f82985378fb3e4fb526d9ae.svg" class="math-inline" style="height: 0.664em; vertical-align: -0.013em;" alt="\( G \)" />” and “If <img src="fig/math/f666f32c63240a84a7fbeabb7d679abe.svg" class="math-inline" style="height: 0.655em; vertical-align: -0.002em;" alt="\( W \)" /> is the wife of
+<img src="fig/math/bf30836652e54c2555d289073100460e.svg" class="math-inline" style="height: 0.649em;" alt="\( M \)" />, and <img src="fig/math/fbd79508b7054f548dfce169e251714c.svg" class="math-inline" style="height: 0.664em; vertical-align: -0.013em;" alt="\( S \)" /> is the son of <img src="fig/math/f666f32c63240a84a7fbeabb7d679abe.svg" class="math-inline" style="height: 0.655em; vertical-align: -0.002em;" alt="\( W \)" />, then <img src="fig/math/fbd79508b7054f548dfce169e251714c.svg" class="math-inline" style="height: 0.664em; vertical-align: -0.013em;" alt="\( S \)" /> is the son of <img src="fig/math/bf30836652e54c2555d289073100460e.svg" class="math-inline" style="height: 0.649em;" alt="\( M \)" />” (which
 was supposedly more true in biblical times than today) that will enable the
 query system to find the grandson of Cain; the sons of Lamech; the grandsons of
 Methushael.  (See <a href="#Exercise-4_002e69">Exercise 4.69</a> for some rules to deduce more complicated
@@ -1055,7 +937,7 @@ This stream is the output of the query.
 </p>
 <figure class="float">
 <a id="Figure-4_002e4"></a>
-<object style="width: 56.21ex; height: 22.19ex;" data="fig/chap4/Fig4.4a.std.svg" type="image/svg+xml">SVG</object>
+<img style="width: 56.21ex; max-width: 100%; display: inline;" src="fig/chap4/Fig4.4a.std.svg" />
 
 <figcaption class="float-caption">
 <p><strong>Figure 4.4:</strong> A query processes a stream of frames.</p>
@@ -1104,7 +986,7 @@ extended by the second query.
 </p>
 <figure class="float">
 <a id="Figure-4_002e5"></a>
-<object style="width: 55.69ex; height: 22.28ex;" data="fig/chap4/Fig4.5a.std.svg" type="image/svg+xml">SVG</object>
+<img style="width: 55.69ex; max-width: 100%; display: inline;" src="fig/chap4/Fig4.5a.std.svg" />
 
 <figcaption class="float-caption">
 <p><strong>Figure 4.5:</strong> The <code>and</code> combination of two queries is produced by operating on the stream of frames in series.</p>
@@ -1118,7 +1000,7 @@ streams are then merged to produce the final output stream.
 </p>
 <figure class="float">
 <a id="Figure-4_002e6"></a>
-<object style="width: 58.02ex; height: 35.92ex;" data="fig/chap4/Fig4.6a.std.svg" type="image/svg+xml">SVG</object>
+<img style="width: 58.02ex; max-width: 100%; display: inline;" src="fig/chap4/Fig4.6a.std.svg" />
 
 <figcaption class="float-caption">
 <p><strong>Figure 4.6:</strong> The <code>or</code> combination of two queries is produced by operating on the stream of frames in parallel and merging the results.</p>
@@ -1437,16 +1319,8 @@ setting up a data base of famous marriages, including
 <div class="lisp">
 <pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="pln">married Mickey </span><span class="pun">?</span><span class="pln">who</span><span class="clo">)</span></pre></div>
 
-<p>we will get no response, because the system doesn’t know that if <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>A</mi>
-</math> is
-married to <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>B</mi>
-</math>, then <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>B</mi>
-</math> is married to <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>A</mi>
-</math>.  So we assert the rule
+<p>we will get no response, because the system doesn’t know that if <img src="fig/math/0795850a4e18ff44aa3a2868640c29a7.svg" class="math-inline" style="height: 0.656em; vertical-align: -0.004em;" alt="\( A \)" /> is
+married to <img src="fig/math/30728d9819efd7caec6b07dd841c7393.svg" class="math-inline" style="height: 0.645em;" alt="\( B \)" />, then <img src="fig/math/30728d9819efd7caec6b07dd841c7393.svg" class="math-inline" style="height: 0.645em;" alt="\( B \)" /> is married to <img src="fig/math/0795850a4e18ff44aa3a2868640c29a7.svg" class="math-inline" style="height: 0.656em; vertical-align: -0.004em;" alt="\( A \)" />.  So we assert the rule
 </p>
 <div class="lisp">
 <pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="pln">assert! </span><span class="opn">(</span><span class="pln">rule </span><span class="opn">(</span><span class="pln">married </span><span class="pun">?</span><span class="pln">x </span><span class="pun">?</span><span class="pln">y</span><span class="clo">)</span><span class="pln">
@@ -1519,16 +1393,8 @@ work if some of its arguments are unbound.  See <a href="#Exercise-4_002e77">Exe
 </p>
 <p>There is also a much more serious way in which the <code>not</code> of the query
 language differs from the <code>not</code> of mathematical logic.  In logic, we
-interpret the statement “not <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>P</mi>
-</math>” to mean that <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>P</mi>
-</math> is not true.  In the
-query system, however, “not <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>P</mi>
-</math>” means that <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>P</mi>
-</math> is not deducible from the
+interpret the statement “not <img src="fig/math/51e14234cf17ac37770614a2ec2663da.svg" class="math-inline" style="height: 0.649em;" alt="\( P \)" />” to mean that <img src="fig/math/51e14234cf17ac37770614a2ec2663da.svg" class="math-inline" style="height: 0.649em;" alt="\( P \)" /> is not true.  In the
+query system, however, “not <img src="fig/math/51e14234cf17ac37770614a2ec2663da.svg" class="math-inline" style="height: 0.649em;" alt="\( P \)" />” means that <img src="fig/math/51e14234cf17ac37770614a2ec2663da.svg" class="math-inline" style="height: 0.649em;" alt="\( P \)" /> is not deducible from the
 knowledge in the data base.  For example, given the personnel data base of
 <a href="#g_t4_002e4_002e1">4.4.1</a>, the system would happily deduce all sorts of <code>not</code>
 statements, such as that Ben Bitdiddle is not a baseball fan, that it is not
@@ -2727,66 +2593,13 @@ precisely one person.
 as a series combination of queries (<a href="#Figure-4_002e5">Figure 4.5</a>) is elegant, but it is
 inefficient because in processing the second query of the <code>and</code> we must
 scan the data base for each frame produced by the first query.  If the data
-base has <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math> elements, and a typical query produces a number of output frames
-proportional to <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math> (say <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>n</mi>
-    <mspace width="thinmathspace"/>
-    <mrow class="MJX-TeXAtom-ORD">
-      <mo>/</mo>
-    </mrow>
-    <mspace width="thinmathspace"/>
-    <mi>k</mi>
-  </mrow>
-</math>), then scanning the data base for each
-frame produced by the first query will require <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <msup>
-      <mi>n</mi>
-      <mn>2</mn>
-    </msup>
-    <mrow class="MJX-TeXAtom-ORD">
-      <mo>/</mo>
-    </mrow>
-    <mspace width="thinmathspace"/>
-    <mi>k</mi>
-  </mrow>
-</math> calls to the
+base has <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" /> elements, and a typical query produces a number of output frames
+proportional to <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" /> (say <img src="fig/math/f446ea371305495c0f79757a695bedc0.svg" class="math-inline" style="height: 0.852em; vertical-align: -0.159em;" alt="\( {n \,/\, k} \)" />), then scanning the data base for each
+frame produced by the first query will require <img src="fig/math/c761df1bc3cbb223478af8e12ae5bab7.svg" class="math-inline" style="height: 1.004em; vertical-align: -0.159em;" alt="\( {n^2 /\, k} \)" /> calls to the
 pattern matcher.  Another approach would be to process the two clauses of the
 <code>and</code> separately, then look for all pairs of output frames that are
-compatible.  If each query produces <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>n</mi>
-    <mspace width="thinmathspace"/>
-    <mrow class="MJX-TeXAtom-ORD">
-      <mo>/</mo>
-    </mrow>
-    <mspace width="thinmathspace"/>
-    <mi>k</mi>
-  </mrow>
-</math> output frames, then this means
-that we must perform <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <msup>
-      <mi>n</mi>
-      <mn>2</mn>
-    </msup>
-    <mrow class="MJX-TeXAtom-ORD">
-      <mo>/</mo>
-    </mrow>
-    <mspace width="thinmathspace"/>
-    <msup>
-      <mi>k</mi>
-      <mn>2</mn>
-    </msup>
-  </mrow>
-</math> compatibility checks—a factor of <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>k</mi>
-</math>
+compatible.  If each query produces <img src="fig/math/f446ea371305495c0f79757a695bedc0.svg" class="math-inline" style="height: 0.852em; vertical-align: -0.159em;" alt="\( {n \,/\, k} \)" /> output frames, then this means
+that we must perform <img src="fig/math/eede4d01804258a8dd1f0becf474f990.svg" class="math-inline" style="height: 1.004em; vertical-align: -0.159em;" alt="\( {n^2 /\, k^2} \)" /> compatibility checks—a factor of <img src="fig/math/83054be07bea98353c7cda3290903d5e.svg" class="math-inline" style="height: 0.703em; vertical-align: -0.009em;" alt="\( k \)" />
 fewer than the number of matches required in our current method.
 </p>
 <p>Devise an implementation of <code>and</code> that uses this strategy.  You must
@@ -2850,14 +2663,8 @@ environments rather than renaming.  See if you can build on your environment
 structure to create constructs in the query language for dealing with large
 systems, such as the rule analog of block-structured procedures.  Can you
 relate any of this to the problem of making deductions in a context (e.g., “If
-I supposed that <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>P</mi>
-</math> were true, then I would be able to deduce <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>A</mi>
-</math> and
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>B</mi>
-</math>.”) as a method of problem solving?  (This problem is open-ended.  A good
+I supposed that <img src="fig/math/51e14234cf17ac37770614a2ec2663da.svg" class="math-inline" style="height: 0.649em;" alt="\( P \)" /> were true, then I would be able to deduce <img src="fig/math/0795850a4e18ff44aa3a2868640c29a7.svg" class="math-inline" style="height: 0.656em; vertical-align: -0.004em;" alt="\( A \)" /> and
+<img src="fig/math/30728d9819efd7caec6b07dd841c7393.svg" class="math-inline" style="height: 0.645em;" alt="\( B \)" />.”) as a method of problem solving?  (This problem is open-ended.  A good
 answer is probably worth a Ph.D.)
 </p></blockquote>
 
@@ -2908,19 +2715,8 @@ problem of how to compute the answer.  There are many different mathematically
 equivalent sets of rules for formulating the <code>append</code> relation, only some
 of which can be turned into effective devices for computing in any direction.
 In addition, sometimes “what is” information gives no clue “how to” compute
-an answer.  For example, consider the problem of computing the <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>y</mi>
-</math> such that
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <msup>
-      <mi>y</mi>
-      <mn>2</mn>
-    </msup>
-    <mo>=</mo>
-    <mi>x</mi>
-  </mrow>
-</math>.</p>
+an answer.  For example, consider the problem of computing the <img src="fig/math/05e4cdb2f26a4f66b68c167423907fea.svg" class="math-inline" style="height: 0.669em; vertical-align: -0.235em;" alt="\( y \)" /> such that
+<img src="fig/math/437588ce11e8725cc98d93e391d57fb8.svg" class="math-inline" style="height: 1.078em; vertical-align: -0.235em;" alt="\( {y^2 = x} \)" />.</p>
 </div>
 <div id="FOOT265"><p><a class="footnote_backlink" href="#DOCF265"><sup>265</sup></a>
 Interest in logic programming peaked during the early 80s
@@ -3031,12 +2827,8 @@ is legitimate is not a trivial assertion.  One must prove that if one starts
 with true premises, only true conclusions can be derived.  The method of
 inference represented by rule applications is <a id="index-modus-ponens"></a>
 <em>modus ponens</em>, the
-familiar method of inference that says that if <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>A</mi>
-</math> is true and <em>A
-implies B</em> is true, then we may conclude that <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>B</mi>
-</math> is true.</p>
+familiar method of inference that says that if <img src="fig/math/0795850a4e18ff44aa3a2868640c29a7.svg" class="math-inline" style="height: 0.656em; vertical-align: -0.004em;" alt="\( A \)" /> is true and <em>A
+implies B</em> is true, then we may conclude that <img src="fig/math/30728d9819efd7caec6b07dd841c7393.svg" class="math-inline" style="height: 0.645em;" alt="\( B \)" /> is true.</p>
 </div>
 <div id="FOOT280"><p><a class="footnote_backlink" href="#DOCF280"><sup>280</sup></a>
 We
@@ -3069,27 +2861,8 @@ control problems, is to put in special knowledge, such as detectors for
 particular kinds of loops (<a href="#Exercise-4_002e67">Exercise 4.67</a>).  However, there can be no
 general scheme for reliably preventing a system from going down infinite paths
 in performing deductions.  Imagine a diabolical rule of the form “To show
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>P</mi>
-    <mo stretchy="false">(</mo>
-    <mi>x</mi>
-    <mo stretchy="false">)</mo>
-  </mrow>
-</math> is true, show that <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>P</mi>
-    <mo stretchy="false">(</mo>
-    <mi>f</mi>
-    <mo stretchy="false">(</mo>
-    <mi>x</mi>
-    <mo stretchy="false">)</mo>
-    <mo stretchy="false">)</mo>
-  </mrow>
-</math> is true,” for some
-suitably chosen function <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>f</mi>
-</math>.</p>
+<img src="fig/math/98df79006c92e07113ae705b54fcef17.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.189em;" alt="\( {P(x)} \)" /> is true, show that <img src="fig/math/f609f83406e5a8b6032604db61942658.svg" class="math-inline" style="height: 0.936em; vertical-align: -0.225em;" alt="\( {P(f(x))} \)" /> is true,” for some
+suitably chosen function <img src="fig/math/7a8d165d31a04fc319968e0213091ff8.svg" class="math-inline" style="height: 0.929em; vertical-align: -0.234em;" alt="\( f \)" />.</p>
 </div>
 <div id="FOOT282"><p><a class="footnote_backlink" href="#DOCF282"><sup>282</sup></a>
 Consider the query
@@ -3116,207 +2889,16 @@ expression <code>(f ?y)</code> and repeatedly substituting <code>(f ?y)</code> f
 <code>?y</code>.  Unfortunately, not every such equation has a meaningful fixed
 point.  The issues that arise here are similar to the issues of manipulating
 infinite series in mathematics.  For example, we know that 2 is the solution to
-the equation <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>y</mi>
-    <mo>=</mo>
-    <mn>1</mn>
-    <mo>+</mo>
-    <mi>y</mi>
-    <mrow class="MJX-TeXAtom-ORD">
-      <mo>/</mo>
-    </mrow>
-    <mn>2</mn>
-  </mrow>
-</math>.  Beginning with the expression <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mn>1</mn>
-    <mo>+</mo>
-    <mi>y</mi>
-    <mrow class="MJX-TeXAtom-ORD">
-      <mo>/</mo>
-    </mrow>
-    <mn>2</mn>
-  </mrow>
-</math>
-and repeatedly substituting <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mn>1</mn>
-    <mo>+</mo>
-    <mi>y</mi>
-    <mrow class="MJX-TeXAtom-ORD">
-      <mo>/</mo>
-    </mrow>
-    <mn>2</mn>
-  </mrow>
-</math> for <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>y</mi>
-</math> gives
-<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
-  <mn>2</mn>
-  <mo>=</mo>
-  <mi>y</mi>
-  <mo>=</mo>
-  <mn>1</mn>
-  <mo>+</mo>
-  <mrow class="MJX-TeXAtom-ORD">
-    <mfrac>
-      <mi>y</mi>
-      <mn>2</mn>
-    </mfrac>
-  </mrow>
-  <mo>=</mo>
-  <mn>1</mn>
-  <mo>+</mo>
-  <mrow class="MJX-TeXAtom-ORD">
-    <mrow class="MJX-TeXAtom-ORD">
-      <mfrac>
-        <mn>1</mn>
-        <mn>2</mn>
-      </mfrac>
-    </mrow>
-    <mrow>
-      <mo>(</mo>
-      <mn>1</mn>
-      <mo>+</mo>
-      <mrow class="MJX-TeXAtom-ORD">
-        <mfrac>
-          <mi>y</mi>
-          <mn>2</mn>
-        </mfrac>
-      </mrow>
-      <mo>)</mo>
-    </mrow>
-  </mrow>
-  <mo>=</mo>
-  <mn>1</mn>
-  <mo>+</mo>
-  <mrow class="MJX-TeXAtom-ORD">
-    <mfrac>
-      <mn>1</mn>
-      <mn>2</mn>
-    </mfrac>
-  </mrow>
-  <mo>+</mo>
-  <mrow class="MJX-TeXAtom-ORD">
-    <mfrac>
-      <mi>y</mi>
-      <mn>4</mn>
-    </mfrac>
-  </mrow>
-  <mo>=</mo>
-  <mrow class="MJX-TeXAtom-ORD">
-    <mo>…<!-- … --></mo>
-    <mo>,</mo>
-  </mrow>
-</math>
+the equation <img src="fig/math/10d27b8a8268a1561a81dc27367f2424.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.229em;" alt="\( {y = 1 + y / 2} \)" />.  Beginning with the expression <img src="fig/math/94162a6f1e1feb5a96dedd6aed5cd00c.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.229em;" alt="\( {1 + y / 2} \)" />
+and repeatedly substituting <img src="fig/math/94162a6f1e1feb5a96dedd6aed5cd00c.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.229em;" alt="\( {1 + y / 2} \)" /> for <img src="fig/math/05e4cdb2f26a4f66b68c167423907fea.svg" class="math-inline" style="height: 0.669em; vertical-align: -0.235em;" alt="\( y \)" /> gives
+<img src="fig/math/25692ed32d64b34d3366f2c82ad4e37d.svg" class="math-display" style="height: 2.017em;" alt="\[ % :78:&amp;#10;  2 = y = 1 + {y \over 2} = 1 + {{1\over2}\left(1 + {y \over 2}\right)} =    1 + {1\over2} + {y \over 4} = {\dots,}  \]" />
 which leads to
-<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
-  <mn>2</mn>
-  <mo>=</mo>
-  <mn>1</mn>
-  <mo>+</mo>
-  <mrow class="MJX-TeXAtom-ORD">
-    <mfrac>
-      <mn>1</mn>
-      <mn>2</mn>
-    </mfrac>
-  </mrow>
-  <mo>+</mo>
-  <mrow class="MJX-TeXAtom-ORD">
-    <mfrac>
-      <mn>1</mn>
-      <mn>4</mn>
-    </mfrac>
-  </mrow>
-  <mo>+</mo>
-  <mrow class="MJX-TeXAtom-ORD">
-    <mfrac>
-      <mn>1</mn>
-      <mn>8</mn>
-    </mfrac>
-  </mrow>
-  <mo>+</mo>
-  <mrow class="MJX-TeXAtom-ORD">
-    <mo>…<!-- … --></mo>
-    <mo>.</mo>
-  </mrow>
-</math>
-However, if we try the same manipulation beginning with the observation that <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mo>−</mo>
-    <mn>1</mn>
-  </mrow>
-</math> 
-is the solution to the equation <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>y</mi>
-    <mo>=</mo>
-    <mn>1</mn>
-    <mo>+</mo>
-    <mn>2</mn>
-    <mi>y</mi>
-  </mrow>
-</math>, we obtain
-<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mo>−<!-- − --></mo>
-    <mn>1</mn>
-  </mrow>
-  <mo>=</mo>
-  <mi>y</mi>
-  <mo>=</mo>
-  <mn>1</mn>
-  <mo>+</mo>
-  <mrow class="MJX-TeXAtom-ORD">
-    <mn>2</mn>
-    <mi>y</mi>
-  </mrow>
-  <mo>=</mo>
-  <mn>1</mn>
-  <mo>+</mo>
-  <mrow class="MJX-TeXAtom-ORD">
-    <mn>2</mn>
-    <mo stretchy="false">(</mo>
-    <mn>1</mn>
-    <mo>+</mo>
-    <mn>2</mn>
-    <mi>y</mi>
-    <mo stretchy="false">)</mo>
-  </mrow>
-  <mo>=</mo>
-  <mn>1</mn>
-  <mo>+</mo>
-  <mn>2</mn>
-  <mo>+</mo>
-  <mrow class="MJX-TeXAtom-ORD">
-    <mn>4</mn>
-    <mi>y</mi>
-  </mrow>
-  <mo>=</mo>
-  <mrow class="MJX-TeXAtom-ORD">
-    <mo>…<!-- … --></mo>
-    <mo>,</mo>
-  </mrow>
-</math>
+<img src="fig/math/50766015cf2e4b7c9941eaf448a0a146.svg" class="math-display" style="height: 2.005em;" alt="\[ % :79:&amp;#10;  2 = 1 + {1\over2} + {1\over4} + {1\over8} + {\dots.}  \]" />
+However, if we try the same manipulation beginning with the observation that <img src="fig/math/b89b4030d4ad8b7c3ee168278e421b82.svg" class="math-inline" style="height: 0.642em;" alt="\( {−1} \)" /> 
+is the solution to the equation <img src="fig/math/a01f24db4f3b10c633e6390b98655208.svg" class="math-inline" style="height: 0.875em; vertical-align: -0.234em;" alt="\( {y = 1 + 2y} \)" />, we obtain
+<img src="fig/math/32d67b7cc6f209778c11861f76c090a8.svg" class="math-display" style="height: 0.933em;" alt="\[ % :80:&amp;#10;  {-1} = y = 1 + {2y} = 1 + {2(1 + 2y)} = 1 + 2 + {4y} = {\dots,}  \]" />
 which leads to
-<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
-  <mo>−<!-- − --></mo>
-  <mn>1</mn>
-  <mo>=</mo>
-  <mn>1</mn>
-  <mo>+</mo>
-  <mn>2</mn>
-  <mo>+</mo>
-  <mn>4</mn>
-  <mo>+</mo>
-  <mn>8</mn>
-  <mo>+</mo>
-  <mrow class="MJX-TeXAtom-ORD">
-    <mo>…<!-- … --></mo>
-    <mo>.</mo>
-  </mrow>
-</math>
+<img src="fig/math/927d3be074331aa51b6ec4452608fe21.svg" class="math-display" style="height: 0.654em;" alt="\[ % :81:&amp;#10;  -1 = 1 + 2 + 4 + 8 + {\dots.}  \]" />
 Although the formal manipulations used in deriving these two equations are
 identical, the first result is a valid assertion about infinite series but the
 second is not.  Similarly, for our unification results, reasoning with an

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" xml:lang="en" lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" xml:lang="en" xmlns:xml="http://www.w3.org/XML/1998/namespace" lang="en">
 <!-- Created by GNU Texinfo 5.1, http://www.gnu.org/software/texinfo/ -->
 <head>
 <title>Structure and Interpretation of Computer Programs, 2e: 1.3</title>
@@ -97,49 +97,9 @@ integers from <code>a</code> through <code>b</code>:
 
 <p>The third computes the sum of a sequence of terms in the series
 
-<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
-  <mfrac>
-    <mn>1</mn>
-    <mrow>
-      <mn>1</mn>
-      <mo>⋅<!-- ⋅ --></mo>
-      <mn>3</mn>
-    </mrow>
-  </mfrac>
-  <mo>+</mo>
-  <mfrac>
-    <mn>1</mn>
-    <mrow>
-      <mn>5</mn>
-      <mo>⋅<!-- ⋅ --></mo>
-      <mn>7</mn>
-    </mrow>
-  </mfrac>
-  <mo>+</mo>
-  <mfrac>
-    <mn>1</mn>
-    <mrow>
-      <mn>9</mn>
-      <mo>⋅<!-- ⋅ --></mo>
-      <mn>11</mn>
-    </mrow>
-  </mfrac>
-  <mo>+</mo>
-  <mrow class="MJX-TeXAtom-ORD">
-    <mo>…<!-- … --></mo>
-    <mo>,</mo>
-  </mrow>
-</math>
+<img src="fig/math/f316427b55b2cae99386cc31549fae9d.svg" class="math-display" style="height: 2.005em;" alt="\[ % :17:&amp;#10;   \frac{1}{1\cdot 3} +  \frac{1}{5\cdot 7} + \frac{1}{9\cdot 11} + {\dots,} \]" />
 
-which converges to <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>π<!-- π --></mi>
-    <mrow class="MJX-TeXAtom-ORD">
-      <mo>/</mo>
-    </mrow>
-    <mn>8</mn>
-  </mrow>
-</math> (very slowly):<a class="footnote_link" id="DOCF49" href="#FOOT49"><sup>49</sup></a>
+which converges to <img src="fig/math/7036f8c43b937dd94b8729faff8921d8.svg" class="math-inline" style="height: 0.827em; vertical-align: -0.153em;" alt="\( {\pi / 8} \)" /> (very slowly):<a class="footnote_link" id="DOCF49" href="#FOOT49"><sup>49</sup></a>
 </p>
 <div class="lisp">
 <pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">define</span><span class="pln"> </span><span class="opn">(</span><span class="pln">pi-sum a b</span><span class="clo">)</span><span class="pln">
@@ -167,42 +127,7 @@ ago identified the abstraction of <a id="index-summation-of-a-series"></a>
 <em>summation of a series</em> and invented
 “sigma notation,” for example
 
-<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
-  <mrow class="MJX-TeXAtom-ORD">
-    <munderover>
-      <mo>∑<!-- ∑ --></mo>
-      <mrow class="MJX-TeXAtom-ORD">
-        <mi>n</mi>
-        <mo>=</mo>
-        <mi>a</mi>
-      </mrow>
-      <mi>b</mi>
-    </munderover>
-    <mi>f</mi>
-    <mo stretchy="false">(</mo>
-    <mi>n</mi>
-    <mo stretchy="false">)</mo>
-  </mrow>
-  <mspace width="thinmathspace"/>
-  <mo>=</mo>
-  <mspace width="thinmathspace"/>
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>f</mi>
-    <mo stretchy="false">(</mo>
-    <mi>a</mi>
-    <mo stretchy="false">)</mo>
-  </mrow>
-  <mo>+</mo>
-  <mo>⋯<!-- ⋯ --></mo>
-  <mo>+</mo>
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>f</mi>
-    <mo stretchy="false">(</mo>
-    <mi>b</mi>
-    <mo stretchy="false">)</mo>
-    <mo>,</mo>
-  </mrow>
-</math>
+<img src="fig/math/0eb2995b6eef64f53cec0011a7a1bf0a.svg" class="math-display" style="height: 2.847em;" alt="\[ % :18:&amp;#10;  {\sum_{n = a}^b f(n)} \,=\, {f(a)} + \dots + {f(b),} \]" />
 
 to express this concept.  The power of sigma notation is that it allows
 mathematicians to deal with the concept of summation itself rather than only
@@ -267,9 +192,7 @@ define <code>sum-cubes</code>:
     </span><span class="opn">(</span><span class="pun">+</span><span class="pln"> x </span><span class="lit">4</span><span class="clo">))</span><span class="pln">
   </span><span class="opn">(</span><span class="pln">sum pi-term a pi-next b</span><span class="clo">))</span></pre></div>
 
-<p>Using these procedures, we can compute an approximation to <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>π<!-- π --></mi>
-</math>:
+<p>Using these procedures, we can compute an approximation to <img src="fig/math/c25469cd205e957b38b51203870f48af.svg" class="math-inline" style="height: 0.438em; vertical-align: -0.000em;" alt="\( \pi \)" />:
 </p>
 <div class="lisp">
 <pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="pun">*</span><span class="pln"> </span><span class="lit">8</span><span class="pln"> </span><span class="opn">(</span><span class="pln">pi-sum </span><span class="lit">1</span><span class="pln"> </span><span class="lit">1000</span><span class="clo">))</span><span class="pln">
@@ -277,112 +200,13 @@ define <code>sum-cubes</code>:
 </pre></div>
 
 <p>Once we have <code>sum</code>, we can use it as a building block in formulating
-further concepts.  For instance, the definite integral of a function <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>f</mi>
-</math>
-between the limits <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>a</mi>
-</math> and <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>b</mi>
-</math> can be approximated numerically using the
+further concepts.  For instance, the definite integral of a function <img src="fig/math/7a8d165d31a04fc319968e0213091ff8.svg" class="math-inline" style="height: 0.929em; vertical-align: -0.234em;" alt="\( f \)" />
+between the limits <img src="fig/math/09009cdd5fc245e05305bc574dcdc97d.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( a \)" /> and <img src="fig/math/3e92f417ccfc1f59b0ee22d034c85747.svg" class="math-inline" style="height: 0.703em; vertical-align: -0.009em;" alt="\( b \)" /> can be approximated numerically using the
 formula
 
-<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
-  <mrow class="MJX-TeXAtom-ORD">
-    <msubsup>
-      <mo>∫<!-- ∫ --></mo>
-      <mi>a</mi>
-      <mi>b</mi>
-    </msubsup>
-    <mspace width="-0.3em"/>
-    <mi>f</mi>
-  </mrow>
-  <mspace width="thickmathspace"/>
-  <mo>=</mo>
-  <mspace width="thickmathspace"/>
-  <mrow class="MJX-TeXAtom-ORD">
-    <mrow>
-      <mo>[</mo>
-      <mspace width="thickmathspace"/>
-      <mi>f</mi>
-      <mrow>
-        <mo>(</mo>
-        <mi>a</mi>
-        <mo>+</mo>
-        <mfrac>
-          <mrow>
-            <mi>d</mi>
-            <mi>x</mi>
-          </mrow>
-          <mn>2</mn>
-        </mfrac>
-        <mo>)</mo>
-      </mrow>
-    </mrow>
-  </mrow>
-  <mspace width="thinmathspace"/>
-  <mo>+</mo>
-  <mspace width="thinmathspace"/>
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>f</mi>
-    <mrow>
-      <mo>(</mo>
-      <mi>a</mi>
-      <mo>+</mo>
-      <mi>d</mi>
-      <mi>x</mi>
-      <mo>+</mo>
-      <mfrac>
-        <mrow>
-          <mi>d</mi>
-          <mi>x</mi>
-        </mrow>
-        <mn>2</mn>
-      </mfrac>
-      <mo>)</mo>
-    </mrow>
-  </mrow>
-  <mspace width="thinmathspace"/>
-  <mo>+</mo>
-  <mspace width="thinmathspace"/>
-  <mrow class="MJX-TeXAtom-ORD">
-    <mrow>
-      <mi>f</mi>
-      <mrow>
-        <mo>(</mo>
-        <mi>a</mi>
-        <mo>+</mo>
-        <mn>2</mn>
-        <mi>d</mi>
-        <mi>x</mi>
-        <mo>+</mo>
-        <mfrac>
-          <mrow>
-            <mi>d</mi>
-            <mi>x</mi>
-          </mrow>
-          <mn>2</mn>
-        </mfrac>
-        <mo>)</mo>
-      </mrow>
-      <mspace width="thinmathspace"/>
-      <mo>+</mo>
-      <mspace width="thinmathspace"/>
-      <mo>…<!-- … --></mo>
-      <mspace width="thickmathspace"/>
-      <mo>]</mo>
-    </mrow>
-    <mi>d</mi>
-    <mi>x</mi>
-  </mrow>
-</math>
+<img src="fig/math/86184e563a55746a1b5c8780393ed522.svg" class="math-display" style="height: 2.527em;" alt="\[ % :19:&amp;#10;  {\int_a^b \kern-0.3em f}   \;=\; {\left[\;f\left(a + \frac{d x}{2}\right)\right.}   \,+\, {f\left(a + dx + \frac{dx}{2}\right)}   \,+\, {\left. f\left(a + 2dx + \frac{dx}{2}\right)   \,+\, \dots \;\right] dx} \]" />
 
-for small values of <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>d</mi>
-    <mi>x</mi>
-  </mrow>
-</math>.  We can express this directly as a procedure:
+for small values of <img src="fig/math/a999758b4fd8ccd10d6eda8234629d51.svg" class="math-inline" style="height: 0.703em; vertical-align: -0.009em;" alt="\( {dx} \)" />.  We can express this directly as a procedure:
 </p>
 <div class="lisp">
 <pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">define</span><span class="pln"> </span><span class="opn">(</span><span class="pln">integral f a b dx</span><span class="clo">)</span><span class="pln">
@@ -402,151 +226,17 @@ for small values of <math xmlns="http://www.w3.org/1998/Math/MathML">
 <blockquote>
 <p><strong><a id="Exercise-1_002e29"></a>Exercise 1.29:</strong> Simpson’s Rule is a more accurate
 method of numerical integration than the method illustrated above.  Using
-Simpson’s Rule, the integral of a function <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>f</mi>
-</math> between <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>a</mi>
-</math> and <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>b</mi>
-</math> is
+Simpson’s Rule, the integral of a function <img src="fig/math/7a8d165d31a04fc319968e0213091ff8.svg" class="math-inline" style="height: 0.929em; vertical-align: -0.234em;" alt="\( f \)" /> between <img src="fig/math/09009cdd5fc245e05305bc574dcdc97d.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( a \)" /> and <img src="fig/math/3e92f417ccfc1f59b0ee22d034c85747.svg" class="math-inline" style="height: 0.703em; vertical-align: -0.009em;" alt="\( b \)" /> is
 approximated as
 
-<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
-  <mfrac>
-    <mi>h</mi>
-    <mn>3</mn>
-  </mfrac>
-  <mo stretchy="false">(</mo>
-  <msub>
-    <mi>y</mi>
-    <mn>0</mn>
-  </msub>
-  <mo>+</mo>
-  <mrow class="MJX-TeXAtom-ORD">
-    <mn>4</mn>
-    <msub>
-      <mi>y</mi>
-      <mn>1</mn>
-    </msub>
-  </mrow>
-  <mo>+</mo>
-  <mrow class="MJX-TeXAtom-ORD">
-    <mn>2</mn>
-    <msub>
-      <mi>y</mi>
-      <mn>2</mn>
-    </msub>
-  </mrow>
-  <mo>+</mo>
-  <mrow class="MJX-TeXAtom-ORD">
-    <mn>4</mn>
-    <msub>
-      <mi>y</mi>
-      <mn>3</mn>
-    </msub>
-  </mrow>
-  <mo>+</mo>
-  <mrow class="MJX-TeXAtom-ORD">
-    <mn>2</mn>
-    <msub>
-      <mi>y</mi>
-      <mn>4</mn>
-    </msub>
-  </mrow>
-  <mo>+</mo>
-  <mo>⋯<!-- ⋯ --></mo>
-  <mo>+</mo>
-  <mrow class="MJX-TeXAtom-ORD">
-    <mn>2</mn>
-    <msub>
-      <mi>y</mi>
-      <mrow class="MJX-TeXAtom-ORD">
-        <mi>n</mi>
-        <mo>−<!-- − --></mo>
-        <mn>2</mn>
-      </mrow>
-    </msub>
-  </mrow>
-  <mo>+</mo>
-  <mrow class="MJX-TeXAtom-ORD">
-    <mn>4</mn>
-    <msub>
-      <mi>y</mi>
-      <mrow class="MJX-TeXAtom-ORD">
-        <mi>n</mi>
-        <mo>−<!-- − --></mo>
-        <mn>1</mn>
-      </mrow>
-    </msub>
-    <mo>+</mo>
-    <msub>
-      <mi>y</mi>
-      <mi>n</mi>
-    </msub>
-    <mo stretchy="false">)</mo>
-    <mo>,</mo>
-  </mrow>
-</math>
+<img src="fig/math/70b79a35895e03d4b7cc28af18f33f90.svg" class="math-display" style="height: 2.056em;" alt="\[ % :20:&amp;#10;   \frac{h}{3}(y_0 + {4y_1} + {2y_2} + {4y_3} + {2y_4} + \dots + {2y_{n-2}} + {4y_{n-1} + y_n),} \]" />
 
-where <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>h</mi>
-    <mo>=</mo>
-    <mo stretchy="false">(</mo>
-    <mi>b</mi>
-    <mo>−<!-- − --></mo>
-    <mi>a</mi>
-    <mo stretchy="false">)</mo>
-    <mrow class="MJX-TeXAtom-ORD">
-      <mo>/</mo>
-    </mrow>
-    <mi>n</mi>
-  </mrow>
-</math>, for some even integer <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math>, and
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <msub>
-    <mi>y</mi>
-    <mi>k</mi>
-  </msub>
-  <mo>=</mo>
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>f</mi>
-    <mo stretchy="false">(</mo>
-    <mi>a</mi>
-    <mo>+</mo>
-    <mi>k</mi>
-    <mi>h</mi>
-    <mo stretchy="false">)</mo>
-  </mrow>
-</math>.  (Increasing <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math> increases the
+where <img src="fig/math/f332fb41588030f2e0de99b4c5635ece.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.189em;" alt="\( {h = (b - a)/n} \)" />, for some even integer <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" />, and
+<img src="fig/math/43c753cbc8190f8b7514dfaf32a74cbb.svg" class="math-inline" style="height: 0.936em; vertical-align: -0.225em;" alt="\( y_k = {f(a + kh)} \)" />.  (Increasing <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" /> increases the
 accuracy of the approximation.)  Define a procedure that takes as arguments
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>f</mi>
-</math>, <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>a</mi>
-</math>, <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>b</mi>
-</math>, and <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math> and returns the value of the integral, computed
+<img src="fig/math/7a8d165d31a04fc319968e0213091ff8.svg" class="math-inline" style="height: 0.929em; vertical-align: -0.234em;" alt="\( f \)" />, <img src="fig/math/09009cdd5fc245e05305bc574dcdc97d.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( a \)" />, <img src="fig/math/3e92f417ccfc1f59b0ee22d034c85747.svg" class="math-inline" style="height: 0.703em; vertical-align: -0.009em;" alt="\( b \)" />, and <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" /> and returns the value of the integral, computed
 using Simpson’s Rule.  Use your procedure to integrate <code>cube</code> between 0
-and 1 (with <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>n</mi>
-    <mo>=</mo>
-    <mn>100</mn>
-  </mrow>
-</math> and <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>n</mi>
-    <mo>=</mo>
-    <mn>1000</mn>
-  </mrow>
-</math>), and compare the results to those of
+and 1 (with <img src="fig/math/c2a31743664bc36d2792884a3692b1f5.svg" class="math-inline" style="height: 0.652em; vertical-align: -0.009em;" alt="\( {n = 100} \)" /> and <img src="fig/math/21e6a0a663b7bb714ef3eded3affb64d.svg" class="math-inline" style="height: 0.652em; vertical-align: -0.009em;" alt="\( {n = 1000} \)" />), and compare the results to those of
 the <code>integral</code> procedure shown above.
 </p></blockquote>
 
@@ -574,54 +264,9 @@ abstractions that can be captured as higher-order procedures.<a class="footnote_
 procedure called <code>product</code> that returns the product of the values of a
 function at points over a given range.  Show how to define <code>factorial</code> in
 terms of <code>product</code>.  Also use <code>product</code> to compute approximations to
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>π<!-- π --></mi>
-</math> using the formula<a class="footnote_link" id="DOCF52" href="#FOOT52"><sup>52</sup></a>
+<img src="fig/math/c25469cd205e957b38b51203870f48af.svg" class="math-inline" style="height: 0.438em; vertical-align: -0.000em;" alt="\( \pi \)" /> using the formula<a class="footnote_link" id="DOCF52" href="#FOOT52"><sup>52</sup></a>
 
-<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
-  <mfrac>
-    <mi>π<!-- π --></mi>
-    <mn>4</mn>
-  </mfrac>
-  <mspace width="thinmathspace"/>
-  <mo>=</mo>
-  <mspace width="thinmathspace"/>
-  <mrow class="MJX-TeXAtom-ORD">
-    <mfrac>
-      <mrow>
-        <mn>2</mn>
-        <mo>⋅<!-- ⋅ --></mo>
-        <mn>4</mn>
-        <mo>⋅<!-- ⋅ --></mo>
-        <mn>4</mn>
-        <mo>⋅<!-- ⋅ --></mo>
-        <mn>6</mn>
-        <mo>⋅<!-- ⋅ --></mo>
-        <mn>6</mn>
-        <mo>⋅<!-- ⋅ --></mo>
-        <mn>8</mn>
-        <mo>⋅<!-- ⋅ --></mo>
-        <mo>⋯<!-- ⋯ --></mo>
-      </mrow>
-      <mrow>
-        <mn>3</mn>
-        <mo>⋅<!-- ⋅ --></mo>
-        <mn>3</mn>
-        <mo>⋅<!-- ⋅ --></mo>
-        <mn>5</mn>
-        <mo>⋅<!-- ⋅ --></mo>
-        <mn>5</mn>
-        <mo>⋅<!-- ⋅ --></mo>
-        <mn>7</mn>
-        <mo>⋅<!-- ⋅ --></mo>
-        <mn>7</mn>
-        <mo>⋅<!-- ⋅ --></mo>
-        <mo>⋯<!-- ⋯ --></mo>
-      </mrow>
-    </mfrac>
-    <mo>.</mo>
-  </mrow>
-</math>
+<img src="fig/math/8e07cb198382e08868967e370efa5f84.svg" class="math-display" style="height: 2.005em;" alt="\[ % :21:&amp;#10;   \frac{\pi}{4} \,=\, {\frac{2\cdot 4\cdot 4\cdot 6\cdot 6\cdot 8\cdot\cdots}                      {3\cdot 3\cdot 5\cdot 5\cdot 7\cdot 7\cdot\cdots}.} \]" />
 
 </li><li> If your <code>product</code> procedure generates a recursive process, write one that
 generates an iterative process.  If it generates an iterative process, write
@@ -669,37 +314,12 @@ that specifies the filter.  Write <code>filtered-accumulate</code> as a procedur
 Show how to express the following using <code>filtered-accumulate</code>:
 </p>
 <ol>
-<li> the sum of the squares of the prime numbers in the interval <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>a</mi>
-</math> to <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>b</mi>
-</math>
+<li> the sum of the squares of the prime numbers in the interval <img src="fig/math/09009cdd5fc245e05305bc574dcdc97d.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( a \)" /> to <img src="fig/math/3e92f417ccfc1f59b0ee22d034c85747.svg" class="math-inline" style="height: 0.703em; vertical-align: -0.009em;" alt="\( b \)" />
 (assuming that you have a <code>prime?</code> predicate already written)
 
-</li><li> the product of all the positive integers less than <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math> that are relatively
-prime to <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math> (i.e., all positive integers <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>i</mi>
-    <mo>&lt;</mo>
-    <mi>n</mi>
-  </mrow>
-</math> such that
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mtext>GCD</mtext>
-    <mo stretchy="false">(</mo>
-    <mi>i</mi>
-    <mo>,</mo>
-    <mi>n</mi>
-    <mo stretchy="false">)</mo>
-    <mo>=</mo>
-    <mn>1</mn>
-  </mrow>
-</math>).
+</li><li> the product of all the positive integers less than <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" /> that are relatively
+prime to <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" /> (i.e., all positive integers <img src="fig/math/9ab46f9df27bbac5cdde0d8abca405eb.svg" class="math-inline" style="height: 0.623em; vertical-align: -0.010em;" alt="\( {i &amp;lt; n} \)" /> such that
+<img src="fig/math/10a7615c5fa63cfa8614ad9a685f9b49.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.189em;" alt="\( {\text{GCD}(i, n) = 1} \)" />).
 
 </li></ol>
 </blockquote>
@@ -790,155 +410,15 @@ name.<a class="footnote_link" id="DOCF53" href="#FOOT53"><sup>53</sup></a>
 local variables in our procedures other than those that have been bound as
 formal parameters.  For example, suppose we wish to compute the function
 
-<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>f</mi>
-    <mo stretchy="false">(</mo>
-    <mi>x</mi>
-    <mo>,</mo>
-    <mi>y</mi>
-    <mo stretchy="false">)</mo>
-  </mrow>
-  <mspace width="thinmathspace"/>
-  <mo>=</mo>
-  <mspace width="thinmathspace"/>
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>x</mi>
-    <mo stretchy="false">(</mo>
-    <mn>1</mn>
-    <mo>+</mo>
-    <mi>x</mi>
-    <mi>y</mi>
-    <msup>
-      <mo stretchy="false">)</mo>
-      <mn>2</mn>
-    </msup>
-  </mrow>
-  <mo>+</mo>
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>y</mi>
-    <mo stretchy="false">(</mo>
-    <mn>1</mn>
-    <mo>−<!-- − --></mo>
-    <mi>y</mi>
-    <mo stretchy="false">)</mo>
-  </mrow>
-  <mo>+</mo>
-  <mrow class="MJX-TeXAtom-ORD">
-    <mo stretchy="false">(</mo>
-    <mn>1</mn>
-    <mo>+</mo>
-    <mi>x</mi>
-    <mi>y</mi>
-    <mo stretchy="false">)</mo>
-    <mo stretchy="false">(</mo>
-    <mn>1</mn>
-    <mo>−<!-- − --></mo>
-    <mi>y</mi>
-    <mo stretchy="false">)</mo>
-    <mo>,</mo>
-  </mrow>
-</math>
+<img src="fig/math/fe77b247f1b571631311f5e0e0a8559d.svg" class="math-display" style="height: 1.131em;" alt="\[ % :22:&amp;#10;   {f(x,y)} \,=\, {x(1 + xy)^2} + {y(1 - y)} + {(1 + xy)(1 - y),} \]" />
 
 which we could also express as
 
-<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
-  <mtable columnalign="right center left" rowspacing="3pt" columnspacing="thickmathspace">
-    <mtr>
-      <mtd>
-        <mi>a</mi>
-      </mtd>
-      <mtd>
-        <mo>=</mo>
-      </mtd>
-      <mtd>
-        <mrow class="MJX-TeXAtom-ORD">
-          <mn>1</mn>
-          <mo>+</mo>
-          <mi>x</mi>
-          <mi>y</mi>
-          <mo>,</mo>
-        </mrow>
-      </mtd>
-    </mtr>
-    <mtr>
-      <mtd>
-        <mrow class="MJX-TeXAtom-ORD">
-          <mpadded height="0" depth="0">
-            <mphantom>
-              <mo stretchy="false">(</mo>
-              <mi>x</mi>
-              <mo>,</mo>
-              <mi>y</mi>
-              <mo stretchy="false">)</mo>
-            </mphantom>
-          </mpadded>
-        </mrow>
-        <mi>b</mi>
-      </mtd>
-      <mtd>
-        <mo>=</mo>
-      </mtd>
-      <mtd>
-        <mrow class="MJX-TeXAtom-ORD">
-          <mn>1</mn>
-          <mo>−<!-- − --></mo>
-          <mi>y</mi>
-          <mo>,</mo>
-        </mrow>
-      </mtd>
-    </mtr>
-    <mtr>
-      <mtd>
-        <mrow class="MJX-TeXAtom-ORD">
-          <mi>f</mi>
-          <mo stretchy="false">(</mo>
-          <mi>x</mi>
-          <mo>,</mo>
-          <mi>y</mi>
-          <mo stretchy="false">)</mo>
-        </mrow>
-      </mtd>
-      <mtd>
-        <mo>=</mo>
-      </mtd>
-      <mtd>
-        <mrow class="MJX-TeXAtom-ORD">
-          <mi>x</mi>
-          <msup>
-            <mi>a</mi>
-            <mn>2</mn>
-          </msup>
-        </mrow>
-        <mo>+</mo>
-        <mrow class="MJX-TeXAtom-ORD">
-          <mi>y</mi>
-          <mi>b</mi>
-        </mrow>
-        <mo>+</mo>
-        <mrow class="MJX-TeXAtom-ORD">
-          <mi>a</mi>
-          <mi>b</mi>
-          <mo>.</mo>
-        </mrow>
-      </mtd>
-    </mtr>
-  </mtable>
-</math>
+<img src="fig/math/19531eed609e9a8dd489a1e7f8434630.svg" class="math-display" style="height: 3.913em;" alt="\[ % :23:&amp;#10;  \begin{eqnarray}   a                     &amp;amp;=&amp;amp;   {1 + xy,}  \\   \hphantom{(x,y)} b    &amp;amp;=&amp;amp;   {1 - y,}   \\   {f(x,y)}              &amp;amp;=&amp;amp;   {xa^2} + {yb} + {ab.} \end{eqnarray} \]" />
 
-In writing a procedure to compute <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>f</mi>
-</math>, we would like to include as local
-variables not only <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>x</mi>
-</math> and <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>y</mi>
-</math> but also the names of intermediate
-quantities like <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>a</mi>
-</math> and <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>b</mi>
-</math>.  One way to accomplish this is to use an
+In writing a procedure to compute <img src="fig/math/7a8d165d31a04fc319968e0213091ff8.svg" class="math-inline" style="height: 0.929em; vertical-align: -0.234em;" alt="\( f \)" />, we would like to include as local
+variables not only <img src="fig/math/2f4b15565d0a1018e90c3e1b30b76acc.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( x \)" /> and <img src="fig/math/05e4cdb2f26a4f66b68c167423907fea.svg" class="math-inline" style="height: 0.669em; vertical-align: -0.235em;" alt="\( y \)" /> but also the names of intermediate
+quantities like <img src="fig/math/09009cdd5fc245e05305bc574dcdc97d.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( a \)" /> and <img src="fig/math/3e92f417ccfc1f59b0ee22d034c85747.svg" class="math-inline" style="height: 0.703em; vertical-align: -0.009em;" alt="\( b \)" />.  One way to accomplish this is to use an
 auxiliary procedure to bind the local variables:
 </p>
 <div class="lisp">
@@ -1097,119 +577,18 @@ directly as procedures.
 
 <p>The <a id="index-half_002dinterval-method"></a>
 <em>half-interval method</em> is a simple but powerful technique for
-finding roots of an equation <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>f</mi>
-    <mo stretchy="false">(</mo>
-    <mi>x</mi>
-    <mo stretchy="false">)</mo>
-    <mo>=</mo>
-    <mn>0</mn>
-  </mrow>
-</math>, where <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>f</mi>
-</math> is a continuous
-function.  The idea is that, if we are given points <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>a</mi>
-</math> and <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>b</mi>
-</math> such that
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>f</mi>
-    <mo stretchy="false">(</mo>
-    <mi>a</mi>
-    <mo stretchy="false">)</mo>
-    <mo>&lt;</mo>
-    <mn>0</mn>
-    <mo>&lt;</mo>
-    <mi>f</mi>
-    <mo stretchy="false">(</mo>
-    <mi>b</mi>
-    <mo stretchy="false">)</mo>
-  </mrow>
-</math>, then <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>f</mi>
-</math> must have at least one zero between
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>a</mi>
-</math> and <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>b</mi>
-</math>.  To locate a zero, let <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>x</mi>
-</math> be the average of <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>a</mi>
-</math> and <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>b</mi>
-</math>,
-and compute <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>f</mi>
-    <mo stretchy="false">(</mo>
-    <mi>x</mi>
-    <mo stretchy="false">)</mo>
-  </mrow>
-</math>.  If <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>f</mi>
-    <mo stretchy="false">(</mo>
-    <mi>x</mi>
-    <mo stretchy="false">)</mo>
-    <mo>&gt;</mo>
-    <mn>0</mn>
-  </mrow>
-</math>, then <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>f</mi>
-</math> must have a zero
-between <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>a</mi>
-</math> and <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>x</mi>
-</math>.  If <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>f</mi>
-    <mo stretchy="false">(</mo>
-    <mi>x</mi>
-    <mo stretchy="false">)</mo>
-    <mo>&lt;</mo>
-    <mn>0</mn>
-  </mrow>
-</math>, then <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>f</mi>
-</math> must have a zero
-between <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>x</mi>
-</math> and <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>b</mi>
-</math>.  Continuing in this way, we can identify smaller and
-smaller intervals on which <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>f</mi>
-</math> must have a zero.  When we reach a point where
+finding roots of an equation <img src="fig/math/21b19556ea4f8df5b5bdbfea09d37ce1.svg" class="math-inline" style="height: 0.936em; vertical-align: -0.225em;" alt="\( {f(x) = 0} \)" />, where <img src="fig/math/7a8d165d31a04fc319968e0213091ff8.svg" class="math-inline" style="height: 0.929em; vertical-align: -0.234em;" alt="\( f \)" /> is a continuous
+function.  The idea is that, if we are given points <img src="fig/math/09009cdd5fc245e05305bc574dcdc97d.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( a \)" /> and <img src="fig/math/3e92f417ccfc1f59b0ee22d034c85747.svg" class="math-inline" style="height: 0.703em; vertical-align: -0.009em;" alt="\( b \)" /> such that
+<img src="fig/math/2ebbda41ddf9bbce8a5cf027170ce10d.svg" class="math-inline" style="height: 0.936em; vertical-align: -0.225em;" alt="\( {f(a) &amp;lt; 0 &amp;lt; f(b)} \)" />, then <img src="fig/math/7a8d165d31a04fc319968e0213091ff8.svg" class="math-inline" style="height: 0.929em; vertical-align: -0.234em;" alt="\( f \)" /> must have at least one zero between
+<img src="fig/math/09009cdd5fc245e05305bc574dcdc97d.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( a \)" /> and <img src="fig/math/3e92f417ccfc1f59b0ee22d034c85747.svg" class="math-inline" style="height: 0.703em; vertical-align: -0.009em;" alt="\( b \)" />.  To locate a zero, let <img src="fig/math/2f4b15565d0a1018e90c3e1b30b76acc.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( x \)" /> be the average of <img src="fig/math/09009cdd5fc245e05305bc574dcdc97d.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( a \)" /> and <img src="fig/math/3e92f417ccfc1f59b0ee22d034c85747.svg" class="math-inline" style="height: 0.703em; vertical-align: -0.009em;" alt="\( b \)" />,
+and compute <img src="fig/math/b057a8e52b609c9d7031fbe3992972ef.svg" class="math-inline" style="height: 0.936em; vertical-align: -0.225em;" alt="\( {f(x)} \)" />.  If <img src="fig/math/45a3fd031ce7e15eac4c6477cdc6a3a1.svg" class="math-inline" style="height: 0.936em; vertical-align: -0.225em;" alt="\( {f(x) &amp;gt; 0} \)" />, then <img src="fig/math/7a8d165d31a04fc319968e0213091ff8.svg" class="math-inline" style="height: 0.929em; vertical-align: -0.234em;" alt="\( f \)" /> must have a zero
+between <img src="fig/math/09009cdd5fc245e05305bc574dcdc97d.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( a \)" /> and <img src="fig/math/2f4b15565d0a1018e90c3e1b30b76acc.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( x \)" />.  If <img src="fig/math/7f0eaa927815e7643164bd4538441b42.svg" class="math-inline" style="height: 0.936em; vertical-align: -0.225em;" alt="\( {f(x) &amp;lt; 0} \)" />, then <img src="fig/math/7a8d165d31a04fc319968e0213091ff8.svg" class="math-inline" style="height: 0.929em; vertical-align: -0.234em;" alt="\( f \)" /> must have a zero
+between <img src="fig/math/2f4b15565d0a1018e90c3e1b30b76acc.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( x \)" /> and <img src="fig/math/3e92f417ccfc1f59b0ee22d034c85747.svg" class="math-inline" style="height: 0.703em; vertical-align: -0.009em;" alt="\( b \)" />.  Continuing in this way, we can identify smaller and
+smaller intervals on which <img src="fig/math/7a8d165d31a04fc319968e0213091ff8.svg" class="math-inline" style="height: 0.929em; vertical-align: -0.234em;" alt="\( f \)" /> must have a zero.  When we reach a point where
 the interval is small enough, the process stops.  Since the interval of
 uncertainty is reduced by half at each step of the process, the number of steps
-required grows as <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi mathvariant="normal">Θ<!-- Θ --></mi>
-    <mo stretchy="false">(</mo>
-    <mi>log</mi>
-    <mo>⁡<!-- ⁡ --></mo>
-    <mo stretchy="false">(</mo>
-    <mi>L</mi>
-    <mspace width="thinmathspace"/>
-    <mrow class="MJX-TeXAtom-ORD">
-      <mo>/</mo>
-    </mrow>
-    <mspace width="thinmathspace"/>
-    <mi>T</mi>
-    <mo stretchy="false">)</mo>
-    <mo stretchy="false">)</mo>
-  </mrow>
-</math>, where <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>L</mi>
-</math> is the
-length of the original interval and <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>T</mi>
-</math> is the error tolerance (that is, the
+required grows as <img src="fig/math/0965cc2fcc7d9b8980211f23a76a1ee5.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.189em;" alt="\( {\Theta(\log(L\, /\, T))} \)" />, where <img src="fig/math/a23a2cd0225c802f8f86942524b01811.svg" class="math-inline" style="height: 0.645em;" alt="\( L \)" /> is the
+length of the original interval and <img src="fig/math/f06926aab0bc0e9f47ee2cd90f581bb2.svg" class="math-inline" style="height: 0.656em; vertical-align: -0.004em;" alt="\( T \)" /> is the error tolerance (that is, the
 size of the interval we will consider “small enough”).  Here is a procedure
 that implements this strategy:
 </p>
@@ -1227,15 +606,11 @@ that implements this strategy:
             </span><span class="opn">(</span><span class="pln">search f midpoint pos-point</span><span class="clo">))</span><span class="pln">
            </span><span class="opn">(</span><span class="kwd">else</span><span class="pln"> midpoint</span><span class="clo">))))))</span></pre></div>
 
-<p>We assume that we are initially given the function <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>f</mi>
-</math> together with points
+<p>We assume that we are initially given the function <img src="fig/math/7a8d165d31a04fc319968e0213091ff8.svg" class="math-inline" style="height: 0.929em; vertical-align: -0.234em;" alt="\( f \)" /> together with points
 at which its values are negative and positive.  We first compute the midpoint
 of the two given points.  Next we check to see if the given interval is small
 enough, and if so we simply return the midpoint as our answer.  Otherwise, we
-compute as a test value the value of <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>f</mi>
-</math> at the midpoint.  If the test value
+compute as a test value the value of <img src="fig/math/7a8d165d31a04fc319968e0213091ff8.svg" class="math-inline" style="height: 0.929em; vertical-align: -0.234em;" alt="\( f \)" /> at the midpoint.  If the test value
 is positive, then we continue the process with a new interval running from the
 original negative point to the midpoint.  If the test value is negative, we
 continue with the interval from the midpoint to the positive point.  Finally,
@@ -1251,9 +626,7 @@ roots:<a class="footnote_link" id="DOCF55" href="#FOOT55"><sup>55</sup></a>
   </span><span class="opn">(</span><span class="pun">&lt;</span><span class="pln"> </span><span class="opn">(</span><span class="pln">abs </span><span class="opn">(</span><span class="pun">-</span><span class="pln"> x y</span><span class="clo">))</span><span class="pln"> </span><span class="lit">0.001</span><span class="clo">))</span></pre></div>
 
 <p><code>Search</code> is awkward to use directly, because we can accidentally give it
-points at which <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>f</mi>
-</math>’s values do not have the required sign, in which case we
+points at which <img src="fig/math/7a8d165d31a04fc319968e0213091ff8.svg" class="math-inline" style="height: 0.929em; vertical-align: -0.234em;" alt="\( f \)" />’s values do not have the required sign, in which case we
 get a wrong answer.  Instead we will use <code>search</code> via the following
 procedure, which checks to see which of the endpoints has a negative function
 value and which has a positive value, and calls the <code>search</code> procedure
@@ -1275,18 +648,8 @@ error.<a class="footnote_link" id="DOCF56" href="#FOOT56"><sup>56</sup></a>
            </span><span class="opn">(</span><span class="err">error</span><span class="pln"> </span><span class="str">"Values are not of 
                    opposite sign"</span><span class="pln"> a b</span><span class="clo">)))))</span></pre></div>
 
-<p>The following example uses the half-interval method to approximate <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>π<!-- π --></mi>
-</math> as
-the root between 2 and 4 of <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>sin</mi>
-    <mo>⁡<!-- ⁡ --></mo>
-    <mi>x</mi>
-    <mo>=</mo>
-    <mn>0</mn>
-  </mrow>
-</math>:
+<p>The following example uses the half-interval method to approximate <img src="fig/math/c25469cd205e957b38b51203870f48af.svg" class="math-inline" style="height: 0.438em; vertical-align: -0.000em;" alt="\( \pi \)" /> as
+the root between 2 and 4 of <img src="fig/math/ad0e0850039670aca59110f6561f4e0b.svg" class="math-inline" style="height: 0.671em; vertical-align: -0.009em;" alt="\( {\sin x = 0} \)" />:
 </p>
 <div class="lisp">
 <pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="pln">half-interval-method sin </span><span class="lit">2.0</span><span class="pln"> </span><span class="lit">4.0</span><span class="clo">)</span><span class="pln">
@@ -1294,21 +657,7 @@ the root between 2 and 4 of <math xmlns="http://www.w3.org/1998/Math/MathML">
 </pre></div>
 
 <p>Here is another example, using the half-interval method to search for a root of
-the equation <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <msup>
-      <mi>x</mi>
-      <mn>3</mn>
-    </msup>
-    <mo>−<!-- − --></mo>
-    <mn>2</mn>
-    <mi>x</mi>
-    <mo>−<!-- − --></mo>
-    <mn>3</mn>
-    <mo>=</mo>
-    <mn>0</mn>
-  </mrow>
-</math> between 1 and 2:
+the equation <img src="fig/math/f90ea7a26cce410633c1e74e88344c3d.svg" class="math-inline" style="height: 0.854em; vertical-align: -0.010em;" alt="\( {x^3 - 2x - 3 = 0} \)" /> between 1 and 2:
 </p>
 <div class="lisp">
 <pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="pln">half-interval-method 
@@ -1321,70 +670,13 @@ the equation <math xmlns="http://www.w3.org/1998/Math/MathML">
 <a id="Finding-fixed-points-of-functions"></a>
 <h5 class="subsubheading">Finding fixed points of functions</h5>
 
-<p>A number <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>x</mi>
-</math> is called a <a id="index-fixed-point"></a>
-<em>fixed point</em> of a function <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>f</mi>
-</math> if <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>x</mi>
-</math>
-satisfies the equation <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>f</mi>
-    <mo stretchy="false">(</mo>
-    <mi>x</mi>
-    <mo stretchy="false">)</mo>
-    <mo>=</mo>
-    <mi>x</mi>
-  </mrow>
-</math>.  For some functions <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>f</mi>
-</math> we can
-locate a fixed point by beginning with an initial guess and applying <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>f</mi>
-</math>
+<p>A number <img src="fig/math/2f4b15565d0a1018e90c3e1b30b76acc.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( x \)" /> is called a <a id="index-fixed-point"></a>
+<em>fixed point</em> of a function <img src="fig/math/7a8d165d31a04fc319968e0213091ff8.svg" class="math-inline" style="height: 0.929em; vertical-align: -0.234em;" alt="\( f \)" /> if <img src="fig/math/2f4b15565d0a1018e90c3e1b30b76acc.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( x \)" />
+satisfies the equation <img src="fig/math/6973ec387c2ca776b59c0e24f3854033.svg" class="math-inline" style="height: 0.936em; vertical-align: -0.225em;" alt="\( {f(x) = x} \)" />.  For some functions <img src="fig/math/7a8d165d31a04fc319968e0213091ff8.svg" class="math-inline" style="height: 0.929em; vertical-align: -0.234em;" alt="\( f \)" /> we can
+locate a fixed point by beginning with an initial guess and applying <img src="fig/math/7a8d165d31a04fc319968e0213091ff8.svg" class="math-inline" style="height: 0.929em; vertical-align: -0.234em;" alt="\( f \)" />
 repeatedly,
 
-<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>f</mi>
-    <mo stretchy="false">(</mo>
-    <mi>x</mi>
-    <mo stretchy="false">)</mo>
-    <mo>,</mo>
-  </mrow>
-  <mspace width="1em"/>
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>f</mi>
-    <mo stretchy="false">(</mo>
-    <mi>f</mi>
-    <mo stretchy="false">(</mo>
-    <mi>x</mi>
-    <mo stretchy="false">)</mo>
-    <mo stretchy="false">)</mo>
-    <mo>,</mo>
-  </mrow>
-  <mspace width="1em"/>
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>f</mi>
-    <mo stretchy="false">(</mo>
-    <mi>f</mi>
-    <mo stretchy="false">(</mo>
-    <mi>f</mi>
-    <mo stretchy="false">(</mo>
-    <mi>x</mi>
-    <mo stretchy="false">)</mo>
-    <mo stretchy="false">)</mo>
-    <mo stretchy="false">)</mo>
-    <mo>,</mo>
-  </mrow>
-  <mspace width="1em"/>
-  <mrow class="MJX-TeXAtom-ORD">
-    <mo>…<!-- … --></mo>
-    <mo>,</mo>
-  </mrow>
-</math>
+<img src="fig/math/e4fa5e281403a0f9850cfc9651238cbe.svg" class="math-display" style="height: 0.936em;" alt="\[ % :24:&amp;#10;   {f(x),}\quad {f(f(x)),}\quad {f(f(f(x))),} \quad{\dots,} \]" />
 
 until the value does not change very much.  Using this idea, we can devise a
 procedure <code>fixed-point</code> that takes as inputs a function and an initial
@@ -1415,19 +707,7 @@ cosine function, starting with 1 as an initial approximation:<a class="footnote_
 </pre></div>
 
 <p>Similarly, we can find a solution to the equation 
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>y</mi>
-    <mo>=</mo>
-    <mi>sin</mi>
-    <mo>⁡<!-- ⁡ --></mo>
-    <mi>y</mi>
-    <mo>+</mo>
-    <mi>cos</mi>
-    <mo>⁡<!-- ⁡ --></mo>
-    <mi>y</mi>
-  </mrow>
-</math>:
+<img src="fig/math/0aa55add0239835caa875b8d063befab.svg" class="math-inline" style="height: 0.894em; vertical-align: -0.234em;" alt="\( {y = \sin y + \cos y} \)" />:
 </p>
 <div class="lisp">
 <pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="pln">fixed-point </span><span class="opn">(</span><span class="kwd">lambda</span><span class="pln"> </span><span class="opn">(</span><span class="pln">y</span><span class="clo">)</span><span class="pln"> </span><span class="opn">(</span><span class="pun">+</span><span class="pln"> </span><span class="opn">(</span><span class="pln">sin y</span><span class="clo">)</span><span class="pln"> </span><span class="opn">(</span><span class="pln">cos y</span><span class="clo">)))</span><span class="pln">
@@ -1439,43 +719,10 @@ cosine function, starting with 1 as an initial approximation:<a class="footnote_
 square roots in <a href="1_002e1.xhtml#g_t1_002e1_002e7">1.1.7</a>.  Both are based on the idea of repeatedly
 improving a guess until the result satisfies some criterion.  In fact, we can
 readily formulate the square-root computation as a fixed-point search.
-Computing the square root of some number <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>x</mi>
-</math> requires finding a <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>y</mi>
-</math> such
-that <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <msup>
-      <mi>y</mi>
-      <mn>2</mn>
-    </msup>
-    <mo>=</mo>
-    <mi>x</mi>
-  </mrow>
-</math>.  Putting this equation into the equivalent form 
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>y</mi>
-    <mo>=</mo>
-    <mi>x</mi>
-    <mrow class="MJX-TeXAtom-ORD">
-      <mo>/</mo>
-    </mrow>
-    <mi>y</mi>
-  </mrow>
-</math>, we recognize that we are looking for a fixed point of the
-function<a class="footnote_link" id="DOCF58" href="#FOOT58"><sup>58</sup></a> <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>y</mi>
-    <mo stretchy="false">↦<!-- ↦ --></mo>
-    <mi>x</mi>
-    <mrow class="MJX-TeXAtom-ORD">
-      <mo>/</mo>
-    </mrow>
-    <mi>y</mi>
-  </mrow>
-</math>, 
+Computing the square root of some number <img src="fig/math/2f4b15565d0a1018e90c3e1b30b76acc.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( x \)" /> requires finding a <img src="fig/math/05e4cdb2f26a4f66b68c167423907fea.svg" class="math-inline" style="height: 0.669em; vertical-align: -0.235em;" alt="\( y \)" /> such
+that <img src="fig/math/437588ce11e8725cc98d93e391d57fb8.svg" class="math-inline" style="height: 1.078em; vertical-align: -0.235em;" alt="\( {y^2 = x} \)" />.  Putting this equation into the equivalent form 
+<img src="fig/math/aef045715ec76889ad7e84fd30b5a3da.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.229em;" alt="\( {y = x / y} \)" />, we recognize that we are looking for a fixed point of the
+function<a class="footnote_link" id="DOCF58" href="#FOOT58"><sup>58</sup></a> <img src="fig/math/c4888039e8855b22c0b35c8152532a53.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.229em;" alt="\( {y \mapsto x / y} \)" />, 
 and we can therefore try to compute square roots as
 </p>
 <div class="lisp">
@@ -1484,166 +731,19 @@ and we can therefore try to compute square roots as
                </span><span class="lit">1.0</span><span class="clo">))</span></pre></div>
 
 <p>Unfortunately, this fixed-point search does not converge.  Consider an initial
-guess <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <msub>
-    <mi>y</mi>
-    <mn>1</mn>
-  </msub>
-</math>.  The next guess is <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <msub>
-      <mi>y</mi>
-      <mn>2</mn>
-    </msub>
-    <mo>=</mo>
-    <mi>x</mi>
-    <mrow class="MJX-TeXAtom-ORD">
-      <mo>/</mo>
-    </mrow>
-    <msub>
-      <mi>y</mi>
-      <mn>1</mn>
-    </msub>
-  </mrow>
-</math> and the next guess is
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <msub>
-    <mi>y</mi>
-    <mn>3</mn>
-  </msub>
-  <mo>=</mo>
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>x</mi>
-    <mrow class="MJX-TeXAtom-ORD">
-      <mo>/</mo>
-    </mrow>
-    <msub>
-      <mi>y</mi>
-      <mn>2</mn>
-    </msub>
-  </mrow>
-  <mo>=</mo>
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>x</mi>
-    <mrow class="MJX-TeXAtom-ORD">
-      <mo>/</mo>
-    </mrow>
-    <mo stretchy="false">(</mo>
-    <mi>x</mi>
-    <mrow class="MJX-TeXAtom-ORD">
-      <mo>/</mo>
-    </mrow>
-    <msub>
-      <mi>y</mi>
-      <mn>1</mn>
-    </msub>
-    <mo stretchy="false">)</mo>
-  </mrow>
-  <mo>=</mo>
-  <msub>
-    <mi>y</mi>
-    <mn>1</mn>
-  </msub>
-</math>.  This results in an
-infinite loop in which the two guesses <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <msub>
-    <mi>y</mi>
-    <mn>1</mn>
-  </msub>
-</math> and <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <msub>
-    <mi>y</mi>
-    <mn>2</mn>
-  </msub>
-</math> repeat over and
+guess <img src="fig/math/c5f215b61ceace6c2622b08df19fb269.svg" class="math-inline" style="height: 0.669em; vertical-align: -0.235em;" alt="\( y_1 \)" />.  The next guess is <img src="fig/math/3a5198b6c94fee8a5e5da16dea15f2c1.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.229em;" alt="\( {y_2 = x / y_1} \)" /> and the next guess is
+<img src="fig/math/ef078e24ed6d43614dbc6ec03136667b.svg" class="math-inline" style="height: 0.933em; vertical-align: -0.225em;" alt="\( y_3 = {x / y_2} = {x / (x / y_1)} = y_1 \)" />.  This results in an
+infinite loop in which the two guesses <img src="fig/math/c5f215b61ceace6c2622b08df19fb269.svg" class="math-inline" style="height: 0.669em; vertical-align: -0.235em;" alt="\( y_1 \)" /> and <img src="fig/math/a920968ff08c279a310e14973392bff2.svg" class="math-inline" style="height: 0.669em; vertical-align: -0.235em;" alt="\( y_2 \)" /> repeat over and
 over, oscillating about the answer.
 </p>
 <p>One way to control such oscillations is to prevent the guesses from changing so
-much.  Since the answer is always between our guess <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>y</mi>
-</math> and <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>x</mi>
-    <mrow class="MJX-TeXAtom-ORD">
-      <mo>/</mo>
-    </mrow>
-    <mi>y</mi>
-  </mrow>
-</math>, we
-can make a new guess that is not as far from <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>y</mi>
-</math> as <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>x</mi>
-    <mrow class="MJX-TeXAtom-ORD">
-      <mo>/</mo>
-    </mrow>
-    <mi>y</mi>
-  </mrow>
-</math> by averaging
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>y</mi>
-</math> with <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>x</mi>
-    <mrow class="MJX-TeXAtom-ORD">
-      <mo>/</mo>
-    </mrow>
-    <mi>y</mi>
-  </mrow>
-</math>, so that the next guess after <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>y</mi>
-</math> is 
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mrow class="MJX-TeXAtom-ORD">
-      <mfrac>
-        <mn>1</mn>
-        <mn>2</mn>
-      </mfrac>
-    </mrow>
-    <mo stretchy="false">(</mo>
-    <mi>y</mi>
-    <mo>+</mo>
-    <mi>x</mi>
-    <mrow class="MJX-TeXAtom-ORD">
-      <mo>/</mo>
-    </mrow>
-    <mi>y</mi>
-    <mo stretchy="false">)</mo>
-  </mrow>
-</math> 
-instead of <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>x</mi>
-    <mrow class="MJX-TeXAtom-ORD">
-      <mo>/</mo>
-    </mrow>
-    <mi>y</mi>
-  </mrow>
-</math>.  The process of making such a sequence of
+much.  Since the answer is always between our guess <img src="fig/math/05e4cdb2f26a4f66b68c167423907fea.svg" class="math-inline" style="height: 0.669em; vertical-align: -0.235em;" alt="\( y \)" /> and <img src="fig/math/c243e54e1f37c985a92584d386f5fc01.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.229em;" alt="\( {x / y} \)" />, we
+can make a new guess that is not as far from <img src="fig/math/05e4cdb2f26a4f66b68c167423907fea.svg" class="math-inline" style="height: 0.669em; vertical-align: -0.235em;" alt="\( y \)" /> as <img src="fig/math/c243e54e1f37c985a92584d386f5fc01.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.229em;" alt="\( {x / y} \)" /> by averaging
+<img src="fig/math/05e4cdb2f26a4f66b68c167423907fea.svg" class="math-inline" style="height: 0.669em; vertical-align: -0.235em;" alt="\( y \)" /> with <img src="fig/math/c243e54e1f37c985a92584d386f5fc01.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.229em;" alt="\( {x / y} \)" />, so that the next guess after <img src="fig/math/05e4cdb2f26a4f66b68c167423907fea.svg" class="math-inline" style="height: 0.669em; vertical-align: -0.235em;" alt="\( y \)" /> is 
+<img src="fig/math/e0b5c0d3af60453a97c1ebc178392557.svg" class="math-inline" style="height: 1.221em; vertical-align: -0.343em;" alt="\( {{1\over2}(y + x / y)} \)" /> 
+instead of <img src="fig/math/c243e54e1f37c985a92584d386f5fc01.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.229em;" alt="\( {x / y} \)" />.  The process of making such a sequence of
 guesses is simply the process of looking for a fixed point of 
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>y</mi>
-  <mo stretchy="false">↦<!-- ↦ --></mo>
-  <mrow class="MJX-TeXAtom-ORD">
-    <mrow class="MJX-TeXAtom-ORD">
-      <mfrac>
-        <mn>1</mn>
-        <mn>2</mn>
-      </mfrac>
-    </mrow>
-    <mo stretchy="false">(</mo>
-    <mi>y</mi>
-    <mo>+</mo>
-    <mi>x</mi>
-    <mrow class="MJX-TeXAtom-ORD">
-      <mo>/</mo>
-    </mrow>
-    <mi>y</mi>
-    <mo stretchy="false">)</mo>
-  </mrow>
-</math>: 
+<img src="fig/math/d90156d1aee4bac4abaecee76393e388.svg" class="math-inline" style="height: 1.221em; vertical-align: -0.343em;" alt="\( y \mapsto {{1\over2}(y + x / y)} \)" />: 
 </p>
 <div class="lisp">
 <pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">define</span><span class="pln"> </span><span class="opn">(</span><span class="pln">sqrt x</span><span class="clo">)</span><span class="pln">
@@ -1651,41 +751,8 @@ guesses is simply the process of looking for a fixed point of
    </span><span class="opn">(</span><span class="kwd">lambda</span><span class="pln"> </span><span class="opn">(</span><span class="pln">y</span><span class="clo">)</span><span class="pln"> </span><span class="opn">(</span><span class="pln">average y </span><span class="opn">(</span><span class="pun">/</span><span class="pln"> x y</span><span class="clo">)))</span><span class="pln">
    </span><span class="lit">1.0</span><span class="clo">))</span></pre></div>
 
-<p>(Note that <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>y</mi>
-  <mo>=</mo>
-  <mrow class="MJX-TeXAtom-ORD">
-    <mrow class="MJX-TeXAtom-ORD">
-      <mfrac>
-        <mn>1</mn>
-        <mn>2</mn>
-      </mfrac>
-    </mrow>
-    <mo stretchy="false">(</mo>
-    <mi>y</mi>
-    <mo>+</mo>
-    <mi>x</mi>
-    <mrow class="MJX-TeXAtom-ORD">
-      <mo>/</mo>
-    </mrow>
-    <mi>y</mi>
-    <mo stretchy="false">)</mo>
-  </mrow>
-</math> is a simple transformation of the
-equation <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>y</mi>
-    <mo>=</mo>
-    <mi>x</mi>
-    <mrow class="MJX-TeXAtom-ORD">
-      <mo>/</mo>
-    </mrow>
-    <mi>y</mi>
-    <mo>;</mo>
-  </mrow>
-</math> to derive it, add <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>y</mi>
-</math> to both sides of the
+<p>(Note that <img src="fig/math/27ff6df3c794eeaefd63a451e9c8b048.svg" class="math-inline" style="height: 1.221em; vertical-align: -0.343em;" alt="\( y = {{1\over2}(y + x / y)} \)" /> is a simple transformation of the
+equation <img src="fig/math/de826a8541eddb4099cf005d61b5a8b5.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.229em;" alt="\( {y = x / y;} \)" /> to derive it, add <img src="fig/math/05e4cdb2f26a4f66b68c167423907fea.svg" class="math-inline" style="height: 0.669em; vertical-align: -0.235em;" alt="\( y \)" /> to both sides of the
 equation and divide by 2.)
 </p>
 <p>With this modification, the square-root procedure works.  In fact, if we
@@ -1698,24 +765,8 @@ averaging successive approximations to a solution, a technique that we call
 </p>
 <blockquote>
 <p><strong><a id="Exercise-1_002e35"></a>Exercise 1.35:</strong> Show that the golden ratio
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>φ<!-- φ --></mi>
-</math> (<a href="1_002e2.xhtml#g_t1_002e2_002e2">1.2.2</a>) is a fixed point of the transformation 
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>x</mi>
-    <mo stretchy="false">↦<!-- ↦ --></mo>
-    <mn>1</mn>
-    <mo>+</mo>
-    <mn>1</mn>
-    <mrow class="MJX-TeXAtom-ORD">
-      <mo>/</mo>
-    </mrow>
-    <mi>x</mi>
-  </mrow>
-</math>, and use this fact to compute <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>φ<!-- φ --></mi>
-</math> by means 
+<img src="fig/math/dcc52b7b3e1a0a821032c2d16b198829.svg" class="math-inline" style="height: 0.672em; vertical-align: -0.238em;" alt="\( \varphi \)" /> (<a href="1_002e2.xhtml#g_t1_002e2_002e2">1.2.2</a>) is a fixed point of the transformation 
+<img src="fig/math/0c2646560025915db6aa50ad3b0ada81.svg" class="math-inline" style="height: 0.827em; vertical-align: -0.153em;" alt="\( {x \mapsto 1 + 1 / x} \)" />, and use this fact to compute <img src="fig/math/dcc52b7b3e1a0a821032c2d16b198829.svg" class="math-inline" style="height: 0.672em; vertical-align: -0.238em;" alt="\( \varphi \)" /> by means 
 of the <code>fixed-point</code> procedure.
 </p></blockquote>
 
@@ -1723,48 +774,11 @@ of the <code>fixed-point</code> procedure.
 <p><strong><a id="Exercise-1_002e36"></a>Exercise 1.36:</strong> Modify <code>fixed-point</code> so that
 it prints the sequence of approximations it generates, using the <code>newline</code>
 and <code>display</code> primitives shown in <a href="1_002e2.xhtml#Exercise-1_002e22">Exercise 1.22</a>.  Then find a
-solution to <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <msup>
-      <mi>x</mi>
-      <mi>x</mi>
-    </msup>
-    <mo>=</mo>
-    <mn>1000</mn>
-  </mrow>
-</math> by finding a fixed point of <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>x</mi>
-  <mo stretchy="false">↦<!-- ↦ --></mo>
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>log</mi>
-    <mo>⁡<!-- ⁡ --></mo>
-    <mo stretchy="false">(</mo>
-    <mn>1000</mn>
-    <mo stretchy="false">)</mo>
-    <mrow class="MJX-TeXAtom-ORD">
-      <mo>/</mo>
-    </mrow>
-    <mi>log</mi>
-    <mo>⁡<!-- ⁡ --></mo>
-    <mo stretchy="false">(</mo>
-    <mi>x</mi>
-    <mo stretchy="false">)</mo>
-  </mrow>
-</math>.  (Use Scheme’s primitive <code>log</code>
+solution to <img src="fig/math/2e6611949fea7c5c1f17561763cc8ab1.svg" class="math-inline" style="height: 0.691em; vertical-align: -0.009em;" alt="\( {x^x = 1000} \)" /> by finding a fixed point of <img src="fig/math/62d8a7bc76798a647a3a8185e88c2d59.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.189em;" alt="\( x \mapsto&amp;#10;{\log(1000) / \log(x)} \)" />.  (Use Scheme’s primitive <code>log</code>
 procedure, which computes natural logarithms.)  Compare the number of steps
 this takes with and without average damping.  (Note that you cannot start
 <code>fixed-point</code> with a guess of 1, as this would cause division by
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>log</mi>
-    <mo>⁡<!-- ⁡ --></mo>
-    <mo stretchy="false">(</mo>
-    <mn>1</mn>
-    <mo stretchy="false">)</mo>
-    <mo>=</mo>
-    <mn>0</mn>
-  </mrow>
-</math>.)
+<img src="fig/math/6f031aa94619263eace21d29b6630539.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.189em;" alt="\( {\log(1) = 0} \)" />.)
 </p></blockquote>
 
 <blockquote>
@@ -1774,151 +788,24 @@ this takes with and without average damping.  (Note that you cannot start
 <li> An infinite <a id="index-continued-fraction"></a>
 <em>continued fraction</em> is an expression of the form
 
-<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
-  <mi>f</mi>
-  <mspace width="thinmathspace"/>
-  <mo>=</mo>
-  <mspace width="thinmathspace"/>
-  <mrow class="MJX-TeXAtom-ORD">
-    <mfrac>
-      <msub>
-        <mi>N</mi>
-        <mn>1</mn>
-      </msub>
-      <mrow>
-        <msub>
-          <mi>D</mi>
-          <mn>1</mn>
-        </msub>
-        <mo>+</mo>
-        <mfrac>
-          <msub>
-            <mi>N</mi>
-            <mn>2</mn>
-          </msub>
-          <mrow>
-            <msub>
-              <mi>D</mi>
-              <mn>2</mn>
-            </msub>
-            <mo>+</mo>
-            <mfrac>
-              <msub>
-                <mi>N</mi>
-                <mn>3</mn>
-              </msub>
-              <mrow>
-                <msub>
-                  <mi>D</mi>
-                  <mn>3</mn>
-                </msub>
-                <mo>+</mo>
-                <mo>…<!-- … --></mo>
-              </mrow>
-            </mfrac>
-          </mrow>
-        </mfrac>
-      </mrow>
-    </mfrac>
-    <mo>.</mo>
-  </mrow>
-</math>
+<img src="fig/math/63b5eb39f15b6aca9997b1e5ced51472.svg" class="math-display" style="height: 3.249em;" alt="\[ % :25:&amp;#10;   f \,=\, {\frac{N_1}{D_1 + \frac{N_2}{D_2 + \frac{N_3}{D_3 + \dots}}}.} \]" />
 
 As an example, one can show that the infinite continued fraction expansion with
-the <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <msub>
-    <mi>N</mi>
-    <mi>i</mi>
-  </msub>
-</math> and the <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <msub>
-    <mi>D</mi>
-    <mi>i</mi>
-  </msub>
-</math> all equal to 1 produces <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mn>1</mn>
-    <mrow class="MJX-TeXAtom-ORD">
-      <mo>/</mo>
-    </mrow>
-    <mi>φ<!-- φ --></mi>
-  </mrow>
-</math>, where
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>φ<!-- φ --></mi>
-</math> is the golden ratio (described in <a href="1_002e2.xhtml#g_t1_002e2_002e2">1.2.2</a>).  One way to
+the <img src="fig/math/303acbd84dbe1f7f07841932b03ce776.svg" class="math-inline" style="height: 0.800em; vertical-align: -0.149em;" alt="\( N_i \)" /> and the <img src="fig/math/83e1229ed935793e9e1d4255ab83cc6c.svg" class="math-inline" style="height: 0.800em; vertical-align: -0.149em;" alt="\( D_i \)" /> all equal to 1 produces <img src="fig/math/38a2250f7050470c4577ebeb6665faae.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.229em;" alt="\( {1 / \varphi} \)" />, where
+<img src="fig/math/dcc52b7b3e1a0a821032c2d16b198829.svg" class="math-inline" style="height: 0.672em; vertical-align: -0.238em;" alt="\( \varphi \)" /> is the golden ratio (described in <a href="1_002e2.xhtml#g_t1_002e2_002e2">1.2.2</a>).  One way to
 approximate an infinite continued fraction is to truncate the expansion after a
 given number of terms.  Such a truncation—a so-called <a id="index-k_002dterm"></a>
 finite continued fraction
 <em><i>k</i>-term
 finite continued fraction</em>—has the form
 
-<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mfrac>
-      <msub>
-        <mi>N</mi>
-        <mn>1</mn>
-      </msub>
-      <mrow>
-        <msub>
-          <mi>D</mi>
-          <mn>1</mn>
-        </msub>
-        <mo>+</mo>
-        <mfrac>
-          <msub>
-            <mi>N</mi>
-            <mn>2</mn>
-          </msub>
-          <mrow>
-            <mo>⋱<!-- ⋱ --></mo>
-            <mo>+</mo>
-            <mfrac>
-              <msub>
-                <mi>N</mi>
-                <mi>k</mi>
-              </msub>
-              <msub>
-                <mi>D</mi>
-                <mi>k</mi>
-              </msub>
-            </mfrac>
-          </mrow>
-        </mfrac>
-      </mrow>
-    </mfrac>
-    <mo>.</mo>
-  </mrow>
-</math>
+<img src="fig/math/1898ca495be2ad558018dc3b0c632948.svg" class="math-display" style="height: 3.744em;" alt="\[ % :26:&amp;#10;   {\frac{N_1}{D_1 + \frac{N_2}{\ddots + \frac{N_k}{D_k}}}.} \]" />
 
 Suppose that <code>n</code> and <code>d</code> are procedures of one argument (the term
-index <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>i</mi>
-</math>) that return the <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <msub>
-    <mi>N</mi>
-    <mi>i</mi>
-  </msub>
-</math> and <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <msub>
-    <mi>D</mi>
-    <mi>i</mi>
-  </msub>
-</math> of the terms of the
+index <img src="fig/math/aa5dfb3bb62785181553d83502ccb9ec.svg" class="math-inline" style="height: 0.623em; vertical-align: -0.010em;" alt="\( i \)" />) that return the <img src="fig/math/303acbd84dbe1f7f07841932b03ce776.svg" class="math-inline" style="height: 0.800em; vertical-align: -0.149em;" alt="\( N_i \)" /> and <img src="fig/math/83e1229ed935793e9e1d4255ab83cc6c.svg" class="math-inline" style="height: 0.800em; vertical-align: -0.149em;" alt="\( D_i \)" /> of the terms of the
 continued fraction.  Define a procedure <code>cont-frac</code> such that evaluating
-<code>(cont-frac n d k)</code> computes the value of the <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>k</mi>
-</math>-term finite continued
-fraction.  Check your procedure by approximating <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mn>1</mn>
-    <mrow class="MJX-TeXAtom-ORD">
-      <mo>/</mo>
-    </mrow>
-    <mi>φ<!-- φ --></mi>
-  </mrow>
-</math> using
+<code>(cont-frac n d k)</code> computes the value of the <img src="fig/math/83054be07bea98353c7cda3290903d5e.svg" class="math-inline" style="height: 0.703em; vertical-align: -0.009em;" alt="\( k \)" />-term finite continued
+fraction.  Check your procedure by approximating <img src="fig/math/38a2250f7050470c4577ebeb6665faae.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.229em;" alt="\( {1 / \varphi} \)" /> using
 
 <div class="lisp">
 <pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="pln">cont-frac </span><span class="opn">(</span><span class="kwd">lambda</span><span class="pln"> </span><span class="opn">(</span><span class="pln">i</span><span class="clo">)</span><span class="pln"> </span><span class="lit">1.0</span><span class="clo">)</span><span class="pln">
@@ -1938,31 +825,11 @@ write one that generates a recursive process.
 <blockquote>
 <p><strong><a id="Exercise-1_002e38"></a>Exercise 1.38:</strong> In 1737, the Swiss mathematician
 Leonhard Euler published a memoir <cite>De Fractionibus Continuis</cite>, which
-included a continued fraction expansion for <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>e</mi>
-    <mo>−<!-- − --></mo>
-    <mn>2</mn>
-  </mrow>
-</math>, where <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>e</mi>
-</math> is the base
-of the natural logarithms.  In this fraction, the <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <msub>
-    <mi>N</mi>
-    <mi>i</mi>
-  </msub>
-</math> are all 1, and
-the <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <msub>
-    <mi>D</mi>
-    <mi>i</mi>
-  </msub>
-</math> are successively 1, 2, 1, 1, 4, 1, 1, 6, 1, 1, 8, ….
+included a continued fraction expansion for <img src="fig/math/f5a7333426389ca45f94c1de568c155f.svg" class="math-inline" style="height: 0.652em; vertical-align: -0.009em;" alt="\( {e - 2} \)" />, where <img src="fig/math/debcc3e84db401938012afdc2ced88f1.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( e \)" /> is the base
+of the natural logarithms.  In this fraction, the <img src="fig/math/303acbd84dbe1f7f07841932b03ce776.svg" class="math-inline" style="height: 0.800em; vertical-align: -0.149em;" alt="\( N_i \)" /> are all 1, and
+the <img src="fig/math/83e1229ed935793e9e1d4255ab83cc6c.svg" class="math-inline" style="height: 0.800em; vertical-align: -0.149em;" alt="\( D_i \)" /> are successively 1, 2, 1, 1, 4, 1, 1, 6, 1, 1, 8, ….
 Write a program that uses your <code>cont-frac</code> procedure from <a href="#Exercise-1_002e37">Exercise 1.37</a> 
-to approximate <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>e</mi>
-</math>, based on Euler’s expansion.
+to approximate <img src="fig/math/debcc3e84db401938012afdc2ced88f1.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( e \)" />, based on Euler’s expansion.
 </p></blockquote>
 
 <blockquote>
@@ -1970,52 +837,9 @@ to approximate <math xmlns="http://www.w3.org/1998/Math/MathML">
 representation of the tangent function was published in 1770 by the German
 mathematician J.H. Lambert:
 
-<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>tan</mi>
-    <mo>⁡<!-- ⁡ --></mo>
-    <mi>x</mi>
-  </mrow>
-  <mspace width="thinmathspace"/>
-  <mo>=</mo>
-  <mspace width="thinmathspace"/>
-  <mrow class="MJX-TeXAtom-ORD">
-    <mfrac>
-      <mi>x</mi>
-      <mrow>
-        <mn>1</mn>
-        <mo>−<!-- − --></mo>
-        <mfrac>
-          <msup>
-            <mi>x</mi>
-            <mn>2</mn>
-          </msup>
-          <mrow>
-            <mn>3</mn>
-            <mo>−<!-- − --></mo>
-            <mfrac>
-              <msup>
-                <mi>x</mi>
-                <mn>2</mn>
-              </msup>
-              <mrow>
-                <mn>5</mn>
-                <mo>−<!-- − --></mo>
-                <mo>…<!-- … --></mo>
-              </mrow>
-            </mfrac>
-          </mrow>
-        </mfrac>
-      </mrow>
-    </mfrac>
-    <mspace width="thinmathspace"/>
-    <mo>,</mo>
-  </mrow>
-</math>
+<img src="fig/math/6f23127a12721d874d61c5de026cddc1.svg" class="math-display" style="height: 2.942em;" alt="\[ % :27:&amp;#10;   {\tan x} \,=\, {\frac{x}{1 - \frac{x^2}{3 - \frac{x^2}{5 - \dots}}}\,,} \]" />
 
-where <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>x</mi>
-</math> is in radians.  Define a procedure <code>(tan-cf x k)</code> that
+where <img src="fig/math/2f4b15565d0a1018e90c3e1b30b76acc.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( x \)" /> is in radians.  Define a procedure <code>(tan-cf x k)</code> that
 computes an approximation to the tangent function based on Lambert’s formula.
 <code>k</code> specifies the number of terms to compute, as in <a href="#Exercise-1_002e37">Exercise 1.37</a>.
 </p></blockquote>
@@ -2032,37 +856,10 @@ values are themselves procedures.
 <p>We can illustrate this idea by looking again at the fixed-point example
 described at the end of <a href="#g_t1_002e3_002e3">1.3.3</a>.  We formulated a new version of
 the square-root procedure as a fixed-point search, starting with the
-observation that <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <msqrt>
-    <mi>x</mi>
-  </msqrt>
-</math> is a fixed-point of the function <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>y</mi>
-    <mo stretchy="false">↦<!-- ↦ --></mo>
-    <mi>x</mi>
-    <mrow class="MJX-TeXAtom-ORD">
-      <mo>/</mo>
-    </mrow>
-    <mi>y</mi>
-  </mrow>
-</math>.  Then we used average damping to make the approximations converge.
+observation that <img src="fig/math/f23ea9ccf69a299490e5f1e45389dbb0.svg" class="math-inline" style="height: 0.993em; vertical-align: -0.168em;" alt="\( \sqrt{x} \)" /> is a fixed-point of the function <img src="fig/math/ddef7e56a0f80929eef40b1233f2c0d6.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.229em;" alt="\( {y \mapsto&amp;#10;x / y} \)" />.  Then we used average damping to make the approximations converge.
 Average damping is a useful general technique in itself.  Namely, given a
-function <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>f</mi>
-</math>, we consider the function whose value at <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>x</mi>
-</math> is equal to the
-average of <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>x</mi>
-</math> and <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>f</mi>
-    <mo stretchy="false">(</mo>
-    <mi>x</mi>
-    <mo stretchy="false">)</mo>
-  </mrow>
-</math>.
+function <img src="fig/math/7a8d165d31a04fc319968e0213091ff8.svg" class="math-inline" style="height: 0.929em; vertical-align: -0.234em;" alt="\( f \)" />, we consider the function whose value at <img src="fig/math/2f4b15565d0a1018e90c3e1b30b76acc.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( x \)" /> is equal to the
+average of <img src="fig/math/2f4b15565d0a1018e90c3e1b30b76acc.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( x \)" /> and <img src="fig/math/b057a8e52b609c9d7031fbe3992972ef.svg" class="math-inline" style="height: 0.936em; vertical-align: -0.225em;" alt="\( {f(x)} \)" />.
 </p>
 <p>We can express the idea of average damping by means of the following procedure:
 </p>
@@ -2075,17 +872,8 @@ average of <math xmlns="http://www.w3.org/1998/Math/MathML">
 <code>f</code> and returns as its value a procedure (produced by the <code>lambda</code>)
 that, when applied to a number <code>x</code>, produces the average of <code>x</code> and
 <code>(f x)</code>.  For example, applying <code>average-damp</code> to the <code>square</code>
-procedure produces a procedure whose value at some number <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>x</mi>
-</math> is the average
-of <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>x</mi>
-</math> and <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <msup>
-    <mi>x</mi>
-    <mn>2</mn>
-  </msup>
-</math>.  Applying this resulting procedure to 10 returns the
+procedure produces a procedure whose value at some number <img src="fig/math/2f4b15565d0a1018e90c3e1b30b76acc.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( x \)" /> is the average
+of <img src="fig/math/2f4b15565d0a1018e90c3e1b30b76acc.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( x \)" /> and <img src="fig/math/4067ede5e74e99831d02a03c863d4f61.svg" class="math-inline" style="height: 0.854em; vertical-align: -0.010em;" alt="\( x^2 \)" />.  Applying this resulting procedure to 10 returns the
 average of 10 and 100, or 55:<a class="footnote_link" id="DOCF59" href="#FOOT59"><sup>59</sup></a>
 </p>
 <div class="lisp">
@@ -2104,17 +892,7 @@ follows:
    </span><span class="lit">1.0</span><span class="clo">))</span></pre></div>
 
 <p>Notice how this formulation makes explicit the three ideas in the method:
-fixed-point search, average damping, and the function <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>y</mi>
-    <mo stretchy="false">↦<!-- ↦ --></mo>
-    <mi>x</mi>
-    <mrow class="MJX-TeXAtom-ORD">
-      <mo>/</mo>
-    </mrow>
-    <mi>y</mi>
-  </mrow>
-</math>.
+fixed-point search, average damping, and the function <img src="fig/math/c4888039e8855b22c0b35c8152532a53.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.229em;" alt="\( {y \mapsto x / y} \)" />.
 It is instructive to compare this formulation of the square-root method with
 the original version given in <a href="1_002e1.xhtml#g_t1_002e1_002e7">1.1.7</a>.  Bear in mind that these
 procedures express the same process, and notice how much clearer the idea
@@ -2123,23 +901,8 @@ general, there are many ways to formulate a process as a procedure.
 Experienced programmers know how to choose procedural formulations that are
 particularly perspicuous, and where useful elements of the process are exposed
 as separate entities that can be reused in other applications.  As a simple
-example of reuse, notice that the cube root of <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>x</mi>
-</math> is a fixed point of the
-function <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>y</mi>
-    <mo stretchy="false">↦<!-- ↦ --></mo>
-    <mi>x</mi>
-    <mrow class="MJX-TeXAtom-ORD">
-      <mo>/</mo>
-    </mrow>
-    <msup>
-      <mi>y</mi>
-      <mn>2</mn>
-    </msup>
-  </mrow>
-</math>, so we can immediately generalize our
+example of reuse, notice that the cube root of <img src="fig/math/2f4b15565d0a1018e90c3e1b30b76acc.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( x \)" /> is a fixed point of the
+function <img src="fig/math/18bb0b98243514be22ca3fe084b0b07a.svg" class="math-inline" style="height: 1.078em; vertical-align: -0.235em;" alt="\( {y \mapsto x / y^2} \)" />, so we can immediately generalize our
 square-root procedure to one that extracts cube roots:<a class="footnote_link" id="DOCF60" href="#FOOT60"><sup>60</sup></a>
 </p>
 <div class="lisp">
@@ -2156,190 +919,30 @@ square-root procedure to one that extracts cube roots:<a class="footnote_link" i
 <p>When we first introduced the square-root procedure, in <a href="1_002e1.xhtml#g_t1_002e1_002e7">1.1.7</a>, we
 mentioned that this was a special case of <a id="index-Newton_0027s-method"></a>
 <em>Newton’s method</em>.  
-If <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>x</mi>
-    <mo stretchy="false">↦<!-- ↦ --></mo>
-    <mi>g</mi>
-    <mo stretchy="false">(</mo>
-    <mi>x</mi>
-    <mo stretchy="false">)</mo>
-  </mrow>
-</math> is a differentiable function, then a solution of the equation
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>g</mi>
-    <mo stretchy="false">(</mo>
-    <mi>x</mi>
-    <mo stretchy="false">)</mo>
-    <mo>=</mo>
-    <mn>0</mn>
-  </mrow>
-</math> is a fixed point of the function <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>x</mi>
-    <mo stretchy="false">↦<!-- ↦ --></mo>
-    <mi>f</mi>
-    <mo stretchy="false">(</mo>
-    <mi>x</mi>
-    <mo stretchy="false">)</mo>
-  </mrow>
-</math> where
+If <img src="fig/math/b8d7965e16f1c2bfd1e3352f2f7b5441.svg" class="math-inline" style="height: 0.933em; vertical-align: -0.225em;" alt="\( {x \mapsto g(x)} \)" /> is a differentiable function, then a solution of the equation
+<img src="fig/math/1bb87b4a000856347a1692e05ca9bf3f.svg" class="math-inline" style="height: 0.933em; vertical-align: -0.225em;" alt="\( {g(x) = 0} \)" /> is a fixed point of the function <img src="fig/math/e989fa4d5f44c42efde2012a986077b1.svg" class="math-inline" style="height: 0.936em; vertical-align: -0.225em;" alt="\( {x \mapsto f(x)} \)" /> where
 
-<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>f</mi>
-    <mo stretchy="false">(</mo>
-    <mi>x</mi>
-    <mo stretchy="false">)</mo>
-  </mrow>
-  <mspace width="thinmathspace"/>
-  <mo>=</mo>
-  <mspace width="thinmathspace"/>
-  <mi>x</mi>
-  <mo>−<!-- − --></mo>
-  <mfrac>
-    <mrow>
-      <mi>g</mi>
-      <mo stretchy="false">(</mo>
-      <mi>x</mi>
-      <mo stretchy="false">)</mo>
-    </mrow>
-    <mrow>
-      <mi>D</mi>
-      <mi>g</mi>
-      <mo stretchy="false">(</mo>
-      <mi>x</mi>
-      <mo stretchy="false">)</mo>
-    </mrow>
-  </mfrac>
-</math>
+<img src="fig/math/081fda9357220fdc133ee7405c8ad84d.svg" class="math-display" style="height: 2.308em;" alt="\[ % :28:&amp;#10;   {f(x)} \,=\, x - \frac{g(x)}{D g(x)} \]" />
 
-and <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>D</mi>
-    <mi>g</mi>
-    <mo stretchy="false">(</mo>
-    <mi>x</mi>
-    <mo stretchy="false">)</mo>
-  </mrow>
-</math> is the derivative of <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>g</mi>
-</math> evaluated at <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>x</mi>
-</math>.  Newton’s
+and <img src="fig/math/9b5f6180b46c2f42142132b6707d8307.svg" class="math-inline" style="height: 0.933em; vertical-align: -0.225em;" alt="\( {Dg(x)} \)" /> is the derivative of <img src="fig/math/658545a813335885e643f33ae78074bc.svg" class="math-inline" style="height: 0.669em; vertical-align: -0.235em;" alt="\( g \)" /> evaluated at <img src="fig/math/2f4b15565d0a1018e90c3e1b30b76acc.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( x \)" />.  Newton’s
 method is the use of the fixed-point method we saw above to approximate a
 solution of the equation by finding a fixed point of the function
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>f</mi>
-  </mrow>
-</math>.<a class="footnote_link" id="DOCF61" href="#FOOT61"><sup>61</sup></a>
+<img src="fig/math/24281a3bb1d277b889b72378360aef7a.svg" class="math-inline" style="height: 0.929em; vertical-align: -0.234em;" alt="\( {f} \)" />.<a class="footnote_link" id="DOCF61" href="#FOOT61"><sup>61</sup></a>
 </p>
-<p>For many functions <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>g</mi>
-</math> and for sufficiently good initial guesses for <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>x</mi>
-</math>,
-Newton’s method converges very rapidly to a solution of <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>g</mi>
-    <mo stretchy="false">(</mo>
-    <mi>x</mi>
-    <mo stretchy="false">)</mo>
-    <mo>=</mo>
-    <mn>0</mn>
-  </mrow>
-</math>.<a class="footnote_link" id="DOCF62" href="#FOOT62"><sup>62</sup></a>
+<p>For many functions <img src="fig/math/658545a813335885e643f33ae78074bc.svg" class="math-inline" style="height: 0.669em; vertical-align: -0.235em;" alt="\( g \)" /> and for sufficiently good initial guesses for <img src="fig/math/2f4b15565d0a1018e90c3e1b30b76acc.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( x \)" />,
+Newton’s method converges very rapidly to a solution of <img src="fig/math/1bb87b4a000856347a1692e05ca9bf3f.svg" class="math-inline" style="height: 0.933em; vertical-align: -0.225em;" alt="\( {g(x) = 0} \)" />.<a class="footnote_link" id="DOCF62" href="#FOOT62"><sup>62</sup></a>
 </p>
 <p>In order to implement Newton’s method as a procedure, we must first express the
 idea of derivative.  Note that “derivative,” like average damping, is
 something that transforms a function into another function.  For instance, the
-derivative of the function <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>x</mi>
-    <mo stretchy="false">↦<!-- ↦ --></mo>
-    <msup>
-      <mi>x</mi>
-      <mn>3</mn>
-    </msup>
-  </mrow>
-</math> is the function <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>x</mi>
-    <mo stretchy="false">↦<!-- ↦ --></mo>
-    <mn>3</mn>
-    <msup>
-      <mi>x</mi>
-      <mn>2</mn>
-    </msup>
-  </mrow>
-</math>.
-In general, if <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>g</mi>
-</math> is a function and <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>d</mi>
-    <mi>x</mi>
-  </mrow>
-</math> is a small number,
-then the derivative <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>D</mi>
-    <mi>g</mi>
-  </mrow>
-</math> of <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>g</mi>
-</math> is the function whose value at any
-number <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>x</mi>
-</math> is given (in the limit of small <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>d</mi>
-    <mi>x</mi>
-  </mrow>
-</math>) by
+derivative of the function <img src="fig/math/ac425fd6c307d8ccc07cc03c895b9e7d.svg" class="math-inline" style="height: 0.854em; vertical-align: -0.010em;" alt="\( {x \mapsto x^3} \)" /> is the function <img src="fig/math/ac7ca6931c571d4a707b5ebb95bf9994.svg" class="math-inline" style="height: 0.854em; vertical-align: -0.010em;" alt="\( {x \mapsto 3x^2} \)" />.
+In general, if <img src="fig/math/658545a813335885e643f33ae78074bc.svg" class="math-inline" style="height: 0.669em; vertical-align: -0.235em;" alt="\( g \)" /> is a function and <img src="fig/math/a999758b4fd8ccd10d6eda8234629d51.svg" class="math-inline" style="height: 0.703em; vertical-align: -0.009em;" alt="\( {dx} \)" /> is a small number,
+then the derivative <img src="fig/math/60f9f23f14887c92a25e763ddb432825.svg" class="math-inline" style="height: 0.876em; vertical-align: -0.227em;" alt="\( {Dg} \)" /> of <img src="fig/math/658545a813335885e643f33ae78074bc.svg" class="math-inline" style="height: 0.669em; vertical-align: -0.235em;" alt="\( g \)" /> is the function whose value at any
+number <img src="fig/math/2f4b15565d0a1018e90c3e1b30b76acc.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( x \)" /> is given (in the limit of small <img src="fig/math/a999758b4fd8ccd10d6eda8234629d51.svg" class="math-inline" style="height: 0.703em; vertical-align: -0.009em;" alt="\( {dx} \)" />) by
 
-<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
-  <mi>D</mi>
-  <mi>g</mi>
-  <mo stretchy="false">(</mo>
-  <mi>x</mi>
-  <mo stretchy="false">)</mo>
-  <mspace width="thinmathspace"/>
-  <mo>=</mo>
-  <mspace width="thinmathspace"/>
-  <mrow class="MJX-TeXAtom-ORD">
-    <mfrac>
-      <mrow>
-        <mi>g</mi>
-        <mo stretchy="false">(</mo>
-        <mi>x</mi>
-        <mo>+</mo>
-        <mi>d</mi>
-        <mi>x</mi>
-        <mo stretchy="false">)</mo>
-        <mo>−<!-- − --></mo>
-        <mi>g</mi>
-        <mo stretchy="false">(</mo>
-        <mi>x</mi>
-        <mo stretchy="false">)</mo>
-      </mrow>
-      <mrow>
-        <mi>d</mi>
-        <mi>x</mi>
-      </mrow>
-    </mfrac>
-    <mo>.</mo>
-  </mrow>
-</math>
+<img src="fig/math/51b1ca2619c2a00fbaffbeaa70e8c8d0.svg" class="math-display" style="height: 2.085em;" alt="\[ % :29:&amp;#10;   Dg(x) \,=\, {\frac{g(x + dx) - g(x)}{dx}.} \]" />
 
-Thus, we can express the idea of derivative (taking <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>d</mi>
-    <mi>x</mi>
-  </mrow>
-</math> to be, say,
+Thus, we can express the idea of derivative (taking <img src="fig/math/a999758b4fd8ccd10d6eda8234629d51.svg" class="math-inline" style="height: 0.703em; vertical-align: -0.009em;" alt="\( {dx} \)" /> to be, say,
 0.00001) as the procedure
 </p>
 <div class="lisp">
@@ -2355,16 +958,7 @@ Thus, we can express the idea of derivative (taking <math xmlns="http://www.w3.o
 
 <p>Like <code>average-damp</code>, <code>deriv</code> is a procedure that takes a procedure as
 argument and returns a procedure as value.  For example, to approximate the
-derivative of <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>x</mi>
-    <mo stretchy="false">↦<!-- ↦ --></mo>
-    <msup>
-      <mi>x</mi>
-      <mn>3</mn>
-    </msup>
-  </mrow>
-</math> at 5 (whose exact value is 75) we can evaluate
+derivative of <img src="fig/math/ac425fd6c307d8ccc07cc03c895b9e7d.svg" class="math-inline" style="height: 0.854em; vertical-align: -0.010em;" alt="\( {x \mapsto x^3} \)" /> at 5 (whose exact value is 75) we can evaluate
 </p>
 <div class="lisp">
 <pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">define</span><span class="pln"> </span><span class="opn">(</span><span class="pln">cube x</span><span class="clo">)</span><span class="pln"> </span><span class="opn">(</span><span class="pun">*</span><span class="pln"> x x x</span><span class="clo">))</span><span class="pln">
@@ -2390,21 +984,8 @@ process:
 this section, and <code>newtons-method</code> is readily defined in terms of this.
 It takes as arguments a procedure that computes the function for which we want
 to find a zero, together with an initial guess.  For instance, to find the
-square root of <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>x</mi>
-</math>, we can use Newton’s method to find a zero of the function
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>y</mi>
-    <mo stretchy="false">↦<!-- ↦ --></mo>
-    <msup>
-      <mi>y</mi>
-      <mn>2</mn>
-    </msup>
-    <mo>−<!-- − --></mo>
-    <mi>x</mi>
-  </mrow>
-</math> starting with an initial guess of 1.<a class="footnote_link" id="DOCF63" href="#FOOT63"><sup>63</sup></a>
+square root of <img src="fig/math/2f4b15565d0a1018e90c3e1b30b76acc.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( x \)" />, we can use Newton’s method to find a zero of the function
+<img src="fig/math/9294c125cde969bc121635c17a573a38.svg" class="math-inline" style="height: 1.078em; vertical-align: -0.235em;" alt="\( {y \mapsto y^2 - x} \)" /> starting with an initial guess of 1.<a class="footnote_link" id="DOCF63" href="#FOOT63"><sup>63</sup></a>
 </p>
 <p>This provides yet another form of the square-root procedure:
 </p>
@@ -2436,17 +1017,7 @@ guess.  The returned result is a fixed point of the transformed function.
 </p>
 <p>Using this abstraction, we can recast the first square-root computation from
 this section (where we look for a fixed point of the average-damped version of
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>y</mi>
-    <mo stretchy="false">↦<!-- ↦ --></mo>
-    <mi>x</mi>
-    <mrow class="MJX-TeXAtom-ORD">
-      <mo>/</mo>
-    </mrow>
-    <mi>y</mi>
-  </mrow>
-</math>) as an instance of this general method:
+<img src="fig/math/c4888039e8855b22c0b35c8152532a53.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.229em;" alt="\( {y \mapsto x / y} \)" />) as an instance of this general method:
 </p>
 <div class="lisp">
 <pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">define</span><span class="pln"> </span><span class="opn">(</span><span class="pln">sqrt x</span><span class="clo">)</span><span class="pln">
@@ -2457,18 +1028,7 @@ this section (where we look for a fixed point of the average-damped version of
 
 <p>Similarly, we can express the second square-root computation from this section
 (an instance of Newton’s method that finds a fixed point of the Newton
-transform of <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>y</mi>
-    <mo stretchy="false">↦<!-- ↦ --></mo>
-    <msup>
-      <mi>y</mi>
-      <mn>2</mn>
-    </msup>
-    <mo>−<!-- − --></mo>
-    <mi>x</mi>
-  </mrow>
-</math>) as
+transform of <img src="fig/math/9294c125cde969bc121635c17a573a38.svg" class="math-inline" style="height: 1.078em; vertical-align: -0.235em;" alt="\( {y \mapsto y^2 - x} \)" />) as
 </p>
 <div class="lisp">
 <pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">define</span><span class="pln"> </span><span class="opn">(</span><span class="pln">sqrt x</span><span class="clo">)</span><span class="pln">
@@ -2523,25 +1083,7 @@ expressions of the form
 <div class="lisp">
 <pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="pln">newtons-method </span><span class="opn">(</span><span class="pln">cubic a b c</span><span class="clo">)</span><span class="pln"> </span><span class="lit">1</span><span class="clo">)</span></pre></div>
 
-<p>to approximate zeros of the cubic <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <msup>
-      <mi>x</mi>
-      <mn>3</mn>
-    </msup>
-    <mo>+</mo>
-    <mi>a</mi>
-    <msup>
-      <mi>x</mi>
-      <mn>2</mn>
-    </msup>
-    <mo>+</mo>
-    <mi>b</mi>
-    <mi>x</mi>
-    <mo>+</mo>
-    <mi>c</mi>
-  </mrow>
-</math>.
+<p>to approximate zeros of the cubic <img src="fig/math/5405ff8409de874ed7bdd219895b7fb8.svg" class="math-inline" style="height: 0.854em; vertical-align: -0.010em;" alt="\( {x^3 + ax^2 + bx + c} \)" />.
 </p></blockquote>
 
 <blockquote>
@@ -2556,30 +1098,10 @@ procedure that adds 2.  What value is returned by
 </blockquote>
 
 <blockquote>
-<p><strong><a id="Exercise-1_002e42"></a>Exercise 1.42:</strong> Let <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>f</mi>
-</math> and <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>g</mi>
-</math> be two
+<p><strong><a id="Exercise-1_002e42"></a>Exercise 1.42:</strong> Let <img src="fig/math/7a8d165d31a04fc319968e0213091ff8.svg" class="math-inline" style="height: 0.929em; vertical-align: -0.234em;" alt="\( f \)" /> and <img src="fig/math/658545a813335885e643f33ae78074bc.svg" class="math-inline" style="height: 0.669em; vertical-align: -0.235em;" alt="\( g \)" /> be two
 one-argument functions.  The <a id="index-composition"></a>
-<em>composition</em> <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>f</mi>
-</math> after <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>g</mi>
-</math> is defined
-to be the function <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>x</mi>
-    <mo stretchy="false">↦<!-- ↦ --></mo>
-    <mi>f</mi>
-    <mo stretchy="false">(</mo>
-    <mi>g</mi>
-    <mo stretchy="false">(</mo>
-    <mi>x</mi>
-    <mo stretchy="false">)</mo>
-    <mo stretchy="false">)</mo>
-  </mrow>
-</math>.  Define a procedure
+<em>composition</em> <img src="fig/math/7a8d165d31a04fc319968e0213091ff8.svg" class="math-inline" style="height: 0.929em; vertical-align: -0.234em;" alt="\( f \)" /> after <img src="fig/math/658545a813335885e643f33ae78074bc.svg" class="math-inline" style="height: 0.669em; vertical-align: -0.235em;" alt="\( g \)" /> is defined
+to be the function <img src="fig/math/b5c483e8eb9a537a8287b34a6b721b7f.svg" class="math-inline" style="height: 0.936em; vertical-align: -0.225em;" alt="\( {x \mapsto f(g(x))} \)" />.  Define a procedure
 <code>compose</code> that implements composition.  For example, if <code>inc</code> is a
 procedure that adds 1 to its argument,
 </p>
@@ -2590,107 +1112,16 @@ procedure that adds 1 to its argument,
 </blockquote>
 
 <blockquote>
-<p><strong><a id="Exercise-1_002e43"></a>Exercise 1.43:</strong> If <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>f</mi>
-</math> is a numerical function
-and <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math> is a positive integer, then we can form the <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <msup>
-    <mi>n</mi>
-    <mrow class="MJX-TeXAtom-ORD">
-      <mtext>th</mtext>
-    </mrow>
-  </msup>
-</math> repeated
-application of <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>f</mi>
-</math>, which is defined to be the function whose value at <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>x</mi>
-</math>
-is <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>f</mi>
-    <mo stretchy="false">(</mo>
-    <mi>f</mi>
-    <mo stretchy="false">(</mo>
-    <mo>…<!-- … --></mo>
-    <mo stretchy="false">(</mo>
-    <mi>f</mi>
-    <mo stretchy="false">(</mo>
-    <mi>x</mi>
-    <mo stretchy="false">)</mo>
-    <mo stretchy="false">)</mo>
-    <mo>…<!-- … --></mo>
-    <mo stretchy="false">)</mo>
-    <mo stretchy="false">)</mo>
-  </mrow>
-</math>.  For example, if <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>f</mi>
-</math> is the
-function <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>x</mi>
-    <mo stretchy="false">↦<!-- ↦ --></mo>
-    <mi>x</mi>
-    <mo>+</mo>
-    <mn>1</mn>
-  </mrow>
-</math>, then the <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <msup>
-    <mi>n</mi>
-    <mrow class="MJX-TeXAtom-ORD">
-      <mtext>th</mtext>
-    </mrow>
-  </msup>
-</math> repeated application of <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>f</mi>
-</math> is
-the function <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>x</mi>
-    <mo stretchy="false">↦<!-- ↦ --></mo>
-    <mi>x</mi>
-    <mo>+</mo>
-    <mi>n</mi>
-  </mrow>
-</math>.  If <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>f</mi>
-</math> is the operation of squaring a
-number, then the <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <msup>
-    <mi>n</mi>
-    <mrow class="MJX-TeXAtom-ORD">
-      <mtext>th</mtext>
-    </mrow>
-  </msup>
-</math> repeated application of <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>f</mi>
-</math> is the function that
-raises its argument to the <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <msup>
-      <mn>2</mn>
-      <mi>n</mi>
-    </msup>
-    <mtext>-th</mtext>
-  </mrow>
-</math> power.  Write a procedure that takes as
-inputs a procedure that computes <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>f</mi>
-</math> and a positive integer <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math> and returns
-the procedure that computes the <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <msup>
-    <mi>n</mi>
-    <mrow class="MJX-TeXAtom-ORD">
-      <mtext>th</mtext>
-    </mrow>
-  </msup>
-</math> repeated application of <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>f</mi>
-</math>.  Your
+<p><strong><a id="Exercise-1_002e43"></a>Exercise 1.43:</strong> If <img src="fig/math/7a8d165d31a04fc319968e0213091ff8.svg" class="math-inline" style="height: 0.929em; vertical-align: -0.234em;" alt="\( f \)" /> is a numerical function
+and <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" /> is a positive integer, then we can form the <img src="fig/math/3b6c232f796b2d291446b22cb38c933e.svg" class="math-inline" style="height: 0.892em; vertical-align: -0.010em;" alt="\( n^{\text{th}} \)" /> repeated
+application of <img src="fig/math/7a8d165d31a04fc319968e0213091ff8.svg" class="math-inline" style="height: 0.929em; vertical-align: -0.234em;" alt="\( f \)" />, which is defined to be the function whose value at <img src="fig/math/2f4b15565d0a1018e90c3e1b30b76acc.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( x \)" />
+is <img src="fig/math/78f46d84e8e5fbe7fe80f557cb5187f9.svg" class="math-inline" style="height: 0.936em; vertical-align: -0.225em;" alt="\( {f(f(\dots (f(x))\dots ))} \)" />.  For example, if <img src="fig/math/7a8d165d31a04fc319968e0213091ff8.svg" class="math-inline" style="height: 0.929em; vertical-align: -0.234em;" alt="\( f \)" /> is the
+function <img src="fig/math/57f08d79273b5db0de0b7073040df346.svg" class="math-inline" style="height: 0.652em; vertical-align: -0.009em;" alt="\( {x \mapsto x + 1} \)" />, then the <img src="fig/math/3b6c232f796b2d291446b22cb38c933e.svg" class="math-inline" style="height: 0.892em; vertical-align: -0.010em;" alt="\( n^{\text{th}} \)" /> repeated application of <img src="fig/math/7a8d165d31a04fc319968e0213091ff8.svg" class="math-inline" style="height: 0.929em; vertical-align: -0.234em;" alt="\( f \)" /> is
+the function <img src="fig/math/9a7d70be73671b51681b2db17377e06a.svg" class="math-inline" style="height: 0.515em; vertical-align: -0.006em;" alt="\( {x \mapsto x + n} \)" />.  If <img src="fig/math/7a8d165d31a04fc319968e0213091ff8.svg" class="math-inline" style="height: 0.929em; vertical-align: -0.234em;" alt="\( f \)" /> is the operation of squaring a
+number, then the <img src="fig/math/3b6c232f796b2d291446b22cb38c933e.svg" class="math-inline" style="height: 0.892em; vertical-align: -0.010em;" alt="\( n^{\text{th}} \)" /> repeated application of <img src="fig/math/7a8d165d31a04fc319968e0213091ff8.svg" class="math-inline" style="height: 0.929em; vertical-align: -0.234em;" alt="\( f \)" /> is the function that
+raises its argument to the <img src="fig/math/8eaeda4e327def8a55a0cf6d7d716fa1.svg" class="math-inline" style="height: 0.692em;" alt="\( {2^n\text{-th}} \)" /> power.  Write a procedure that takes as
+inputs a procedure that computes <img src="fig/math/7a8d165d31a04fc319968e0213091ff8.svg" class="math-inline" style="height: 0.929em; vertical-align: -0.234em;" alt="\( f \)" /> and a positive integer <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" /> and returns
+the procedure that computes the <img src="fig/math/3b6c232f796b2d291446b22cb38c933e.svg" class="math-inline" style="height: 0.892em; vertical-align: -0.010em;" alt="\( n^{\text{th}} \)" /> repeated application of <img src="fig/math/7a8d165d31a04fc319968e0213091ff8.svg" class="math-inline" style="height: 0.929em; vertical-align: -0.234em;" alt="\( f \)" />.  Your
 procedure should be able to be used as follows:
 </p>
 <div class="lisp">
@@ -2704,54 +1135,12 @@ procedure should be able to be used as follows:
 <blockquote>
 <p><strong><a id="Exercise-1_002e44"></a>Exercise 1.44:</strong> The idea of <a id="index-smoothing"></a>
 <em>smoothing</em> a
-function is an important concept in signal processing.  If <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>f</mi>
-</math> is a function
-and <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>d</mi>
-    <mi>x</mi>
-  </mrow>
-</math> is some small number, then the smoothed version of <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>f</mi>
-</math> is the
-function whose value at a point <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>x</mi>
-</math> is the average of <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>f</mi>
-    <mo stretchy="false">(</mo>
-    <mi>x</mi>
-    <mo>−<!-- − --></mo>
-    <mi>d</mi>
-    <mi>x</mi>
-    <mo stretchy="false">)</mo>
-  </mrow>
-</math>, 
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>f</mi>
-    <mo stretchy="false">(</mo>
-    <mi>x</mi>
-    <mo stretchy="false">)</mo>
-  </mrow>
-</math>, and <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>f</mi>
-    <mo stretchy="false">(</mo>
-    <mi>x</mi>
-    <mo>+</mo>
-    <mi>d</mi>
-    <mi>x</mi>
-    <mo stretchy="false">)</mo>
-  </mrow>
-</math>.  Write a procedure
-<code>smooth</code> that takes as input a procedure that computes <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>f</mi>
-</math> and returns a
-procedure that computes the smoothed <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>f</mi>
-</math>.  It is sometimes valuable to
+function is an important concept in signal processing.  If <img src="fig/math/7a8d165d31a04fc319968e0213091ff8.svg" class="math-inline" style="height: 0.929em; vertical-align: -0.234em;" alt="\( f \)" /> is a function
+and <img src="fig/math/a999758b4fd8ccd10d6eda8234629d51.svg" class="math-inline" style="height: 0.703em; vertical-align: -0.009em;" alt="\( {dx} \)" /> is some small number, then the smoothed version of <img src="fig/math/7a8d165d31a04fc319968e0213091ff8.svg" class="math-inline" style="height: 0.929em; vertical-align: -0.234em;" alt="\( f \)" /> is the
+function whose value at a point <img src="fig/math/2f4b15565d0a1018e90c3e1b30b76acc.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( x \)" /> is the average of <img src="fig/math/d9e5595beefdff468eeafe7717bf4891.svg" class="math-inline" style="height: 0.936em; vertical-align: -0.225em;" alt="\( {f(x - dx)} \)" />, 
+<img src="fig/math/b057a8e52b609c9d7031fbe3992972ef.svg" class="math-inline" style="height: 0.936em; vertical-align: -0.225em;" alt="\( {f(x)} \)" />, and <img src="fig/math/c1a6758b4b5770cca95dc3b49310f975.svg" class="math-inline" style="height: 0.936em; vertical-align: -0.225em;" alt="\( {f(x + dx)} \)" />.  Write a procedure
+<code>smooth</code> that takes as input a procedure that computes <img src="fig/math/7a8d165d31a04fc319968e0213091ff8.svg" class="math-inline" style="height: 0.929em; vertical-align: -0.234em;" alt="\( f \)" /> and returns a
+procedure that computes the smoothed <img src="fig/math/7a8d165d31a04fc319968e0213091ff8.svg" class="math-inline" style="height: 0.929em; vertical-align: -0.234em;" alt="\( f \)" />.  It is sometimes valuable to
 repeatedly smooth a function (that is, smooth the smoothed function, and so on)
 to obtain the <a id="index-n_002dfold-smoothed-function"></a>
 <em><i>n</i>-fold smoothed function</em>.  Show how to generate
@@ -2762,98 +1151,17 @@ the <i>n</i>-fold smoothed function of any given function using <code>smooth</co
 <blockquote>
 <p><strong><a id="Exercise-1_002e45"></a>Exercise 1.45:</strong> We saw in <a href="#g_t1_002e3_002e3">1.3.3</a>
 that attempting to compute square roots by naively finding a fixed point of
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>y</mi>
-    <mo stretchy="false">↦<!-- ↦ --></mo>
-    <mi>x</mi>
-    <mrow class="MJX-TeXAtom-ORD">
-      <mo>/</mo>
-    </mrow>
-    <mi>y</mi>
-  </mrow>
-</math> does not converge, and that this can be fixed by average
+<img src="fig/math/c4888039e8855b22c0b35c8152532a53.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.229em;" alt="\( {y \mapsto x / y} \)" /> does not converge, and that this can be fixed by average
 damping.  The same method works for finding cube roots as fixed points of the
-average-damped <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>y</mi>
-    <mo stretchy="false">↦<!-- ↦ --></mo>
-    <mi>x</mi>
-    <mrow class="MJX-TeXAtom-ORD">
-      <mo>/</mo>
-    </mrow>
-    <msup>
-      <mi>y</mi>
-      <mn>2</mn>
-    </msup>
-  </mrow>
-</math>.  Unfortunately, the process does not
+average-damped <img src="fig/math/18bb0b98243514be22ca3fe084b0b07a.svg" class="math-inline" style="height: 1.078em; vertical-align: -0.235em;" alt="\( {y \mapsto x / y^2} \)" />.  Unfortunately, the process does not
 work for fourth roots—a single average damp is not enough to make a
-fixed-point search for <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>y</mi>
-    <mo stretchy="false">↦<!-- ↦ --></mo>
-    <mi>x</mi>
-    <mrow class="MJX-TeXAtom-ORD">
-      <mo>/</mo>
-    </mrow>
-    <msup>
-      <mi>y</mi>
-      <mn>3</mn>
-    </msup>
-  </mrow>
-</math> converge.  On the other hand, if
+fixed-point search for <img src="fig/math/ee3c68d0350ab75033b5737a37031060.svg" class="math-inline" style="height: 1.078em; vertical-align: -0.235em;" alt="\( {y \mapsto x / y^3} \)" /> converge.  On the other hand, if
 we average damp twice (i.e., use the average damp of the average damp of 
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>y</mi>
-    <mo stretchy="false">↦<!-- ↦ --></mo>
-    <mi>x</mi>
-    <mrow class="MJX-TeXAtom-ORD">
-      <mo>/</mo>
-    </mrow>
-    <msup>
-      <mi>y</mi>
-      <mn>3</mn>
-    </msup>
-  </mrow>
-</math>) the fixed-point search does converge.  Do some experiments
-to determine how many average damps are required to compute <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <msup>
-    <mi>n</mi>
-    <mrow class="MJX-TeXAtom-ORD">
-      <mtext>th</mtext>
-    </mrow>
-  </msup>
-</math> roots as a
-fixed-point search based upon repeated average damping of <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>y</mi>
-    <mo stretchy="false">↦<!-- ↦ --></mo>
-    <mi>x</mi>
-    <mrow class="MJX-TeXAtom-ORD">
-      <mo>/</mo>
-    </mrow>
-    <msup>
-      <mi>y</mi>
-      <mrow class="MJX-TeXAtom-ORD">
-        <mspace width="0.1em"/>
-        <mi>n</mi>
-        <mo>−<!-- − --></mo>
-        <mn>1</mn>
-      </mrow>
-    </msup>
-  </mrow>
-</math>.  
+<img src="fig/math/ee3c68d0350ab75033b5737a37031060.svg" class="math-inline" style="height: 1.078em; vertical-align: -0.235em;" alt="\( {y \mapsto x / y^3} \)" />) the fixed-point search does converge.  Do some experiments
+to determine how many average damps are required to compute <img src="fig/math/3b6c232f796b2d291446b22cb38c933e.svg" class="math-inline" style="height: 0.892em; vertical-align: -0.010em;" alt="\( n^{\text{th}} \)" /> roots as a
+fixed-point search based upon repeated average damping of <img src="fig/math/688ae2de37fbe7a18cfc0edcc889f8dc.svg" class="math-inline" style="height: 1.078em; vertical-align: -0.235em;" alt="\( {y \mapsto x / y^{\kern0.1em n-1}} \)" />.  
 Use this to implement a simple procedure for computing
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <msup>
-    <mi>n</mi>
-    <mrow class="MJX-TeXAtom-ORD">
-      <mtext>th</mtext>
-    </mrow>
-  </msup>
-</math> roots using <code>fixed-point</code>, <code>average-damp</code>, and the
+<img src="fig/math/3b6c232f796b2d291446b22cb38c933e.svg" class="math-inline" style="height: 0.892em; vertical-align: -0.010em;" alt="\( n^{\text{th}} \)" /> roots using <code>fixed-point</code>, <code>average-damp</code>, and the
 <code>repeated</code> procedure of <a href="#Exercise-1_002e43">Exercise 1.43</a>.  Assume that any arithmetic
 operations you need are available as primitives.
 </p></blockquote>
@@ -2881,43 +1189,7 @@ Rewrite the <code>sqrt</code> procedure of <a href="1_002e1.xhtml#g_t1_002e1_002
 <div id="FOOT49"><p><a class="footnote_backlink" href="#DOCF49"><sup>49</sup></a>
 This series, usually
 written in the equivalent form 
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mfrac>
-      <mi>π<!-- π --></mi>
-      <mn>4</mn>
-    </mfrac>
-  </mrow>
-  <mo>=</mo>
-  <mrow class="MJX-TeXAtom-ORD">
-    <mn>1</mn>
-    <mo>−<!-- − --></mo>
-    <mrow class="MJX-TeXAtom-ORD">
-      <mfrac>
-        <mn>1</mn>
-        <mn>3</mn>
-      </mfrac>
-    </mrow>
-    <mo>+</mo>
-    <mrow class="MJX-TeXAtom-ORD">
-      <mfrac>
-        <mn>1</mn>
-        <mn>5</mn>
-      </mfrac>
-    </mrow>
-  </mrow>
-  <mo>−<!-- − --></mo>
-  <mrow class="MJX-TeXAtom-ORD">
-    <mrow class="MJX-TeXAtom-ORD">
-      <mfrac>
-        <mn>1</mn>
-        <mn>7</mn>
-      </mfrac>
-    </mrow>
-    <mo>+</mo>
-    <mo>…<!-- … --></mo>
-  </mrow>
-</math>, 
+<img src="fig/math/8fb226294dc22a2a6271b433e09a1435.svg" class="math-inline" style="height: 1.221em; vertical-align: -0.343em;" alt="\( {\pi\over4} = {1 - {1\over3} + {1\over5}} - {{1\over7} + \dots} \)" />, 
 is due to Leibniz.  We’ll see how to use this as the basis for some
 fancy numerical tricks in <a href="3_002e5.xhtml#g_t3_002e5_002e3">3.5.3</a>.</p>
 </div>
@@ -2983,31 +1255,9 @@ during a boring lecture: Set your calculator to radians mode and then
 repeatedly press the <code>cos</code> button until you obtain the fixed point.</p>
 </div>
 <div id="FOOT58"><p><a class="footnote_backlink" href="#DOCF58"><sup>58</sup></a>
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mo stretchy="false">↦<!-- ↦ --></mo>
-</math> (pronounced “maps to”) is the mathematician’s way of
-writing <code>lambda</code>.  <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>y</mi>
-    <mo stretchy="false">↦<!-- ↦ --></mo>
-    <mi>x</mi>
-    <mrow class="MJX-TeXAtom-ORD">
-      <mo>/</mo>
-    </mrow>
-    <mi>y</mi>
-  </mrow>
-</math> means <code>(lambda (y) (/ x y))</code>,
-that is, the function whose value at <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>y</mi>
-</math> is <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>x</mi>
-    <mrow class="MJX-TeXAtom-ORD">
-      <mo>/</mo>
-    </mrow>
-    <mi>y</mi>
-  </mrow>
-</math>.</p>
+<img src="fig/math/0ce91553aad27651969cc77ddd0cb826.svg" class="math-inline" style="height: 0.467em;" alt="\( \mapsto \)" /> (pronounced “maps to”) is the mathematician’s way of
+writing <code>lambda</code>.  <img src="fig/math/c4888039e8855b22c0b35c8152532a53.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.229em;" alt="\( {y \mapsto x / y} \)" /> means <code>(lambda (y) (/ x y))</code>,
+that is, the function whose value at <img src="fig/math/05e4cdb2f26a4f66b68c167423907fea.svg" class="math-inline" style="height: 0.669em; vertical-align: -0.235em;" alt="\( y \)" /> is <img src="fig/math/c243e54e1f37c985a92584d386f5fc01.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.229em;" alt="\( {x / y} \)" />.</p>
 </div>
 <div id="FOOT59"><p><a class="footnote_backlink" href="#DOCF59"><sup>59</sup></a>
 Observe that this is a combination whose
@@ -3022,43 +1272,7 @@ See
 </div>
 <div id="FOOT61"><p><a class="footnote_backlink" href="#DOCF61"><sup>61</sup></a>
 Elementary calculus books usually describe Newton’s method in
-terms of the sequence of approximations <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <msub>
-    <mi>x</mi>
-    <mrow class="MJX-TeXAtom-ORD">
-      <mi>n</mi>
-      <mo>+</mo>
-      <mn>1</mn>
-    </mrow>
-  </msub>
-  <mo>=</mo>
-  <msub>
-    <mi>x</mi>
-    <mi>n</mi>
-  </msub>
-  <mo>−<!-- − --></mo>
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>g</mi>
-    <mo stretchy="false">(</mo>
-    <msub>
-      <mi>x</mi>
-      <mi>n</mi>
-    </msub>
-    <mo stretchy="false">)</mo>
-    <mspace width="thinmathspace"/>
-    <mrow class="MJX-TeXAtom-ORD">
-      <mo>/</mo>
-    </mrow>
-    <mi>D</mi>
-    <mi>g</mi>
-    <mo stretchy="false">(</mo>
-    <msub>
-      <mi>x</mi>
-      <mi>n</mi>
-    </msub>
-    <mo stretchy="false">)</mo>
-  </mrow>
-</math>. 
+terms of the sequence of approximations <img src="fig/math/96cbc64b5b9346071e74621f47f63af6.svg" class="math-inline" style="height: 0.933em; vertical-align: -0.225em;" alt="\( x_{n+1} = x_n - {g(x_n)\,/ Dg(x_n)} \)" />. 
 Having language for talking about processes and using the idea of fixed points 
 simplifies the description of the method.</p>
 </div>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" xml:lang="en" lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" xml:lang="en" xmlns:xml="http://www.w3.org/XML/1998/namespace" lang="en">
 <!-- Created by GNU Texinfo 5.1, http://www.gnu.org/software/texinfo/ -->
 <head>
 <title>Structure and Interpretation of Computer Programs, 2e: 5.2</title>
@@ -248,9 +248,7 @@ internal procedure <code>allocate-register</code> adds new entries to the regist
 table, and the internal procedure <code>lookup-register</code> looks up registers in
 the table.
 </p>
-<p><strong><a id="Figure-5_002e13"></a>Figure 5.13:</strong> <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mo stretchy="false">↓<!-- ↓ --></mo>
-</math> The <code>make-new-machine</code>
+<p><strong><a id="Figure-5_002e13"></a>Figure 5.13:</strong> <img src="fig/math/6055ad073cc2a2ef0c1068b0c6d90034.svg" class="math-inline" style="height: 0.843em; vertical-align: -0.159em;" alt="\( \downarrow \)" /> The <code>make-new-machine</code>
 procedure, which implements the basic machine model.
 </p>
 <div class="lisp">
@@ -1047,39 +1045,15 @@ simulator.
 </p>
 <blockquote>
 <p><strong><a id="Exercise-5_002e14"></a>Exercise 5.14:</strong> Measure the number of pushes and
-the maximum stack depth required to compute <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>n</mi>
-    <mo>!</mo>
-  </mrow>
-</math> for various small values of
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math> using the factorial machine shown in <a href="5_002e1.xhtml#Figure-5_002e11">Figure 5.11</a>.  From your data
-determine formulas in terms of <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math> for the total number of push operations
-and the maximum stack depth used in computing <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>n</mi>
-    <mo>!</mo>
-  </mrow>
-</math> for any <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>n</mi>
-    <mo>&gt;</mo>
-    <mn>1</mn>
-  </mrow>
-</math>. Note
-that each of these is a linear function of <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math> and is thus determined by two
+the maximum stack depth required to compute <img src="fig/math/5fa3dbabdc4f880a425fd3b033864691.svg" class="math-inline" style="height: 0.702em; vertical-align: -0.009em;" alt="\( {n!} \)" /> for various small values of
+<img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" /> using the factorial machine shown in <a href="5_002e1.xhtml#Figure-5_002e11">Figure 5.11</a>.  From your data
+determine formulas in terms of <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" /> for the total number of push operations
+and the maximum stack depth used in computing <img src="fig/math/5fa3dbabdc4f880a425fd3b033864691.svg" class="math-inline" style="height: 0.702em; vertical-align: -0.009em;" alt="\( {n!} \)" /> for any <img src="fig/math/0ee8dfc58e09bad9d67190f66682c923.svg" class="math-inline" style="height: 0.652em; vertical-align: -0.009em;" alt="\( {n &amp;gt; 1} \)" />. Note
+that each of these is a linear function of <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" /> and is thus determined by two
 constants.  In order to get the statistics printed, you will have to augment
 the factorial machine with instructions to initialize the stack and print the
 statistics.  You may want to also modify the machine so that it repeatedly
-reads a value for <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math>, computes the factorial, and prints the result (as we
+reads a value for <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" />, computes the factorial, and prints the result (as we
 did for the <abbr>GCD</abbr> machine in <a href="5_002e1.xhtml#Figure-5_002e4">Figure 5.4</a>), so that you will not
 have to repeatedly invoke <code>get-register-contents</code>,
 <code>set-register-contents!</code>, and <code>start</code>.
@@ -1134,14 +1108,7 @@ procedure
 <div class="lisp">
 <pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="pln">set-breakpoint ⟨</span><var><span class="pln">machine</span></var><span class="pln">⟩ ⟨</span><var><span class="pln">label</span></var><span class="pln">⟩ ⟨</span><var><span class="pln">n</span></var><span class="pln">⟩</span><span class="clo">)</span></pre></div>
 
-<p>that sets a breakpoint just before the <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <msup>
-    <mi>n</mi>
-    <mrow class="MJX-TeXAtom-ORD">
-      <mtext>th</mtext>
-    </mrow>
-  </msup>
-</math> instruction after the given
+<p>that sets a breakpoint just before the <img src="fig/math/3b6c232f796b2d291446b22cb38c933e.svg" class="math-inline" style="height: 0.892em; vertical-align: -0.010em;" alt="\( n^{\text{th}} \)" /> instruction after the given
 label.  For example,
 </p>
 <div class="lisp">

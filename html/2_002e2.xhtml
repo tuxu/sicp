@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" xml:lang="en" lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" xml:lang="en" xmlns:xml="http://www.w3.org/XML/1998/namespace" lang="en">
 <!-- Created by GNU Texinfo 5.1, http://www.gnu.org/software/texinfo/ -->
 <head>
 <title>Structure and Interpretation of Computer Programs, 2e: 2.2</title>
@@ -48,7 +48,7 @@ containing the <code>cdr</code>.
 </p>
 <figure class="float">
 <a id="Figure-2_002e2"></a>
-<object style="width: 21.76ex; height: 11.83ex;" data="fig/chap2/Fig2.2e.std.svg" type="image/svg+xml">SVG</object>
+<img style="width: 21.76ex; max-width: 100%; display: inline;" src="fig/chap2/Fig2.2e.std.svg" />
 
 <figcaption class="float-caption">
 <p><strong>Figure 2.2:</strong> Box-and-pointer representation of <code>(cons 1 2)</code>.</p>
@@ -64,7 +64,7 @@ numbers 1, 2, 3, and 4.
 </p>
 <figure class="float">
 <a id="Figure-2_002e3"></a>
-<object style="width: 55.60ex; height: 28.41ex;" data="fig/chap2/Fig2.3e.std.svg" type="image/svg+xml">SVG</object>
+<img style="width: 55.60ex; max-width: 100%; display: inline;" src="fig/chap2/Fig2.3e.std.svg" />
 
 <figcaption class="float-caption">
 <p><strong>Figure 2.3:</strong> Two ways to combine 1, 2, 3, and 4 using pairs.</p>
@@ -117,7 +117,7 @@ nested <code>cons</code> operations:
 
 <figure class="float">
 <a id="Figure-2_002e4"></a>
-<object style="width: 48.95ex; height: 11.83ex;" data="fig/chap2/Fig2.4e.std.svg" type="image/svg+xml">SVG</object>
+<img style="width: 48.95ex; max-width: 100%; display: inline;" src="fig/chap2/Fig2.4e.std.svg" />
 
 <figcaption class="float-caption">
 <p><strong>Figure 2.4:</strong> The sequence 1, 2, 3, 4 represented as a chain of pairs.</p>
@@ -196,37 +196,14 @@ of as a sequence of no elements, the <a id="index-empty-list"></a>
 <p>The use of pairs to represent sequences of elements as lists is accompanied by
 conventional programming techniques for manipulating lists by successively
 “<code>cdr</code>ing down” the lists.  For example, the procedure <code>list-ref</code>
-takes as arguments a list and a number <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math> and returns the <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <msup>
-    <mi>n</mi>
-    <mrow class="MJX-TeXAtom-ORD">
-      <mtext>th</mtext>
-    </mrow>
-  </msup>
-</math> item of
+takes as arguments a list and a number <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" /> and returns the <img src="fig/math/3b6c232f796b2d291446b22cb38c933e.svg" class="math-inline" style="height: 0.892em; vertical-align: -0.010em;" alt="\( n^{\text{th}} \)" /> item of
 the list.  It is customary to number the elements of the list beginning with 0.
 The method for computing <code>list-ref</code> is the following:
 </p>
 <ul>
-<li> For <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>n</mi>
-    <mo>=</mo>
-    <mn>0</mn>
-  </mrow>
-</math>, <code>list-ref</code> should return the <code>car</code> of the list.
+<li> For <img src="fig/math/389ad77fe7e3ccf7e8e3c2f2b9b868d3.svg" class="math-inline" style="height: 0.652em; vertical-align: -0.009em;" alt="\( {n = 0} \)" />, <code>list-ref</code> should return the <code>car</code> of the list.
 
-</li><li> Otherwise, <code>list-ref</code> should return  the <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mo stretchy="false">(</mo>
-    <mi>n</mi>
-    <mo>−<!-- − --></mo>
-    <mn>1</mn>
-    <mo stretchy="false">)</mo>
-  </mrow>
-</math>-st item of the
+</li><li> Otherwise, <code>list-ref</code> should return  the <img src="fig/math/716ccfff42bc65c2085808762d3f3244.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.189em;" alt="\( {(n - 1)} \)" />-st item of the
 <code>cdr</code> of the list.
 
 </li></ul>
@@ -610,7 +587,7 @@ this structure in terms of pairs.
 </p>
 <figure class="float">
 <a id="Figure-2_002e5"></a>
-<object style="width: 51.89ex; height: 25.73ex;" data="fig/chap2/Fig2.5e.std.svg" type="image/svg+xml">SVG</object>
+<img style="width: 51.89ex; max-width: 100%; display: inline;" src="fig/chap2/Fig2.5e.std.svg" />
 
 <figcaption class="float-caption">
 <p><strong>Figure 2.5:</strong> Structure formed by <code>(cons (list 1 2) (list 3 4))</code>.</p>
@@ -625,7 +602,7 @@ shows the structure in <a href="#Figure-2_002e5">Figure 2.5</a> viewed as a tree
 </p>
 <figure class="float">
 <a id="Figure-2_002e6"></a>
-<object style="width: 15.02ex; height: 17.01ex;" data="fig/chap2/Fig2.6b.std.svg" type="image/svg+xml">SVG</object>
+<img style="width: 15.02ex; max-width: 100%; display: inline;" src="fig/chap2/Fig2.6b.std.svg" />
 
 <figcaption class="float-caption">
 <p><strong>Figure 2.6:</strong> The list structure in <a href="#Figure-2_002e5">Figure 2.5</a> viewed as a tree.</p>
@@ -951,19 +928,8 @@ argument and computes the sum of the squares of the leaves that are odd:
                   </span><span class="opn">(</span><span class="kwd">cdr</span><span class="pln"> tree</span><span class="clo">))))))</span></pre></div>
 
 <p>On the surface, this procedure is very different from the following one, which
-constructs a list of all the even Fibonacci numbers <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mtext>Fib</mtext>
-    <mo stretchy="false">(</mo>
-    <mi>k</mi>
-    <mo stretchy="false">)</mo>
-  </mrow>
-</math>, where
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>k</mi>
-</math> is less than or equal to a given integer <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math>:
+constructs a list of all the even Fibonacci numbers <img src="fig/math/61b26af655b8ac297245df11a37ba011.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.189em;" alt="\( {\text{Fib}(k)} \)" />, where
+<img src="fig/math/83054be07bea98353c7cda3290903d5e.svg" class="math-inline" style="height: 0.703em; vertical-align: -0.009em;" alt="\( k \)" /> is less than or equal to a given integer <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" />:
 </p>
 <div class="lisp">
 <pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">define</span><span class="pln"> </span><span class="opn">(</span><span class="pln">even-fibs n</span><span class="clo">)</span><span class="pln">
@@ -994,9 +960,7 @@ similarity.  The first program
 <p>The second program
 </p>
 <ul>
-<li> enumerates the integers from 0 to <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math>;
+<li> enumerates the integers from 0 to <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" />;
 
 </li><li> computes the Fibonacci number for each integer;
 
@@ -1025,7 +989,7 @@ elements using <code>+</code>, starting from an initial 0.  The plan for
 </p>
 <figure class="float">
 <a id="Figure-2_002e7"></a>
-<object style="width: 57.93ex; height: 16.23ex;" data="fig/chap2/Fig2.7e.std.svg" type="image/svg+xml">SVG</object> 
+<img style="width: 57.93ex; max-width: 100%; display: inline;" src="fig/chap2/Fig2.7e.std.svg" /> 
 
 <figcaption class="float-caption">
 <p><strong>Figure 2.7:</strong> The signal-flow plans for the procedures <code>sum-odd-squares</code> (top) and <code>even-fibs</code> (bottom) reveal the commonality between the two programs.</p>
@@ -1144,9 +1108,7 @@ square each element, and sum the results:
         </span><span class="opn">(</span><span class="pln">filter odd?
                 </span><span class="opn">(</span><span class="pln">enumerate-tree tree</span><span class="clo">)))))</span></pre></div>
 
-<p>For <code>even-fibs</code>, we enumerate the integers from 0 to <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math>, generate the
+<p>For <code>even-fibs</code>, we enumerate the integers from 0 to <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" />, generate the
 Fibonacci number for each of these integers, filter the resulting sequence to
 keep only the even elements, and accumulate the results into a list:
 </p>
@@ -1172,13 +1134,7 @@ standardized families of filters and transducers.  Similarly, sequence
 operations provide a library of standard program elements that we can mix and
 match.  For instance, we can reuse pieces from the <code>sum-odd-squares</code> and
 <code>even-fibs</code> procedures in a program that constructs a list of the squares
-of the first <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>n</mi>
-    <mo>+</mo>
-    <mn>1</mn>
-  </mrow>
-</math> Fibonacci numbers:
+of the first <img src="fig/math/c09177a287583da634d642d340852664.svg" class="math-inline" style="height: 0.652em; vertical-align: -0.009em;" alt="\( {n + 1} \)" /> Fibonacci numbers:
 </p>
 <div class="lisp">
 <pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">define</span><span class="pln"> </span><span class="opn">(</span><span class="pln">list-fib-squares n</span><span class="clo">)</span><span class="pln">
@@ -1257,146 +1213,21 @@ operations as accumulations:
 </blockquote>
 
 <blockquote>
-<p><strong><a id="Exercise-2_002e34"></a>Exercise 2.34:</strong> Evaluating a polynomial in <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>x</mi>
-</math>
-at a given value of <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>x</mi>
-</math> can be formulated as an accumulation.  We evaluate
+<p><strong><a id="Exercise-2_002e34"></a>Exercise 2.34:</strong> Evaluating a polynomial in <img src="fig/math/2f4b15565d0a1018e90c3e1b30b76acc.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( x \)" />
+at a given value of <img src="fig/math/2f4b15565d0a1018e90c3e1b30b76acc.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( x \)" /> can be formulated as an accumulation.  We evaluate
 the polynomial
-<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
-  <mrow class="MJX-TeXAtom-ORD">
-    <msub>
-      <mi>a</mi>
-      <mi>n</mi>
-    </msub>
-    <msup>
-      <mi>x</mi>
-      <mi>n</mi>
-    </msup>
-  </mrow>
-  <mo>+</mo>
-  <mrow class="MJX-TeXAtom-ORD">
-    <msub>
-      <mi>a</mi>
-      <mrow class="MJX-TeXAtom-ORD">
-        <mi>n</mi>
-        <mo>−<!-- − --></mo>
-        <mn>1</mn>
-      </mrow>
-    </msub>
-    <msup>
-      <mi>x</mi>
-      <mrow class="MJX-TeXAtom-ORD">
-        <mi>n</mi>
-        <mo>−<!-- − --></mo>
-        <mn>1</mn>
-      </mrow>
-    </msup>
-  </mrow>
-  <mo>+</mo>
-  <mo>⋯<!-- ⋯ --></mo>
-  <mo>+</mo>
-  <mrow class="MJX-TeXAtom-ORD">
-    <msub>
-      <mi>a</mi>
-      <mn>1</mn>
-    </msub>
-    <mi>x</mi>
-  </mrow>
-  <mo>+</mo>
-  <msub>
-    <mi>a</mi>
-    <mn>0</mn>
-  </msub>
-</math>
+<img src="fig/math/f233554baeb2d74d8e32fea8ccbb94d8.svg" class="math-display" style="height: 1.052em;" alt="\[ % :35:&amp;#10;  {a_n x^n} + {a_{n-1} x^{n-1}} + \dots + {a_1 x} + a_0  \]" />
 using a well-known algorithm called <a id="index-Horner_0027s-rule"></a>
 <em>Horner’s rule</em>, which structures
 the computation as
-<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mo stretchy="false">(</mo>
-    <mo>…<!-- … --></mo>
-    <mo stretchy="false">(</mo>
-    <msub>
-      <mi>a</mi>
-      <mi>n</mi>
-    </msub>
-    <mi>x</mi>
-  </mrow>
-  <mo>+</mo>
-  <mrow class="MJX-TeXAtom-ORD">
-    <msub>
-      <mi>a</mi>
-      <mrow class="MJX-TeXAtom-ORD">
-        <mi>n</mi>
-        <mo>−<!-- − --></mo>
-        <mn>1</mn>
-      </mrow>
-    </msub>
-    <mo stretchy="false">)</mo>
-    <mi>x</mi>
-  </mrow>
-  <mo>+</mo>
-  <mo>⋯<!-- ⋯ --></mo>
-  <mo>+</mo>
-  <mrow class="MJX-TeXAtom-ORD">
-    <msub>
-      <mi>a</mi>
-      <mn>1</mn>
-    </msub>
-    <mo stretchy="false">)</mo>
-    <mi>x</mi>
-  </mrow>
-  <mo>+</mo>
-  <mrow class="MJX-TeXAtom-ORD">
-    <msub>
-      <mi>a</mi>
-      <mn>0</mn>
-    </msub>
-    <mo>.</mo>
-  </mrow>
-</math>
-In other words, we start with <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <msub>
-    <mi>a</mi>
-    <mi>n</mi>
-  </msub>
-</math>, multiply by <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>x</mi>
-</math>, add
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <msub>
-    <mi>a</mi>
-    <mrow class="MJX-TeXAtom-ORD">
-      <mi>n</mi>
-      <mo>−<!-- − --></mo>
-      <mn>1</mn>
-    </mrow>
-  </msub>
-</math>, multiply by <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>x</mi>
-</math>, and so on, until we reach
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <msub>
-    <mi>a</mi>
-    <mn>0</mn>
-  </msub>
-</math>.<a class="footnote_link" id="DOCF82" href="#FOOT82"><sup>82</sup></a>
+<img src="fig/math/8d309afa88b300b083549ef45458bac9.svg" class="math-display" style="height: 0.901em;" alt="\[ % :36:&amp;#10;  {(\dots (a_n x} + {a_{n-1}) x} + \dots + {a_1) x} + {a_0.}  \]" />
+In other words, we start with <img src="fig/math/20cf4f99c1ef8e5865e5e7c0fa729fb5.svg" class="math-inline" style="height: 0.591em; vertical-align: -0.155em;" alt="\( a_n \)" />, multiply by <img src="fig/math/2f4b15565d0a1018e90c3e1b30b76acc.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( x \)" />, add
+<img src="fig/math/694ae571fdc1923aa55adcf066f48524.svg" class="math-inline" style="height: 0.591em; vertical-align: -0.155em;" alt="\( a_{n-1} \)" />, multiply by <img src="fig/math/2f4b15565d0a1018e90c3e1b30b76acc.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( x \)" />, and so on, until we reach
+<img src="fig/math/a165fae8b3379b5b86caf620688ab9d6.svg" class="math-inline" style="height: 0.584em; vertical-align: -0.147em;" alt="\( a_0 \)" />.<a class="footnote_link" id="DOCF82" href="#FOOT82"><sup>82</sup></a>
 </p>
 <p>Fill in the following template to produce a procedure that evaluates a
 polynomial using Horner’s rule.  Assume that the coefficients of the polynomial
-are arranged in a sequence, from <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <msub>
-    <mi>a</mi>
-    <mn>0</mn>
-  </msub>
-</math> through <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <msub>
-    <mi>a</mi>
-    <mi>n</mi>
-  </msub>
-</math>.
+are arranged in a sequence, from <img src="fig/math/a165fae8b3379b5b86caf620688ab9d6.svg" class="math-inline" style="height: 0.584em; vertical-align: -0.147em;" alt="\( a_0 \)" /> through <img src="fig/math/20cf4f99c1ef8e5865e5e7c0fa729fb5.svg" class="math-inline" style="height: 0.591em; vertical-align: -0.155em;" alt="\( a_n \)" />.
 </p>
 <div class="lisp">
 <pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">define</span><span class="pln"> 
@@ -1407,33 +1238,7 @@ are arranged in a sequence, from <math xmlns="http://www.w3.org/1998/Math/MathML
    </span><span class="lit">0</span><span class="pln">
    coefficient-sequence</span><span class="clo">))</span></pre></div>
 
-<p>For example, to compute <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mn>1</mn>
-    <mo>+</mo>
-    <mn>3</mn>
-    <mi>x</mi>
-  </mrow>
-  <mo>+</mo>
-  <mrow class="MJX-TeXAtom-ORD">
-    <mn>5</mn>
-    <msup>
-      <mi>x</mi>
-      <mn>3</mn>
-    </msup>
-    <mo>+</mo>
-    <msup>
-      <mi>x</mi>
-      <mn>5</mn>
-    </msup>
-  </mrow>
-</math> at <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>x</mi>
-    <mo>=</mo>
-    <mn>2</mn>
-  </mrow>
-</math> you
+<p>For example, to compute <img src="fig/math/b1dba83b4e6a918b21907ffbe9dfbf54.svg" class="math-inline" style="height: 0.854em; vertical-align: -0.010em;" alt="\( {1 + 3x} + {5x^3 + x^5} \)" /> at <img src="fig/math/f5df4a3102e8f3fae66f277cdf8d2d8e.svg" class="math-inline" style="height: 0.652em; vertical-align: -0.009em;" alt="\( {x = 2} \)" /> you
 would evaluate
 </p>
 <div class="lisp">
@@ -1471,234 +1276,15 @@ of <code>accumulate-n</code>:
 
 <blockquote>
 <p><strong><a id="Exercise-2_002e37"></a>Exercise 2.37:</strong>
-Suppose we represent vectors <b>v</b> = <math xmlns="http://www.w3.org/1998/Math/MathML">
-<mrow class="MJX-TeXAtom-ORD">
-  <mo stretchy="false">(</mo>
-  <msub>
-    <mi>v</mi>
-    <mi>i</mi>
-  </msub>
-  <mo stretchy="false">)</mo>
-</mrow>
-</math> as sequences of numbers, and
-matrices <b>m</b> = <math xmlns="http://www.w3.org/1998/Math/MathML">
-<mrow class="MJX-TeXAtom-ORD">
-  <mo stretchy="false">(</mo>
-  <msub>
-    <mi>m</mi>
-    <mrow class="MJX-TeXAtom-ORD">
-      <mi>i</mi>
-      <mi>j</mi>
-    </mrow>
-  </msub>
-  <mo stretchy="false">)</mo>
-</mrow>
-</math> as sequences of vectors (the rows of the
+Suppose we represent vectors <b>v</b> = <img src="fig/math/18d8348b7f8b88cbbc674ec5770962cb.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.189em;" alt="\( {(v_i)} \)" /> as sequences of numbers, and
+matrices <b>m</b> = <img src="fig/math/3e6b3636ce6b7dd5538a68cf587cac73.svg" class="math-inline" style="height: 0.992em; vertical-align: -0.283em;" alt="\( {(m_{ij})} \)" /> as sequences of vectors (the rows of the
 matrix).  For example, the matrix
-<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
-  <mrow>
-    <mo>(</mo>
-    <mtable rowspacing="4pt" columnspacing="1em">
-      <mtr>
-        <mtd>
-          <mn>1</mn>
-        </mtd>
-        <mtd>
-          <mn>2</mn>
-        </mtd>
-        <mtd>
-          <mn>3</mn>
-        </mtd>
-        <mtd>
-          <mn>4</mn>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mn>4</mn>
-        </mtd>
-        <mtd>
-          <mn>5</mn>
-        </mtd>
-        <mtd>
-          <mn>6</mn>
-        </mtd>
-        <mtd>
-          <mn>6</mn>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mn>6</mn>
-        </mtd>
-        <mtd>
-          <mn>7</mn>
-        </mtd>
-        <mtd>
-          <mn>8</mn>
-        </mtd>
-        <mtd>
-          <mn>9</mn>
-        </mtd>
-      </mtr>
-    </mtable>
-    <mo>)</mo>
-  </mrow>
-</math>
+<img src="fig/math/0b8a63a512cad11ceaa4e470230a3775.svg" class="math-display" style="height: 3.321em;" alt="\[ % :37:&amp;#10;   \left(\matrix{ 1 &amp;amp; 2 &amp;amp; 3 &amp;amp; 4 \cr   4 &amp;amp; 5 &amp;amp; 6 &amp;amp; 6 \cr   6 &amp;amp; 7 &amp;amp; 8 &amp;amp; 9 \cr }\right)  \]" />
 is represented as the sequence <code>((1 2 3 4) (4 5 6 6) (6 7 8 9))</code>.  With
 this representation, we can use sequence operations to concisely express the
 basic matrix and vector operations.  These operations (which are described in
 any book on matrix algebra) are the following:
-<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
-<mtable columnalign="right left" rowspacing=".5em" columnspacing="thickmathspace">
-  <mtr>
-    <mtd>
-      <mtext>(dot-product v w)</mtext>
-    </mtd>
-    <mtd>
-      <mtext>returns the sum</mtext>
-      <mspace width="thickmathspace"/>
-      <msub>
-        <mi mathvariant="normal">Σ<!-- Σ --></mi>
-        <mi>i</mi>
-      </msub>
-      <msub>
-        <mi>v</mi>
-        <mi>i</mi>
-      </msub>
-      <msub>
-        <mi>w</mi>
-        <mi>i</mi>
-      </msub>
-      <mo>;</mo>
-    </mtd>
-  </mtr>
-  <mtr>
-    <mtd>
-      <mtext>(matrix-*-vector m v)</mtext>
-    </mtd>
-    <mtd>
-      <mtext>returns the vector</mtext>
-      <mspace width="thickmathspace"/>
-      <mrow class="MJX-TeXAtom-ORD">
-        <mi mathvariant="bold">t</mi>
-      </mrow>
-      <mo>,</mo>
-    </mtd>
-  </mtr>
-  <mtr>
-    <mtd/>
-    <mtd>
-      <mtext>where</mtext>
-      <mspace width="thickmathspace"/>
-      <msub>
-        <mi>t</mi>
-        <mi>i</mi>
-      </msub>
-      <mo>=</mo>
-      <msub>
-        <mi mathvariant="normal">Σ<!-- Σ --></mi>
-        <mi>j</mi>
-      </msub>
-      <msub>
-        <mi>m</mi>
-        <mrow class="MJX-TeXAtom-ORD">
-          <mi>i</mi>
-          <mi>j</mi>
-        </mrow>
-      </msub>
-      <msub>
-        <mi>v</mi>
-        <mi>j</mi>
-      </msub>
-      <mo>;</mo>
-    </mtd>
-  </mtr>
-  <mtr>
-    <mtd>
-      <mtext>(matrix-*-matrix m n)</mtext>
-    </mtd>
-    <mtd>
-      <mtext>returns the matrix</mtext>
-      <mspace width="thickmathspace"/>
-      <mrow class="MJX-TeXAtom-ORD">
-        <mi mathvariant="bold">p</mi>
-      </mrow>
-      <mo>,</mo>
-    </mtd>
-  </mtr>
-  <mtr>
-    <mtd/>
-    <mtd>
-      <mtext>where</mtext>
-      <mspace width="thickmathspace"/>
-      <msub>
-        <mi>p</mi>
-        <mrow class="MJX-TeXAtom-ORD">
-          <mi>i</mi>
-          <mi>j</mi>
-        </mrow>
-      </msub>
-      <mo>=</mo>
-      <msub>
-        <mi mathvariant="normal">Σ<!-- Σ --></mi>
-        <mi>k</mi>
-      </msub>
-      <msub>
-        <mi>m</mi>
-        <mrow class="MJX-TeXAtom-ORD">
-          <mi>i</mi>
-          <mi>k</mi>
-        </mrow>
-      </msub>
-      <msub>
-        <mi>n</mi>
-        <mrow class="MJX-TeXAtom-ORD">
-          <mi>k</mi>
-          <mi>j</mi>
-        </mrow>
-      </msub>
-      <mo>;</mo>
-    </mtd>
-  </mtr>
-  <mtr>
-    <mtd>
-      <mtext>(transpose m)</mtext>
-    </mtd>
-    <mtd>
-      <mtext>returns the matrix</mtext>
-      <mspace width="thickmathspace"/>
-      <mrow class="MJX-TeXAtom-ORD">
-        <mi mathvariant="bold">n</mi>
-      </mrow>
-      <mo>,</mo>
-    </mtd>
-  </mtr>
-  <mtr>
-    <mtd/>
-    <mtd>
-      <mtext>where</mtext>
-      <mspace width="thickmathspace"/>
-      <msub>
-        <mi>n</mi>
-        <mrow class="MJX-TeXAtom-ORD">
-          <mi>i</mi>
-          <mi>j</mi>
-        </mrow>
-      </msub>
-      <mo>=</mo>
-      <msub>
-        <mi>m</mi>
-        <mrow class="MJX-TeXAtom-ORD">
-          <mi>j</mi>
-          <mi>i</mi>
-        </mrow>
-      </msub>
-      <mo>.</mo>
-    </mtd>
-  </mtr>
-</mtable>
-</math>
+<img src="fig/math/dd6f7feafc58996f7ff52c241e1aced8.svg" class="math-display" style="height: 9.790em;" alt="\[ % :38:&amp;#10;   \eqalign{   \text{(dot-product v w)}  &amp;amp; \text{returns the sum}\;\Sigma_i v_i w_i; \cr  \text{(matrix-*-vector m v)}  &amp;amp; \text{returns the vector}\;{\bf t}, \cr   &amp;amp; \text{where}\; t_i = \Sigma_j m_{ij} v_j; \cr  \text{(matrix-*-matrix m n)}  &amp;amp; \text{returns the matrix}\;{\bf p}, \cr   &amp;amp; \text{where}\; p_{ij} = \Sigma_k m_{ik} n_{kj}; \cr  \text{(transpose m)}   &amp;amp; \text{returns the matrix}\;{\bf n}, \cr   &amp;amp; \text{where}\; n_{ij} = m_{ji}. \cr }  \]" />
 We can define the dot product as<a class="footnote_link" id="DOCF83" href="#FOOT83"><sup>83</sup></a>
 </p>
 <div class="lisp">
@@ -1769,187 +1355,24 @@ definitions of <code>reverse</code> (<a href="#Exercise-2_002e18">Exercise 2.18<
 <h5 class="subsubheading">Nested Mappings</h5>
 
 <p>We can extend the sequence paradigm to include many computations that are
-commonly expressed using nested loops.<a class="footnote_link" id="DOCF84" href="#FOOT84"><sup>84</sup></a> Consider this problem: Given a positive integer <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math>, find all
-ordered pairs of distinct positive integers <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>i</mi>
-</math> and <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>j</mi>
-</math>, where 
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mn>1</mn>
-    <mo>≤<!-- ≤ --></mo>
-    <mi>j</mi>
-  </mrow>
-  <mo>&lt;</mo>
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>i</mi>
-    <mo>≤<!-- ≤ --></mo>
-    <mi>n</mi>
-  </mrow>
-</math>, such that <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>i</mi>
-    <mo>+</mo>
-    <mi>j</mi>
-  </mrow>
-</math> is prime.  For example, if <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math> is 6,
+commonly expressed using nested loops.<a class="footnote_link" id="DOCF84" href="#FOOT84"><sup>84</sup></a> Consider this problem: Given a positive integer <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" />, find all
+ordered pairs of distinct positive integers <img src="fig/math/aa5dfb3bb62785181553d83502ccb9ec.svg" class="math-inline" style="height: 0.623em; vertical-align: -0.010em;" alt="\( i \)" /> and <img src="fig/math/c43c70f4cf72247cdeb1dd81fb4f1ee0.svg" class="math-inline" style="height: 0.808em; vertical-align: -0.195em;" alt="\( j \)" />, where 
+<img src="fig/math/910030811dfa4c10fe43f705c3bf6271.svg" class="math-inline" style="height: 0.837em; vertical-align: -0.194em;" alt="\( {1 \le j} &amp;lt; {i \le n} \)" />, such that <img src="fig/math/c6ad57c179a45a768d358dff2d5b5da3.svg" class="math-inline" style="height: 0.808em; vertical-align: -0.195em;" alt="\( {i + j} \)" /> is prime.  For example, if <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" /> is 6,
 then the pairs are the following:
-<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
-  <mtable columnalign="center center center center center center center center" rowspacing="4pt" columnspacing="1em" rowlines="none solid" columnlines="solid none none none none none none">
-    <mtr>
-      <mtd>
-        <mi>i</mi>
-      </mtd>
-      <mtd>
-        <mn>2</mn>
-      </mtd>
-      <mtd>
-        <mn>3</mn>
-      </mtd>
-      <mtd>
-        <mn>4</mn>
-      </mtd>
-      <mtd>
-        <mn>4</mn>
-      </mtd>
-      <mtd>
-        <mn>5</mn>
-      </mtd>
-      <mtd>
-        <mn>6</mn>
-      </mtd>
-      <mtd>
-        <mn>6</mn>
-      </mtd>
-    </mtr>
-    <mtr>
-      <mtd>
-        <mi>j</mi>
-      </mtd>
-      <mtd>
-        <mn>1</mn>
-      </mtd>
-      <mtd>
-        <mn>2</mn>
-      </mtd>
-      <mtd>
-        <mn>1</mn>
-      </mtd>
-      <mtd>
-        <mn>3</mn>
-      </mtd>
-      <mtd>
-        <mn>2</mn>
-      </mtd>
-      <mtd>
-        <mn>1</mn>
-      </mtd>
-      <mtd>
-        <mn>5</mn>
-      </mtd>
-    </mtr>
-    <mtr>
-      <mtd>
-        <mi>i</mi>
-        <mo>+</mo>
-        <mi>j</mi>
-      </mtd>
-      <mtd>
-        <mn>3</mn>
-      </mtd>
-      <mtd>
-        <mn>5</mn>
-      </mtd>
-      <mtd>
-        <mn>5</mn>
-      </mtd>
-      <mtd>
-        <mn>7</mn>
-      </mtd>
-      <mtd>
-        <mn>7</mn>
-      </mtd>
-      <mtd>
-        <mn>7</mn>
-      </mtd>
-      <mtd>
-        <mn>11</mn>
-      </mtd>
-    </mtr>
-  </mtable>
-</math>
+<img src="fig/math/5123e7fa2a114eb71700fd1ba1fba6ea.svg" class="math-display" style="height: 3.658em;" alt="\[ % :39:&amp;#10;  \begin{array}{c|ccccccc} i  &amp;amp; 2 &amp;amp; 3 &amp;amp; 4 &amp;amp; 4 &amp;amp; 5 &amp;amp; 6 &amp;amp; 6 \\ j  &amp;amp; 1 &amp;amp; 2 &amp;amp; 1 &amp;amp; 3 &amp;amp; 2 &amp;amp; 1 &amp;amp; 5 \\ \hline i + j &amp;amp; 3 &amp;amp; 5 &amp;amp; 5 &amp;amp; 7 &amp;amp; 7 &amp;amp; 7 &amp;amp; 11  \end{array} \]" />
 A natural way to organize this computation is to generate the sequence of all
-ordered pairs of positive integers less than or equal to <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math>, filter to
-select those pairs whose sum is prime, and then, for each pair <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mo stretchy="false">(</mo>
-    <mi>i</mi>
-    <mo>,</mo>
-    <mi>j</mi>
-    <mo stretchy="false">)</mo>
-  </mrow>
-</math>
-that passes through the filter, produce the triple <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mo stretchy="false">(</mo>
-    <mi>i</mi>
-    <mo>,</mo>
-    <mi>j</mi>
-    <mo>,</mo>
-    <mi>i</mi>
-    <mo>+</mo>
-    <mi>j</mi>
-    <mo stretchy="false">)</mo>
-  </mrow>
-</math>.
+ordered pairs of positive integers less than or equal to <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" />, filter to
+select those pairs whose sum is prime, and then, for each pair <img src="fig/math/b3e51b500a677738d763b9243179a091.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.189em;" alt="\( {(i, j)} \)" />
+that passes through the filter, produce the triple <img src="fig/math/9fc1a15363c3d64c445b05d56b04a209.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.189em;" alt="\( {(i, j, i + j)} \)" />.
 </p>
-<p>Here is a way to generate the sequence of pairs: For each integer <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>i</mi>
-    <mo>≤<!-- ≤ --></mo>
-    <mi>n</mi>
-  </mrow>
-</math>, 
-enumerate the integers <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>j</mi>
-    <mo>&lt;</mo>
-    <mi>i</mi>
-  </mrow>
-</math>, and for each such <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>i</mi>
-</math> and <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>j</mi>
-</math>
-generate the pair <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mo stretchy="false">(</mo>
-    <mi>i</mi>
-    <mo>,</mo>
-    <mi>j</mi>
-    <mo stretchy="false">)</mo>
-  </mrow>
-</math>.  In terms of sequence operations, we map along
-the sequence <code>(enumerate-interval 1 n)</code>.  For each <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>i</mi>
-</math> in this sequence,
+<p>Here is a way to generate the sequence of pairs: For each integer <img src="fig/math/dd7bdb58a1917d1992d05d5166d957d2.svg" class="math-inline" style="height: 0.670em; vertical-align: -0.056em;" alt="\( {i \le n} \)" />, 
+enumerate the integers <img src="fig/math/0af5eba9335467e5b2c5012b18aa70e6.svg" class="math-inline" style="height: 0.808em; vertical-align: -0.195em;" alt="\( {j &amp;lt; i} \)" />, and for each such <img src="fig/math/aa5dfb3bb62785181553d83502ccb9ec.svg" class="math-inline" style="height: 0.623em; vertical-align: -0.010em;" alt="\( i \)" /> and <img src="fig/math/c43c70f4cf72247cdeb1dd81fb4f1ee0.svg" class="math-inline" style="height: 0.808em; vertical-align: -0.195em;" alt="\( j \)" />
+generate the pair <img src="fig/math/b3e51b500a677738d763b9243179a091.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.189em;" alt="\( {(i, j)} \)" />.  In terms of sequence operations, we map along
+the sequence <code>(enumerate-interval 1 n)</code>.  For each <img src="fig/math/aa5dfb3bb62785181553d83502ccb9ec.svg" class="math-inline" style="height: 0.623em; vertical-align: -0.010em;" alt="\( i \)" /> in this sequence,
 we map along the sequence <code>(enumerate-interval 1 (- i 1))</code>.  For each
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>j</mi>
-</math> in this latter sequence, we generate the pair <code>(list i j)</code>.  This
-gives us a sequence of pairs for each <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>i</mi>
-</math>.  Combining all the sequences for
-all the <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>i</mi>
-</math> (by accumulating with <code>append</code>) produces the required
+<img src="fig/math/c43c70f4cf72247cdeb1dd81fb4f1ee0.svg" class="math-inline" style="height: 0.808em; vertical-align: -0.195em;" alt="\( j \)" /> in this latter sequence, we generate the pair <code>(list i j)</code>.  This
+gives us a sequence of pairs for each <img src="fig/math/aa5dfb3bb62785181553d83502ccb9ec.svg" class="math-inline" style="height: 0.623em; vertical-align: -0.010em;" alt="\( i \)" />.  Combining all the sequences for
+all the <img src="fig/math/aa5dfb3bb62785181553d83502ccb9ec.svg" class="math-inline" style="height: 0.623em; vertical-align: -0.010em;" alt="\( i \)" /> (by accumulating with <code>append</code>) produces the required
 sequence of pairs:<a class="footnote_link" id="DOCF85" href="#FOOT85"><sup>85</sup></a>
 </p>
 <div class="lisp">
@@ -2005,116 +1428,15 @@ elements of the pair along with their sum:
          </span><span class="opn">(</span><span class="pln">enumerate-interval </span><span class="lit">1</span><span class="pln"> n</span><span class="clo">)))))</span></pre></div>
 
 <p>Nested mappings are also useful for sequences other than those that enumerate
-intervals.  Suppose we wish to generate all the permutations of a set <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>S</mi>
-    <mo>;</mo>
-  </mrow>
-</math>
+intervals.  Suppose we wish to generate all the permutations of a set <img src="fig/math/ff0f7a65a0df18f91149c8d3a1baadc9.svg" class="math-inline" style="height: 0.848em; vertical-align: -0.196em;" alt="\( {S;} \)" />
 that is, all the ways of ordering the items in the set.  For instance, the
-permutations of <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mo fence="false" stretchy="false">{</mo>
-    <mn>1</mn>
-    <mo>,</mo>
-    <mn>2</mn>
-    <mo>,</mo>
-    <mn>3</mn>
-    <mo fence="false" stretchy="false">}</mo>
-  </mrow>
-</math> are <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mo fence="false" stretchy="false">{</mo>
-    <mn>1</mn>
-    <mo>,</mo>
-    <mn>2</mn>
-    <mo>,</mo>
-    <mn>3</mn>
-    <mo fence="false" stretchy="false">}</mo>
-  </mrow>
-</math>, <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mo fence="false" stretchy="false">{</mo>
-    <mn>1</mn>
-    <mo>,</mo>
-    <mn>3</mn>
-    <mo>,</mo>
-    <mn>2</mn>
-    <mo fence="false" stretchy="false">}</mo>
-  </mrow>
-</math>, <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mo fence="false" stretchy="false">{</mo>
-    <mn>2</mn>
-    <mo>,</mo>
-    <mn>1</mn>
-    <mo>,</mo>
-    <mn>3</mn>
-    <mo fence="false" stretchy="false">}</mo>
-  </mrow>
-</math>, <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mo fence="false" stretchy="false">{</mo>
-    <mn>2</mn>
-    <mo>,</mo>
-    <mn>3</mn>
-    <mo>,</mo>
-    <mn>1</mn>
-    <mo fence="false" stretchy="false">}</mo>
-  </mrow>
-</math>,
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mo fence="false" stretchy="false">{</mo>
-    <mn>3</mn>
-    <mo>,</mo>
-    <mn>1</mn>
-    <mo>,</mo>
-    <mn>2</mn>
-    <mo fence="false" stretchy="false">}</mo>
-  </mrow>
-</math>, and <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mo fence="false" stretchy="false">{</mo>
-    <mn>3</mn>
-    <mo>,</mo>
-    <mn>2</mn>
-    <mo>,</mo>
-    <mn>1</mn>
-    <mo fence="false" stretchy="false">}</mo>
-  </mrow>
-</math>.  Here is a plan for generating the permutations of
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>S</mi>
-</math>: For each item <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>x</mi>
-</math> in <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>S</mi>
-</math>, recursively generate the sequence of
-permutations of <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>S</mi>
-    <mo>−<!-- − --></mo>
-    <mi>x</mi>
-  </mrow>
-</math>,<a class="footnote_link" id="DOCF86" href="#FOOT86"><sup>86</sup></a> and adjoin <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>x</mi>
-</math> to the front of each one.
-This yields, for each <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>x</mi>
-</math> in <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>S</mi>
-</math>, the sequence of permutations of <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>S</mi>
-</math>
-that begin with <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>x</mi>
-</math>.  Combining these sequences for all <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>x</mi>
-</math> gives all the
-permutations of <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>S</mi>
-</math>:<a class="footnote_link" id="DOCF87" href="#FOOT87"><sup>87</sup></a>
+permutations of <img src="fig/math/3ef8b6afff3820edd7ad6b58a3f9237a.svg" class="math-inline" style="height: 0.843em; vertical-align: -0.159em;" alt="\( {\{1, 2, 3\}} \)" /> are <img src="fig/math/3ef8b6afff3820edd7ad6b58a3f9237a.svg" class="math-inline" style="height: 0.843em; vertical-align: -0.159em;" alt="\( {\{1, 2, 3\}} \)" />, <img src="fig/math/5fcc2911dbf63336fd0902b81c9f1d58.svg" class="math-inline" style="height: 0.843em; vertical-align: -0.159em;" alt="\( {\{1, 3, 2\}} \)" />, <img src="fig/math/2a046a92ef338bc243dda180f9aef8d0.svg" class="math-inline" style="height: 0.843em; vertical-align: -0.159em;" alt="\( {\{2, 1, 3\}} \)" />, <img src="fig/math/08a3d55b3472f879b9fe6f81a03852d4.svg" class="math-inline" style="height: 0.843em; vertical-align: -0.159em;" alt="\( {\{2, 3, 1\}} \)" />,
+<img src="fig/math/9a4ecc49f988040f202e9b52740926b5.svg" class="math-inline" style="height: 0.843em; vertical-align: -0.159em;" alt="\( {\{3, 1, 2\}} \)" />, and <img src="fig/math/d4aa6f7a930b27b9108bb922589f68bb.svg" class="math-inline" style="height: 0.843em; vertical-align: -0.159em;" alt="\( {\{3, 2, 1\}} \)" />.  Here is a plan for generating the permutations of
+<img src="fig/math/fbd79508b7054f548dfce169e251714c.svg" class="math-inline" style="height: 0.664em; vertical-align: -0.013em;" alt="\( S \)" />: For each item <img src="fig/math/2f4b15565d0a1018e90c3e1b30b76acc.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( x \)" /> in <img src="fig/math/fbd79508b7054f548dfce169e251714c.svg" class="math-inline" style="height: 0.664em; vertical-align: -0.013em;" alt="\( S \)" />, recursively generate the sequence of
+permutations of <img src="fig/math/3a0530b2113624d685a0a7efceb27266.svg" class="math-inline" style="height: 0.664em; vertical-align: -0.013em;" alt="\( {S - x} \)" />,<a class="footnote_link" id="DOCF86" href="#FOOT86"><sup>86</sup></a> and adjoin <img src="fig/math/2f4b15565d0a1018e90c3e1b30b76acc.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( x \)" /> to the front of each one.
+This yields, for each <img src="fig/math/2f4b15565d0a1018e90c3e1b30b76acc.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( x \)" /> in <img src="fig/math/fbd79508b7054f548dfce169e251714c.svg" class="math-inline" style="height: 0.664em; vertical-align: -0.013em;" alt="\( S \)" />, the sequence of permutations of <img src="fig/math/fbd79508b7054f548dfce169e251714c.svg" class="math-inline" style="height: 0.664em; vertical-align: -0.013em;" alt="\( S \)" />
+that begin with <img src="fig/math/2f4b15565d0a1018e90c3e1b30b76acc.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( x \)" />.  Combining these sequences for all <img src="fig/math/2f4b15565d0a1018e90c3e1b30b76acc.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( x \)" /> gives all the
+permutations of <img src="fig/math/fbd79508b7054f548dfce169e251714c.svg" class="math-inline" style="height: 0.664em; vertical-align: -0.013em;" alt="\( S \)" />:<a class="footnote_link" id="DOCF87" href="#FOOT87"><sup>87</sup></a>
 </p>
 <div class="lisp">
 <pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">define</span><span class="pln"> </span><span class="opn">(</span><span class="pln">permutations s</span><span class="clo">)</span><span class="pln">
@@ -2128,12 +1450,8 @@ permutations of <math xmlns="http://www.w3.org/1998/Math/MathML">
                s</span><span class="clo">)))</span></pre></div>
 
 <p>Notice how this strategy reduces the problem of generating permutations of
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>S</mi>
-</math> to the problem of generating the permutations of sets with fewer elements
-than <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>S</mi>
-</math>.  In the terminal case, we work our way down to the empty list,
+<img src="fig/math/fbd79508b7054f548dfce169e251714c.svg" class="math-inline" style="height: 0.664em; vertical-align: -0.013em;" alt="\( S \)" /> to the problem of generating the permutations of sets with fewer elements
+than <img src="fig/math/fbd79508b7054f548dfce169e251714c.svg" class="math-inline" style="height: 0.664em; vertical-align: -0.013em;" alt="\( S \)" />.  In the terminal case, we work our way down to the empty list,
 which represents a set of no elements.  For this, we generate <code>(list
 nil)</code>, which is a sequence with one item, namely the set with no elements.  The
 <code>remove</code> procedure used in <code>permutations</code> returns all the items in a
@@ -2147,47 +1465,15 @@ filter:
 
 <blockquote>
 <p><strong><a id="Exercise-2_002e40"></a>Exercise 2.40:</strong> Define a procedure
-<code>unique-pairs</code> that, given an integer <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math>, generates the sequence of
-pairs <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mo stretchy="false">(</mo>
-    <mi>i</mi>
-    <mo>,</mo>
-    <mi>j</mi>
-    <mo stretchy="false">)</mo>
-  </mrow>
-</math> with <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mn>1</mn>
-    <mo>≤<!-- ≤ --></mo>
-    <mi>j</mi>
-  </mrow>
-  <mo>&lt;</mo>
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>i</mi>
-    <mo>≤<!-- ≤ --></mo>
-    <mi>n</mi>
-  </mrow>
-</math>.  Use <code>unique-pairs</code>
+<code>unique-pairs</code> that, given an integer <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" />, generates the sequence of
+pairs <img src="fig/math/b3e51b500a677738d763b9243179a091.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.189em;" alt="\( {(i, j)} \)" /> with <img src="fig/math/910030811dfa4c10fe43f705c3bf6271.svg" class="math-inline" style="height: 0.837em; vertical-align: -0.194em;" alt="\( {1 \le j} &amp;lt; {i \le n} \)" />.  Use <code>unique-pairs</code>
 to simplify the definition of <code>prime-sum-pairs</code> given above.
 </p></blockquote>
 
 <blockquote>
 <p><strong><a id="Exercise-2_002e41"></a>Exercise 2.41:</strong> Write a procedure to find all
-ordered triples of distinct positive integers <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>i</mi>
-</math>, <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>j</mi>
-</math>, and <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>k</mi>
-</math> less than
-or equal to a given integer <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math> that sum to a given integer <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>s</mi>
-</math>.
+ordered triples of distinct positive integers <img src="fig/math/aa5dfb3bb62785181553d83502ccb9ec.svg" class="math-inline" style="height: 0.623em; vertical-align: -0.010em;" alt="\( i \)" />, <img src="fig/math/c43c70f4cf72247cdeb1dd81fb4f1ee0.svg" class="math-inline" style="height: 0.808em; vertical-align: -0.195em;" alt="\( j \)" />, and <img src="fig/math/83054be07bea98353c7cda3290903d5e.svg" class="math-inline" style="height: 0.703em; vertical-align: -0.009em;" alt="\( k \)" /> less than
+or equal to a given integer <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" /> that sum to a given integer <img src="fig/math/f3b4e35eaf0ef77cfe4d3be58270d76f.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( s \)" />.
 </p></blockquote>
 
 <blockquote>
@@ -2196,63 +1482,20 @@ how to place eight queens on a chessboard so that no queen is in check from any
 other (i.e., no two queens are in the same row, column, or diagonal).  One
 possible solution is shown in <a href="#Figure-2_002e8">Figure 2.8</a>.  One way to solve the puzzle is
 to work across the board, placing a queen in each column.  Once we have placed
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>k</mi>
-    <mo>−<!-- − --></mo>
-    <mn>1</mn>
-  </mrow>
-</math> queens, we must place the <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <msup>
-    <mi>k</mi>
-    <mrow class="MJX-TeXAtom-ORD">
-      <mtext>th</mtext>
-    </mrow>
-  </msup>
-</math> queen in a position where it does
+<img src="fig/math/3e61c2251b318e45a947c72427a74c5e.svg" class="math-inline" style="height: 0.703em; vertical-align: -0.009em;" alt="\( {k - 1} \)" /> queens, we must place the <img src="fig/math/a99501773dcc30d9f89e17ff1338d1eb.svg" class="math-inline" style="height: 0.892em; vertical-align: -0.010em;" alt="\( k^{\text{th}} \)" /> queen in a position where it does
 not check any of the queens already on the board.  We can formulate this
 approach recursively: Assume that we have already generated the sequence of all
-possible ways to place <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>k</mi>
-    <mo>−<!-- − --></mo>
-    <mn>1</mn>
-  </mrow>
-</math> queens in the first <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>k</mi>
-    <mo>−<!-- − --></mo>
-    <mn>1</mn>
-  </mrow>
-</math> columns of the
+possible ways to place <img src="fig/math/3e61c2251b318e45a947c72427a74c5e.svg" class="math-inline" style="height: 0.703em; vertical-align: -0.009em;" alt="\( {k - 1} \)" /> queens in the first <img src="fig/math/3e61c2251b318e45a947c72427a74c5e.svg" class="math-inline" style="height: 0.703em; vertical-align: -0.009em;" alt="\( {k - 1} \)" /> columns of the
 board.  For each of these ways, generate an extended set of positions by
-placing a queen in each row of the <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <msup>
-    <mi>k</mi>
-    <mrow class="MJX-TeXAtom-ORD">
-      <mtext>th</mtext>
-    </mrow>
-  </msup>
-</math> column.  Now filter these, keeping
-only the positions for which the queen in the <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <msup>
-    <mi>k</mi>
-    <mrow class="MJX-TeXAtom-ORD">
-      <mtext>th</mtext>
-    </mrow>
-  </msup>
-</math> column is safe with
+placing a queen in each row of the <img src="fig/math/a99501773dcc30d9f89e17ff1338d1eb.svg" class="math-inline" style="height: 0.892em; vertical-align: -0.010em;" alt="\( k^{\text{th}} \)" /> column.  Now filter these, keeping
+only the positions for which the queen in the <img src="fig/math/a99501773dcc30d9f89e17ff1338d1eb.svg" class="math-inline" style="height: 0.892em; vertical-align: -0.010em;" alt="\( k^{\text{th}} \)" /> column is safe with
 respect to the other queens.  This produces the sequence of all ways to place
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>k</mi>
-</math> queens in the first <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>k</mi>
-</math> columns.  By continuing this process, we will
+<img src="fig/math/83054be07bea98353c7cda3290903d5e.svg" class="math-inline" style="height: 0.703em; vertical-align: -0.009em;" alt="\( k \)" /> queens in the first <img src="fig/math/83054be07bea98353c7cda3290903d5e.svg" class="math-inline" style="height: 0.703em; vertical-align: -0.009em;" alt="\( k \)" /> columns.  By continuing this process, we will
 produce not only one solution, but all solutions to the puzzle.
 </p>
 <figure class="float">
 <a id="Figure-2_002e8"></a>
-<object style="width: 33.41ex; height: 33.41ex;" data="fig/chap2/Fig2.8c.std.svg" type="image/svg+xml">SVG</object>
+<img style="width: 33.41ex; max-width: 100%; display: inline;" src="fig/chap2/Fig2.8c.std.svg" />
 
 <figcaption class="float-caption">
 <p><strong>Figure 2.8:</strong> A solution to the eight-queens puzzle.</p>
@@ -2261,20 +1504,10 @@ produce not only one solution, but all solutions to the puzzle.
 </blockquote>
 
 <p>We implement this solution as a procedure <code>queens</code>, which returns a
-sequence of all solutions to the problem of placing <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math> queens on an
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>n</mi>
-    <mo>×<!-- × --></mo>
-    <mi>n</mi>
-  </mrow>
-</math> chessboard.  <code>Queens</code> has an internal procedure
+sequence of all solutions to the problem of placing <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" /> queens on an
+<img src="fig/math/29a52a373f000dda65c89b5b5da1d8db.svg" class="math-inline" style="height: 0.519em; vertical-align: -0.008em;" alt="\( {n \times n} \)" /> chessboard.  <code>Queens</code> has an internal procedure
 <code>queen-cols</code> that returns the sequence of all ways to place queens in the
-first <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>k</mi>
-</math> columns of the board.
+first <img src="fig/math/83054be07bea98353c7cda3290903d5e.svg" class="math-inline" style="height: 0.703em; vertical-align: -0.009em;" alt="\( k \)" /> columns of the board.
 </p>
 <div class="lisp">
 <pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">define</span><span class="pln"> </span><span class="opn">(</span><span class="pln">queens board-size</span><span class="clo">)</span><span class="pln">
@@ -2297,40 +1530,14 @@ first <math xmlns="http://www.w3.org/1998/Math/MathML">
           </span><span class="opn">(</span><span class="pln">queen-cols </span><span class="opn">(</span><span class="pun">-</span><span class="pln"> k </span><span class="lit">1</span><span class="clo">))))))</span><span class="pln">
   </span><span class="opn">(</span><span class="pln">queen-cols board-size</span><span class="clo">))</span></pre></div>
 
-<p>In this procedure <code>rest-of-queens</code> is a way to place <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>k</mi>
-    <mo>−<!-- − --></mo>
-    <mn>1</mn>
-  </mrow>
-</math> queens in
-the first <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>k</mi>
-    <mo>−<!-- − --></mo>
-    <mn>1</mn>
-  </mrow>
-</math> columns, and <code>new-row</code> is a proposed row in which to
-place the queen for the <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <msup>
-    <mi>k</mi>
-    <mrow class="MJX-TeXAtom-ORD">
-      <mtext>th</mtext>
-    </mrow>
-  </msup>
-</math> column.  Complete the program by implementing
+<p>In this procedure <code>rest-of-queens</code> is a way to place <img src="fig/math/3e61c2251b318e45a947c72427a74c5e.svg" class="math-inline" style="height: 0.703em; vertical-align: -0.009em;" alt="\( {k - 1} \)" /> queens in
+the first <img src="fig/math/3e61c2251b318e45a947c72427a74c5e.svg" class="math-inline" style="height: 0.703em; vertical-align: -0.009em;" alt="\( {k - 1} \)" /> columns, and <code>new-row</code> is a proposed row in which to
+place the queen for the <img src="fig/math/a99501773dcc30d9f89e17ff1338d1eb.svg" class="math-inline" style="height: 0.892em; vertical-align: -0.010em;" alt="\( k^{\text{th}} \)" /> column.  Complete the program by implementing
 the representation for sets of board positions, including the procedure
 <code>adjoin-position</code>, which adjoins a new row-column position to a set of
 positions, and <code>empty-board</code>, which represents an empty set of positions.
 You must also write the procedure <code>safe?</code>, which determines for a set of
-positions, whether the queen in the <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <msup>
-    <mi>k</mi>
-    <mrow class="MJX-TeXAtom-ORD">
-      <mtext>th</mtext>
-    </mrow>
-  </msup>
-</math> column is safe with respect to the
+positions, whether the queen in the <img src="fig/math/a99501773dcc30d9f89e17ff1338d1eb.svg" class="math-inline" style="height: 0.892em; vertical-align: -0.010em;" alt="\( k^{\text{th}} \)" /> column is safe with respect to the
 others.  (Note that we need only check whether the new queen is safe—the
 other queens are already guaranteed safe with respect to each other.)
 </p>
@@ -2338,13 +1545,7 @@ other queens are already guaranteed safe with respect to each other.)
 <p><strong><a id="Exercise-2_002e43"></a>Exercise 2.43:</strong> Louis Reasoner is having a
 terrible time doing <a href="#Exercise-2_002e42">Exercise 2.42</a>.  His <code>queens</code> procedure seems to
 work, but it runs extremely slowly.  (Louis never does manage to wait long
-enough for it to solve even the <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mn>6</mn>
-    <mo>×<!-- × --></mo>
-    <mn>6</mn>
-  </mrow>
-</math> case.)  When Louis asks Eva Lu Ator for
+enough for it to solve even the <img src="fig/math/71f98c1ca6884f5e789d367c1f5b2002.svg" class="math-inline" style="height: 0.647em; vertical-align: -0.004em;" alt="\( {6\times6} \)" /> case.)  When Louis asks Eva Lu Ator for
 help, she points out that he has interchanged the order of the nested mappings
 in the <code>flatmap</code>, writing it as
 </p>
@@ -2359,9 +1560,7 @@ in the <code>flatmap</code>, writing it as
 
 <p>Explain why this interchange makes the program run slowly.  Estimate how long
 it will take Louis’s program to solve the eight-queens puzzle, assuming that
-the program in <a href="#Exercise-2_002e42">Exercise 2.42</a> solves the puzzle in time <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>T</mi>
-</math>.
+the program in <a href="#Exercise-2_002e42">Exercise 2.42</a> solves the puzzle in time <img src="fig/math/f06926aab0bc0e9f47ee2cd90f581bb2.svg" class="math-inline" style="height: 0.656em; vertical-align: -0.004em;" alt="\( T \)" />.
 </p></blockquote>
 
 <a id="g_t2_002e2_002e4"></a>
@@ -2381,7 +1580,7 @@ build arbitrarily complicated patterns.
 </p>
 <figure class="float">
 <a id="Figure-2_002e9"></a>
-<object style="width: 55.86ex; height: 31.34ex;" data="fig/chap2/Fig2.9.std.svg" type="image/svg+xml">SVG</object>
+<img style="width: 55.86ex; max-width: 100%; display: inline;" src="fig/chap2/Fig2.9.std.svg" />
 
 <figcaption class="float-caption">
 <p><strong>Figure 2.9:</strong> Designs generated with the picture language.</p>
@@ -2411,7 +1610,7 @@ frames as the <code>wave</code> images in figure 2.10.
 </p>
 <figure class="float">
 <a id="Figure-2_002e10"></a>
-<object style="width: 28.23ex; height: 30.22ex;" data="fig/chap2/Fig2.10.std.svg" type="image/svg+xml">SVG</object>
+<img style="width: 28.23ex; max-width: 100%; display: inline;" src="fig/chap2/Fig2.10.std.svg" />
 
 <figcaption class="float-caption">
 <p><strong>Figure 2.10:</strong> Images produced by the <code>wave</code> painter, with respect to four different frames.  The frames, shown with dotted lines, are not part of the images.</p>
@@ -2420,7 +1619,7 @@ frames as the <code>wave</code> images in figure 2.10.
 
 <figure class="float">
 <a id="Figure-2_002e11"></a>
-<object style="width: 28.23ex; height: 31.26ex;" data="fig/chap2/Fig2.11.std.svg" type="image/svg+xml">SVG</object>
+<img style="width: 28.23ex; max-width: 100%; display: inline;" src="fig/chap2/Fig2.11.std.svg" />
 
 <figcaption class="float-caption">
 <p><strong>Figure 2.11:</strong> Images of William Barton Rogers, founder and first president of <abbr>MIT</abbr>, painted with respect to the same four frames as in <a href="#Figure-2_002e10">Figure 2.10</a> (original image from Wikimedia Commons).</p>
@@ -2447,7 +1646,7 @@ original painter’s image left-to-right reversed.
 
 <figure class="float">
 <a id="Figure-2_002e12"></a>
-<object style="width: 47.06ex; height: 26.07ex;" data="fig/chap2/Fig2.12.std.svg" type="image/svg+xml">SVG</object>
+<img style="width: 47.06ex; max-width: 100%; display: inline;" src="fig/chap2/Fig2.12.std.svg" />
 
 <figcaption class="float-caption">
 <p><strong>Figure 2.12:</strong> Creating a complex figure, starting from the <code>wave</code> painter of <a href="#Figure-2_002e10">Figure 2.10</a>.</p>
@@ -2497,7 +1696,7 @@ and <a href="#Figure-2_002e14">Figure 2.14</a>:
 
 <figure class="float">
 <a id="Figure-2_002e13"></a>
-<object style="width: 52.15ex; height: 68.90ex;" data="fig/chap2/Fig2.13a.std.svg" type="image/svg+xml">SVG</object>
+<img style="width: 52.15ex; max-width: 100%; display: inline;" src="fig/chap2/Fig2.13a.std.svg" />
 
 <figcaption class="float-caption">
 <p><strong>Figure 2.13:</strong> Recursive plans for <code>right-split</code> and <code>corner-split</code>.</p>
@@ -2525,7 +1724,7 @@ right (see <a href="#Exercise-2_002e44">Exercise 2.44</a>, <a href="#Figure-2_00
 
 <figure class="float">
 <a id="Figure-2_002e14"></a>
-<object style="width: 52.93ex; height: 62.25ex;" data="fig/chap2/Fig2.14b.std.svg" type="image/svg+xml">SVG</object>
+<img style="width: 52.93ex; max-width: 100%; display: inline;" src="fig/chap2/Fig2.14b.std.svg" />
 
 <figcaption class="float-caption">
 <p><strong>Figure 2.14:</strong> The recursive operations <code>right-split</code> and <code>corner-split</code> applied to the painters <code>wave</code> and <code>rogers</code>.  Combining four <code>corner-split</code> figures produces symmetric <code>square-limit</code> designs as shown in <a href="#Figure-2_002e9">Figure 2.9</a>.</p>
@@ -2634,69 +1833,20 @@ corresponding selectors <code>origin-frame</code>, <code>edge1-frame</code>, and
 </p>
 <figure class="float">
 <a id="Figure-2_002e15"></a>
-<object style="width: 34.02ex; height: 32.03ex;" data="fig/chap2/Fig2.15a.std.svg" type="image/svg+xml">SVG</object>
+<img style="width: 34.02ex; max-width: 100%; display: inline;" src="fig/chap2/Fig2.15a.std.svg" />
 
 <figcaption class="float-caption">
 <p><strong>Figure 2.15:</strong> A frame is described by three vectors — an origin and two edges.</p>
 </figcaption>
 </figure>
 
-<p>We will use coordinates in the unit square <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mo stretchy="false">(</mo>
-    <mn>0</mn>
-    <mo>≤<!-- ≤ --></mo>
-    <mi>x</mi>
-    <mo>,</mo>
-    <mi>y</mi>
-    <mo>≤<!-- ≤ --></mo>
-    <mn>1</mn>
-    <mo stretchy="false">)</mo>
-  </mrow>
-</math> to specify
+<p>We will use coordinates in the unit square <img src="fig/math/469cdffc42d416883834efcd1e7372d9.svg" class="math-inline" style="height: 0.933em; vertical-align: -0.225em;" alt="\( {(0 \le x, y \le 1)} \)" /> to specify
 images.  With each frame, we associate a <a id="index-frame-coordinate-map"></a>
 <em>frame coordinate map</em>, which
 will be used to shift and scale images to fit the frame.  The map transforms
-the unit square into the frame by mapping the vector <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mrow class="MJX-TeXAtom-ORD">
-      <mi mathvariant="bold">v</mi>
-    </mrow>
-    <mo>=</mo>
-    <mo stretchy="false">(</mo>
-    <mi>x</mi>
-    <mo>,</mo>
-    <mi>y</mi>
-    <mo stretchy="false">)</mo>
-  </mrow>
-</math> to
+the unit square into the frame by mapping the vector <img src="fig/math/5b2dd43e5d23edf696f65e936c013594.svg" class="math-inline" style="height: 0.933em; vertical-align: -0.225em;" alt="\( {{\bf v} = (x, y)} \)" /> to
 the vector sum
-<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mtext>Origin(Frame)</mtext>
-  </mrow>
-  <mo>+</mo>
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>x</mi>
-    <mo>⋅<!-- ⋅ --></mo>
-    <msub>
-      <mtext>Edge</mtext>
-      <mn>1</mn>
-    </msub>
-    <mtext>(Frame)</mtext>
-  </mrow>
-  <mo>+</mo>
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>y</mi>
-    <mo>⋅<!-- ⋅ --></mo>
-    <msub>
-      <mtext>Edge</mtext>
-      <mn>2</mn>
-    </msub>
-    <mtext>(Frame)</mtext>
-    <mo>.</mo>
-  </mrow>
-</math>
+<img src="fig/math/19badc9c5d2ed08ac994b14f183705b2.svg" class="math-display" style="height: 0.996em;" alt="\[ % :40:&amp;#10;  {\text{Origin(Frame)}} + {x \cdot \text{Edge}_1\text{(Frame)}} + {y \cdot \text{Edge}_2\text{(Frame)}.} \]" />
 For example, (0, 0) is mapped to the origin of the frame, (1, 1) to the vertex
 diagonally opposite the origin, and (0.5, 0.5) to the center of the frame.  We
 can create a frame’s coordinate map with the following
@@ -2726,156 +1876,15 @@ square, the result vector will be in the frame.  For example,
 <pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="pln">origin-frame a-frame</span><span class="clo">)</span></pre></div>
 
 <blockquote>
-<p><strong><a id="Exercise-2_002e46"></a>Exercise 2.46:</strong> A two-dimensional vector <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi mathvariant="bold">v</mi>
-</math>
+<p><strong><a id="Exercise-2_002e46"></a>Exercise 2.46:</strong> A two-dimensional vector <img src="fig/math/4fdffbcbbd149a0335d6ff43dcfc56cd.svg" class="math-inline" style="height: 0.429em;" alt="\( \bf v \)" />
 running from the origin to a point can be represented as a pair consisting of
-an <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>x</mi>
-</math>-coordinate and a <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>y</mi>
-</math>-coordinate.  Implement a data abstraction for
+an <img src="fig/math/2f4b15565d0a1018e90c3e1b30b76acc.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( x \)" />-coordinate and a <img src="fig/math/05e4cdb2f26a4f66b68c167423907fea.svg" class="math-inline" style="height: 0.669em; vertical-align: -0.235em;" alt="\( y \)" />-coordinate.  Implement a data abstraction for
 vectors by giving a constructor <code>make-vect</code> and corresponding selectors
 <code>xcor-vect</code> and <code>ycor-vect</code>.  In terms of your selectors and
 constructor, implement procedures <code>add-vect</code>, <code>sub-vect</code>, and
 <code>scale-vect</code> that perform the operations vector addition, vector
 subtraction, and multiplying a vector by a scalar:
-<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
-  <mtable columnalign="right center left" rowspacing="3pt" columnspacing="thickmathspace">
-    <mtr>
-      <mtd>
-        <mo stretchy="false">(</mo>
-        <msub>
-          <mi>x</mi>
-          <mn>1</mn>
-        </msub>
-        <mo>,</mo>
-        <msub>
-          <mi>y</mi>
-          <mn>1</mn>
-        </msub>
-        <mo stretchy="false">)</mo>
-        <mo>+</mo>
-        <mo stretchy="false">(</mo>
-        <msub>
-          <mi>x</mi>
-          <mn>2</mn>
-        </msub>
-        <mo>,</mo>
-        <msub>
-          <mi>y</mi>
-          <mn>2</mn>
-        </msub>
-        <mo stretchy="false">)</mo>
-      </mtd>
-      <mtd>
-        <mo>=</mo>
-      </mtd>
-      <mtd>
-        <mo stretchy="false">(</mo>
-        <msub>
-          <mi>x</mi>
-          <mn>1</mn>
-        </msub>
-        <mo>+</mo>
-        <msub>
-          <mi>x</mi>
-          <mn>2</mn>
-        </msub>
-        <mo>,</mo>
-        <msub>
-          <mi>y</mi>
-          <mn>1</mn>
-        </msub>
-        <mo>+</mo>
-        <msub>
-          <mi>y</mi>
-          <mn>2</mn>
-        </msub>
-        <mo stretchy="false">)</mo>
-        <mo>,</mo>
-      </mtd>
-    </mtr>
-    <mtr>
-      <mtd>
-        <mo stretchy="false">(</mo>
-        <msub>
-          <mi>x</mi>
-          <mn>1</mn>
-        </msub>
-        <mo>,</mo>
-        <msub>
-          <mi>y</mi>
-          <mn>1</mn>
-        </msub>
-        <mo stretchy="false">)</mo>
-        <mo>−<!-- − --></mo>
-        <mo stretchy="false">(</mo>
-        <msub>
-          <mi>x</mi>
-          <mn>2</mn>
-        </msub>
-        <mo>,</mo>
-        <msub>
-          <mi>y</mi>
-          <mn>2</mn>
-        </msub>
-        <mo stretchy="false">)</mo>
-      </mtd>
-      <mtd>
-        <mo>=</mo>
-      </mtd>
-      <mtd>
-        <mo stretchy="false">(</mo>
-        <msub>
-          <mi>x</mi>
-          <mn>1</mn>
-        </msub>
-        <mo>−<!-- − --></mo>
-        <msub>
-          <mi>x</mi>
-          <mn>2</mn>
-        </msub>
-        <mo>,</mo>
-        <msub>
-          <mi>y</mi>
-          <mn>1</mn>
-        </msub>
-        <mo>−<!-- − --></mo>
-        <msub>
-          <mi>y</mi>
-          <mn>2</mn>
-        </msub>
-        <mo stretchy="false">)</mo>
-        <mo>,</mo>
-      </mtd>
-    </mtr>
-    <mtr>
-      <mtd>
-        <mi>s</mi>
-        <mo>⋅<!-- ⋅ --></mo>
-        <mo stretchy="false">(</mo>
-        <mi>x</mi>
-        <mo>,</mo>
-        <mi>y</mi>
-        <mo stretchy="false">)</mo>
-      </mtd>
-      <mtd>
-        <mo>=</mo>
-      </mtd>
-      <mtd>
-        <mo stretchy="false">(</mo>
-        <mi>s</mi>
-        <mi>x</mi>
-        <mo>,</mo>
-        <mi>s</mi>
-        <mi>y</mi>
-        <mo stretchy="false">)</mo>
-        <mo>.</mo>
-      </mtd>
-    </mtr>
-  </mtable>
-</math>
+<img src="fig/math/8098a8a4c2747e7c1a9e2d580ef84efa.svg" class="math-display" style="height: 3.913em;" alt="\[ % :41:&amp;#10;   \begin{eqnarray}  (x_1, y_1) + (x_2, y_2)  &amp;amp;=&amp;amp;  (x_1 + x_2, y_1 + y_2), \\  (x_1, y_1) - (x_2, y_2)  &amp;amp;=&amp;amp;  (x_1 - x_2, y_1 - y_2), \\  s \cdot (x, y)    &amp;amp;=&amp;amp;  (sx, sy). \end{eqnarray} \]" />
 </p></blockquote>
 
 <blockquote>
@@ -3227,11 +2236,7 @@ write
 <div id="FOOT78"><p><a class="footnote_backlink" href="#DOCF78"><sup>78</sup></a>
 <a id="Footnote-78"></a>Scheme standardly provides a <code>map</code> procedure that
 is more general than the one described here.  This more general <code>map</code>
-takes a procedure of <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math> arguments, together with <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math> lists, and applies
+takes a procedure of <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" /> arguments, together with <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" /> lists, and applies
 the procedure to all the first elements of the lists, all the second elements
 of the lists, and so on, returning a list of the results.  For example:
 </p>
@@ -3276,38 +2281,8 @@ According to <a href="References.xhtml#Knuth-1981">Knuth 1981</a>, this rule was
 W. G. Horner early in the nineteenth century, but the method was actually used
 by Newton over a hundred years earlier.  Horner’s rule evaluates the polynomial
 using fewer additions and multiplications than does the straightforward method
-of first computing <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <msub>
-      <mi>a</mi>
-      <mi>n</mi>
-    </msub>
-    <msup>
-      <mi>x</mi>
-      <mi>n</mi>
-    </msup>
-  </mrow>
-</math>, then adding
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <msub>
-      <mi>a</mi>
-      <mrow class="MJX-TeXAtom-ORD">
-        <mi>n</mi>
-        <mo>−<!-- − --></mo>
-        <mn>1</mn>
-      </mrow>
-    </msub>
-    <msup>
-      <mi>x</mi>
-      <mrow class="MJX-TeXAtom-ORD">
-        <mi>n</mi>
-        <mo>−<!-- − --></mo>
-        <mn>1</mn>
-      </mrow>
-    </msup>
-  </mrow>
-</math>, and so on.  In fact, it is possible to prove
+of first computing <img src="fig/math/46b3a713853586122abc3f5bb4039350.svg" class="math-inline" style="height: 0.838em; vertical-align: -0.156em;" alt="\( {a_n x^n} \)" />, then adding
+<img src="fig/math/e0ab66bb2abd9b61f5a1a1fe578abbab.svg" class="math-inline" style="height: 1.002em; vertical-align: -0.157em;" alt="\( {a_{n-1}x^{n-1}} \)" />, and so on.  In fact, it is possible to prove
 that any algorithm for evaluating arbitrary polynomials must use at least as
 many additions and multiplications as does Horner’s rule, and thus Horner’s
 rule is an optimal algorithm for polynomial evaluation.  This was proved (for
@@ -3331,30 +2306,12 @@ sequences.</p>
 </div>
 <div id="FOOT85"><p><a class="footnote_backlink" href="#DOCF85"><sup>85</sup></a>
 We’re representing a pair here as a list of two
-elements rather than as a Lisp pair.  Thus, the “pair” <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mo stretchy="false">(</mo>
-    <mi>i</mi>
-    <mo>,</mo>
-    <mi>j</mi>
-    <mo stretchy="false">)</mo>
-  </mrow>
-</math> is
+elements rather than as a Lisp pair.  Thus, the “pair” <img src="fig/math/b3e51b500a677738d763b9243179a091.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.189em;" alt="\( {(i, j)} \)" /> is
 represented as <code>(list i j)</code>, not <code>(cons i j)</code>.</p>
 </div>
 <div id="FOOT86"><p><a class="footnote_backlink" href="#DOCF86"><sup>86</sup></a>
-The set <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>S</mi>
-    <mo>−<!-- − --></mo>
-    <mi>x</mi>
-  </mrow>
-</math> is the set of all
-elements of <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>S</mi>
-</math>, excluding <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>x</mi>
-</math>.</p>
+The set <img src="fig/math/3a0530b2113624d685a0a7efceb27266.svg" class="math-inline" style="height: 0.664em; vertical-align: -0.013em;" alt="\( {S - x} \)" /> is the set of all
+elements of <img src="fig/math/fbd79508b7054f548dfce169e251714c.svg" class="math-inline" style="height: 0.664em; vertical-align: -0.013em;" alt="\( S \)" />, excluding <img src="fig/math/2f4b15565d0a1018e90c3e1b30b76acc.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( x \)" />.</p>
 </div>
 <div id="FOOT87"><p><a class="footnote_backlink" href="#DOCF87"><sup>87</sup></a>
 Semicolons in Scheme code are used to introduce

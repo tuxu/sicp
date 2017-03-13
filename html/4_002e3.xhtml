@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" xml:lang="en" lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" xml:lang="en" xmlns:xml="http://www.w3.org/XML/1998/namespace" lang="en">
 <!-- Created by GNU Texinfo 5.1, http://www.gnu.org/software/texinfo/ -->
 <head>
 <title>Structure and Interpretation of Computer Programs, 2e: 4.3</title>
@@ -128,19 +128,7 @@ The expression
 <div class="lisp">
 <pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="pln">amb ⟨</span><var><span class="pln">e</span><span class="pun">₁</span></var><span class="pln">⟩ ⟨</span><var><span class="pln">e</span><span class="pun">₂</span></var><span class="pln">⟩ </span><span class="roman"><span class="pun">…</span></span><span class="pln"> ⟨</span><var><span class="pln">e</span><span class="pun">ₙ</span></var><span class="pln">⟩</span><span class="clo">)</span></pre></div>
 
-<p>returns the value of one of the <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math> expressions <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mo stretchy="false">⟨</mo>
-    <mspace width="0.03em"/>
-    <msub>
-      <mi>e</mi>
-      <mi>i</mi>
-    </msub>
-    <mo stretchy="false">⟩</mo>
-  </mrow>
-</math>
+<p>returns the value of one of the <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" /> expressions <img src="fig/math/5de92899224b85bc53fbd9665867a41d.svg" class="math-inline" style="height: 0.843em; vertical-align: -0.159em;" alt="\( {⟨\kern0.03em e_i⟩} \)" />
 “ambiguously.”  For example, the expression
 </p>
 <div class="lisp">
@@ -179,9 +167,7 @@ returns either the first element of the list or an element chosen from the rest
 of the list.
 </p>
 <p>We can also express infinite ranges of choices.  The following procedure
-potentially returns any integer greater than or equal to some given <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math>:
+potentially returns any integer greater than or equal to some given <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" />:
 </p>
 <div class="lisp">
 <pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">define</span><span class="pln"> </span><span class="opn">(</span><span class="pln">an-integer-starting-from n</span><span class="clo">)</span><span class="pln">
@@ -190,9 +176,7 @@ potentially returns any integer greater than or equal to some given <math xmlns=
 <p>This is like the stream procedure <code>integers-starting-from</code> described in
 <a href="3_002e5.xhtml#g_t3_002e5_002e2">3.5.2</a>, but with an important difference: The stream procedure
 returns an object that represents the sequence of all integers beginning with
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math>, whereas the <code>amb</code> procedure returns a single integer.<a class="footnote_link" id="DOCF248" href="#FOOT248"><sup>248</sup></a>
+<img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" />, whereas the <code>amb</code> procedure returns a single integer.<a class="footnote_link" id="DOCF248" href="#FOOT248"><sup>248</sup></a>
 </p>
 <p>Abstractly, we can imagine that evaluating an <code>amb</code> expression causes time
 to split into branches, where the computation continues on each branch with one
@@ -282,41 +266,8 @@ try-again
 <p><strong><a id="Exercise-4_002e35"></a>Exercise 4.35:</strong> Write a procedure
 <code>an-integer-between</code> that returns an integer between two given bounds.
 This can be used to implement a procedure that finds Pythagorean triples, i.e.,
-triples of integers <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mo stretchy="false">(</mo>
-    <mi>i</mi>
-    <mo>,</mo>
-    <mi>j</mi>
-    <mo>,</mo>
-    <mi>k</mi>
-    <mo stretchy="false">)</mo>
-  </mrow>
-</math> between the given bounds such that
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>i</mi>
-    <mo>≤<!-- ≤ --></mo>
-    <mi>j</mi>
-  </mrow>
-</math> and <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <msup>
-      <mi>i</mi>
-      <mn>2</mn>
-    </msup>
-    <mo>+</mo>
-    <msup>
-      <mi>j</mi>
-      <mn>2</mn>
-    </msup>
-    <mo>=</mo>
-    <msup>
-      <mi>k</mi>
-      <mn>2</mn>
-    </msup>
-  </mrow>
-</math>, as follows:
+triples of integers <img src="fig/math/e7853946c0c2678998e1da658f89fd35.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.189em;" alt="\( {(i, j, k)} \)" /> between the given bounds such that
+<img src="fig/math/abd99fa84a4de8dd35d5caa76adaef23.svg" class="math-inline" style="height: 0.808em; vertical-align: -0.195em;" alt="\( {i \le j} \)" /> and <img src="fig/math/91f53e5e64b2c77fdad283a4e7195096.svg" class="math-inline" style="height: 1.039em; vertical-align: -0.195em;" alt="\( {i^2 + j^2 = k^2} \)" />, as follows:
 </p>
 <div class="lisp">
 <pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">define</span><span class="pln"> </span><span class="opn">(</span><span class="pln">a-pythagorean-triple-between low high</span><span class="clo">)</span><span class="pln">

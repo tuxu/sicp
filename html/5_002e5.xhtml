@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" xml:lang="en" lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" xml:lang="en" xmlns:xml="http://www.w3.org/XML/1998/namespace" lang="en">
 <!-- Created by GNU Texinfo 5.1, http://www.gnu.org/software/texinfo/ -->
 <head>
 <title>Structure and Interpretation of Computer Programs, 2e: 5.5</title>
@@ -295,32 +295,8 @@ expression is accomplished by evaluating the component expressions.
 <p>The simplest method for combining instruction sequences is a procedure called
 <code>append-instruction-sequences</code>.  It takes as arguments any number of
 instruction sequences that are to be executed sequentially; it appends them and
-returns the combined sequence.  That is, if <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mo stretchy="false">⟨</mo>
-    <mspace width="0.1em"/>
-    <mi>s</mi>
-    <mi>e</mi>
-    <msub>
-      <mi>q</mi>
-      <mn>1</mn>
-    </msub>
-    <mo stretchy="false">⟩</mo>
-  </mrow>
-</math> 
-and <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mo stretchy="false">⟨</mo>
-    <mspace width="0.1em"/>
-    <mi>s</mi>
-    <mi>e</mi>
-    <msub>
-      <mi>q</mi>
-      <mn>2</mn>
-    </msub>
-    <mo stretchy="false">⟩</mo>
-  </mrow>
-</math> are sequences of instructions, then 
+returns the combined sequence.  That is, if <img src="fig/math/7b9f9a6e47a4783d7a78dee0da1eabed.svg" class="math-inline" style="height: 0.916em; vertical-align: -0.231em;" alt="\( {⟨\kern0.1em seq_1⟩} \)" /> 
+and <img src="fig/math/5ff2b2ebd0be19a9de95892245c9e411.svg" class="math-inline" style="height: 0.916em; vertical-align: -0.231em;" alt="\( {⟨\kern0.1em seq_2⟩} \)" /> are sequences of instructions, then 
 evaluating
 </p>
 <div class="lisp">
@@ -346,316 +322,9 @@ Otherwise, <code>preserving</code> simply returns the appended instruction seque
 Thus, for example,
 <code>(preserving (list ⟨<var>reg₁</var>⟩ ⟨<var>reg₂</var>⟩) ⟨<var>seg₁</var>⟩ ⟨<var>seg₂</var>⟩)</code>
 produces one of the following four sequences of instructions, depending on how
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mo stretchy="false">⟨</mo>
-    <mspace width="0.1em"/>
-    <mi>s</mi>
-    <mi>e</mi>
-    <msub>
-      <mi>q</mi>
-      <mn>1</mn>
-    </msub>
-    <mo stretchy="false">⟩</mo>
-  </mrow>
-</math> and <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mo stretchy="false">⟨</mo>
-    <mspace width="0.1em"/>
-    <mi>s</mi>
-    <mi>e</mi>
-    <msub>
-      <mi>q</mi>
-      <mn>2</mn>
-    </msub>
-    <mo stretchy="false">⟩</mo>
-  </mrow>
-</math> 
-use <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mo stretchy="false">⟨</mo>
-    <mspace width="0.1em"/>
-    <mi>r</mi>
-    <mi>e</mi>
-    <msub>
-      <mi>g</mi>
-      <mn>1</mn>
-    </msub>
-    <mo stretchy="false">⟩</mo>
-  </mrow>
-</math> and <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mo stretchy="false">⟨</mo>
-    <mspace width="0.1em"/>
-    <mi>r</mi>
-    <mi>e</mi>
-    <msub>
-      <mi>g</mi>
-      <mn>2</mn>
-    </msub>
-    <mo stretchy="false">⟩</mo>
-  </mrow>
-</math>:
-<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
-<mtable columnalign="left left left left" rowspacing="4pt" columnspacing="1em" columnlines="solid solid solid">
-  <mtr>
-    <mtd>
-      <mo stretchy="false">⟨</mo>
-      <mspace width="0.1em"/>
-      <mrow class="MJX-TeXAtom-ORD">
-        <mi>s</mi>
-        <mi>e</mi>
-        <msub>
-          <mi>q</mi>
-          <mn>1</mn>
-        </msub>
-      </mrow>
-      <mo stretchy="false">⟩</mo>
-    </mtd>
-    <mtd>
-      <mtext>(save</mtext>
-    </mtd>
-    <mtd>
-      <mtext>(save</mtext>
-    </mtd>
-    <mtd>
-      <mtext>(save</mtext>
-      <mspace width="1ex"/>
-      <mo stretchy="false">⟨</mo>
-      <mspace width="0.1em"/>
-      <mrow class="MJX-TeXAtom-ORD">
-        <mi>r</mi>
-        <mi>e</mi>
-        <msub>
-          <mi>g</mi>
-          <mn>2</mn>
-        </msub>
-      </mrow>
-      <mo stretchy="false">⟩</mo>
-      <mtext>)</mtext>
-    </mtd>
-  </mtr>
-  <mtr>
-    <mtd>
-      <mo stretchy="false">⟨</mo>
-      <mspace width="0.1em"/>
-      <mrow class="MJX-TeXAtom-ORD">
-        <mi>s</mi>
-        <mi>e</mi>
-        <msub>
-          <mi>q</mi>
-          <mn>2</mn>
-        </msub>
-      </mrow>
-      <mo stretchy="false">⟩</mo>
-    </mtd>
-    <mtd>
-      <mspace width="1ex"/>
-      <mo stretchy="false">⟨</mo>
-      <mspace width="0.1em"/>
-      <mrow class="MJX-TeXAtom-ORD">
-        <mi>r</mi>
-        <mi>e</mi>
-        <msub>
-          <mi>g</mi>
-          <mn>1</mn>
-        </msub>
-      </mrow>
-      <mo stretchy="false">⟩</mo>
-      <mtext>)</mtext>
-    </mtd>
-    <mtd>
-      <mspace width="1ex"/>
-      <mo stretchy="false">⟨</mo>
-      <mspace width="0.1em"/>
-      <mrow class="MJX-TeXAtom-ORD">
-        <mi>r</mi>
-        <mi>e</mi>
-        <msub>
-          <mi>g</mi>
-          <mn>2</mn>
-        </msub>
-      </mrow>
-      <mo stretchy="false">⟩</mo>
-      <mtext>)</mtext>
-    </mtd>
-    <mtd>
-      <mtext>(save</mtext>
-      <mspace width="1ex"/>
-      <mo stretchy="false">⟨</mo>
-      <mspace width="0.1em"/>
-      <mrow class="MJX-TeXAtom-ORD">
-        <mi>r</mi>
-        <mi>e</mi>
-        <msub>
-          <mi>g</mi>
-          <mn>1</mn>
-        </msub>
-      </mrow>
-      <mo stretchy="false">⟩</mo>
-      <mtext>)</mtext>
-    </mtd>
-  </mtr>
-  <mtr>
-    <mtd/>
-    <mtd>
-      <mo stretchy="false">⟨</mo>
-      <mspace width="0.1em"/>
-      <mrow class="MJX-TeXAtom-ORD">
-        <mi>s</mi>
-        <mi>e</mi>
-        <msub>
-          <mi>q</mi>
-          <mn>1</mn>
-        </msub>
-      </mrow>
-      <mo stretchy="false">⟩</mo>
-    </mtd>
-    <mtd>
-      <mo stretchy="false">⟨</mo>
-      <mspace width="0.1em"/>
-      <mrow class="MJX-TeXAtom-ORD">
-        <mi>s</mi>
-        <mi>e</mi>
-        <msub>
-          <mi>q</mi>
-          <mn>1</mn>
-        </msub>
-      </mrow>
-      <mo stretchy="false">⟩</mo>
-    </mtd>
-    <mtd>
-      <mo stretchy="false">⟨</mo>
-      <mspace width="0.1em"/>
-      <mrow class="MJX-TeXAtom-ORD">
-        <mi>s</mi>
-        <mi>e</mi>
-        <msub>
-          <mi>q</mi>
-          <mn>1</mn>
-        </msub>
-      </mrow>
-      <mo stretchy="false">⟩</mo>
-    </mtd>
-  </mtr>
-  <mtr>
-    <mtd/>
-    <mtd>
-      <mtext>(restore</mtext>
-    </mtd>
-    <mtd>
-      <mtext>(restore</mtext>
-    </mtd>
-    <mtd>
-      <mtext>(restore</mtext>
-      <mspace width="1ex"/>
-      <mo stretchy="false">⟨</mo>
-      <mspace width="0.1em"/>
-      <mrow class="MJX-TeXAtom-ORD">
-        <mi>r</mi>
-        <mi>e</mi>
-        <msub>
-          <mi>g</mi>
-          <mn>1</mn>
-        </msub>
-      </mrow>
-      <mo stretchy="false">⟩</mo>
-      <mtext>)</mtext>
-    </mtd>
-  </mtr>
-  <mtr>
-    <mtd/>
-    <mtd>
-      <mspace width="1ex"/>
-      <mo stretchy="false">⟨</mo>
-      <mspace width="0.1em"/>
-      <mrow class="MJX-TeXAtom-ORD">
-        <mi>r</mi>
-        <mi>e</mi>
-        <msub>
-          <mi>g</mi>
-          <mn>1</mn>
-        </msub>
-      </mrow>
-      <mo stretchy="false">⟩</mo>
-      <mtext>)</mtext>
-    </mtd>
-    <mtd>
-      <mspace width="1ex"/>
-      <mo stretchy="false">⟨</mo>
-      <mspace width="0.1em"/>
-      <mrow class="MJX-TeXAtom-ORD">
-        <mi>r</mi>
-        <mi>e</mi>
-        <msub>
-          <mi>g</mi>
-          <mn>2</mn>
-        </msub>
-      </mrow>
-      <mo stretchy="false">⟩</mo>
-      <mtext>)</mtext>
-    </mtd>
-    <mtd>
-      <mtext>(restore</mtext>
-      <mspace width="1ex"/>
-      <mo stretchy="false">⟨</mo>
-      <mspace width="0.1em"/>
-      <mrow class="MJX-TeXAtom-ORD">
-        <mi>r</mi>
-        <mi>e</mi>
-        <msub>
-          <mi>g</mi>
-          <mn>2</mn>
-        </msub>
-      </mrow>
-      <mo stretchy="false">⟩</mo>
-      <mtext>)</mtext>
-    </mtd>
-  </mtr>
-  <mtr>
-    <mtd/>
-    <mtd>
-      <mo stretchy="false">⟨</mo>
-      <mspace width="0.1em"/>
-      <mrow class="MJX-TeXAtom-ORD">
-        <mi>s</mi>
-        <mi>e</mi>
-        <msub>
-          <mi>q</mi>
-          <mn>2</mn>
-        </msub>
-      </mrow>
-      <mo stretchy="false">⟩</mo>
-    </mtd>
-    <mtd>
-      <mo stretchy="false">⟨</mo>
-      <mspace width="0.1em"/>
-      <mrow class="MJX-TeXAtom-ORD">
-        <mi>s</mi>
-        <mi>e</mi>
-        <msub>
-          <mi>q</mi>
-          <mn>2</mn>
-        </msub>
-      </mrow>
-      <mo stretchy="false">⟩</mo>
-    </mtd>
-    <mtd>
-      <mo stretchy="false">⟨</mo>
-      <mspace width="0.1em"/>
-      <mrow class="MJX-TeXAtom-ORD">
-        <mi>s</mi>
-        <mi>e</mi>
-        <msub>
-          <mi>q</mi>
-          <mn>2</mn>
-        </msub>
-      </mrow>
-      <mo stretchy="false">⟩</mo>
-    </mtd>
-  </mtr>
-</mtable>
-</math>
+<img src="fig/math/7b9f9a6e47a4783d7a78dee0da1eabed.svg" class="math-inline" style="height: 0.916em; vertical-align: -0.231em;" alt="\( {⟨\kern0.1em seq_1⟩} \)" /> and <img src="fig/math/5ff2b2ebd0be19a9de95892245c9e411.svg" class="math-inline" style="height: 0.916em; vertical-align: -0.231em;" alt="\( {⟨\kern0.1em seq_2⟩} \)" /> 
+use <img src="fig/math/6c723d2ecee2bbea91d7406144733786.svg" class="math-inline" style="height: 0.913em; vertical-align: -0.231em;" alt="\( {⟨\kern0.1em reg_1⟩} \)" /> and <img src="fig/math/b6aa8b9be170a7cd003a8dafbf23306e.svg" class="math-inline" style="height: 0.913em; vertical-align: -0.231em;" alt="\( {⟨\kern0.1em reg_2⟩} \)" />:
+<img src="fig/math/40716a61eb4b686fdecee9e10cc1e882.svg" class="math-display" style="height: 7.250em;" alt="\[ % :83:&amp;#10; \begin{array}{l|l|l|l} ⟨\kern0.1em{seq_1}⟩                     &amp;amp; \text{(save}                            &amp;amp; \text{(save}                            &amp;amp; \text{(save} \kern1ex ⟨\kern0.1em{reg_2}⟩\text{)}    \\  ⟨\kern0.1em{seq_2}⟩            &amp;amp; \kern1ex ⟨\kern0.1em{reg_1}⟩\text{)}    &amp;amp; \kern1ex ⟨\kern0.1em{reg_2}⟩\text{)}    &amp;amp; \text{(save} \kern1ex ⟨\kern0.1em{reg_1}⟩\text{)}    \\                                          &amp;amp; ⟨\kern0.1em{seq_1}⟩                     &amp;amp; ⟨\kern0.1em{seq_1}⟩                     &amp;amp; ⟨\kern0.1em{seq_1}⟩                                  \\                                          &amp;amp; \text{(restore}                         &amp;amp; \text{(restore}                         &amp;amp; \text{(restore} \kern1ex ⟨\kern0.1em{reg_1}⟩\text{)} \\                                          &amp;amp; \kern1ex ⟨\kern0.1em{reg_1}⟩\text{)}    &amp;amp; \kern1ex ⟨\kern0.1em{reg_2}⟩\text{)}    &amp;amp; \text{(restore} \kern1ex ⟨\kern0.1em{reg_2}⟩\text{)} \\                                          &amp;amp; ⟨\kern0.1em{seq_2}⟩                     &amp;amp; ⟨\kern0.1em{seq_2}⟩                     &amp;amp; ⟨\kern0.1em{seq_2}⟩ \end{array} \]" />
 </p>
 <p>By using <code>preserving</code> to combine instruction sequences the compiler avoids
 unnecessary stack operations.  This also isolates the details of whether or not
@@ -1836,9 +1505,7 @@ procedure call in the predicate and needed for the procedure call and the
 <code>return</code> linkage in the branches.
 </p>
 <blockquote>
-<p><strong><a id="Figure-5_002e17"></a>Figure 5.17:</strong> <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mo stretchy="false">↓<!-- ↓ --></mo>
-</math> Compilation of the definition of the <code>factorial</code> procedure.
+<p><strong><a id="Figure-5_002e17"></a>Figure 5.17:</strong> <img src="fig/math/6055ad073cc2a2ef0c1068b0c6d90034.svg" class="math-inline" style="height: 0.843em; vertical-align: -0.159em;" alt="\( \downarrow \)" /> Compilation of the definition of the <code>factorial</code> procedure.
 </p>
 <div class="lisp">
 <pre class="lisp prettyprinted" style=""><span class="roman"><span class="com">;; construct the procedure and skip over code</span></span><span class="pln">
@@ -2030,9 +1697,7 @@ produce the code shown in <a href="#Figure-5_002e18">Figure 5.18</a>?
 </p></blockquote>
 
 <blockquote>
-<p><strong><a id="Figure-5_002e18"></a>Figure 5.18:</strong> <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mo stretchy="false">↓<!-- ↓ --></mo>
-</math> An example of compiler output.  See
+<p><strong><a id="Figure-5_002e18"></a>Figure 5.18:</strong> <img src="fig/math/6055ad073cc2a2ef0c1068b0c6d90034.svg" class="math-inline" style="height: 0.843em; vertical-align: -0.159em;" alt="\( \downarrow \)" /> An example of compiler output.  See
 <a href="#Exercise-5_002e35">Exercise 5.35</a>.
 </p>
 <div class="lisp">
@@ -2603,15 +2268,8 @@ stack use to the performance of a special-purpose machine for the same
 computation gives some indication of the quality of the compiler.
 </p>
 <ol>
-<li> <a href="5_002e4.xhtml#Exercise-5_002e27">Exercise 5.27</a> asked you to determine, as a function of <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math>, the number
-of pushes and the maximum stack depth needed by the evaluator to compute <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>n</mi>
-    <mo>!</mo>
-  </mrow>
-</math>
+<li> <a href="5_002e4.xhtml#Exercise-5_002e27">Exercise 5.27</a> asked you to determine, as a function of <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" />, the number
+of pushes and the maximum stack depth needed by the evaluator to compute <img src="fig/math/5fa3dbabdc4f880a425fd3b033864691.svg" class="math-inline" style="height: 0.702em; vertical-align: -0.009em;" alt="\( {n!} \)" />
 using the recursive factorial procedure given above.  <a href="5_002e2.xhtml#Exercise-5_002e14">Exercise 5.14</a> asked
 you to do the same measurements for the special-purpose factorial machine shown
 in <a href="5_002e1.xhtml#Figure-5_002e11">Figure 5.11</a>. Now perform the same analysis using the compiled
@@ -2619,17 +2277,8 @@ in <a href="5_002e1.xhtml#Figure-5_002e11">Figure 5.11</a>. Now perform the same
 
 <p>Take the ratio of the number of pushes in the compiled version to the number of
 pushes in the interpreted version, and do the same for the maximum stack depth.
-Since the number of operations and the stack depth used to compute <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>n</mi>
-    <mo>!</mo>
-  </mrow>
-</math>  are
-linear in <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math>, these ratios should approach constants as <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math> becomes large.
+Since the number of operations and the stack depth used to compute <img src="fig/math/5fa3dbabdc4f880a425fd3b033864691.svg" class="math-inline" style="height: 0.702em; vertical-align: -0.009em;" alt="\( {n!} \)" />  are
+linear in <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" />, these ratios should approach constants as <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" /> becomes large.
 What are these constants?  Similarly, find the ratios of the stack usage in the
 special-purpose machine to the usage in the interpreted version.
 </p>
@@ -2659,15 +2308,8 @@ tree-recursive Fibonacci procedure
 <p>compared to the effectiveness of using the special-purpose Fibonacci machine of
 <a href="5_002e1.xhtml#Figure-5_002e12">Figure 5.12</a>.  (For measurement of the interpreted performance, see
 <a href="5_002e4.xhtml#Exercise-5_002e29">Exercise 5.29</a>.)  For Fibonacci, the time resource used is not linear in
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>n</mi>
-    <mo>;</mo>
-  </mrow>
-</math> hence the ratios of stack operations will not approach a limiting value
-that is independent of <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math>.
+<img src="fig/math/295e86b35a63ddd6237d432cb9cb73d5.svg" class="math-inline" style="height: 0.627em; vertical-align: -0.191em;" alt="\( {n;} \)" /> hence the ratios of stack operations will not approach a limiting value
+that is independent of <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" />.
 </p></blockquote>
 
 <blockquote>

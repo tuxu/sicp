@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" xml:lang="en" lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" xml:lang="en" xmlns:xml="http://www.w3.org/XML/1998/namespace" lang="en">
 <!-- Created by GNU Texinfo 5.1, http://www.gnu.org/software/texinfo/ -->
 <head>
 <title>Structure and Interpretation of Computer Programs, 2e: 5.4</title>
@@ -58,7 +58,7 @@ integrated-circuit layout.<a class="footnote_link" id="DOCF304" href="#FOOT304">
 </p>
 <figure class="float">
 <a id="Figure-5_002e16"></a>
-<object style="width: 52.41ex; height: 42.31ex;" data="fig/chap5/chip.std.svg" type="image/svg+xml">SVG</object>
+<img style="width: 52.41ex; max-width: 100%; display: inline;" src="fig/chap5/chip.std.svg" />
 
 <figcaption class="float-caption">
 <p><strong>Figure 5.16:</strong> A silicon-chip implementation of an evaluator for Scheme.</p>
@@ -849,46 +849,17 @@ Start the evaluator and define the iterative <code>factorial</code> procedure fr
               </span><span class="opn">(</span><span class="pun">+</span><span class="pln"> counter </span><span class="lit">1</span><span class="clo">))))</span><span class="pln">
   </span><span class="opn">(</span><span class="pln">iter </span><span class="lit">1</span><span class="pln"> </span><span class="lit">1</span><span class="clo">))</span></pre></div>
 
-<p>Run the procedure with some small values of <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math>.  Record the maximum stack
-depth and the number of pushes required to compute <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>n</mi>
-    <mo>!</mo>
-  </mrow>
-</math> for each of these
+<p>Run the procedure with some small values of <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" />.  Record the maximum stack
+depth and the number of pushes required to compute <img src="fig/math/5fa3dbabdc4f880a425fd3b033864691.svg" class="math-inline" style="height: 0.702em; vertical-align: -0.009em;" alt="\( {n!} \)" /> for each of these
 values.
 </p>
 <ol>
-<li> You will find that the maximum depth required to evaluate <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>n</mi>
-    <mo>!</mo>
-  </mrow>
-</math> is independent
-of <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math>.  What is that depth?
+<li> You will find that the maximum depth required to evaluate <img src="fig/math/5fa3dbabdc4f880a425fd3b033864691.svg" class="math-inline" style="height: 0.702em; vertical-align: -0.009em;" alt="\( {n!} \)" /> is independent
+of <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" />.  What is that depth?
 
-</li><li> Determine from your data a formula in terms of <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math> for the total number of
-push operations used in evaluating <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>n</mi>
-    <mo>!</mo>
-  </mrow>
-</math> for any <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>n</mi>
-    <mo>≥<!-- ≥ --></mo>
-    <mn>1</mn>
-  </mrow>
-</math>.  Note that the
-number of operations used is a linear function of <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math> and is thus determined
+</li><li> Determine from your data a formula in terms of <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" /> for the total number of
+push operations used in evaluating <img src="fig/math/5fa3dbabdc4f880a425fd3b033864691.svg" class="math-inline" style="height: 0.702em; vertical-align: -0.009em;" alt="\( {n!} \)" /> for any <img src="fig/math/a84f4e39f5951d29cf4e78bce2006142.svg" class="math-inline" style="height: 0.699em; vertical-align: -0.055em;" alt="\( {n \ge 1} \)" />.  Note that the
+number of operations used is a linear function of <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" /> and is thus determined
 by two constants.
 
 </li></ol>
@@ -906,75 +877,11 @@ recursively:
       </span><span class="opn">(</span><span class="pun">*</span><span class="pln"> </span><span class="opn">(</span><span class="pln">factorial </span><span class="opn">(</span><span class="pun">-</span><span class="pln"> n </span><span class="lit">1</span><span class="clo">))</span><span class="pln"> n</span><span class="clo">)))</span></pre></div>
 
 <p>By running this procedure with the monitored stack, determine, as a function of
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math>, the maximum depth of the stack and the total number of pushes used in
-evaluating <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>n</mi>
-    <mo>!</mo>
-  </mrow>
-</math> for <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>n</mi>
-    <mo>≥<!-- ≥ --></mo>
-    <mn>1</mn>
-  </mrow>
-</math>.  (Again, these functions will be linear.)
+<img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" />, the maximum depth of the stack and the total number of pushes used in
+evaluating <img src="fig/math/5fa3dbabdc4f880a425fd3b033864691.svg" class="math-inline" style="height: 0.702em; vertical-align: -0.009em;" alt="\( {n!} \)" /> for <img src="fig/math/a84f4e39f5951d29cf4e78bce2006142.svg" class="math-inline" style="height: 0.699em; vertical-align: -0.055em;" alt="\( {n \ge 1} \)" />.  (Again, these functions will be linear.)
 Summarize your experiments by filling in the following table with the
-appropriate expressions in terms of <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math>:
-<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
-  <mtable columnalign="left left left" rowspacing="4pt" columnspacing="1em" rowlines="none solid none solid none" columnlines="solid solid">
-    <mtr>
-      <mtd/>
-      <mtd>
-        <mtext>Maximum</mtext>
-      </mtd>
-      <mtd>
-        <mtext>Number of</mtext>
-      </mtd>
-    </mtr>
-    <mtr>
-      <mtd/>
-      <mtd>
-        <mtext>depth</mtext>
-      </mtd>
-      <mtd>
-        <mtext>pushes</mtext>
-      </mtd>
-    </mtr>
-    <mtr>
-      <mtd>
-        <mtext>Recursive</mtext>
-      </mtd>
-      <mtd/>
-      <mtd/>
-    </mtr>
-    <mtr>
-      <mtd>
-        <mtext>factorial</mtext>
-      </mtd>
-      <mtd/>
-      <mtd/>
-    </mtr>
-    <mtr>
-      <mtd>
-        <mtext>Iterative</mtext>
-      </mtd>
-      <mtd/>
-      <mtd/>
-    </mtr>
-    <mtr>
-      <mtd>
-        <mtext>factorial</mtext>
-      </mtd>
-      <mtd/>
-      <mtd/>
-    </mtr>
-  </mtable>
-</math>
+appropriate expressions in terms of <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" />:
+<img src="fig/math/4224144742c43d635a4866b01b43651d.svg" class="math-display" style="height: 7.317em;" alt="\[ % :82:&amp;#10; \begin{array}{l|l|l}                  &amp;amp; \text{Maximum}  &amp;amp; \text{Number of}  \\                  &amp;amp; \text{depth}          &amp;amp; \text{pushes}  \\ \hline \text{Recursive}  &amp;amp;                 &amp;amp;  \\ \text{factorial}  &amp;amp;                   &amp;amp;  \\ \hline \text{Iterative}  &amp;amp;                &amp;amp;  \\ \text{factorial}  &amp;amp;                   &amp;amp;  \end{array} \]" />
 The maximum depth is a measure of the amount of space used by the evaluator in
 carrying out the computation, and the number of pushes correlates well with the
 time required.
@@ -1000,120 +907,19 @@ the tree-recursive Fibonacci computation:
       </span><span class="opn">(</span><span class="pun">+</span><span class="pln"> </span><span class="opn">(</span><span class="pln">fib </span><span class="opn">(</span><span class="pun">-</span><span class="pln"> n </span><span class="lit">1</span><span class="clo">))</span><span class="pln"> </span><span class="opn">(</span><span class="pln">fib </span><span class="opn">(</span><span class="pun">-</span><span class="pln"> n </span><span class="lit">2</span><span class="clo">)))))</span></pre></div>
 
 <ol>
-<li> Give a formula in terms of <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math> for the maximum depth of the stack required to
-compute <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mtext>Fib</mtext>
-    <mo stretchy="false">(</mo>
-    <mi>n</mi>
-    <mo stretchy="false">)</mo>
-  </mrow>
-</math> for <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>n</mi>
-    <mo>≥<!-- ≥ --></mo>
-    <mn>2</mn>
-  </mrow>
-</math>.  Hint: In <a href="1_002e2.xhtml#g_t1_002e2_002e2">1.2.2</a> we
-argued that the space used by this process grows linearly with <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math>.
+<li> Give a formula in terms of <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" /> for the maximum depth of the stack required to
+compute <img src="fig/math/606058a44581066eed9cf2309aee7b71.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.189em;" alt="\( {\text{Fib}(n)} \)" /> for <img src="fig/math/6a4b9379e15109b06ec4bdc0b06442d4.svg" class="math-inline" style="height: 0.699em; vertical-align: -0.055em;" alt="\( {n \ge 2} \)" />.  Hint: In <a href="1_002e2.xhtml#g_t1_002e2_002e2">1.2.2</a> we
+argued that the space used by this process grows linearly with <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" />.
 
-</li><li> Give a formula for the total number of pushes used to compute <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mtext>Fib</mtext>
-    <mo stretchy="false">(</mo>
-    <mi>n</mi>
-    <mo stretchy="false">)</mo>
-  </mrow>
-</math>
-for <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>n</mi>
-    <mo>≥<!-- ≥ --></mo>
-    <mn>2</mn>
-  </mrow>
-</math>.  You should find that the number of pushes (which correlates
-well with the time used) grows exponentially with <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math>.  Hint: Let
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>S</mi>
-    <mo stretchy="false">(</mo>
-    <mi>n</mi>
-    <mo stretchy="false">)</mo>
-  </mrow>
-</math> be the number of pushes used in computing <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mtext>Fib</mtext>
-    <mo stretchy="false">(</mo>
-    <mi>n</mi>
-    <mo stretchy="false">)</mo>
-  </mrow>
-</math>.  You
-should be able to argue that there is a formula that expresses <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>S</mi>
-    <mo stretchy="false">(</mo>
-    <mi>n</mi>
-    <mo stretchy="false">)</mo>
-  </mrow>
-</math> in
-terms of <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>S</mi>
-    <mo stretchy="false">(</mo>
-    <mi>n</mi>
-    <mo>−<!-- − --></mo>
-    <mn>1</mn>
-    <mo stretchy="false">)</mo>
-  </mrow>
-</math>, <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>S</mi>
-    <mo stretchy="false">(</mo>
-    <mi>n</mi>
-    <mo>−<!-- − --></mo>
-    <mn>2</mn>
-    <mo stretchy="false">)</mo>
-  </mrow>
-</math>, and some fixed “overhead”
-constant <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>k</mi>
-</math> that is independent of <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math>.  Give the formula, and say what
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>k</mi>
-</math> is.  Then show that <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>S</mi>
-    <mo stretchy="false">(</mo>
-    <mi>n</mi>
-    <mo stretchy="false">)</mo>
-  </mrow>
-</math> can be expressed as 
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>a</mi>
-    <mo>⋅<!-- ⋅ --></mo>
-    <mtext>Fib</mtext>
-    <mo stretchy="false">(</mo>
-    <mi>n</mi>
-    <mo>+</mo>
-    <mn>1</mn>
-    <mo stretchy="false">)</mo>
-    <mo>+</mo>
-    <mi>b</mi>
-  </mrow>
-</math> and give the values of <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>a</mi>
-</math> and <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>b</mi>
-</math>.
+</li><li> Give a formula for the total number of pushes used to compute <img src="fig/math/606058a44581066eed9cf2309aee7b71.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.189em;" alt="\( {\text{Fib}(n)} \)" />
+for <img src="fig/math/6a4b9379e15109b06ec4bdc0b06442d4.svg" class="math-inline" style="height: 0.699em; vertical-align: -0.055em;" alt="\( {n \ge 2} \)" />.  You should find that the number of pushes (which correlates
+well with the time used) grows exponentially with <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" />.  Hint: Let
+<img src="fig/math/7fae69e08c965a8af54a3347b78bed5f.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.189em;" alt="\( {S(n)} \)" /> be the number of pushes used in computing <img src="fig/math/606058a44581066eed9cf2309aee7b71.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.189em;" alt="\( {\text{Fib}(n)} \)" />.  You
+should be able to argue that there is a formula that expresses <img src="fig/math/7fae69e08c965a8af54a3347b78bed5f.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.189em;" alt="\( {S(n)} \)" /> in
+terms of <img src="fig/math/80c5ab8defb9e7403ff65ad901a3d69b.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.189em;" alt="\( {S(n - 1)} \)" />, <img src="fig/math/6eecc0e0b0935f3ede465eeb5ad2ae91.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.189em;" alt="\( {S(n - 2)} \)" />, and some fixed “overhead”
+constant <img src="fig/math/83054be07bea98353c7cda3290903d5e.svg" class="math-inline" style="height: 0.703em; vertical-align: -0.009em;" alt="\( k \)" /> that is independent of <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" />.  Give the formula, and say what
+<img src="fig/math/83054be07bea98353c7cda3290903d5e.svg" class="math-inline" style="height: 0.703em; vertical-align: -0.009em;" alt="\( k \)" /> is.  Then show that <img src="fig/math/7fae69e08c965a8af54a3347b78bed5f.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.189em;" alt="\( {S(n)} \)" /> can be expressed as 
+<img src="fig/math/b25a89d4c323add91d0f35a149b94e0a.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.189em;" alt="\( {a\cdot\text{Fib}(n + 1) + b} \)" /> and give the values of <img src="fig/math/09009cdd5fc245e05305bc574dcdc97d.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( a \)" /> and <img src="fig/math/3e92f417ccfc1f59b0ee22d034c85747.svg" class="math-inline" style="height: 0.703em; vertical-align: -0.009em;" alt="\( b \)" />.
 
 </li></ol>
 </blockquote>

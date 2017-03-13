@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" xml:lang="en" lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" xml:lang="en" xmlns:xml="http://www.w3.org/XML/1998/namespace" lang="en">
 <!-- Created by GNU Texinfo 5.1, http://www.gnu.org/software/texinfo/ -->
 <head>
 <title>Structure and Interpretation of Computer Programs, 2e: 1.1</title>
@@ -299,7 +299,7 @@ general kind of process known as <a id="index-tree-accumulation"></a>
 </p>
 <figure class="float">
 <a id="Figure-1_002e1"></a>
-<object style="width: 20.38ex; height: 20.46ex;" data="fig/chap1/Fig1.1g.std.svg" type="image/svg+xml">SVG</object>
+<img style="width: 20.38ex; max-width: 100%; display: inline;" src="fig/chap1/Fig1.1g.std.svg" />
 
 <figcaption class="float-caption">
 <p><strong>Figure 1.1:</strong> Tree representation, showing the value of each subcombination.</p>
@@ -425,17 +425,7 @@ would be in an actual call to the procedure being defined.
 </pre></div>
 
 <p>We can also use <code>square</code> as a building block in defining other procedures.
-For example, <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <msup>
-    <mi>x</mi>
-    <mn>2</mn>
-  </msup>
-  <mo>+</mo>
-  <msup>
-    <mi>y</mi>
-    <mn>2</mn>
-  </msup>
-</math> can be expressed as
+For example, <img src="fig/math/ef5ef8f3534bb6cad0d2b5045f813685.svg" class="math-inline" style="height: 1.078em; vertical-align: -0.235em;" alt="\( x^2 + y^2 \)" /> can be expressed as
 </p>
 <div class="lisp">
 <pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="pun">+</span><span class="pln"> </span><span class="opn">(</span><span class="pln">square x</span><span class="clo">)</span><span class="pln"> </span><span class="opn">(</span><span class="pln">square y</span><span class="clo">))</span></pre></div>
@@ -629,68 +619,7 @@ cannot define a procedure that computes the absolute value of a number by
 testing whether the number is positive, negative, or zero and taking different
 actions in the different cases according to the rule
 
-<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
-  <mrow>
-    <mo>|</mo>
-    <mrow class="MJX-TeXAtom-ORD">
-      <mi>x</mi>
-    </mrow>
-    <mo>|</mo>
-  </mrow>
-  <mspace width="thickmathspace"/>
-  <mo>=</mo>
-  <mspace width="thickmathspace"/>
-  <mrow>
-    <mo>{</mo>
-    <mtable columnalign="right left left" rowspacing="4pt" columnspacing="1em">
-      <mtr>
-        <mtd>
-          <mi>x</mi>
-        </mtd>
-        <mtd>
-          <mspace width="thickmathspace"/>
-          <mtext>if</mtext>
-        </mtd>
-        <mtd>
-          <mi>x</mi>
-          <mo>&gt;<!-- > --></mo>
-          <mn>0</mn>
-          <mo>,</mo>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mn>0</mn>
-        </mtd>
-        <mtd>
-          <mspace width="thickmathspace"/>
-          <mtext>if</mtext>
-        </mtd>
-        <mtd>
-          <mi>x</mi>
-          <mo>=</mo>
-          <mn>0</mn>
-          <mo>,</mo>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mo>−<!-- − --></mo>
-          <mi>x</mi>
-        </mtd>
-        <mtd>
-          <mspace width="thickmathspace"/>
-          <mtext>if</mtext>
-        </mtd>
-        <mtd>
-          <mi>x</mi>
-          <mo>&lt;<!-- < --></mo>
-          <mn>0.</mn>
-        </mtd>
-      </mtr>
-    </mtable>
-  </mrow>
-</math>
+<img src="fig/math/827517d0ecd8f031fa58256546889916.svg" class="math-display" style="height: 3.389em;" alt="\[ % :1:&amp;#10; \left|{x}\right| \; = \;   \left\{      \begin{array}{rll}            x &amp;amp; \;\text{if} &amp;amp; x \gt 0, \\        0 &amp;amp; \;\text{if} &amp;amp; x  =  0, \\       -x &amp;amp; \;\text{if} &amp;amp; x \lt 0.      \end{array}    \right.  \]" />
 
 This construct is called a <a id="index-case-analysis"></a>
 <em>case analysis</em>, and there is a special form
@@ -723,62 +652,14 @@ expressions
 <em>predicate</em>—that is, an expression whose value is interpreted as
 either true or false.<a class="footnote_link" id="DOCF17" href="#FOOT17"><sup>17</sup></a>
 </p>
-<p>Conditional expressions are evaluated as follows.  The predicate <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mo stretchy="false">⟨</mo>
-    <msub>
-      <mi>p</mi>
-      <mn>1</mn>
-    </msub>
-    <mo stretchy="false">⟩</mo>
-  </mrow>
-</math> is
-evaluated first.  If its value is false, then <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mo stretchy="false">⟨</mo>
-    <msub>
-      <mi>p</mi>
-      <mn>2</mn>
-    </msub>
-    <mo stretchy="false">⟩</mo>
-  </mrow>
-</math> is evaluated.  If
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mo stretchy="false">⟨</mo>
-    <msub>
-      <mi>p</mi>
-      <mn>2</mn>
-    </msub>
-    <mo stretchy="false">⟩</mo>
-  </mrow>
-</math>’s value is also false, then <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mo stretchy="false">⟨</mo>
-    <msub>
-      <mi>p</mi>
-      <mn>3</mn>
-    </msub>
-    <mo stretchy="false">⟩</mo>
-  </mrow>
-</math> is evaluated.  This process
+<p>Conditional expressions are evaluated as follows.  The predicate <img src="fig/math/38ad274b81a729d803d68a92bb79cdb0.svg" class="math-inline" style="height: 0.916em; vertical-align: -0.231em;" alt="\( {⟨p_1⟩} \)" /> is
+evaluated first.  If its value is false, then <img src="fig/math/7f4d632268394200967d619e965e2f21.svg" class="math-inline" style="height: 0.916em; vertical-align: -0.231em;" alt="\( {⟨p_2⟩} \)" /> is evaluated.  If
+<img src="fig/math/7f4d632268394200967d619e965e2f21.svg" class="math-inline" style="height: 0.916em; vertical-align: -0.231em;" alt="\( {⟨p_2⟩} \)" />’s value is also false, then <img src="fig/math/6d9ec14c119cce8c9035a44acf56d1e8.svg" class="math-inline" style="height: 0.916em; vertical-align: -0.231em;" alt="\( {⟨p_3⟩} \)" /> is evaluated.  This process
 continues until a predicate is found whose value is true, in which case the
 interpreter returns the value of the corresponding <a id="index-consequent-expression"></a>
 <em>consequent expression</em> 
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mo stretchy="false">⟨</mo>
-    <mi>e</mi>
-    <mo stretchy="false">⟩</mo>
-  </mrow>
-</math> of the clause as the value of the conditional expression.
-If none of the <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mo stretchy="false">⟨</mo>
-    <mi>p</mi>
-    <mo stretchy="false">⟩</mo>
-  </mrow>
-</math>’s is found to be true, the value of the <code>cond</code> is
+<img src="fig/math/50b0886bc58e9198573af83a2c87dd16.svg" class="math-inline" style="height: 0.843em; vertical-align: -0.159em;" alt="\( {⟨e⟩} \)" /> of the clause as the value of the conditional expression.
+If none of the <img src="fig/math/275cb87ec00431e4320aaeb37376bdaa.svg" class="math-inline" style="height: 0.916em; vertical-align: -0.231em;" alt="\( {⟨p⟩} \)" />’s is found to be true, the value of the <code>cond</code> is
 undefined.
 </p>
 <p>The word <a id="index-predicate-1"></a>
@@ -796,39 +677,12 @@ number, returning true or false accordingly.
   </span><span class="opn">(</span><span class="kwd">cond</span><span class="pln"> </span><span class="opn">((</span><span class="pun">&lt;</span><span class="pln"> x </span><span class="lit">0</span><span class="clo">)</span><span class="pln"> </span><span class="opn">(</span><span class="pun">-</span><span class="pln"> x</span><span class="clo">))</span><span class="pln">
         </span><span class="opn">(</span><span class="kwd">else</span><span class="pln"> x</span><span class="clo">)))</span></pre></div>
 
-<p>which could be expressed in English as “If <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>x</mi>
-</math> is less than zero return 
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mo>−<!-- − --></mo>
-    <mi>x</mi>
-  </mrow>
-</math>; otherwise return <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>x</mi>
-</math>.”  <code>Else</code> is a special symbol that can be
-used in place of the <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mo stretchy="false">⟨</mo>
-    <mi>p</mi>
-    <mo stretchy="false">⟩</mo>
-  </mrow>
-</math> in the final clause of a <code>cond</code>.  This
+<p>which could be expressed in English as “If <img src="fig/math/2f4b15565d0a1018e90c3e1b30b76acc.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( x \)" /> is less than zero return 
+<img src="fig/math/9b5fb3541f562e216ec62eb211390ca1.svg" class="math-inline" style="height: 0.519em; vertical-align: -0.008em;" alt="\( {-x} \)" />; otherwise return <img src="fig/math/2f4b15565d0a1018e90c3e1b30b76acc.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( x \)" />.”  <code>else</code> is a special symbol that can be
+used in place of the <img src="fig/math/275cb87ec00431e4320aaeb37376bdaa.svg" class="math-inline" style="height: 0.916em; vertical-align: -0.231em;" alt="\( {⟨p⟩} \)" /> in the final clause of a <code>cond</code>.  This
 causes the <code>cond</code> to return as its value the value of the corresponding
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mo stretchy="false">⟨</mo>
-    <mi>e</mi>
-    <mo stretchy="false">⟩</mo>
-  </mrow>
-</math> whenever all previous clauses have been bypassed.  In fact, any
-expression that always evaluates to a true value could be used as the <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mo stretchy="false">⟨</mo>
-    <mi>p</mi>
-    <mo stretchy="false">⟩</mo>
-  </mrow>
-</math>
+<img src="fig/math/50b0886bc58e9198573af83a2c87dd16.svg" class="math-inline" style="height: 0.843em; vertical-align: -0.159em;" alt="\( {⟨e⟩} \)" /> whenever all previous clauses have been bypassed.  In fact, any
+expression that always evaluates to a true value could be used as the <img src="fig/math/275cb87ec00431e4320aaeb37376bdaa.svg" class="math-inline" style="height: 0.916em; vertical-align: -0.231em;" alt="\( {⟨p⟩} \)" />
 here.
 </p>
 <p>Here is yet another way to write the absolute-value procedure:
@@ -884,16 +738,8 @@ evaluates to false, and false otherwise.
 the subexpressions are not necessarily all evaluated.  <code>Not</code> is an
 ordinary procedure.
 </p>
-<p>As an example of how these are used, the condition that a number <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>x</mi>
-</math> be in
-the range <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mn>5</mn>
-  <mo>&lt;</mo>
-  <mi>x</mi>
-  <mo>&lt;</mo>
-  <mn>10</mn>
-</math> may be expressed as
+<p>As an example of how these are used, the condition that a number <img src="fig/math/2f4b15565d0a1018e90c3e1b30b76acc.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( x \)" /> be in
+the range <img src="fig/math/2998398cd90f9d578c299b935f3b136f.svg" class="math-inline" style="height: 0.652em; vertical-align: -0.009em;" alt="\( 5 &amp;lt; x &amp;lt; 10 \)" /> may be expressed as
 </p>
 <div class="lisp">
 <pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">and</span><span class="pln"> </span><span class="opn">(</span><span class="pun">&gt;</span><span class="pln"> x </span><span class="lit">5</span><span class="clo">)</span><span class="pln"> </span><span class="opn">(</span><span class="pun">&lt;</span><span class="pln"> x </span><span class="lit">10</span><span class="clo">))</span></pre></div>
@@ -944,48 +790,7 @@ presented.
 <p><strong><a id="Exercise-1_002e2"></a>Exercise 1.2:</strong> Translate the following expression
 into prefix form:
 
-<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mfrac>
-      <mrow>
-        <mn>5</mn>
-        <mo>+</mo>
-        <mn>4</mn>
-        <mo>+</mo>
-        <mo stretchy="false">(</mo>
-        <mn>2</mn>
-        <mo>−<!-- − --></mo>
-        <mo stretchy="false">(</mo>
-        <mn>3</mn>
-        <mo>−<!-- − --></mo>
-        <mo stretchy="false">(</mo>
-        <mn>6</mn>
-        <mo>+</mo>
-        <mfrac>
-          <mn>4</mn>
-          <mn>5</mn>
-        </mfrac>
-        <mo stretchy="false">)</mo>
-        <mo stretchy="false">)</mo>
-        <mo stretchy="false">)</mo>
-      </mrow>
-      <mrow>
-        <mn>3</mn>
-        <mo stretchy="false">(</mo>
-        <mn>6</mn>
-        <mo>−<!-- − --></mo>
-        <mn>2</mn>
-        <mo stretchy="false">)</mo>
-        <mo stretchy="false">(</mo>
-        <mn>2</mn>
-        <mo>−<!-- − --></mo>
-        <mn>7</mn>
-        <mo stretchy="false">)</mo>
-      </mrow>
-    </mfrac>
-    <mo>.</mo>
-  </mrow>
-</math>
+<img src="fig/math/81e37771ed20035fb8d1832c245a99bb.svg" class="math-display" style="height: 2.561em;" alt="\[ % :2:&amp;#10; {\frac{5 + 4 + (2 - (3 - (6 + \frac{4}{5})))}{3(6 - 2)(2 - 7)}.} \]" />
 
 </p></blockquote>
 
@@ -1045,48 +850,7 @@ procedures.  Procedures must be effective.
 <p>As a case in point, consider the problem of computing square roots.  We can
 define the square-root function as
 
-<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
-  <msqrt>
-    <mi>x</mi>
-  </msqrt>
-  <mspace width="thickmathspace"/>
-  <mspace width="thickmathspace"/>
-  <mo>=</mo>
-  <mspace width="thickmathspace"/>
-  <mspace width="thickmathspace"/>
-  <mrow class="MJX-TeXAtom-ORD">
-    <mtext>the</mtext>
-    <mspace width="thickmathspace"/>
-    <mspace width="thickmathspace"/>
-    <mi>y</mi>
-  </mrow>
-  <mspace width="thickmathspace"/>
-  <mspace width="thickmathspace"/>
-  <mrow class="MJX-TeXAtom-ORD">
-    <mtext>such that</mtext>
-  </mrow>
-  <mspace width="thickmathspace"/>
-  <mspace width="thickmathspace"/>
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>y</mi>
-    <mo>≥<!-- ≥ --></mo>
-    <mn>0</mn>
-  </mrow>
-  <mspace width="thickmathspace"/>
-  <mspace width="thickmathspace"/>
-  <mrow class="MJX-TeXAtom-ORD">
-    <mtext>and</mtext>
-    <mspace width="thickmathspace"/>
-    <mspace width="thickmathspace"/>
-    <msup>
-      <mi>y</mi>
-      <mn>2</mn>
-    </msup>
-    <mo>=</mo>
-    <mi>x</mi>
-    <mo>.</mo>
-  </mrow>
-</math>
+<img src="fig/math/d0666d2646b513c81f28cc983a15579c.svg" class="math-display" style="height: 1.128em;" alt="\[ % :3:&amp;#10; \sqrt{x} \;\; = \;\; {\text{the} \;\; y} \;\; {\text{such that}} \;\; {y \ge 0} \;\; {\text{and} \;\; y^2 = x.} \]" />
 
 This describes a perfectly legitimate mathematical function.  We could use it
 to recognize whether one number is the square root of another, or to derive
@@ -1111,23 +875,9 @@ usually concerned with imperative (how to) descriptions.<a class="footnote_link"
 </p>
 <p>How does one compute square roots?  The most common way is to use Newton’s
 method of successive approximations, which says that whenever we have a guess
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>y</mi>
-</math> for the value of the square root of a number <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>x</mi>
-</math>, we can perform a
+<img src="fig/math/05e4cdb2f26a4f66b68c167423907fea.svg" class="math-inline" style="height: 0.669em; vertical-align: -0.235em;" alt="\( y \)" /> for the value of the square root of a number <img src="fig/math/2f4b15565d0a1018e90c3e1b30b76acc.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( x \)" />, we can perform a
 simple manipulation to get a better guess (one closer to the actual square
-root) by averaging <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>y</mi>
-</math> with <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>x</mi>
-    <mrow class="MJX-TeXAtom-ORD">
-      <mo>/</mo>
-    </mrow>
-    <mi>y</mi>
-  </mrow>
-</math>.<a class="footnote_link" id="DOCF21" href="#FOOT21"><sup>21</sup></a> 
+root) by averaging <img src="fig/math/05e4cdb2f26a4f66b68c167423907fea.svg" class="math-inline" style="height: 0.669em; vertical-align: -0.235em;" alt="\( y \)" /> with <img src="fig/math/c243e54e1f37c985a92584d386f5fc01.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.229em;" alt="\( {x / y} \)" />.<a class="footnote_link" id="DOCF21" href="#FOOT21"><sup>21</sup></a> 
 For example, we can compute the square root of 2 as follows.
 Suppose our initial guess is 1:
 </p>
@@ -1266,36 +1016,10 @@ kind of end test.  Does this work better for small and large numbers?
 
 <blockquote>
 <p><strong><a id="Exercise-1_002e8"></a>Exercise 1.8:</strong> Newton’s method for cube roots is
-based on the fact that if <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>y</mi>
-</math> is an approximation to the cube root of <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>x</mi>
-</math>,
+based on the fact that if <img src="fig/math/05e4cdb2f26a4f66b68c167423907fea.svg" class="math-inline" style="height: 0.669em; vertical-align: -0.235em;" alt="\( y \)" /> is an approximation to the cube root of <img src="fig/math/2f4b15565d0a1018e90c3e1b30b76acc.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( x \)" />,
 then a better approximation is given by the value
 
-<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mfrac>
-      <mrow>
-        <mrow class="MJX-TeXAtom-ORD">
-          <mi>x</mi>
-          <mrow class="MJX-TeXAtom-ORD">
-            <mo>/</mo>
-          </mrow>
-          <msup>
-            <mi>y</mi>
-            <mn>2</mn>
-          </msup>
-        </mrow>
-        <mo>+</mo>
-        <mn>2</mn>
-        <mi>y</mi>
-      </mrow>
-      <mn>3</mn>
-    </mfrac>
-    <mo>.</mo>
-  </mrow>
-</math>
+<img src="fig/math/f473edbf6a444add19b682cd2e3ad814.svg" class="math-display" style="height: 2.220em;" alt="\[ % :4:&amp;#10;  {\frac{{x / y^2} + 2y}{3}.} \]" />
 
 Use this formula to implement a cube-root procedure analogous to the
 square-root procedure.  (In <a href="1_002e3.xhtml#g_t1_002e3_002e4">1.3.4</a> we will see how to implement
@@ -1326,7 +1050,7 @@ problem into subproblems.
 </p>
 <figure class="float">
 <a id="Figure-1_002e2"></a>
-<object style="width: 34.97ex; height: 15.63ex;" data="fig/chap1/Fig1.2.std.svg" type="image/svg+xml">SVG</object>
+<img style="width: 34.97ex; max-width: 100%; display: inline;" src="fig/chap1/Fig1.2.std.svg" />
 
 <figcaption class="float-caption">
 <p><strong>Figure 1.2:</strong> Procedural decomposition of the <code>sqrt</code> program.</p>
@@ -1698,9 +1422,7 @@ exact integers and decimal values, and dividing two integers produces a
 rational number rather than a decimal.  For example, dividing 10 by 6 yields
 5/3, while dividing 10.0 by 6.0 yields 1.6666666666666667.  (We will learn how
 to implement arithmetic on rational numbers in <a href="2_002e1.xhtml#g_t2_002e1_002e1">2.1.1</a>.)  If we
-start with an initial guess of 1 in our square-root program, and <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>x</mi>
-</math> is an
+start with an initial guess of 1 in our square-root program, and <img src="fig/math/2f4b15565d0a1018e90c3e1b30b76acc.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( x \)" /> is an
 exact integer, all subsequent values produced in the square-root computation
 will be rational numbers rather than decimals.  Mixed operations on rational
 numbers and decimals always yield decimals, so starting with an initial guess

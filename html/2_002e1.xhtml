@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" xml:lang="en" lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" xml:lang="en" xmlns:xml="http://www.w3.org/XML/1998/namespace" lang="en">
 <!-- Created by GNU Texinfo 5.1, http://www.gnu.org/software/texinfo/ -->
 <head>
 <title>Structure and Interpretation of Computer Programs, 2e: 2.1</title>
@@ -95,341 +95,7 @@ We haven’t yet said how a rational number is represented, or how the procedure
 <code>numer</code>, <code>denom</code>, and <code>make-rat</code> should be implemented.  Even
 so, if we did have these three procedures, we could then add, subtract,
 multiply, divide, and test equality by using the following relations:
-<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
-  <mtable columnalign="right center left" rowspacing="3pt" columnspacing="thickmathspace">
-    <mtr>
-      <mtd>
-        <mrow class="MJX-TeXAtom-ORD">
-          <mfrac>
-            <msub>
-              <mi>n</mi>
-              <mn>1</mn>
-            </msub>
-            <msub>
-              <mi>d</mi>
-              <mn>1</mn>
-            </msub>
-          </mfrac>
-        </mrow>
-        <mo>+</mo>
-        <mrow class="MJX-TeXAtom-ORD">
-          <mfrac>
-            <msub>
-              <mi>n</mi>
-              <mn>2</mn>
-            </msub>
-            <msub>
-              <mi>d</mi>
-              <mn>2</mn>
-            </msub>
-          </mfrac>
-        </mrow>
-      </mtd>
-      <mtd>
-        <mo>=</mo>
-      </mtd>
-      <mtd>
-        <mrow class="MJX-TeXAtom-ORD">
-          <mfrac>
-            <mrow>
-              <msub>
-                <mi>n</mi>
-                <mn>1</mn>
-              </msub>
-              <msub>
-                <mi>d</mi>
-                <mn>2</mn>
-              </msub>
-              <mo>+</mo>
-              <msub>
-                <mi>n</mi>
-                <mn>2</mn>
-              </msub>
-              <msub>
-                <mi>d</mi>
-                <mn>1</mn>
-              </msub>
-            </mrow>
-            <mrow>
-              <msub>
-                <mi>d</mi>
-                <mn>1</mn>
-              </msub>
-              <msub>
-                <mi>d</mi>
-                <mn>2</mn>
-              </msub>
-            </mrow>
-          </mfrac>
-        </mrow>
-        <mo>,</mo>
-      </mtd>
-    </mtr>
-    <mtr>
-      <mtd>
-        <mrow class="MJX-TeXAtom-ORD">
-          <mfrac>
-            <msub>
-              <mi>n</mi>
-              <mn>1</mn>
-            </msub>
-            <msub>
-              <mi>d</mi>
-              <mn>1</mn>
-            </msub>
-          </mfrac>
-        </mrow>
-        <mo>−<!-- − --></mo>
-        <mrow class="MJX-TeXAtom-ORD">
-          <mfrac>
-            <msub>
-              <mi>n</mi>
-              <mn>2</mn>
-            </msub>
-            <msub>
-              <mi>d</mi>
-              <mn>2</mn>
-            </msub>
-          </mfrac>
-        </mrow>
-      </mtd>
-      <mtd>
-        <mo>=</mo>
-      </mtd>
-      <mtd>
-        <mrow class="MJX-TeXAtom-ORD">
-          <mfrac>
-            <mrow>
-              <msub>
-                <mi>n</mi>
-                <mn>1</mn>
-              </msub>
-              <msub>
-                <mi>d</mi>
-                <mn>2</mn>
-              </msub>
-              <mo>−<!-- − --></mo>
-              <msub>
-                <mi>n</mi>
-                <mn>2</mn>
-              </msub>
-              <msub>
-                <mi>d</mi>
-                <mn>1</mn>
-              </msub>
-            </mrow>
-            <mrow>
-              <msub>
-                <mi>d</mi>
-                <mn>1</mn>
-              </msub>
-              <msub>
-                <mi>d</mi>
-                <mn>2</mn>
-              </msub>
-            </mrow>
-          </mfrac>
-        </mrow>
-        <mo>,</mo>
-      </mtd>
-    </mtr>
-    <mtr>
-      <mtd>
-        <mrow class="MJX-TeXAtom-ORD">
-          <mfrac>
-            <msub>
-              <mi>n</mi>
-              <mn>1</mn>
-            </msub>
-            <msub>
-              <mi>d</mi>
-              <mn>1</mn>
-            </msub>
-          </mfrac>
-        </mrow>
-        <mo>×<!-- × --></mo>
-        <mrow class="MJX-TeXAtom-ORD">
-          <mfrac>
-            <msub>
-              <mi>n</mi>
-              <mn>2</mn>
-            </msub>
-            <msub>
-              <mi>d</mi>
-              <mn>2</mn>
-            </msub>
-          </mfrac>
-        </mrow>
-      </mtd>
-      <mtd>
-        <mo>=</mo>
-      </mtd>
-      <mtd>
-        <mrow class="MJX-TeXAtom-ORD">
-          <mfrac>
-            <mrow>
-              <msub>
-                <mi>n</mi>
-                <mn>1</mn>
-              </msub>
-              <msub>
-                <mi>n</mi>
-                <mn>2</mn>
-              </msub>
-            </mrow>
-            <mrow>
-              <msub>
-                <mi>d</mi>
-                <mn>1</mn>
-              </msub>
-              <msub>
-                <mi>d</mi>
-                <mn>2</mn>
-              </msub>
-            </mrow>
-          </mfrac>
-        </mrow>
-        <mo>,</mo>
-      </mtd>
-    </mtr>
-    <mtr>
-      <mtd>
-        <mfrac>
-          <mrow class="MJX-TeXAtom-ORD">
-            <msub>
-              <mi>n</mi>
-              <mn>1</mn>
-            </msub>
-            <mspace width="thinmathspace"/>
-            <mrow class="MJX-TeXAtom-ORD">
-              <mo>/</mo>
-            </mrow>
-            <mspace width="thinmathspace"/>
-            <msub>
-              <mi>d</mi>
-              <mn>1</mn>
-            </msub>
-          </mrow>
-          <mrow class="MJX-TeXAtom-ORD">
-            <msub>
-              <mi>n</mi>
-              <mn>2</mn>
-            </msub>
-            <mspace width="thinmathspace"/>
-            <mrow class="MJX-TeXAtom-ORD">
-              <mo>/</mo>
-            </mrow>
-            <mspace width="thinmathspace"/>
-            <msub>
-              <mi>d</mi>
-              <mn>2</mn>
-            </msub>
-          </mrow>
-        </mfrac>
-      </mtd>
-      <mtd>
-        <mo>=</mo>
-      </mtd>
-      <mtd>
-        <mrow class="MJX-TeXAtom-ORD">
-          <mfrac>
-            <mrow>
-              <msub>
-                <mi>n</mi>
-                <mn>1</mn>
-              </msub>
-              <msub>
-                <mi>d</mi>
-                <mn>2</mn>
-              </msub>
-            </mrow>
-            <mrow>
-              <msub>
-                <mi>d</mi>
-                <mn>1</mn>
-              </msub>
-              <msub>
-                <mi>n</mi>
-                <mn>2</mn>
-              </msub>
-            </mrow>
-          </mfrac>
-        </mrow>
-        <mo>,</mo>
-      </mtd>
-    </mtr>
-    <mtr>
-      <mtd>
-        <mrow class="MJX-TeXAtom-ORD">
-          <mfrac>
-            <msub>
-              <mi>n</mi>
-              <mn>1</mn>
-            </msub>
-            <msub>
-              <mi>d</mi>
-              <mn>1</mn>
-            </msub>
-          </mfrac>
-        </mrow>
-      </mtd>
-      <mtd>
-        <mo>=</mo>
-      </mtd>
-      <mtd>
-        <mrow class="MJX-TeXAtom-ORD">
-          <mfrac>
-            <msub>
-              <mi>n</mi>
-              <mn>2</mn>
-            </msub>
-            <msub>
-              <mi>d</mi>
-              <mn>2</mn>
-            </msub>
-          </mfrac>
-        </mrow>
-        <mspace width="1em"/>
-        <mrow class="MJX-TeXAtom-ORD">
-          <mtext> </mtext>
-          <mi mathvariant="normal">i</mi>
-          <mi mathvariant="normal">f</mi>
-          <mtext> </mtext>
-          <mi mathvariant="normal">a</mi>
-          <mi mathvariant="normal">n</mi>
-          <mi mathvariant="normal">d</mi>
-          <mtext> </mtext>
-          <mi mathvariant="normal">o</mi>
-          <mi mathvariant="normal">n</mi>
-          <mi mathvariant="normal">l</mi>
-          <mi mathvariant="normal">y</mi>
-          <mtext> </mtext>
-          <mi mathvariant="normal">i</mi>
-          <mi mathvariant="normal">f</mi>
-          <mspace width="1em"/>
-        </mrow>
-        <msub>
-          <mi>n</mi>
-          <mn>1</mn>
-        </msub>
-        <msub>
-          <mi>d</mi>
-          <mn>2</mn>
-        </msub>
-        <mo>=</mo>
-        <msub>
-          <mi>n</mi>
-          <mn>2</mn>
-        </msub>
-        <msub>
-          <mi>d</mi>
-          <mn>1</mn>
-        </msub>
-        <mo>.</mo>
-      </mtd>
-    </mtr>
-  </mtable>
-</math>
+<img src="fig/math/55d25a70d9db3c6d95666151a04c4869.svg" class="math-display" style="height: 11.866em;" alt="\[ % :30:&amp;#10;  \begin{eqnarray} {n_1 \over d_1} + {n_2 \over d_2}       &amp;amp;=&amp;amp; {n_1 d_2 + n_2 d_1 \over d_1 d_2}, \\ {n_1 \over d_1} - {n_2 \over d_2}  &amp;amp;=&amp;amp; {n_1 d_2 - n_2 d_1 \over d_1 d_2}, \\ {n_1 \over d_1} \times {n_2 \over d_2}  &amp;amp;=&amp;amp; {n_1 n_2 \over d_1 d_2}, \\ {n_1 \,/\, d_1} \over {n_2 \,/\, d_2}  &amp;amp;=&amp;amp; {n_1 d_2 \over d_1 n_2}, \\ {n_1 \over d_1}    &amp;amp;=&amp;amp; {n_2 \over d_2} \quad       {\rm\ if\ and\ only\ if\quad}        n_1 d_2 = n_2 d_1.  \end{eqnarray} \]" />
 We can express these rules as procedures:
 </p>
 <div class="lisp">
@@ -617,7 +283,7 @@ barriers and connect the different levels.
 </p>
 <figure class="float">
 <a id="Figure-2_002e1"></a>
-<object style="width: 48.87ex; height: 38.08ex;" data="fig/chap2/Fig2.1d.std.svg" type="image/svg+xml">SVG</object>
+<img style="width: 48.87ex; max-width: 100%; display: inline;" src="fig/chap2/Fig2.1d.std.svg" />
 
 <figcaption class="float-caption">
 <p><strong>Figure 2.1:</strong> Data-abstraction barriers in the rational-number package.</p>
@@ -675,12 +341,8 @@ representing line segments in a plane.  Each segment is represented as a pair
 of points: a starting point and an ending point.  Define a constructor
 <code>make-segment</code> and selectors <code>start-segment</code> and <code>end-segment</code>
 that define the representation of segments in terms of points.  Furthermore, a
-point can be represented as a pair of numbers: the <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>x</mi>
-</math> coordinate and the
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>y</mi>
-</math> coordinate.  Accordingly, specify a constructor <code>make-point</code> and
+point can be represented as a pair of numbers: the <img src="fig/math/2f4b15565d0a1018e90c3e1b30b76acc.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( x \)" /> coordinate and the
+<img src="fig/math/05e4cdb2f26a4f66b68c167423907fea.svg" class="math-inline" style="height: 0.669em; vertical-align: -0.235em;" alt="\( y \)" /> coordinate.  Accordingly, specify a constructor <code>make-point</code> and
 selectors <code>x-point</code> and <code>y-point</code> that define this representation.
 Finally, using your selectors and constructors, define a procedure
 <code>midpoint-segment</code> that takes a line segment as argument and returns its
@@ -729,24 +391,7 @@ dividing them should yield the same result as dividing <code>n</code> by <code>d
 In other words, <code>make-rat</code>, <code>numer</code>, and <code>denom</code> must satisfy
 the condition that, for any integer <code>n</code> and any non-zero integer <code>d</code>,
 if <code>x</code> is <code>(make-rat n d)</code>, then
-<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mfrac>
-      <mtext>(numer x)</mtext>
-      <mtext>(denom x)</mtext>
-    </mfrac>
-  </mrow>
-  <mo>=</mo>
-  <mrow class="MJX-TeXAtom-ORD">
-    <mrow class="MJX-TeXAtom-ORD">
-      <mfrac>
-        <mtext>n</mtext>
-        <mtext>d</mtext>
-      </mfrac>
-    </mrow>
-    <mo>.</mo>
-  </mrow>
-</math>
+<img src="fig/math/e315a23aba2b08a50cf11f956590d227.svg" class="math-display" style="height: 2.388em;" alt="\[ % :31:&amp;#10;  {\text{(numer x)} \over \text{(denom x)}} = {{\text{n} \over \text{d}}.}   \]" />
 In fact, this is the only condition <code>make-rat</code>, <code>numer</code>, and
 <code>denom</code> must fulfill in order to form a suitable basis for a
 rational-number representation.  In general, we can think of data as defined by
@@ -835,22 +480,7 @@ works, make use of the substitution model of <a href="1_002e1.xhtml#g_t1_002e1_0
 <blockquote>
 <p><strong><a id="Exercise-2_002e5"></a>Exercise 2.5:</strong> Show that we can represent pairs of
 nonnegative integers using only numbers and arithmetic operations if we
-represent the pair <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>a</mi>
-</math> and <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>b</mi>
-</math> as the integer that is the product <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <msup>
-      <mn>2</mn>
-      <mi>a</mi>
-    </msup>
-    <msup>
-      <mn>3</mn>
-      <mi>b</mi>
-    </msup>
-  </mrow>
-</math>.
+represent the pair <img src="fig/math/09009cdd5fc245e05305bc574dcdc97d.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( a \)" /> and <img src="fig/math/3e92f417ccfc1f59b0ee22d034c85747.svg" class="math-inline" style="height: 0.703em; vertical-align: -0.009em;" alt="\( b \)" /> as the integer that is the product <img src="fig/math/c990d69cae4f3c4354b8ac648e5bbd6c.svg" class="math-inline" style="height: 0.871em;" alt="\( {2^a 3^b} \)" />.
 Give the corresponding definitions of the procedures <code>cons</code>,
 <code>car</code>, and <code>cdr</code>.
 </p></blockquote>
@@ -890,65 +520,13 @@ quantities the results will be numbers of known precision.
 </p>
 <p>Electrical engineers will be using Alyssa’s system to compute electrical
 quantities.  It is sometimes necessary for them to compute the value of a
-parallel equivalent resistance <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <msub>
-    <mi>R</mi>
-    <mi>p</mi>
-  </msub>
-</math> of two resistors <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <msub>
-    <mi>R</mi>
-    <mn>1</mn>
-  </msub>
-</math> and <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <msub>
-    <mi>R</mi>
-    <mn>2</mn>
-  </msub>
-</math>
+parallel equivalent resistance <img src="fig/math/c06f47fede68ce008eee7db83d8761f5.svg" class="math-inline" style="height: 0.970em; vertical-align: -0.318em;" alt="\( R_p \)" /> of two resistors <img src="fig/math/d9d9cdc18840ec4f11d07675e7ece0b6.svg" class="math-inline" style="height: 0.797em; vertical-align: -0.144em;" alt="\( R_1 \)" /> and <img src="fig/math/5d040779e23d1de90e90e99f745396ee.svg" class="math-inline" style="height: 0.797em; vertical-align: -0.144em;" alt="\( R_2 \)" />
 using the formula
-<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
-  <msub>
-    <mi>R</mi>
-    <mi>p</mi>
-  </msub>
-  <mspace width="thinmathspace"/>
-  <mo>=</mo>
-  <mspace width="thinmathspace"/>
-  <mrow class="MJX-TeXAtom-ORD">
-    <mrow class="MJX-TeXAtom-ORD">
-      <mfrac>
-        <mn>1</mn>
-        <mrow>
-          <mn>1</mn>
-          <mrow class="MJX-TeXAtom-ORD">
-            <mo>/</mo>
-          </mrow>
-          <msub>
-            <mi>R</mi>
-            <mn>1</mn>
-          </msub>
-          <mo>+</mo>
-          <mn>1</mn>
-          <mrow class="MJX-TeXAtom-ORD">
-            <mo>/</mo>
-          </mrow>
-          <msub>
-            <mi>R</mi>
-            <mn>2</mn>
-          </msub>
-        </mrow>
-      </mfrac>
-    </mrow>
-    <mo>.</mo>
-  </mrow>
-</math>
+<img src="fig/math/f1df30cf5e9f1966a016658bd398c10d.svg" class="math-display" style="height: 2.164em;" alt="\[ % :32:&amp;#10;  R_p \,=\, {{1 \over 1 / R_1 + 1 / R_2}.}   \]" />
 Resistance values are usually known only up to some tolerance guaranteed by the
 manufacturer of the resistor.  For example, if you buy a resistor labeled “6.8
 ohms with 10% tolerance” you can only be sure that the resistor has a
-resistance between 6.8 <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mo>−<!-- − --></mo>
-</math> 0.68 = 6.12 and 6.8 + 0.68 = 7.48 ohms.  Thus, if you
+resistance between 6.8 <img src="fig/math/c49a4c44bcccc6da62cee655abca6ad8.svg" class="math-inline" style="height: 0.509em;" alt="\( - \)" /> 0.68 = 6.12 and 6.8 + 0.68 = 7.48 ohms.  Thus, if you
 have a 6.8-ohm 10% resistor in parallel with a 4.7-ohm 5% resistor, the
 resistance of the combination can range from about 2.58 ohms (if the two
 resistors are at the lower bounds) to about 2.97 ohms (if the two resistors are
@@ -1052,9 +630,7 @@ suggestion.
 <p>After debugging her program, Alyssa shows it to a potential user, who complains
 that her program solves the wrong problem.  He wants a program that can deal
 with numbers represented as a center value and an additive tolerance; for
-example, he wants to work with intervals such as 3.5 <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mo>±<!-- ± --></mo>
-</math> 0.15 rather than
+example, he wants to work with intervals such as 3.5 <img src="fig/math/c303947b7f2431a717bf042574d8c3ee.svg" class="math-inline" style="height: 0.509em;" alt="\( \pm \)" /> 0.15 rather than
 [3.35, 3.65].  Alyssa returns to her desk and fixes this problem by supplying
 an alternate constructor and alternate selectors:
 </p>
@@ -1099,63 +675,9 @@ Several years later, after she has forgotten all about it, she gets a frenzied
 call from an irate user, Lem E. Tweakit.  It seems that Lem has noticed that
 the formula for parallel resistors can be written in two algebraically
 equivalent ways:
-<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mfrac>
-      <mrow>
-        <msub>
-          <mi>R</mi>
-          <mn>1</mn>
-        </msub>
-        <msub>
-          <mi>R</mi>
-          <mn>2</mn>
-        </msub>
-      </mrow>
-      <mrow>
-        <msub>
-          <mi>R</mi>
-          <mn>1</mn>
-        </msub>
-        <mo>+</mo>
-        <msub>
-          <mi>R</mi>
-          <mn>2</mn>
-        </msub>
-      </mrow>
-    </mfrac>
-  </mrow>
-</math>
+<img src="fig/math/41845d6c2d588f00b193008316740461.svg" class="math-display" style="height: 2.160em;" alt="\[ % :33:&amp;#10;  {R_1 R_2 \over R_1 + R_2}  \]" />
 and
-<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mrow class="MJX-TeXAtom-ORD">
-      <mfrac>
-        <mn>1</mn>
-        <mrow>
-          <mn>1</mn>
-          <mrow class="MJX-TeXAtom-ORD">
-            <mo>/</mo>
-          </mrow>
-          <msub>
-            <mi>R</mi>
-            <mn>1</mn>
-          </msub>
-          <mo>+</mo>
-          <mn>1</mn>
-          <mrow class="MJX-TeXAtom-ORD">
-            <mo>/</mo>
-          </mrow>
-          <msub>
-            <mi>R</mi>
-            <mn>2</mn>
-          </msub>
-        </mrow>
-      </mfrac>
-    </mrow>
-    <mo>.</mo>
-  </mrow>
-</math>
+<img src="fig/math/1c9d2dcabe5ed85f87568a2ba9502c16.svg" class="math-display" style="height: 2.164em;" alt="\[ % :34:&amp;#10;  {{1 \over 1 / R_1 + 1 / R_2}.}  \]" />
 He has written the following two programs, each of which computes the
 parallel-resistors formula differently:
 </p>
@@ -1180,28 +702,8 @@ computing. This is a serious complaint.
 <blockquote>
 <p><strong><a id="Exercise-2_002e14"></a>Exercise 2.14:</strong> Demonstrate that Lem is right.
 Investigate the behavior of the system on a variety of arithmetic
-expressions. Make some intervals <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>A</mi>
-</math> and <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>B</mi>
-</math>, and use them in computing the
-expressions <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>A</mi>
-    <mrow class="MJX-TeXAtom-ORD">
-      <mo>/</mo>
-    </mrow>
-    <mi>A</mi>
-  </mrow>
-</math> and <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>A</mi>
-    <mrow class="MJX-TeXAtom-ORD">
-      <mo>/</mo>
-    </mrow>
-    <mi>B</mi>
-  </mrow>
-</math>.  You will get the most insight by
+expressions. Make some intervals <img src="fig/math/0795850a4e18ff44aa3a2868640c29a7.svg" class="math-inline" style="height: 0.656em; vertical-align: -0.004em;" alt="\( A \)" /> and <img src="fig/math/30728d9819efd7caec6b07dd841c7393.svg" class="math-inline" style="height: 0.645em;" alt="\( B \)" />, and use them in computing the
+expressions <img src="fig/math/20a170b3fcb7a6e375f7b0dab55857e5.svg" class="math-inline" style="height: 0.827em; vertical-align: -0.153em;" alt="\( {A / A} \)" /> and <img src="fig/math/0535b8aa83afc951273e78b0cf32ebc1.svg" class="math-inline" style="height: 0.827em; vertical-align: -0.153em;" alt="\( {A / B} \)" />.  You will get the most insight by
 using intervals whose width is a small percentage of the center value. Examine
 the results of the computation in center-percent form (see <a href="#Exercise-2_002e12">Exercise 2.12</a>).
 </p></blockquote>

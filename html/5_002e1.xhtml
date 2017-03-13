@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" xml:lang="en" lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" xml:lang="en" xmlns:xml="http://www.w3.org/XML/1998/namespace" lang="en">
 <!-- Created by GNU Texinfo 5.1, http://www.gnu.org/software/texinfo/ -->
 <head>
 <title>Structure and Interpretation of Computer Programs, 2e: 5.1</title>
@@ -50,12 +50,8 @@ the following procedure:
       a
       </span><span class="opn">(</span><span class="pln">gcd b </span><span class="opn">(</span><span class="pln">remainder a b</span><span class="clo">))))</span></pre></div>
 
-<p>A machine to carry out this algorithm must keep track of two numbers, <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>a</mi>
-</math> and
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>b</mi>
-</math>, so let us assume that these numbers are stored in two registers with
+<p>A machine to carry out this algorithm must keep track of two numbers, <img src="fig/math/09009cdd5fc245e05305bc574dcdc97d.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( a \)" /> and
+<img src="fig/math/3e92f417ccfc1f59b0ee22d034c85747.svg" class="math-inline" style="height: 0.703em; vertical-align: -0.009em;" alt="\( b \)" />, so let us assume that these numbers are stored in two registers with
 those names.  The basic operations required are testing whether the contents of
 register <code>b</code> is zero and computing the remainder of the contents of
 register <code>a</code> divided by the contents of register <code>b</code>.  The remainder
@@ -89,7 +85,7 @@ represented in a data-path diagram by a triangle containing the constant).
 </p>
 <figure class="float">
 <a id="Figure-5_002e1"></a>
-<object style="width: 37.90ex; height: 26.07ex;" data="fig/chap5/Fig5.1a.std.svg" type="image/svg+xml">SVG</object>
+<img style="width: 37.90ex; max-width: 100%; display: inline;" src="fig/chap5/Fig5.1a.std.svg" />
 
 <figcaption class="float-caption">
 <p><strong>Figure 5.1:</strong> Data paths for a <abbr>GCD</abbr> machine.</p>
@@ -135,7 +131,7 @@ reaches <code>done</code>, we will find the value of the <abbr>GCD</abbr> in reg
 </p>
 <figure class="float">
 <a id="Figure-5_002e2"></a>
-<object style="width: 27.46ex; height: 30.74ex;" data="fig/chap5/Fig5.2.std.svg" type="image/svg+xml">SVG</object>
+<img style="width: 27.46ex; max-width: 100%; display: inline;" src="fig/chap5/Fig5.2.std.svg" />
 
 <figcaption class="float-caption">
 <p><strong>Figure 5.2:</strong> Controller for a <abbr>GCD</abbr> machine.</p>
@@ -213,9 +209,7 @@ example only hints at the generality of these descriptions, since the
 and each button and test is used only once in the controller.
 </p>
 <blockquote>
-<p><strong><a id="Figure-5_002e3"></a>Figure 5.3:</strong> <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mo stretchy="false">↓<!-- ↓ --></mo>
-</math> A specification of the <abbr>GCD</abbr>
+<p><strong><a id="Figure-5_002e3"></a>Figure 5.3:</strong> <img src="fig/math/6055ad073cc2a2ef0c1068b0c6d90034.svg" class="math-inline" style="height: 0.843em; vertical-align: -0.159em;" alt="\( \downarrow \)" /> A specification of the <abbr>GCD</abbr>
 machine.
 </p>
 <div class="lisp">
@@ -356,7 +350,7 @@ loops we used in the interpreters of <a href="Chapter-4.xhtml#Chapter-4">Chapter
 </p>
 <figure class="float">
 <a id="Figure-5_002e4"></a>
-<object style="width: 59.92ex; height: 69.76ex;" data="fig/chap5/Fig5.4c.std.svg" type="image/svg+xml">SVG</object>
+<img style="width: 59.92ex; max-width: 100%; display: inline;" src="fig/chap5/Fig5.4c.std.svg" />
 
 <figcaption class="float-caption">
 <p><strong>Figure 5.4:</strong> A <abbr>GCD</abbr> machine that reads inputs and prints results.</p>
@@ -401,7 +395,7 @@ instructions that contains a loop, as shown in <a href="#Figure-5_002e6">Figure 
 </p>
 <figure class="float">
 <a id="Figure-5_002e5"></a>
-<object style="width: 44.03ex; height: 70.71ex;" data="fig/chap5/Fig5.5b.std.svg" type="image/svg+xml">SVG</object>
+<img style="width: 44.03ex; max-width: 100%; display: inline;" src="fig/chap5/Fig5.5b.std.svg" />
 
 <figcaption class="float-caption">
 <p><strong>Figure 5.5:</strong> Data paths and controller for the elaborated <abbr>GCD</abbr> machine.</p>
@@ -409,9 +403,7 @@ instructions that contains a loop, as shown in <a href="#Figure-5_002e6">Figure 
 </figure>
 
 <blockquote>
-<p><strong><a id="Figure-5_002e6"></a>Figure 5.6:</strong> <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mo stretchy="false">↓<!-- ↓ --></mo>
-</math> Controller instruction sequence for the
+<p><strong><a id="Figure-5_002e6"></a>Figure 5.6:</strong> <img src="fig/math/6055ad073cc2a2ef0c1068b0c6d90034.svg" class="math-inline" style="height: 0.843em; vertical-align: -0.159em;" alt="\( \downarrow \)" /> Controller instruction sequence for the
 <abbr>GCD</abbr> machine in <a href="#Figure-5_002e5">Figure 5.5</a>.
 </p>
 <div class="lisp">
@@ -474,7 +466,7 @@ corresponding portions of the machine’s controller sequence.
 </p>
 <figure class="float">
 <a id="Figure-5_002e7"></a>
-<object style="width: 56.64ex; height: 63.20ex;" data="fig/chap5/Fig5.7b.std.svg" type="image/svg+xml">SVG</object>
+<img style="width: 56.64ex; max-width: 100%; display: inline;" src="fig/chap5/Fig5.7b.std.svg" />
 
 <figcaption class="float-caption">
 <p><strong>Figure 5.7:</strong> Portions of the data paths and controller sequence<!-- /@w --> for a machine with two <abbr>GCD</abbr> computations.</p>
@@ -495,9 +487,7 @@ as the first.  If we do this, we obtain the controller sequence shown in
 <a href="#Figure-5_002e8">Figure 5.8</a>.
 </p>
 <blockquote>
-<p><strong><a id="Figure-5_002e8"></a>Figure 5.8:</strong> <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mo stretchy="false">↓<!-- ↓ --></mo>
-</math> Portions of the controller sequence for
+<p><strong><a id="Figure-5_002e8"></a>Figure 5.8:</strong> <img src="fig/math/6055ad073cc2a2ef0c1068b0c6d90034.svg" class="math-inline" style="height: 0.843em; vertical-align: -0.159em;" alt="\( \downarrow \)" /> Portions of the controller sequence for
 a machine that uses the same data-path components for two different
 <abbr>GCD</abbr> computations.
 </p>
@@ -537,9 +527,7 @@ portion of the resulting controller sequence, which includes only a single copy
 of the <code>gcd</code> instructions.
 </p>
 <blockquote>
-<p><strong><a id="Figure-5_002e9"></a>Figure 5.9:</strong> <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mo stretchy="false">↓<!-- ↓ --></mo>
-</math> Using a <code>continue</code> register to
+<p><strong><a id="Figure-5_002e9"></a>Figure 5.9:</strong> <img src="fig/math/6055ad073cc2a2ef0c1068b0c6d90034.svg" class="math-inline" style="height: 0.843em; vertical-align: -0.159em;" alt="\( \downarrow \)" /> Using a <code>continue</code> register to
 avoid the duplicate controller sequence in <a href="#Figure-5_002e8">Figure 5.8</a>.
 </p>
 <div class="lisp">
@@ -594,9 +582,7 @@ terminate the <code>gcd</code> subroutine with a branch to the location stored i
 <a href="#Figure-5_002e10">Figure 5.10</a>.
 </p>
 <blockquote>
-<p><strong><a id="Figure-5_002e10"></a>Figure 5.10:</strong> <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mo stretchy="false">↓<!-- ↓ --></mo>
-</math> Assigning labels to the
+<p><strong><a id="Figure-5_002e10"></a>Figure 5.10:</strong> <img src="fig/math/6055ad073cc2a2ef0c1068b0c6d90034.svg" class="math-inline" style="height: 0.843em; vertical-align: -0.159em;" alt="\( \downarrow \)" /> Assigning labels to the
 <code>continue</code> register simplifies and generalizes the strategy shown in
 <a href="#Figure-5_002e9">Figure 5.9</a>.
 </p>
@@ -658,21 +644,7 @@ first examined in <a href="1_002e2.xhtml#g_t1_002e2_002e1">1.2.1</a>:
       </span><span class="lit">1</span><span class="pln">
       </span><span class="opn">(</span><span class="pun">*</span><span class="pln"> </span><span class="opn">(</span><span class="pln">factorial </span><span class="opn">(</span><span class="pun">-</span><span class="pln"> n </span><span class="lit">1</span><span class="clo">))</span><span class="pln"> n</span><span class="clo">)))</span></pre></div>
 
-<p>As we see from the procedure, computing <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>n</mi>
-    <mo>!</mo>
-  </mrow>
-</math> requires computing <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mo stretchy="false">(</mo>
-    <mi>n</mi>
-    <mo>−<!-- − --></mo>
-    <mn>1</mn>
-    <mo stretchy="false">)</mo>
-    <mo>!</mo>
-  </mrow>
-</math>.
+<p>As we see from the procedure, computing <img src="fig/math/5fa3dbabdc4f880a425fd3b033864691.svg" class="math-inline" style="height: 0.702em; vertical-align: -0.009em;" alt="\( {n!} \)" /> requires computing <img src="fig/math/44fe5301c8e9c277481b220163a36838.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.189em;" alt="\( {(n - 1)!} \)" />.
 Our <abbr>GCD</abbr> machine, modeled on the procedure
 </p>
 <div class="lisp">
@@ -694,18 +666,7 @@ computation.
 </p>
 <p>In the case of factorial (or any recursive process) the answer to the new
 factorial subproblem is not the answer to the original problem.  The value
-obtained for <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mo stretchy="false">(</mo>
-    <mi>n</mi>
-    <mo>−<!-- − --></mo>
-    <mn>1</mn>
-    <mo stretchy="false">)</mo>
-    <mo>!</mo>
-  </mrow>
-</math> must be multiplied by <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math> to get the final answer.
+obtained for <img src="fig/math/44fe5301c8e9c277481b220163a36838.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.189em;" alt="\( {(n - 1)!} \)" /> must be multiplied by <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" /> to get the final answer.
 If we try to imitate the <abbr>GCD</abbr> design, and solve the factorial
 subproblem by decrementing the <code>n</code> register and rerunning the factorial
 machine, we will no longer have available the old value of <code>n</code> by which to
@@ -718,32 +679,9 @@ constructed from a fixed, finite number of parts.
 </p>
 <p>Nevertheless, we can implement the factorial process as a register machine if
 we can arrange to use the same components for each nested instance of the
-machine.  Specifically, the machine that computes <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>n</mi>
-    <mo>!</mo>
-  </mrow>
-</math>  should use the same
-components to work on the subproblem of computing <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mo stretchy="false">(</mo>
-    <mi>n</mi>
-    <mo>−<!-- − --></mo>
-    <mn>1</mn>
-    <mo stretchy="false">)</mo>
-    <mo>!</mo>
-  </mrow>
-</math>, on the
-subproblem for <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mo stretchy="false">(</mo>
-    <mi>n</mi>
-    <mo>−<!-- − --></mo>
-    <mn>2</mn>
-    <mo stretchy="false">)</mo>
-    <mo>!</mo>
-  </mrow>
-</math>, and so on.  This is plausible because, although
+machine.  Specifically, the machine that computes <img src="fig/math/5fa3dbabdc4f880a425fd3b033864691.svg" class="math-inline" style="height: 0.702em; vertical-align: -0.009em;" alt="\( {n!} \)" />  should use the same
+components to work on the subproblem of computing <img src="fig/math/44fe5301c8e9c277481b220163a36838.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.189em;" alt="\( {(n - 1)!} \)" />, on the
+subproblem for <img src="fig/math/38f9b5515613d04a8d4009a2cf0c9fb1.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.189em;" alt="\( {(n - 2)!} \)" />, and so on.  This is plausible because, although
 the factorial process dictates that an unbounded number of copies of the same
 machine are needed to perform a computation, only one of these copies needs to
 be active at any given time.  When the machine encounters a recursive
@@ -777,39 +715,9 @@ machine’s data paths for each factorial subproblem.  There is a similar design
 issue in reusing the controller sequence that operates the data paths.  To
 reexecute the factorial computation, the controller cannot simply loop back to
 the beginning, as with an iterative process, because after solving the 
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mo stretchy="false">(</mo>
-    <mi>n</mi>
-    <mo>−<!-- − --></mo>
-    <mn>1</mn>
-    <mo stretchy="false">)</mo>
-    <mo>!</mo>
-  </mrow>
-</math> subproblem the machine must still multiply the result by <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math>.  The
-controller must suspend its computation of <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>n</mi>
-    <mo>!</mo>
-  </mrow>
-</math>, solve the <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mo stretchy="false">(</mo>
-    <mi>n</mi>
-    <mo>−<!-- − --></mo>
-    <mn>1</mn>
-    <mo stretchy="false">)</mo>
-    <mo>!</mo>
-  </mrow>
-</math>
-subproblem, then continue its computation of <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>n</mi>
-    <mo>!</mo>
-  </mrow>
-</math>.  This view of the
+<img src="fig/math/44fe5301c8e9c277481b220163a36838.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.189em;" alt="\( {(n - 1)!} \)" /> subproblem the machine must still multiply the result by <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" />.  The
+controller must suspend its computation of <img src="fig/math/5fa3dbabdc4f880a425fd3b033864691.svg" class="math-inline" style="height: 0.702em; vertical-align: -0.009em;" alt="\( {n!} \)" />, solve the <img src="fig/math/44fe5301c8e9c277481b220163a36838.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.189em;" alt="\( {(n - 1)!} \)" />
+subproblem, then continue its computation of <img src="fig/math/5fa3dbabdc4f880a425fd3b033864691.svg" class="math-inline" style="height: 0.702em; vertical-align: -0.009em;" alt="\( {n!} \)" />.  This view of the
 factorial computation suggests the use of the subroutine mechanism described in
 <a href="#g_t5_002e1_002e3">5.1.3</a>, which has the controller use a <code>continue</code> register to
 transfer to the part of the sequence that solves a subproblem and then continue
@@ -843,7 +751,7 @@ subcomputation, is needed.
 </p>
 <figure class="float">
 <a id="Figure-5_002e11"></a>
-<object style="width: 66.14ex; height: 73.13ex;" data="fig/chap5/Fig5.11b.std.svg" type="image/svg+xml">SVG</object>
+<img style="width: 66.14ex; max-width: 100%; display: inline;" src="fig/chap5/Fig5.11b.std.svg" />
 
 <figcaption class="float-caption">
 <p><strong>Figure 5.11:</strong> A recursive factorial machine.</p>
@@ -881,49 +789,17 @@ of the Fibonacci numbers, which we introduced in <a href="1_002e2.xhtml#g_t1_002
 a register machine with registers <code>n</code>, <code>val</code>, and <code>continue</code>.
 The machine is more complex than the one for factorial, because there are two
 places in the controller sequence where we need to perform recursive
-calls—once to compute <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mtext>Fib</mtext>
-    <mo stretchy="false">(</mo>
-    <mi>n</mi>
-    <mo>−<!-- − --></mo>
-    <mn>1</mn>
-    <mo stretchy="false">)</mo>
-  </mrow>
-</math> and once to compute <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mtext>Fib</mtext>
-    <mo stretchy="false">(</mo>
-    <mi>n</mi>
-    <mo>−<!-- − --></mo>
-    <mn>2</mn>
-    <mo stretchy="false">)</mo>
-  </mrow>
-</math>.  To
+calls—once to compute <img src="fig/math/35917e154e59bb8d0626c859e472c68e.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.189em;" alt="\( {\text{Fib}(n - 1)} \)" /> and once to compute <img src="fig/math/084dbe559d00ffc6440d3be93daac604.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.189em;" alt="\( {\text{Fib}(n - 2)} \)" />.  To
 set up for each of these calls, we save the registers whose values will be
 needed later, set the <code>n</code> register to the number whose Fib we need to
-compute recursively (<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>n</mi>
-    <mo>−<!-- − --></mo>
-    <mn>1</mn>
-  </mrow>
-</math> or <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>n</mi>
-    <mo>−<!-- − --></mo>
-    <mn>2</mn>
-  </mrow>
-</math>), and assign to <code>continue</code> the
+compute recursively (<img src="fig/math/81eb4f306db699a33b30b99343404a6c.svg" class="math-inline" style="height: 0.652em; vertical-align: -0.009em;" alt="\( {n - 1} \)" /> or <img src="fig/math/8b1fdb2acf85c0211eb0090dd9057eb6.svg" class="math-inline" style="height: 0.652em; vertical-align: -0.009em;" alt="\( {n - 2} \)" />), and assign to <code>continue</code> the
 entry point in the main sequence to which to return (<code>afterfib-n-1</code> or
 <code>afterfib-n-2</code>, respectively).  We then go to <code>fib-loop</code>.  When we
 return from the recursive call, the answer is in <code>val</code>.  <a href="#Figure-5_002e12">Figure 5.12</a>
 shows the controller sequence for this machine.
 </p>
 <blockquote>
-<p><strong><a id="Figure-5_002e12"></a>Figure 5.12:</strong> <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mo stretchy="false">↓<!-- ↓ --></mo>
-</math> Controller for a machine to compute
+<p><strong><a id="Figure-5_002e12"></a>Figure 5.12:</strong> <img src="fig/math/6055ad073cc2a2ef0c1068b0c6d90034.svg" class="math-inline" style="height: 0.843em; vertical-align: -0.159em;" alt="\( \downarrow \)" /> Controller for a machine to compute
 Fibonacci numbers.
 </p>
 <div class="lisp">
@@ -1017,21 +893,7 @@ instructions?
 <h4 class="subsection"><span class="secnum">5.1.5</span><span class="sectitle">Instruction Summary</span></h4>
 
 <p>A controller instruction in our register-machine language has one of the
-following forms, where each <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mo stretchy="false">⟨</mo>
-    <mspace width="0.06em"/>
-    <mi>i</mi>
-    <mi>n</mi>
-    <mi>p</mi>
-    <mi>u</mi>
-    <msub>
-      <mi>t</mi>
-      <mi>i</mi>
-    </msub>
-    <mo stretchy="false">⟩</mo>
-  </mrow>
-</math> is either 
+following forms, where each <img src="fig/math/f7d486a2c42730cab6faf2d8ed1fc32e.svg" class="math-inline" style="height: 0.916em; vertical-align: -0.231em;" alt="\( {⟨\kern0.06em input_i⟩} \)" /> is either 
 <code>(reg ⟨<var>register-name</var>⟩)</code> or <code>(const ⟨<var>constant-value</var>⟩)</code>.  
 These instructions were introduced in <a href="#g_t5_002e1_002e1">5.1.1</a>:
 </p>

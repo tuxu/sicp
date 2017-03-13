@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" xml:lang="en" lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" xml:lang="en" xmlns:xml="http://www.w3.org/XML/1998/namespace" lang="en">
 <!-- Created by GNU Texinfo 5.1, http://www.gnu.org/software/texinfo/ -->
 <head>
 <title>Structure and Interpretation of Computer Programs, 2e: 3.1</title>
@@ -146,41 +146,8 @@ general, evaluating the expression
 <div class="lisp">
 <pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">begin</span><span class="pln"> ⟨</span><var><span class="pln">exp</span><span class="pun">₁</span></var><span class="pln">⟩ ⟨</span><var><span class="pln">exp</span><span class="pun">₂</span></var><span class="pln">⟩ </span><span class="roman"><span class="pun">…</span></span><span class="pln"> ⟨</span><var><span class="pln">exp</span><span class="pun">ₖ</span></var><span class="pln">⟩</span><span class="clo">)</span></pre></div>
 
-<p>causes the expressions <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mo stretchy="false">⟨</mo>
-    <mi>e</mi>
-    <mi>x</mi>
-    <msub>
-      <mi>p</mi>
-      <mn>1</mn>
-    </msub>
-    <mo stretchy="false">⟩</mo>
-  </mrow>
-</math> through <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mo stretchy="false">⟨</mo>
-    <mi>e</mi>
-    <mi>x</mi>
-    <msub>
-      <mi>p</mi>
-      <mi>k</mi>
-    </msub>
-    <mo stretchy="false">⟩</mo>
-  </mrow>
-</math> to be evaluated
-in sequence and the value of the final expression <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mo stretchy="false">⟨</mo>
-    <mi>e</mi>
-    <mi>x</mi>
-    <msub>
-      <mi>p</mi>
-      <mi>k</mi>
-    </msub>
-    <mo stretchy="false">⟩</mo>
-  </mrow>
-</math> to be
+<p>causes the expressions <img src="fig/math/932e0a83764911cd81a3bc16542a4fc3.svg" class="math-inline" style="height: 0.916em; vertical-align: -0.231em;" alt="\( {⟨exp_1⟩} \)" /> through <img src="fig/math/d3f08810356211380cf625bdbb62d030.svg" class="math-inline" style="height: 0.916em; vertical-align: -0.231em;" alt="\( {⟨exp_k⟩} \)" /> to be evaluated
+in sequence and the value of the final expression <img src="fig/math/d3f08810356211380cf625bdbb62d030.svg" class="math-inline" style="height: 0.916em; vertical-align: -0.231em;" alt="\( {⟨exp_k⟩} \)" /> to be
 returned as the value of the entire <code>begin</code> form.<a class="footnote_link" id="DOCF131" href="#FOOT131"><sup>131</sup></a>
 </p>
 <p>Although <code>withdraw</code> works as desired, the variable <code>balance</code> presents
@@ -423,33 +390,13 @@ presumably want is for successive calls to <code>rand</code> to produce a sequen
 numbers that has statistical properties of uniform distribution.  We will not
 discuss methods for generating suitable sequences here.  Rather, let us assume
 that we have a procedure <code>rand-update</code> that has the property that if we
-start with a given number <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <msub>
-    <mi>x</mi>
-    <mn>1</mn>
-  </msub>
-</math> and form
+start with a given number <img src="fig/math/4e7007fd1b5dc307c428f9f0c386469b.svg" class="math-inline" style="height: 0.584em; vertical-align: -0.147em;" alt="\( x_1 \)" /> and form
 </p>
 <div class="lisp">
 <pre class="lisp prettyprinted" style=""><var><span class="pln">x</span><span class="pun">₂</span></var><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="opn">(</span><span class="pln">rand-update </span><var><span class="pln">x</span><span class="pun">₁</span></var><span class="clo">)</span><span class="pln">
 </span><var><span class="pln">x</span><span class="pun">₃</span></var><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="opn">(</span><span class="pln">rand-update </span><var><span class="pln">x</span><span class="pun">₂</span></var><span class="clo">)</span></pre></div>
 
-<p>then the sequence of values <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <msub>
-    <mi>x</mi>
-    <mn>1</mn>
-  </msub>
-</math>, <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <msub>
-    <mi>x</mi>
-    <mn>2</mn>
-  </msub>
-</math>, <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <msub>
-    <mi>x</mi>
-    <mn>3</mn>
-  </msub>
-</math>, … will have the
+<p>then the sequence of values <img src="fig/math/4e7007fd1b5dc307c428f9f0c386469b.svg" class="math-inline" style="height: 0.584em; vertical-align: -0.147em;" alt="\( x_1 \)" />, <img src="fig/math/afda232db9e06069e94f51fabee982dc.svg" class="math-inline" style="height: 0.584em; vertical-align: -0.147em;" alt="\( x_2 \)" />, <img src="fig/math/594aa2432d4c78d8040174831b0e5cde.svg" class="math-inline" style="height: 0.584em; vertical-align: -0.147em;" alt="\( x_3 \)" />, … will have the
 desired statistical properties.<a class="footnote_link" id="DOCF134" href="#FOOT134"><sup>134</sup></a>
 </p>
 <p>We can implement <code>rand</code> as a procedure with a local state variable
@@ -474,42 +421,14 @@ using random numbers to implement a technique called <a id="index-Monte-Carlo-si
 <p>The Monte Carlo method consists of choosing sample experiments at random from a
 large set and then making deductions on the basis of the probabilities
 estimated from tabulating the results of those experiments.  For example, we
-can approximate <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>π<!-- π --></mi>
-</math> using the fact that <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mn>6</mn>
-    <mrow class="MJX-TeXAtom-ORD">
-      <mo>/</mo>
-    </mrow>
-    <msup>
-      <mi>π<!-- π --></mi>
-      <mn>2</mn>
-    </msup>
-  </mrow>
-</math> is the probability
+can approximate <img src="fig/math/c25469cd205e957b38b51203870f48af.svg" class="math-inline" style="height: 0.438em; vertical-align: -0.000em;" alt="\( \pi \)" /> using the fact that <img src="fig/math/dd13f0d4f04db82ae022821e30162865.svg" class="math-inline" style="height: 1.004em; vertical-align: -0.159em;" alt="\( {6/\pi^2} \)" /> is the probability
 that two integers chosen at random will have no factors in common; that is,
 that their greatest common divisor will be 1.<a class="footnote_link" id="DOCF135" href="#FOOT135"><sup>135</sup></a> To
-obtain the approximation to <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>π<!-- π --></mi>
-</math>, we perform a large number of experiments.
+obtain the approximation to <img src="fig/math/c25469cd205e957b38b51203870f48af.svg" class="math-inline" style="height: 0.438em; vertical-align: -0.000em;" alt="\( \pi \)" />, we perform a large number of experiments.
 In each experiment we choose two integers at random and perform a test to see
 if their <abbr>GCD</abbr> is 1.  The fraction of times that the test is passed
-gives us our estimate of <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mn>6</mn>
-    <mrow class="MJX-TeXAtom-ORD">
-      <mo>/</mo>
-    </mrow>
-    <msup>
-      <mi>π<!-- π --></mi>
-      <mn>2</mn>
-    </msup>
-  </mrow>
-</math>, and from this we obtain our
-approximation to <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>π<!-- π --></mi>
-</math>.
+gives us our estimate of <img src="fig/math/dd13f0d4f04db82ae022821e30162865.svg" class="math-inline" style="height: 1.004em; vertical-align: -0.159em;" alt="\( {6/\pi^2} \)" />, and from this we obtain our
+approximation to <img src="fig/math/c25469cd205e957b38b51203870f48af.svg" class="math-inline" style="height: 0.438em; vertical-align: -0.000em;" alt="\( \pi \)" />.
 </p>
 <p>The heart of our program is a procedure <code>monte-carlo</code>, which takes as
 arguments the number of times to try an experiment, together with the
@@ -602,77 +521,16 @@ shall see, the story is not so simple.
 <em>Monte Carlo integration</em>
 is a method of estimating definite integrals by means of Monte Carlo
 simulation.  Consider computing the area of a region of space described by a
-predicate <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>P</mi>
-    <mo stretchy="false">(</mo>
-    <mi>x</mi>
-    <mo>,</mo>
-    <mi>y</mi>
-    <mo stretchy="false">)</mo>
-  </mrow>
-</math> that is true for points <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mo stretchy="false">(</mo>
-    <mi>x</mi>
-    <mo>,</mo>
-    <mi>y</mi>
-    <mo stretchy="false">)</mo>
-  </mrow>
-</math> in the
+predicate <img src="fig/math/39b642a8ef9f5e6ca7d7e12bce688a90.svg" class="math-inline" style="height: 0.933em; vertical-align: -0.225em;" alt="\( {P(x, y)} \)" /> that is true for points <img src="fig/math/edd210bae579171a37f4e1f4fb1fef9e.svg" class="math-inline" style="height: 0.933em; vertical-align: -0.225em;" alt="\( {(x, y)} \)" /> in the
 region and false for points not in the region.  For example, the region
 contained within a circle of radius 3 centered at (5, 7) is described by the
-predicate that tests whether <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mo stretchy="false">(</mo>
-    <mi>x</mi>
-    <mo>−<!-- − --></mo>
-    <mn>5</mn>
-    <msup>
-      <mo stretchy="false">)</mo>
-      <mn>2</mn>
-    </msup>
-  </mrow>
-  <mo>+</mo>
-  <mrow class="MJX-TeXAtom-ORD">
-    <mo stretchy="false">(</mo>
-    <mi>y</mi>
-    <mo>−<!-- − --></mo>
-    <mn>7</mn>
-    <msup>
-      <mo stretchy="false">)</mo>
-      <mn>2</mn>
-    </msup>
-    <mo>≤<!-- ≤ --></mo>
-    <msup>
-      <mn>3</mn>
-      <mn>2</mn>
-    </msup>
-  </mrow>
-</math>.  To estimate
+predicate that tests whether <img src="fig/math/a2f9d5ceb4d37b1641407d58fe96cb6b.svg" class="math-inline" style="height: 1.078em; vertical-align: -0.235em;" alt="\( {(x - 5)^2} + {(y - 7)^2 \le 3^2} \)" />.  To estimate
 the area of the region described by such a predicate, begin by choosing a
 rectangle that contains the region.  For example, a rectangle with diagonally
 opposite corners at (2, 4) and (8, 10) contains the circle above.  The desired
 integral is the area of that portion of the rectangle that lies in the region.
-We can estimate the integral by picking, at random, points <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mo stretchy="false">(</mo>
-    <mi>x</mi>
-    <mo>,</mo>
-    <mi>y</mi>
-    <mo stretchy="false">)</mo>
-  </mrow>
-</math> that
-lie in the rectangle, and testing <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>P</mi>
-    <mo stretchy="false">(</mo>
-    <mi>x</mi>
-    <mo>,</mo>
-    <mi>y</mi>
-    <mo stretchy="false">)</mo>
-  </mrow>
-</math> for each point to
+We can estimate the integral by picking, at random, points <img src="fig/math/edd210bae579171a37f4e1f4fb1fef9e.svg" class="math-inline" style="height: 0.933em; vertical-align: -0.225em;" alt="\( {(x, y)} \)" /> that
+lie in the rectangle, and testing <img src="fig/math/39b642a8ef9f5e6ca7d7e12bce688a90.svg" class="math-inline" style="height: 0.933em; vertical-align: -0.225em;" alt="\( {P(x, y)} \)" /> for each point to
 determine whether the point lies in the region.  If we try this with many
 points, then the fraction of points that fall in the region should give an
 estimate of the proportion of the rectangle that lies in the region.  Hence,
@@ -683,12 +541,8 @@ estimate of the integral.
 takes as arguments a predicate <code>P</code>, upper and lower bounds <code>x1</code>,
 <code>x2</code>, <code>y1</code>, and <code>y2</code> for the rectangle, and the number of trials
 to perform in order to produce the estimate.  Your procedure should use the
-same <code>monte-carlo</code> procedure that was used above to estimate <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>π<!-- π --></mi>
-</math>.
-Use your <code>estimate-integral</code> to produce an estimate of <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>π<!-- π --></mi>
-</math> by
+same <code>monte-carlo</code> procedure that was used above to estimate <img src="fig/math/c25469cd205e957b38b51203870f48af.svg" class="math-inline" style="height: 0.438em; vertical-align: -0.000em;" alt="\( \pi \)" />.
+Use your <code>estimate-integral</code> to produce an estimate of <img src="fig/math/c25469cd205e957b38b51203870f48af.svg" class="math-inline" style="height: 0.438em; vertical-align: -0.000em;" alt="\( \pi \)" /> by
 measuring the area of a unit circle.
 </p>
 <p>You will find it useful to have a procedure that returns a number chosen at
@@ -1092,25 +946,8 @@ evaluation in <a href="3_002e2.xhtml#g_t3_002e2">3.2</a>.  (See also <a href="3_
 </div>
 <div id="FOOT134"><p><a class="footnote_backlink" href="#DOCF134"><sup>134</sup></a>
 One common way to implement
-<code>rand-update</code> is to use the rule that <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>x</mi>
-</math> is updated to <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>a</mi>
-    <mi>x</mi>
-    <mo>+</mo>
-    <mi>b</mi>
-  </mrow>
-</math> 
-modulo <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>m</mi>
-</math>, where <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>a</mi>
-</math>, <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>b</mi>
-</math>, and <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>m</mi>
-</math> are appropriately chosen
+<code>rand-update</code> is to use the rule that <img src="fig/math/2f4b15565d0a1018e90c3e1b30b76acc.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( x \)" /> is updated to <img src="fig/math/5518447330ac049ee1fec6b9a793f130.svg" class="math-inline" style="height: 0.703em; vertical-align: -0.009em;" alt="\( {ax + b} \)" /> 
+modulo <img src="fig/math/d87e6d0d6a9513640fdd6193cde8b6a3.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( m \)" />, where <img src="fig/math/09009cdd5fc245e05305bc574dcdc97d.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( a \)" />, <img src="fig/math/3e92f417ccfc1f59b0ee22d034c85747.svg" class="math-inline" style="height: 0.703em; vertical-align: -0.009em;" alt="\( b \)" />, and <img src="fig/math/d87e6d0d6a9513640fdd6193cde8b6a3.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( m \)" /> are appropriately chosen
 integers.  Chapter 3 of <a href="References.xhtml#Knuth-1981">Knuth 1981</a> includes an extensive discussion of
 techniques for generating sequences of random numbers and establishing their
 statistical properties.  Notice that the <code>rand-update</code> procedure computes

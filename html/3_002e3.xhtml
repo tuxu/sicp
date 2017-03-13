@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" xml:lang="en" lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" xml:lang="en" xmlns:xml="http://www.w3.org/XML/1998/namespace" lang="en">
 <!-- Created by GNU Texinfo 5.1, http://www.gnu.org/software/texinfo/ -->
 <head>
 <title>Structure and Interpretation of Computer Programs, 2e: 3.3</title>
@@ -93,7 +93,7 @@ replaced, are now detached from the original structure.<a class="footnote_link" 
 </p>
 <figure class="float">
 <a id="Figure-3_002e12"></a>
-<object style="width: 48.18ex; height: 37.82ex;" data="fig/chap3/Fig3.12b.std.svg" type="image/svg+xml">SVG</object>
+<img style="width: 48.18ex; max-width: 100%; display: inline;" src="fig/chap3/Fig3.12b.std.svg" />
 
 <figcaption class="float-caption">
 <p><strong>Figure 3.12:</strong> Lists <code>x</code>: <code>((a b) c d)</code> and <code>y</code>: <code>(e f)</code>.</p>
@@ -102,7 +102,7 @@ replaced, are now detached from the original structure.<a class="footnote_link" 
 
 <figure class="float">
 <a id="Figure-3_002e13"></a>
-<object style="width: 48.18ex; height: 37.82ex;" data="fig/chap3/Fig3.13b.std.svg" type="image/svg+xml">SVG</object>
+<img style="width: 48.18ex; max-width: 100%; display: inline;" src="fig/chap3/Fig3.13b.std.svg" />
 
 <figcaption class="float-caption">
 <p><strong>Figure 3.13:</strong> Effect of <code>(set-car! x y)</code> on the lists in <a href="#Figure-3_002e12">Figure 3.12</a>.</p>
@@ -117,7 +117,7 @@ bound to a new pair created by the <code>cons</code> operation; the list to whic
 </p>
 <figure class="float">
 <a id="Figure-3_002e14"></a>
-<object style="width: 48.18ex; height: 38.68ex;" data="fig/chap3/Fig3.14b.std.svg" type="image/svg+xml">SVG</object>
+<img style="width: 48.18ex; max-width: 100%; display: inline;" src="fig/chap3/Fig3.14b.std.svg" />
 
 <figcaption class="float-caption">
 <p><strong>Figure 3.14:</strong> Effect of <code>(define z (cons y (cdr x)))</code> on the lists in <a href="#Figure-3_002e12">Figure 3.12</a>.</p>
@@ -134,7 +134,7 @@ is now detached from the structure.
 </p>
 <figure class="float">
 <a id="Figure-3_002e15"></a>
-<object style="width: 48.18ex; height: 37.82ex;" data="fig/chap3/Fig3.15b.std.svg" type="image/svg+xml">SVG</object>
+<img style="width: 48.18ex; max-width: 100%; display: inline;" src="fig/chap3/Fig3.15b.std.svg" />
 
 <figcaption class="float-caption">
 <p><strong>Figure 3.15:</strong> Effect of <code>(set-cdr! x y)</code> on the lists in <a href="#Figure-3_002e12">Figure 3.12</a>.</p>
@@ -277,7 +277,7 @@ in which many individual pairs are shared by many different structures.
 </p>
 <figure class="float">
 <a id="Figure-3_002e16"></a>
-<object style="width: 31.08ex; height: 19.69ex;" data="fig/chap3/Fig3.16b.std.svg" type="image/svg+xml">SVG</object>
+<img style="width: 31.08ex; max-width: 100%; display: inline;" src="fig/chap3/Fig3.16b.std.svg" />
 
 <figcaption class="float-caption">
 <p><strong>Figure 3.16:</strong> The list <code>z1</code> formed by <code>(cons x x)</code>.</p>
@@ -293,7 +293,7 @@ by
 
 <figure class="float">
 <a id="Figure-3_002e17"></a>
-<object style="width: 47.57ex; height: 17.96ex;" data="fig/chap3/Fig3.17b.std.svg" type="image/svg+xml">SVG</object>
+<img style="width: 47.57ex; max-width: 100%; display: inline;" src="fig/chap3/Fig3.17b.std.svg" />
 
 <figcaption class="float-caption">
 <p><strong>Figure 3.17:</strong> The list <code>z2</code> formed by <code>(cons (list 'a 'b) (list 'a 'b))</code>.</p>
@@ -493,7 +493,7 @@ called a <a id="index-FIFO"></a>
 </p>
 <figure class="float">
 <a id="Figure-3_002e18"></a>
-<object style="width: 48.01ex; height: 23.05ex;" data="fig/chap3/Fig3.18.std.svg" type="image/svg+xml">SVG</object>
+<img style="width: 48.01ex; max-width: 100%; display: inline;" src="fig/chap3/Fig3.18.std.svg" />
 
 <figcaption class="float-caption">
 <p><strong>Figure 3.18:</strong> Queue operations.</p>
@@ -543,26 +543,10 @@ end of the list, and deleting an item from the queue would just be taking the
 <code>cdr</code> of the list.  However, this representation is inefficient, because
 in order to insert an item we must scan the list until we reach the end.  Since
 the only method we have for scanning a list is by successive <code>cdr</code>
-operations, this scanning requires <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi mathvariant="normal">Θ<!-- Θ --></mi>
-    <mo stretchy="false">(</mo>
-    <mi>n</mi>
-    <mo stretchy="false">)</mo>
-  </mrow>
-</math> steps for a list of <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math>
+operations, this scanning requires <img src="fig/math/67f39a78859198da759c097b570842e8.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.189em;" alt="\( {\Theta(n)} \)" /> steps for a list of <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" />
 items.  A simple modification to the list representation overcomes this
 disadvantage by allowing the queue operations to be implemented so that they
-require <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi mathvariant="normal">Θ<!-- Θ --></mi>
-    <mo stretchy="false">(</mo>
-    <mn>1</mn>
-    <mo stretchy="false">)</mo>
-  </mrow>
-</math> steps; that is, so that the number of steps needed is
+require <img src="fig/math/d204133a45e3c82e46752ed335bc0373.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.189em;" alt="\( {\Theta(1)} \)" /> steps; that is, so that the number of steps needed is
 independent of the length of the queue.
 </p>
 <p>The difficulty with the list representation arises from the need to scan to
@@ -583,7 +567,7 @@ representation.
 </p>
 <figure class="float">
 <a id="Figure-3_002e19"></a>
-<object style="width: 46.54ex; height: 22.45ex;" data="fig/chap3/Fig3.19b.std.svg" type="image/svg+xml">SVG</object>
+<img style="width: 46.54ex; max-width: 100%; display: inline;" src="fig/chap3/Fig3.19b.std.svg" />
 
 <figcaption class="float-caption">
 <p><strong>Figure 3.19:</strong> Implementation of a queue as a list with front and rear pointers.</p>
@@ -633,7 +617,7 @@ also set the rear pointer to the new pair.
 </p>
 <figure class="float">
 <a id="Figure-3_002e20"></a>
-<object style="width: 55.09ex; height: 22.45ex;" data="fig/chap3/Fig3.20c.std.svg" type="image/svg+xml">SVG</object>
+<img style="width: 55.09ex; max-width: 100%; display: inline;" src="fig/chap3/Fig3.20c.std.svg" />
 
 <figcaption class="float-caption">
 <p><strong>Figure 3.20:</strong> Result of using <code>(insert-queue! q 'd)</code> on the queue of <a href="#Figure-3_002e19">Figure 3.19</a>.</p>
@@ -669,7 +653,7 @@ found by following the <code>cdr</code> pointer of the first item (see
 
 <figure class="float">
 <a id="Figure-3_002e21"></a>
-<object style="width: 55.09ex; height: 22.45ex;" data="fig/chap3/Fig3.21c.std.svg" type="image/svg+xml">SVG</object>
+<img style="width: 55.09ex; max-width: 100%; display: inline;" src="fig/chap3/Fig3.21c.std.svg" />
 
 <figcaption class="float-caption">
 <p><strong>Figure 3.21:</strong> Result of using <code>(delete-queue!  q)</code> on the queue of <a href="#Figure-3_002e20">Figure 3.20</a>.</p>
@@ -738,14 +722,7 @@ the predicate <code>empty-deque?</code>, selectors <code>front-deque</code> and
 <code>rear-insert-deque!</code>, <code>front-delete-deque!</code>, 
 <code>rear-delete-deque!</code>.  Show how to represent deques using pairs, and give
 implementations of the operations.<a class="footnote_link" id="DOCF151" href="#FOOT151"><sup>151</sup></a>  
-All operations should be accomplished in <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi mathvariant="normal">Θ<!-- Θ --></mi>
-    <mo stretchy="false">(</mo>
-    <mn>1</mn>
-    <mo stretchy="false">)</mo>
-  </mrow>
-</math> steps.
+All operations should be accomplished in <img src="fig/math/d204133a45e3c82e46752ed335bc0373.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.189em;" alt="\( {\Theta(1)} \)" /> steps.
 </p></blockquote>
 
 <a id="g_t3_002e3_002e3"></a>
@@ -779,7 +756,7 @@ c</span><span class="pun">:</span><span class="pln">  </span><span class="lit">3
 
 <figure class="float">
 <a id="Figure-3_002e22"></a>
-<object style="width: 53.27ex; height: 27.11ex;" data="fig/chap3/Fig3.22c.std.svg" type="image/svg+xml">SVG</object>
+<img style="width: 53.27ex; max-width: 100%; display: inline;" src="fig/chap3/Fig3.22c.std.svg" />
 
 <figcaption class="float-caption">
 <p><strong>Figure 3.22:</strong> A table represented as a headed list.</p>
@@ -851,7 +828,7 @@ since the key that identifies the subtable serves this purpose.)
 </p>
 <figure class="float">
 <a id="Figure-3_002e23"></a>
-<object style="width: 57.42ex; height: 55.95ex;" data="fig/chap3/Fig3.23b.std.svg" type="image/svg+xml">SVG</object>
+<img style="width: 57.42ex; max-width: 100%; display: inline;" src="fig/chap3/Fig3.23b.std.svg" />
 
 <figcaption class="float-caption">
 <p><strong>Figure 3.23:</strong> A two-dimensional table.</p>
@@ -1037,17 +1014,8 @@ computing Fibonacci numbers:
               result</span><span class="clo">))))))</span></pre></div>
 
 <p>Draw an environment diagram to analyze the computation of <code>(memo-fib 3)</code>.
-Explain why <code>memo-fib</code> computes the <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <msup>
-    <mi>n</mi>
-    <mrow class="MJX-TeXAtom-ORD">
-      <mtext>th</mtext>
-    </mrow>
-  </msup>
-</math> Fibonacci number in a number
-of steps proportional to <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math>.  Would the scheme still work if we had simply
+Explain why <code>memo-fib</code> computes the <img src="fig/math/3b6c232f796b2d291446b22cb38c933e.svg" class="math-inline" style="height: 0.892em; vertical-align: -0.010em;" alt="\( n^{\text{th}} \)" /> Fibonacci number in a number
+of steps proportional to <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" />.  Would the scheme still work if we had simply
 defined <code>memo-fib</code> to be <code>(memoize fib)</code>?
 </p></blockquote>
 
@@ -1100,7 +1068,7 @@ otherwise the output will become 0.
 </p>
 <figure class="float">
 <a id="Figure-3_002e24"></a>
-<object style="width: 49.30ex; height: 11.14ex;" data="fig/chap3/Fig3.24a.std.svg" type="image/svg+xml">SVG</object>
+<img style="width: 49.30ex; max-width: 100%; display: inline;" src="fig/chap3/Fig3.24a.std.svg" />
 
 <figcaption class="float-caption">
 <p><strong>Figure 3.24:</strong> Primitive functions in the digital logic simulator.</p>
@@ -1120,7 +1088,7 @@ of the difficulties in the design of digital circuits arise from this fact.
 </p>
 <figure class="float">
 <a id="Figure-3_002e25"></a>
-<object style="width: 48.52ex; height: 19.17ex;" data="fig/chap3/Fig3.25c.std.svg" type="image/svg+xml">SVG</object>
+<img style="width: 48.52ex; max-width: 100%; display: inline;" src="fig/chap3/Fig3.25c.std.svg" />
 
 <figcaption class="float-caption">
 <p><strong>Figure 3.25:</strong> A half-adder circuit.</p>
@@ -1194,7 +1162,7 @@ and an or-gate.<a class="footnote_link" id="DOCF154" href="#FOOT154"><sup>154</s
 
 <figure class="float">
 <a id="Figure-3_002e26"></a>
-<object style="width: 51.29ex; height: 19.17ex;" data="fig/chap3/Fig3.26.std.svg" type="image/svg+xml">SVG</object>
+<img style="width: 51.29ex; max-width: 100%; display: inline;" src="fig/chap3/Fig3.26.std.svg" />
 
 <figcaption class="float-caption">
 <p><strong>Figure 3.26:</strong> A full-adder circuit.</p>
@@ -1301,130 +1269,29 @@ the delay time of the or-gate in terms of <code>and-gate-delay</code> and
 <blockquote>
 <p><strong><a id="Exercise-3_002e30"></a>Exercise 3.30:</strong> <a href="#Figure-3_002e27">Figure 3.27</a> shows a
 <a id="index-ripple_002dcarry-adder"></a>
-<em>ripple-carry adder</em> formed by stringing together <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math> full-adders.
-This is the simplest form of parallel adder for adding two <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math>-bit binary
-numbers.  The inputs <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <msub>
-    <mi>A</mi>
-    <mn>1</mn>
-  </msub>
-</math>, <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <msub>
-    <mi>A</mi>
-    <mn>2</mn>
-  </msub>
-</math>, <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <msub>
-    <mi>A</mi>
-    <mn>3</mn>
-  </msub>
-</math>, …, <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <msub>
-    <mi>A</mi>
-    <mi>n</mi>
-  </msub>
-</math> and 
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <msub>
-    <mi>B</mi>
-    <mn>1</mn>
-  </msub>
-</math>, <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <msub>
-    <mi>B</mi>
-    <mn>2</mn>
-  </msub>
-</math>, <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <msub>
-    <mi>B</mi>
-    <mn>3</mn>
-  </msub>
-</math>,
-…, <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <msub>
-    <mi>B</mi>
-    <mi>n</mi>
-  </msub>
-</math> are the two binary numbers to be added (each <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <msub>
-    <mi>A</mi>
-    <mi>k</mi>
-  </msub>
-</math> and
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <msub>
-    <mi>B</mi>
-    <mi>k</mi>
-  </msub>
-</math> is a 0 or a 1).  The circuit generates <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <msub>
-    <mi>S</mi>
-    <mn>1</mn>
-  </msub>
-</math>, <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <msub>
-    <mi>S</mi>
-    <mn>2</mn>
-  </msub>
-</math>, 
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <msub>
-    <mi>S</mi>
-    <mn>3</mn>
-  </msub>
-</math>, …, <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <msub>
-    <mi>S</mi>
-    <mi>n</mi>
-  </msub>
-</math>,
-the <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math> bits of the sum, and <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>C</mi>
-</math>, the carry from the addition.  Write a
+<em>ripple-carry adder</em> formed by stringing together <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" /> full-adders.
+This is the simplest form of parallel adder for adding two <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" />-bit binary
+numbers.  The inputs <img src="fig/math/6eaa832ac7342ef702f6b8902ef52343.svg" class="math-inline" style="height: 0.804em; vertical-align: -0.151em;" alt="\( A_1 \)" />, <img src="fig/math/a5f074d95033f2bb37d11bc149bfa207.svg" class="math-inline" style="height: 0.804em; vertical-align: -0.151em;" alt="\( A_2 \)" />, <img src="fig/math/a14690b8b45abe672c87e5df93424cab.svg" class="math-inline" style="height: 0.804em; vertical-align: -0.151em;" alt="\( A_3 \)" />, …, <img src="fig/math/62cadf460111e4822ee345b2ada3fce0.svg" class="math-inline" style="height: 0.811em; vertical-align: -0.160em;" alt="\( A_n \)" /> and 
+<img src="fig/math/a620c46f238e6cd0d0b06e60a5947751.svg" class="math-inline" style="height: 0.793em; vertical-align: -0.140em;" alt="\( B_1 \)" />, <img src="fig/math/1ada95296deecc8e9ddfaa3a9d3436e0.svg" class="math-inline" style="height: 0.793em; vertical-align: -0.140em;" alt="\( B_2 \)" />, <img src="fig/math/e872c066b20af7713a31ca59b62bd2a7.svg" class="math-inline" style="height: 0.793em; vertical-align: -0.140em;" alt="\( B_3 \)" />,
+…, <img src="fig/math/25854663c0e37780fa211a47ace38654.svg" class="math-inline" style="height: 0.800em; vertical-align: -0.149em;" alt="\( B_n \)" /> are the two binary numbers to be added (each <img src="fig/math/b9e3e263822e02708431bc2828266715.svg" class="math-inline" style="height: 0.818em; vertical-align: -0.166em;" alt="\( A_k \)" /> and
+<img src="fig/math/41220011068fd3115d355f86c1e207cb.svg" class="math-inline" style="height: 0.807em; vertical-align: -0.155em;" alt="\( B_k \)" /> is a 0 or a 1).  The circuit generates <img src="fig/math/41180978873c164a3a229e0f28d52f03.svg" class="math-inline" style="height: 0.804em; vertical-align: -0.151em;" alt="\( S_1 \)" />, <img src="fig/math/dfe427210cdf6ee07874f4f0b6fad36d.svg" class="math-inline" style="height: 0.804em; vertical-align: -0.151em;" alt="\( S_2 \)" />, 
+<img src="fig/math/a5051a8ea065d815541060aa80f875c4.svg" class="math-inline" style="height: 0.804em; vertical-align: -0.151em;" alt="\( S_3 \)" />, …, <img src="fig/math/0c3097352e9e517a82f406c0dab738c5.svg" class="math-inline" style="height: 0.811em; vertical-align: -0.160em;" alt="\( S_n \)" />,
+the <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" /> bits of the sum, and <img src="fig/math/684e3ac6700a3aa191a0a61645d5b384.svg" class="math-inline" style="height: 0.664em; vertical-align: -0.013em;" alt="\( C \)" />, the carry from the addition.  Write a
 procedure <code>ripple-carry-adder</code> that generates this circuit.  The procedure
-should take as arguments three lists of <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math> wires each—the <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <msub>
-    <mi>A</mi>
-    <mi>k</mi>
-  </msub>
-</math>, the
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <msub>
-    <mi>B</mi>
-    <mi>k</mi>
-  </msub>
-</math>, and the <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <msub>
-    <mi>S</mi>
-    <mi>k</mi>
-  </msub>
-</math>—and also another wire <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>C</mi>
-</math>.  The major drawback of the
+should take as arguments three lists of <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" /> wires each—the <img src="fig/math/b9e3e263822e02708431bc2828266715.svg" class="math-inline" style="height: 0.818em; vertical-align: -0.166em;" alt="\( A_k \)" />, the
+<img src="fig/math/41220011068fd3115d355f86c1e207cb.svg" class="math-inline" style="height: 0.807em; vertical-align: -0.155em;" alt="\( B_k \)" />, and the <img src="fig/math/478933547f4aad1a5ec381515f4c9cca.svg" class="math-inline" style="height: 0.818em; vertical-align: -0.166em;" alt="\( S_k \)" />—and also another wire <img src="fig/math/684e3ac6700a3aa191a0a61645d5b384.svg" class="math-inline" style="height: 0.664em; vertical-align: -0.013em;" alt="\( C \)" />.  The major drawback of the
 ripple-carry adder is the need to wait for the carry signals to propagate.
-What is the delay needed to obtain the complete output from an <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math>-bit
+What is the delay needed to obtain the complete output from an <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" />-bit
 ripple-carry adder, expressed in terms of the delays for and-gates, or-gates,
 and inverters?
 </p></blockquote>
 
 <figure class="float">
 <a id="Figure-3_002e27"></a>
-<object style="width: 50.16ex; height: 15.54ex;" data="fig/chap3/Fig3.27b.std.svg" type="image/svg+xml">SVG</object>
+<img style="width: 50.16ex; max-width: 100%; display: inline;" src="fig/chap3/Fig3.27b.std.svg" />
 
 <figcaption class="float-caption">
-<p><strong>Figure 3.27:</strong> A ripple-carry adder for <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math>-bit numbers.</p>
+<p><strong>Figure 3.27:</strong> A ripple-carry adder for <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" />-bit numbers.</p>
 </figcaption>
 </figure>
 
@@ -1791,48 +1658,16 @@ front (last in, first out).
 which perform operations on prespecified arguments to produce desired outputs.
 On the other hand, we often model systems in terms of relations among
 quantities.  For example, a mathematical model of a mechanical structure might
-include the information that the deflection <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>d</mi>
-</math> of a metal rod is related to
-the force <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>F</mi>
-</math> on the rod, the length <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>L</mi>
-</math> of the rod, the cross-sectional
-area <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>A</mi>
-</math>, and the elastic modulus <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>E</mi>
-</math> via the equation
-<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>d</mi>
-    <mi>A</mi>
-    <mi>E</mi>
-  </mrow>
-  <mspace width="thinmathspace"/>
-  <mo>=</mo>
-  <mspace width="thinmathspace"/>
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>F</mi>
-    <mi>L</mi>
-    <mo>.</mo>
-  </mrow>
-</math>
+include the information that the deflection <img src="fig/math/94022487faed4226073f19cc394c11d0.svg" class="math-inline" style="height: 0.703em; vertical-align: -0.009em;" alt="\( d \)" /> of a metal rod is related to
+the force <img src="fig/math/dad5acc166833db4a0807de0f690142a.svg" class="math-inline" style="height: 0.645em;" alt="\( F \)" /> on the rod, the length <img src="fig/math/a23a2cd0225c802f8f86942524b01811.svg" class="math-inline" style="height: 0.645em;" alt="\( L \)" /> of the rod, the cross-sectional
+area <img src="fig/math/0795850a4e18ff44aa3a2868640c29a7.svg" class="math-inline" style="height: 0.656em; vertical-align: -0.004em;" alt="\( A \)" />, and the elastic modulus <img src="fig/math/ec1ff58ded5659cdd76b96fdf0f5e70a.svg" class="math-inline" style="height: 0.645em;" alt="\( E \)" /> via the equation
+<img src="fig/math/454a6efad55f0d786f5af08958c84264.svg" class="math-display" style="height: 0.705em;" alt="\[ % :61:&amp;#10;  {dAE} \,=\, {FL.}  \]" />
 Such an equation is not one-directional.  Given any four of the quantities, we
 can use it to compute the fifth.  Yet translating the equation into a
 traditional computer language would force us to choose one of the quantities to
 be computed in terms of the other four.  Thus, a procedure for computing the
-area <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>A</mi>
-</math> could not be used to compute the deflection <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>d</mi>
-</math>, even though the
-computations of <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>A</mi>
-</math> and <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>d</mi>
-</math> arise from the same
+area <img src="fig/math/0795850a4e18ff44aa3a2868640c29a7.svg" class="math-inline" style="height: 0.656em; vertical-align: -0.004em;" alt="\( A \)" /> could not be used to compute the deflection <img src="fig/math/94022487faed4226073f19cc394c11d0.svg" class="math-inline" style="height: 0.703em; vertical-align: -0.009em;" alt="\( d \)" />, even though the
+computations of <img src="fig/math/0795850a4e18ff44aa3a2868640c29a7.svg" class="math-inline" style="height: 0.656em; vertical-align: -0.004em;" alt="\( A \)" /> and <img src="fig/math/94022487faed4226073f19cc394c11d0.svg" class="math-inline" style="height: 0.703em; vertical-align: -0.009em;" alt="\( d \)" /> arise from the same
 equation.<a class="footnote_link" id="DOCF159" href="#FOOT159"><sup>159</sup></a>
 </p>
 <p>In this section, we sketch the design of a language that enables us to work in
@@ -1840,32 +1675,9 @@ terms of relations themselves.  The primitive elements of the language are
 <a id="index-primitive-constraints"></a>
 <em>primitive constraints</em>, which state that certain relations hold
 between quantities.  For example, <code>(adder a b c)</code> specifies that the
-quantities <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>a</mi>
-</math>, <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>b</mi>
-</math>, and <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>c</mi>
-</math> must be related by the equation 
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>a</mi>
-    <mo>+</mo>
-    <mi>b</mi>
-    <mo>=</mo>
-    <mi>c</mi>
-  </mrow>
-</math>, <code>(multiplier x y z)</code> expresses the constraint 
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>x</mi>
-    <mi>y</mi>
-    <mo>=</mo>
-    <mi>z</mi>
-  </mrow>
-</math>, and <code>(constant 3.14 x)</code> says that the value of <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>x</mi>
-</math> must be 3.14.
+quantities <img src="fig/math/09009cdd5fc245e05305bc574dcdc97d.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( a \)" />, <img src="fig/math/3e92f417ccfc1f59b0ee22d034c85747.svg" class="math-inline" style="height: 0.703em; vertical-align: -0.009em;" alt="\( b \)" />, and <img src="fig/math/b98937403abaaeb001eed7d68959205d.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( c \)" /> must be related by the equation 
+<img src="fig/math/5929834c1304adbbb2ec26561b3d5430.svg" class="math-inline" style="height: 0.703em; vertical-align: -0.009em;" alt="\( {a + b = c} \)" />, <code>(multiplier x y z)</code> expresses the constraint 
+<img src="fig/math/0a055701bccdee3584874e71c19d757a.svg" class="math-inline" style="height: 0.675em; vertical-align: -0.241em;" alt="\( {xy = z} \)" />, and <code>(constant 3.14 x)</code> says that the value of <img src="fig/math/2f4b15565d0a1018e90c3e1b30b76acc.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( x \)" /> must be 3.14.
 </p>
 <p>Our language provides a means of combining primitive constraints in order to
 express more complex relations.  We combine constraints by constructing
@@ -1875,103 +1687,24 @@ express more complex relations.  We combine constraints by constructing
 <em>connectors</em>.  A connector is an object that “holds” a value that may
 participate in one or more constraints.  For example, we know that the
 relationship between Fahrenheit and Celsius temperatures is
-<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mn>9</mn>
-    <mi>C</mi>
-  </mrow>
-  <mspace width="thinmathspace"/>
-  <mo>=</mo>
-  <mspace width="thinmathspace"/>
-  <mrow class="MJX-TeXAtom-ORD">
-    <mn>5</mn>
-    <mo stretchy="false">(</mo>
-    <mi>F</mi>
-    <mo>−<!-- − --></mo>
-    <mn>32</mn>
-    <mo stretchy="false">)</mo>
-    <mo>.</mo>
-  </mrow>
-</math>
+<img src="fig/math/10ca175f0abf1832670c884bbc2d8a70.svg" class="math-display" style="height: 0.901em;" alt="\[ % :62:&amp;#10;  {9C} \,=\, {5(F - 32).}  \]" />
 Such a constraint can be thought of as a network consisting of primitive adder,
 multiplier, and constant constraints (<a href="#Figure-3_002e28">Figure 3.28</a>).  In the figure, we
-see on the left a multiplier box with three terminals, labeled <math xmlns="http://www.w3.org/1998/Math/MathML">
-<mrow class="MJX-TeXAtom-ORD">
-  <mi>m</mi>
-  <mn>1</mn>
-</mrow>
-</math>, <math xmlns="http://www.w3.org/1998/Math/MathML">
-<mrow class="MJX-TeXAtom-ORD">
-  <mi>m</mi>
-  <mn>2</mn>
-</mrow>
-</math>,
-and <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>p</mi>
-</math>.  These connect the multiplier to the rest of the network as follows:
-The <math xmlns="http://www.w3.org/1998/Math/MathML">
-<mrow class="MJX-TeXAtom-ORD">
-  <mi>m</mi>
-  <mn>1</mn>
-</mrow>
-</math> terminal is linked to a connector <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>C</mi>
-</math>, which will hold the Celsius
-temperature.  The <math xmlns="http://www.w3.org/1998/Math/MathML">
-<mrow class="MJX-TeXAtom-ORD">
-  <mi>m</mi>
-  <mn>2</mn>
-</mrow>
-</math> terminal is linked to a connector <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>w</mi>
-</math>, which is also
-linked to a constant box that holds 9.  The <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>p</mi>
-</math> terminal, which the
-multiplier box constrains to be the product of <math xmlns="http://www.w3.org/1998/Math/MathML">
-<mrow class="MJX-TeXAtom-ORD">
-  <mi>m</mi>
-  <mn>1</mn>
-</mrow>
-</math> and <math xmlns="http://www.w3.org/1998/Math/MathML">
-<mrow class="MJX-TeXAtom-ORD">
-  <mi>m</mi>
-  <mn>2</mn>
-</mrow>
-</math>, is linked to
-the <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>p</mi>
-</math> terminal of another multiplier box, whose <math xmlns="http://www.w3.org/1998/Math/MathML">
-<mrow class="MJX-TeXAtom-ORD">
-  <mi>m</mi>
-  <mn>2</mn>
-</mrow>
-</math> is connected to a
-constant 5 and whose <math xmlns="http://www.w3.org/1998/Math/MathML">
-<mrow class="MJX-TeXAtom-ORD">
-  <mi>m</mi>
-  <mn>1</mn>
-</mrow>
-</math> is connected to one of the terms in a sum.
+see on the left a multiplier box with three terminals, labeled <img src="fig/math/9abb046c87d1a7bf081cd50090f4c151.svg" class="math-inline" style="height: 0.652em; vertical-align: -0.009em;" alt="\( {m1} \)" />, <img src="fig/math/c1a838a24e324bff438f0b5767bedbad.svg" class="math-inline" style="height: 0.652em; vertical-align: -0.009em;" alt="\( {m2} \)" />,
+and <img src="fig/math/cce39738a2208cea750f01366fd29144.svg" class="math-inline" style="height: 0.724em; vertical-align: -0.232em;" alt="\( p \)" />.  These connect the multiplier to the rest of the network as follows:
+The <img src="fig/math/9abb046c87d1a7bf081cd50090f4c151.svg" class="math-inline" style="height: 0.652em; vertical-align: -0.009em;" alt="\( {m1} \)" /> terminal is linked to a connector <img src="fig/math/684e3ac6700a3aa191a0a61645d5b384.svg" class="math-inline" style="height: 0.664em; vertical-align: -0.013em;" alt="\( C \)" />, which will hold the Celsius
+temperature.  The <img src="fig/math/c1a838a24e324bff438f0b5767bedbad.svg" class="math-inline" style="height: 0.652em; vertical-align: -0.009em;" alt="\( {m2} \)" /> terminal is linked to a connector <img src="fig/math/46c14c38cf63639ab89857814b934497.svg" class="math-inline" style="height: 0.446em; vertical-align: -0.008em;" alt="\( w \)" />, which is also
+linked to a constant box that holds 9.  The <img src="fig/math/cce39738a2208cea750f01366fd29144.svg" class="math-inline" style="height: 0.724em; vertical-align: -0.232em;" alt="\( p \)" /> terminal, which the
+multiplier box constrains to be the product of <img src="fig/math/9abb046c87d1a7bf081cd50090f4c151.svg" class="math-inline" style="height: 0.652em; vertical-align: -0.009em;" alt="\( {m1} \)" /> and <img src="fig/math/c1a838a24e324bff438f0b5767bedbad.svg" class="math-inline" style="height: 0.652em; vertical-align: -0.009em;" alt="\( {m2} \)" />, is linked to
+the <img src="fig/math/cce39738a2208cea750f01366fd29144.svg" class="math-inline" style="height: 0.724em; vertical-align: -0.232em;" alt="\( p \)" /> terminal of another multiplier box, whose <img src="fig/math/c1a838a24e324bff438f0b5767bedbad.svg" class="math-inline" style="height: 0.652em; vertical-align: -0.009em;" alt="\( {m2} \)" /> is connected to a
+constant 5 and whose <img src="fig/math/9abb046c87d1a7bf081cd50090f4c151.svg" class="math-inline" style="height: 0.652em; vertical-align: -0.009em;" alt="\( {m1} \)" /> is connected to one of the terms in a sum.
 </p>
 <figure class="float">
 <a id="Figure-3_002e28"></a>
-<object style="width: 58.11ex; height: 18.30ex;" data="fig/chap3/Fig3.28.std.svg" type="image/svg+xml">SVG</object>
+<img style="width: 58.11ex; max-width: 100%; display: inline;" src="fig/chap3/Fig3.28.std.svg" />
 
 <figcaption class="float-caption">
-<p><strong>Figure 3.28:</strong> The relation <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mn>9</mn>
-    <mi>C</mi>
-    <mo>=</mo>
-    <mn>5</mn>
-    <mo stretchy="false">(</mo>
-    <mi>F</mi>
-    <mo>−<!-- − --></mo>
-    <mn>32</mn>
-    <mo stretchy="false">)</mo>
-  </mrow>
-</math> expressed as a constraint network.</p>
+<p><strong>Figure 3.28:</strong> The relation <img src="fig/math/74ef9c461f6d43feb59f91a0ddfa3ad7.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.189em;" alt="\( {9C = 5(F - 32)} \)" /> expressed as a constraint network.</p>
 </figcaption>
 </figure>
 
@@ -1982,39 +1715,13 @@ it) to inform them that it has a value.  Each awakened constraint box then
 polls its connectors to see if there is enough information to determine a value
 for a connector.  If so, the box sets that connector, which then awakens all of
 its associated constraints, and so on.  For instance, in conversion between
-Celsius and Fahrenheit, <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>w</mi>
-</math>, <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>x</mi>
-</math>, and <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>y</mi>
-</math> are immediately set by the
+Celsius and Fahrenheit, <img src="fig/math/46c14c38cf63639ab89857814b934497.svg" class="math-inline" style="height: 0.446em; vertical-align: -0.008em;" alt="\( w \)" />, <img src="fig/math/2f4b15565d0a1018e90c3e1b30b76acc.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( x \)" />, and <img src="fig/math/05e4cdb2f26a4f66b68c167423907fea.svg" class="math-inline" style="height: 0.669em; vertical-align: -0.235em;" alt="\( y \)" /> are immediately set by the
 constant boxes to 9, 5, and 32, respectively.  The connectors awaken the
 multipliers and the adder, which determine that there is not enough information
-to proceed.  If the user (or some other part of the network) sets <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>C</mi>
-</math> to a
-value (say 25), the leftmost multiplier will be awakened, and it will set <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>u</mi>
-</math>
-to <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mn>25</mn>
-    <mo>⋅<!-- ⋅ --></mo>
-    <mn>9</mn>
-    <mo>=</mo>
-    <mn>225</mn>
-  </mrow>
-</math>.  Then <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>u</mi>
-</math> awakens the second multiplier, which sets <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>v</mi>
-</math> to
-45, and <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>v</mi>
-</math> awakens the adder, which sets <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>f</mi>
-</math> to 77.
+to proceed.  If the user (or some other part of the network) sets <img src="fig/math/684e3ac6700a3aa191a0a61645d5b384.svg" class="math-inline" style="height: 0.664em; vertical-align: -0.013em;" alt="\( C \)" /> to a
+value (say 25), the leftmost multiplier will be awakened, and it will set <img src="fig/math/6868dd7524bfa5196a0e6433e7185e5d.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( u \)" />
+to <img src="fig/math/2176de2f0ac5e8d3e9142737e6f1661c.svg" class="math-inline" style="height: 0.642em;" alt="\( {25 \cdot 9 = 225} \)" />.  Then <img src="fig/math/6868dd7524bfa5196a0e6433e7185e5d.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( u \)" /> awakens the second multiplier, which sets <img src="fig/math/71942c801c8d60cf7d5f705ba88631d7.svg" class="math-inline" style="height: 0.442em; vertical-align: -0.006em;" alt="\( v \)" /> to
+45, and <img src="fig/math/71942c801c8d60cf7d5f705ba88631d7.svg" class="math-inline" style="height: 0.442em; vertical-align: -0.006em;" alt="\( v \)" /> awakens the adder, which sets <img src="fig/math/7a8d165d31a04fc319968e0213091ff8.svg" class="math-inline" style="height: 0.929em; vertical-align: -0.234em;" alt="\( f \)" /> to 77.
 </p>
 <a id="Using-the-constraint-system"></a>
 <h5 class="subsubheading">Using the constraint system</h5>
@@ -2583,26 +2290,9 @@ record.</p>
 <div id="FOOT154"><p><a class="footnote_backlink" href="#DOCF154"><sup>154</sup></a>
 A full-adder is a basic circuit element used in adding
 two binary numbers.  Here A and B are the bits at corresponding positions in
-the two numbers to be added, and <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <msub>
-    <mi mathvariant="normal">C</mi>
-    <mrow class="MJX-TeXAtom-ORD">
-      <mi mathvariant="normal">i</mi>
-      <mi mathvariant="normal">n</mi>
-    </mrow>
-  </msub>
-</math> is the carry bit from the
+the two numbers to be added, and <img src="fig/math/2a821f4faf95cdf11d51a59a446822df.svg" class="math-inline" style="height: 0.831em; vertical-align: -0.147em;" alt="\( \rm C_{in} \)" /> is the carry bit from the
 addition one place to the right.  The circuit generates SUM, which is the sum
-bit in the corresponding position, and <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <msub>
-    <mi mathvariant="normal">C</mi>
-    <mrow class="MJX-TeXAtom-ORD">
-      <mi mathvariant="normal">o</mi>
-      <mi mathvariant="normal">u</mi>
-      <mi mathvariant="normal">t</mi>
-    </mrow>
-  </msub>
-</math>, which is the carry
+bit in the corresponding position, and <img src="fig/math/f2fc90fc0f0d24986fb847674bba83e8.svg" class="math-inline" style="height: 0.831em; vertical-align: -0.147em;" alt="\( \rm C_{out} \)" />, which is the carry
 bit to be propagated to the left.</p>
 </div>
 <div id="FOOT155"><p><a class="footnote_backlink" href="#DOCF155"><sup>155</sup></a>
@@ -2658,21 +2348,7 @@ because it avoids the need to name the intermediate expressions in a
 computation.  Our original formulation of the constraint language is cumbersome
 in the same way that many languages are cumbersome when dealing with operations
 on compound data.  For example, if we wanted to compute the product 
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mo stretchy="false">(</mo>
-    <mi>a</mi>
-    <mo>+</mo>
-    <mi>b</mi>
-    <mo stretchy="false">)</mo>
-    <mo>⋅<!-- ⋅ --></mo>
-    <mo stretchy="false">(</mo>
-    <mi>c</mi>
-    <mo>+</mo>
-    <mi>d</mi>
-    <mo stretchy="false">)</mo>
-  </mrow>
-</math>, where the variables represent vectors, we could work
+<img src="fig/math/2e2bfaaaa2c75f74ad57669af5ed975a.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.189em;" alt="\( {(a + b) \cdot (c + d)} \)" />, where the variables represent vectors, we could work
 in “imperative style,” using procedures that set the values of designated
 vector arguments but do not themselves return vectors as values:
 </p>

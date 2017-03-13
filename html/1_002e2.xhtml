@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" xml:lang="en" lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" xml:lang="en" xmlns:xml="http://www.w3.org/XML/1998/namespace" lang="en">
 <!-- Created by GNU Texinfo 5.1, http://www.gnu.org/software/texinfo/ -->
 <head>
 <title>Structure and Interpretation of Computer Programs, 2e: 1.2</title>
@@ -81,128 +81,16 @@ than practical examples in their own right.
 
 <p>We begin by considering the factorial function, defined by
 
-<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
-  <mi>n</mi>
-  <mo>!</mo>
-  <mspace width="thinmathspace"/>
-  <mo>=</mo>
-  <mspace width="thinmathspace"/>
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>n</mi>
-    <mo>⋅<!-- ⋅ --></mo>
-    <mo stretchy="false">(</mo>
-    <mi>n</mi>
-    <mo>−<!-- − --></mo>
-    <mn>1</mn>
-    <mo stretchy="false">)</mo>
-  </mrow>
-  <mo>⋅<!-- ⋅ --></mo>
-  <mrow class="MJX-TeXAtom-ORD">
-    <mo stretchy="false">(</mo>
-    <mi>n</mi>
-    <mo>−<!-- − --></mo>
-    <mn>2</mn>
-    <mo stretchy="false">)</mo>
-  </mrow>
-  <mo>⋯<!-- ⋯ --></mo>
-  <mrow class="MJX-TeXAtom-ORD">
-    <mn>3</mn>
-    <mo>⋅<!-- ⋅ --></mo>
-    <mn>2</mn>
-    <mo>⋅<!-- ⋅ --></mo>
-    <mn>1.</mn>
-  </mrow>
-</math>
+<img src="fig/math/d9a7ed457c5fc2db3708937f13e789da.svg" class="math-display" style="height: 0.901em;" alt="\[ % :5:&amp;#10;  n! \,=\, {n \cdot (n - 1)} \cdot {(n - 2)} \cdots {3 \cdot 2 \cdot 1.} \]" />
 
 There are many ways to compute factorials.  One way is to make use of the
-observation that <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>n</mi>
-    <mo>!</mo>
-  </mrow>
-</math> is equal to <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math> times <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mo stretchy="false">(</mo>
-    <mi>n</mi>
-    <mo>−<!-- − --></mo>
-    <mn>1</mn>
-    <mo stretchy="false">)</mo>
-    <mo>!</mo>
-  </mrow>
-</math> for any positive
-integer <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math>:
+observation that <img src="fig/math/5fa3dbabdc4f880a425fd3b033864691.svg" class="math-inline" style="height: 0.702em; vertical-align: -0.009em;" alt="\( {n!} \)" /> is equal to <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" /> times <img src="fig/math/44fe5301c8e9c277481b220163a36838.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.189em;" alt="\( {(n - 1)!} \)" /> for any positive
+integer <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" />:
 
-<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
-  <mi>n</mi>
-  <mo>!</mo>
-  <mspace width="thinmathspace"/>
-  <mo>=</mo>
-  <mspace width="thinmathspace"/>
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>n</mi>
-    <mo>⋅<!-- ⋅ --></mo>
-    <mo stretchy="false">[</mo>
-    <mo stretchy="false">(</mo>
-    <mi>n</mi>
-    <mo>−<!-- − --></mo>
-    <mn>1</mn>
-    <mo stretchy="false">)</mo>
-  </mrow>
-  <mo>⋅<!-- ⋅ --></mo>
-  <mrow class="MJX-TeXAtom-ORD">
-    <mo stretchy="false">(</mo>
-    <mi>n</mi>
-    <mo>−<!-- − --></mo>
-    <mn>2</mn>
-    <mo stretchy="false">)</mo>
-  </mrow>
-  <mo>⋯<!-- ⋯ --></mo>
-  <mrow class="MJX-TeXAtom-ORD">
-    <mn>3</mn>
-    <mo>⋅<!-- ⋅ --></mo>
-    <mn>2</mn>
-    <mo>⋅<!-- ⋅ --></mo>
-    <mn>1</mn>
-    <mo stretchy="false">]</mo>
-  </mrow>
-  <mspace width="thinmathspace"/>
-  <mo>=</mo>
-  <mspace width="thinmathspace"/>
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>n</mi>
-    <mo>⋅<!-- ⋅ --></mo>
-    <mo stretchy="false">(</mo>
-    <mi>n</mi>
-    <mo>−<!-- − --></mo>
-    <mn>1</mn>
-    <mo stretchy="false">)</mo>
-    <mo>!</mo>
-    <mo>.</mo>
-  </mrow>
-</math>
+<img src="fig/math/84b2ed4ef8a69a37b4ae01ceb320dc1c.svg" class="math-display" style="height: 0.996em;" alt="\[ % :6:&amp;#10;  n! \,=\, {n \cdot [(n - 1)} \cdot {(n - 2)} \cdots {3 \cdot 2 \cdot 1]} \,=\, {n \cdot (n - 1)!.} \]" />
 
-Thus, we can compute <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>n</mi>
-    <mo>!</mo>
-  </mrow>
-</math> by computing <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mo stretchy="false">(</mo>
-    <mi>n</mi>
-    <mo>−<!-- − --></mo>
-    <mn>1</mn>
-    <mo stretchy="false">)</mo>
-    <mo>!</mo>
-  </mrow>
-</math> and multiplying the
-result by <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math>.  If we add the stipulation that 1! is equal to 1, this
+Thus, we can compute <img src="fig/math/5fa3dbabdc4f880a425fd3b033864691.svg" class="math-inline" style="height: 0.702em; vertical-align: -0.009em;" alt="\( {n!} \)" /> by computing <img src="fig/math/44fe5301c8e9c277481b220163a36838.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.189em;" alt="\( {(n - 1)!} \)" /> and multiplying the
+result by <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" />.  If we add the stipulation that 1! is equal to 1, this
 observation translates directly into a procedure:
 </p>
 <div class="lisp">
@@ -216,7 +104,7 @@ procedure in action computing 6!, as shown in <a href="#Figure-1_002e3">Figure 1
 </p>
 <figure class="float">
 <a id="Figure-1_002e3"></a>
-<object style="width: 52.58ex; height: 31.43ex;" data="fig/chap1/Fig1.3d.std.svg" type="image/svg+xml">SVG</object>
+<img style="width: 52.58ex; max-width: 100%; display: inline;" src="fig/chap1/Fig1.3d.std.svg" />
 
 <figcaption class="float-caption">
 <p><strong>Figure 1.3:</strong> A linear recursive process for computing 6!.</p>
@@ -224,40 +112,20 @@ procedure in action computing 6!, as shown in <a href="#Figure-1_002e3">Figure 1
 </figure>
 
 <p>Now let’s take a different perspective on computing factorials.  We could
-describe a rule for computing <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>n</mi>
-    <mo>!</mo>
-  </mrow>
-</math> by specifying that we first multiply 1 by
-2, then multiply the result by 3, then by 4, and so on until we reach <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math>.
+describe a rule for computing <img src="fig/math/5fa3dbabdc4f880a425fd3b033864691.svg" class="math-inline" style="height: 0.702em; vertical-align: -0.009em;" alt="\( {n!} \)" /> by specifying that we first multiply 1 by
+2, then multiply the result by 3, then by 4, and so on until we reach <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" />.
 More formally, we maintain a running product, together with a counter that
-counts from 1 up to <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math>.  We can describe the computation by saying that the
+counts from 1 up to <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" />.  We can describe the computation by saying that the
 counter and the product simultaneously change from one step to the next
 according to the rule
 </p>
 <div class="example">
-<pre class="example">product <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mo stretchy="false">←<!-- ← --></mo>
-</math> counter * product
-counter <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mo stretchy="false">←<!-- ← --></mo>
-</math> counter + 1
+<pre class="example">product <img src="fig/math/8a733dfd09fb25f18571920570c70be0.svg" class="math-inline" style="height: 0.467em;" alt="\( \gets \)" /> counter * product
+counter <img src="fig/math/8a733dfd09fb25f18571920570c70be0.svg" class="math-inline" style="height: 0.467em;" alt="\( \gets \)" /> counter + 1
 </pre></div>
 
-<p>and stipulating that <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>n</mi>
-    <mo>!</mo>
-  </mrow>
-</math> is the value of the product when the counter
-exceeds <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math>.
+<p>and stipulating that <img src="fig/math/5fa3dbabdc4f880a425fd3b033864691.svg" class="math-inline" style="height: 0.702em; vertical-align: -0.009em;" alt="\( {n!} \)" /> is the value of the product when the counter
+exceeds <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" />.
 </p>
 <p>Once again, we can recast our description as a procedure for computing
 factorials:<a class="footnote_link" id="DOCF29" href="#FOOT29"><sup>29</sup></a>
@@ -278,7 +146,7 @@ computing 6!, as shown in <a href="#Figure-1_002e4">Figure 1.4</a>.
 </p>
 <figure class="float">
 <a id="Figure-1_002e4"></a>
-<object style="width: 23.40ex; height: 23.31ex;" data="fig/chap1/Fig1.4d.std.svg" type="image/svg+xml">SVG</object>
+<img style="width: 23.40ex; max-width: 100%; display: inline;" src="fig/chap1/Fig1.4d.std.svg" />
 
 <figcaption class="float-caption">
 <p><strong>Figure 1.4:</strong> A linear iterative process for computing 6!.</p>
@@ -287,14 +155,7 @@ computing 6!, as shown in <a href="#Figure-1_002e4">Figure 1.4</a>.
 
 <p>Compare the two processes.  From one point of view, they seem hardly different
 at all.  Both compute the same mathematical function on the same domain, and
-each requires a number of steps proportional to <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math> to compute <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>n</mi>
-    <mo>!</mo>
-  </mrow>
-</math>.
+each requires a number of steps proportional to <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" /> to compute <img src="fig/math/5fa3dbabdc4f880a425fd3b033864691.svg" class="math-inline" style="height: 0.702em; vertical-align: -0.009em;" alt="\( {n!} \)" />.
 Indeed, both processes even carry out the same sequence of multiplications,
 obtaining the same sequence of partial products.  On the other hand, when we
 consider the “shapes” of the two processes, we find that they evolve quite
@@ -309,26 +170,15 @@ as the operations are actually performed.  This type of process, characterized
 by a chain of deferred operations, is called a <a id="index-recursive-process"></a>
 <em>recursive process</em>.
 Carrying out this process requires that the interpreter keep track of the
-operations to be performed later on.  In the computation of <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>n</mi>
-    <mo>!</mo>
-  </mrow>
-</math>, the length
+operations to be performed later on.  In the computation of <img src="fig/math/5fa3dbabdc4f880a425fd3b033864691.svg" class="math-inline" style="height: 0.702em; vertical-align: -0.009em;" alt="\( {n!} \)" />, the length
 of the chain of deferred multiplications, and hence the amount of information
-needed to keep track of it, grows linearly with <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math> (is proportional to
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math>), just like the number of steps.  Such a process is called a
+needed to keep track of it, grows linearly with <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" /> (is proportional to
+<img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" />), just like the number of steps.  Such a process is called a
 <a id="index-linear-recursive-process"></a>
 <em>linear recursive process</em>.
 </p>
 <p>By contrast, the second process does not grow and shrink.  At each step, all we
-need to keep track of, for any <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math>, are the current values of the variables
+need to keep track of, for any <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" />, are the current values of the variables
 <code>product</code>, <code>counter</code>, and <code>max-count</code>.  We call this an
 <a id="index-iterative-process"></a>
 <em>iterative process</em>.  In general, an iterative process is one whose
@@ -337,14 +187,7 @@ state can be summarized by a fixed number of <a id="index-state-variables"></a>
 together with a fixed rule that describes how the state variables should be
 updated as the process moves from state to state and an (optional) end test
 that specifies conditions under which the process should terminate.  In
-computing <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>n</mi>
-    <mo>!</mo>
-  </mrow>
-</math>, the number of steps required grows linearly with <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math>.  Such
+computing <img src="fig/math/5fa3dbabdc4f880a425fd3b033864691.svg" class="math-inline" style="height: 0.702em; vertical-align: -0.009em;" alt="\( {n!} \)" />, the number of steps required grows linearly with <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" />.  Such
 a process is called a <a id="index-linear-iterative-process"></a>
 <em>linear iterative process</em>.
 </p>
@@ -442,17 +285,7 @@ defined above:
 
 <p>Give concise mathematical definitions for the functions computed by the
 procedures <code>f</code>, <code>g</code>, and <code>h</code> for positive integer values of
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math>.  For example, <code>(k n)</code> computes <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mn>5</mn>
-    <msup>
-      <mi>n</mi>
-      <mn>2</mn>
-    </msup>
-  </mrow>
-</math>.
+<img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" />.  For example, <code>(k n)</code> computes <img src="fig/math/16a46df6d09d600cea1b52c1f70b1db4.svg" class="math-inline" style="height: 0.854em; vertical-align: -0.010em;" alt="\( {5n^2} \)" />.
 </p></blockquote>
 
 <a id="g_t1_002e2_002e2"></a>
@@ -468,72 +301,7 @@ number is the sum of the preceding two:
 </div>
 <p>In general, the Fibonacci numbers can be defined by the rule
 
-<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
-  <mtext>Fib</mtext>
-  <mo stretchy="false">(</mo>
-  <mi>n</mi>
-  <mo stretchy="false">)</mo>
-  <mspace width="thickmathspace"/>
-  <mo>=</mo>
-  <mspace width="thickmathspace"/>
-  <mrow>
-    <mo>{</mo>
-    <mtable columnalign="left left" rowspacing="4pt" columnspacing="1em">
-      <mtr>
-        <mtd>
-          <mn>0</mn>
-        </mtd>
-        <mtd>
-          <mspace width="thickmathspace"/>
-          <mtext>if</mtext>
-          <mspace width="thickmathspace"/>
-          <mspace width="thickmathspace"/>
-          <mi>n</mi>
-          <mo>=</mo>
-          <mn>0</mn>
-          <mo>,</mo>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mn>1</mn>
-        </mtd>
-        <mtd>
-          <mspace width="thickmathspace"/>
-          <mtext>if</mtext>
-          <mspace width="thickmathspace"/>
-          <mspace width="thickmathspace"/>
-          <mi>n</mi>
-          <mo>=</mo>
-          <mn>1</mn>
-          <mo>,</mo>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext>Fib</mtext>
-          <mo stretchy="false">(</mo>
-          <mi>n</mi>
-          <mo>−<!-- − --></mo>
-          <mn>1</mn>
-          <mo stretchy="false">)</mo>
-          <mo>+</mo>
-          <mtext>Fib</mtext>
-          <mo stretchy="false">(</mo>
-          <mi>n</mi>
-          <mo>−<!-- − --></mo>
-          <mn>2</mn>
-          <mo stretchy="false">)</mo>
-        </mtd>
-        <mtd>
-          <mspace width="thickmathspace"/>
-          <mtext>otherwise</mtext>
-          <mo>.</mo>
-        </mtd>
-      </mtr>
-    </mtable>
-  </mrow>
-</math>
+<img src="fig/math/8225dec0d676b9c57da03597a3556d31.svg" class="math-display" style="height: 3.389em;" alt="\[ % :7:&amp;#10;   \text{Fib}(n) \; = \;   \left\{      \begin{array}{ll}           0 &amp;amp; \;\text{if} \;\; n = 0, \\       1 &amp;amp; \;\text{if} \;\; n = 1, \\       \text{Fib}(n-1) + \text{Fib}(n-2) &amp;amp; \;\text{otherwise}.      \end{array}    \right.  \]" />
 
 We can immediately translate this definition into a recursive procedure for
 computing Fibonacci numbers:
@@ -554,7 +322,7 @@ that the <code>fib</code> procedure calls itself twice each time it is invoked.
 </p>
 <figure class="float">
 <a id="Figure-1_002e5"></a>
-<object style="width: 58.07ex; height: 36.18ex;" data="fig/chap1/Fig1.5d.std.svg" type="image/svg+xml">SVG</object>
+<img style="width: 58.07ex; max-width: 100%; display: inline;" src="fig/chap1/Fig1.5d.std.svg" />
 
 <figcaption class="float-caption">
 <p><strong>Figure 1.5:</strong> The tree-recursive process generated in computing <code>(fib 5)</code>.</p>
@@ -567,87 +335,17 @@ computation.  Notice in <a href="#Figure-1_002e5">Figure 1.5</a> that the entire
 <code>(fib 3)</code>—almost half the work—is duplicated.  In fact, it is not hard
 to show that the number of times the procedure will compute <code>(fib 1)</code> or
 <code>(fib 0)</code> (the number of leaves in the above tree, in general) is
-precisely <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mtext>Fib</mtext>
-    <mo stretchy="false">(</mo>
-    <mi>n</mi>
-    <mo>+</mo>
-    <mn>1</mn>
-    <mo stretchy="false">)</mo>
-  </mrow>
-</math>.  To get an idea of how bad this is, one can
-show that the value of <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mtext>Fib</mtext>
-    <mo stretchy="false">(</mo>
-    <mi>n</mi>
-    <mo stretchy="false">)</mo>
-  </mrow>
-</math> grows exponentially with <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math>.  More
-precisely (see <a href="#Exercise-1_002e13">Exercise 1.13</a>), <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mtext>Fib</mtext>
-    <mo stretchy="false">(</mo>
-    <mi>n</mi>
-    <mo stretchy="false">)</mo>
-  </mrow>
-</math> is the closest integer
-to <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <msup>
-      <mi>φ<!-- φ --></mi>
-      <mi>n</mi>
-    </msup>
-    <mrow class="MJX-TeXAtom-ORD">
-      <mo>/</mo>
-    </mrow>
-    <msqrt>
-      <mn>5</mn>
-    </msqrt>
-  </mrow>
-</math>, where
+precisely <img src="fig/math/455054e624823e0531cfd992817c1e2c.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.189em;" alt="\( {\text{Fib}(n+1)} \)" />.  To get an idea of how bad this is, one can
+show that the value of <img src="fig/math/606058a44581066eed9cf2309aee7b71.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.189em;" alt="\( {\text{Fib}(n)} \)" /> grows exponentially with <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" />.  More
+precisely (see <a href="#Exercise-1_002e13">Exercise 1.13</a>), <img src="fig/math/606058a44581066eed9cf2309aee7b71.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.189em;" alt="\( {\text{Fib}(n)} \)" /> is the closest integer
+to <img src="fig/math/dd53f55e0a4674912e8a49cd871c795b.svg" class="math-inline" style="height: 1.118em; vertical-align: -0.180em;" alt="\( {\varphi^n / \sqrt{5}} \)" />, where
 
-<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
-  <mi>φ<!-- φ --></mi>
-  <mspace width="thinmathspace"/>
-  <mo>=</mo>
-  <mspace width="thinmathspace"/>
-  <mfrac>
-    <mrow>
-      <mn>1</mn>
-      <mo>+</mo>
-      <msqrt>
-        <mn>5</mn>
-      </msqrt>
-    </mrow>
-    <mn>2</mn>
-  </mfrac>
-  <mspace width="thinmathspace"/>
-  <mo>≈<!-- ≈ --></mo>
-  <mspace width="thinmathspace"/>
-  <mn>1.6180</mn>
-</math>
+<img src="fig/math/196371d8fda930e2dcb771b35db1df9a.svg" class="math-display" style="height: 2.248em;" alt="\[ % :8:&amp;#10; \varphi \,=\, \frac{1 + \sqrt{5}}{2} \,\approx\, 1.6180 \]" />
 
 is the <a id="index-golden-ratio"></a>
 <em>golden ratio</em>, which satisfies the equation
 
-<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
-  <msup>
-    <mi>φ<!-- φ --></mi>
-    <mn>2</mn>
-  </msup>
-  <mspace width="thinmathspace"/>
-  <mo>=</mo>
-  <mspace width="thinmathspace"/>
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>φ<!-- φ --></mi>
-    <mo>+</mo>
-    <mn>1.</mn>
-  </mrow>
-</math>
+<img src="fig/math/9726168de251dd7670ebb58eaca40d0d.svg" class="math-display" style="height: 1.128em;" alt="\[ % :9:&amp;#10;  \varphi^2 \,=\, {\varphi + 1.} \]" />
 
 Thus, the process uses a number of steps that grows exponentially with the
 input.  On the other hand, the space required grows only linearly with the
@@ -657,75 +355,16 @@ tree-recursive process will be proportional to the number of nodes in the tree,
 while the space required will be proportional to the maximum depth of the tree.
 </p>
 <p>We can also formulate an iterative process for computing the Fibonacci numbers.
-The idea is to use a pair of integers <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>a</mi>
-</math> and <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>b</mi>
-</math>, initialized to
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mtext>Fib(1) = 1</mtext>
-  </mrow>
-</math> and <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mtext>Fib(0) = 0</mtext>
-  </mrow>
-</math>, and to repeatedly apply the
+The idea is to use a pair of integers <img src="fig/math/09009cdd5fc245e05305bc574dcdc97d.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( a \)" /> and <img src="fig/math/3e92f417ccfc1f59b0ee22d034c85747.svg" class="math-inline" style="height: 0.703em; vertical-align: -0.009em;" alt="\( b \)" />, initialized to
+<img src="fig/math/ba72d1746f7d257fd4f89f24c86a0e61.svg" class="math-inline" style="height: 0.996em; vertical-align: -0.247em;" alt="\( {\text{Fib(1) = 1}} \)" /> and <img src="fig/math/af6821f800a115ac3e33a8b02bb5c544.svg" class="math-inline" style="height: 0.996em; vertical-align: -0.247em;" alt="\( {\text{Fib(0) = 0}} \)" />, and to repeatedly apply the
 simultaneous transformations
 </p>
 
-<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
-  <mtable columnalign="left" rowspacing="4pt" columnspacing="1em">
-    <mtr>
-      <mtd>
-        <mi>a</mi>
-        <mspace width="thickmathspace"/>
-        <mo stretchy="false">←<!-- ← --></mo>
-        <mspace width="thickmathspace"/>
-        <mi>a</mi>
-        <mo>+</mo>
-        <mi>b</mi>
-        <mo>,</mo>
-      </mtd>
-    </mtr>
-    <mtr>
-      <mtd>
-        <mi>b</mi>
-        <mspace width="thickmathspace"/>
-        <mo stretchy="false">←<!-- ← --></mo>
-        <mspace width="thickmathspace"/>
-        <mi>a</mi>
-        <mo>.</mo>
-      </mtd>
-    </mtr>
-  </mtable>
-</math>
+<img src="fig/math/d7bc6551cb534bc2372f5fe135fb8843.svg" class="math-display" style="height: 1.913em;" alt="\[ % :10:&amp;#10;  \begin{array}{l}   a \;\leftarrow\; a + b, \\    b \;\leftarrow\; a.  \end{array} \]" />
 
-<p>It is not hard to show that, after applying this transformation <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math> times,
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>a</mi>
-</math> and <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>b</mi>
-</math> will be equal, respectively, to <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mtext>Fib</mtext>
-    <mo stretchy="false">(</mo>
-    <mi>n</mi>
-    <mo>+</mo>
-    <mn>1</mn>
-    <mo stretchy="false">)</mo>
-  </mrow>
-</math> and
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mtext>Fib</mtext>
-    <mo stretchy="false">(</mo>
-    <mi>n</mi>
-    <mo stretchy="false">)</mo>
-  </mrow>
-</math>.  Thus, we can compute Fibonacci numbers iteratively using
+<p>It is not hard to show that, after applying this transformation <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" /> times,
+<img src="fig/math/09009cdd5fc245e05305bc574dcdc97d.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( a \)" /> and <img src="fig/math/3e92f417ccfc1f59b0ee22d034c85747.svg" class="math-inline" style="height: 0.703em; vertical-align: -0.009em;" alt="\( b \)" /> will be equal, respectively, to <img src="fig/math/455054e624823e0531cfd992817c1e2c.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.189em;" alt="\( {\text{Fib}(n+1)} \)" /> and
+<img src="fig/math/606058a44581066eed9cf2309aee7b71.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.189em;" alt="\( {\text{Fib}(n)} \)" />.  Thus, we can compute Fibonacci numbers iteratively using
 the procedure
 </p>
 <div class="lisp">
@@ -737,25 +376,9 @@ the procedure
       b
       </span><span class="opn">(</span><span class="pln">fib-iter </span><span class="opn">(</span><span class="pun">+</span><span class="pln"> a b</span><span class="clo">)</span><span class="pln"> a </span><span class="opn">(</span><span class="pun">-</span><span class="pln"> count </span><span class="lit">1</span><span class="clo">))))</span></pre></div>
 
-<p>This second method for computing <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mtext>Fib</mtext>
-    <mo stretchy="false">(</mo>
-    <mi>n</mi>
-    <mo stretchy="false">)</mo>
-  </mrow>
-</math> is a linear iteration.  The
+<p>This second method for computing <img src="fig/math/606058a44581066eed9cf2309aee7b71.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.189em;" alt="\( {\text{Fib}(n)} \)" /> is a linear iteration.  The
 difference in number of steps required by the two methods—one linear in
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math>, one growing as fast as <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mtext>Fib</mtext>
-    <mo stretchy="false">(</mo>
-    <mi>n</mi>
-    <mo stretchy="false">)</mo>
-  </mrow>
-</math> itself—is enormous, even for
+<img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" />, one growing as fast as <img src="fig/math/606058a44581066eed9cf2309aee7b71.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.189em;" alt="\( {\text{Fib}(n)} \)" /> itself—is enormous, even for
 small inputs.
 </p>
 <p>One should not conclude from this that tree-recursive processes are useless.
@@ -783,30 +406,14 @@ number of ways to change any given amount of money?
 of the types of coins available as arranged in some order.  Then the following
 relation holds:
 </p>
-<p>The number of ways to change amount <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>a</mi>
-</math> using <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math> kinds of coins equals
+<p>The number of ways to change amount <img src="fig/math/09009cdd5fc245e05305bc574dcdc97d.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( a \)" /> using <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" /> kinds of coins equals
 </p>
 <ul>
-<li> the number of ways to change amount <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>a</mi>
-</math> using all but the first kind of coin,
+<li> the number of ways to change amount <img src="fig/math/09009cdd5fc245e05305bc574dcdc97d.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( a \)" /> using all but the first kind of coin,
 plus
 
-</li><li> the number of ways to change amount <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>a</mi>
-    <mo>−<!-- − --></mo>
-    <mi>d</mi>
-  </mrow>
-</math> using all <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math> kinds of
-coins, where <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>d</mi>
-</math> is the denomination of the first kind of coin.
+</li><li> the number of ways to change amount <img src="fig/math/300c23f60457a24b1e5ebe2eba416e7d.svg" class="math-inline" style="height: 0.703em; vertical-align: -0.009em;" alt="\( {a - d} \)" /> using all <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" /> kinds of
+coins, where <img src="fig/math/94022487faed4226073f19cc394c11d0.svg" class="math-inline" style="height: 0.703em; vertical-align: -0.009em;" alt="\( d \)" /> is the denomination of the first kind of coin.
 
 </li></ul>
 
@@ -825,17 +432,11 @@ reduction rule carefully, and convince yourself that we can use it to describe
 an algorithm if we specify the following degenerate cases:<a class="footnote_link" id="DOCF33" href="#FOOT33"><sup>33</sup></a>
 </p>
 <ul>
-<li> If <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>a</mi>
-</math> is exactly 0, we should count that as 1 way to make change.
+<li> If <img src="fig/math/09009cdd5fc245e05305bc574dcdc97d.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( a \)" /> is exactly 0, we should count that as 1 way to make change.
 
-</li><li> If <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>a</mi>
-</math> is less than 0, we should count that as 0 ways to make change.
+</li><li> If <img src="fig/math/09009cdd5fc245e05305bc574dcdc97d.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( a \)" /> is less than 0, we should count that as 0 ways to make change.
 
-</li><li> If <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math> is 0, we should count that as 0 ways to make change.
+</li><li> If <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" /> is 0, we should count that as 0 ways to make change.
 
 </li></ul>
 
@@ -885,73 +486,10 @@ compiler” that could transform tree-recursive procedures into more efficient
 procedures that compute the same result.<a class="footnote_link" id="DOCF34" href="#FOOT34"><sup>34</sup></a>
 </p>
 <blockquote>
-<p><strong><a id="Exercise-1_002e11"></a>Exercise 1.11:</strong> A function <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>f</mi>
-</math> is defined by
-the rule that <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>f</mi>
-    <mo stretchy="false">(</mo>
-    <mi>n</mi>
-    <mo stretchy="false">)</mo>
-    <mo>=</mo>
-    <mi>n</mi>
-  </mrow>
-</math> if <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>n</mi>
-    <mo>&lt;</mo>
-    <mn>3</mn>
-  </mrow>
-</math> and <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>f</mi>
-    <mo stretchy="false">(</mo>
-    <mi>n</mi>
-    <mo stretchy="false">)</mo>
-  </mrow>
-  <mo>=</mo>
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>f</mi>
-    <mo stretchy="false">(</mo>
-    <mi>n</mi>
-    <mo>−<!-- − --></mo>
-    <mn>1</mn>
-    <mo stretchy="false">)</mo>
-  </mrow>
-  <mo>+</mo>
-  <mrow class="MJX-TeXAtom-ORD">
-    <mn>2</mn>
-    <mi>f</mi>
-    <mo stretchy="false">(</mo>
-    <mi>n</mi>
-    <mo>−<!-- − --></mo>
-    <mn>2</mn>
-    <mo stretchy="false">)</mo>
-  </mrow>
-  <mo>+</mo>
-  <mrow class="MJX-TeXAtom-ORD">
-    <mn>3</mn>
-    <mi>f</mi>
-    <mo stretchy="false">(</mo>
-    <mi>n</mi>
-    <mo>−<!-- − --></mo>
-    <mn>3</mn>
-    <mo stretchy="false">)</mo>
-  </mrow>
-</math> if <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>n</mi>
-    <mo>≥<!-- ≥ --></mo>
-    <mn>3</mn>
-  </mrow>
-</math>.  
-Write a procedure that computes <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>f</mi>
-</math> by means of a recursive process.  Write a procedure that
-computes <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>f</mi>
-</math> by means of an iterative process.
+<p><strong><a id="Exercise-1_002e11"></a>Exercise 1.11:</strong> A function <img src="fig/math/7a8d165d31a04fc319968e0213091ff8.svg" class="math-inline" style="height: 0.929em; vertical-align: -0.234em;" alt="\( f \)" /> is defined by
+the rule that <img src="fig/math/858e97aa72fad42049bfdb3d966def85.svg" class="math-inline" style="height: 0.936em; vertical-align: -0.225em;" alt="\( {f(n) = n} \)" /> if <img src="fig/math/1a7101157ae461b511ffea0eacf7ce88.svg" class="math-inline" style="height: 0.652em; vertical-align: -0.009em;" alt="\( {n &amp;lt; 3} \)" /> and <img src="fig/math/3442878c66dcc4b6133e5ea2a2d10121.svg" class="math-inline" style="height: 0.936em; vertical-align: -0.225em;" alt="\( {f(n)} = {f(n-1)} + {2f(n-2)} + {3f(n-3)} \)" /> if <img src="fig/math/fd0bb2e5e2f01284bb7c8b8e23031c45.svg" class="math-inline" style="height: 0.699em; vertical-align: -0.055em;" alt="\( {n \ge 3} \)" />.  
+Write a procedure that computes <img src="fig/math/7a8d165d31a04fc319968e0213091ff8.svg" class="math-inline" style="height: 0.929em; vertical-align: -0.234em;" alt="\( f \)" /> by means of a recursive process.  Write a procedure that
+computes <img src="fig/math/7a8d165d31a04fc319968e0213091ff8.svg" class="math-inline" style="height: 0.929em; vertical-align: -0.234em;" alt="\( f \)" /> by means of an iterative process.
 </p></blockquote>
 
 <blockquote>
@@ -974,90 +512,11 @@ means of a recursive process.
 </p></blockquote>
 
 <blockquote>
-<p><strong><a id="Exercise-1_002e13"></a>Exercise 1.13:</strong> Prove that <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mtext>Fib</mtext>
-    <mo stretchy="false">(</mo>
-    <mi>n</mi>
-    <mo stretchy="false">)</mo>
-  </mrow>
-</math> is
-the closest integer to <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <msup>
-      <mi>φ<!-- φ --></mi>
-      <mi>n</mi>
-    </msup>
-    <mrow class="MJX-TeXAtom-ORD">
-      <mo>/</mo>
-    </mrow>
-    <msqrt>
-      <mn>5</mn>
-    </msqrt>
-  </mrow>
-</math>, where <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>φ<!-- φ --></mi>
-  <mo>=</mo>
-  <mrow class="MJX-TeXAtom-ORD">
-    <mo stretchy="false">(</mo>
-    <mn>1</mn>
-    <mo>+</mo>
-    <msqrt>
-      <mn>5</mn>
-    </msqrt>
-    <mo stretchy="false">)</mo>
-    <mrow class="MJX-TeXAtom-ORD">
-      <mo>/</mo>
-    </mrow>
-    <mn>2</mn>
-  </mrow>
-</math>.  
-Hint: Let <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>ψ<!-- ψ --></mi>
-  <mo>=</mo>
-  <mrow class="MJX-TeXAtom-ORD">
-    <mo stretchy="false">(</mo>
-    <mn>1</mn>
-    <mo>−<!-- − --></mo>
-    <msqrt>
-      <mn>5</mn>
-    </msqrt>
-    <mo stretchy="false">)</mo>
-    <mrow class="MJX-TeXAtom-ORD">
-      <mo>/</mo>
-    </mrow>
-    <mn>2</mn>
-  </mrow>
-</math>.
+<p><strong><a id="Exercise-1_002e13"></a>Exercise 1.13:</strong> Prove that <img src="fig/math/606058a44581066eed9cf2309aee7b71.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.189em;" alt="\( {\text{Fib}(n)} \)" /> is
+the closest integer to <img src="fig/math/dd53f55e0a4674912e8a49cd871c795b.svg" class="math-inline" style="height: 1.118em; vertical-align: -0.180em;" alt="\( {\varphi^n / \sqrt{5}} \)" />, where <img src="fig/math/82c54a67e55d18b10c1f9e31c4e345a8.svg" class="math-inline" style="height: 1.118em; vertical-align: -0.180em;" alt="\( \varphi = {(1 + \sqrt{5}) / 2} \)" />.  
+Hint: Let <img src="fig/math/64827f834c027b41fcef22961c68e30f.svg" class="math-inline" style="height: 1.118em; vertical-align: -0.180em;" alt="\( \psi = {(1 - \sqrt{5}) / 2} \)" />.
 Use induction and the definition of the Fibonacci numbers (see <a href="#g_t1_002e2_002e2">1.2.2</a>) 
-to prove that <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mtext>Fib</mtext>
-    <mo stretchy="false">(</mo>
-    <mi>n</mi>
-    <mo stretchy="false">)</mo>
-  </mrow>
-  <mo>=</mo>
-  <mrow class="MJX-TeXAtom-ORD">
-    <mo stretchy="false">(</mo>
-    <msup>
-      <mi>φ<!-- φ --></mi>
-      <mi>n</mi>
-    </msup>
-    <mo>−<!-- − --></mo>
-    <msup>
-      <mi>ψ<!-- ψ --></mi>
-      <mi>n</mi>
-    </msup>
-    <mo stretchy="false">)</mo>
-    <mrow class="MJX-TeXAtom-ORD">
-      <mo>/</mo>
-    </mrow>
-    <msqrt>
-      <mn>5</mn>
-    </msqrt>
-  </mrow>
-</math>.
+to prove that <img src="fig/math/ccf94bce86e4d1eb28de0fe042b3b533.svg" class="math-inline" style="height: 1.118em; vertical-align: -0.180em;" alt="\( {\text{Fib}(n)} = {(\varphi^n - \psi^n) / \sqrt{5}} \)" />.
 </p></blockquote>
 
 <a id="g_t1_002e2_002e3"></a>
@@ -1071,278 +530,45 @@ describe this difference is to use the notion of <a id="index-order-of-growth"><
 obtain a gross measure of the resources required by a process as the inputs
 become larger.
 </p>
-<p>Let <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math> be a parameter that measures the size of the problem, and let
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>R</mi>
-    <mo stretchy="false">(</mo>
-    <mi>n</mi>
-    <mo stretchy="false">)</mo>
-  </mrow>
-</math> be the amount of resources the process requires for a problem of
-size <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math>.  In our previous examples we took <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math> to be the number for which
+<p>Let <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" /> be a parameter that measures the size of the problem, and let
+<img src="fig/math/ea7204bb6e90d2190e6edb6a241d8564.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.189em;" alt="\( {R(n)} \)" /> be the amount of resources the process requires for a problem of
+size <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" />.  In our previous examples we took <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" /> to be the number for which
 a given function is to be computed, but there are other possibilities.  For
 instance, if our goal is to compute an approximation to the square root of a
-number, we might take <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math> to be the number of digits accuracy required.  For
-matrix multiplication we might take <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math> to be the number of rows in the
+number, we might take <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" /> to be the number of digits accuracy required.  For
+matrix multiplication we might take <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" /> to be the number of rows in the
 matrices.  In general there are a number of properties of the problem with
 respect to which it will be desirable to analyze a given process.  Similarly,
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>R</mi>
-    <mo stretchy="false">(</mo>
-    <mi>n</mi>
-    <mo stretchy="false">)</mo>
-  </mrow>
-</math> might measure the number of internal storage registers used, the
+<img src="fig/math/ea7204bb6e90d2190e6edb6a241d8564.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.189em;" alt="\( {R(n)} \)" /> might measure the number of internal storage registers used, the
 number of elementary machine operations performed, and so on.  In computers
 that do only a fixed number of operations at a time, the time required will be
 proportional to the number of elementary machine operations performed.
 </p>
-<p>We say that <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>R</mi>
-    <mo stretchy="false">(</mo>
-    <mi>n</mi>
-    <mo stretchy="false">)</mo>
-  </mrow>
-</math> has order of growth <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi mathvariant="normal">Θ<!-- Θ --></mi>
-    <mo stretchy="false">(</mo>
-    <mi>f</mi>
-    <mo stretchy="false">(</mo>
-    <mi>n</mi>
-    <mo stretchy="false">)</mo>
-    <mo stretchy="false">)</mo>
-  </mrow>
-</math>, written
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>R</mi>
-    <mo stretchy="false">(</mo>
-    <mi>n</mi>
-    <mo stretchy="false">)</mo>
-  </mrow>
-  <mo>=</mo>
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi mathvariant="normal">Θ<!-- Θ --></mi>
-    <mo stretchy="false">(</mo>
-    <mi>f</mi>
-    <mo stretchy="false">(</mo>
-    <mi>n</mi>
-    <mo stretchy="false">)</mo>
-    <mo stretchy="false">)</mo>
-  </mrow>
-</math> (pronounced “theta of
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>f</mi>
-    <mo stretchy="false">(</mo>
-    <mi>n</mi>
-    <mo stretchy="false">)</mo>
-  </mrow>
-</math>”), if there are positive constants <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <msub>
-    <mi>k</mi>
-    <mn>1</mn>
-  </msub>
-</math> and <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <msub>
-    <mi>k</mi>
-    <mn>2</mn>
-  </msub>
-</math>
-independent of <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math> such that <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <msub>
-      <mi>k</mi>
-      <mn>1</mn>
-    </msub>
-    <mi>f</mi>
-    <mo stretchy="false">(</mo>
-    <mi>n</mi>
-    <mo stretchy="false">)</mo>
-  </mrow>
-  <mo>≤<!-- ≤ --></mo>
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>R</mi>
-    <mo stretchy="false">(</mo>
-    <mi>n</mi>
-    <mo stretchy="false">)</mo>
-  </mrow>
-  <mo>≤<!-- ≤ --></mo>
-  <mrow class="MJX-TeXAtom-ORD">
-    <msub>
-      <mi>k</mi>
-      <mn>2</mn>
-    </msub>
-    <mi>f</mi>
-    <mo stretchy="false">(</mo>
-    <mi>n</mi>
-    <mo stretchy="false">)</mo>
-  </mrow>
-</math> 
-for any sufficiently large value of <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math>.  (In other words, for large <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math>,
-the value <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>R</mi>
-    <mo stretchy="false">(</mo>
-    <mi>n</mi>
-    <mo stretchy="false">)</mo>
-  </mrow>
-</math> is sandwiched between <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <msub>
-      <mi>k</mi>
-      <mn>1</mn>
-    </msub>
-    <mi>f</mi>
-    <mo stretchy="false">(</mo>
-    <mi>n</mi>
-    <mo stretchy="false">)</mo>
-  </mrow>
-</math> and
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <msub>
-      <mi>k</mi>
-      <mn>2</mn>
-    </msub>
-    <mi>f</mi>
-    <mo stretchy="false">(</mo>
-    <mi>n</mi>
-    <mo stretchy="false">)</mo>
-  </mrow>
-</math>.)
+<p>We say that <img src="fig/math/ea7204bb6e90d2190e6edb6a241d8564.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.189em;" alt="\( {R(n)} \)" /> has order of growth <img src="fig/math/82dee58be97eb1c143e8307f9a952b48.svg" class="math-inline" style="height: 0.936em; vertical-align: -0.225em;" alt="\( {\Theta(f(n))} \)" />, written
+<img src="fig/math/aca9328ad0b29190f05f348d1f42f4f9.svg" class="math-inline" style="height: 0.936em; vertical-align: -0.225em;" alt="\( {R(n)} = {\Theta(f(n))} \)" /> (pronounced “theta of
+<img src="fig/math/84a6f8b825fdb354bca37ca2a5b854e1.svg" class="math-inline" style="height: 0.936em; vertical-align: -0.225em;" alt="\( {f(n)} \)" />”), if there are positive constants <img src="fig/math/9e40c899364b3a7bc648f5071c8e501c.svg" class="math-inline" style="height: 0.843em; vertical-align: -0.148em;" alt="\( k_1 \)" /> and <img src="fig/math/f770f36651db7f4958828f415118c5e8.svg" class="math-inline" style="height: 0.843em; vertical-align: -0.148em;" alt="\( k_2 \)" />
+independent of <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" /> such that <img src="fig/math/06b1fbaa45f5769cd3de898eb76451b1.svg" class="math-inline" style="height: 0.936em; vertical-align: -0.225em;" alt="\( {k_1 f(n)} \le {R(n)} \le {k_2 f(n)} \)" /> 
+for any sufficiently large value of <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" />.  (In other words, for large <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" />,
+the value <img src="fig/math/ea7204bb6e90d2190e6edb6a241d8564.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.189em;" alt="\( {R(n)} \)" /> is sandwiched between <img src="fig/math/1b4ac2c0c1dd95f199d565e90b91e1ca.svg" class="math-inline" style="height: 0.936em; vertical-align: -0.225em;" alt="\( {k_1 f(n)} \)" /> and
+<img src="fig/math/f683bd07b215182cd8c6df8573bb0513.svg" class="math-inline" style="height: 0.936em; vertical-align: -0.225em;" alt="\( {k_2 f(n)} \)" />.)
 </p>
 <p>For instance, with the linear recursive process for computing factorial
 described in <a href="#g_t1_002e2_002e1">1.2.1</a> the number of steps grows proportionally to
-the input <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math>.  Thus, the steps required for this process grows as
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi mathvariant="normal">Θ<!-- Θ --></mi>
-    <mo stretchy="false">(</mo>
-    <mi>n</mi>
-    <mo stretchy="false">)</mo>
-  </mrow>
-</math>.  We also saw that the space required grows as
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi mathvariant="normal">Θ<!-- Θ --></mi>
-    <mo stretchy="false">(</mo>
-    <mi>n</mi>
-    <mo stretchy="false">)</mo>
-  </mrow>
-</math>.  For the iterative factorial, the number of steps is still
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi mathvariant="normal">Θ<!-- Θ --></mi>
-    <mo stretchy="false">(</mo>
-    <mi>n</mi>
-    <mo stretchy="false">)</mo>
-  </mrow>
-</math> but the space is <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi mathvariant="normal">Θ<!-- Θ --></mi>
-    <mo stretchy="false">(</mo>
-    <mn>1</mn>
-    <mo stretchy="false">)</mo>
-  </mrow>
-</math>—that is,
+the input <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" />.  Thus, the steps required for this process grows as
+<img src="fig/math/67f39a78859198da759c097b570842e8.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.189em;" alt="\( {\Theta(n)} \)" />.  We also saw that the space required grows as
+<img src="fig/math/67f39a78859198da759c097b570842e8.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.189em;" alt="\( {\Theta(n)} \)" />.  For the iterative factorial, the number of steps is still
+<img src="fig/math/67f39a78859198da759c097b570842e8.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.189em;" alt="\( {\Theta(n)} \)" /> but the space is <img src="fig/math/d204133a45e3c82e46752ed335bc0373.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.189em;" alt="\( {\Theta(1)} \)" />—that is,
 constant.<a class="footnote_link" id="DOCF36" href="#FOOT36"><sup>36</sup></a> The
-tree-recursive Fibonacci computation requires <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi mathvariant="normal">Θ<!-- Θ --></mi>
-    <mo stretchy="false">(</mo>
-    <msup>
-      <mi>φ<!-- φ --></mi>
-      <mi>n</mi>
-    </msup>
-    <mo stretchy="false">)</mo>
-  </mrow>
-</math>
-steps and space <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi mathvariant="normal">Θ<!-- Θ --></mi>
-    <mo stretchy="false">(</mo>
-    <mi>n</mi>
-    <mo stretchy="false">)</mo>
-  </mrow>
-</math>, where <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>φ<!-- φ --></mi>
-</math> is the golden ratio
+tree-recursive Fibonacci computation requires <img src="fig/math/52158564696e8ea2b148b091ec81e378.svg" class="math-inline" style="height: 0.933em; vertical-align: -0.225em;" alt="\( {\Theta(\varphi^n)} \)" />
+steps and space <img src="fig/math/67f39a78859198da759c097b570842e8.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.189em;" alt="\( {\Theta(n)} \)" />, where <img src="fig/math/dcc52b7b3e1a0a821032c2d16b198829.svg" class="math-inline" style="height: 0.672em; vertical-align: -0.238em;" alt="\( \varphi \)" /> is the golden ratio
 described in <a href="#g_t1_002e2_002e2">1.2.2</a>.
 </p>
 <p>Orders of growth provide only a crude description of the behavior of a process.
-For example, a process requiring <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <msup>
-    <mi>n</mi>
-    <mn>2</mn>
-  </msup>
-</math> steps and a process requiring
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mn>1000</mn>
-    <msup>
-      <mi>n</mi>
-      <mn>2</mn>
-    </msup>
-  </mrow>
-</math> steps and a process requiring <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mn>3</mn>
-    <msup>
-      <mi>n</mi>
-      <mn>2</mn>
-    </msup>
-  </mrow>
-  <mo>+</mo>
-  <mrow class="MJX-TeXAtom-ORD">
-    <mn>10</mn>
-    <mi>n</mi>
-  </mrow>
-  <mo>+</mo>
-  <mn>17</mn>
-</math> steps all
-have <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi mathvariant="normal">Θ<!-- Θ --></mi>
-    <mo stretchy="false">(</mo>
-    <msup>
-      <mi>n</mi>
-      <mn>2</mn>
-    </msup>
-    <mo stretchy="false">)</mo>
-  </mrow>
-</math> order of growth.  On the other hand, order of growth
+For example, a process requiring <img src="fig/math/8749316e3d02c5d953690375757e639e.svg" class="math-inline" style="height: 0.854em; vertical-align: -0.010em;" alt="\( n^2 \)" /> steps and a process requiring
+<img src="fig/math/27546935652e330bcf31c704436a103d.svg" class="math-inline" style="height: 0.854em; vertical-align: -0.010em;" alt="\( {1000n^2} \)" /> steps and a process requiring <img src="fig/math/95657bdb137c3a0202cdd427b4930ea3.svg" class="math-inline" style="height: 0.854em; vertical-align: -0.010em;" alt="\( {3n^2} + {10n} + 17 \)" /> steps all
+have <img src="fig/math/e6194f553f4f8569bdbf476c2d7fbe3e.svg" class="math-inline" style="height: 1.046em; vertical-align: -0.199em;" alt="\( {\Theta(n^2)} \)" /> order of growth.  On the other hand, order of growth
 provides a useful indication of how we may expect the behavior of the process
-to change as we change the size of the problem.  For a <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi mathvariant="normal">Θ<!-- Θ --></mi>
-    <mo stretchy="false">(</mo>
-    <mi>n</mi>
-    <mo stretchy="false">)</mo>
-  </mrow>
-</math>
+to change as we change the size of the problem.  For a <img src="fig/math/67f39a78859198da759c097b570842e8.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.189em;" alt="\( {\Theta(n)} \)" />
 (linear) process, doubling the size will roughly double the amount of resources
 used.  For an exponential process, each increment in problem size will multiply
 the resource utilization by a constant factor.  In the remainder of 
@@ -1360,53 +586,10 @@ number of steps used by this process as the amount to be changed increases?
 <blockquote>
 <p><strong><a id="Exercise-1_002e15"></a>Exercise 1.15:</strong> The sine of an angle (specified
 in radians) can be computed by making use of the approximation 
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>sin</mi>
-    <mo>⁡<!-- ⁡ --></mo>
-    <mi>x</mi>
-    <mo>≈<!-- ≈ --></mo>
-    <mi>x</mi>
-  </mrow>
-</math> if <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>x</mi>
-</math> is sufficiently small, and the trigonometric
+<img src="fig/math/5b5a58e4e6caabf48362f07299a6963f.svg" class="math-inline" style="height: 0.671em; vertical-align: -0.009em;" alt="\( {\sin x  \approx x} \)" /> if <img src="fig/math/2f4b15565d0a1018e90c3e1b30b76acc.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( x \)" /> is sufficiently small, and the trigonometric
 identity
 
-<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>sin</mi>
-    <mo>⁡<!-- ⁡ --></mo>
-    <mi>x</mi>
-  </mrow>
-  <mspace width="thinmathspace"/>
-  <mo>=</mo>
-  <mspace width="thinmathspace"/>
-  <mrow class="MJX-TeXAtom-ORD">
-    <mn>3</mn>
-    <mi>sin</mi>
-    <mo>⁡<!-- ⁡ --></mo>
-    <mfrac>
-      <mi>x</mi>
-      <mn>3</mn>
-    </mfrac>
-  </mrow>
-  <mspace width="thinmathspace"/>
-  <mo>−<!-- − --></mo>
-  <mspace width="thinmathspace"/>
-  <mrow class="MJX-TeXAtom-ORD">
-    <mn>4</mn>
-    <msup>
-      <mi>sin</mi>
-      <mn>3</mn>
-    </msup>
-    <mo>⁡<!-- ⁡ --></mo>
-    <mfrac>
-      <mi>x</mi>
-      <mn>3</mn>
-    </mfrac>
-  </mrow>
-</math>
+<img src="fig/math/c5d4c9fd61552087f2509120228486b5.svg" class="math-display" style="height: 1.797em;" alt="\[ % :12:&amp;#10;  {\sin x} \,=\, {3\sin \frac{x}{3}} \,-\, {4\sin^3 \frac{x}{3}} \]" />
 
 to reduce the size of the argument of sin.  (For purposes of this
 exercise an angle is considered “sufficiently small” if its magnitude is not
@@ -1426,9 +609,7 @@ procedures:
 evaluated?
 
 </li><li> What is the order of growth in space and number of steps (as a function of
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>a</mi>
-</math>) used by the process generated by the <code>sine</code> procedure when
+<img src="fig/math/09009cdd5fc245e05305bc574dcdc97d.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( a \)" />) used by the process generated by the <code>sine</code> procedure when
 <code>(sine a)</code> is evaluated?
 
 </li></ol>
@@ -1439,58 +620,11 @@ evaluated?
 <h4 class="subsection"><span class="secnum">1.2.4</span><span class="sectitle">Exponentiation</span></h4>
 
 <p>Consider the problem of computing the exponential of a given number.  We would
-like a procedure that takes as arguments a base <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>b</mi>
-</math> and a positive integer
-exponent <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math> and computes <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <msup>
-    <mi>b</mi>
-    <mi>n</mi>
-  </msup>
-</math>.  One way to do this is via the
+like a procedure that takes as arguments a base <img src="fig/math/3e92f417ccfc1f59b0ee22d034c85747.svg" class="math-inline" style="height: 0.703em; vertical-align: -0.009em;" alt="\( b \)" /> and a positive integer
+exponent <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" /> and computes <img src="fig/math/d6d83912c8ad9c60e8bb70e75a27a8ad.svg" class="math-inline" style="height: 0.703em; vertical-align: -0.009em;" alt="\( b^n \)" />.  One way to do this is via the
 recursive definition
 
-<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
-  <mtable columnalign="left" rowspacing="4pt" columnspacing="1em">
-    <mtr>
-      <mtd>
-        <msup>
-          <mi>b</mi>
-          <mi>n</mi>
-        </msup>
-        <mspace width="thinmathspace"/>
-        <mo>=</mo>
-        <mspace width="thinmathspace"/>
-        <mi>b</mi>
-        <mo>⋅<!-- ⋅ --></mo>
-        <msup>
-          <mi>b</mi>
-          <mrow class="MJX-TeXAtom-ORD">
-            <mi>n</mi>
-            <mo>−<!-- − --></mo>
-            <mn>1</mn>
-          </mrow>
-        </msup>
-        <mo>,</mo>
-      </mtd>
-    </mtr>
-    <mtr>
-      <mtd>
-        <msup>
-          <mi>b</mi>
-          <mn>0</mn>
-        </msup>
-        <mspace width="thinmathspace"/>
-        <mo>=</mo>
-        <mspace width="thinmathspace"/>
-        <mn>1</mn>
-        <mo>,</mo>
-      </mtd>
-    </mtr>
-  </mtable>
-</math>
+<img src="fig/math/7cdc301fe7e670dea20a8543c292a94b.svg" class="math-display" style="height: 2.193em;" alt="\[ % :13:&amp;#10;  \begin{array}{l}   b^n \,=\, b\cdot b^{n-1}, \\    b^0 \,=\, 1,  \end{array} \]" />
 
 which translates readily into the procedure
 </p>
@@ -1500,22 +634,8 @@ which translates readily into the procedure
       </span><span class="lit">1</span><span class="pln"> 
       </span><span class="opn">(</span><span class="pun">*</span><span class="pln"> b </span><span class="opn">(</span><span class="pln">expt b </span><span class="opn">(</span><span class="pun">-</span><span class="pln"> n </span><span class="lit">1</span><span class="clo">)))))</span></pre></div>
 
-<p>This is a linear recursive process, which requires <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi mathvariant="normal">Θ<!-- Θ --></mi>
-    <mo stretchy="false">(</mo>
-    <mi>n</mi>
-    <mo stretchy="false">)</mo>
-  </mrow>
-</math> steps and
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi mathvariant="normal">Θ<!-- Θ --></mi>
-    <mo stretchy="false">(</mo>
-    <mi>n</mi>
-    <mo stretchy="false">)</mo>
-  </mrow>
-</math> space.  Just as with factorial, we can readily formulate an
+<p>This is a linear recursive process, which requires <img src="fig/math/67f39a78859198da759c097b570842e8.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.189em;" alt="\( {\Theta(n)} \)" /> steps and
+<img src="fig/math/67f39a78859198da759c097b570842e8.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.189em;" alt="\( {\Theta(n)} \)" /> space.  Just as with factorial, we can readily formulate an
 equivalent linear iteration:
 </p>
 <div class="lisp">
@@ -1529,202 +649,22 @@ equivalent linear iteration:
                  </span><span class="opn">(</span><span class="pun">-</span><span class="pln"> counter </span><span class="lit">1</span><span class="clo">)</span><span class="pln">
                  </span><span class="opn">(</span><span class="pun">*</span><span class="pln"> b product</span><span class="clo">))))</span></pre></div>
 
-<p>This version requires <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi mathvariant="normal">Θ<!-- Θ --></mi>
-    <mo stretchy="false">(</mo>
-    <mi>n</mi>
-    <mo stretchy="false">)</mo>
-  </mrow>
-</math> steps and <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi mathvariant="normal">Θ<!-- Θ --></mi>
-    <mo stretchy="false">(</mo>
-    <mn>1</mn>
-    <mo stretchy="false">)</mo>
-  </mrow>
-</math> space.
+<p>This version requires <img src="fig/math/67f39a78859198da759c097b570842e8.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.189em;" alt="\( {\Theta(n)} \)" /> steps and <img src="fig/math/d204133a45e3c82e46752ed335bc0373.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.189em;" alt="\( {\Theta(1)} \)" /> space.
 </p>
 <p>We can compute exponentials in fewer steps by using successive squaring.  For
-instance, rather than computing <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <msup>
-    <mi>b</mi>
-    <mn>8</mn>
-  </msup>
-</math> as
+instance, rather than computing <img src="fig/math/283d552b882dc58695d55ae691cc39ec.svg" class="math-inline" style="height: 0.854em; vertical-align: -0.010em;" alt="\( b^8 \)" /> as
 
-<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>b</mi>
-    <mo>⋅<!-- ⋅ --></mo>
-    <mo stretchy="false">(</mo>
-    <mi>b</mi>
-    <mo>⋅<!-- ⋅ --></mo>
-    <mo stretchy="false">(</mo>
-    <mi>b</mi>
-  </mrow>
-  <mo>⋅<!-- ⋅ --></mo>
-  <mrow class="MJX-TeXAtom-ORD">
-    <mo stretchy="false">(</mo>
-    <mi>b</mi>
-    <mo>⋅<!-- ⋅ --></mo>
-    <mo stretchy="false">(</mo>
-    <mi>b</mi>
-    <mo>⋅<!-- ⋅ --></mo>
-    <mo stretchy="false">(</mo>
-    <mi>b</mi>
-  </mrow>
-  <mo>⋅<!-- ⋅ --></mo>
-  <mrow class="MJX-TeXAtom-ORD">
-    <mo stretchy="false">(</mo>
-    <mi>b</mi>
-    <mo>⋅<!-- ⋅ --></mo>
-    <mi>b</mi>
-    <mo stretchy="false">)</mo>
-    <mo stretchy="false">)</mo>
-    <mo stretchy="false">)</mo>
-    <mo stretchy="false">)</mo>
-    <mo stretchy="false">)</mo>
-    <mo stretchy="false">)</mo>
-    <mo>,</mo>
-  </mrow>
-</math>
+<img src="fig/math/0af40e2c1e29ab7e2b5c30a9a3626d86.svg" class="math-display" style="height: 0.901em;" alt="\[ % :14:&amp;#10;   {b\cdot (b\cdot (b}\cdot {(b\cdot (b\cdot (b}\cdot {(b\cdot b)))))),} \]" />
 
 we can compute it using three multiplications:
 
-<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
-  <mtable columnalign="left" rowspacing="4pt" columnspacing="1em">
-    <mtr>
-      <mtd>
-        <msup>
-          <mi>b</mi>
-          <mn>2</mn>
-        </msup>
-        <mspace width="thinmathspace"/>
-        <mo>=</mo>
-        <mspace width="thinmathspace"/>
-        <mi>b</mi>
-        <mo>⋅<!-- ⋅ --></mo>
-        <mi>b</mi>
-        <mo>,</mo>
-      </mtd>
-    </mtr>
-    <mtr>
-      <mtd>
-        <msup>
-          <mi>b</mi>
-          <mn>4</mn>
-        </msup>
-        <mspace width="thinmathspace"/>
-        <mo>=</mo>
-        <mspace width="thinmathspace"/>
-        <msup>
-          <mi>b</mi>
-          <mn>2</mn>
-        </msup>
-        <mo>⋅<!-- ⋅ --></mo>
-        <msup>
-          <mi>b</mi>
-          <mn>2</mn>
-        </msup>
-        <mo>,</mo>
-      </mtd>
-    </mtr>
-    <mtr>
-      <mtd>
-        <msup>
-          <mi>b</mi>
-          <mn>8</mn>
-        </msup>
-        <mspace width="thinmathspace"/>
-        <mo>=</mo>
-        <mspace width="thinmathspace"/>
-        <msup>
-          <mi>b</mi>
-          <mn>4</mn>
-        </msup>
-        <mo>⋅<!-- ⋅ --></mo>
-        <msup>
-          <mi>b</mi>
-          <mn>4</mn>
-        </msup>
-        <mo>.</mo>
-      </mtd>
-    </mtr>
-  </mtable>
-</math>
+<img src="fig/math/3d315a20de1eb7a81e1755603ff7fba8.svg" class="math-display" style="height: 3.275em;" alt="\[ % :15:&amp;#10;  \begin{array}{l}   b^2 \,=\, b\cdot b, \\    b^4 \,=\, b^2\cdot b^2, \\   b^8 \,=\, b^4\cdot b^4. \end{array} \]" />
 
 This method works fine for exponents that are powers of 2.  We can also take
 advantage of successive squaring in computing exponentials in general if we use
 the rule
 
-<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
-  <mtable columnalign="left left" rowspacing="4pt" columnspacing="1em">
-    <mtr>
-      <mtd>
-        <msup>
-          <mi>b</mi>
-          <mi>n</mi>
-        </msup>
-        <mspace width="thinmathspace"/>
-        <mo>=</mo>
-        <mspace width="thinmathspace"/>
-        <mo stretchy="false">(</mo>
-        <msup>
-          <mi>b</mi>
-          <mrow class="MJX-TeXAtom-ORD">
-            <mi>n</mi>
-            <mrow class="MJX-TeXAtom-ORD">
-              <mo>/</mo>
-            </mrow>
-            <mn>2</mn>
-          </mrow>
-        </msup>
-        <msup>
-          <mo stretchy="false">)</mo>
-          <mn>2</mn>
-        </msup>
-      </mtd>
-      <mtd>
-        <mtext>if</mtext>
-        <mspace width="thickmathspace"/>
-        <mi>n</mi>
-        <mspace width="thickmathspace"/>
-        <mtext>is even</mtext>
-        <mo>,</mo>
-      </mtd>
-    </mtr>
-    <mtr>
-      <mtd>
-        <msup>
-          <mi>b</mi>
-          <mi>n</mi>
-        </msup>
-        <mspace width="thinmathspace"/>
-        <mo>=</mo>
-        <mspace width="thinmathspace"/>
-        <mi>b</mi>
-        <mo>⋅<!-- ⋅ --></mo>
-        <msup>
-          <mi>b</mi>
-          <mrow class="MJX-TeXAtom-ORD">
-            <mi>n</mi>
-            <mo>−<!-- − --></mo>
-            <mn>1</mn>
-          </mrow>
-        </msup>
-      </mtd>
-      <mtd>
-        <mtext>if</mtext>
-        <mspace width="thickmathspace"/>
-        <mi>n</mi>
-        <mspace width="thickmathspace"/>
-        <mtext>is odd</mtext>
-        <mo>.</mo>
-      </mtd>
-    </mtr>
-  </mtable>
-</math>
+<img src="fig/math/6c35b5f12bc3e025345212de641cff2c.svg" class="math-display" style="height: 2.074em;" alt="\[ % :16:&amp;#10;  \begin{array}{ll}   b^n \,=\, (b^{n / 2})^2   &amp;amp; \text{if} \; n \; \text{is even}, \\   b^n \,=\, b\cdot b^{n-1}  &amp;amp; \text{if} \; n \; \text{is odd}. \end{array} \]" />
 
 We can express this method as a procedure:
 </p>
@@ -1744,66 +684,18 @@ the primitive procedure <code>remainder</code> by
 <pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">define</span><span class="pln"> </span><span class="opn">(</span><span class="pln">even? n</span><span class="clo">)</span><span class="pln">
   </span><span class="opn">(</span><span class="pun">=</span><span class="pln"> </span><span class="opn">(</span><span class="pln">remainder n </span><span class="lit">2</span><span class="clo">)</span><span class="pln"> </span><span class="lit">0</span><span class="clo">))</span></pre></div>
 
-<p>The process evolved by <code>fast-expt</code> grows logarithmically with <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math> in
+<p>The process evolved by <code>fast-expt</code> grows logarithmically with <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" /> in
 both space and number of steps.  To see this, observe that computing
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <msup>
-    <mi>b</mi>
-    <mrow class="MJX-TeXAtom-ORD">
-      <mn>2</mn>
-      <mi>n</mi>
-    </mrow>
-  </msup>
-</math> using <code>fast-expt</code> requires only one more multiplication
-than computing <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <msup>
-    <mi>b</mi>
-    <mi>n</mi>
-  </msup>
-</math>.  The size of the exponent we can compute therefore
+<img src="fig/math/02fd4a93757c080c7a4513c86141b1ca.svg" class="math-inline" style="height: 0.854em; vertical-align: -0.010em;" alt="\( b^{2n} \)" /> using <code>fast-expt</code> requires only one more multiplication
+than computing <img src="fig/math/d6d83912c8ad9c60e8bb70e75a27a8ad.svg" class="math-inline" style="height: 0.703em; vertical-align: -0.009em;" alt="\( b^n \)" />.  The size of the exponent we can compute therefore
 doubles (approximately) with every new multiplication we are allowed.  Thus,
-the number of multiplications required for an exponent of <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math> grows about as
-fast as the logarithm of <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math> to the base 2.  The process has
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi mathvariant="normal">Θ<!-- Θ --></mi>
-    <mo stretchy="false">(</mo>
-    <mi>log</mi>
-    <mo>⁡<!-- ⁡ --></mo>
-    <mi>n</mi>
-    <mo stretchy="false">)</mo>
-  </mrow>
-</math> growth.<a class="footnote_link" id="DOCF37" href="#FOOT37"><sup>37</sup></a>
+the number of multiplications required for an exponent of <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" /> grows about as
+fast as the logarithm of <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" /> to the base 2.  The process has
+<img src="fig/math/48be6efaded27da68b3a4aa70713c562.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.189em;" alt="\( {\Theta(\log n)} \)" /> growth.<a class="footnote_link" id="DOCF37" href="#FOOT37"><sup>37</sup></a>
 </p>
-<p>The difference between <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi mathvariant="normal">Θ<!-- Θ --></mi>
-    <mo stretchy="false">(</mo>
-    <mi>log</mi>
-    <mo>⁡<!-- ⁡ --></mo>
-    <mi>n</mi>
-    <mo stretchy="false">)</mo>
-  </mrow>
-</math> growth and
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi mathvariant="normal">Θ<!-- Θ --></mi>
-    <mo stretchy="false">(</mo>
-    <mi>n</mi>
-    <mo stretchy="false">)</mo>
-  </mrow>
-</math> growth becomes striking as <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math> becomes large.  For
-example, <code>fast-expt</code> for <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math> = 1000 requires only 14
+<p>The difference between <img src="fig/math/48be6efaded27da68b3a4aa70713c562.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.189em;" alt="\( {\Theta(\log n)} \)" /> growth and
+<img src="fig/math/67f39a78859198da759c097b570842e8.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.189em;" alt="\( {\Theta(n)} \)" /> growth becomes striking as <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" /> becomes large.  For
+example, <code>fast-expt</code> for <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" /> = 1000 requires only 14
 multiplications.<a class="footnote_link" id="DOCF38" href="#FOOT38"><sup>38</sup></a> It is also possible to
 use the idea of successive squaring to devise an iterative algorithm that
 computes exponentials with a logarithmic number of steps (see <a href="#Exercise-1_002e16">Exercise 1.16</a>), 
@@ -1814,65 +706,11 @@ written down so straightforwardly as the recursive algorithm.<a class="footnote_
 <p><strong><a id="Exercise-1_002e16"></a>Exercise 1.16:</strong> Design a procedure that evolves
 an iterative exponentiation process that uses successive squaring and uses a
 logarithmic number of steps, as does <code>fast-expt</code>.  (Hint: Using the
-observation that <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mo stretchy="false">(</mo>
-    <msup>
-      <mi>b</mi>
-      <mrow class="MJX-TeXAtom-ORD">
-        <mi>n</mi>
-        <mrow class="MJX-TeXAtom-ORD">
-          <mo>/</mo>
-        </mrow>
-        <mn>2</mn>
-      </mrow>
-    </msup>
-    <msup>
-      <mo stretchy="false">)</mo>
-      <mn>2</mn>
-    </msup>
-  </mrow>
-  <mo>=</mo>
-  <mrow class="MJX-TeXAtom-ORD">
-    <mo stretchy="false">(</mo>
-    <msup>
-      <mi>b</mi>
-      <mn>2</mn>
-    </msup>
-    <msup>
-      <mo stretchy="false">)</mo>
-      <mrow class="MJX-TeXAtom-ORD">
-        <mi>n</mi>
-        <mrow class="MJX-TeXAtom-ORD">
-          <mo>/</mo>
-        </mrow>
-        <mn>2</mn>
-      </mrow>
-    </msup>
-  </mrow>
-</math>, keep, along with
-the exponent <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math> and the base <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>b</mi>
-</math>, an additional state variable <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>a</mi>
-</math>, and
-define the state transformation in such a way that the product <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>a</mi>
-    <msup>
-      <mi>b</mi>
-      <mi>n</mi>
-    </msup>
-  </mrow>
-</math> 
+observation that <img src="fig/math/2200ff350e68ec776850ac2446796cf2.svg" class="math-inline" style="height: 1.054em; vertical-align: -0.195em;" alt="\( {(b^{n / 2})^2} = {(b^2)^{n / 2}} \)" />, keep, along with
+the exponent <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" /> and the base <img src="fig/math/3e92f417ccfc1f59b0ee22d034c85747.svg" class="math-inline" style="height: 0.703em; vertical-align: -0.009em;" alt="\( b \)" />, an additional state variable <img src="fig/math/09009cdd5fc245e05305bc574dcdc97d.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( a \)" />, and
+define the state transformation in such a way that the product <img src="fig/math/c6cb8af9049ad4ef353f37f56c7dd679.svg" class="math-inline" style="height: 0.703em; vertical-align: -0.009em;" alt="\( {ab^n} \)" /> 
 is unchanged from state to state.  At the beginning of the process
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>a</mi>
-</math> is taken to be 1, and the answer is given by the value of <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>a</mi>
-</math> at the
+<img src="fig/math/09009cdd5fc245e05305bc574dcdc97d.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( a \)" /> is taken to be 1, and the answer is given by the value of <img src="fig/math/09009cdd5fc245e05305bc574dcdc97d.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( a \)" /> at the
 end of the process.  In general, the technique of defining an
 <a id="index-invariant-quantity"></a>
 <em>invariant quantity</em> that remains unchanged from state to state is a
@@ -1910,181 +748,21 @@ and halving and uses a logarithmic number of steps.<a class="footnote_link" id="
 <blockquote>
 <p><strong><a id="Exercise-1_002e19"></a>Exercise 1.19:</strong> There is a clever algorithm for
 computing the Fibonacci numbers in a logarithmic number of steps.  Recall the
-transformation of the state variables <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>a</mi>
-</math> and <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>b</mi>
-</math> in the <code>fib-iter</code>
-process of <a href="#g_t1_002e2_002e2">1.2.2</a>: <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>a</mi>
-  <mo stretchy="false">←<!-- ← --></mo>
-  <mi>a</mi>
-  <mo>+</mo>
-  <mi>b</mi>
-</math> and <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>b</mi>
-  <mo stretchy="false">←<!-- ← --></mo>
-  <mi>a</mi>
-</math>.
-Call this transformation <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>T</mi>
-</math>, and observe that applying <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>T</mi>
-</math> over and over
-again <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math> times, starting with 1 and 0, produces the pair <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mtext>Fib</mtext>
-    <mo stretchy="false">(</mo>
-    <mi>n</mi>
-    <mo>+</mo>
-    <mn>1</mn>
-    <mo stretchy="false">)</mo>
-  </mrow>
-</math> and 
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mtext>Fib</mtext>
-    <mo stretchy="false">(</mo>
-    <mi>n</mi>
-    <mo stretchy="false">)</mo>
-  </mrow>
-</math>.  In other words, the Fibonacci numbers are produced
-by applying <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <msup>
-    <mi>T</mi>
-    <mi>n</mi>
-  </msup>
-</math>, the <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <msup>
-    <mi>n</mi>
-    <mrow class="MJX-TeXAtom-ORD">
-      <mtext>th</mtext>
-    </mrow>
-  </msup>
-</math> power of the transformation <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>T</mi>
-</math>,
-starting with the pair (1, 0).  Now consider <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>T</mi>
-</math> to be the special case of
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>p</mi>
-    <mo>=</mo>
-    <mn>0</mn>
-  </mrow>
-</math> and <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>q</mi>
-    <mo>=</mo>
-    <mn>1</mn>
-  </mrow>
-</math> in a family of transformations <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <msub>
-    <mi>T</mi>
-    <mrow class="MJX-TeXAtom-ORD">
-      <mi>p</mi>
-      <mi>q</mi>
-    </mrow>
-  </msub>
-</math>,
-where <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <msub>
-    <mi>T</mi>
-    <mrow class="MJX-TeXAtom-ORD">
-      <mi>p</mi>
-      <mi>q</mi>
-    </mrow>
-  </msub>
-</math> transforms the pair <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mo stretchy="false">(</mo>
-    <mi>a</mi>
-    <mo>,</mo>
-    <mi>b</mi>
-    <mo stretchy="false">)</mo>
-  </mrow>
-</math> according to 
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>a</mi>
-  <mo stretchy="false">←<!-- ← --></mo>
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>b</mi>
-    <mi>q</mi>
-  </mrow>
-  <mo>+</mo>
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>a</mi>
-    <mi>q</mi>
-  </mrow>
-  <mo>+</mo>
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>a</mi>
-    <mi>p</mi>
-  </mrow>
-</math> and <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>b</mi>
-  <mo stretchy="false">←<!-- ← --></mo>
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>b</mi>
-    <mi>p</mi>
-  </mrow>
-  <mo>+</mo>
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>a</mi>
-    <mi>q</mi>
-  </mrow>
-</math>.
-Show that if we apply such a transformation <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <msub>
-    <mi>T</mi>
-    <mrow class="MJX-TeXAtom-ORD">
-      <mi>p</mi>
-      <mi>q</mi>
-    </mrow>
-  </msub>
-</math> twice, the
-effect is the same as using a single transformation <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <msub>
-    <mi>T</mi>
-    <mrow class="MJX-TeXAtom-ORD">
-      <msup>
-        <mi>p</mi>
-        <mo>′</mo>
-      </msup>
-      <msup>
-        <mi>q</mi>
-        <mo>′</mo>
-      </msup>
-    </mrow>
-  </msub>
-</math> of the
-same form, and compute <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <msup>
-    <mi>p</mi>
-    <mo>′</mo>
-  </msup>
-  <mspace width="negativethinmathspace"/>
-</math> and <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <msup>
-    <mi>q</mi>
-    <mo>′</mo>
-  </msup>
-  <mspace width="negativethinmathspace"/>
-</math> in terms of <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>p</mi>
-</math> and <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>q</mi>
-</math>.  This
+transformation of the state variables <img src="fig/math/09009cdd5fc245e05305bc574dcdc97d.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( a \)" /> and <img src="fig/math/3e92f417ccfc1f59b0ee22d034c85747.svg" class="math-inline" style="height: 0.703em; vertical-align: -0.009em;" alt="\( b \)" /> in the <code>fib-iter</code>
+process of <a href="#g_t1_002e2_002e2">1.2.2</a>: <img src="fig/math/d39194a0d1c178733eb244d69b55684e.svg" class="math-inline" style="height: 0.703em; vertical-align: -0.009em;" alt="\( a \gets a + b \)" /> and <img src="fig/math/3b380e5e7cb6eaec3d24987d57155346.svg" class="math-inline" style="height: 0.703em; vertical-align: -0.009em;" alt="\( b \gets a \)" />.
+Call this transformation <img src="fig/math/f06926aab0bc0e9f47ee2cd90f581bb2.svg" class="math-inline" style="height: 0.656em; vertical-align: -0.004em;" alt="\( T \)" />, and observe that applying <img src="fig/math/f06926aab0bc0e9f47ee2cd90f581bb2.svg" class="math-inline" style="height: 0.656em; vertical-align: -0.004em;" alt="\( T \)" /> over and over
+again <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" /> times, starting with 1 and 0, produces the pair <img src="fig/math/455054e624823e0531cfd992817c1e2c.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.189em;" alt="\( {\text{Fib}(n+1)} \)" /> and 
+<img src="fig/math/606058a44581066eed9cf2309aee7b71.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.189em;" alt="\( {\text{Fib}(n)} \)" />.  In other words, the Fibonacci numbers are produced
+by applying <img src="fig/math/97bb73b53bd84890ebced415bc5b713b.svg" class="math-inline" style="height: 0.683em; vertical-align: -0.000em;" alt="\( T^n \)" />, the <img src="fig/math/3b6c232f796b2d291446b22cb38c933e.svg" class="math-inline" style="height: 0.892em; vertical-align: -0.010em;" alt="\( n^{\text{th}} \)" /> power of the transformation <img src="fig/math/f06926aab0bc0e9f47ee2cd90f581bb2.svg" class="math-inline" style="height: 0.656em; vertical-align: -0.004em;" alt="\( T \)" />,
+starting with the pair (1, 0).  Now consider <img src="fig/math/f06926aab0bc0e9f47ee2cd90f581bb2.svg" class="math-inline" style="height: 0.656em; vertical-align: -0.004em;" alt="\( T \)" /> to be the special case of
+<img src="fig/math/cb1bd43764938dd0d271b5c7810257d2.svg" class="math-inline" style="height: 0.878em; vertical-align: -0.234em;" alt="\( {p=0} \)" /> and <img src="fig/math/07135faa5399dbe9425185586bd6242d.svg" class="math-inline" style="height: 0.878em; vertical-align: -0.234em;" alt="\( {q=1} \)" /> in a family of transformations <img src="fig/math/27485fa57aac362c12f3cb2fcd66342a.svg" class="math-inline" style="height: 0.977em; vertical-align: -0.325em;" alt="\( T_{pq} \)" />,
+where <img src="fig/math/27485fa57aac362c12f3cb2fcd66342a.svg" class="math-inline" style="height: 0.977em; vertical-align: -0.325em;" alt="\( T_{pq} \)" /> transforms the pair <img src="fig/math/ea2319b50d39f07528935586077fff92.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.189em;" alt="\( {(a, b)} \)" /> according to 
+<img src="fig/math/5abe8ae895e31cd7ab1160ddf92add64.svg" class="math-inline" style="height: 0.929em; vertical-align: -0.234em;" alt="\( a \gets {bq} + {aq} + {ap} \)" /> and <img src="fig/math/232e9f2a41f754a7c0551325a3e01f05.svg" class="math-inline" style="height: 0.929em; vertical-align: -0.234em;" alt="\( b \gets {bp} + {aq} \)" />.
+Show that if we apply such a transformation <img src="fig/math/27485fa57aac362c12f3cb2fcd66342a.svg" class="math-inline" style="height: 0.977em; vertical-align: -0.325em;" alt="\( T_{pq} \)" /> twice, the
+effect is the same as using a single transformation <img src="fig/math/4f694b2fe4e4719aa0dac2d674d0b3a0.svg" class="math-inline" style="height: 0.977em; vertical-align: -0.325em;" alt="\( T_{p'q'} \)" /> of the
+same form, and compute <img src="fig/math/57e75abf57b8dff6be94ebb3d668a101.svg" class="math-inline" style="height: 0.942em; vertical-align: -0.234em;" alt="\( p'\! \)" /> and <img src="fig/math/64e83566bd37cbe1c40549eab5aa5f33.svg" class="math-inline" style="height: 0.942em; vertical-align: -0.234em;" alt="\( q'\! \)" /> in terms of <img src="fig/math/cce39738a2208cea750f01366fd29144.svg" class="math-inline" style="height: 0.724em; vertical-align: -0.232em;" alt="\( p \)" /> and <img src="fig/math/55e71917aae71d65907116d02f07c8f8.svg" class="math-inline" style="height: 0.678em; vertical-align: -0.241em;" alt="\( q \)" />.  This
 gives us an explicit way to square these transformations, and thus we can
-compute <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <msup>
-    <mi>T</mi>
-    <mi>n</mi>
-  </msup>
-</math> using successive squaring, as in the <code>fast-expt</code>
+compute <img src="fig/math/97bb73b53bd84890ebced415bc5b713b.svg" class="math-inline" style="height: 0.683em; vertical-align: -0.000em;" alt="\( T^n \)" /> using successive squaring, as in the <code>fast-expt</code>
 procedure.  Put this all together to complete the following procedure, which
 runs in a logarithmic number of steps:<a class="footnote_link" id="DOCF41" href="#FOOT41"><sup>41</sup></a>
 </p>
@@ -2116,16 +794,8 @@ runs in a logarithmic number of steps:<a class="footnote_link" id="DOCF41" href=
 <a id="Greatest-Common-Divisors"></a>
 <h4 class="subsection"><span class="secnum">1.2.5</span><span class="sectitle">Greatest Common Divisors</span></h4>
 
-<p>The greatest common divisor (<abbr>GCD</abbr>) of two integers <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>a</mi>
-</math> and <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>b</mi>
-</math> is
-defined to be the largest integer that divides both <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>a</mi>
-</math> and <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>b</mi>
-</math> with no
+<p>The greatest common divisor (<abbr>GCD</abbr>) of two integers <img src="fig/math/09009cdd5fc245e05305bc574dcdc97d.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( a \)" /> and <img src="fig/math/3e92f417ccfc1f59b0ee22d034c85747.svg" class="math-inline" style="height: 0.703em; vertical-align: -0.009em;" alt="\( b \)" /> is
+defined to be the largest integer that divides both <img src="fig/math/09009cdd5fc245e05305bc574dcdc97d.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( a \)" /> and <img src="fig/math/3e92f417ccfc1f59b0ee22d034c85747.svg" class="math-inline" style="height: 0.703em; vertical-align: -0.009em;" alt="\( b \)" /> with no
 remainder.  For example, the <abbr>GCD</abbr> of 16 and 28 is 4.  In <a href="Chapter-2.xhtml#Chapter-2">Chapter 2</a>, when we investigate how to implement rational-number arithmetic, we will
 need to be able to compute <abbr>GCD</abbr>s in order to reduce rational numbers
 to lowest terms.  (To reduce a rational number to lowest terms, we must divide
@@ -2134,23 +804,9 @@ both the numerator and the denominator by their <abbr>GCD</abbr>.  For example,
 factor them and search for common factors, but there is a famous algorithm that
 is much more efficient.
 </p>
-<p>The idea of the algorithm is based on the observation that, if <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>r</mi>
-</math> is the
-remainder when <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>a</mi>
-</math> is divided by <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>b</mi>
-</math>, then the common divisors of <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>a</mi>
-</math> and
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>b</mi>
-</math> are precisely the same as the common divisors of <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>b</mi>
-</math> and <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>r</mi>
-</math>.  Thus,
+<p>The idea of the algorithm is based on the observation that, if <img src="fig/math/506c25753e5f5225576484e427d17c9b.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( r \)" /> is the
+remainder when <img src="fig/math/09009cdd5fc245e05305bc574dcdc97d.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( a \)" /> is divided by <img src="fig/math/3e92f417ccfc1f59b0ee22d034c85747.svg" class="math-inline" style="height: 0.703em; vertical-align: -0.009em;" alt="\( b \)" />, then the common divisors of <img src="fig/math/09009cdd5fc245e05305bc574dcdc97d.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( a \)" /> and
+<img src="fig/math/3e92f417ccfc1f59b0ee22d034c85747.svg" class="math-inline" style="height: 0.703em; vertical-align: -0.009em;" alt="\( b \)" /> are precisely the same as the common divisors of <img src="fig/math/3e92f417ccfc1f59b0ee22d034c85747.svg" class="math-inline" style="height: 0.703em; vertical-align: -0.009em;" alt="\( b \)" /> and <img src="fig/math/506c25753e5f5225576484e427d17c9b.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( r \)" />.  Thus,
 we can use the equation
 </p>
 <div class="example">
@@ -2191,67 +847,17 @@ logarithm of the numbers involved.
 logarithmic growth bears an interesting relation to the Fibonacci numbers:
 </p>
 <blockquote>
-<p><strong>Lamé’s Theorem:</strong> If Euclid’s Algorithm requires <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>k</mi>
-</math> steps to
+<p><strong>Lamé’s Theorem:</strong> If Euclid’s Algorithm requires <img src="fig/math/83054be07bea98353c7cda3290903d5e.svg" class="math-inline" style="height: 0.703em; vertical-align: -0.009em;" alt="\( k \)" /> steps to
 compute the <abbr>GCD</abbr> of some pair, then the smaller number in the pair
-must be greater than or equal to the <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <msup>
-    <mi>k</mi>
-    <mrow class="MJX-TeXAtom-ORD">
-      <mtext>th</mtext>
-    </mrow>
-  </msup>
-</math> Fibonacci number.<a class="footnote_link" id="DOCF43" href="#FOOT43"><sup>43</sup></a>
+must be greater than or equal to the <img src="fig/math/a99501773dcc30d9f89e17ff1338d1eb.svg" class="math-inline" style="height: 0.892em; vertical-align: -0.010em;" alt="\( k^{\text{th}} \)" /> Fibonacci number.<a class="footnote_link" id="DOCF43" href="#FOOT43"><sup>43</sup></a>
 </p></blockquote>
 
 <p>We can use this theorem to get an order-of-growth estimate for Euclid’s
-Algorithm.  Let <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math> be the smaller of the two inputs to the procedure.  If
-the process takes <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>k</mi>
-</math> steps, then we must have 
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-  <mo>≥<!-- ≥ --></mo>
-  <mrow class="MJX-TeXAtom-ORD">
-    <mtext>Fib</mtext>
-    <mo stretchy="false">(</mo>
-    <mi>k</mi>
-    <mo stretchy="false">)</mo>
-  </mrow>
-  <mo>≈<!-- ≈ --></mo>
-  <mrow class="MJX-TeXAtom-ORD">
-    <msup>
-      <mi>φ<!-- φ --></mi>
-      <mi>k</mi>
-    </msup>
-    <mrow class="MJX-TeXAtom-ORD">
-      <mo>/</mo>
-    </mrow>
-    <msqrt>
-      <mn>5</mn>
-    </msqrt>
-  </mrow>
-</math>.  Therefore the number of steps <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>k</mi>
-</math>
-grows as the logarithm (to the base <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>φ<!-- φ --></mi>
-</math>) of <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math>.  Hence, the order of
-growth is <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi mathvariant="normal">Θ<!-- Θ --></mi>
-    <mo stretchy="false">(</mo>
-    <mi>log</mi>
-    <mo>⁡<!-- ⁡ --></mo>
-    <mi>n</mi>
-    <mo stretchy="false">)</mo>
-  </mrow>
-</math>.
+Algorithm.  Let <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" /> be the smaller of the two inputs to the procedure.  If
+the process takes <img src="fig/math/83054be07bea98353c7cda3290903d5e.svg" class="math-inline" style="height: 0.703em; vertical-align: -0.009em;" alt="\( k \)" /> steps, then we must have 
+<img src="fig/math/4dc3a31cbb87672a5f199a4a57784b3c.svg" class="math-inline" style="height: 1.118em; vertical-align: -0.180em;" alt="\( n \ge {\text{Fib}(k)} \approx {\varphi^k / \sqrt{5}} \)" />.  Therefore the number of steps <img src="fig/math/83054be07bea98353c7cda3290903d5e.svg" class="math-inline" style="height: 0.703em; vertical-align: -0.009em;" alt="\( k \)" />
+grows as the logarithm (to the base <img src="fig/math/dcc52b7b3e1a0a821032c2d16b198829.svg" class="math-inline" style="height: 0.672em; vertical-align: -0.238em;" alt="\( \varphi \)" />) of <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" />.  Hence, the order of
+growth is <img src="fig/math/48be6efaded27da68b3a4aa70713c562.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.189em;" alt="\( {\Theta(\log n)} \)" />.
 </p>
 <blockquote>
 <p><strong><a id="Exercise-1_002e20"></a>Exercise 1.20:</strong> The process that a procedure
@@ -2271,28 +877,8 @@ evaluation of <code>(gcd 206 40)</code>?  In the applicative-order evaluation?
 <h4 class="subsection"><span class="secnum">1.2.6</span><span class="sectitle">Example: Testing for Primality</span></h4>
 
 <p>This section describes two methods for checking the primality of an integer
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math>, one with order of growth <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi mathvariant="normal">Θ<!-- Θ --></mi>
-    <mo stretchy="false">(</mo>
-    <msqrt>
-      <mi>n</mi>
-    </msqrt>
-    <mo stretchy="false">)</mo>
-  </mrow>
-</math>, and a
-“probabilistic” algorithm with order of growth <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi mathvariant="normal">Θ<!-- Θ --></mi>
-    <mo stretchy="false">(</mo>
-    <mi>log</mi>
-    <mo>⁡<!-- ⁡ --></mo>
-    <mi>n</mi>
-    <mo stretchy="false">)</mo>
-  </mrow>
-</math>.
+<img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" />, one with order of growth <img src="fig/math/0b326d311946d63cd799ea924304ca88.svg" class="math-inline" style="height: 0.993em; vertical-align: -0.168em;" alt="\( {\Theta(\sqrt{n})} \)" />, and a
+“probabilistic” algorithm with order of growth <img src="fig/math/48be6efaded27da68b3a4aa70713c562.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.189em;" alt="\( {\Theta(\log n)} \)" />.
 The exercises at the end of this section suggest programming projects based on
 these algorithms.
 </p>
@@ -2303,12 +889,8 @@ these algorithms.
 prime numbers, and many people have worked on the problem of determining ways
 to test if numbers are prime.  One way to test if a number is prime is to find
 the number’s divisors.  The following program finds the smallest integral
-divisor (greater than 1) of a given number <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math>.  It does this in a
-straightforward way, by testing <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math> for divisibility by successive integers
+divisor (greater than 1) of a given number <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" />.  It does this in a
+straightforward way, by testing <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" /> for divisibility by successive integers
 starting with 2.
 </p>
 <div class="lisp">
@@ -2327,155 +909,49 @@ starting with 2.
 </span><span class="opn">(</span><span class="kwd">define</span><span class="pln"> </span><span class="opn">(</span><span class="pln">divides? a b</span><span class="clo">)</span><span class="pln">
   </span><span class="opn">(</span><span class="pun">=</span><span class="pln"> </span><span class="opn">(</span><span class="pln">remainder b a</span><span class="clo">)</span><span class="pln"> </span><span class="lit">0</span><span class="clo">))</span></pre></div>
 
-<p>We can test whether a number is prime as follows: <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math> is prime if and only if
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math> is its own smallest divisor.
+<p>We can test whether a number is prime as follows: <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" /> is prime if and only if
+<img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" /> is its own smallest divisor.
 </p>
 <div class="lisp">
 <pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">define</span><span class="pln"> </span><span class="opn">(</span><span class="pln">prime? n</span><span class="clo">)</span><span class="pln">
   </span><span class="opn">(</span><span class="pun">=</span><span class="pln"> n </span><span class="opn">(</span><span class="pln">smallest-divisor n</span><span class="clo">)))</span></pre></div>
 
-<p>The end test for <code>find-divisor</code> is based on the fact that if <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math> is not
+<p>The end test for <code>find-divisor</code> is based on the fact that if <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" /> is not
 prime it must have a divisor less than or equal to
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <msqrt>
-    <mi>n</mi>
-  </msqrt>
-</math>.<a class="footnote_link" id="DOCF44" href="#FOOT44"><sup>44</sup></a>  This means that the algorithm need only test divisors
-between 1 and <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <msqrt>
-    <mi>n</mi>
-  </msqrt>
-</math>.  Consequently, the number of steps required
-to identify <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math> as prime will have order of growth
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi mathvariant="normal">Θ<!-- Θ --></mi>
-    <mo stretchy="false">(</mo>
-    <msqrt>
-      <mi>n</mi>
-    </msqrt>
-    <mo stretchy="false">)</mo>
-  </mrow>
-</math>.
+<img src="fig/math/6401acda6e40516e261b2a2cd409285f.svg" class="math-inline" style="height: 0.993em; vertical-align: -0.168em;" alt="\( \sqrt{n} \)" />.<a class="footnote_link" id="DOCF44" href="#FOOT44"><sup>44</sup></a>  This means that the algorithm need only test divisors
+between 1 and <img src="fig/math/6401acda6e40516e261b2a2cd409285f.svg" class="math-inline" style="height: 0.993em; vertical-align: -0.168em;" alt="\( \sqrt{n} \)" />.  Consequently, the number of steps required
+to identify <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" /> as prime will have order of growth
+<img src="fig/math/0b326d311946d63cd799ea924304ca88.svg" class="math-inline" style="height: 0.993em; vertical-align: -0.168em;" alt="\( {\Theta(\sqrt{n})} \)" />.
 </p>
 <a id="The-Fermat-test"></a>
 <h5 class="subsubheading">The Fermat test</h5>
 
-<p>The <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi mathvariant="normal">Θ<!-- Θ --></mi>
-    <mo stretchy="false">(</mo>
-    <mi>log</mi>
-    <mo>⁡<!-- ⁡ --></mo>
-    <mi>n</mi>
-    <mo stretchy="false">)</mo>
-  </mrow>
-</math> primality test is based on a result from
+<p>The <img src="fig/math/48be6efaded27da68b3a4aa70713c562.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.189em;" alt="\( {\Theta(\log n)} \)" /> primality test is based on a result from
 number theory known as Fermat’s Little Theorem.<a class="footnote_link" id="DOCF45" href="#FOOT45"><sup>45</sup></a>
 </p>
 <blockquote>
-<p><strong>Fermat’s Little Theorem:</strong> If <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math> is a prime number and <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>a</mi>
-</math> is any
-positive integer less than <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math>, then <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>a</mi>
-</math> raised to the <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <msup>
-    <mi>n</mi>
-    <mrow class="MJX-TeXAtom-ORD">
-      <mtext>th</mtext>
-    </mrow>
-  </msup>
-</math> power is
-congruent to <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>a</mi>
-</math> modulo <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math>.
+<p><strong>Fermat’s Little Theorem:</strong> If <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" /> is a prime number and <img src="fig/math/09009cdd5fc245e05305bc574dcdc97d.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( a \)" /> is any
+positive integer less than <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" />, then <img src="fig/math/09009cdd5fc245e05305bc574dcdc97d.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( a \)" /> raised to the <img src="fig/math/3b6c232f796b2d291446b22cb38c933e.svg" class="math-inline" style="height: 0.892em; vertical-align: -0.010em;" alt="\( n^{\text{th}} \)" /> power is
+congruent to <img src="fig/math/09009cdd5fc245e05305bc574dcdc97d.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( a \)" /> modulo <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" />.
 </p></blockquote>
 
 <p>(Two numbers are said to be <a id="index-congruent-modulo"></a>
-<em>congruent modulo</em> <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math> if they both have
-the same remainder when divided by <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math>.  The remainder of a number <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>a</mi>
-</math> when
-divided by <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math> is also referred to as the <a id="index-remainder-of"></a>
-<em>remainder of</em> <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>a</mi>
-</math>
+<em>congruent modulo</em> <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" /> if they both have
+the same remainder when divided by <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" />.  The remainder of a number <img src="fig/math/09009cdd5fc245e05305bc574dcdc97d.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( a \)" /> when
+divided by <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" /> is also referred to as the <a id="index-remainder-of"></a>
+<em>remainder of</em> <img src="fig/math/09009cdd5fc245e05305bc574dcdc97d.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( a \)" />
 <a id="index-modulo"></a>
-<em>modulo</em> <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math>, or simply as <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>a</mi>
-</math> <a id="index-modulo-1"></a>
-<em>modulo</em> <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math>.)
+<em>modulo</em> <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" />, or simply as <img src="fig/math/09009cdd5fc245e05305bc574dcdc97d.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( a \)" /> <a id="index-modulo-1"></a>
+<em>modulo</em> <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" />.)
 </p>
-<p>If <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math> is not prime, then, in general, most of the numbers <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>a</mi>
-    <mo>&lt;</mo>
-    <mi>n</mi>
-  </mrow>
-</math> will
+<p>If <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" /> is not prime, then, in general, most of the numbers <img src="fig/math/fe5e256d86f2ab36533fbb225c24f80c.svg" class="math-inline" style="height: 0.519em; vertical-align: -0.005em;" alt="\( {a &amp;lt; n} \)" /> will
 not satisfy the above relation.  This leads to the following algorithm for
-testing primality: Given a number <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math>, pick a random number <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>a</mi>
-    <mo>&lt;</mo>
-    <mi>n</mi>
-  </mrow>
-</math> and
-compute the remainder of <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <msup>
-    <mi>a</mi>
-    <mi>n</mi>
-  </msup>
-</math> modulo <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math>.  If the result is not equal
-to <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>a</mi>
-</math>, then <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math> is certainly not prime.  If it is <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>a</mi>
-</math>, then chances are
-good that <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math> is prime.  Now pick another random number <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>a</mi>
-</math> and test it
+testing primality: Given a number <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" />, pick a random number <img src="fig/math/fe5e256d86f2ab36533fbb225c24f80c.svg" class="math-inline" style="height: 0.519em; vertical-align: -0.005em;" alt="\( {a &amp;lt; n} \)" /> and
+compute the remainder of <img src="fig/math/105ea6d3173ee81b75f470740a59e52a.svg" class="math-inline" style="height: 0.691em; vertical-align: -0.009em;" alt="\( a^n \)" /> modulo <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" />.  If the result is not equal
+to <img src="fig/math/09009cdd5fc245e05305bc574dcdc97d.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( a \)" />, then <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" /> is certainly not prime.  If it is <img src="fig/math/09009cdd5fc245e05305bc574dcdc97d.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( a \)" />, then chances are
+good that <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" /> is prime.  Now pick another random number <img src="fig/math/09009cdd5fc245e05305bc574dcdc97d.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( a \)" /> and test it
 with the same method.  If it also satisfies the equation, then we can be even
-more confident that <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math> is prime.  By trying more and more values of <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>a</mi>
-</math>,
+more confident that <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" /> is prime.  By trying more and more values of <img src="fig/math/09009cdd5fc245e05305bc574dcdc97d.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( a \)" />,
 we can increase our confidence in the result.  This algorithm is known as the
 Fermat test.
 </p>
@@ -2498,48 +974,13 @@ of a number modulo another number:
 It uses successive squaring, so that the number of steps grows logarithmically
 with the exponent.<a class="footnote_link" id="DOCF46" href="#FOOT46"><sup>46</sup></a>
 </p>
-<p>The Fermat test is performed by choosing at random a number <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>a</mi>
-</math> between 1 and
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>n</mi>
-    <mo>−<!-- − --></mo>
-    <mn>1</mn>
-  </mrow>
-</math> inclusive and checking whether the remainder modulo <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math> of the
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <msup>
-    <mi>n</mi>
-    <mrow class="MJX-TeXAtom-ORD">
-      <mtext>th</mtext>
-    </mrow>
-  </msup>
-</math> power of <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>a</mi>
-</math> is equal to <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>a</mi>
-</math>.  The random number <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>a</mi>
-</math> is chosen
+<p>The Fermat test is performed by choosing at random a number <img src="fig/math/09009cdd5fc245e05305bc574dcdc97d.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( a \)" /> between 1 and
+<img src="fig/math/1aeb2237b7777768e88172586e76ee37.svg" class="math-inline" style="height: 0.652em; vertical-align: -0.009em;" alt="\( {n-1} \)" /> inclusive and checking whether the remainder modulo <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" /> of the
+<img src="fig/math/3b6c232f796b2d291446b22cb38c933e.svg" class="math-inline" style="height: 0.892em; vertical-align: -0.010em;" alt="\( n^{\text{th}} \)" /> power of <img src="fig/math/09009cdd5fc245e05305bc574dcdc97d.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( a \)" /> is equal to <img src="fig/math/09009cdd5fc245e05305bc574dcdc97d.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( a \)" />.  The random number <img src="fig/math/09009cdd5fc245e05305bc574dcdc97d.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( a \)" /> is chosen
 using the procedure <code>random</code>, which we assume is included as a primitive
 in Scheme. <code>Random</code> returns a nonnegative integer less than its integer
-input.  Hence, to obtain a random number between 1 and <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>n</mi>
-    <mo>−<!-- − --></mo>
-    <mn>1</mn>
-  </mrow>
-</math>, we call
-<code>random</code> with an input of <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>n</mi>
-    <mo>−<!-- − --></mo>
-    <mn>1</mn>
-  </mrow>
-</math> and add 1 to the result:
+input.  Hence, to obtain a random number between 1 and <img src="fig/math/1aeb2237b7777768e88172586e76ee37.svg" class="math-inline" style="height: 0.652em; vertical-align: -0.009em;" alt="\( {n-1} \)" />, we call
+<code>random</code> with an input of <img src="fig/math/1aeb2237b7777768e88172586e76ee37.svg" class="math-inline" style="height: 0.652em; vertical-align: -0.009em;" alt="\( {n-1} \)" /> and add 1 to the result:
 </p>
 <div class="lisp">
 <pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">define</span><span class="pln"> </span><span class="opn">(</span><span class="pln">fermat-test n</span><span class="clo">)</span><span class="pln">
@@ -2563,96 +1004,31 @@ otherwise.
 
 <p>The Fermat test differs in character from most familiar algorithms, in which
 one computes an answer that is guaranteed to be correct.  Here, the answer
-obtained is only probably correct.  More precisely, if <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math> ever fails the
-Fermat test, we can be certain that <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math> is not prime.  But the fact that
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math> passes the test, while an extremely strong indication, is still not a
-guarantee that <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math> is prime.  What we would like to say is that for any
-number <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math>, if we perform the test enough times and find that <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math> always
+obtained is only probably correct.  More precisely, if <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" /> ever fails the
+Fermat test, we can be certain that <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" /> is not prime.  But the fact that
+<img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" /> passes the test, while an extremely strong indication, is still not a
+guarantee that <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" /> is prime.  What we would like to say is that for any
+number <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" />, if we perform the test enough times and find that <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" /> always
 passes the test, then the probability of error in our primality test can be
 made as small as we like.
 </p>
 <p>Unfortunately, this assertion is not quite correct.  There do exist numbers
-that fool the Fermat test: numbers <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math> that are not prime and yet have the
-property that <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <msup>
-    <mi>a</mi>
-    <mi>n</mi>
-  </msup>
-</math> is congruent to <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>a</mi>
-</math> modulo <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math> for all integers
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>a</mi>
-    <mo>&lt;</mo>
-    <mi>n</mi>
-  </mrow>
-</math>.  Such numbers are extremely rare, so the Fermat test is quite
+that fool the Fermat test: numbers <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" /> that are not prime and yet have the
+property that <img src="fig/math/105ea6d3173ee81b75f470740a59e52a.svg" class="math-inline" style="height: 0.691em; vertical-align: -0.009em;" alt="\( a^n \)" /> is congruent to <img src="fig/math/09009cdd5fc245e05305bc574dcdc97d.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( a \)" /> modulo <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" /> for all integers
+<img src="fig/math/fe5e256d86f2ab36533fbb225c24f80c.svg" class="math-inline" style="height: 0.519em; vertical-align: -0.005em;" alt="\( {a &amp;lt; n} \)" />.  Such numbers are extremely rare, so the Fermat test is quite
 reliable in practice.<a class="footnote_link" id="DOCF47" href="#FOOT47"><sup>47</sup></a>
 </p>
 <p>There are variations of the Fermat test that cannot be fooled.  In these tests,
-as with the Fermat method, one tests the primality of an integer <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math> by
-choosing a random integer <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>a</mi>
-    <mo>&lt;</mo>
-    <mi>n</mi>
-  </mrow>
-</math> and checking some condition that depends
-upon <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math> and <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>a</mi>
-</math>.  (See <a href="#Exercise-1_002e28">Exercise 1.28</a> for an example of such a test.)
+as with the Fermat method, one tests the primality of an integer <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" /> by
+choosing a random integer <img src="fig/math/fe5e256d86f2ab36533fbb225c24f80c.svg" class="math-inline" style="height: 0.519em; vertical-align: -0.005em;" alt="\( {a &amp;lt; n} \)" /> and checking some condition that depends
+upon <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" /> and <img src="fig/math/09009cdd5fc245e05305bc574dcdc97d.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( a \)" />.  (See <a href="#Exercise-1_002e28">Exercise 1.28</a> for an example of such a test.)
 On the other hand, in contrast to the Fermat test, one can prove that, for any
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math>, the condition does not hold for most of the integers <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>a</mi>
-    <mo>&lt;</mo>
-    <mi>n</mi>
-  </mrow>
-</math> unless
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math> is prime.  Thus, if <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math> passes the test for some random choice of
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>a</mi>
-</math>, the chances are better than even that <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math> is prime.  If <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math> passes
-the test for two random choices of <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>a</mi>
-</math>, the chances are better than 3 out of
-4 that <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math> is prime. By running the test with more and more randomly chosen
-values of <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>a</mi>
-</math> we can make the probability of error as small as we like.
+<img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" />, the condition does not hold for most of the integers <img src="fig/math/fe5e256d86f2ab36533fbb225c24f80c.svg" class="math-inline" style="height: 0.519em; vertical-align: -0.005em;" alt="\( {a &amp;lt; n} \)" /> unless
+<img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" /> is prime.  Thus, if <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" /> passes the test for some random choice of
+<img src="fig/math/09009cdd5fc245e05305bc574dcdc97d.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( a \)" />, the chances are better than even that <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" /> is prime.  If <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" /> passes
+the test for two random choices of <img src="fig/math/09009cdd5fc245e05305bc574dcdc97d.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( a \)" />, the chances are better than 3 out of
+4 that <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" /> is prime. By running the test with more and more randomly chosen
+values of <img src="fig/math/09009cdd5fc245e05305bc574dcdc97d.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( a \)" /> we can make the probability of error as small as we like.
 </p>
 <p>The existence of tests for which one can prove that the chance of error becomes
 arbitrarily small has sparked interest in algorithms of this type, which have
@@ -2672,16 +1048,8 @@ procedure to find the smallest divisor of each of the following numbers: 199,
 a primitive called <code>runtime</code> that returns an integer that specifies the
 amount of time the system has been running (measured, for example, in
 microseconds).  The following <code>timed-prime-test</code> procedure, when called
-with an integer <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math>, prints <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math> and checks to see if <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math> is prime.  If
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math> is prime, the procedure prints three asterisks followed by the amount of
+with an integer <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" />, prints <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" /> and checks to see if <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" /> is prime.  If
+<img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" /> is prime, the procedure prints three asterisks followed by the amount of
 time used in performing the test.
 </p>
 <div class="lisp">
@@ -2706,32 +1074,10 @@ the primality of consecutive odd integers in a specified range.  Use your
 procedure to find the three smallest primes larger than 1000; larger than
 10,000; larger than 100,000; larger than 1,000,000.  Note the time needed to
 test each prime.  Since the testing algorithm has order of growth of
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi mathvariant="normal">Θ<!-- Θ --></mi>
-    <mo stretchy="false">(</mo>
-    <msqrt>
-      <mi>n</mi>
-    </msqrt>
-    <mo stretchy="false">)</mo>
-  </mrow>
-</math>, you should expect that testing for primes
-around 10,000 should take about <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <msqrt>
-    <mn>10</mn>
-  </msqrt>
-</math> times as long as testing for
+<img src="fig/math/0b326d311946d63cd799ea924304ca88.svg" class="math-inline" style="height: 0.993em; vertical-align: -0.168em;" alt="\( {\Theta(\sqrt{n})} \)" />, you should expect that testing for primes
+around 10,000 should take about <img src="fig/math/791dda34684aa76ee72ce36deacb06ee.svg" class="math-inline" style="height: 0.993em; vertical-align: -0.059em;" alt="\( \sqrt{10} \)" /> times as long as testing for
 primes around 1000.  Do your timing data bear this out?  How well do the data
-for 100,000 and 1,000,000 support the <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi mathvariant="normal">Θ<!-- Θ --></mi>
-    <mo stretchy="false">(</mo>
-    <msqrt>
-      <mi>n</mi>
-    </msqrt>
-    <mo stretchy="false">)</mo>
-  </mrow>
-</math> prediction?  Is your
+for 100,000 and 1,000,000 support the <img src="fig/math/0b326d311946d63cd799ea924304ca88.svg" class="math-inline" style="height: 0.993em; vertical-align: -0.168em;" alt="\( {\Theta(\sqrt{n})} \)" /> prediction?  Is your
 result compatible with the notion that programs on your machine run in time
 proportional to the number of steps required for the computation?
 </p></blockquote>
@@ -2758,16 +1104,7 @@ algorithms, and how do you explain the fact that it is different from 2?
 <p><strong><a id="Exercise-1_002e24"></a>Exercise 1.24:</strong> Modify the
 <code>timed-prime-test</code> procedure of <a href="#Exercise-1_002e22">Exercise 1.22</a> to use
 <code>fast-prime?</code> (the Fermat method), and test each of the 12 primes you
-found in that exercise.  Since the Fermat test has <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi mathvariant="normal">Θ<!-- Θ --></mi>
-    <mo stretchy="false">(</mo>
-    <mi>log</mi>
-    <mo>⁡<!-- ⁡ --></mo>
-    <mi>n</mi>
-    <mo stretchy="false">)</mo>
-  </mrow>
-</math>
+found in that exercise.  Since the Fermat test has <img src="fig/math/48be6efaded27da68b3a4aa70713c562.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.189em;" alt="\( {\Theta(\log n)} \)" />
 growth, how would you expect the time to test primes near 1,000,000 to
 compare with the time needed to test primes near 1000?  Do your data bear this
 out?  Can you explain any discrepancy you find?
@@ -2810,48 +1147,15 @@ calling <code>square</code>:
 
 <p>“I don’t see what difference that could make,” says Louis.  “I do.”<!-- /@w -->  says
 Eva.  “By writing the procedure like that, you have transformed the
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi mathvariant="normal">Θ<!-- Θ --></mi>
-    <mo stretchy="false">(</mo>
-    <mi>log</mi>
-    <mo>⁡<!-- ⁡ --></mo>
-    <mi>n</mi>
-    <mo stretchy="false">)</mo>
-  </mrow>
-</math> process into a <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi mathvariant="normal">Θ<!-- Θ --></mi>
-    <mo stretchy="false">(</mo>
-    <mi>n</mi>
-    <mo stretchy="false">)</mo>
-  </mrow>
-</math> process.”
+<img src="fig/math/48be6efaded27da68b3a4aa70713c562.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.189em;" alt="\( {\Theta(\log n)} \)" /> process into a <img src="fig/math/67f39a78859198da759c097b570842e8.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.189em;" alt="\( {\Theta(n)} \)" /> process.”
 Explain.
 </p></blockquote>
 
 <blockquote>
 <p><strong><a id="Exercise-1_002e27"></a>Exercise 1.27:</strong> Demonstrate that the Carmichael
 numbers listed in <a href="#Footnote-47">Footnote 47</a> really do fool the Fermat test.  That is,
-write a procedure that takes an integer <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math> and tests whether <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <msup>
-    <mi>a</mi>
-    <mi>n</mi>
-  </msup>
-</math> is
-congruent to <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>a</mi>
-</math> modulo <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math> for every <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>a</mi>
-    <mo>&lt;</mo>
-    <mi>n</mi>
-  </mrow>
-</math>, and try your procedure
+write a procedure that takes an integer <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" /> and tests whether <img src="fig/math/105ea6d3173ee81b75f470740a59e52a.svg" class="math-inline" style="height: 0.691em; vertical-align: -0.009em;" alt="\( a^n \)" /> is
+congruent to <img src="fig/math/09009cdd5fc245e05305bc574dcdc97d.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( a \)" /> modulo <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" /> for every <img src="fig/math/fe5e256d86f2ab36533fbb225c24f80c.svg" class="math-inline" style="height: 0.519em; vertical-align: -0.005em;" alt="\( {a &amp;lt; n} \)" />, and try your procedure
 on the given Carmichael numbers.
 </p></blockquote>
 
@@ -2860,88 +1164,19 @@ on the given Carmichael numbers.
 that cannot be fooled is called the <a id="index-Miller_002dRabin-test"></a>
 <em>Miller-Rabin test</em> (<a href="References.xhtml#Miller-1976">Miller 1976</a>;
 <a href="References.xhtml#Rabin-1980">Rabin 1980</a>).  This starts from an alternate form of Fermat’s Little Theorem,
-which states that if <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math> is a prime number and <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>a</mi>
-</math> is any positive integer
-less than <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math>, then <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>a</mi>
-</math> raised to the <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mo stretchy="false">(</mo>
-    <mi>n</mi>
-    <mo>−<!-- − --></mo>
-    <mn>1</mn>
-    <mo stretchy="false">)</mo>
-  </mrow>
-</math>-st power is congruent to 1
-modulo <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math>.  To test the primality of a number <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math> by the Miller-Rabin
-test, we pick a random number <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>a</mi>
-    <mo>&lt;</mo>
-    <mi>n</mi>
-  </mrow>
-</math> and raise <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>a</mi>
-</math> to the <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mo stretchy="false">(</mo>
-    <mi>n</mi>
-    <mo>−<!-- − --></mo>
-    <mn>1</mn>
-    <mo stretchy="false">)</mo>
-  </mrow>
-</math>-st
-power modulo <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math> using the <code>expmod</code> procedure.  However, whenever we
+which states that if <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" /> is a prime number and <img src="fig/math/09009cdd5fc245e05305bc574dcdc97d.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( a \)" /> is any positive integer
+less than <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" />, then <img src="fig/math/09009cdd5fc245e05305bc574dcdc97d.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( a \)" /> raised to the <img src="fig/math/c8beea704f256f9704f3db4847b94c52.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.189em;" alt="\( {(n-1)} \)" />-st power is congruent to 1
+modulo <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" />.  To test the primality of a number <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" /> by the Miller-Rabin
+test, we pick a random number <img src="fig/math/fe5e256d86f2ab36533fbb225c24f80c.svg" class="math-inline" style="height: 0.519em; vertical-align: -0.005em;" alt="\( {a &amp;lt; n} \)" /> and raise <img src="fig/math/09009cdd5fc245e05305bc574dcdc97d.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( a \)" /> to the <img src="fig/math/c8beea704f256f9704f3db4847b94c52.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.189em;" alt="\( {(n-1)} \)" />-st
+power modulo <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" /> using the <code>expmod</code> procedure.  However, whenever we
 perform the squaring step in <code>expmod</code>, we check to see if we have
-discovered a “nontrivial square root of 1 modulo <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math>,” that is, a number
-not equal to 1 or <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>n</mi>
-    <mo>−<!-- − --></mo>
-    <mn>1</mn>
-  </mrow>
-</math> whose square is equal to 1 modulo <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math>.  It is
-possible to prove that if such a nontrivial square root of 1 exists, then <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math>
-is not prime.  It is also possible to prove that if <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math> is an odd number that
-is not prime, then, for at least half the numbers <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>a</mi>
-    <mo>&lt;</mo>
-    <mi>n</mi>
-  </mrow>
-</math>, computing
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <msup>
-    <mi>a</mi>
-    <mrow class="MJX-TeXAtom-ORD">
-      <mi>n</mi>
-      <mo>−<!-- − --></mo>
-      <mn>1</mn>
-    </mrow>
-  </msup>
-</math> in this way will reveal a nontrivial square root of 1 modulo
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math>.  (This is why the Miller-Rabin test cannot be fooled.)  Modify the
+discovered a “nontrivial square root of 1 modulo <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" />,” that is, a number
+not equal to 1 or <img src="fig/math/1aeb2237b7777768e88172586e76ee37.svg" class="math-inline" style="height: 0.652em; vertical-align: -0.009em;" alt="\( {n-1} \)" /> whose square is equal to 1 modulo <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" />.  It is
+possible to prove that if such a nontrivial square root of 1 exists, then <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" />
+is not prime.  It is also possible to prove that if <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" /> is an odd number that
+is not prime, then, for at least half the numbers <img src="fig/math/fe5e256d86f2ab36533fbb225c24f80c.svg" class="math-inline" style="height: 0.519em; vertical-align: -0.005em;" alt="\( {a &amp;lt; n} \)" />, computing
+<img src="fig/math/8eb6a52f0a1b2964cd27430784f25ad9.svg" class="math-inline" style="height: 0.854em; vertical-align: -0.010em;" alt="\( a^{n-1} \)" /> in this way will reveal a nontrivial square root of 1 modulo
+<img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" />.  (This is why the Miller-Rabin test cannot be fooled.)  Modify the
 <code>expmod</code> procedure to signal if it discovers a nontrivial square root of
 1, and use this to implement the Miller-Rabin test with a procedure analogous
 to <code>fermat-test</code>.  Check your procedure by testing various known primes
@@ -3015,28 +1250,8 @@ linearly with the input.  See <a href="3_002e3.xhtml#Exercise-3_002e27">Exercise
 The elements of
 Pascal’s triangle are called the <a id="index-binomial-coefficients"></a>
 <em>binomial coefficients</em>, because the
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <msup>
-      <mi>n</mi>
-      <mrow class="MJX-TeXAtom-ORD">
-        <mtext>th</mtext>
-      </mrow>
-    </msup>
-  </mrow>
-</math> row consists of the coefficients of the terms in the expansion of
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mo stretchy="false">(</mo>
-    <mi>x</mi>
-    <mo>+</mo>
-    <mi>y</mi>
-    <msup>
-      <mo stretchy="false">)</mo>
-      <mi>n</mi>
-    </msup>
-  </mrow>
-</math>.  This pattern for computing the coefficients appeared in
+<img src="fig/math/1d26333e30d7ef6a556179ea33325d48.svg" class="math-inline" style="height: 0.892em; vertical-align: -0.010em;" alt="\( {n^{\text{th}}} \)" /> row consists of the coefficients of the terms in the expansion of
+<img src="fig/math/1d548631d553cb5c93d658f0f25d296c.svg" class="math-inline" style="height: 0.933em; vertical-align: -0.225em;" alt="\( {(x + y)^n} \)" />.  This pattern for computing the coefficients appeared in
 Blaise Pascal’s 1653 seminal work on probability theory, <cite>Traité du
 triangle arithmétique</cite>.  According to <a href="References.xhtml#Knuth-_00281973_0029">Knuth (1973)</a>, the same pattern appears
 in the <cite>Szu-yuen Yü-chien</cite> (“The Precious Mirror of the Four
@@ -3056,37 +1271,12 @@ analysis of a process can be carried out at various levels of abstraction.</p>
 </div>
 <div id="FOOT37"><p><a class="footnote_backlink" href="#DOCF37"><sup>37</sup></a>
 More precisely, the number of
-multiplications required is equal to 1 less than the log base 2 of <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math> plus
-the number of ones in the binary representation of <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math>.  This total is always
-less than twice the log base 2 of <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math>.  The arbitrary constants <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <msub>
-    <mi>k</mi>
-    <mn>1</mn>
-  </msub>
-</math> and
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <msub>
-    <mi>k</mi>
-    <mn>2</mn>
-  </msub>
-</math> in the definition of order notation imply that, for a logarithmic
+multiplications required is equal to 1 less than the log base 2 of <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" /> plus
+the number of ones in the binary representation of <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" />.  This total is always
+less than twice the log base 2 of <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" />.  The arbitrary constants <img src="fig/math/9e40c899364b3a7bc648f5071c8e501c.svg" class="math-inline" style="height: 0.843em; vertical-align: -0.148em;" alt="\( k_1 \)" /> and
+<img src="fig/math/f770f36651db7f4958828f415118c5e8.svg" class="math-inline" style="height: 0.843em; vertical-align: -0.148em;" alt="\( k_2 \)" /> in the definition of order notation imply that, for a logarithmic
 process, the base to which logarithms are taken does not matter, so all such
-processes are described as <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi mathvariant="normal">Θ<!-- Θ --></mi>
-    <mo stretchy="false">(</mo>
-    <mi>log</mi>
-    <mo>⁡<!-- ⁡ --></mo>
-    <mi>n</mi>
-    <mo stretchy="false">)</mo>
-  </mrow>
-</math>.</p>
+processes are described as <img src="fig/math/48be6efaded27da68b3a4aa70713c562.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.189em;" alt="\( {\Theta(\log n)} \)" />.</p>
 </div>
 <div id="FOOT38"><p><a class="footnote_backlink" href="#DOCF38"><sup>38</sup></a>
 You may wonder why anyone would care about raising
@@ -3123,480 +1313,34 @@ examples.</p>
 This
 theorem was proved in 1845 by Gabriel Lamé, a French mathematician and
 engineer known chiefly for his contributions to mathematical physics.  To prove
-the theorem, we consider pairs <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mo stretchy="false">(</mo>
-    <msub>
-      <mi>a</mi>
-      <mi>k</mi>
-    </msub>
-    <mo>,</mo>
-    <msub>
-      <mi>b</mi>
-      <mi>k</mi>
-    </msub>
-    <mo stretchy="false">)</mo>
-  </mrow>
-</math>, where <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <msub>
-      <mi>a</mi>
-      <mi>k</mi>
-    </msub>
-    <mo>≥<!-- ≥ --></mo>
-    <msub>
-      <mi>b</mi>
-      <mi>k</mi>
-    </msub>
-  </mrow>
-</math>, 
-for which Euclid’s Algorithm terminates in <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>k</mi>
-</math> steps.  The proof
-is based on the claim that, if <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mo stretchy="false">(</mo>
-    <msub>
-      <mi>a</mi>
-      <mrow class="MJX-TeXAtom-ORD">
-        <mi>k</mi>
-        <mo>+</mo>
-        <mn>1</mn>
-      </mrow>
-    </msub>
-    <mo>,</mo>
-    <msub>
-      <mi>b</mi>
-      <mrow class="MJX-TeXAtom-ORD">
-        <mi>k</mi>
-        <mo>+</mo>
-        <mn>1</mn>
-      </mrow>
-    </msub>
-    <mo stretchy="false">)</mo>
-  </mrow>
-  <mo stretchy="false">→<!-- → --></mo>
-  <mrow class="MJX-TeXAtom-ORD">
-    <mo stretchy="false">(</mo>
-    <msub>
-      <mi>a</mi>
-      <mi>k</mi>
-    </msub>
-    <mo>,</mo>
-    <msub>
-      <mi>b</mi>
-      <mi>k</mi>
-    </msub>
-    <mo stretchy="false">)</mo>
-  </mrow>
-  <mo stretchy="false">→<!-- → --></mo>
-  <mrow class="MJX-TeXAtom-ORD">
-    <mo stretchy="false">(</mo>
-    <msub>
-      <mi>a</mi>
-      <mrow class="MJX-TeXAtom-ORD">
-        <mi>k</mi>
-        <mo>−<!-- − --></mo>
-        <mn>1</mn>
-      </mrow>
-    </msub>
-    <mo>,</mo>
-    <msub>
-      <mi>b</mi>
-      <mrow class="MJX-TeXAtom-ORD">
-        <mi>k</mi>
-        <mo>−<!-- − --></mo>
-        <mn>1</mn>
-      </mrow>
-    </msub>
-    <mo stretchy="false">)</mo>
-  </mrow>
-</math> 
+the theorem, we consider pairs <img src="fig/math/4f4d9d2c178554d258955b5882886b71.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.189em;" alt="\( {(a_k, b_k)} \)" />, where <img src="fig/math/c2b388f46177fef311a426f168e037d0.svg" class="math-inline" style="height: 0.857em; vertical-align: -0.163em;" alt="\( {a_k \ge b_k} \)" />, 
+for which Euclid’s Algorithm terminates in <img src="fig/math/83054be07bea98353c7cda3290903d5e.svg" class="math-inline" style="height: 0.703em; vertical-align: -0.009em;" alt="\( k \)" /> steps.  The proof
+is based on the claim that, if <img src="fig/math/f91a2e4e97b6d4a9352d940625decdc0.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.189em;" alt="\( {(a_{k+1}, b_{k+1})} \to {(a_k, b_k)} \to {(a_{k-1}, b_{k-1})} \)" /> 
 are three successive pairs 
-in the reduction process, then we must have <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <msub>
-    <mi>b</mi>
-    <mrow class="MJX-TeXAtom-ORD">
-      <mi>k</mi>
-      <mo>+</mo>
-      <mn>1</mn>
-    </mrow>
-  </msub>
-  <mo>≥<!-- ≥ --></mo>
-  <msub>
-    <mi>b</mi>
-    <mi>k</mi>
-  </msub>
-  <mo>+</mo>
-  <msub>
-    <mi>b</mi>
-    <mrow class="MJX-TeXAtom-ORD">
-      <mi>k</mi>
-      <mo>−<!-- − --></mo>
-      <mn>1</mn>
-    </mrow>
-  </msub>
-</math>.  
+in the reduction process, then we must have <img src="fig/math/c02eacd6ed941e61dd6627af23507a75.svg" class="math-inline" style="height: 0.857em; vertical-align: -0.163em;" alt="\( b_{k+1} \ge b_k + b_{k-1} \)" />.  
 To verify the claim, consider that a reduction step is defined by applying the 
-transformation <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <msub>
-      <mi>a</mi>
-      <mrow class="MJX-TeXAtom-ORD">
-        <mi>k</mi>
-        <mo>−<!-- − --></mo>
-        <mn>1</mn>
-      </mrow>
-    </msub>
-    <mo>=</mo>
-    <msub>
-      <mi>b</mi>
-      <mi>k</mi>
-    </msub>
-  </mrow>
-</math>, <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <msub>
-      <mi>b</mi>
-      <mrow class="MJX-TeXAtom-ORD">
-        <mi>k</mi>
-        <mo>−<!-- − --></mo>
-        <mn>1</mn>
-      </mrow>
-    </msub>
-    <mo>=</mo>
-  </mrow>
-</math> remainder of <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <msub>
-    <mi>a</mi>
-    <mi>k</mi>
-  </msub>
-</math> 
-divided by <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <msub>
-    <mi>b</mi>
-    <mi>k</mi>
-  </msub>
-</math>.  The second equation means that <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <msub>
-    <mi>a</mi>
-    <mi>k</mi>
-  </msub>
-  <mo>=</mo>
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>q</mi>
-    <msub>
-      <mi>b</mi>
-      <mi>k</mi>
-    </msub>
-  </mrow>
-  <mo>+</mo>
-  <mrow class="MJX-TeXAtom-ORD">
-    <msub>
-      <mi>b</mi>
-      <mrow class="MJX-TeXAtom-ORD">
-        <mi>k</mi>
-        <mo>−<!-- − --></mo>
-        <mn>1</mn>
-      </mrow>
-    </msub>
-  </mrow>
-</math> 
-for some positive integer <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>q</mi>
-</math>.  And since <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>q</mi>
-</math> must be at least 1 we have 
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <msub>
-    <mi>a</mi>
-    <mi>k</mi>
-  </msub>
-  <mo>=</mo>
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>q</mi>
-    <msub>
-      <mi>b</mi>
-      <mi>k</mi>
-    </msub>
-  </mrow>
-  <mo>+</mo>
-  <msub>
-    <mi>b</mi>
-    <mrow class="MJX-TeXAtom-ORD">
-      <mi>k</mi>
-      <mo>−<!-- − --></mo>
-      <mn>1</mn>
-    </mrow>
-  </msub>
-  <mo>≥<!-- ≥ --></mo>
-  <msub>
-    <mi>b</mi>
-    <mi>k</mi>
-  </msub>
-  <mo>+</mo>
-  <msub>
-    <mi>b</mi>
-    <mrow class="MJX-TeXAtom-ORD">
-      <mi>k</mi>
-      <mo>−<!-- − --></mo>
-      <mn>1</mn>
-    </mrow>
-  </msub>
-</math>.  But in the previous reduction 
-step we have <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <msub>
-    <mi>b</mi>
-    <mrow class="MJX-TeXAtom-ORD">
-      <mi>k</mi>
-      <mo>+</mo>
-      <mn>1</mn>
-    </mrow>
-  </msub>
-  <mo>=</mo>
-  <msub>
-    <mi>a</mi>
-    <mi>k</mi>
-  </msub>
-</math>.  Therefore, <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <msub>
-    <mi>b</mi>
-    <mrow class="MJX-TeXAtom-ORD">
-      <mi>k</mi>
-      <mo>+</mo>
-      <mn>1</mn>
-    </mrow>
-  </msub>
-  <mo>=</mo>
-  <msub>
-    <mi>a</mi>
-    <mi>k</mi>
-  </msub>
-  <mo>≥<!-- ≥ --></mo>
-  <msub>
-    <mi>b</mi>
-    <mi>k</mi>
-  </msub>
-  <mo>+</mo>
-  <msub>
-    <mi>b</mi>
-    <mrow class="MJX-TeXAtom-ORD">
-      <mi>k</mi>
-      <mo>−<!-- − --></mo>
-      <mn>1</mn>
-    </mrow>
-  </msub>
-</math>.
-This verifies the claim.  Now we can prove the theorem by induction on <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>k</mi>
-</math>, 
+transformation <img src="fig/math/7913884e304c591ea6986727d9c56e66.svg" class="math-inline" style="height: 0.857em; vertical-align: -0.163em;" alt="\( {a_{k-1} = b_k} \)" />, <img src="fig/math/3cc38c0fc219be9688662626a0b0c48b.svg" class="math-inline" style="height: 0.857em; vertical-align: -0.163em;" alt="\( {b_{k-1} =} \)" /> remainder of <img src="fig/math/07febb67a15c456e95ebbdb91c5910b7.svg" class="math-inline" style="height: 0.598em; vertical-align: -0.162em;" alt="\( a_k \)" /> 
+divided by <img src="fig/math/7b7c05b32ae65e232eca6bbe10d21ea1.svg" class="math-inline" style="height: 0.857em; vertical-align: -0.163em;" alt="\( b_k \)" />.  The second equation means that <img src="fig/math/d6d4e2bcb9ab1e420b2a77bdb19d8fb3.svg" class="math-inline" style="height: 0.929em; vertical-align: -0.234em;" alt="\( a_k = {qb_k} + {b_{k-1}} \)" /> 
+for some positive integer <img src="fig/math/55e71917aae71d65907116d02f07c8f8.svg" class="math-inline" style="height: 0.678em; vertical-align: -0.241em;" alt="\( q \)" />.  And since <img src="fig/math/55e71917aae71d65907116d02f07c8f8.svg" class="math-inline" style="height: 0.678em; vertical-align: -0.241em;" alt="\( q \)" /> must be at least 1 we have 
+<img src="fig/math/938e4d2065401215ca379761b3a64e9d.svg" class="math-inline" style="height: 0.929em; vertical-align: -0.234em;" alt="\( a_k = {qb_k} + b_{k-1} \ge b_k + b_{k-1} \)" />.  But in the previous reduction 
+step we have <img src="fig/math/438f8ebb132c2cec5e4312a20d21e1b6.svg" class="math-inline" style="height: 0.857em; vertical-align: -0.163em;" alt="\( b_{k+1} = a_k \)" />.  Therefore, <img src="fig/math/88677bf9dcc1a761dc146cb860233562.svg" class="math-inline" style="height: 0.857em; vertical-align: -0.163em;" alt="\( b_{k+1} = a_k \ge b_k + b_{k-1} \)" />.
+This verifies the claim.  Now we can prove the theorem by induction on <img src="fig/math/83054be07bea98353c7cda3290903d5e.svg" class="math-inline" style="height: 0.703em; vertical-align: -0.009em;" alt="\( k \)" />, 
 the number of steps that the algorithm requires to terminate.  The result is true for 
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>k</mi>
-    <mo>=</mo>
-    <mn>1</mn>
-  </mrow>
-</math>, since this merely requires that <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>b</mi>
-</math> be at least as large as <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mtext>Fib</mtext>
-    <mo stretchy="false">(</mo>
-    <mn>1</mn>
-    <mo stretchy="false">)</mo>
-    <mo>=</mo>
-    <mn>1</mn>
-  </mrow>
-</math>.  
+<img src="fig/math/bb08cea3f77bfdf5d4c5dd747eeb776d.svg" class="math-inline" style="height: 0.703em; vertical-align: -0.009em;" alt="\( {k = 1} \)" />, since this merely requires that <img src="fig/math/3e92f417ccfc1f59b0ee22d034c85747.svg" class="math-inline" style="height: 0.703em; vertical-align: -0.009em;" alt="\( b \)" /> be at least as large as <img src="fig/math/45b5ef7d699444ab210b863170b7461a.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.189em;" alt="\( {\text{Fib}(1) = 1} \)" />.  
 Now, assume that the result is true for all integers less than or equal
-to <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>k</mi>
-</math> and establish the result for <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>k</mi>
-    <mo>+</mo>
-    <mn>1</mn>
-  </mrow>
-</math>.  
-Let <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mo stretchy="false">(</mo>
-    <msub>
-      <mi>a</mi>
-      <mrow class="MJX-TeXAtom-ORD">
-        <mi>k</mi>
-        <mo>+</mo>
-        <mn>1</mn>
-      </mrow>
-    </msub>
-    <mo>,</mo>
-    <msub>
-      <mi>b</mi>
-      <mrow class="MJX-TeXAtom-ORD">
-        <mi>k</mi>
-        <mo>+</mo>
-        <mn>1</mn>
-      </mrow>
-    </msub>
-    <mo stretchy="false">)</mo>
-  </mrow>
-  <mo stretchy="false">→<!-- → --></mo>
-  <mrow class="MJX-TeXAtom-ORD">
-    <mo stretchy="false">(</mo>
-    <msub>
-      <mi>a</mi>
-      <mi>k</mi>
-    </msub>
-    <mo>,</mo>
-    <msub>
-      <mi>b</mi>
-      <mi>k</mi>
-    </msub>
-    <mo stretchy="false">)</mo>
-  </mrow>
-  <mo stretchy="false">→<!-- → --></mo>
-  <mrow class="MJX-TeXAtom-ORD">
-    <mo stretchy="false">(</mo>
-    <msub>
-      <mi>a</mi>
-      <mrow class="MJX-TeXAtom-ORD">
-        <mi>k</mi>
-        <mo>−<!-- − --></mo>
-        <mn>1</mn>
-      </mrow>
-    </msub>
-    <mo>,</mo>
-    <msub>
-      <mi>b</mi>
-      <mrow class="MJX-TeXAtom-ORD">
-        <mi>k</mi>
-        <mo>−<!-- − --></mo>
-        <mn>1</mn>
-      </mrow>
-    </msub>
-    <mo stretchy="false">)</mo>
-  </mrow>
-</math> 
+to <img src="fig/math/83054be07bea98353c7cda3290903d5e.svg" class="math-inline" style="height: 0.703em; vertical-align: -0.009em;" alt="\( k \)" /> and establish the result for <img src="fig/math/17d112fd6f44f2145c3129b029e7ac8b.svg" class="math-inline" style="height: 0.703em; vertical-align: -0.009em;" alt="\( {k + 1} \)" />.  
+Let <img src="fig/math/f91a2e4e97b6d4a9352d940625decdc0.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.189em;" alt="\( {(a_{k+1}, b_{k+1})} \to {(a_k, b_k)} \to {(a_{k-1}, b_{k-1})} \)" /> 
 be successive pairs in the reduction 
-process.  By our induction hypotheses, we have <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <msub>
-    <mi>b</mi>
-    <mrow class="MJX-TeXAtom-ORD">
-      <mi>k</mi>
-      <mo>−<!-- − --></mo>
-      <mn>1</mn>
-    </mrow>
-  </msub>
-  <mo>≥<!-- ≥ --></mo>
-  <mrow class="MJX-TeXAtom-ORD">
-    <mtext>Fib</mtext>
-    <mo stretchy="false">(</mo>
-    <mi>k</mi>
-    <mo>−<!-- − --></mo>
-    <mn>1</mn>
-    <mo stretchy="false">)</mo>
-  </mrow>
-</math> 
-and <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <msub>
-    <mi>b</mi>
-    <mi>k</mi>
-  </msub>
-  <mo>≥<!-- ≥ --></mo>
-  <mrow class="MJX-TeXAtom-ORD">
-    <mtext>Fib</mtext>
-    <mo stretchy="false">(</mo>
-    <mi>k</mi>
-    <mo stretchy="false">)</mo>
-  </mrow>
-</math>.  Thus, applying the claim we just proved together with 
+process.  By our induction hypotheses, we have <img src="fig/math/3ef36ea21d5611df87ff2c3d91236e32.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.189em;" alt="\( b_{k-1} \ge {\text{Fib}(k - 1)} \)" /> 
+and <img src="fig/math/1133dbc7a8bdab0aaed8b78933faac11.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.189em;" alt="\( b_k \ge {\text{Fib}(k)} \)" />.  Thus, applying the claim we just proved together with 
 the definition of the Fibonacci numbers gives 
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <msub>
-    <mi>b</mi>
-    <mrow class="MJX-TeXAtom-ORD">
-      <mi>k</mi>
-      <mo>+</mo>
-      <mn>1</mn>
-    </mrow>
-  </msub>
-  <mo>≥<!-- ≥ --></mo>
-  <msub>
-    <mi>b</mi>
-    <mi>k</mi>
-  </msub>
-  <mo>+</mo>
-  <msub>
-    <mi>b</mi>
-    <mrow class="MJX-TeXAtom-ORD">
-      <mi>k</mi>
-      <mo>−<!-- − --></mo>
-      <mn>1</mn>
-    </mrow>
-  </msub>
-  <mo>≥<!-- ≥ --></mo>
-  <mrow class="MJX-TeXAtom-ORD">
-    <mtext>Fib</mtext>
-    <mo stretchy="false">(</mo>
-    <mi>k</mi>
-    <mo stretchy="false">)</mo>
-  </mrow>
-  <mo>+</mo>
-  <mrow class="MJX-TeXAtom-ORD">
-    <mtext>Fib</mtext>
-    <mo stretchy="false">(</mo>
-    <mi>k</mi>
-    <mo>−<!-- − --></mo>
-    <mn>1</mn>
-    <mo stretchy="false">)</mo>
-  </mrow>
-  <mo>=</mo>
-  <mrow class="MJX-TeXAtom-ORD">
-    <mtext>Fib</mtext>
-    <mo stretchy="false">(</mo>
-    <mi>k</mi>
-    <mo>+</mo>
-    <mn>1</mn>
-    <mo stretchy="false">)</mo>
-  </mrow>
-</math>, 
+<img src="fig/math/b54c123a3fd5277f0165afffbbc74c83.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.189em;" alt="\( b_{k+1} \ge b_k + b_{k-1} \ge {\text{Fib}(k)} + {\text{Fib}(k-1)} = {\text{Fib}(k+1)} \)" />, 
 which completes the proof of Lamé’s Theorem.</p>
 </div>
 <div id="FOOT44"><p><a class="footnote_backlink" href="#DOCF44"><sup>44</sup></a>
-If <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>d</mi>
-</math> is a divisor of <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math>, then so is
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>n</mi>
-    <mspace width="thinmathspace"/>
-    <mrow class="MJX-TeXAtom-ORD">
-      <mo>/</mo>
-    </mrow>
-    <mspace width="thinmathspace"/>
-    <mi>d</mi>
-  </mrow>
-</math>.  But <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>d</mi>
-</math> and <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>n</mi>
-    <mspace width="thinmathspace"/>
-    <mrow class="MJX-TeXAtom-ORD">
-      <mo>/</mo>
-    </mrow>
-    <mspace width="thinmathspace"/>
-    <mi>d</mi>
-  </mrow>
-</math> cannot both be greater than
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <msqrt>
-    <mi>n</mi>
-  </msqrt>
-</math>.</p>
+If <img src="fig/math/94022487faed4226073f19cc394c11d0.svg" class="math-inline" style="height: 0.703em; vertical-align: -0.009em;" alt="\( d \)" /> is a divisor of <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" />, then so is
+<img src="fig/math/9101f115e5e93ec5cec5de214927fb7f.svg" class="math-inline" style="height: 0.852em; vertical-align: -0.159em;" alt="\( {n \,/\, d} \)" />.  But <img src="fig/math/94022487faed4226073f19cc394c11d0.svg" class="math-inline" style="height: 0.703em; vertical-align: -0.009em;" alt="\( d \)" /> and <img src="fig/math/9101f115e5e93ec5cec5de214927fb7f.svg" class="math-inline" style="height: 0.852em; vertical-align: -0.159em;" alt="\( {n \,/\, d} \)" /> cannot both be greater than
+<img src="fig/math/6401acda6e40516e261b2a2cd409285f.svg" class="math-inline" style="height: 0.993em; vertical-align: -0.168em;" alt="\( \sqrt{n} \)" />.</p>
 </div>
 <div id="FOOT45"><p><a class="footnote_backlink" href="#DOCF45"><sup>45</sup></a>
 Pierre de Fermat
@@ -3615,57 +1359,14 @@ given in 1995 by Andrew Wiles of Princeton University.</p>
 </div>
 <div id="FOOT46"><p><a class="footnote_backlink" href="#DOCF46"><sup>46</sup></a>
 The reduction steps in the cases where the exponent
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>e</mi>
-</math> is greater than 1 are based on the fact that, for any integers <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>x</mi>
-</math>,
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>y</mi>
-</math>, and <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>m</mi>
-</math>, we can find the remainder of <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>x</mi>
-</math> times <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>y</mi>
-</math> modulo <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>m</mi>
-</math>
-by computing separately the remainders of <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>x</mi>
-</math> modulo <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>m</mi>
-</math> and <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>y</mi>
-</math> modulo
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>m</mi>
-</math>, multiplying these, and then taking the remainder of the result modulo
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>m</mi>
-</math>.  For instance, in the case where <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>e</mi>
-</math> is even, we compute the remainder
-of <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <msup>
-    <mi>b</mi>
-    <mrow class="MJX-TeXAtom-ORD">
-      <mi>e</mi>
-      <mrow class="MJX-TeXAtom-ORD">
-        <mo>/</mo>
-      </mrow>
-      <mn>2</mn>
-    </mrow>
-  </msup>
-</math> modulo <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>m</mi>
-</math>, square this, and take the remainder modulo
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>m</mi>
-</math>.  This technique is useful because it means we can perform our
-computation without ever having to deal with numbers much larger than <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>m</mi>
-</math>.
+<img src="fig/math/debcc3e84db401938012afdc2ced88f1.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( e \)" /> is greater than 1 are based on the fact that, for any integers <img src="fig/math/2f4b15565d0a1018e90c3e1b30b76acc.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( x \)" />,
+<img src="fig/math/05e4cdb2f26a4f66b68c167423907fea.svg" class="math-inline" style="height: 0.669em; vertical-align: -0.235em;" alt="\( y \)" />, and <img src="fig/math/d87e6d0d6a9513640fdd6193cde8b6a3.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( m \)" />, we can find the remainder of <img src="fig/math/2f4b15565d0a1018e90c3e1b30b76acc.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( x \)" /> times <img src="fig/math/05e4cdb2f26a4f66b68c167423907fea.svg" class="math-inline" style="height: 0.669em; vertical-align: -0.235em;" alt="\( y \)" /> modulo <img src="fig/math/d87e6d0d6a9513640fdd6193cde8b6a3.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( m \)" />
+by computing separately the remainders of <img src="fig/math/2f4b15565d0a1018e90c3e1b30b76acc.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( x \)" /> modulo <img src="fig/math/d87e6d0d6a9513640fdd6193cde8b6a3.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( m \)" /> and <img src="fig/math/05e4cdb2f26a4f66b68c167423907fea.svg" class="math-inline" style="height: 0.669em; vertical-align: -0.235em;" alt="\( y \)" /> modulo
+<img src="fig/math/d87e6d0d6a9513640fdd6193cde8b6a3.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( m \)" />, multiplying these, and then taking the remainder of the result modulo
+<img src="fig/math/d87e6d0d6a9513640fdd6193cde8b6a3.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( m \)" />.  For instance, in the case where <img src="fig/math/debcc3e84db401938012afdc2ced88f1.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( e \)" /> is even, we compute the remainder
+of <img src="fig/math/074fefd2a5f678baa3f4dfd220035e99.svg" class="math-inline" style="height: 0.862em; vertical-align: -0.006em;" alt="\( b^{e / 2} \)" /> modulo <img src="fig/math/d87e6d0d6a9513640fdd6193cde8b6a3.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( m \)" />, square this, and take the remainder modulo
+<img src="fig/math/d87e6d0d6a9513640fdd6193cde8b6a3.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( m \)" />.  This technique is useful because it means we can perform our
+computation without ever having to deal with numbers much larger than <img src="fig/math/d87e6d0d6a9513640fdd6193cde8b6a3.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( m \)" />.
 (Compare <a href="#Exercise-1_002e25">Exercise 1.25</a>.)</p>
 </div>
 <div id="FOOT47"><p><a class="footnote_backlink" href="#DOCF47"><sup>47</sup></a>

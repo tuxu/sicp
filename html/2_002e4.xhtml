@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" xml:lang="en" lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" xml:lang="en" xmlns:xml="http://www.w3.org/XML/1998/namespace" lang="en">
 <!-- Created by GNU Texinfo 5.1, http://www.gnu.org/software/texinfo/ -->
 <head>
 <title>Structure and Interpretation of Computer Programs, 2e: 2.4</title>
@@ -109,7 +109,7 @@ and install alternative representations.
 </p>
 <figure class="float">
 <a id="Figure-2_002e19"></a>
-<object style="width: 40.41ex; height: 33.41ex;" data="fig/chap2/Fig2.19a.std.svg" type="image/svg+xml">SVG</object>
+<img style="width: 40.41ex; max-width: 100%; display: inline;" src="fig/chap2/Fig2.19a.std.svg" />
 
 <figcaption class="float-caption">
 <p><strong>Figure 2.19:</strong> Data-abstraction barriers in the complex-number system.</p>
@@ -140,129 +140,15 @@ single system through the use of type tags and generic operations.
 pairs.  The set of complex numbers can be thought of as a two-dimensional space
 with two orthogonal axes, the “real” axis and the “imaginary” axis. (See
 <a href="#Figure-2_002e20">Figure 2.20</a>.)  From this point of view, the complex number 
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>z</mi>
-    <mo>=</mo>
-    <mi>x</mi>
-    <mo>+</mo>
-    <mi>i</mi>
-    <mi>y</mi>
-  </mrow>
-</math> (where <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <msup>
-      <mi>i</mi>
-      <mrow class="MJX-TeXAtom-ORD">
-        <mspace width="0.1em"/>
-        <mn>2</mn>
-      </mrow>
-    </msup>
-    <mo>=</mo>
-    <mtext>−1</mtext>
-  </mrow>
-</math>) can be thought of as the point in the plane
-whose real coordinate is <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>x</mi>
-</math> and whose imaginary coordinate is <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>y</mi>
-</math>.
+<img src="fig/math/bd5b0a8d4f6780c68d48e19b2f42b81b.svg" class="math-inline" style="height: 0.847em; vertical-align: -0.235em;" alt="\( {z = x + iy} \)" /> (where <img src="fig/math/5c7dc7b11ea2d5f964561acf397a1642.svg" class="math-inline" style="height: 0.854em; vertical-align: -0.010em;" alt="\( {i^{\kern0.1em 2} = \text{−1}} \)" />) can be thought of as the point in the plane
+whose real coordinate is <img src="fig/math/2f4b15565d0a1018e90c3e1b30b76acc.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( x \)" /> and whose imaginary coordinate is <img src="fig/math/05e4cdb2f26a4f66b68c167423907fea.svg" class="math-inline" style="height: 0.669em; vertical-align: -0.235em;" alt="\( y \)" />.
 Addition of complex numbers reduces in this representation to addition of
 coordinates:
-<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
-  <mtable columnalign="right center left" rowspacing="3pt" columnspacing="thickmathspace">
-    <mtr>
-      <mtd>
-        <mtext>Real-part</mtext>
-        <mo stretchy="false">(</mo>
-        <msub>
-          <mi>z</mi>
-          <mn>1</mn>
-        </msub>
-        <mo>+</mo>
-        <msub>
-          <mi>z</mi>
-          <mn>2</mn>
-        </msub>
-        <mo stretchy="false">)</mo>
-      </mtd>
-      <mtd>
-        <mo>=</mo>
-      </mtd>
-      <mtd>
-        <mtext>Real-part</mtext>
-        <mo stretchy="false">(</mo>
-        <msub>
-          <mi>z</mi>
-          <mn>1</mn>
-        </msub>
-        <mo stretchy="false">)</mo>
-        <mo>+</mo>
-      </mtd>
-    </mtr>
-    <mtr>
-      <mtd/>
-      <mtd/>
-      <mtd>
-        <mtext>Real-part</mtext>
-        <mo stretchy="false">(</mo>
-        <msub>
-          <mi>z</mi>
-          <mn>2</mn>
-        </msub>
-        <mo stretchy="false">)</mo>
-        <mo>,</mo>
-      </mtd>
-    </mtr>
-    <mtr>
-      <mtd>
-        <mtext>Imaginary-part</mtext>
-        <mo stretchy="false">(</mo>
-        <msub>
-          <mi>z</mi>
-          <mn>1</mn>
-        </msub>
-        <mo>+</mo>
-        <msub>
-          <mi>z</mi>
-          <mn>2</mn>
-        </msub>
-        <mo stretchy="false">)</mo>
-      </mtd>
-      <mtd>
-        <mo>=</mo>
-      </mtd>
-      <mtd>
-        <mtext>Imaginary-part</mtext>
-        <mo stretchy="false">(</mo>
-        <msub>
-          <mi>z</mi>
-          <mn>1</mn>
-        </msub>
-        <mo stretchy="false">)</mo>
-        <mo>+</mo>
-      </mtd>
-    </mtr>
-    <mtr>
-      <mtd/>
-      <mtd/>
-      <mtd>
-        <mtext>Imaginary-part</mtext>
-        <mo stretchy="false">(</mo>
-        <msub>
-          <mi>z</mi>
-          <mn>2</mn>
-        </msub>
-        <mo stretchy="false">)</mo>
-        <mo>.</mo>
-      </mtd>
-    </mtr>
-  </mtable>
-</math>
+<img src="fig/math/7ace231c483dceae4d2f9c64c74ee3e0.svg" class="math-display" style="height: 5.371em;" alt="\[ % :46:&amp;#10;\begin{eqnarray} \text{Real-part} (z_1 + z_2)      &amp;amp;=&amp;amp; \text{Real-part} (z_1) + \\                                     &amp;amp; &amp;amp; \text{Real-part} (z_2),  \\ \text{Imaginary-part} (z_1 + z_2)   &amp;amp;=&amp;amp; \text{Imaginary-part} (z_1) + \\                                     &amp;amp; &amp;amp; \text{Imaginary-part} (z_2). \end{eqnarray} \]" />
 </p>
 <figure class="float">
 <a id="Figure-2_002e20"></a>
-<object style="width: 51.98ex; height: 30.74ex;" data="fig/chap2/Fig2.20.std.svg" type="image/svg+xml">SVG</object>
+<img style="width: 51.98ex; max-width: 100%; display: inline;" src="fig/chap2/Fig2.20.std.svg" />
 
 <figcaption class="float-caption">
 <p><strong>Figure 2.20:</strong> Complex numbers as points in the plane.</p>
@@ -270,92 +156,11 @@ coordinates:
 </figure>
 
 <p>When multiplying complex numbers, it is more natural to think in terms of
-representing a complex number in polar form, as a magnitude and an angle (<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>r</mi>
-</math>
-and <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>A</mi>
-</math> in <a href="#Figure-2_002e20">Figure 2.20</a>).  The product of two complex numbers is the
+representing a complex number in polar form, as a magnitude and an angle (<img src="fig/math/506c25753e5f5225576484e427d17c9b.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( r \)" />
+and <img src="fig/math/0795850a4e18ff44aa3a2868640c29a7.svg" class="math-inline" style="height: 0.656em; vertical-align: -0.004em;" alt="\( A \)" /> in <a href="#Figure-2_002e20">Figure 2.20</a>).  The product of two complex numbers is the
 vector obtained by stretching one complex number by the length of the other and
 then rotating it through the angle of the other:
-<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
-  <mtable columnalign="right center left" rowspacing="3pt" columnspacing="thickmathspace">
-    <mtr>
-      <mtd>
-        <mtext>Magnitude</mtext>
-        <mo stretchy="false">(</mo>
-        <msub>
-          <mi>z</mi>
-          <mn>1</mn>
-        </msub>
-        <mo>⋅<!-- ⋅ --></mo>
-        <msub>
-          <mi>z</mi>
-          <mn>2</mn>
-        </msub>
-        <mo stretchy="false">)</mo>
-      </mtd>
-      <mtd>
-        <mo>=</mo>
-      </mtd>
-      <mtd>
-        <mtext>Magnitude</mtext>
-        <mo stretchy="false">(</mo>
-        <msub>
-          <mi>z</mi>
-          <mn>1</mn>
-        </msub>
-        <mo stretchy="false">)</mo>
-        <mo>⋅<!-- ⋅ --></mo>
-        <mtext>Magnitude</mtext>
-        <mo stretchy="false">(</mo>
-        <msub>
-          <mi>z</mi>
-          <mn>2</mn>
-        </msub>
-        <mo stretchy="false">)</mo>
-        <mo>,</mo>
-      </mtd>
-    </mtr>
-    <mtr>
-      <mtd>
-        <mtext>Angle</mtext>
-        <mo stretchy="false">(</mo>
-        <msub>
-          <mi>z</mi>
-          <mn>1</mn>
-        </msub>
-        <mo>⋅<!-- ⋅ --></mo>
-        <msub>
-          <mi>z</mi>
-          <mn>2</mn>
-        </msub>
-        <mo stretchy="false">)</mo>
-      </mtd>
-      <mtd>
-        <mo>=</mo>
-      </mtd>
-      <mtd>
-        <mtext>Angle</mtext>
-        <mo stretchy="false">(</mo>
-        <msub>
-          <mi>z</mi>
-          <mn>1</mn>
-        </msub>
-        <mo stretchy="false">)</mo>
-        <mo>+</mo>
-        <mtext>Angle</mtext>
-        <mo stretchy="false">(</mo>
-        <msub>
-          <mi>z</mi>
-          <mn>2</mn>
-        </msub>
-        <mo stretchy="false">)</mo>
-        <mo>.</mo>
-      </mtd>
-    </mtr>
-  </mtable>
-</math>
+<img src="fig/math/f779fa3281271d4e18f67a4f2f77008b.svg" class="math-display" style="height: 2.455em;" alt="\[ % :47:&amp;#10;\begin{eqnarray}   \text{Magnitude} (z_1 \cdot z_2)  &amp;amp;=&amp;amp;      \text{Magnitude} (z_1) \cdot \text{Magnitude} (z_2), \\   \text{Angle} (z_1 \cdot z_2)      &amp;amp;=&amp;amp;      \text{Angle} (z_1) + \text{Angle} (z_2). \end{eqnarray} \]" />
 </p>
 <p>Thus, there are two different representations for complex numbers, which are
 appropriate for different operations.  Yet, from the viewpoint of someone
@@ -433,99 +238,10 @@ constructing a complex number with given real and imaginary parts.  To find the
 magnitude and the angle, or to construct a complex number with a given
 magnitude and angle, he uses the trigonometric relations
 </p>
-<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
-  <mtable columnalign="right center left" rowspacing="3pt" columnspacing="thickmathspace">
-    <mtr>
-      <mtd>
-        <mi>x</mi>
-      </mtd>
-      <mtd>
-        <mo>=</mo>
-      </mtd>
-      <mtd>
-        <mi>r</mi>
-        <mi>cos</mi>
-        <mo>⁡<!-- ⁡ --></mo>
-        <mi>A</mi>
-        <mo>,</mo>
-      </mtd>
-    </mtr>
-    <mtr>
-      <mtd>
-        <mi>y</mi>
-      </mtd>
-      <mtd>
-        <mo>=</mo>
-      </mtd>
-      <mtd>
-        <mi>r</mi>
-        <mi>sin</mi>
-        <mo>⁡<!-- ⁡ --></mo>
-        <mi>A</mi>
-        <mo>,</mo>
-      </mtd>
-    </mtr>
-    <mtr>
-      <mtd>
-        <mi>r</mi>
-      </mtd>
-      <mtd>
-        <mo>=</mo>
-      </mtd>
-      <mtd>
-        <msqrt>
-          <msup>
-            <mi>x</mi>
-            <mn>2</mn>
-          </msup>
-          <mo>+</mo>
-          <msup>
-            <mi>y</mi>
-            <mn>2</mn>
-          </msup>
-          <mo>,</mo>
-        </msqrt>
-      </mtd>
-    </mtr>
-    <mtr>
-      <mtd>
-        <mi>A</mi>
-      </mtd>
-      <mtd>
-        <mo>=</mo>
-      </mtd>
-      <mtd>
-        <mi>arctan</mi>
-        <mo>⁡<!-- ⁡ --></mo>
-        <mo stretchy="false">(</mo>
-        <mi>y</mi>
-        <mo>,</mo>
-        <mi>x</mi>
-        <mo stretchy="false">)</mo>
-        <mo>,</mo>
-      </mtd>
-    </mtr>
-  </mtable>
-</math>
+<img src="fig/math/00f082affa2ccb9cbf780bec93c09821.svg" class="math-display" style="height: 5.993em;" alt="\[ % :48:&amp;#10;\begin{eqnarray}   x &amp;amp;=&amp;amp; r \cos A, \\   y &amp;amp;=&amp;amp; r \sin A, \\   r &amp;amp;=&amp;amp; \sqrt{x^2 + y^2,} \\   A &amp;amp;=&amp;amp; \arctan(y, x), \end{eqnarray} \]" />
 
-<p>which relate the real and imaginary parts <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mo stretchy="false">(</mo>
-    <mi>x</mi>
-    <mo>,</mo>
-    <mi>y</mi>
-    <mo stretchy="false">)</mo>
-  </mrow>
-</math> to the magnitude and
-the angle <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mo stretchy="false">(</mo>
-    <mi>r</mi>
-    <mo>,</mo>
-    <mi>A</mi>
-    <mo stretchy="false">)</mo>
-  </mrow>
-</math>.<a class="footnote_link" id="DOCF110" href="#FOOT110"><sup>110</sup></a>  Ben’s
+<p>which relate the real and imaginary parts <img src="fig/math/edd210bae579171a37f4e1f4fb1fef9e.svg" class="math-inline" style="height: 0.933em; vertical-align: -0.225em;" alt="\( {(x, y)} \)" /> to the magnitude and
+the angle <img src="fig/math/96d2a0c9549c061360f8c2994fcdcdb8.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.189em;" alt="\( {(r, A)} \)" />.<a class="footnote_link" id="DOCF110" href="#FOOT110"><sup>110</sup></a>  Ben’s
 representation is therefore given by the following selectors and constructors:
 </p>
 <div class="lisp">
@@ -761,7 +477,7 @@ interface.
 </p>
 <figure class="float">
 <a id="Figure-2_002e21"></a>
-<object style="width: 65.01ex; height: 33.59ex;" data="fig/chap2/Fig2.21a.std.svg" type="image/svg+xml">SVG</object>
+<img style="width: 65.01ex; max-width: 100%; display: inline;" src="fig/chap2/Fig2.21a.std.svg" />
 
 <figcaption class="float-caption">
 <p><strong>Figure 2.21:</strong> Structure of the generic complex-arithmetic system.</p>
@@ -835,7 +551,7 @@ same information could have been organized in a table, as shown in <a href="#Fig
 </p>
 <figure class="float">
 <a id="Figure-2_002e22"></a>
-<object style="width: 63.29ex; height: 20.98ex;" data="fig/chap2/Fig2.22.std.svg" type="image/svg+xml">SVG</object>
+<img style="width: 63.29ex; max-width: 100%; display: inline;" src="fig/chap2/Fig2.22.std.svg" />
 
 <figcaption class="float-caption">
 <p><strong>Figure 2.22:</strong> Table of operations for the complex-number system.</p>
@@ -1203,19 +919,7 @@ substantial systems to be developed later in this chapter.</p>
 <div id="FOOT110"><p><a class="footnote_backlink" href="#DOCF110"><sup>110</sup></a>
 The arctangent function referred to here,
 computed by Scheme’s <code>atan</code> procedure, is defined so as to take two
-arguments <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>y</mi>
-</math> and <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>x</mi>
-</math> and to return the angle whose tangent is <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>y</mi>
-    <mrow class="MJX-TeXAtom-ORD">
-      <mo>/</mo>
-    </mrow>
-    <mi>x</mi>
-  </mrow>
-</math>.
+arguments <img src="fig/math/05e4cdb2f26a4f66b68c167423907fea.svg" class="math-inline" style="height: 0.669em; vertical-align: -0.235em;" alt="\( y \)" /> and <img src="fig/math/2f4b15565d0a1018e90c3e1b30b76acc.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( x \)" /> and to return the angle whose tangent is <img src="fig/math/da452c1d7d02bfb45f61a717cc8b22cf.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.229em;" alt="\( {y / x} \)" />.
 The signs of the arguments determine the quadrant of the angle.</p>
 </div>
 <div id="FOOT111"><p><a class="footnote_backlink" href="#DOCF111"><sup>111</sup></a>

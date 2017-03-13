@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" xml:lang="en" lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" xml:lang="en" xmlns:xml="http://www.w3.org/XML/1998/namespace" lang="en">
 <!-- Created by GNU Texinfo 5.1, http://www.gnu.org/software/texinfo/ -->
 <head>
 <title>Structure and Interpretation of Computer Programs, 2e: 2.3</title>
@@ -201,31 +201,8 @@ abstraction, consider the design of a procedure that performs symbolic
 differentiation of algebraic expressions.  We would like the procedure to take
 as arguments an algebraic expression and a variable and to return the
 derivative of the expression with respect to the variable.  For example, if the
-arguments to the procedure are <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>a</mi>
-    <msup>
-      <mi>x</mi>
-      <mn>2</mn>
-    </msup>
-    <mo>+</mo>
-    <mi>b</mi>
-    <mi>x</mi>
-    <mo>+</mo>
-    <mi>c</mi>
-  </mrow>
-</math> and <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>x</mi>
-</math>, the
-procedure should return <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mn>2</mn>
-    <mi>a</mi>
-    <mi>x</mi>
-    <mo>+</mo>
-    <mi>b</mi>
-  </mrow>
-</math>.  Symbolic differentiation is of
+arguments to the procedure are <img src="fig/math/c92b0f43d454179c501adff46594964c.svg" class="math-inline" style="height: 0.854em; vertical-align: -0.010em;" alt="\( {ax^2 + bx + c} \)" /> and <img src="fig/math/2f4b15565d0a1018e90c3e1b30b76acc.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( x \)" />, the
+procedure should return <img src="fig/math/c5fb93604bfd05b7bc0fa5854059f821.svg" class="math-inline" style="height: 0.703em; vertical-align: -0.009em;" alt="\( {2ax + b} \)" />.  Symbolic differentiation is of
 special historical significance in Lisp.  It was one of the motivating examples
 behind the development of a computer language for symbol manipulation.
 Furthermore, it marked the beginning of the line of research that led to the
@@ -248,173 +225,8 @@ symbolic-differentiation program that handles expressions that are built up
 using only the operations of addition and multiplication with two arguments.
 Differentiation of any such expression can be carried out by applying the
 following reduction rules:
-<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mrow class="MJX-TeXAtom-ORD">
-      <mfrac>
-        <mrow>
-          <mi>d</mi>
-          <mi>c</mi>
-        </mrow>
-        <mrow>
-          <mi>d</mi>
-          <mi>x</mi>
-        </mrow>
-      </mfrac>
-    </mrow>
-    <mspace width="thinmathspace"/>
-    <mo>=</mo>
-    <mspace width="thinmathspace"/>
-    <mn>0</mn>
-    <mo>,</mo>
-  </mrow>
-  <mspace width="1em"/>
-  <mrow class="MJX-TeXAtom-ORD">
-    <mtext>for </mtext>
-    <mi>c</mi>
-    <mtext> a constant </mtext>
-  </mrow>
-  <mrow class="MJX-TeXAtom-ORD">
-    <mtext>or a variable </mtext>
-  </mrow>
-  <mrow class="MJX-TeXAtom-ORD">
-    <mtext>different from </mtext>
-    <mi>x</mi>
-    <mo>,</mo>
-  </mrow>
-</math>
-<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
-  <mtable columnalign="right center left" rowspacing="3pt" columnspacing="thickmathspace">
-    <mtr>
-      <mtd>
-        <mrow class="MJX-TeXAtom-ORD">
-          <mfrac>
-            <mrow>
-              <mi>d</mi>
-              <mi>x</mi>
-            </mrow>
-            <mrow>
-              <mi>d</mi>
-              <mi>x</mi>
-            </mrow>
-          </mfrac>
-        </mrow>
-      </mtd>
-      <mtd>
-        <mo>=</mo>
-      </mtd>
-      <mtd>
-        <mn>1</mn>
-        <mo>,</mo>
-      </mtd>
-    </mtr>
-    <mtr>
-      <mtd>
-        <mrow class="MJX-TeXAtom-ORD">
-          <mfrac>
-            <mrow>
-              <mi>d</mi>
-              <mo stretchy="false">(</mo>
-              <mi>u</mi>
-              <mo>+</mo>
-              <mi>v</mi>
-              <mo stretchy="false">)</mo>
-            </mrow>
-            <mrow>
-              <mi>d</mi>
-              <mi>x</mi>
-            </mrow>
-          </mfrac>
-        </mrow>
-      </mtd>
-      <mtd>
-        <mo>=</mo>
-      </mtd>
-      <mtd>
-        <mrow class="MJX-TeXAtom-ORD">
-          <mfrac>
-            <mrow>
-              <mi>d</mi>
-              <mi>u</mi>
-            </mrow>
-            <mrow>
-              <mi>d</mi>
-              <mi>x</mi>
-            </mrow>
-          </mfrac>
-        </mrow>
-        <mo>+</mo>
-        <mrow class="MJX-TeXAtom-ORD">
-          <mfrac>
-            <mrow>
-              <mi>d</mi>
-              <mi>v</mi>
-            </mrow>
-            <mrow>
-              <mi>d</mi>
-              <mi>x</mi>
-            </mrow>
-          </mfrac>
-        </mrow>
-        <mo>,</mo>
-      </mtd>
-    </mtr>
-    <mtr>
-      <mtd>
-        <mrow class="MJX-TeXAtom-ORD">
-          <mfrac>
-            <mrow>
-              <mi>d</mi>
-              <mo stretchy="false">(</mo>
-              <mi>u</mi>
-              <mi>v</mi>
-              <mo stretchy="false">)</mo>
-            </mrow>
-            <mrow>
-              <mi>d</mi>
-              <mi>x</mi>
-            </mrow>
-          </mfrac>
-        </mrow>
-      </mtd>
-      <mtd>
-        <mo>=</mo>
-      </mtd>
-      <mtd>
-        <mi>u</mi>
-        <mspace width="0.1em"/>
-        <mrow class="MJX-TeXAtom-ORD">
-          <mfrac>
-            <mrow>
-              <mi>d</mi>
-              <mi>v</mi>
-            </mrow>
-            <mrow>
-              <mi>d</mi>
-              <mi>x</mi>
-            </mrow>
-          </mfrac>
-        </mrow>
-        <mo>+</mo>
-        <mi>v</mi>
-        <mspace width="0.1em"/>
-        <mrow class="MJX-TeXAtom-ORD">
-          <mfrac>
-            <mrow>
-              <mi>d</mi>
-              <mi>u</mi>
-            </mrow>
-            <mrow>
-              <mi>d</mi>
-              <mi>x</mi>
-            </mrow>
-          </mfrac>
-        </mrow>
-        <mo>.</mo>
-      </mtd>
-    </mtr>
-  </mtable>
-</math>
+<img src="fig/math/8bc536601dcfc0f84966a06753b4cfb3.svg" class="math-display" style="height: 2.066em;" alt="\[ % :42:&amp;#10;{{dc \over dx} \,=\, 0,}    \quad {\text{for } c \text{ a constant }} {\text{or a variable }} {\text{different from } x,} \]" />
+<img src="fig/math/70ebce59b33b95d57225311ccbffa70b.svg" class="math-display" style="height: 6.903em;" alt="\[ % :43:&amp;#10;\begin{eqnarray} {dx \over dx}         &amp;amp;=&amp;amp;   1, \\ {d(u + v) \over dx}   &amp;amp;=&amp;amp;   {du \over dx} + {dv \over dx}, \\ {d(uv) \over dx}      &amp;amp;=&amp;amp;   u \kern0.1em {dv \over dx} + v \kern0.1em {du \over dx}. \end{eqnarray} \]" />
 Observe that the latter two rules are recursive in nature.  That is, to obtain
 the derivative of a sum we first find the derivatives of the terms and add
 them.  Each of the terms may in turn be an expression that needs to be
@@ -478,24 +290,10 @@ next.
 
 <p>We can imagine many ways to use list structure to represent algebraic
 expressions.  For example, we could use lists of symbols that mirror the usual
-algebraic notation, representing <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>a</mi>
-    <mi>x</mi>
-    <mo>+</mo>
-    <mi>b</mi>
-  </mrow>
-</math> as the list <code>(a * x + b)</code>.  
+algebraic notation, representing <img src="fig/math/5518447330ac049ee1fec6b9a793f130.svg" class="math-inline" style="height: 0.703em; vertical-align: -0.009em;" alt="\( {ax + b} \)" /> as the list <code>(a * x + b)</code>.  
 However, one especially straightforward choice is to use the same
 parenthesized prefix notation that Lisp uses for combinations; that is, to
-represent <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>a</mi>
-    <mi>x</mi>
-    <mo>+</mo>
-    <mi>b</mi>
-  </mrow>
-</math> as <code>(+ (* a x) b)</code>.  Then our data
+represent <img src="fig/math/5518447330ac049ee1fec6b9a793f130.svg" class="math-inline" style="height: 0.703em; vertical-align: -0.009em;" alt="\( {ax + b} \)" /> as <code>(+ (* a x) b)</code>.  Then our data
 representation for the differentiation problem is as follows:
 </p>
 <ul>
@@ -571,64 +369,9 @@ some examples of its behavior:
 
 <p>The program produces answers that are correct; however, they are unsimplified.
 It is true that
-<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mfrac>
-      <mrow>
-        <mi>d</mi>
-        <mo stretchy="false">(</mo>
-        <mi>x</mi>
-        <mi>y</mi>
-        <mo stretchy="false">)</mo>
-      </mrow>
-      <mrow>
-        <mi>d</mi>
-        <mi>x</mi>
-      </mrow>
-    </mfrac>
-  </mrow>
-  <mspace width="thinmathspace"/>
-  <mo>=</mo>
-  <mspace width="thinmathspace"/>
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>x</mi>
-    <mo>⋅<!-- ⋅ --></mo>
-    <mn>0</mn>
-  </mrow>
-  <mo>+</mo>
-  <mrow class="MJX-TeXAtom-ORD">
-    <mn>1</mn>
-    <mo>⋅<!-- ⋅ --></mo>
-    <mi>y</mi>
-    <mo>,</mo>
-  </mrow>
-</math>
-but we would like the program to know that <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>x</mi>
-    <mo>⋅<!-- ⋅ --></mo>
-    <mn>0</mn>
-    <mo>=</mo>
-    <mn>0</mn>
-  </mrow>
-</math>, <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mn>1</mn>
-    <mo>⋅<!-- ⋅ --></mo>
-    <mi>y</mi>
-    <mo>=</mo>
-    <mi>y</mi>
-  </mrow>
-</math>,
-and <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mn>0</mn>
-    <mo>+</mo>
-    <mi>y</mi>
-    <mo>=</mo>
-    <mi>y</mi>
-  </mrow>
-</math>.  The answer for the second example should have been
+<img src="fig/math/6ec3e4588672d34653b8ec1cf39eb347.svg" class="math-display" style="height: 2.085em;" alt="\[ % :44:&amp;#10;  {d(xy) \over dx} \,=\, {x \cdot 0} + {1 \cdot y,}  \]" />
+but we would like the program to know that <img src="fig/math/cf4b41ef227881db7e6b85e2e44593fb.svg" class="math-inline" style="height: 0.652em; vertical-align: -0.009em;" alt="\( {x \cdot 0 = 0} \)" />, <img src="fig/math/fbcc20f434e816478b84f5739df1538e.svg" class="math-inline" style="height: 0.875em; vertical-align: -0.234em;" alt="\( {1 \cdot y = y} \)" />,
+and <img src="fig/math/1c9a905666f9f258577c955834430a36.svg" class="math-inline" style="height: 0.875em; vertical-align: -0.234em;" alt="\( {0 + y = y} \)" />.  The answer for the second example should have been
 simply <code>y</code>.  As the third example shows, this becomes a serious issue when
 the expressions are complex.
 </p>
@@ -693,56 +436,7 @@ simplest for one purpose may not be for another.
 <p><strong><a id="Exercise-2_002e56"></a>Exercise 2.56:</strong> Show how to extend the basic
 differentiator to handle more kinds of expressions.  For instance, implement
 the differentiation rule
-<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mfrac>
-      <mrow>
-        <mi>d</mi>
-        <mo stretchy="false">(</mo>
-        <msup>
-          <mi>u</mi>
-          <mrow class="MJX-TeXAtom-ORD">
-            <mspace width="0.1ex"/>
-            <mi>n</mi>
-          </mrow>
-        </msup>
-        <mo stretchy="false">)</mo>
-      </mrow>
-      <mrow>
-        <mi>d</mi>
-        <mi>x</mi>
-      </mrow>
-    </mfrac>
-  </mrow>
-  <mspace width="thinmathspace"/>
-  <mo>=</mo>
-  <mspace width="thinmathspace"/>
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>n</mi>
-    <msup>
-      <mi>u</mi>
-      <mrow class="MJX-TeXAtom-ORD">
-        <mspace width="0.1ex"/>
-        <mi>n</mi>
-        <mo>−<!-- − --></mo>
-        <mn>1</mn>
-      </mrow>
-    </msup>
-    <mspace width="thinmathspace"/>
-    <mrow class="MJX-TeXAtom-ORD">
-      <mfrac>
-        <mrow>
-          <mi>d</mi>
-          <mi>u</mi>
-        </mrow>
-        <mrow>
-          <mi>d</mi>
-          <mi>x</mi>
-        </mrow>
-      </mfrac>
-    </mrow>
-  </mrow>
-</math>
+<img src="fig/math/9915fc8d6994b5743a52806a5d99b151.svg" class="math-display" style="height: 2.073em;" alt="\[ % :45:&amp;#10;  {d(u^{\kern0.1ex n}) \over dx} \,=\, {nu^{\kern0.1ex n-1} \, {du \over dx}}  \]" />
 by adding a new clause to the <code>deriv</code> program and defining appropriate
 procedures <code>exponentiation?</code>, <code>base</code>, <code>exponent</code>, and
 <code>make-exponentiation</code>.  (You may use the symbol <code>**</code> to denote
@@ -864,44 +558,14 @@ Since they all use <code>element-of-set?</code>, the speed of this operation has
 major impact on the efficiency of the set implementation as a whole.  Now, in
 order to check whether an object is a member of a set, <code>element-of-set?</code>
 may have to scan the entire set. (In the worst case, the object turns out not
-to be in the set.)  Hence, if the set has <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math> elements,
-<code>element-of-set?</code>  might take up to <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math> steps.  Thus, the number of
-steps required grows as <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi mathvariant="normal">Θ<!-- Θ --></mi>
-    <mo stretchy="false">(</mo>
-    <mi>n</mi>
-    <mo stretchy="false">)</mo>
-  </mrow>
-</math>.  The number of steps required by
-<code>adjoin-set</code>, which uses this operation, also grows as <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi mathvariant="normal">Θ<!-- Θ --></mi>
-    <mo stretchy="false">(</mo>
-    <mi>n</mi>
-    <mo stretchy="false">)</mo>
-  </mrow>
-</math>.
+to be in the set.)  Hence, if the set has <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" /> elements,
+<code>element-of-set?</code>  might take up to <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" /> steps.  Thus, the number of
+steps required grows as <img src="fig/math/67f39a78859198da759c097b570842e8.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.189em;" alt="\( {\Theta(n)} \)" />.  The number of steps required by
+<code>adjoin-set</code>, which uses this operation, also grows as <img src="fig/math/67f39a78859198da759c097b570842e8.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.189em;" alt="\( {\Theta(n)} \)" />.
 For <code>intersection-set</code>, which does an <code>element-of-set?</code> check for
 each element of <code>set1</code>, the number of steps required grows as the product
-of the sizes of the sets involved, or <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi mathvariant="normal">Θ<!-- Θ --></mi>
-    <mo stretchy="false">(</mo>
-    <msup>
-      <mi>n</mi>
-      <mn>2</mn>
-    </msup>
-    <mo stretchy="false">)</mo>
-  </mrow>
-</math> for two sets of size
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math>.  The same will be true of <code>union-set</code>.
+of the sizes of the sets involved, or <img src="fig/math/e6194f553f4f8569bdbf476c2d7fbe3e.svg" class="math-inline" style="height: 1.046em; vertical-align: -0.199em;" alt="\( {\Theta(n^2)} \)" /> for two sets of size
+<img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" />.  The same will be true of <code>union-set</code>.
 </p>
 <blockquote>
 <p><strong><a id="Exercise-2_002e59"></a>Exercise 2.59:</strong> Implement the <code>union-set</code>
@@ -911,17 +575,7 @@ operation for the unordered-list representation of sets.
 <blockquote>
 <p><strong><a id="Exercise-2_002e60"></a>Exercise 2.60:</strong> We specified that a set would be
 represented as a list with no duplicates.  Now suppose we allow duplicates.
-For instance, the set <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mo fence="false" stretchy="false">{</mo>
-    <mn>1</mn>
-    <mo>,</mo>
-    <mn>2</mn>
-    <mo>,</mo>
-    <mn>3</mn>
-    <mo fence="false" stretchy="false">}</mo>
-  </mrow>
-</math> could be represented as the list <code>(2 3 2 1
+For instance, the set <img src="fig/math/3ef8b6afff3820edd7ad6b58a3f9237a.svg" class="math-inline" style="height: 0.843em; vertical-align: -0.159em;" alt="\( {\{1, 2, 3\}} \)" /> could be represented as the list <code>(2 3 2 1
 3 2 2)</code>.  Design procedures <code>element-of-set?</code>, <code>adjoin-set</code>,
 <code>union-set</code>, and <code>intersection-set</code> that operate on this
 representation.  How does the efficiency of each compare with the corresponding
@@ -941,19 +595,7 @@ comparing the corresponding numbers.  To keep our discussion simple, we will
 consider only the case where the set elements are numbers, so that we can
 compare elements using <code>&gt;</code> and <code>&lt;</code>.  We will represent a set of
 numbers by listing its elements in increasing order.  Whereas our first
-representation above allowed us to represent the set <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mo fence="false" stretchy="false">{</mo>
-    <mn>1</mn>
-    <mo>,</mo>
-    <mn>3</mn>
-    <mo>,</mo>
-    <mn>6</mn>
-    <mo>,</mo>
-    <mn>10</mn>
-    <mo fence="false" stretchy="false">}</mo>
-  </mrow>
-</math> by listing
+representation above allowed us to represent the set <img src="fig/math/94aa30bf406188448e7d391b3753d63d.svg" class="math-inline" style="height: 0.843em; vertical-align: -0.159em;" alt="\( {\{1, 3, 6, 10\}} \)" /> by listing
 the elements in any order, our new representation allows only the list <code>(1
 3 6 10)</code>.
 </p>
@@ -976,37 +618,12 @@ many different sizes we can expect that sometimes we will be able to stop
 searching at a point near the beginning of the list and that other times we
 will still need to examine most of the list.  On the average we should expect
 to have to examine about half of the items in the set.  Thus, the average
-number of steps required will be about <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>n</mi>
-    <mrow class="MJX-TeXAtom-ORD">
-      <mo>/</mo>
-    </mrow>
-    <mn>2</mn>
-  </mrow>
-</math>.  This is still
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi mathvariant="normal">Θ<!-- Θ --></mi>
-    <mo stretchy="false">(</mo>
-    <mi>n</mi>
-    <mo stretchy="false">)</mo>
-  </mrow>
-</math> growth, but it does save us, on the average, a factor of 2
+number of steps required will be about <img src="fig/math/e4338712edf2735ea980407e9103c2a8.svg" class="math-inline" style="height: 0.827em; vertical-align: -0.153em;" alt="\( {n / 2} \)" />.  This is still
+<img src="fig/math/67f39a78859198da759c097b570842e8.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.189em;" alt="\( {\Theta(n)} \)" /> growth, but it does save us, on the average, a factor of 2
 in number of steps over the previous implementation.
 </p>
 <p>We obtain a more impressive speedup with <code>intersection-set</code>.  In the
-unordered representation this operation required <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi mathvariant="normal">Θ<!-- Θ --></mi>
-    <mo stretchy="false">(</mo>
-    <msup>
-      <mi>n</mi>
-      <mn>2</mn>
-    </msup>
-    <mo stretchy="false">)</mo>
-  </mrow>
-</math> steps,
+unordered representation this operation required <img src="fig/math/e6194f553f4f8569bdbf476c2d7fbe3e.svg" class="math-inline" style="height: 1.046em; vertical-align: -0.199em;" alt="\( {\Theta(n^2)} \)" /> steps,
 because we performed a complete scan of <code>set2</code> for each element of
 <code>set1</code>.  But with the ordered representation, we can use a more clever
 method.  Begin by comparing the initial elements, <code>x1</code> and <code>x2</code>, of
@@ -1042,25 +659,8 @@ step we reduce the intersection problem to computing intersections of smaller
 sets—removing the first element from <code>set1</code> or <code>set2</code> or both.
 Thus, the number of steps required is at most the sum of the sizes of
 <code>set1</code> and <code>set2</code>, rather than the product of the sizes as with the
-unordered representation.  This is <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi mathvariant="normal">Θ<!-- Θ --></mi>
-    <mo stretchy="false">(</mo>
-    <mi>n</mi>
-    <mo stretchy="false">)</mo>
-  </mrow>
-</math> growth rather than
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi mathvariant="normal">Θ<!-- Θ --></mi>
-    <mo stretchy="false">(</mo>
-    <msup>
-      <mi>n</mi>
-      <mn>2</mn>
-    </msup>
-    <mo stretchy="false">)</mo>
-  </mrow>
-</math>—a considerable speedup, even for sets of moderate size.
+unordered representation.  This is <img src="fig/math/67f39a78859198da759c097b570842e8.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.189em;" alt="\( {\Theta(n)} \)" /> growth rather than
+<img src="fig/math/e6194f553f4f8569bdbf476c2d7fbe3e.svg" class="math-inline" style="height: 1.046em; vertical-align: -0.199em;" alt="\( {\Theta(n^2)} \)" />—a considerable speedup, even for sets of moderate size.
 </p>
 <blockquote>
 <p><strong><a id="Exercise-2_002e61"></a>Exercise 2.61:</strong> Give an implementation of
@@ -1071,14 +671,7 @@ unordered representation.
 </p></blockquote>
 
 <blockquote>
-<p><strong><a id="Exercise-2_002e62"></a>Exercise 2.62:</strong> Give a <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi mathvariant="normal">Θ<!-- Θ --></mi>
-    <mo stretchy="false">(</mo>
-    <mi>n</mi>
-    <mo stretchy="false">)</mo>
-  </mrow>
-</math>
+<p><strong><a id="Exercise-2_002e62"></a>Exercise 2.62:</strong> Give a <img src="fig/math/67f39a78859198da759c097b570842e8.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.189em;" alt="\( {\Theta(n)} \)" />
 implementation of <code>union-set</code> for sets represented as ordered lists.
 </p></blockquote>
 
@@ -1091,91 +684,30 @@ set, called the “entry” at that node, and a link to each of two other
 (possibly empty) nodes.  The “left” link points to elements smaller than the
 one at the node, and the “right” link to elements greater than the one at the
 node.  <a href="#Figure-2_002e16">Figure 2.16</a> shows some trees that represent the set
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mo fence="false" stretchy="false">{</mo>
-    <mn>1</mn>
-    <mo>,</mo>
-    <mn>3</mn>
-    <mo>,</mo>
-    <mn>5</mn>
-    <mo>,</mo>
-    <mn>7</mn>
-    <mo>,</mo>
-    <mn>9</mn>
-    <mo>,</mo>
-    <mn>11</mn>
-    <mo fence="false" stretchy="false">}</mo>
-  </mrow>
-</math>.  The same set may be represented by a tree in a number of
+<img src="fig/math/83c7ae34516d0c9ddd53fa227c76eed2.svg" class="math-inline" style="height: 0.843em; vertical-align: -0.159em;" alt="\( {\{1, 3, 5, 7, 9, 11\}} \)" />.  The same set may be represented by a tree in a number of
 different ways.  The only thing we require for a valid representation is that
 all elements in the left subtree be smaller than the node entry and that all
 elements in the right subtree be larger.
 </p>
 <figure class="float">
 <a id="Figure-2_002e16"></a>
-<object style="width: 45.93ex; height: 21.50ex;" data="fig/chap2/Fig2.16c.std.svg" type="image/svg+xml">SVG</object>
+<img style="width: 45.93ex; max-width: 100%; display: inline;" src="fig/chap2/Fig2.16c.std.svg" />
 
 <figcaption class="float-caption">
-<p><strong>Figure 2.16:</strong> Various binary trees that represent the set <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mo fence="false" stretchy="false">{</mo>
-    <mn>1</mn>
-    <mo>,</mo>
-    <mn>3</mn>
-    <mo>,</mo>
-    <mn>5</mn>
-    <mo>,</mo>
-    <mn>7</mn>
-    <mo>,</mo>
-    <mn>9</mn>
-    <mo>,</mo>
-    <mn>11</mn>
-    <mo fence="false" stretchy="false">}</mo>
-  </mrow>
-</math>.</p>
+<p><strong>Figure 2.16:</strong> Various binary trees that represent the set <img src="fig/math/83c7ae34516d0c9ddd53fa227c76eed2.svg" class="math-inline" style="height: 0.843em; vertical-align: -0.159em;" alt="\( {\{1, 3, 5, 7, 9, 11\}} \)" />.</p>
 </figcaption>
 </figure>
 
 <p>The advantage of the tree representation is this: Suppose we want to check
-whether a number <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>x</mi>
-</math> is contained in a set.  We begin by comparing <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>x</mi>
-</math> with
-the entry in the top node.  If <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>x</mi>
-</math> is less than this, we know that we need
-only search the left subtree; if <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>x</mi>
-</math> is greater, we need only search the
+whether a number <img src="fig/math/2f4b15565d0a1018e90c3e1b30b76acc.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( x \)" /> is contained in a set.  We begin by comparing <img src="fig/math/2f4b15565d0a1018e90c3e1b30b76acc.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( x \)" /> with
+the entry in the top node.  If <img src="fig/math/2f4b15565d0a1018e90c3e1b30b76acc.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( x \)" /> is less than this, we know that we need
+only search the left subtree; if <img src="fig/math/2f4b15565d0a1018e90c3e1b30b76acc.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( x \)" /> is greater, we need only search the
 right subtree.  Now, if the tree is “balanced,” each of these subtrees will
 be about half the size of the original.  Thus, in one step we have reduced the
-problem of searching a tree of size <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math> to searching a tree of size <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>n</mi>
-    <mrow class="MJX-TeXAtom-ORD">
-      <mo>/</mo>
-    </mrow>
-    <mn>2</mn>
-  </mrow>
-</math>.
+problem of searching a tree of size <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" /> to searching a tree of size <img src="fig/math/e4338712edf2735ea980407e9103c2a8.svg" class="math-inline" style="height: 0.827em; vertical-align: -0.153em;" alt="\( {n / 2} \)" />.
 Since the size of the tree is halved at each step, we should expect that the
-number of steps needed to search a tree of size <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math> grows as
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi mathvariant="normal">Θ<!-- Θ --></mi>
-    <mo stretchy="false">(</mo>
-    <mi>log</mi>
-    <mo>⁡<!-- ⁡ --></mo>
-    <mi>n</mi>
-    <mo stretchy="false">)</mo>
-  </mrow>
-</math>.<a class="footnote_link" id="DOCF104" href="#FOOT104"><sup>104</sup></a> For large sets, this will be a
+number of steps needed to search a tree of size <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" /> grows as
+<img src="fig/math/48be6efaded27da68b3a4aa70713c562.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.189em;" alt="\( {\Theta(\log n)} \)" />.<a class="footnote_link" id="DOCF104" href="#FOOT104"><sup>104</sup></a> For large sets, this will be a
 significant speedup over the previous representations.
 </p>
 <p>We can represent trees by using lists.  Each node will be a list of three
@@ -1208,16 +740,7 @@ described above:
           </span><span class="opn">(</span><span class="pln">right-branch </span><span class="kwd">set</span><span class="clo">)))))</span></pre></div>
 
 <p>Adjoining an item to a set is implemented similarly and also requires
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi mathvariant="normal">Θ<!-- Θ --></mi>
-    <mo stretchy="false">(</mo>
-    <mi>log</mi>
-    <mo>⁡<!-- ⁡ --></mo>
-    <mi>n</mi>
-    <mo stretchy="false">)</mo>
-  </mrow>
-</math> steps.  To adjoin an item <code>x</code>, we compare
+<img src="fig/math/48be6efaded27da68b3a4aa70713c562.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.189em;" alt="\( {\Theta(\log n)} \)" /> steps.  To adjoin an item <code>x</code>, we compare
 <code>x</code> with the node entry to determine whether <code>x</code> should be added to
 the right or to the left branch, and having adjoined <code>x</code> to the
 appropriate branch we piece this newly constructed branch together with the
@@ -1259,21 +782,12 @@ that transforms an arbitrary tree into a balanced tree with the same elements.
 Then we can perform this transformation after every few <code>adjoin-set</code>
 operations to keep our set in balance.  There are also other ways to solve this
 problem, most of which involve designing new data structures for which
-searching and insertion both can be done in <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi mathvariant="normal">Θ<!-- Θ --></mi>
-    <mo stretchy="false">(</mo>
-    <mi>log</mi>
-    <mo>⁡<!-- ⁡ --></mo>
-    <mi>n</mi>
-    <mo stretchy="false">)</mo>
-  </mrow>
-</math>
+searching and insertion both can be done in <img src="fig/math/48be6efaded27da68b3a4aa70713c562.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.189em;" alt="\( {\Theta(\log n)} \)" />
 steps.<a class="footnote_link" id="DOCF106" href="#FOOT106"><sup>106</sup></a>
 </p>
 <figure class="float">
 <a id="Figure-2_002e17"></a>
-<object style="width: 26.68ex; height: 26.51ex;" data="fig/chap2/Fig2.17a.std.svg" type="image/svg+xml">SVG</object>
+<img style="width: 26.68ex; max-width: 100%; display: inline;" src="fig/chap2/Fig2.17a.std.svg" />
 
 <figcaption class="float-caption">
 <p><strong>Figure 2.17:</strong> Unbalanced tree produced by adjoining 1 through 7 in sequence.</p>
@@ -1313,9 +827,7 @@ the results differ?  What lists do the two procedures produce for the trees in
 <a href="#Figure-2_002e16">Figure 2.16</a>?
 
 </li><li> Do the two procedures have the same order of growth in the number of steps
-required to convert a balanced tree with <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math> elements to a list?  If not,
+required to convert a balanced tree with <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" /> elements to a list?  If not,
 which one grows more slowly?
 
 </li></ol>
@@ -1324,15 +836,9 @@ which one grows more slowly?
 <blockquote>
 <p><strong><a id="Exercise-2_002e64"></a>Exercise 2.64:</strong> The following procedure
 <code>list-&gt;tree</code> converts an ordered list to a balanced binary tree.  The
-helper procedure <code>partial-tree</code> takes as arguments an integer <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math> and
-list of at least <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math> elements and constructs a balanced tree containing the
-first <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math> elements of the list.  The result returned by <code>partial-tree</code>
+helper procedure <code>partial-tree</code> takes as arguments an integer <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" /> and
+list of at least <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" /> elements and constructs a balanced tree containing the
+first <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" /> elements of the list.  The result returned by <code>partial-tree</code>
 is a pair (formed with <code>cons</code>) whose <code>car</code> is the constructed tree
 and whose <code>cdr</code> is the list of elements not included in the tree.
 </p>
@@ -1376,23 +882,14 @@ and whose <code>cdr</code> is the list of elements not included in the tree.
 the list <code>(1 3 5 7 9 11)</code>.
 
 </li><li> What is the order of growth in the number of steps required by
-<code>list-&gt;tree</code> to convert a list of <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math> elements?
+<code>list-&gt;tree</code> to convert a list of <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" /> elements?
 
 </li></ol>
 </blockquote>
 
 <blockquote>
 <p><strong><a id="Exercise-2_002e65"></a>Exercise 2.65:</strong> Use the results of <a href="#Exercise-2_002e63">Exercise 2.63</a> 
-and <a href="#Exercise-2_002e64">Exercise 2.64</a> to give <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi mathvariant="normal">Θ<!-- Θ --></mi>
-    <mo stretchy="false">(</mo>
-    <mi>n</mi>
-    <mo stretchy="false">)</mo>
-  </mrow>
-</math> implementations of
+and <a href="#Exercise-2_002e64">Exercise 2.64</a> to give <img src="fig/math/67f39a78859198da759c097b570842e8.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.189em;" alt="\( {\Theta(n)} \)" /> implementations of
 <code>union-set</code> and <code>intersection-set</code> for sets implemented as (balanced)
 binary trees.<a class="footnote_link" id="DOCF107" href="#FOOT107"><sup>107</sup></a>
 </p></blockquote>
@@ -1463,25 +960,9 @@ ordered by the numerical values of the keys.
 abstraction to manipulate sets and trees.  The application is to methods for
 representing data as sequences of ones and zeros (bits).  For example, the
 ASCII standard code used to represent text in computers encodes each character
-as a sequence of seven bits.  Using seven bits allows us to distinguish <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <msup>
-    <mn>2</mn>
-    <mn>7</mn>
-  </msup>
-</math>,
+as a sequence of seven bits.  Using seven bits allows us to distinguish <img src="fig/math/db8447b90c11a51aedc2be19aa5b06b9.svg" class="math-inline" style="height: 0.845em;" alt="\( 2^7 \)" />,
 or 128, possible different characters.  In general, if we want to distinguish
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math> different symbols, we will need to use <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <msub>
-      <mi>log</mi>
-      <mn>2</mn>
-    </msub>
-    <mo>⁡<!-- ⁡ --></mo>
-    <mi>n</mi>
-  </mrow>
-</math> bits per
+<img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" /> different symbols, we will need to use <img src="fig/math/717015e68836a9df347aec3a5a84ab66.svg" class="math-inline" style="height: 0.923em; vertical-align: -0.229em;" alt="\( {\log_2n} \)" /> bits per
 symbol.  If all our messages are made up of the eight symbols A, B, C, D, E, F,
 G, and H, we can choose a code with three bits per character, for example
 </p>
@@ -1564,7 +1045,7 @@ other letters each with relative frequency 1.
 </p>
 <figure class="float">
 <a id="Figure-2_002e18"></a>
-<object style="width: 53.01ex; height: 35.23ex;" data="fig/chap2/Fig2.18a.std.svg" type="image/svg+xml">SVG</object>
+<img style="width: 53.01ex; max-width: 100%; display: inline;" src="fig/chap2/Fig2.18a.std.svg" />
 
 <figcaption class="float-caption">
 <p><strong>Figure 2.18:</strong> A Huffman encoding tree.</p>
@@ -1887,44 +1368,9 @@ for the eight-symbol alphabet?
 
 <blockquote>
 <p><strong><a id="Exercise-2_002e71"></a>Exercise 2.71:</strong> Suppose we have a Huffman tree
-for an alphabet of <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math> symbols, and that the relative frequencies of the
-symbols are <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mn>1</mn>
-    <mo>,</mo>
-    <mn>2</mn>
-    <mo>,</mo>
-    <mn>4</mn>
-    <mo>,</mo>
-    <mo>…<!-- … --></mo>
-    <mo>,</mo>
-    <msup>
-      <mn>2</mn>
-      <mrow class="MJX-TeXAtom-ORD">
-        <mi>n</mi>
-        <mo>−<!-- − --></mo>
-        <mn>1</mn>
-      </mrow>
-    </msup>
-  </mrow>
-</math>.  Sketch the tree for <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>n</mi>
-    <mo>=</mo>
-    <mn>5</mn>
-  </mrow>
-</math>; for
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow class="MJX-TeXAtom-ORD">
-    <mi>n</mi>
-    <mo>=</mo>
-    <mn>10</mn>
-  </mrow>
-</math>.  In such a tree (for general <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math>) how many bits are required to
+for an alphabet of <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" /> symbols, and that the relative frequencies of the
+symbols are <img src="fig/math/b82811b937ba3a2a88d74b6f88bc338d.svg" class="math-inline" style="height: 0.984em; vertical-align: -0.139em;" alt="\( {1, 2, 4, \dots, 2^{n-1}} \)" />.  Sketch the tree for <img src="fig/math/33c62cfdc303b50ae778c08ba79ad67c.svg" class="math-inline" style="height: 0.652em; vertical-align: -0.009em;" alt="\( {n=5} \)" />; for
+<img src="fig/math/fe791be589989bc4c7b2c5e45a264732.svg" class="math-inline" style="height: 0.652em; vertical-align: -0.009em;" alt="\( {n=10} \)" />.  In such a tree (for general <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" />) how many bits are required to
 encode the most frequent symbol?  The least frequent symbol?
 </p></blockquote>
 
@@ -1934,12 +1380,8 @@ that you designed in <a href="#Exercise-2_002e68">Exercise 2.68</a>.  What is th
 number of steps needed to encode a symbol?  Be sure to include the number of
 steps needed to search the symbol list at each node encountered.  To answer
 this question in general is difficult.  Consider the special case where the
-relative frequencies of the <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math> symbols are as described in <a href="#Exercise-2_002e71">Exercise 2.71</a>, 
-and give the order of growth (as a function of <math xmlns="http://www.w3.org/1998/Math/MathML">
-  <mi>n</mi>
-</math>) of the number of
+relative frequencies of the <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" /> symbols are as described in <a href="#Exercise-2_002e71">Exercise 2.71</a>, 
+and give the order of growth (as a function of <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" />) of the number of
 steps needed to encode the most frequent and least frequent symbols in the
 alphabet.
 </p></blockquote>
