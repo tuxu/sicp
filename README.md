@@ -13,6 +13,11 @@ To build from source, you need Python 3.5 or later, LaTeX (including `newtx` pac
 
 For Kindle readers, you may pass the generated EPUB3 through [KindleGen](https://www.amazon.com/gp/feature.html?docId=1000765211) to create a Mobi file.
 
+<b>EPUB3/SVG version: [sicp.epub](https://github.com/tuxu/sicp-epub-svgmath/blob/master/sicp.epub?raw=true)</b>
+
+<b>Kindle Mobi/SVG version: [sicp.mobi](https://github.com/tuxu/sicp-epub-svgmath/blob/master/sicp.mobi?raw=true)</b>
+
+
 ---
 
 This is a new HTML5 and EPUB3 version of "Structure and Interpretation of Computer Programs" by Abelson, Sussman, and Sussman. It comes from the lineage of [Unofficial Texinfo Format](http://www.neilvandyke.org/sicp-texi) that was converted from the original [HTML version](https://mitpress.mit.edu/sicp) at The MIT Press.
