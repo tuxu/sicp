@@ -1633,7 +1633,7 @@ sub _convert_footnote_command($$$$)
   }
 
   $footnote_text =~ s/<p>//;                    # (A.R) -->
-  $foot_lines .= "<div id=\"$footid\"><p>" .
+  $foot_lines .= "<div><p id=\"$footid\" epub:type=\"footnote\">" .
    "<a class=\"footnote_backlink\" href=\"$document_filename#$docid\"><sup>$number_in_doc</sup></a>\n"
    . $footnote_text . "</div>\n";               # --> (A.R)
 
@@ -1641,9 +1641,9 @@ sub _convert_footnote_command($$$$)
   if ($self->in_preformatted()) {
     $footnote_number_text = "($number_in_doc)";
   } else {
-    $footnote_number_text = "<sup>$number_in_doc</sup>";
+    $footnote_number_text = "$number_in_doc";
   }
-  return "<a class=\"footnote_link\" id=\"$docid\" href=\"$footnote_filename#$footid\">$footnote_number_text</a>";    # (A.R)
+  return "<sup><a class=\"footnote_link\" id=\"$docid\" href=\"$footnote_filename#$footid\" epub:type=\"noteref\">$footnote_number_text</a></sup>";    # (A.R)
 }
 $default_commands_conversion{'footnote'} = \&_convert_footnote_command;
 
