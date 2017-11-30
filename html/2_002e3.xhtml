@@ -79,7 +79,7 @@ instance, the first letter of “John” is clearly “J.”  If we tell somebod
 “say your name aloud,” we expect to hear that person’s name.  However, if we
 tell somebody “say ‘your name’ aloud,” we expect to hear the words “your
 name.”  Note that we are forced to nest quotation marks to describe what
-somebody else might say.<a class="footnote_link" id="DOCF98" href="#FOOT98"><sup>98</sup></a>
+somebody else might say.<sup><a class="footnote_link" id="DOCF98" href="#FOOT98" epub:type="noteref">98</a></sup>
 </p>
 <p>We can follow this same practice to identify lists and symbols that are to be
 treated as data objects rather than as expressions to be evaluated.  However,
@@ -87,7 +87,7 @@ our format for quoting differs from that of natural languages in that we place
 a quotation mark (traditionally, the single quote symbol <code>'</code>)<!-- /@w --> only at the
 beginning of the object to be quoted.  We can get away with this in Scheme
 syntax because we rely on blanks and parentheses to delimit objects.  Thus, the
-meaning of the single quote character is to quote the next object.<a class="footnote_link" id="DOCF99" href="#FOOT99"><sup>99</sup></a>
+meaning of the single quote character is to quote the next object.<sup><a class="footnote_link" id="DOCF99" href="#FOOT99" epub:type="noteref">99</a></sup>
 </p>
 <p>Now we can distinguish between symbols and their values:
 </p>
@@ -106,7 +106,7 @@ meaning of the single quote character is to quote the next object.<a class="foot
 </pre></div>
 
 <p>Quotation also allows us to type in compound objects, using the conventional
-printed representation for lists:<a class="footnote_link" id="DOCF100" href="#FOOT100"><sup>100</sup></a>
+printed representation for lists:<sup><a class="footnote_link" id="DOCF100" href="#FOOT100" epub:type="noteref">100</a></sup>
 </p>
 <div class="lisp">
 <pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">car</span><span class="pln"> </span><span class="lit">'</span><span class="opn">(</span><span class="pln">a b c</span><span class="clo">))</span><span class="pln">
@@ -120,7 +120,7 @@ printed representation for lists:<a class="footnote_link" id="DOCF100" href="#FO
 and thus dispense with the variable <code>nil</code>.
 </p>
 <p>One additional primitive used in manipulating symbols is <code>eq?</code>, which
-takes two symbols as arguments and tests whether they are the same.<a class="footnote_link" id="DOCF101" href="#FOOT101"><sup>101</sup></a>
+takes two symbols as arguments and tests whether they are the same.<sup><a class="footnote_link" id="DOCF101" href="#FOOT101" epub:type="noteref">101</a></sup>
 Using <code>eq?</code>, we can implement a useful procedure called <code>memq</code>.  This
 takes two arguments, a symbol and a list.  If the symbol is not contained in
 the list (i.e., is not <code>eq?</code> to any item in the list), then <code>memq</code>
@@ -179,7 +179,7 @@ terms of the basic <code>eq?</code> equality of symbols by saying that <code>a</
 <code>b</code> are <code>equal?</code> if they are both symbols and the symbols are
 <code>eq?</code>, or if they are both lists such that <code>(car a)</code> is <code>equal?</code>
 to <code>(car b)</code> and <code>(cdr a)</code> is <code>equal?</code> to <code>(cdr b)</code>.  Using
-this idea, implement <code>equal?</code> as a procedure.<a class="footnote_link" id="DOCF102" href="#FOOT102"><sup>102</sup></a>
+this idea, implement <code>equal?</code> as a procedure.<sup><a class="footnote_link" id="DOCF102" href="#FOOT102" epub:type="noteref">102</a></sup>
 </p></blockquote>
 
 <blockquote>
@@ -508,7 +508,7 @@ either argument.  <code>Intersection-set</code> computes the intersection of two
 sets, which is the set containing only elements that appear in both arguments.
 From the viewpoint of data abstraction, we are free to design any
 representation that implements these operations in a way consistent with the
-interpretations given above.<a class="footnote_link" id="DOCF103" href="#FOOT103"><sup>103</sup></a>
+interpretations given above.<sup><a class="footnote_link" id="DOCF103" href="#FOOT103" epub:type="noteref">103</a></sup>
 </p>
 <a id="Sets-as-unordered-lists"></a>
 <h5 class="subsubheading">Sets as unordered lists</h5>
@@ -707,14 +707,14 @@ be about half the size of the original.  Thus, in one step we have reduced the
 problem of searching a tree of size <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" /> to searching a tree of size <img src="fig/math/e4338712edf2735ea980407e9103c2a8.svg" class="math-inline" style="height: 0.827em; vertical-align: -0.153em;" alt="\( {n / 2} \)" />.
 Since the size of the tree is halved at each step, we should expect that the
 number of steps needed to search a tree of size <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" /> grows as
-<img src="fig/math/48be6efaded27da68b3a4aa70713c562.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.189em;" alt="\( {\Theta(\log n)} \)" />.<a class="footnote_link" id="DOCF104" href="#FOOT104"><sup>104</sup></a> For large sets, this will be a
+<img src="fig/math/48be6efaded27da68b3a4aa70713c562.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.189em;" alt="\( {\Theta(\log n)} \)" />.<sup><a class="footnote_link" id="DOCF104" href="#FOOT104" epub:type="noteref">104</a></sup> For large sets, this will be a
 significant speedup over the previous representations.
 </p>
 <p>We can represent trees by using lists.  Each node will be a list of three
 items: the entry at the node, the left subtree, and the right subtree.  A left
 or a right subtree of the empty list will indicate that there is no subtree
 connected there.  We can describe this representation by the following
-procedures:<a class="footnote_link" id="DOCF105" href="#FOOT105"><sup>105</sup></a>
+procedures:<sup><a class="footnote_link" id="DOCF105" href="#FOOT105" epub:type="noteref">105</a></sup>
 </p>
 <div class="lisp">
 <pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">define</span><span class="pln"> </span><span class="opn">(</span><span class="pln">entry tree</span><span class="clo">)</span><span class="pln"> </span><span class="opn">(</span><span class="kwd">car</span><span class="pln"> tree</span><span class="clo">))</span><span class="pln">
@@ -783,7 +783,7 @@ Then we can perform this transformation after every few <code>adjoin-set</code>
 operations to keep our set in balance.  There are also other ways to solve this
 problem, most of which involve designing new data structures for which
 searching and insertion both can be done in <img src="fig/math/48be6efaded27da68b3a4aa70713c562.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.189em;" alt="\( {\Theta(\log n)} \)" />
-steps.<a class="footnote_link" id="DOCF106" href="#FOOT106"><sup>106</sup></a>
+steps.<sup><a class="footnote_link" id="DOCF106" href="#FOOT106" epub:type="noteref">106</a></sup>
 </p>
 <figure class="float">
 <a id="Figure-2_002e17"></a>
@@ -891,7 +891,7 @@ the list <code>(1 3 5 7 9 11)</code>.
 <p><strong><a id="Exercise-2_002e65"></a>Exercise 2.65:</strong> Use the results of <a href="#Exercise-2_002e63">Exercise 2.63</a> 
 and <a href="#Exercise-2_002e64">Exercise 2.64</a> to give <img src="fig/math/67f39a78859198da759c097b570842e8.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.189em;" alt="\( {\Theta(n)} \)" /> implementations of
 <code>union-set</code> and <code>intersection-set</code> for sets implemented as (balanced)
-binary trees.<a class="footnote_link" id="DOCF107" href="#FOOT107"><sup>107</sup></a>
+binary trees.<sup><a class="footnote_link" id="DOCF107" href="#FOOT107" epub:type="noteref">107</a></sup>
 </p></blockquote>
 
 <a id="Sets-and-information-retrieval"></a>
@@ -1085,7 +1085,7 @@ with the fewest bits?)  Huffman gave an algorithm for doing this and showed
 that the resulting code is indeed the best variable-length code for messages
 where the relative frequency of the symbols matches the frequencies with which
 the code was constructed.  We will not prove this optimality of Huffman codes
-here, but we will show how Huffman trees are constructed.<a class="footnote_link" id="DOCF108" href="#FOOT108"><sup>108</sup></a>
+here, but we will show how Huffman trees are constructed.<sup><a class="footnote_link" id="DOCF108" href="#FOOT108" epub:type="noteref">108</a></sup>
 </p>
 <p>The algorithm for generating a Huffman tree is very simple. The idea is to
 arrange the tree so that the symbols with the lowest frequency appear farthest
@@ -1389,7 +1389,7 @@ alphabet.
 <div class="footnote">
 <h4 class="footnotes-heading">Footnotes</h4>
 
-<div id="FOOT98"><p><a class="footnote_backlink" href="#DOCF98"><sup>98</sup></a>
+<div><p id="FOOT98" epub:type="footnote"><a class="footnote_backlink" href="#DOCF98"><sup>98</sup></a>
 Allowing quotation in a language wreaks havoc
 with the ability to reason about the language in simple terms, because it
 destroys the notion that equals can be substituted for equals.  For example,
@@ -1404,14 +1404,14 @@ from the statement “the evening star is Venus” we can deduce “the morning
 star is Venus.”  However, given that “John knows that the evening star is
 Venus” we cannot infer that “John knows that the morning star is Venus.”</p>
 </div>
-<div id="FOOT99"><p><a class="footnote_backlink" href="#DOCF99"><sup>99</sup></a>
+<div><p id="FOOT99" epub:type="footnote"><a class="footnote_backlink" href="#DOCF99"><sup>99</sup></a>
 The
 single quote is different from the double quote we have been using to enclose
 character strings to be printed.  Whereas the single quote can be used to
 denote lists or symbols, the double quote is used only with character strings.
 In this book, the only use for character strings is as items to be printed.</p>
 </div>
-<div id="FOOT100"><p><a class="footnote_backlink" href="#DOCF100"><sup>100</sup></a>
+<div><p id="FOOT100" epub:type="footnote"><a class="footnote_backlink" href="#DOCF100"><sup>100</sup></a>
 Strictly, our use of the quotation
 mark violates the general rule that all compound expressions in our language
 should be delimited by parentheses and look like lists.  We can recover this
@@ -1426,14 +1426,14 @@ interpreter can be manipulated as a data object.  For instance, we could
 construct the expression <code>(car '(a b c))</code>, which is the same as <code>(car
 (quote (a b c)))</code>, by evaluating <code>(list 'car (list 'quote '(a b c)))</code>.</p>
 </div>
-<div id="FOOT101"><p><a class="footnote_backlink" href="#DOCF101"><sup>101</sup></a>
+<div><p id="FOOT101" epub:type="footnote"><a class="footnote_backlink" href="#DOCF101"><sup>101</sup></a>
 We
 can consider two symbols to be “the same” if they consist of the same
 characters in the same order.  Such a definition skirts a deep issue that we
 are not yet ready to address: the meaning of “sameness” in a programming
 language.  We will return to this in <a href="Chapter-3.xhtml#Chapter-3">Chapter 3</a> (<a href="3_002e1.xhtml#g_t3_002e1_002e3">3.1.3</a>).</p>
 </div>
-<div id="FOOT102"><p><a class="footnote_backlink" href="#DOCF102"><sup>102</sup></a>
+<div><p id="FOOT102" epub:type="footnote"><a class="footnote_backlink" href="#DOCF102"><sup>102</sup></a>
 In practice,
 programmers use <code>equal?</code> to compare lists that contain numbers as well as
 symbols.  Numbers are not considered to be symbols.  The question of whether
@@ -1443,7 +1443,7 @@ the one that comes as a primitive in Scheme) would also stipulate that if
 <code>a</code> and <code>b</code> are both numbers, then <code>a</code> and <code>b</code> are
 <code>equal?</code> if they are numerically equal.</p>
 </div>
-<div id="FOOT103"><p><a class="footnote_backlink" href="#DOCF103"><sup>103</sup></a>
+<div><p id="FOOT103" epub:type="footnote"><a class="footnote_backlink" href="#DOCF103"><sup>103</sup></a>
 If we want to be more formal, we can
 specify “consistent with the interpretations given above” to mean that the
 operations satisfy a collection of rules such as these:
@@ -1467,13 +1467,13 @@ is false (informally: “No object is an element of the empty set”).
 
 </li></ul>
 </div>
-<div id="FOOT104"><p><a class="footnote_backlink" href="#DOCF104"><sup>104</sup></a>
+<div><p id="FOOT104" epub:type="footnote"><a class="footnote_backlink" href="#DOCF104"><sup>104</sup></a>
 Halving the size of the problem at each
 step is the distinguishing characteristic of logarithmic growth, as we saw with
 the fast-exponentiation algorithm of <a href="1_002e2.xhtml#g_t1_002e2_002e4">1.2.4</a> and the half-interval
 search method of <a href="1_002e3.xhtml#g_t1_002e3_002e3">1.3.3</a>.</p>
 </div>
-<div id="FOOT105"><p><a class="footnote_backlink" href="#DOCF105"><sup>105</sup></a>
+<div><p id="FOOT105" epub:type="footnote"><a class="footnote_backlink" href="#DOCF105"><sup>105</sup></a>
 We are representing sets in terms of trees, and trees in
 terms of lists—in effect, a data abstraction built upon a data abstraction.
 We can regard the procedures <code>entry</code>, <code>left-branch</code>,
@@ -1481,18 +1481,18 @@ We can regard the procedures <code>entry</code>, <code>left-branch</code>,
 of a “binary tree” from the particular way we might wish to represent such a
 tree in terms of list structure.</p>
 </div>
-<div id="FOOT106"><p><a class="footnote_backlink" href="#DOCF106"><sup>106</sup></a>
+<div><p id="FOOT106" epub:type="footnote"><a class="footnote_backlink" href="#DOCF106"><sup>106</sup></a>
 Examples of such structures include <a id="index-B_002dtrees"></a>
 <em>B-trees</em> and
 <a id="index-red_002dblack-trees"></a>
 <em>red-black trees</em>.  There is a large literature on data structures
 devoted to this problem.  See <a href="References.xhtml#Cormen-et-al_002e-1990">Cormen et al. 1990</a>.</p>
 </div>
-<div id="FOOT107"><p><a class="footnote_backlink" href="#DOCF107"><sup>107</sup></a>
+<div><p id="FOOT107" epub:type="footnote"><a class="footnote_backlink" href="#DOCF107"><sup>107</sup></a>
 <a href="#Exercise-2_002e63">Exercise 2.63</a> through <a href="#Exercise-2_002e65">Exercise 2.65</a> are due
 to Paul Hilfinger.</p>
 </div>
-<div id="FOOT108"><p><a class="footnote_backlink" href="#DOCF108"><sup>108</sup></a>
+<div><p id="FOOT108" epub:type="footnote"><a class="footnote_backlink" href="#DOCF108"><sup>108</sup></a>
 See <a href="References.xhtml#Hamming-1980">Hamming 1980</a> 
 for a discussion of the mathematical properties of Huffman codes.</p>
 </div>

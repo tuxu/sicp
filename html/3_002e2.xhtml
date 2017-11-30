@@ -121,7 +121,7 @@ remains the same as when we first introduced it in <a href="1_002e1.xhtml#g_t1_0
 </li></ul>
 
 <ol>
-<li> Evaluate the subexpressions of the combination.<a class="footnote_link" id="DOCF140" href="#FOOT140"><sup>140</sup></a>
+<li> Evaluate the subexpressions of the combination.<sup><a class="footnote_link" id="DOCF140" href="#FOOT140" epub:type="noteref">140</a></sup>
 
 </li><li> Apply the value of the operator subexpression to the values of the operand
 subexpressions.
@@ -218,7 +218,7 @@ the procedure was created.
 
 <p>We also specify that defining a symbol using <code>define</code> creates a binding in
 the current environment frame and assigns to the symbol the indicated
-value.<a class="footnote_link" id="DOCF141" href="#FOOT141"><sup>141</sup></a> Finally, we
+value.<sup><a class="footnote_link" id="DOCF141" href="#FOOT141" epub:type="noteref">141</a></sup> Finally, we
 specify the behavior of <code>set!</code>, the operation that forced us to introduce
 the environment model in the first place.  Evaluating the expression
 <code>(set! ⟨<var>variable</var>⟩ ⟨<var>value</var>⟩)</code> in some environment locates the
@@ -346,7 +346,7 @@ recursive version
                  max-count</span><span class="clo">)))</span></pre></div>
 
 <p>Show the environment structures created by evaluating <code>(factorial 6)</code>
-using each version of the <code>factorial</code> procedure.<a class="footnote_link" id="DOCF142" href="#FOOT142"><sup>142</sup></a>
+using each version of the <code>factorial</code> procedure.<sup><a class="footnote_link" id="DOCF142" href="#FOOT142" epub:type="noteref">142</a></sup>
 </p></blockquote>
 
 <a id="g_t3_002e2_002e3"></a>
@@ -488,7 +488,7 @@ environment.  The environment E2 for <code>W2</code> was created by the call to
 <code>make-withdraw</code>.  It contains a frame with its own local binding for
 <code>balance</code>.  On the other hand, <code>W1</code> and <code>W2</code> have the same code:
 the code specified by the λ-expression in the body of
-<code>make-withdraw</code>.<a class="footnote_link" id="DOCF143" href="#FOOT143"><sup>143</sup></a> We see here why <code>W1</code> and
+<code>make-withdraw</code>.<sup><a class="footnote_link" id="DOCF143" href="#FOOT143" epub:type="noteref">143</a></sup> We see here why <code>W1</code> and
 <code>W2</code> behave as independent objects.  Calls to <code>W1</code> reference the
 state variable <code>balance</code> stored in E1, whereas calls to <code>W2</code>
 reference the <code>balance</code> stored in E2. Thus, changes to the local state of
@@ -680,7 +680,7 @@ the environment structure are shared between <code>acc</code> and <code>acc2</co
 <div class="footnote">
 <h4 class="footnotes-heading">Footnotes</h4>
 
-<div id="FOOT140"><p><a class="footnote_backlink" href="#DOCF140"><sup>140</sup></a>
+<div><p id="FOOT140" epub:type="footnote"><a class="footnote_backlink" href="#DOCF140"><sup>140</sup></a>
 Assignment introduces a
 subtlety into step 1 of the evaluation rule.  As shown in <a href="3_002e1.xhtml#Exercise-3_002e8">Exercise 3.8</a>,
 the presence of assignment allows us to write expressions that will produce
@@ -692,7 +692,7 @@ should never write programs that depend on some particular order.  For
 instance, a sophisticated compiler might optimize a program by varying the
 order in which subexpressions are evaluated.</p>
 </div>
-<div id="FOOT141"><p><a class="footnote_backlink" href="#DOCF141"><sup>141</sup></a>
+<div><p id="FOOT141" epub:type="footnote"><a class="footnote_backlink" href="#DOCF141"><sup>141</sup></a>
 If there is already a binding for the variable in the current
 frame, then the binding is changed.  This is convenient because it allows
 redefinition of symbols; however, it also means that <code>define</code> can be used
@@ -700,14 +700,14 @@ to change values, and this brings up the issues of assignment without
 explicitly using <code>set!</code>.  Because of this, some people prefer
 redefinitions of existing symbols to signal errors or warnings.</p>
 </div>
-<div id="FOOT142"><p><a class="footnote_backlink" href="#DOCF142"><sup>142</sup></a>
+<div><p id="FOOT142" epub:type="footnote"><a class="footnote_backlink" href="#DOCF142"><sup>142</sup></a>
 The environment
 model will not clarify our claim in <a href="1_002e2.xhtml#g_t1_002e2_002e1">1.2.1</a> that the interpreter
 can execute a procedure such as <code>fact-iter</code> in a constant amount of space
 using tail recursion.  We will discuss tail recursion when we deal with the
 control structure of the interpreter in <a href="5_002e4.xhtml#g_t5_002e4">5.4</a>.</p>
 </div>
-<div id="FOOT143"><p><a class="footnote_backlink" href="#DOCF143"><sup>143</sup></a>
+<div><p id="FOOT143" epub:type="footnote"><a class="footnote_backlink" href="#DOCF143"><sup>143</sup></a>
 Whether <code>W1</code> and <code>W2</code> share the same
 physical code stored in the computer, or whether they each keep a copy of the
 code, is a detail of the implementation.  For the interpreter we implement in

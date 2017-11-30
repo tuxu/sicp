@@ -77,7 +77,7 @@ the <a id="index-closure-property"></a>
 <em>closure property</em> of <code>cons</code>.  In general, an operation for
 combining data objects satisfies the closure property if the results of
 combining things with that operation can themselves be combined using the same
-operation.<a class="footnote_link" id="DOCF72" href="#FOOT72"><sup>72</sup></a> Closure
+operation.<sup><a class="footnote_link" id="DOCF72" href="#FOOT72" epub:type="noteref">72</a></sup> Closure
 is the key to power in any means of combination because it permits us to create
 <a id="index-hierarchical"></a>
 <em>hierarchical</em> structures—structures made up of parts, which
@@ -89,7 +89,7 @@ fact that the elements of a combination can themselves be combinations.  In
 this section, we take up the consequences of closure for compound data.  We
 describe some conventional techniques for using pairs to represent sequences
 and trees, and we exhibit a graphics language that illustrates closure in a
-vivid way.<a class="footnote_link" id="DOCF73" href="#FOOT73"><sup>73</sup></a>
+vivid way.<sup><a class="footnote_link" id="DOCF73" href="#FOOT73" epub:type="noteref">73</a></sup>
 </p>
 
 <a id="g_t2_002e2_002e1"></a>
@@ -127,7 +127,7 @@ nested <code>cons</code> operations:
 <p>Such a sequence of pairs, formed by nested <code>cons</code>es, is called a
 <a id="index-list"></a>
 <em>list</em>, and Scheme provides a primitive called <code>list</code> to help in
-constructing lists.<a class="footnote_link" id="DOCF74" href="#FOOT74"><sup>74</sup></a>  The above sequence could be produced by <code>(list 1 2 3 4)</code>.
+constructing lists.<sup><a class="footnote_link" id="DOCF74" href="#FOOT74" epub:type="noteref">74</a></sup>  The above sequence could be produced by <code>(list 1 2 3 4)</code>.
 In general,
 </p>
 <div class="lisp">
@@ -162,7 +162,7 @@ arguments <code>2</code>, <code>3</code>, <code>4</code>.
 <p>We can think of <code>car</code> as selecting the first item in the list, and of
 <code>cdr</code> as selecting the sublist consisting of all but the first item.
 Nested applications of <code>car</code> and <code>cdr</code> can be used to extract the
-second, third, and subsequent items in the list.<a class="footnote_link" id="DOCF75" href="#FOOT75"><sup>75</sup></a> The constructor <code>cons</code>
+second, third, and subsequent items in the list.<sup><a class="footnote_link" id="DOCF75" href="#FOOT75" epub:type="noteref">75</a></sup> The constructor <code>cons</code>
 makes a list like the original one, but with an additional item at the
 beginning.
 </p>
@@ -188,7 +188,7 @@ of as a sequence of no elements, the <a id="index-empty-list"></a>
 <em>empty list</em>.  The word
 <a id="index-nil"></a>
 <em>nil</em> is a contraction of the Latin word <em>nihil</em>, which means
-“nothing.”<a class="footnote_link" id="DOCF76" href="#FOOT76"><sup>76</sup></a>
+“nothing.”<sup><a class="footnote_link" id="DOCF76" href="#FOOT76" epub:type="noteref">76</a></sup>
 </p>
 <a id="List-operations"></a>
 <h5 class="subsubheading">List operations</h5>
@@ -410,7 +410,7 @@ evaluate
 <pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="pln">g </span><span class="lit">1</span><span class="pln"> </span><span class="lit">2</span><span class="pln"> </span><span class="lit">3</span><span class="pln"> </span><span class="lit">4</span><span class="pln"> </span><span class="lit">5</span><span class="pln"> </span><span class="lit">6</span><span class="clo">)</span></pre></div>
 
 <p>then in the body of <code>g</code>, <code>w</code> will be the list <code>(1 2 3 4 5
-6)</code>.<a class="footnote_link" id="DOCF77" href="#FOOT77"><sup>77</sup></a>
+6)</code>.<sup><a class="footnote_link" id="DOCF77" href="#FOOT77" epub:type="noteref">77</a></sup>
 </p>
 <p>Use this notation to write a procedure <code>same-parity</code> that takes one or
 more integers and returns a list of all the arguments that have the same
@@ -448,7 +448,7 @@ procedure scales each number in a list by a given factor:
 as a higher-order procedure, just as in <a href="1_002e3.xhtml#g_t1_002e3">1.3</a>.  The higher-order
 procedure here is called <code>map</code>.  <code>Map</code> takes as arguments a procedure
 of one argument and a list, and returns a list of the results produced by
-applying the procedure to each element in the list:<a class="footnote_link" id="DOCF78" href="#FOOT78"><sup>78</sup></a>
+applying the procedure to each element in the list:<sup><a class="footnote_link" id="DOCF78" href="#FOOT78" epub:type="noteref">78</a></sup>
 </p>
 <div class="lisp">
 <pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">define</span><span class="pln"> </span><span class="opn">(</span><span class="pln">map proc items</span><span class="clo">)</span><span class="pln">
@@ -676,7 +676,7 @@ case:
 
 <p>To aid in writing recursive procedures on trees, Scheme provides the primitive
 predicate <code>pair?</code>, which tests whether its argument is a pair.  Here is
-the complete procedure:<a class="footnote_link" id="DOCF79" href="#FOOT79"><sup>79</sup></a>
+the complete procedure:<sup><a class="footnote_link" id="DOCF79" href="#FOOT79" epub:type="noteref">79</a></sup>
 </p>
 <div class="lisp">
 <pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">define</span><span class="pln"> </span><span class="opn">(</span><span class="pln">count-leaves x</span><span class="clo">)</span><span class="pln">
@@ -1080,7 +1080,7 @@ sequence of integers in a given range, which we can do as follows:
 </span><i><span class="opn">(</span><span class="lit">2</span><span class="pln"> </span><span class="lit">3</span><span class="pln"> </span><span class="lit">4</span><span class="pln"> </span><span class="lit">5</span><span class="pln"> </span><span class="lit">6</span><span class="pln"> </span><span class="lit">7</span><span class="clo">)</span></i>
 </pre></div>
 
-<p>To enumerate the leaves of a tree, we can use<a class="footnote_link" id="DOCF80" href="#FOOT80"><sup>80</sup></a>
+<p>To enumerate the leaves of a tree, we can use<sup><a class="footnote_link" id="DOCF80" href="#FOOT80" epub:type="noteref">80</a></sup>
 </p>
 <div class="lisp">
 <pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">define</span><span class="pln"> </span><span class="opn">(</span><span class="pln">enumerate-tree tree</span><span class="clo">)</span><span class="pln">
@@ -1184,7 +1184,7 @@ write
         </span><span class="opn">(</span><span class="pln">filter programmer? records</span><span class="clo">))))</span></pre></div>
 
 <p>These examples give just a hint of the vast range of operations that can be
-expressed as sequence operations.<a class="footnote_link" id="DOCF81" href="#FOOT81"><sup>81</sup></a>
+expressed as sequence operations.<sup><a class="footnote_link" id="DOCF81" href="#FOOT81" epub:type="noteref">81</a></sup>
 </p>
 <p>Sequences, implemented here as lists, serve as a conventional interface that
 permits us to combine processing modules.  Additionally, when we uniformly
@@ -1223,7 +1223,7 @@ the computation as
 <img src="fig/math/8d309afa88b300b083549ef45458bac9.svg" class="math-display" style="height: 0.901em;" alt="\[ % :36:&amp;#10;  {(\dots (a_n x} + {a_{n-1}) x} + \dots + {a_1) x} + {a_0.}  \]" />
 In other words, we start with <img src="fig/math/20cf4f99c1ef8e5865e5e7c0fa729fb5.svg" class="math-inline" style="height: 0.591em; vertical-align: -0.155em;" alt="\( a_n \)" />, multiply by <img src="fig/math/2f4b15565d0a1018e90c3e1b30b76acc.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( x \)" />, add
 <img src="fig/math/694ae571fdc1923aa55adcf066f48524.svg" class="math-inline" style="height: 0.591em; vertical-align: -0.155em;" alt="\( a_{n-1} \)" />, multiply by <img src="fig/math/2f4b15565d0a1018e90c3e1b30b76acc.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( x \)" />, and so on, until we reach
-<img src="fig/math/a165fae8b3379b5b86caf620688ab9d6.svg" class="math-inline" style="height: 0.584em; vertical-align: -0.147em;" alt="\( a_0 \)" />.<a class="footnote_link" id="DOCF82" href="#FOOT82"><sup>82</sup></a>
+<img src="fig/math/a165fae8b3379b5b86caf620688ab9d6.svg" class="math-inline" style="height: 0.584em; vertical-align: -0.147em;" alt="\( a_0 \)" />.<sup><a class="footnote_link" id="DOCF82" href="#FOOT82" epub:type="noteref">82</a></sup>
 </p>
 <p>Fill in the following template to produce a procedure that evaluates a
 polynomial using Horner’s rule.  Assume that the coefficients of the polynomial
@@ -1285,7 +1285,7 @@ this representation, we can use sequence operations to concisely express the
 basic matrix and vector operations.  These operations (which are described in
 any book on matrix algebra) are the following:
 <img src="fig/math/dd6f7feafc58996f7ff52c241e1aced8.svg" class="math-display" style="height: 9.790em;" alt="\[ % :38:&amp;#10;   \eqalign{   \text{(dot-product v w)}  &amp;amp; \text{returns the sum}\;\Sigma_i v_i w_i; \cr  \text{(matrix-*-vector m v)}  &amp;amp; \text{returns the vector}\;{\bf t}, \cr   &amp;amp; \text{where}\; t_i = \Sigma_j m_{ij} v_j; \cr  \text{(matrix-*-matrix m n)}  &amp;amp; \text{returns the matrix}\;{\bf p}, \cr   &amp;amp; \text{where}\; p_{ij} = \Sigma_k m_{ik} n_{kj}; \cr  \text{(transpose m)}   &amp;amp; \text{returns the matrix}\;{\bf n}, \cr   &amp;amp; \text{where}\; n_{ij} = m_{ji}. \cr }  \]" />
-We can define the dot product as<a class="footnote_link" id="DOCF83" href="#FOOT83"><sup>83</sup></a>
+We can define the dot product as<sup><a class="footnote_link" id="DOCF83" href="#FOOT83" epub:type="noteref">83</a></sup>
 </p>
 <div class="lisp">
 <pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">define</span><span class="pln"> </span><span class="opn">(</span><span class="pln">dot-product v w</span><span class="clo">)</span><span class="pln">
@@ -1355,7 +1355,7 @@ definitions of <code>reverse</code> (<a href="#Exercise-2_002e18">Exercise 2.18<
 <h5 class="subsubheading">Nested Mappings</h5>
 
 <p>We can extend the sequence paradigm to include many computations that are
-commonly expressed using nested loops.<a class="footnote_link" id="DOCF84" href="#FOOT84"><sup>84</sup></a> Consider this problem: Given a positive integer <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" />, find all
+commonly expressed using nested loops.<sup><a class="footnote_link" id="DOCF84" href="#FOOT84" epub:type="noteref">84</a></sup> Consider this problem: Given a positive integer <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" />, find all
 ordered pairs of distinct positive integers <img src="fig/math/aa5dfb3bb62785181553d83502ccb9ec.svg" class="math-inline" style="height: 0.623em; vertical-align: -0.010em;" alt="\( i \)" /> and <img src="fig/math/c43c70f4cf72247cdeb1dd81fb4f1ee0.svg" class="math-inline" style="height: 0.808em; vertical-align: -0.195em;" alt="\( j \)" />, where 
 <img src="fig/math/910030811dfa4c10fe43f705c3bf6271.svg" class="math-inline" style="height: 0.837em; vertical-align: -0.194em;" alt="\( {1 \le j} &amp;lt; {i \le n} \)" />, such that <img src="fig/math/c6ad57c179a45a768d358dff2d5b5da3.svg" class="math-inline" style="height: 0.808em; vertical-align: -0.195em;" alt="\( {i + j} \)" /> is prime.  For example, if <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" /> is 6,
 then the pairs are the following:
@@ -1373,7 +1373,7 @@ we map along the sequence <code>(enumerate-interval 1 (- i 1))</code>.  For each
 <img src="fig/math/c43c70f4cf72247cdeb1dd81fb4f1ee0.svg" class="math-inline" style="height: 0.808em; vertical-align: -0.195em;" alt="\( j \)" /> in this latter sequence, we generate the pair <code>(list i j)</code>.  This
 gives us a sequence of pairs for each <img src="fig/math/aa5dfb3bb62785181553d83502ccb9ec.svg" class="math-inline" style="height: 0.623em; vertical-align: -0.010em;" alt="\( i \)" />.  Combining all the sequences for
 all the <img src="fig/math/aa5dfb3bb62785181553d83502ccb9ec.svg" class="math-inline" style="height: 0.623em; vertical-align: -0.010em;" alt="\( i \)" /> (by accumulating with <code>append</code>) produces the required
-sequence of pairs:<a class="footnote_link" id="DOCF85" href="#FOOT85"><sup>85</sup></a>
+sequence of pairs:<sup><a class="footnote_link" id="DOCF85" href="#FOOT85" epub:type="noteref">85</a></sup>
 </p>
 <div class="lisp">
 <pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="pln">accumulate 
@@ -1433,10 +1433,10 @@ that is, all the ways of ordering the items in the set.  For instance, the
 permutations of <img src="fig/math/3ef8b6afff3820edd7ad6b58a3f9237a.svg" class="math-inline" style="height: 0.843em; vertical-align: -0.159em;" alt="\( {\{1, 2, 3\}} \)" /> are <img src="fig/math/3ef8b6afff3820edd7ad6b58a3f9237a.svg" class="math-inline" style="height: 0.843em; vertical-align: -0.159em;" alt="\( {\{1, 2, 3\}} \)" />, <img src="fig/math/5fcc2911dbf63336fd0902b81c9f1d58.svg" class="math-inline" style="height: 0.843em; vertical-align: -0.159em;" alt="\( {\{1, 3, 2\}} \)" />, <img src="fig/math/2a046a92ef338bc243dda180f9aef8d0.svg" class="math-inline" style="height: 0.843em; vertical-align: -0.159em;" alt="\( {\{2, 1, 3\}} \)" />, <img src="fig/math/08a3d55b3472f879b9fe6f81a03852d4.svg" class="math-inline" style="height: 0.843em; vertical-align: -0.159em;" alt="\( {\{2, 3, 1\}} \)" />,
 <img src="fig/math/9a4ecc49f988040f202e9b52740926b5.svg" class="math-inline" style="height: 0.843em; vertical-align: -0.159em;" alt="\( {\{3, 1, 2\}} \)" />, and <img src="fig/math/d4aa6f7a930b27b9108bb922589f68bb.svg" class="math-inline" style="height: 0.843em; vertical-align: -0.159em;" alt="\( {\{3, 2, 1\}} \)" />.  Here is a plan for generating the permutations of
 <img src="fig/math/fbd79508b7054f548dfce169e251714c.svg" class="math-inline" style="height: 0.664em; vertical-align: -0.013em;" alt="\( S \)" />: For each item <img src="fig/math/2f4b15565d0a1018e90c3e1b30b76acc.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( x \)" /> in <img src="fig/math/fbd79508b7054f548dfce169e251714c.svg" class="math-inline" style="height: 0.664em; vertical-align: -0.013em;" alt="\( S \)" />, recursively generate the sequence of
-permutations of <img src="fig/math/3a0530b2113624d685a0a7efceb27266.svg" class="math-inline" style="height: 0.664em; vertical-align: -0.013em;" alt="\( {S - x} \)" />,<a class="footnote_link" id="DOCF86" href="#FOOT86"><sup>86</sup></a> and adjoin <img src="fig/math/2f4b15565d0a1018e90c3e1b30b76acc.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( x \)" /> to the front of each one.
+permutations of <img src="fig/math/3a0530b2113624d685a0a7efceb27266.svg" class="math-inline" style="height: 0.664em; vertical-align: -0.013em;" alt="\( {S - x} \)" />,<sup><a class="footnote_link" id="DOCF86" href="#FOOT86" epub:type="noteref">86</a></sup> and adjoin <img src="fig/math/2f4b15565d0a1018e90c3e1b30b76acc.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( x \)" /> to the front of each one.
 This yields, for each <img src="fig/math/2f4b15565d0a1018e90c3e1b30b76acc.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( x \)" /> in <img src="fig/math/fbd79508b7054f548dfce169e251714c.svg" class="math-inline" style="height: 0.664em; vertical-align: -0.013em;" alt="\( S \)" />, the sequence of permutations of <img src="fig/math/fbd79508b7054f548dfce169e251714c.svg" class="math-inline" style="height: 0.664em; vertical-align: -0.013em;" alt="\( S \)" />
 that begin with <img src="fig/math/2f4b15565d0a1018e90c3e1b30b76acc.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( x \)" />.  Combining these sequences for all <img src="fig/math/2f4b15565d0a1018e90c3e1b30b76acc.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( x \)" /> gives all the
-permutations of <img src="fig/math/fbd79508b7054f548dfce169e251714c.svg" class="math-inline" style="height: 0.664em; vertical-align: -0.013em;" alt="\( S \)" />:<a class="footnote_link" id="DOCF87" href="#FOOT87"><sup>87</sup></a>
+permutations of <img src="fig/math/fbd79508b7054f548dfce169e251714c.svg" class="math-inline" style="height: 0.664em; vertical-align: -0.013em;" alt="\( S \)" />:<sup><a class="footnote_link" id="DOCF87" href="#FOOT87" epub:type="noteref">87</a></sup>
 </p>
 <div class="lisp">
 <pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">define</span><span class="pln"> </span><span class="opn">(</span><span class="pln">permutations s</span><span class="clo">)</span><span class="pln">
@@ -1571,7 +1571,7 @@ the program in <a href="#Exercise-2_002e42">Exercise 2.42</a> solves the puzzle 
 the power of data abstraction and closure, and also exploits higher-order
 procedures in an essential way.  The language is designed to make it easy to
 experiment with patterns such as the ones in <a href="#Figure-2_002e9">Figure 2.9</a>, which are
-composed of repeated elements that are shifted and scaled.<a class="footnote_link" id="DOCF88" href="#FOOT88"><sup>88</sup></a> In this language, the data
+composed of repeated elements that are shifted and scaled.<sup><a class="footnote_link" id="DOCF88" href="#FOOT88" epub:type="noteref">88</a></sup> In this language, the data
 objects being combined are represented as procedures rather than as list
 structure.  Just as <code>cons</code>, which satisfies the closure property, allowed
 us to easily build arbitrarily complicated list structure, the operations in
@@ -1605,7 +1605,7 @@ depends on the frame—all four images in figure 2.10 are produced by the
 same <code>wave</code> painter, but with respect to four different frames.  Painters
 can be more elaborate than this: The primitive painter called <code>rogers</code>
 paints a picture of <abbr>MIT</abbr>’s founder, William Barton Rogers, as shown in
-<a href="#Figure-2_002e11">Figure 2.11</a>.<a class="footnote_link" id="DOCF89" href="#FOOT89"><sup>89</sup></a> The four images in figure 2.11 are drawn with respect to the same four
+<a href="#Figure-2_002e11">Figure 2.11</a>.<sup><a class="footnote_link" id="DOCF89" href="#FOOT89" epub:type="noteref">89</a></sup> The four images in figure 2.11 are drawn with respect to the same four
 frames as the <code>wave</code> images in figure 2.10.
 </p>
 <figure class="float">
@@ -1778,7 +1778,7 @@ respectively.
       </span><span class="opn">(</span><span class="pln">below bottom top</span><span class="clo">))))</span></pre></div>
 
 <p>Then <code>flipped-pairs</code> can be defined in terms of <code>square-of-four</code> as
-follows:<a class="footnote_link" id="DOCF90" href="#FOOT90"><sup>90</sup></a>
+follows:<sup><a class="footnote_link" id="DOCF90" href="#FOOT90" epub:type="noteref">90</a></sup>
 </p>
 <div class="lisp">
 <pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">define</span><span class="pln"> </span><span class="opn">(</span><span class="pln">flipped-pairs painter</span><span class="clo">)</span><span class="pln">
@@ -1789,7 +1789,7 @@ follows:<a class="footnote_link" id="DOCF90" href="#FOOT90"><sup>90</sup></a>
                          flip-vert</span><span class="clo">)))</span><span class="pln">
     </span><span class="opn">(</span><span class="pln">combine4 painter</span><span class="clo">)))</span></pre></div>
 
-<p>and <code>square-limit</code> can be expressed as<a class="footnote_link" id="DOCF91" href="#FOOT91"><sup>91</sup></a>
+<p>and <code>square-limit</code> can be expressed as<sup><a class="footnote_link" id="DOCF91" href="#FOOT91" epub:type="noteref">91</a></sup>
 </p>
 <div class="lisp">
 <pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">define</span><span class="pln"> </span><span class="opn">(</span><span class="pln">square-limit painter n</span><span class="clo">)</span><span class="pln">
@@ -1850,7 +1850,7 @@ the vector sum
 For example, (0, 0) is mapped to the origin of the frame, (1, 1) to the vertex
 diagonally opposite the origin, and (0.5, 0.5) to the center of the frame.  We
 can create a frame’s coordinate map with the following
-procedure:<a class="footnote_link" id="DOCF92" href="#FOOT92"><sup>92</sup></a>
+procedure:<sup><a class="footnote_link" id="DOCF92" href="#FOOT92" epub:type="noteref">92</a></sup>
 </p>
 <div class="lisp">
 <pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">define</span><span class="pln"> </span><span class="opn">(</span><span class="pln">frame-coord-map frame</span><span class="clo">)</span><span class="pln">
@@ -1915,7 +1915,7 @@ characteristics of the graphics system and the type of image to be drawn.  For
 instance, suppose we have a procedure <code>draw-line</code> that draws a line on the
 screen between two specified points.  Then we can create painters for line
 drawings, such as the <code>wave</code> painter in <a href="#Figure-2_002e10">Figure 2.10</a>, from lists of
-line segments as follows:<a class="footnote_link" id="DOCF93" href="#FOOT93"><sup>93</sup></a>
+line segments as follows:<sup><a class="footnote_link" id="DOCF93" href="#FOOT93" epub:type="noteref">93</a></sup>
 </p>
 <div class="lisp">
 <pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">define</span><span class="pln"> </span><span class="opn">(</span><span class="pln">segments-</span><span class="pun">&gt;</span><span class="pln">painter segment-list</span><span class="clo">)</span><span class="pln">
@@ -1938,7 +1938,7 @@ the picture language.  We can create and intermix all sorts of primitive
 painters, based on a variety of graphics capabilities. The details of their
 implementation do not matter.  Any procedure can serve as a painter, provided
 that it takes a frame as argument and draws something scaled to fit the
-frame.<a class="footnote_link" id="DOCF94" href="#FOOT94"><sup>94</sup></a>
+frame.<sup><a class="footnote_link" id="DOCF94" href="#FOOT94" epub:type="noteref">94</a></sup>
 </p>
 <blockquote>
 <p><strong><a id="Exercise-2_002e48"></a>Exercise 2.48:</strong> A directed line segment in the
@@ -2021,7 +2021,7 @@ upper-right quarter of the frame it is given:
                      </span><span class="opn">(</span><span class="pln">make-vect </span><span class="lit">0.5</span><span class="pln"> </span><span class="lit">1.0</span><span class="clo">)))</span></pre></div>
 
 <p>Other transformations rotate images counterclockwise by 90
-degrees<a class="footnote_link" id="DOCF95" href="#FOOT95"><sup>95</sup></a>
+degrees<sup><a class="footnote_link" id="DOCF95" href="#FOOT95" epub:type="noteref">95</a></sup>
 </p>
 <div class="lisp">
 <pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">define</span><span class="pln"> </span><span class="opn">(</span><span class="pln">rotate90 painter</span><span class="clo">)</span><span class="pln">
@@ -2030,7 +2030,7 @@ degrees<a class="footnote_link" id="DOCF95" href="#FOOT95"><sup>95</sup></a>
                      </span><span class="opn">(</span><span class="pln">make-vect </span><span class="lit">1.0</span><span class="pln"> </span><span class="lit">1.0</span><span class="clo">)</span><span class="pln">
                      </span><span class="opn">(</span><span class="pln">make-vect </span><span class="lit">0.0</span><span class="pln"> </span><span class="lit">0.0</span><span class="clo">)))</span></pre></div>
 
-<p>or squash images towards the center of the frame:<a class="footnote_link" id="DOCF96" href="#FOOT96"><sup>96</sup></a>
+<p>or squash images towards the center of the frame:<sup><a class="footnote_link" id="DOCF96" href="#FOOT96" epub:type="noteref">96</a></sup>
 </p>
 <div class="lisp">
 <pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">define</span><span class="pln"> </span><span class="opn">(</span><span class="pln">squash-inwards painter</span><span class="clo">)</span><span class="pln">
@@ -2111,7 +2111,7 @@ combination, and means of abstraction appropriate to that level of detail.
 computer engineering, resistors and transistors are combined (and described
 using a language of analog circuits) to produce parts such as and-gates and
 or-gates, which form the primitives of a language for digital-circuit
-design.<a class="footnote_link" id="DOCF97" href="#FOOT97"><sup>97</sup></a> These parts
+design.<sup><a class="footnote_link" id="DOCF97" href="#FOOT97" epub:type="noteref">97</a></sup> These parts
 are combined to build processors, bus structures, and memory systems, which are
 in turn combined to form computers, using languages appropriate to computer
 architecture.  Computers are combined to form distributed systems, using
@@ -2163,7 +2163,7 @@ the big Mr. Rogers look outward from each corner of the square.)
 <div class="footnote">
 <h4 class="footnotes-heading">Footnotes</h4>
 
-<div id="FOOT72"><p><a class="footnote_backlink" href="#DOCF72"><sup>72</sup></a>
+<div><p id="FOOT72" epub:type="footnote"><a class="footnote_backlink" href="#DOCF72"><sup>72</sup></a>
 The use of the word “closure” here comes from abstract
 algebra, where a set of elements is said to be closed under an operation if
 applying the operation to elements in the set produces an element that is again
@@ -2172,7 +2172,7 @@ an element of the set.  The Lisp community also (unfortunately) uses the word
 implementation technique for representing procedures with free variables.  We
 do not use the word “closure” in this second sense in this book.  </p>
 </div>
-<div id="FOOT73"><p><a class="footnote_backlink" href="#DOCF73"><sup>73</sup></a>
+<div><p id="FOOT73" epub:type="footnote"><a class="footnote_backlink" href="#DOCF73"><sup>73</sup></a>
 The notion that a means of combination should satisfy
 closure is a straightforward idea.  Unfortunately, the data combiners provided
 in many popular programming languages do not satisfy closure, or make closure
@@ -2190,7 +2190,7 @@ inhibits and penalizes casual cooperation.  It is better to have 100 functions
 operate on one data structure than to have 10 functions operate on 10 data
 structures.”</p>
 </div>
-<div id="FOOT74"><p><a class="footnote_backlink" href="#DOCF74"><sup>74</sup></a>
+<div><p id="FOOT74" epub:type="footnote"><a class="footnote_backlink" href="#DOCF74"><sup>74</sup></a>
 In this book, we use <a id="index-list-1"></a>
 <em>list</em> to mean a
 chain of pairs terminated by the end-of-list marker.  In contrast, the term
@@ -2198,7 +2198,7 @@ chain of pairs terminated by the end-of-list marker.  In contrast, the term
 <em>list structure</em> refers to any data structure made out of pairs, not
 just to lists.</p>
 </div>
-<div id="FOOT75"><p><a class="footnote_backlink" href="#DOCF75"><sup>75</sup></a>
+<div><p id="FOOT75" epub:type="footnote"><a class="footnote_backlink" href="#DOCF75"><sup>75</sup></a>
 Since nested
 applications of <code>car</code> and <code>cdr</code> are cumbersome to write, Lisp
 dialects provide abbreviations for them—for instance,
@@ -2212,7 +2212,7 @@ for a <code>cdr</code> operation, to be applied in the same order in which they
 appear in the name.  The names <code>car</code> and <code>cdr</code> persist because simple
 combinations like <code>cadr</code> are pronounceable.</p>
 </div>
-<div id="FOOT76"><p><a class="footnote_backlink" href="#DOCF76"><sup>76</sup></a>
+<div><p id="FOOT76" epub:type="footnote"><a class="footnote_backlink" href="#DOCF76"><sup>76</sup></a>
 It’s remarkable how much energy in the standardization of
 Lisp dialects has been dissipated in arguments that are literally over nothing:
 Should <code>nil</code> be an ordinary name?  Should the value of <code>nil</code> be a
@@ -2225,7 +2225,7 @@ standardization brawls, would like to avoid the entire issue.  Once we have
 introduced quotation in <a href="2_002e3.xhtml#g_t2_002e3">2.3</a>, we will denote the empty list as
 <code>'()</code> and dispense with the variable <code>nil</code> entirely.</p>
 </div>
-<div id="FOOT77"><p><a class="footnote_backlink" href="#DOCF77"><sup>77</sup></a>
+<div><p id="FOOT77" epub:type="footnote"><a class="footnote_backlink" href="#DOCF77"><sup>77</sup></a>
 To define <code>f</code> and <code>g</code> using <code>lambda</code> we would
 write
 </p>
@@ -2233,7 +2233,7 @@ write
 <pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">define</span><span class="pln"> f </span><span class="opn">(</span><span class="kwd">lambda</span><span class="pln"> </span><span class="opn">(</span><span class="pln">x y </span><span class="pun">.</span><span class="pln"> z</span><span class="clo">)</span><span class="pln"> ⟨</span><var><span class="pln">body</span></var><span class="pln">⟩</span><span class="clo">))</span><span class="pln">
 </span><span class="opn">(</span><span class="kwd">define</span><span class="pln"> g </span><span class="opn">(</span><span class="kwd">lambda</span><span class="pln"> w ⟨</span><var><span class="pln">body</span></var><span class="pln">⟩</span><span class="clo">))</span></pre></div>
 </div>
-<div id="FOOT78"><p><a class="footnote_backlink" href="#DOCF78"><sup>78</sup></a>
+<div><p id="FOOT78" epub:type="footnote"><a class="footnote_backlink" href="#DOCF78"><sup>78</sup></a>
 <a id="Footnote-78"></a>Scheme standardly provides a <code>map</code> procedure that
 is more general than the one described here.  This more general <code>map</code>
 takes a procedure of <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" /> arguments, together with <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" /> lists, and applies
@@ -2253,18 +2253,18 @@ of the lists, and so on, returning a list of the results.  For example:
 </span><i><span class="opn">(</span><span class="lit">9</span><span class="pln"> </span><span class="lit">12</span><span class="pln"> </span><span class="lit">15</span><span class="clo">)</span></i>
 </pre></div>
 </div>
-<div id="FOOT79"><p><a class="footnote_backlink" href="#DOCF79"><sup>79</sup></a>
+<div><p id="FOOT79" epub:type="footnote"><a class="footnote_backlink" href="#DOCF79"><sup>79</sup></a>
 The order of the first two clauses in the
 <code>cond</code> matters, since the empty list satisfies <code>null?</code> and also is
 not a pair.</p>
 </div>
-<div id="FOOT80"><p><a class="footnote_backlink" href="#DOCF80"><sup>80</sup></a>
+<div><p id="FOOT80" epub:type="footnote"><a class="footnote_backlink" href="#DOCF80"><sup>80</sup></a>
 This is, in fact,
 precisely the <code>fringe</code> procedure from <a href="#Exercise-2_002e28">Exercise 2.28</a>.  Here we’ve
 renamed it to emphasize that it is part of a family of general
 sequence-manipulation procedures.</p>
 </div>
-<div id="FOOT81"><p><a class="footnote_backlink" href="#DOCF81"><sup>81</sup></a>
+<div><p id="FOOT81" epub:type="footnote"><a class="footnote_backlink" href="#DOCF81"><sup>81</sup></a>
 Richard <a href="References.xhtml#Waters-_00281979_0029">Waters (1979)</a> developed a
 program that automatically analyzes traditional Fortran programs, viewing them
 in terms of maps, filters, and accumulations.  He found that fully 90 percent
@@ -2276,7 +2276,7 @@ language APL owes much of its power and appeal to a similar choice. In APL all
 data are represented as arrays, and there is a universal and convenient set of
 generic operators for all sorts of array operations.</p>
 </div>
-<div id="FOOT82"><p><a class="footnote_backlink" href="#DOCF82"><sup>82</sup></a>
+<div><p id="FOOT82" epub:type="footnote"><a class="footnote_backlink" href="#DOCF82"><sup>82</sup></a>
 According to <a href="References.xhtml#Knuth-1981">Knuth 1981</a>, this rule was formulated by
 W. G. Horner early in the nineteenth century, but the method was actually used
 by Newton over a hundred years earlier.  Horner’s rule evaluates the polynomial
@@ -2292,11 +2292,11 @@ multiplications was proved by V. Y. Pan in 1966.  The book by <a href="Reference
 provides an overview of these and other results about optimal
 algorithms.</p>
 </div>
-<div id="FOOT83"><p><a class="footnote_backlink" href="#DOCF83"><sup>83</sup></a>
+<div><p id="FOOT83" epub:type="footnote"><a class="footnote_backlink" href="#DOCF83"><sup>83</sup></a>
 This definition uses the extended
 version of <code>map</code> described in <a href="#Footnote-78">Footnote 78</a>.</p>
 </div>
-<div id="FOOT84"><p><a class="footnote_backlink" href="#DOCF84"><sup>84</sup></a>
+<div><p id="FOOT84" epub:type="footnote"><a class="footnote_backlink" href="#DOCF84"><sup>84</sup></a>
 This approach to nested
 mappings was shown to us by David Turner, whose languages KRC and Miranda
 provide elegant formalisms for dealing with these constructs.  The examples in
@@ -2304,30 +2304,30 @@ this section (see also <a href="#Exercise-2_002e42">Exercise 2.42</a>) are adapt
 <a href="3_002e5.xhtml#g_t3_002e5_002e3">3.5.3</a>, we’ll see how this approach generalizes to infinite
 sequences.</p>
 </div>
-<div id="FOOT85"><p><a class="footnote_backlink" href="#DOCF85"><sup>85</sup></a>
+<div><p id="FOOT85" epub:type="footnote"><a class="footnote_backlink" href="#DOCF85"><sup>85</sup></a>
 We’re representing a pair here as a list of two
 elements rather than as a Lisp pair.  Thus, the “pair” <img src="fig/math/b3e51b500a677738d763b9243179a091.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.189em;" alt="\( {(i, j)} \)" /> is
 represented as <code>(list i j)</code>, not <code>(cons i j)</code>.</p>
 </div>
-<div id="FOOT86"><p><a class="footnote_backlink" href="#DOCF86"><sup>86</sup></a>
+<div><p id="FOOT86" epub:type="footnote"><a class="footnote_backlink" href="#DOCF86"><sup>86</sup></a>
 The set <img src="fig/math/3a0530b2113624d685a0a7efceb27266.svg" class="math-inline" style="height: 0.664em; vertical-align: -0.013em;" alt="\( {S - x} \)" /> is the set of all
 elements of <img src="fig/math/fbd79508b7054f548dfce169e251714c.svg" class="math-inline" style="height: 0.664em; vertical-align: -0.013em;" alt="\( S \)" />, excluding <img src="fig/math/2f4b15565d0a1018e90c3e1b30b76acc.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( x \)" />.</p>
 </div>
-<div id="FOOT87"><p><a class="footnote_backlink" href="#DOCF87"><sup>87</sup></a>
+<div><p id="FOOT87" epub:type="footnote"><a class="footnote_backlink" href="#DOCF87"><sup>87</sup></a>
 Semicolons in Scheme code are used to introduce
 <a id="index-comments"></a>
 <em>comments</em>.  Everything from the semicolon to the end of the line is
 ignored by the interpreter.  In this book we don’t use many comments; we try to
 make our programs self-documenting by using descriptive names.</p>
 </div>
-<div id="FOOT88"><p><a class="footnote_backlink" href="#DOCF88"><sup>88</sup></a>
+<div><p id="FOOT88" epub:type="footnote"><a class="footnote_backlink" href="#DOCF88"><sup>88</sup></a>
 The picture
 language is based on the language Peter Henderson created to construct images
 like M.C. Escher’s “Square Limit” woodcut (see <a href="References.xhtml#Henderson-1982">Henderson 1982</a>).  The woodcut
 incorporates a repeated scaled pattern, similar to the arrangements drawn using
 the <code>square-limit</code> procedure in this section.</p>
 </div>
-<div id="FOOT89"><p><a class="footnote_backlink" href="#DOCF89"><sup>89</sup></a>
+<div><p id="FOOT89" epub:type="footnote"><a class="footnote_backlink" href="#DOCF89"><sup>89</sup></a>
 William Barton Rogers (1804-1882) was the founder
 and first president of <abbr>MIT</abbr>.  A geologist and talented teacher, he
 taught at William and Mary College and at the University of Virginia.  In 1859
@@ -2381,7 +2381,7 @@ as so good a knight would surely have wished, in harness, at his post, and in
 the very part and act of public duty.
 </p></blockquote>
 </div>
-<div id="FOOT90"><p><a class="footnote_backlink" href="#DOCF90"><sup>90</sup></a>
+<div><p id="FOOT90" epub:type="footnote"><a class="footnote_backlink" href="#DOCF90"><sup>90</sup></a>
 Equivalently, we could write
 </p>
 <div class="lisp">
@@ -2389,25 +2389,25 @@ Equivalently, we could write
   </span><span class="opn">(</span><span class="pln">square-of-four 
    identity flip-vert identity flip-vert</span><span class="clo">))</span></pre></div>
 </div>
-<div id="FOOT91"><p><a class="footnote_backlink" href="#DOCF91"><sup>91</sup></a>
+<div><p id="FOOT91" epub:type="footnote"><a class="footnote_backlink" href="#DOCF91"><sup>91</sup></a>
 <code>Rotate180</code> rotates a
 painter by 180 degrees (see <a href="#Exercise-2_002e50">Exercise 2.50</a>).  Instead of <code>rotate180</code>
 we could say <code>(compose flip-vert flip-horiz)</code>, using the <code>compose</code>
 procedure from <a href="1_002e3.xhtml#Exercise-1_002e42">Exercise 1.42</a>.</p>
 </div>
-<div id="FOOT92"><p><a class="footnote_backlink" href="#DOCF92"><sup>92</sup></a>
+<div><p id="FOOT92" epub:type="footnote"><a class="footnote_backlink" href="#DOCF92"><sup>92</sup></a>
 <code>Frame-coord-map</code> uses the vector operations described
 in <a href="#Exercise-2_002e46">Exercise 2.46</a> below, which we assume have been implemented using some
 representation for vectors.  Because of data abstraction, it doesn’t matter
 what this vector representation is, so long as the vector operations behave
 correctly.</p>
 </div>
-<div id="FOOT93"><p><a class="footnote_backlink" href="#DOCF93"><sup>93</sup></a>
+<div><p id="FOOT93" epub:type="footnote"><a class="footnote_backlink" href="#DOCF93"><sup>93</sup></a>
 <code>Segments-&gt;painter</code> uses the
 representation for line segments described in <a href="#Exercise-2_002e48">Exercise 2.48</a> below.  It
 also uses the <code>for-each</code> procedure described in <a href="#Exercise-2_002e23">Exercise 2.23</a>.</p>
 </div>
-<div id="FOOT94"><p><a class="footnote_backlink" href="#DOCF94"><sup>94</sup></a>
+<div><p id="FOOT94" epub:type="footnote"><a class="footnote_backlink" href="#DOCF94"><sup>94</sup></a>
 For example, the <code>rogers</code> painter of <a href="#Figure-2_002e11">Figure 2.11</a> was
 constructed from a gray-level image.  For each point in a given frame, the
 <code>rogers</code> painter determines the point in the image that is mapped to it
@@ -2420,16 +2420,16 @@ way at all, so long as it draws something in the designated frame.
 <a href="2_002e1.xhtml#g_t2_002e1_002e3">2.1.3</a> also showed how pairs could be implemented as procedures.  Painters
 are our second example of a procedural representation for data.</p>
 </div>
-<div id="FOOT95"><p><a class="footnote_backlink" href="#DOCF95"><sup>95</sup></a>
+<div><p id="FOOT95" epub:type="footnote"><a class="footnote_backlink" href="#DOCF95"><sup>95</sup></a>
 <code>Rotate90</code> is a pure rotation only for square frames,
 because it also stretches and shrinks the image to fit into the rotated frame.</p>
 </div>
-<div id="FOOT96"><p><a class="footnote_backlink" href="#DOCF96"><sup>96</sup></a>
+<div><p id="FOOT96" epub:type="footnote"><a class="footnote_backlink" href="#DOCF96"><sup>96</sup></a>
 The diamond-shaped
 images in <a href="#Figure-2_002e10">Figure 2.10</a> and <a href="#Figure-2_002e11">Figure 2.11</a> were created with
 <code>squash-inwards</code> applied to <code>wave</code> and <code>rogers</code>.</p>
 </div>
-<div id="FOOT97"><p><a class="footnote_backlink" href="#DOCF97"><sup>97</sup></a>
+<div><p id="FOOT97" epub:type="footnote"><a class="footnote_backlink" href="#DOCF97"><sup>97</sup></a>
 Section <a href="3_002e3.xhtml#g_t3_002e3_002e4">3.3.4</a> describes one such language.</p>
 </div>
 </div>

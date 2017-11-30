@@ -38,7 +38,7 @@ Next: <a href="4_002e2.xhtml#g_t4_002e2" accesskey="n" rel="next">4.2</a>, Prev:
 circular to think about evaluating Lisp programs using an evaluator that is
 itself implemented in Lisp.  However, evaluation is a process, so it is
 appropriate to describe the evaluation process using Lisp, which, after all, is
-our tool for describing processes.<a class="footnote_link" id="DOCF207" href="#FOOT207"><sup>207</sup></a>
+our tool for describing processes.<sup><a class="footnote_link" id="DOCF207" href="#FOOT207" epub:type="noteref">207</a></sup>
 An evaluator that is written in the same language that it evaluates is said to
 be <a id="index-metacircular"></a>
 <em>metacircular</em>.
@@ -65,7 +65,7 @@ in which expressions to be evaluated in environments are reduced to procedures
 to be applied to arguments, which in turn are reduced to new expressions to be
 evaluated in new environments, and so on, until we get down to symbols, whose
 values are looked up in the environment, and to primitive procedures, which are
-applied directly (see <a href="#Figure-4_002e1">Figure 4.1</a>).<a class="footnote_link" id="DOCF208" href="#FOOT208"><sup>208</sup></a> 
+applied directly (see <a href="#Figure-4_002e1">Figure 4.1</a>).<sup><a class="footnote_link" id="DOCF208" href="#FOOT208" epub:type="noteref">208</a></sup> 
 This evaluation cycle will be embodied by the interplay between the two
 critical procedures in the evaluator, <code>eval</code> and <code>apply</code>, which are
 described in <a href="#g_t4_002e1_002e1">4.1.1</a> (see <a href="#Figure-4_002e1">Figure 4.1</a>).
@@ -248,7 +248,7 @@ the definition of <code>apply</code>:
 <code>list-of-values</code> to produce the list of arguments to which the procedure
 is to be applied. <code>List-of-values</code> takes as an argument the operands of
 the combination.  It evaluates each operand and returns a list of the
-corresponding values:<a class="footnote_link" id="DOCF209" href="#FOOT209"><sup>209</sup></a>
+corresponding values:<sup><a class="footnote_link" id="DOCF209" href="#FOOT209" epub:type="noteref">209</a></sup>
 </p>
 <div class="lisp">
 <pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">define</span><span class="pln"> </span><span class="opn">(</span><span class="pln">list-of-values exps env</span><span class="clo">)</span><span class="pln">
@@ -278,7 +278,7 @@ connection between an implemented language and an implementation language.  The
 yields a value in that language.  The interpreter predicate <code>true?</code>
 translates that value into a value that can be tested by the <code>if</code> in the
 implementation language: The metacircular representation of truth might not be
-the same as that of the underlying Scheme.<a class="footnote_link" id="DOCF210" href="#FOOT210"><sup>210</sup></a>
+the same as that of the underlying Scheme.<sup><a class="footnote_link" id="DOCF210" href="#FOOT210" epub:type="noteref">210</a></sup>
 </p>
 <a id="Sequences"></a>
 <h5 class="subsubheading">Sequences</h5>
@@ -314,7 +314,7 @@ environment.
    env</span><span class="clo">)</span><span class="pln">
   </span><span class="lit">'ok</span><span class="clo">)</span></pre></div>
 
-<p>Definitions of variables are handled in a similar manner.<a class="footnote_link" id="DOCF211" href="#FOOT211"><sup>211</sup></a>
+<p>Definitions of variables are handled in a similar manner.<sup><a class="footnote_link" id="DOCF211" href="#FOOT211" epub:type="noteref">211</a></sup>
 </p>
 <div class="lisp">
 <pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">define</span><span class="pln"> </span><span class="opn">(</span><span class="pln">eval-definition exp env</span><span class="clo">)</span><span class="pln">
@@ -325,7 +325,7 @@ environment.
   </span><span class="lit">'ok</span><span class="clo">)</span></pre></div>
 
 <p>We have chosen here to return the symbol <code>ok</code> as the value of an
-assignment or a definition.<a class="footnote_link" id="DOCF212" href="#FOOT212"><sup>212</sup></a>
+assignment or a definition.<sup><a class="footnote_link" id="DOCF212" href="#FOOT212" epub:type="noteref">212</a></sup>
 </p>
 <blockquote>
 <p><strong><a id="Exercise-4_002e1"></a>Exercise 4.1:</strong> Notice that we cannot tell whether
@@ -374,7 +374,7 @@ expressions.
 <div class="lisp">
 <pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">define</span><span class="pln"> </span><span class="opn">(</span><span class="pln">variable? exp</span><span class="clo">)</span><span class="pln"> </span><span class="opn">(</span><span class="pln">symbol? exp</span><span class="clo">))</span></pre></div>
 
-</li><li> Quotations have the form <code>(quote ⟨<var>text-of-quotation</var>⟩)</code>:<a class="footnote_link" id="DOCF213" href="#FOOT213"><sup>213</sup></a>
+</li><li> Quotations have the form <code>(quote ⟨<var>text-of-quotation</var>⟩)</code>:<sup><a class="footnote_link" id="DOCF213" href="#FOOT213" epub:type="noteref">213</a></sup>
 
 <div class="lisp">
 <pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">define</span><span class="pln"> </span><span class="opn">(</span><span class="pln">quoted? exp</span><span class="clo">)</span><span class="pln">
@@ -457,7 +457,7 @@ identifies lists beginning with a designated symbol:
 
 </li><li> Conditionals begin with <code>if</code> and have a predicate, a consequent, and an
 (optional) alternative.  If the expression has no alternative part, we provide
-<code>false</code> as the alternative.<a class="footnote_link" id="DOCF214" href="#FOOT214"><sup>214</sup></a>
+<code>false</code> as the alternative.<sup><a class="footnote_link" id="DOCF214" href="#FOOT214" epub:type="noteref">214</a></sup>
 
 <div class="lisp">
 <pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">define</span><span class="pln"> </span><span class="opn">(</span><span class="kwd">if</span><span class="pun">?</span><span class="pln"> exp</span><span class="clo">)</span><span class="pln"> </span><span class="opn">(</span><span class="pln">tagged-list? exp </span><span class="lit">'if</span><span class="clo">))</span><span class="pln">
@@ -485,7 +485,7 @@ expressions:
 include syntax operations on <code>begin</code> expressions to extract the actual
 sequence from the <code>begin</code> expression, as well as selectors that return the
 first expression and the rest of the expressions in the
-sequence.<a class="footnote_link" id="DOCF215" href="#FOOT215"><sup>215</sup></a>
+sequence.<sup><a class="footnote_link" id="DOCF215" href="#FOOT215" epub:type="noteref">215</a></sup>
 
 <div class="lisp">
 <pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">define</span><span class="pln"> </span><span class="opn">(</span><span class="kwd">begin</span><span class="pun">?</span><span class="pln"> exp</span><span class="clo">)</span><span class="pln"> 
@@ -553,7 +553,7 @@ must be explicitly specified.
 expression, and a procedure <code>cond-&gt;if</code> that transforms <code>cond</code>
 expressions into <code>if</code> expressions.  A case analysis begins with
 <code>cond</code> and has a list of predicate-action clauses.  A clause is an
-<code>else</code> clause if its predicate is the symbol <code>else</code>.<a class="footnote_link" id="DOCF216" href="#FOOT216"><sup>216</sup></a>
+<code>else</code> clause if its predicate is the symbol <code>else</code>.<sup><a class="footnote_link" id="DOCF216" href="#FOOT216" epub:type="noteref">216</a></sup>
 </p>
 <div class="lisp">
 <pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">define</span><span class="pln"> </span><span class="opn">(</span><span class="kwd">cond</span><span class="pun">?</span><span class="pln"> exp</span><span class="clo">)</span><span class="pln"> 
@@ -589,7 +589,7 @@ expressions into <code>if</code> expressions.  A case analysis begins with
 transformations are called <a id="index-derived-expressions"></a>
 <em>derived expressions</em>.  <code>Let</code>
 expressions are also derived expressions (see 
-<a href="#Exercise-4_002e6">Exercise 4.6</a>).<a class="footnote_link" id="DOCF217" href="#FOOT217"><sup>217</sup></a>
+<a href="#Exercise-4_002e6">Exercise 4.6</a>).<sup><a class="footnote_link" id="DOCF217" href="#FOOT217" epub:type="noteref">217</a></sup>
 </p>
 <blockquote>
 <p><strong><a id="Exercise-4_002e2"></a>Exercise 4.2:</strong> Louis Reasoner plans to reorder the
@@ -856,7 +856,7 @@ empty environment is simply the empty list.
 
 <p>Each frame of an environment is represented as a pair of lists: a list of the
 variables bound in that frame and a list of the associated
-values.<a class="footnote_link" id="DOCF218" href="#FOOT218"><sup>218</sup></a>
+values.<sup><a class="footnote_link" id="DOCF218" href="#FOOT218" epub:type="noteref">218</a></sup>
 </p>
 <div class="lisp">
 <pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">define</span><span class="pln"> </span><span class="opn">(</span><span class="pln">make-frame variables values</span><span class="clo">)</span><span class="pln">
@@ -956,7 +956,7 @@ production-quality Lisp system, the speed of the evaluator’s environment
 operations—especially that of variable lookup—has a major impact on the
 performance of the system.  The representation described here, although
 conceptually simple, is not efficient and would not ordinarily be used in a
-production system.<a class="footnote_link" id="DOCF219" href="#FOOT219"><sup>219</sup></a>
+production system.<sup><a class="footnote_link" id="DOCF219" href="#FOOT219" epub:type="noteref">219</a></sup>
 </p>
 <blockquote>
 <p><strong><a id="Exercise-4_002e11"></a>Exercise 4.11:</strong> Instead of representing a frame
@@ -1038,7 +1038,7 @@ implements that primitive.
   </span><span class="opn">(</span><span class="kwd">cadr</span><span class="pln"> proc</span><span class="clo">))</span></pre></div>
 
 <p><code>Setup-environment</code> will get the primitive names and implementation
-procedures from a list:<a class="footnote_link" id="DOCF220" href="#FOOT220"><sup>220</sup></a>
+procedures from a list:<sup><a class="footnote_link" id="DOCF220" href="#FOOT220" epub:type="noteref">220</a></sup>
 </p>
 <div class="lisp">
 <pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">define</span><span class="pln"> primitive-procedures
@@ -1058,7 +1058,7 @@ procedures from a list:<a class="footnote_link" id="DOCF220" href="#FOOT220"><su
 
 <p>To apply a primitive procedure, we simply apply the implementation procedure to
 the arguments, using the underlying Lisp
-system:<a class="footnote_link" id="DOCF221" href="#FOOT221"><sup>221</sup></a>
+system:<sup><a class="footnote_link" id="DOCF221" href="#FOOT221" epub:type="noteref">221</a></sup>
 </p>
 <div class="lisp">
 <pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">define</span><span class="pln"> </span><span class="opn">(</span><span class="pln">apply-primitive-procedure proc args</span><span class="clo">)</span><span class="pln">
@@ -1073,7 +1073,7 @@ Lisp system.  It prints a <a id="index-prompt"></a>
 evaluates this expression in the global environment, and prints the result.  We
 precede each printed result by an <a id="index-output-prompt"></a>
 <em>output prompt</em> so as to distinguish
-the value of the expression from other output that may be printed.<a class="footnote_link" id="DOCF222" href="#FOOT222"><sup>222</sup></a>
+the value of the expression from other output that may be printed.<sup><a class="footnote_link" id="DOCF222" href="#FOOT222" epub:type="noteref">222</a></sup>
 </p>
 <div class="lisp">
 <pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">define</span><span class="pln"> input-prompt  </span><span class="str">";;; M-Eval input:"</span><span class="clo">)</span><span class="pln">
@@ -1193,13 +1193,13 @@ the evaluator will be able to compute factorials.
 <p>From this perspective, our evaluator is seen to be a <a id="index-universal-machine"></a>
 <em>universal machine</em>.  
 It mimics other machines when these are described as Lisp
-programs.<a class="footnote_link" id="DOCF223" href="#FOOT223"><sup>223</sup></a> This is striking. Try to imagine an analogous evaluator
+programs.<sup><a class="footnote_link" id="DOCF223" href="#FOOT223" epub:type="noteref">223</a></sup> This is striking. Try to imagine an analogous evaluator
 for electrical circuits.  This would be a circuit that takes as input a signal
 encoding the plans for some other circuit, such as a filter.  Given this input,
 the circuit evaluator would then behave like a filter with the same
 description.  Such a universal electrical circuit is almost unimaginably
 complex.  It is remarkable that the program evaluator is a rather simple
-program.<a class="footnote_link" id="DOCF224" href="#FOOT224"><sup>224</sup></a>
+program.<sup><a class="footnote_link" id="DOCF224" href="#FOOT224" epub:type="noteref">224</a></sup>
 </p>
 <p>Another striking aspect of the evaluator is that it acts as a bridge between
 the data objects that are manipulated by our programming language and the
@@ -1218,7 +1218,7 @@ to give the user the ability to explicitly evaluate a data object as a Lisp
 expression, by making <code>eval</code> available for use in programs.  Many Lisp
 dialects provide a primitive <code>eval</code> procedure that takes as arguments an
 expression and an environment and evaluates the expression relative to the
-environment.<a class="footnote_link" id="DOCF225" href="#FOOT225"><sup>225</sup></a> Thus,
+environment.<sup><a class="footnote_link" id="DOCF225" href="#FOOT225" epub:type="noteref">225</a></sup> Thus,
 </p>
 <div class="lisp">
 <pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="pln">eval </span><span class="lit">'</span><span class="opn">(</span><span class="pun">*</span><span class="pln"> </span><span class="lit">5</span><span class="pln"> </span><span class="lit">5</span><span class="clo">)</span><span class="pln"> user-initial-environment</span><span class="clo">)</span></pre></div>
@@ -1229,7 +1229,7 @@ environment.<a class="footnote_link" id="DOCF225" href="#FOOT225"><sup>225</sup>
 <pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="pln">eval </span><span class="opn">(</span><span class="kwd">cons</span><span class="pln"> </span><span class="lit">'</span><span class="pun">*</span><span class="pln"> </span><span class="opn">(</span><span class="pln">list </span><span class="lit">5</span><span class="pln"> </span><span class="lit">5</span><span class="clo">))</span><span class="pln"> 
       user-initial-environment</span><span class="clo">)</span></pre></div>
 
-<p>will both return 25.<a class="footnote_link" id="DOCF226" href="#FOOT226"><sup>226</sup></a>
+<p>will both return 25.<sup><a class="footnote_link" id="DOCF226" href="#FOOT226" epub:type="noteref">226</a></sup>
 </p>
 <blockquote>
 <p><strong><a id="Exercise-4_002e15"></a>Exercise 4.15:</strong> Given a one-argument procedure
@@ -1252,7 +1252,7 @@ implement the following program:
 
 <p>Now consider evaluating the expression <code>(try try)</code> and show that any
 possible outcome (either halting or running forever) violates the intended
-behavior of <code>halts?</code>.<a class="footnote_link" id="DOCF227" href="#FOOT227"><sup>227</sup></a>
+behavior of <code>halts?</code>.<sup><a class="footnote_link" id="DOCF227" href="#FOOT227" epub:type="noteref">227</a></sup>
 </p></blockquote>
 
 <a id="g_t4_002e1_002e6"></a>
@@ -1304,7 +1304,7 @@ definition for any procedure in which the internal definitions come first in a
 body and evaluation of the value expressions for the defined variables doesn’t
 actually use any of the defined variables.  (For an example of a procedure that
 doesn’t obey these restrictions, so that sequential definition isn’t equivalent
-to simultaneous definition, see <a href="#Exercise-4_002e19">Exercise 4.19</a>.)<a class="footnote_link" id="DOCF228" href="#FOOT228"><sup>228</sup></a>
+to simultaneous definition, see <a href="#Exercise-4_002e19">Exercise 4.19</a>.)<sup><a class="footnote_link" id="DOCF228" href="#FOOT228" epub:type="noteref">228</a></sup>
 </p>
 <p>There is, however, a simple way to treat definitions so that internally defined
 names have truly simultaneous scope—just create all local variables that will
@@ -1338,7 +1338,7 @@ not-yet-assigned variable.
 <p>An alternative strategy for scanning out internal definitions is shown in
 <a href="#Exercise-4_002e18">Exercise 4.18</a>.  Unlike the transformation shown above, this enforces the
 restriction that the defined variables’ values can be evaluated without using
-any of the variables’ values.<a class="footnote_link" id="DOCF229" href="#FOOT229"><sup>229</sup></a>
+any of the variables’ values.<sup><a class="footnote_link" id="DOCF229" href="#FOOT229" epub:type="noteref">229</a></sup>
 </p>
 <blockquote>
 <p><strong><a id="Exercise-4_002e16"></a>Exercise 4.16:</strong> In this exercise we implement the
@@ -1426,7 +1426,7 @@ are truly meant to be simultaneous, then the value 5 for <code>a</code> should b
 used in evaluating <code>b</code>.  Hence, in Eva’s view <code>a</code> should be 5,
 <code>b</code> should be 15, and the result should be 20.  Which (if any) of these
 viewpoints do you support?  Can you devise a way to implement internal
-definitions so that they behave as Eva prefers?<a class="footnote_link" id="DOCF230" href="#FOOT230"><sup>230</sup></a>
+definitions so that they behave as Eva prefers?<sup><a class="footnote_link" id="DOCF230" href="#FOOT230" epub:type="noteref">230</a></sup>
 </p></blockquote>
 
 <blockquote>
@@ -1500,7 +1500,7 @@ environment diagram for the same evaluation, but with <code>let</code> in place 
 procedures without using <code>letrec</code> (or even <code>define</code>), although the
 method for accomplishing this is much more subtle than Louis imagined.  The
 following expression computes 10 factorial by applying a recursive factorial
-procedure:<a class="footnote_link" id="DOCF231" href="#FOOT231"><sup>231</sup></a>
+procedure:<sup><a class="footnote_link" id="DOCF231" href="#FOOT231" epub:type="noteref">231</a></sup>
 </p>
 <div class="lisp">
 <pre class="lisp prettyprinted" style=""><span class="opn">((</span><span class="kwd">lambda</span><span class="pln"> </span><span class="opn">(</span><span class="pln">n</span><span class="clo">)</span><span class="pln">
@@ -1574,7 +1574,7 @@ application, and must extract its operator and operands.  This analysis is
 expensive.  Performing it repeatedly is wasteful.
 </p>
 <p>We can transform the evaluator to be significantly more efficient by arranging
-things so that syntactic analysis is performed only once.<a class="footnote_link" id="DOCF232" href="#FOOT232"><sup>232</sup></a> We split <code>eval</code>, which takes an expression and an
+things so that syntactic analysis is performed only once.<sup><a class="footnote_link" id="DOCF232" href="#FOOT232" epub:type="noteref">232</a></sup> We split <code>eval</code>, which takes an expression and an
 environment, into two parts.  The procedure <code>analyze</code> takes only the
 expression.  It performs the syntactic analysis and returns a new procedure,
 the <a id="index-execution-procedure"></a>
@@ -1640,7 +1640,7 @@ phase.
     </span><span class="opn">(</span><span class="kwd">lambda</span><span class="pln"> </span><span class="opn">(</span><span class="pln">env</span><span class="clo">)</span><span class="pln"> qval</span><span class="clo">)))</span></pre></div>
 
 <p>Looking up a variable value must still be done in the execution phase, since
-this depends upon knowing the environment.<a class="footnote_link" id="DOCF233" href="#FOOT233"><sup>233</sup></a>
+this depends upon knowing the environment.<sup><a class="footnote_link" id="DOCF233" href="#FOOT233" epub:type="noteref">233</a></sup>
 </p>
 <div class="lisp">
 <pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">define</span><span class="pln"> </span><span class="opn">(</span><span class="pln">analyze-variable exp</span><span class="clo">)</span><span class="pln">
@@ -1698,7 +1698,7 @@ from evaluation of the <code>lambda</code> may be applied many times.
       </span><span class="opn">(</span><span class="pln">make-procedure vars bproc env</span><span class="clo">))))</span></pre></div>
 
 <p>Analysis of a sequence of expressions (as in a <code>begin</code> or the body of a
-<code>lambda</code> expression) is more involved.<a class="footnote_link" id="DOCF234" href="#FOOT234"><sup>234</sup></a> Each expression in the
+<code>lambda</code> expression) is more involved.<sup><a class="footnote_link" id="DOCF234" href="#FOOT234" epub:type="noteref">234</a></sup> Each expression in the
 sequence is analyzed, yielding an execution procedure.  These execution
 procedures are combined to produce an execution procedure that takes an
 environment as argument and sequentially calls each individual execution
@@ -1808,7 +1808,7 @@ that is spent in analysis versus execution for various procedures.
 <div class="footnote">
 <h4 class="footnotes-heading">Footnotes</h4>
 
-<div id="FOOT207"><p><a class="footnote_backlink" href="#DOCF207"><sup>207</sup></a>
+<div><p id="FOOT207" epub:type="footnote"><a class="footnote_backlink" href="#DOCF207"><sup>207</sup></a>
 Even so, there will remain
 important aspects of the evaluation process that are not elucidated by our
 evaluator.  The most important of these are the detailed mechanisms by which
@@ -1816,7 +1816,7 @@ procedures call other procedures and return values to their callers.  We will
 address these issues in <a href="Chapter-5.xhtml#Chapter-5">Chapter 5</a>, where we take a closer look at the
 evaluation process by implementing the evaluator as a simple register machine.</p>
 </div>
-<div id="FOOT208"><p><a class="footnote_backlink" href="#DOCF208"><sup>208</sup></a>
+<div><p id="FOOT208" epub:type="footnote"><a class="footnote_backlink" href="#DOCF208"><sup>208</sup></a>
 If we grant ourselves the
 ability to apply primitives, then what remains for us to implement in the
 evaluator?  The job of the evaluator is not to specify the primitives of the
@@ -1849,7 +1849,7 @@ from procedure calls.
 
 </li></ul>
 </div>
-<div id="FOOT209"><p><a class="footnote_backlink" href="#DOCF209"><sup>209</sup></a>
+<div><p id="FOOT209" epub:type="footnote"><a class="footnote_backlink" href="#DOCF209"><sup>209</sup></a>
 We could have simplified the <code>application?</code>
 clause in <code>eval</code> by using <code>map</code> (and stipulating that <code>operands</code>
 returns a list) rather than writing an explicit <code>list-of-values</code>
@@ -1859,51 +1859,51 @@ thus could be written in a language that doesn’t have higher-order procedures)
 even though the language that it supports will include higher-order
 procedures.</p>
 </div>
-<div id="FOOT210"><p><a class="footnote_backlink" href="#DOCF210"><sup>210</sup></a>
+<div><p id="FOOT210" epub:type="footnote"><a class="footnote_backlink" href="#DOCF210"><sup>210</sup></a>
 In this case, the language
 being implemented and the implementation language are the same.  Contemplation
 of the meaning of <code>true?</code> here yields expansion of consciousness without
 the abuse of substance.</p>
 </div>
-<div id="FOOT211"><p><a class="footnote_backlink" href="#DOCF211"><sup>211</sup></a>
+<div><p id="FOOT211" epub:type="footnote"><a class="footnote_backlink" href="#DOCF211"><sup>211</sup></a>
 This
 implementation of <code>define</code> ignores a subtle issue in the handling of
 internal definitions, although it works correctly in most cases.  We will see
 what the problem is and how to solve it in <a href="#g_t4_002e1_002e6">4.1.6</a>.</p>
 </div>
-<div id="FOOT212"><p><a class="footnote_backlink" href="#DOCF212"><sup>212</sup></a>
+<div><p id="FOOT212" epub:type="footnote"><a class="footnote_backlink" href="#DOCF212"><sup>212</sup></a>
 As we said when we introduced
 <code>define</code> and <code>set!</code>, these values are implementation-dependent in
 Scheme—that is, the implementor can choose what value to return.</p>
 </div>
-<div id="FOOT213"><p><a class="footnote_backlink" href="#DOCF213"><sup>213</sup></a>
+<div><p id="FOOT213" epub:type="footnote"><a class="footnote_backlink" href="#DOCF213"><sup>213</sup></a>
 As
 mentioned in <a href="2_002e3.xhtml#g_t2_002e3_002e1">2.3.1</a>, the evaluator sees a quoted expression as a
 list beginning with <code>quote</code>, even if the expression is typed with the
 quotation mark.  For example, the expression <code>'a</code> would be seen by the
 evaluator as <code>(quote a)</code>.  See <a href="2_002e3.xhtml#Exercise-2_002e55">Exercise 2.55</a>.</p>
 </div>
-<div id="FOOT214"><p><a class="footnote_backlink" href="#DOCF214"><sup>214</sup></a>
+<div><p id="FOOT214" epub:type="footnote"><a class="footnote_backlink" href="#DOCF214"><sup>214</sup></a>
 The value of an <code>if</code> expression
 when the predicate is false and there is no alternative is unspecified in
 Scheme; we have chosen here to make it false.  We will support the use of the
 variables <code>true</code> and <code>false</code> in expressions to be evaluated by
 binding them in the global environment.  See <a href="#g_t4_002e1_002e4">4.1.4</a>.</p>
 </div>
-<div id="FOOT215"><p><a class="footnote_backlink" href="#DOCF215"><sup>215</sup></a>
+<div><p id="FOOT215" epub:type="footnote"><a class="footnote_backlink" href="#DOCF215"><sup>215</sup></a>
 These selectors for a list of expressions—and the
 corresponding ones for a list of operands—are not intended as a data
 abstraction.  They are introduced as mnemonic names for the basic list
 operations in order to make it easier to understand the explicit-control
 evaluator in <a href="5_002e4.xhtml#g_t5_002e4">5.4</a>.</p>
 </div>
-<div id="FOOT216"><p><a class="footnote_backlink" href="#DOCF216"><sup>216</sup></a>
+<div><p id="FOOT216" epub:type="footnote"><a class="footnote_backlink" href="#DOCF216"><sup>216</sup></a>
 The
 value of a <code>cond</code> expression when all the predicates are false and there
 is no <code>else</code> clause is unspecified in Scheme; we have chosen here to make
 it false.</p>
 </div>
-<div id="FOOT217"><p><a class="footnote_backlink" href="#DOCF217"><sup>217</sup></a>
+<div><p id="FOOT217" epub:type="footnote"><a class="footnote_backlink" href="#DOCF217"><sup>217</sup></a>
 Practical Lisp systems provide a mechanism that allows a user
 to add new derived expressions and specify their implementation as syntactic
 transformations without modifying the evaluator.  Such a user-defined
@@ -1914,14 +1914,14 @@ name-conflict problems.  There has been much research on mechanisms for macro
 definition that do not cause these difficulties.  See, for example, <a href="References.xhtml#Kohlbecker-1986">Kohlbecker 1986</a>, 
 <a href="References.xhtml#Clinger-and-Rees-1991">Clinger and Rees 1991</a>, and <a href="References.xhtml#Hanson-1991">Hanson 1991</a>.</p>
 </div>
-<div id="FOOT218"><p><a class="footnote_backlink" href="#DOCF218"><sup>218</sup></a>
+<div><p id="FOOT218" epub:type="footnote"><a class="footnote_backlink" href="#DOCF218"><sup>218</sup></a>
 Frames are not really a data abstraction in the following
 code: <code>Set-variable-value!</code> and <code>define-variable!</code> use
 <code>set-car!</code>  to directly modify the values in a frame.  The purpose of the
 frame procedures is to make the environment-manipulation procedures easy to
 read.</p>
 </div>
-<div id="FOOT219"><p><a class="footnote_backlink" href="#DOCF219"><sup>219</sup></a>
+<div><p id="FOOT219" epub:type="footnote"><a class="footnote_backlink" href="#DOCF219"><sup>219</sup></a>
 The drawback of this representation (as well as the
 variant in <a href="#Exercise-4_002e11">Exercise 4.11</a>) is that the evaluator may have to search
 through many frames in order to find the binding for a given variable.  (Such
@@ -1931,7 +1931,7 @@ inefficiency is to make use of a strategy called <a id="index-lexical-addressing
 <em>lexical addressing</em>,
 which will be discussed in <a href="5_002e5.xhtml#g_t5_002e5_002e6">5.5.6</a>.</p>
 </div>
-<div id="FOOT220"><p><a class="footnote_backlink" href="#DOCF220"><sup>220</sup></a>
+<div><p id="FOOT220" epub:type="footnote"><a class="footnote_backlink" href="#DOCF220"><sup>220</sup></a>
 Any procedure defined in the underlying Lisp
 can be used as a primitive for the metacircular evaluator.  The name of a
 primitive installed in the evaluator need not be the same as the name of its
@@ -1940,7 +1940,7 @@ metacircular evaluator implements Scheme itself.  Thus, for example, we could
 put <code>(list 'first car)</code> or <code>(list 'square (lambda (x) (* x x)))</code> in
 the list of <code>primitive-procedures</code>.</p>
 </div>
-<div id="FOOT221"><p><a class="footnote_backlink" href="#DOCF221"><sup>221</sup></a>
+<div><p id="FOOT221" epub:type="footnote"><a class="footnote_backlink" href="#DOCF221"><sup>221</sup></a>
 <code>Apply-in-underlying-scheme</code> is the <code>apply</code>
 procedure we have used in earlier chapters.  The metacircular evaluator’s
 <code>apply</code> procedure (<a href="#g_t4_002e1_002e1">4.1.1</a>) models the working of this
@@ -1957,7 +1957,7 @@ instead that we have saved a reference to the underlying <code>apply</code> by d
 <p>before defining the metacircular <code>apply</code>.  This allows us to access the
 original version of <code>apply</code> under a different name.</p>
 </div>
-<div id="FOOT222"><p><a class="footnote_backlink" href="#DOCF222"><sup>222</sup></a>
+<div><p id="FOOT222" epub:type="footnote"><a class="footnote_backlink" href="#DOCF222"><sup>222</sup></a>
 The
 primitive procedure <code>read</code> waits for input from the user, and returns the
 next complete expression that is typed.  For example, if the user types
@@ -1966,7 +1966,7 @@ next complete expression that is typed.  For example, if the user types
 <code>read</code> returns a two-element list containing the symbol <code>quote</code> and
 the symbol <code>x</code>.</p>
 </div>
-<div id="FOOT223"><p><a class="footnote_backlink" href="#DOCF223"><sup>223</sup></a>
+<div><p id="FOOT223" epub:type="footnote"><a class="footnote_backlink" href="#DOCF223"><sup>223</sup></a>
 The fact that the machines are described in Lisp is
 inessential.  If we give our evaluator a Lisp program that behaves as an
 evaluator for some other language, say C, the Lisp evaluator will emulate the C
@@ -1994,7 +1994,7 @@ practical computer science as well.  For example, he invented the idea of
 structuring programs using general-purpose subroutines.  See <a href="References.xhtml#Hodges-1983">Hodges 1983</a> for a
 biography of Turing.</p>
 </div>
-<div id="FOOT224"><p><a class="footnote_backlink" href="#DOCF224"><sup>224</sup></a>
+<div><p id="FOOT224" epub:type="footnote"><a class="footnote_backlink" href="#DOCF224"><sup>224</sup></a>
 Some people find it counterintuitive that an evaluator, which
 is implemented by a relatively simple procedure, can emulate programs that are
 more complex than the evaluator itself.  The existence of a universal evaluator
@@ -2004,7 +2004,7 @@ a branch of mathematical logic, is concerned with logical limits of
 computation.  Douglas Hofstadter’s beautiful book <cite>Gödel, Escher, Bach</cite>
 explores some of these ideas (<a href="References.xhtml#Hofstadter-1979">Hofstadter 1979</a>).</p>
 </div>
-<div id="FOOT225"><p><a class="footnote_backlink" href="#DOCF225"><sup>225</sup></a>
+<div><p id="FOOT225" epub:type="footnote"><a class="footnote_backlink" href="#DOCF225"><sup>225</sup></a>
 Warning: This <code>eval</code> primitive is not identical to
 the <code>eval</code> procedure we implemented in <a href="#g_t4_002e1_002e1">4.1.1</a>, because it
 uses <em>actual</em> Scheme environments rather than the sample environment
@@ -2015,13 +2015,13 @@ we saw earlier is not identical to the metacircular <code>apply</code>, because 
 uses actual Scheme procedures rather than the procedure objects we constructed
 in <a href="#g_t4_002e1_002e3">4.1.3</a> and <a href="#g_t4_002e1_002e4">4.1.4</a>.</p>
 </div>
-<div id="FOOT226"><p><a class="footnote_backlink" href="#DOCF226"><sup>226</sup></a>
+<div><p id="FOOT226" epub:type="footnote"><a class="footnote_backlink" href="#DOCF226"><sup>226</sup></a>
 The <abbr>MIT</abbr> implementation of Scheme
 includes <code>eval</code>, as well as a symbol <code>user-initial-environment</code> that
 is bound to the initial environment in which the user’s input expressions are
 evaluated.</p>
 </div>
-<div id="FOOT227"><p><a class="footnote_backlink" href="#DOCF227"><sup>227</sup></a>
+<div><p id="FOOT227" epub:type="footnote"><a class="footnote_backlink" href="#DOCF227"><sup>227</sup></a>
 Although we stipulated that <code>halts?</code>
 is given a procedure object, notice that this reasoning still applies even if
 <code>halts?</code> can gain access to the procedure’s text and its environment.
@@ -2031,7 +2031,7 @@ clear example of a <a id="index-non_002dcomputable"></a>
 <em>non-computable</em> problem, i.e., a well-posed task
 that cannot be carried out as a computational procedure.</p>
 </div>
-<div id="FOOT228"><p><a class="footnote_backlink" href="#DOCF228"><sup>228</sup></a>
+<div><p id="FOOT228" epub:type="footnote"><a class="footnote_backlink" href="#DOCF228"><sup>228</sup></a>
 Wanting programs
 to not depend on this evaluation mechanism is the reason for the “management
 is not responsible” remark in <a href="1_002e1.xhtml#Footnote-28">Footnote 28</a> of <a href="Chapter-1.xhtml#Chapter-1">Chapter 1</a>.  By
@@ -2044,7 +2044,7 @@ programs.  However, we will see in <a href="5_002e5.xhtml#g_t5_002e5_002e6">5.5.
 of simultaneous scoping for internal definitions avoids some nasty difficulties
 that would otherwise arise in implementing a compiler.</p>
 </div>
-<div id="FOOT229"><p><a class="footnote_backlink" href="#DOCF229"><sup>229</sup></a>
+<div><p id="FOOT229" epub:type="footnote"><a class="footnote_backlink" href="#DOCF229"><sup>229</sup></a>
 The <abbr>IEEE</abbr> standard for Scheme
 allows for different implementation strategies by specifying that it is up to
 the programmer to obey this restriction, not up to the implementation to
@@ -2052,7 +2052,7 @@ enforce it.  Some Scheme implementations, including <abbr>MIT</abbr> Scheme, use
 the transformation shown above.  Thus, some programs that don’t obey this
 restriction will in fact run in such implementations.</p>
 </div>
-<div id="FOOT230"><p><a class="footnote_backlink" href="#DOCF230"><sup>230</sup></a>
+<div><p id="FOOT230" epub:type="footnote"><a class="footnote_backlink" href="#DOCF230"><sup>230</sup></a>
 The <abbr>MIT</abbr>
 implementors of Scheme support Alyssa on the following grounds: Eva is in
 principle correct—the definitions should be regarded as simultaneous.  But
@@ -2061,7 +2061,7 @@ Eva requires.  In the absence of such a mechanism, it is better to generate an
 error in the difficult cases of simultaneous definitions (Alyssa’s notion) than
 to produce an incorrect answer (as Ben would have it).</p>
 </div>
-<div id="FOOT231"><p><a class="footnote_backlink" href="#DOCF231"><sup>231</sup></a>
+<div><p id="FOOT231" epub:type="footnote"><a class="footnote_backlink" href="#DOCF231"><sup>231</sup></a>
 This example illustrates a programming trick for
 formulating recursive procedures without using <code>define</code>.  The most general
 trick of this sort is the <img src="fig/math/e4262a87f8871ebce3cb99ff25f06e73.svg" class="math-inline" style="height: 0.645em;" alt="\( Y \)" /> <a id="index-operator-1"></a>
@@ -2070,7 +2070,7 @@ trick of this sort is the <img src="fig/math/e4262a87f8871ebce3cb99ff25f06e73.sv
 details on the λ-calculus, and <a href="References.xhtml#Gabriel-1988">Gabriel 1988</a> for an exposition of the
 <img src="fig/math/e4262a87f8871ebce3cb99ff25f06e73.svg" class="math-inline" style="height: 0.645em;" alt="\( Y \)" /> operator in Scheme.)</p>
 </div>
-<div id="FOOT232"><p><a class="footnote_backlink" href="#DOCF232"><sup>232</sup></a>
+<div><p id="FOOT232" epub:type="footnote"><a class="footnote_backlink" href="#DOCF232"><sup>232</sup></a>
 This
 technique is an integral part of the compilation process, which we shall
 discuss in <a href="Chapter-5.xhtml#Chapter-5">Chapter 5</a>.  Jonathan Rees wrote a Scheme interpreter like this
@@ -2078,7 +2078,7 @@ in about 1982 for the T project (<a href="References.xhtml#Rees-and-Adams-1982">
 also <a href="References.xhtml#Feeley-and-Lapalme-1987">Feeley and Lapalme 1987</a>) independently invented this technique in his
 master’s thesis.</p>
 </div>
-<div id="FOOT233"><p><a class="footnote_backlink" href="#DOCF233"><sup>233</sup></a>
+<div><p id="FOOT233" epub:type="footnote"><a class="footnote_backlink" href="#DOCF233"><sup>233</sup></a>
 There is, however, an
 important part of the variable search that <em>can</em> be done as part of the
 syntactic analysis.  As we will show in <a href="5_002e5.xhtml#g_t5_002e5_002e6">5.5.6</a>, one can determine
@@ -2086,7 +2086,7 @@ the position in the environment structure where the value of the variable will
 be found, thus obviating the need to scan the environment for the entry that
 matches the variable.</p>
 </div>
-<div id="FOOT234"><p><a class="footnote_backlink" href="#DOCF234"><sup>234</sup></a>
+<div><p id="FOOT234" epub:type="footnote"><a class="footnote_backlink" href="#DOCF234"><sup>234</sup></a>
 See <a href="#Exercise-4_002e23">Exercise 4.23</a>
 for some insight into the processing of sequences.</p>
 </div>

@@ -68,7 +68,7 @@ more than one value, and, as a result, the computation is dealing with
 relations rather than with single-valued functions.  Logic programming extends
 this idea by combining a relational vision of programming with a powerful kind
 of symbolic pattern matching called <a id="index-unification"></a>
-<em>unification</em>.<a class="footnote_link" id="DOCF262" href="#FOOT262"><sup>262</sup></a>
+<em>unification</em>.<sup><a class="footnote_link" id="DOCF262" href="#FOOT262" epub:type="noteref">262</a></sup>
 </p>
 <p>This approach, when it works, can be a very powerful way to write programs.
 Part of the power comes from the fact that a single “what is” fact can be
@@ -95,7 +95,7 @@ two parts:
 
 </li><li> For any <code>u</code>, <code>v</code>, <code>y</code>, and <code>z</code>, <code>(cons u v)</code> and
 <code>y</code> <code>append</code> to form <code>(cons u z)</code> if <code>v</code> and <code>y</code>
-<code>append</code> to form <code>z</code>.<a class="footnote_link" id="DOCF263" href="#FOOT263"><sup>263</sup></a>
+<code>append</code> to form <code>z</code>.<sup><a class="footnote_link" id="DOCF263" href="#FOOT263" epub:type="noteref">263</a></sup>
 
 </li></ul>
 
@@ -119,13 +119,13 @@ b c d)</code>.
 “procedure” by stating the two rules about <code>append</code> given above.  “How
 to” knowledge is provided automatically by the interpreter to allow this
 single pair of rules to be used to answer all three types of questions about
-<code>append</code>.<a class="footnote_link" id="DOCF264" href="#FOOT264"><sup>264</sup></a>
+<code>append</code>.<sup><a class="footnote_link" id="DOCF264" href="#FOOT264" epub:type="noteref">264</a></sup>
 </p>
 <p>Contemporary logic programming languages (including the one we implement here)
 have substantial deficiencies, in that their general “how to” methods can
 lead them into spurious infinite loops or other undesirable behavior.  Logic
 programming is an active field of research in computer
-science.<a class="footnote_link" id="DOCF265" href="#FOOT265"><sup>265</sup></a>
+science.<sup><a class="footnote_link" id="DOCF265" href="#FOOT265" epub:type="noteref">265</a></sup>
 </p>
 <p>Earlier in this chapter we explored the technology of implementing interpreters
 and described the elements that are essential to an interpreter for a Lisp-like
@@ -360,7 +360,7 @@ is <code>computer</code>:
 <p>because the third item in the entry is a list of three elements, and the
 pattern’s third item specifies that there should be two elements.  If we wanted
 to change the pattern so that the third item could be any list beginning with
-<code>computer</code>, we could specify<a class="footnote_link" id="DOCF266" href="#FOOT266"><sup>266</sup></a>
+<code>computer</code>, we could specify<sup><a class="footnote_link" id="DOCF266" href="#FOOT266" epub:type="noteref">266</a></sup>
 </p>
 <div class="lisp">
 <pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="pln">job </span><span class="pun">?</span><span class="pln">x </span><span class="opn">(</span><span class="pln">computer </span><span class="pun">.</span><span class="pln"> </span><span class="pun">?</span><span class="pln">type</span><span class="clo">))</span></pre></div>
@@ -515,7 +515,7 @@ In general,
 <pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="pln">not ⟨</span><var><span class="pln">query</span><span class="pun">₁</span></var><span class="pln">⟩</span><span class="clo">)</span></pre></div>
 
 <p>is satisfied by all assignments to the pattern variables that do not satisfy
-<img src="fig/math/baacff7ca4bf7baeb71fc5d2eafe8913.svg" class="math-inline" style="height: 0.916em; vertical-align: -0.231em;" alt="\( {⟨\kern0.1em query_1⟩} \)" />.<a class="footnote_link" id="DOCF267" href="#FOOT267"><sup>267</sup></a>
+<img src="fig/math/baacff7ca4bf7baeb71fc5d2eafe8913.svg" class="math-inline" style="height: 0.916em; vertical-align: -0.231em;" alt="\( {⟨\kern0.1em query_1⟩} \)" />.<sup><a class="footnote_link" id="DOCF267" href="#FOOT267" epub:type="noteref">267</a></sup>
 </p>
 <p>The final combining form is called <code>lisp-value</code>.  When <code>lisp-value</code>
 is the first element of a pattern, it specifies that the next element is a Lisp
@@ -528,7 +528,7 @@ arguments.  In general,
 <p>will be satisfied by assignments to the pattern variables for which the
 <code>⟨</code><var>predicate</var><code>⟩</code> applied to the instantiated <img src="fig/math/3a5899b123fcb6b0e738fa6bb1a237e4.svg" class="math-inline" style="height: 0.913em; vertical-align: -0.231em;" alt="\( {⟨\kern0.1em arg_1⟩} \)" /> <span class="roman">…</span>
 <img src="fig/math/9f0197828704a1ad5f51fd2e1cfc2048.svg" class="math-inline" style="height: 0.913em; vertical-align: -0.231em;" alt="\( {⟨\kern0.1em arg_n⟩} \)" /> is true.  For example, to find all people whose salary is
-greater than $30,000 we could write<a class="footnote_link" id="DOCF268" href="#FOOT268"><sup>268</sup></a>
+greater than $30,000 we could write<sup><a class="footnote_link" id="DOCF268" href="#FOOT268" epub:type="noteref">268</a></sup>
 </p>
 <div class="lisp">
 <pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">and</span><span class="pln"> </span><span class="opn">(</span><span class="pln">salary </span><span class="pun">?</span><span class="pln">person </span><span class="pun">?</span><span class="pln">amount</span><span class="clo">)</span><span class="pln">
@@ -570,7 +570,7 @@ The rule
 <p>specifies that two people live near each other if they live in the same town.
 The final <code>not</code> clause prevents the rule from saying that all people live
 near themselves.  The <code>same</code> relation is defined by a very simple
-rule:<a class="footnote_link" id="DOCF269" href="#FOOT269"><sup>269</sup></a>
+rule:<sup><a class="footnote_link" id="DOCF269" href="#FOOT269" epub:type="noteref">269</a></sup>
 </p>
 <div class="lisp">
 <pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="pln">rule </span><span class="opn">(</span><span class="pln">same </span><span class="pun">?</span><span class="pln">x </span><span class="pun">?</span><span class="pln">x</span><span class="clo">))</span></pre></div>
@@ -590,7 +590,7 @@ he supervises someone who is in turn a supervisor:
 <pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="pln">rule ⟨</span><var><span class="pln">conclusion</span></var><span class="pln">⟩ ⟨</span><var><span class="pln">body</span></var><span class="pln">⟩</span><span class="clo">)</span></pre></div>
 
 <p>where <code>⟨</code><var>conclusion</var><code>⟩</code> is a pattern and <code>⟨</code><var>body</var><code>⟩</code> is any
-query.<a class="footnote_link" id="DOCF270" href="#FOOT270"><sup>270</sup></a> We can think of a rule as representing a large
+query.<sup><a class="footnote_link" id="DOCF270" href="#FOOT270" epub:type="noteref">270</a></sup> We can think of a rule as representing a large
 (even infinite) set of assertions, namely all instantiations of the rule
 conclusion with variable assignments that satisfy the rule body.  When we
 described simple queries (patterns), we said that an assignment to variables
@@ -925,7 +925,7 @@ symbol indicating that the match has failed or an extension to the frame.  The
 results for all the data-base entries are collected into a stream, which is
 passed through a filter to weed out the failures.  The result is a stream of
 all the frames that extend the given frame via a match to some assertion in the
-data base.<a class="footnote_link" id="DOCF271" href="#FOOT271"><sup>271</sup></a>
+data base.<sup><a class="footnote_link" id="DOCF271" href="#FOOT271" epub:type="noteref">271</a></sup>
 </p>
 <p>In our system, a query takes an input stream of frames and performs the above
 matching operation for every frame in the stream, as indicated in <a href="#Figure-4_002e4">Figure 4.4</a>.  
@@ -1012,9 +1012,9 @@ compound queries can be slow.  For example, since a query may produce more than
 one output frame for each input frame, and each query in an <code>and</code> gets its
 input frames from the previous query, an <code>and</code> query could, in the worst
 case, have to perform a number of matches that is exponential in the number of
-queries (see <a href="#Exercise-4_002e76">Exercise 4.76</a>).<a class="footnote_link" id="DOCF272" href="#FOOT272"><sup>272</sup></a> Though systems for
+queries (see <a href="#Exercise-4_002e76">Exercise 4.76</a>).<sup><a class="footnote_link" id="DOCF272" href="#FOOT272" epub:type="noteref">272</a></sup> Though systems for
 handling only simple queries are quite practical, dealing with complex queries
-is extremely difficult.<a class="footnote_link" id="DOCF273" href="#FOOT273"><sup>273</sup></a>
+is extremely difficult.<sup><a class="footnote_link" id="DOCF273" href="#FOOT273" epub:type="noteref">273</a></sup>
 </p>
 <p>From the stream-of-frames viewpoint, the <code>not</code> of some query acts as a
 filter that removes all frames for which the query can be satisfied.  For
@@ -1037,7 +1037,7 @@ query
 <p>the first clause will generate frames with bindings for <code>?x</code> and
 <code>?y</code>.  The <code>not</code> clause will then filter these by removing all frames
 in which the binding for <code>?x</code> satisfies the restriction that <code>?x</code> is
-a computer programmer.<a class="footnote_link" id="DOCF274" href="#FOOT274"><sup>274</sup></a>
+a computer programmer.<sup><a class="footnote_link" id="DOCF274" href="#FOOT274" epub:type="noteref">274</a></sup>
 </p>
 <p>The <code>lisp-value</code> special form is implemented as a similar filter on frame
 streams.  We use each frame in the stream to instantiate any variables in the
@@ -1074,7 +1074,7 @@ example, the algorithm must infer that <code>?x</code> should be <code>(a b c)</
 <code>?y</code> should be <code>b</code>, and <code>?z</code> should be <code>c</code>.  We may think
 of this process as solving a set of equations among the pattern components.  In
 general, these are simultaneous equations, which may require substantial
-manipulation to solve.<a class="footnote_link" id="DOCF275" href="#FOOT275"><sup>275</sup></a> For example, unifying <code>(?x ?x)</code> and
+manipulation to solve.<sup><a class="footnote_link" id="DOCF275" href="#FOOT275" epub:type="noteref">275</a></sup> For example, unifying <code>(?x ?x)</code> and
 <code>((a ?y c) (a b ?z))</code> may be thought of as specifying the simultaneous
 equations
 </p>
@@ -1115,7 +1115,7 @@ The match does, however, restrict the value of <code>?x</code>.  Whatever value
 pattern <code>(b ?y)</code> is thus put into the frame.  If a value for <code>?y</code> is
 later determined and added to the frame (by a pattern match or unification that
 is required to be consistent with this frame), the previously bound <code>?x</code>
-will refer to this value.<a class="footnote_link" id="DOCF276" href="#FOOT276"><sup>276</sup></a>
+will refer to this value.<sup><a class="footnote_link" id="DOCF276" href="#FOOT276" epub:type="noteref">276</a></sup>
 </p>
 <a id="Applying-rules"></a>
 <h5 class="subsubheading">Applying rules</h5>
@@ -1195,7 +1195,7 @@ the input stream, two streams:
 assertions in the data base (using the pattern matcher), and
 
 </li><li> a stream of extended frames obtained by applying all possible rules (using the
-unifier).<a class="footnote_link" id="DOCF277" href="#FOOT277"><sup>277</sup></a>
+unifier).<sup><a class="footnote_link" id="DOCF277" href="#FOOT277" epub:type="noteref">277</a></sup>
 
 </li></ul>
 
@@ -1228,7 +1228,7 @@ single empty frame.  This will produce the stream of all possible matches (all
 possible extensions to the empty frame).  For each frame in the resulting
 stream, it instantiates the original query using the values of the variables
 found in the frame.  This stream of instantiated queries is then
-printed.<a class="footnote_link" id="DOCF278" href="#FOOT278"><sup>278</sup></a>
+printed.<sup><a class="footnote_link" id="DOCF278" href="#FOOT278" epub:type="noteref">278</a></sup>
 </p>
 <p>The driver also checks for the special command <code>assert!</code>, which signals
 that the input is not a query but rather an assertion or rule to be added to
@@ -1253,7 +1253,7 @@ the data base.  For instance,
 <p>The means of combination used in the query language may at first seem identical
 to the operations <code>and</code>, <code>or</code>, and <code>not</code> of mathematical logic,
 and the application of query-language rules is in fact accomplished through a
-legitimate method of inference.<a class="footnote_link" id="DOCF279" href="#FOOT279"><sup>279</sup></a> This
+legitimate method of inference.<sup><a class="footnote_link" id="DOCF279" href="#FOOT279" epub:type="noteref">279</a></sup> This
 identification of the query language with mathematical logic is not really
 valid, though, because the query language provides a <a id="index-control-structure"></a>
 <em>control structure</em> 
@@ -1300,7 +1300,7 @@ interpretation: To establish the conclusion of the rule, establish the body of
 the rule.  Rules, therefore, specify computations.  However, because rules can
 also be regarded as statements of mathematical logic, we can justify any
 “inference” accomplished by a logic program by asserting that the same result
-could be obtained by working entirely within mathematical logic.<a class="footnote_link" id="DOCF280" href="#FOOT280"><sup>280</sup></a>
+could be obtained by working entirely within mathematical logic.<sup><a class="footnote_link" id="DOCF280" href="#FOOT280" epub:type="noteref">280</a></sup>
 </p>
 <a id="Infinite-loops"></a>
 <h5 class="subsubheading">Infinite loops</h5>
@@ -1357,7 +1357,7 @@ of loops that can occur.  Collections of interrelated rules can lead to loops
 that are much harder to anticipate, and the appearance of a loop can depend on
 the order of clauses in an <code>and</code> (see <a href="#Exercise-4_002e64">Exercise 4.64</a>) or on low-level
 details concerning the order in which the system processes
-queries.<a class="footnote_link" id="DOCF281" href="#FOOT281"><sup>281</sup></a>
+queries.<sup><a class="footnote_link" id="DOCF281" href="#FOOT281" epub:type="noteref">281</a></sup>
 </p>
 <a id="Problems-with-not"></a>
 <h5 class="subsubheading">Problems with <code>not</code></h5>
@@ -1398,10 +1398,10 @@ query system, however, “not <img src="fig/math/51e14234cf17ac37770614a2ec2663d
 knowledge in the data base.  For example, given the personnel data base of
 <a href="#g_t4_002e4_002e1">4.4.1</a>, the system would happily deduce all sorts of <code>not</code>
 statements, such as that Ben Bitdiddle is not a baseball fan, that it is not
-raining outside, and that 2 + 2 is not 4.<a class="footnote_link" id="DOCF282" href="#FOOT282"><sup>282</sup></a> In other words, the <code>not</code> of logic programming
+raining outside, and that 2 + 2 is not 4.<sup><a class="footnote_link" id="DOCF282" href="#FOOT282" epub:type="noteref">282</a></sup> In other words, the <code>not</code> of logic programming
 languages reflects the so-called <a id="index-closed-world-assumption"></a>
 <em>closed world assumption</em> that all
-relevant information has been included in the data base.<a class="footnote_link" id="DOCF283" href="#FOOT283"><sup>283</sup></a>
+relevant information has been included in the data base.<sup><a class="footnote_link" id="DOCF283" href="#FOOT283" epub:type="noteref">283</a></sup>
 </p>
 <blockquote>
 <p><strong><a id="Exercise-4_002e64"></a>Exercise 4.64:</strong> Louis Reasoner mistakenly deletes
@@ -2031,7 +2031,7 @@ of values for the pattern variables that make the patterns the same, then these
 patterns imply instructions to find a <code>?y</code> such that <code>?y</code> is equal to
 the expression involving <code>?y</code>.  There is no general method for solving
 such equations, so we reject such bindings; these cases are recognized by the
-predicate <code>depends-on?</code>.<a class="footnote_link" id="DOCF284" href="#FOOT284"><sup>284</sup></a>  On the
+predicate <code>depends-on?</code>.<sup><a class="footnote_link" id="DOCF284" href="#FOOT284" epub:type="noteref">284</a></sup>  On the
 other hand, we do not want to reject attempts to bind a variable to itself.
 For example, consider unifying <code>(?x ?x)</code> and <code>(?y ?y)</code>.  The second
 attempt to bind <code>?x</code> to <code>?y</code> matches <code>?y</code> (the stored value of
@@ -2373,7 +2373,7 @@ efficiency of query processing, since it means that the system can check to see
 if an expression is a pattern variable by checking whether the <code>car</code> of
 the expression is the symbol <code>?</code>, rather than having to extract characters
 from the symbol.  The syntax transformation is accomplished by the following
-procedure:<a class="footnote_link" id="DOCF285" href="#FOOT285"><sup>285</sup></a>
+procedure:<sup><a class="footnote_link" id="DOCF285" href="#FOOT285" epub:type="noteref">285</a></sup>
 </p>
 <div class="lisp">
 <pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">define</span><span class="pln"> </span><span class="opn">(</span><span class="pln">query-syntax-process exp</span><span class="clo">)</span><span class="pln">
@@ -2671,7 +2671,7 @@ answer is probably worth a Ph.D.)
 <div class="footnote">
 <h4 class="footnotes-heading">Footnotes</h4>
 
-<div id="FOOT262"><p><a class="footnote_backlink" href="#DOCF262"><sup>262</sup></a>
+<div><p id="FOOT262" epub:type="footnote"><a class="footnote_backlink" href="#DOCF262"><sup>262</sup></a>
 Logic
 programming has grown out of a long history of research in automatic theorem
 proving.  Early theorem-proving programs could accomplish very little, because
@@ -2703,13 +2703,13 @@ an attempt to figure out what Hewitt was talking about in his brilliant but
 impenetrable Ph.D. thesis.  For a history of logic programming, see 
 <a href="References.xhtml#Robinson-1983">Robinson 1983</a>.</p>
 </div>
-<div id="FOOT263"><p><a class="footnote_backlink" href="#DOCF263"><sup>263</sup></a>
+<div><p id="FOOT263" epub:type="footnote"><a class="footnote_backlink" href="#DOCF263"><sup>263</sup></a>
 To see the correspondence between the
 rules and the procedure, let <code>x</code> in the procedure (where <code>x</code> is
 nonempty) correspond to <code>(cons u v)</code> in the rule.  Then <code>z</code> in the
 rule corresponds to the <code>append</code> of <code>(cdr x)</code> and <code>y</code>.</p>
 </div>
-<div id="FOOT264"><p><a class="footnote_backlink" href="#DOCF264"><sup>264</sup></a>
+<div><p id="FOOT264" epub:type="footnote"><a class="footnote_backlink" href="#DOCF264"><sup>264</sup></a>
 This certainly does not relieve the user of the entire
 problem of how to compute the answer.  There are many different mathematically
 equivalent sets of rules for formulating the <code>append</code> relation, only some
@@ -2718,7 +2718,7 @@ In addition, sometimes “what is” information gives no clue “how to” comp
 an answer.  For example, consider the problem of computing the <img src="fig/math/05e4cdb2f26a4f66b68c167423907fea.svg" class="math-inline" style="height: 0.669em; vertical-align: -0.235em;" alt="\( y \)" /> such that
 <img src="fig/math/437588ce11e8725cc98d93e391d57fb8.svg" class="math-inline" style="height: 1.078em; vertical-align: -0.235em;" alt="\( {y^2 = x} \)" />.</p>
 </div>
-<div id="FOOT265"><p><a class="footnote_backlink" href="#DOCF265"><sup>265</sup></a>
+<div><p id="FOOT265" epub:type="footnote"><a class="footnote_backlink" href="#DOCF265"><sup>265</sup></a>
 Interest in logic programming peaked during the early 80s
 when the Japanese government began an ambitious project aimed at building
 superfast computers optimized to run logic programming languages.  The speed of
@@ -2732,24 +2732,24 @@ relational programming based on techniques other than simple pattern matching,
 such as the ability to deal with numerical constraints such as the ones
 illustrated in the constraint-propagation system of <a href="3_002e3.xhtml#g_t3_002e3_002e5">3.3.5</a>.</p>
 </div>
-<div id="FOOT266"><p><a class="footnote_backlink" href="#DOCF266"><sup>266</sup></a>
+<div><p id="FOOT266" epub:type="footnote"><a class="footnote_backlink" href="#DOCF266"><sup>266</sup></a>
 This uses the dotted-tail notation
 introduced in <a href="2_002e2.xhtml#Exercise-2_002e20">Exercise 2.20</a>.</p>
 </div>
-<div id="FOOT267"><p><a class="footnote_backlink" href="#DOCF267"><sup>267</sup></a>
+<div><p id="FOOT267" epub:type="footnote"><a class="footnote_backlink" href="#DOCF267"><sup>267</sup></a>
 Actually, this description of <code>not</code> is valid
 only for simple cases.  The real behavior of <code>not</code> is more complex.  We
 will examine <code>not</code>’s peculiarities in <a href="#g_t4_002e4_002e2">4.4.2</a> and
 <a href="#g_t4_002e4_002e3">4.4.3</a>.</p>
 </div>
-<div id="FOOT268"><p><a class="footnote_backlink" href="#DOCF268"><sup>268</sup></a>
+<div><p id="FOOT268" epub:type="footnote"><a class="footnote_backlink" href="#DOCF268"><sup>268</sup></a>
 <code>Lisp-value</code> should be used
 only to perform an operation not provided in the query language.  In
 particular, it should not be used to test equality (since that is what the
 matching in the query language is designed to do) or inequality (since that can
 be done with the <code>same</code> rule shown below).</p>
 </div>
-<div id="FOOT269"><p><a class="footnote_backlink" href="#DOCF269"><sup>269</sup></a>
+<div><p id="FOOT269" epub:type="footnote"><a class="footnote_backlink" href="#DOCF269"><sup>269</sup></a>
 Notice that we do not need <code>same</code> in order to make two
 things be the same: We just use the same pattern variable for each—in effect,
 we have one thing instead of two things in the first place.  For example, see
@@ -2761,12 +2761,12 @@ of a query forces the same value to appear in both places, using different
 pattern variables does not force different values to appear.  (The values
 assigned to different pattern variables may be the same or different.)</p>
 </div>
-<div id="FOOT270"><p><a class="footnote_backlink" href="#DOCF270"><sup>270</sup></a>
+<div><p id="FOOT270" epub:type="footnote"><a class="footnote_backlink" href="#DOCF270"><sup>270</sup></a>
 We will also allow rules without bodies, as in <code>same</code>, and
 we will interpret such a rule to mean that the rule conclusion is satisfied by
 any values of the variables.</p>
 </div>
-<div id="FOOT271"><p><a class="footnote_backlink" href="#DOCF271"><sup>271</sup></a>
+<div><p id="FOOT271" epub:type="footnote"><a class="footnote_backlink" href="#DOCF271"><sup>271</sup></a>
 Because matching is generally very expensive, we would like
 to avoid applying the full matcher to every element of the data base.  This is
 usually arranged by breaking up the process into a fast, coarse match and the
@@ -2779,27 +2779,27 @@ constructed rather then when we want to select the candidates.  This is called
 data-base-indexing schemes.  Our implementation, described in 
 <a href="#g_t4_002e4_002e4">4.4.4</a>, contains a simple-minded form of such an optimization.</p>
 </div>
-<div id="FOOT272"><p><a class="footnote_backlink" href="#DOCF272"><sup>272</sup></a>
+<div><p id="FOOT272" epub:type="footnote"><a class="footnote_backlink" href="#DOCF272"><sup>272</sup></a>
 But this kind of exponential
 explosion is not common in <code>and</code> queries because the added conditions tend
 to reduce rather than expand the number of frames produced.</p>
 </div>
-<div id="FOOT273"><p><a class="footnote_backlink" href="#DOCF273"><sup>273</sup></a>
+<div><p id="FOOT273" epub:type="footnote"><a class="footnote_backlink" href="#DOCF273"><sup>273</sup></a>
 There is a large literature on
 data-base-management systems that is concerned with how to handle complex
 queries efficiently.</p>
 </div>
-<div id="FOOT274"><p><a class="footnote_backlink" href="#DOCF274"><sup>274</sup></a>
+<div><p id="FOOT274" epub:type="footnote"><a class="footnote_backlink" href="#DOCF274"><sup>274</sup></a>
 There is a subtle difference between this
 filter implementation of <code>not</code> and the usual meaning of <code>not</code> in
 mathematical logic.  See <a href="#g_t4_002e4_002e3">4.4.3</a>.</p>
 </div>
-<div id="FOOT275"><p><a class="footnote_backlink" href="#DOCF275"><sup>275</sup></a>
+<div><p id="FOOT275" epub:type="footnote"><a class="footnote_backlink" href="#DOCF275"><sup>275</sup></a>
 In one-sided pattern matching, all the
 equations that contain pattern variables are explicit and already solved for
 the unknown (the pattern variable).</p>
 </div>
-<div id="FOOT276"><p><a class="footnote_backlink" href="#DOCF276"><sup>276</sup></a>
+<div><p id="FOOT276" epub:type="footnote"><a class="footnote_backlink" href="#DOCF276"><sup>276</sup></a>
 Another way to think of unification is that
 it generates the most general pattern that is a specialization of the two input
 patterns.  That is, the unification of <code>(?x a)</code> and <code>((b ?y) ?z)</code> is
@@ -2808,20 +2808,20 @@ a)</code>, discussed above, is <code>(a a a)</code>.  For our implementation, it
 convenient to think of the result of unification as a frame rather than a
 pattern.</p>
 </div>
-<div id="FOOT277"><p><a class="footnote_backlink" href="#DOCF277"><sup>277</sup></a>
+<div><p id="FOOT277" epub:type="footnote"><a class="footnote_backlink" href="#DOCF277"><sup>277</sup></a>
 Since unification is a generalization of matching, we could
 simplify the system by using the unifier to produce both streams.  Treating the
 easy case with the simple matcher, however, illustrates how matching (as
 opposed to full-blown unification) can be useful in its own right.</p>
 </div>
-<div id="FOOT278"><p><a class="footnote_backlink" href="#DOCF278"><sup>278</sup></a>
+<div><p id="FOOT278" epub:type="footnote"><a class="footnote_backlink" href="#DOCF278"><sup>278</sup></a>
 The reason we use streams (rather than lists) of frames is
 that the recursive application of rules can generate infinite numbers of values
 that satisfy a query.  The delayed evaluation embodied in streams is crucial
 here: The system will print responses one by one as they are generated,
 regardless of whether there are a finite or infinite number of responses.</p>
 </div>
-<div id="FOOT279"><p><a class="footnote_backlink" href="#DOCF279"><sup>279</sup></a>
+<div><p id="FOOT279" epub:type="footnote"><a class="footnote_backlink" href="#DOCF279"><sup>279</sup></a>
 That a particular method of inference
 is legitimate is not a trivial assertion.  One must prove that if one starts
 with true premises, only true conclusions can be derived.  The method of
@@ -2830,7 +2830,7 @@ inference represented by rule applications is <a id="index-modus-ponens"></a>
 familiar method of inference that says that if <img src="fig/math/0795850a4e18ff44aa3a2868640c29a7.svg" class="math-inline" style="height: 0.656em; vertical-align: -0.004em;" alt="\( A \)" /> is true and <em>A
 implies B</em> is true, then we may conclude that <img src="fig/math/30728d9819efd7caec6b07dd841c7393.svg" class="math-inline" style="height: 0.645em;" alt="\( B \)" /> is true.</p>
 </div>
-<div id="FOOT280"><p><a class="footnote_backlink" href="#DOCF280"><sup>280</sup></a>
+<div><p id="FOOT280" epub:type="footnote"><a class="footnote_backlink" href="#DOCF280"><sup>280</sup></a>
 We
 must qualify this statement by agreeing that, in speaking of the “inference”
 accomplished by a logic program, we assume that the computation terminates.
@@ -2848,7 +2848,7 @@ concerns of research in logic programming is to find ways to achieve more
 consistency with mathematical logic without unduly sacrificing expressive
 power.</p>
 </div>
-<div id="FOOT281"><p><a class="footnote_backlink" href="#DOCF281"><sup>281</sup></a>
+<div><p id="FOOT281" epub:type="footnote"><a class="footnote_backlink" href="#DOCF281"><sup>281</sup></a>
 This is not a problem of the logic but one of the procedural
 interpretation of the logic provided by our interpreter.  We could write an
 interpreter that would not fall into a loop here.  For example, we could
@@ -2864,7 +2864,7 @@ in performing deductions.  Imagine a diabolical rule of the form “To show
 <img src="fig/math/98df79006c92e07113ae705b54fcef17.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.189em;" alt="\( {P(x)} \)" /> is true, show that <img src="fig/math/f609f83406e5a8b6032604db61942658.svg" class="math-inline" style="height: 0.936em; vertical-align: -0.225em;" alt="\( {P(f(x))} \)" /> is true,” for some
 suitably chosen function <img src="fig/math/7a8d165d31a04fc319968e0213091ff8.svg" class="math-inline" style="height: 0.929em; vertical-align: -0.234em;" alt="\( f \)" />.</p>
 </div>
-<div id="FOOT282"><p><a class="footnote_backlink" href="#DOCF282"><sup>282</sup></a>
+<div><p id="FOOT282" epub:type="footnote"><a class="footnote_backlink" href="#DOCF282"><sup>282</sup></a>
 Consider the query
 <code>(not (baseball-fan (Bitdiddle Ben)))</code>.  The system finds that
 <code>(baseball-fan (Bitdiddle Ben))</code> is not in the data base, so the empty
@@ -2873,12 +2873,12 @@ stream of frames.  The result of the query is thus the empty frame, which is
 used to instantiate the input query to produce <code>(not (baseball-fan
 (Bitdiddle Ben)))</code>.</p>
 </div>
-<div id="FOOT283"><p><a class="footnote_backlink" href="#DOCF283"><sup>283</sup></a>
+<div><p id="FOOT283" epub:type="footnote"><a class="footnote_backlink" href="#DOCF283"><sup>283</sup></a>
 A discussion
 and justification of this treatment of <code>not</code> can be found in the article
 by <a href="References.xhtml#Clark-_00281978_0029">Clark (1978)</a>.</p>
 </div>
-<div id="FOOT284"><p><a class="footnote_backlink" href="#DOCF284"><sup>284</sup></a>
+<div><p id="FOOT284" epub:type="footnote"><a class="footnote_backlink" href="#DOCF284"><sup>284</sup></a>
 In general, unifying <code>?y</code> with an
 expression involving <code>?y</code> would require our being able to find a fixed
 point of the equation <code>?y</code> = <code>⟨</code><var>expression involving <code>?y</code></var><code>⟩</code>.  It
@@ -2904,7 +2904,7 @@ identical, the first result is a valid assertion about infinite series but the
 second is not.  Similarly, for our unification results, reasoning with an
 arbitrary syntactically constructed expression may lead to errors.</p>
 </div>
-<div id="FOOT285"><p><a class="footnote_backlink" href="#DOCF285"><sup>285</sup></a>
+<div><p id="FOOT285" epub:type="footnote"><a class="footnote_backlink" href="#DOCF285"><sup>285</sup></a>
 Most Lisp systems give the user the ability to modify the
 ordinary <code>read</code> procedure to perform such transformations by defining
 <a id="index-reader-macro-characters"></a>

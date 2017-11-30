@@ -135,7 +135,7 @@ language provides a compound structure called a <a id="index-pair"></a>
 constructed with the primitive procedure <code>cons</code>.  This procedure takes two
 arguments and returns a compound data object that contains the two arguments as
 parts.  Given a pair, we can extract the parts using the primitive procedures
-<code>car</code> and <code>cdr</code>.<a class="footnote_link" id="DOCF68" href="#FOOT68"><sup>68</sup></a> Thus, we can use <code>cons</code>, <code>car</code>, and
+<code>car</code> and <code>cdr</code>.<sup><a class="footnote_link" id="DOCF68" href="#FOOT68" epub:type="noteref">68</a></sup> Thus, we can use <code>cons</code>, <code>car</code>, and
 <code>cdr</code> as follows:
 </p>
 <div class="lisp">
@@ -179,7 +179,7 @@ only glue we need.  Data objects constructed from pairs are called
 <p>Pairs offer a natural way to complete the rational-number system.  Simply
 represent a rational number as a pair of two integers: a numerator and a
 denominator.  Then <code>make-rat</code>, <code>numer</code>, and <code>denom</code> are readily
-implemented as follows:<a class="footnote_link" id="DOCF69" href="#FOOT69"><sup>69</sup></a>
+implemented as follows:<sup><a class="footnote_link" id="DOCF69" href="#FOOT69" epub:type="noteref">69</a></sup>
 </p>
 <div class="lisp">
 <pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">define</span><span class="pln"> </span><span class="opn">(</span><span class="pln">make-rat n d</span><span class="clo">)</span><span class="pln"> </span><span class="opn">(</span><span class="kwd">cons</span><span class="pln"> n d</span><span class="clo">))</span><span class="pln">
@@ -188,7 +188,7 @@ implemented as follows:<a class="footnote_link" id="DOCF69" href="#FOOT69"><sup>
 
 <p>Also, in order to display the results of our computations, we can print
 rational numbers by printing the numerator, a slash, and the
-denominator:<a class="footnote_link" id="DOCF70" href="#FOOT70"><sup>70</sup></a>
+denominator:<sup><a class="footnote_link" id="DOCF70" href="#FOOT70" epub:type="noteref">70</a></sup>
 </p>
 <div class="lisp">
 <pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">define</span><span class="pln"> </span><span class="opn">(</span><span class="pln">print-rat x</span><span class="clo">)</span><span class="pln">
@@ -397,7 +397,7 @@ In fact, this is the only condition <code>make-rat</code>, <code>numer</code>, a
 rational-number representation.  In general, we can think of data as defined by
 some collection of selectors and constructors, together with specified
 conditions that these procedures must fulfill in order to be a valid
-representation.<a class="footnote_link" id="DOCF71" href="#FOOT71"><sup>71</sup></a>
+representation.<sup><a class="footnote_link" id="DOCF71" href="#FOOT71" epub:type="noteref">71</a></sup>
 </p>
 <p>This point of view can serve to define not only “high-level” data objects,
 such as rational numbers, but lower-level objects as well.  Consider the notion
@@ -729,7 +729,7 @@ task impossible?  (Warning: This problem is very difficult.)
 <div class="footnote">
 <h4 class="footnotes-heading">Footnotes</h4>
 
-<div id="FOOT68"><p><a class="footnote_backlink" href="#DOCF68"><sup>68</sup></a>
+<div><p id="FOOT68" epub:type="footnote"><a class="footnote_backlink" href="#DOCF68"><sup>68</sup></a>
 The name <code>cons</code> stands for
 “construct.”  The names <code>car</code> and <code>cdr</code> derive from the original
 implementation of Lisp on the IBM 704.  That machine had an addressing scheme
@@ -738,7 +738,7 @@ memory location.  <code>Car</code> stands for “Contents of Address part of
 Register” and <code>cdr</code> (pronounced “could-er”) stands for “Contents of
 Decrement part of Register.”</p>
 </div>
-<div id="FOOT69"><p><a class="footnote_backlink" href="#DOCF69"><sup>69</sup></a>
+<div><p id="FOOT69" epub:type="footnote"><a class="footnote_backlink" href="#DOCF69"><sup>69</sup></a>
 Another way to define the selectors and
 constructor is
 </p>
@@ -762,14 +762,14 @@ watch every call to <code>cons</code>.
 </p>
 <p>We have chosen not to use this style of definition in this book.</p>
 </div>
-<div id="FOOT70"><p><a class="footnote_backlink" href="#DOCF70"><sup>70</sup></a>
+<div><p id="FOOT70" epub:type="footnote"><a class="footnote_backlink" href="#DOCF70"><sup>70</sup></a>
 <code>Display</code> is the Scheme primitive for printing data.
 The Scheme primitive <code>newline</code> starts a new line for printing.  Neither of
 these procedures returns a useful value, so in the uses of <code>print-rat</code>
 below, we show only what <code>print-rat</code> prints, not what the interpreter
 prints as the value returned by <code>print-rat</code>.</p>
 </div>
-<div id="FOOT71"><p><a class="footnote_backlink" href="#DOCF71"><sup>71</sup></a>
+<div><p id="FOOT71" epub:type="footnote"><a class="footnote_backlink" href="#DOCF71"><sup>71</sup></a>
 Surprisingly, this idea is very difficult to formulate
 rigorously. There are two approaches to giving such a formulation.  One,
 pioneered by C. A. R. <a href="References.xhtml#Hoare-_00281972_0029">Hoare (1972)</a>, is known as the method of <a id="index-abstract-models"></a>

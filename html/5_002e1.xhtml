@@ -316,7 +316,7 @@ to describe the iterative factorial machine of <a href="#Exercise-5_002e1">Exerc
 whose <abbr>GCD</abbr> we want and get the answer printed at our terminal.  We
 will not discuss how to make a machine that can read and print, but will assume
 (as we do when we use <code>read</code> and <code>display</code> in Scheme) that they are
-available as primitive operations.<a class="footnote_link" id="DOCF286" href="#FOOT286"><sup>286</sup></a>
+available as primitive operations.<sup><a class="footnote_link" id="DOCF286" href="#FOOT286" epub:type="noteref">286</a></sup>
 </p>
 <p><code>Read</code> is like the operations we have been using in that it produces a
 value that can be stored in a register.  But <code>read</code> does not take inputs
@@ -695,7 +695,7 @@ save the contents of any registers that will be needed after the subproblem is
 solved so that these can be restored to continue the suspended computation.  In
 the case of factorial, we will save the old value of <code>n</code>, to be restored
 when we are finished computing the factorial of the decremented <code>n</code>
-register.<a class="footnote_link" id="DOCF287" href="#FOOT287"><sup>287</sup></a>
+register.<sup><a class="footnote_link" id="DOCF287" href="#FOOT287" epub:type="noteref">287</a></sup>
 </p>
 <p>Since there is no <em>a priori</em> limit on the depth of nested recursive calls,
 we may need to save an arbitrary number of register values.  These values must
@@ -708,7 +708,7 @@ register-machine language to include a stack by adding two kinds of
 instructions: Values are placed on the stack using a <code>save</code> instruction
 and restored from the stack using a <code>restore</code> instruction.  After a
 sequence of values has been <code>save</code>d on the stack, a sequence of
-<code>restore</code>s will retrieve these values in reverse order.<a class="footnote_link" id="DOCF288" href="#FOOT288"><sup>288</sup></a>
+<code>restore</code>s will retrieve these values in reverse order.<sup><a class="footnote_link" id="DOCF288" href="#FOOT288" epub:type="noteref">288</a></sup>
 </p>
 <p>With the aid of the stack, we can reuse a single copy of the factorial
 machine’s data paths for each factorial subproblem.  There is a similar design
@@ -938,19 +938,19 @@ and <code>(const ())</code> is the empty list.
 <div class="footnote">
 <h4 class="footnotes-heading">Footnotes</h4>
 
-<div id="FOOT286"><p><a class="footnote_backlink" href="#DOCF286"><sup>286</sup></a>
+<div><p id="FOOT286" epub:type="footnote"><a class="footnote_backlink" href="#DOCF286"><sup>286</sup></a>
 This assumption glosses over a
 great deal of complexity.  Usually a large portion of the implementation of a
 Lisp system is dedicated to making reading and printing work.</p>
 </div>
-<div id="FOOT287"><p><a class="footnote_backlink" href="#DOCF287"><sup>287</sup></a>
+<div><p id="FOOT287" epub:type="footnote"><a class="footnote_backlink" href="#DOCF287"><sup>287</sup></a>
 One might argue that we don’t need to save the old <code>n</code>;
 after we decrement it and solve the subproblem, we could simply increment it to
 recover the old value.  Although this strategy works for factorial, it cannot
 work in general, since the old value of a register cannot always be computed
 from the new one.</p>
 </div>
-<div id="FOOT288"><p><a class="footnote_backlink" href="#DOCF288"><sup>288</sup></a>
+<div><p id="FOOT288" epub:type="footnote"><a class="footnote_backlink" href="#DOCF288"><sup>288</sup></a>
 In
 <a href="5_002e3.xhtml#g_t5_002e3">5.3</a> we will see how to implement a stack in terms of more
 primitive operations.</p>

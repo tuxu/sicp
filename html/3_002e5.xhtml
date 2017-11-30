@@ -57,7 +57,7 @@ mathematical functions.  We can describe the time-varying behavior of a
 quantity <img src="fig/math/2f4b15565d0a1018e90c3e1b30b76acc.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( x \)" /> as a function of time <img src="fig/math/11951e6ec01ad0675327321cf040c65a.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.189em;" alt="\( {x(t)} \)" />.  If we concentrate on <img src="fig/math/2f4b15565d0a1018e90c3e1b30b76acc.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( x \)" />
 instant by instant, we think of it as a changing quantity.  Yet if we
 concentrate on the entire time history of values, we do not emphasize
-change—the function itself does not change.<a class="footnote_link" id="DOCF180" href="#FOOT180"><sup>180</sup></a>
+change—the function itself does not change.<sup><a class="footnote_link" id="DOCF180" href="#FOOT180" epub:type="noteref">180</a></sup>
 </p>
 <p>If time is measured in discrete steps, then we can model a time function as a
 (possibly infinite) sequence.  In this section, we will see how to model change
@@ -98,7 +98,7 @@ transformations of lists, our programs must construct and copy data structures
 </p>
 <p>To see why this is true, let us compare two programs for computing the sum of
 all the prime numbers in an interval.  The first program is written in standard
-iterative style:<a class="footnote_link" id="DOCF181" href="#FOOT181"><sup>181</sup></a>
+iterative style:<sup><a class="footnote_link" id="DOCF181" href="#FOOT181" epub:type="noteref">181</a></sup>
 </p>
 <div class="lisp">
 <pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">define</span><span class="pln"> </span><span class="opn">(</span><span class="pln">sum-primes a b</span><span class="clo">)</span><span class="pln">
@@ -171,11 +171,11 @@ constraints
 
 <p>There is a distinguishable object, <code>the-empty-stream</code>, which cannot be the
 result of any <code>cons-stream</code> operation, and which can be identified with
-the predicate <code>stream-null?</code>.<a class="footnote_link" id="DOCF182" href="#FOOT182"><sup>182</sup></a>  Thus we can
+the predicate <code>stream-null?</code>.<sup><a class="footnote_link" id="DOCF182" href="#FOOT182" epub:type="noteref">182</a></sup>  Thus we can
 make and use streams, in just the same way as we can make and use lists, to
 represent aggregate data arranged in a sequence.  In particular, we can build
 stream analogs of the list operations from <a href="Chapter-2.xhtml#Chapter-2">Chapter 2</a>, such as
-<code>list-ref</code>, <code>map</code>, and <code>for-each</code>:<a class="footnote_link" id="DOCF183" href="#FOOT183"><sup>183</sup></a>
+<code>list-ref</code>, <code>map</code>, and <code>for-each</code>:<sup><a class="footnote_link" id="DOCF183" href="#FOOT183" epub:type="noteref">183</a></sup>
 </p>
 <div class="lisp">
 <pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">define</span><span class="pln"> </span><span class="opn">(</span><span class="pln">stream-ref s n</span><span class="clo">)</span><span class="pln">
@@ -260,7 +260,7 @@ pair we will put there a promise to compute the rest if it is ever requested.
 
 <p><code>Stream-car</code> selects the <code>car</code> of the pair; <code>stream-cdr</code> selects
 the <code>cdr</code> of the pair and evaluates the delayed expression found there to
-obtain the rest of the stream.<a class="footnote_link" id="DOCF184" href="#FOOT184"><sup>184</sup></a>
+obtain the rest of the stream.<sup><a class="footnote_link" id="DOCF184" href="#FOOT184" epub:type="noteref">184</a></sup>
 </p>
 <a id="The-stream-implementation-in-action"></a>
 <h5 class="subsubheading">The stream implementation in action</h5>
@@ -291,7 +291,7 @@ and 1,000,000.  <code>Stream-enumerate-interval</code> is the stream analog of
                                   high</span><span class="clo">))))</span></pre></div>
 
 <p>and thus the result returned by <code>stream-enumerate-interval</code>, formed by the
-<code>cons-stream</code>, is<a class="footnote_link" id="DOCF185" href="#FOOT185"><sup>185</sup></a>
+<code>cons-stream</code>, is<sup><a class="footnote_link" id="DOCF185" href="#FOOT185" epub:type="noteref">185</a></sup>
 </p>
 <div class="lisp">
 <pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">cons</span><span class="pln"> </span><span class="lit">10000</span><span class="pln">
@@ -437,7 +437,7 @@ to
 <div class="lisp">
 <pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="pln">memo-proc </span><span class="opn">(</span><span class="kwd">lambda</span><span class="pln"> </span><span class="opn">(</span><span class="clo">)</span><span class="pln"> ⟨</span><var><span class="pln">exp</span></var><span class="pln">⟩</span><span class="clo">))</span></pre></div>
 
-<p>and <code>force</code> is as defined previously.<a class="footnote_link" id="DOCF186" href="#FOOT186"><sup>186</sup></a>
+<p>and <code>force</code> is as defined previously.<sup><a class="footnote_link" id="DOCF186" href="#FOOT186" epub:type="noteref">186</a></sup>
 </p>
 <blockquote>
 <p><strong><a id="Exercise-3_002e50"></a>Exercise 3.50:</strong> Complete the following
@@ -468,7 +468,7 @@ its argument after printing it:
   x</span><span class="clo">)</span></pre></div>
 
 <p>What does the interpreter print in response to evaluating each expression in
-the following sequence?<a class="footnote_link" id="DOCF187" href="#FOOT187"><sup>187</sup></a>
+the following sequence?<sup><a class="footnote_link" id="DOCF187" href="#FOOT187" epub:type="noteref">187</a></sup>
 </p>
 <div class="lisp">
 <pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">define</span><span class="pln"> x 
@@ -571,7 +571,7 @@ promise to evaluate <code>(fibgen 1 2)</code>, and so on.
 <p>For a look at a more exciting infinite stream, we can generalize the
 <code>no-sevens</code> example to construct the infinite stream of prime numbers,
 using a method known as the <a id="index-sieve-of-Eratosthenes"></a>
-<em>sieve of Eratosthenes</em>.<a class="footnote_link" id="DOCF188" href="#FOOT188"><sup>188</sup></a>
+<em>sieve of Eratosthenes</em>.<sup><a class="footnote_link" id="DOCF188" href="#FOOT188" epub:type="noteref">188</a></sup>
 We start with the integers beginning with 2, which is the first prime.  To get
 the rest of the primes, we start by filtering the multiples of 2 from the rest
 of the integers.  This leaves a stream beginning with 3, which is the next
@@ -605,7 +605,7 @@ result. This process is readily described in terms of stream operations:
 
 <p>It is interesting to contemplate the signal-processing system set up by
 <code>sieve</code>, shown in the “Henderson diagram” in 
-<a href="#Figure-3_002e31">Figure 3.31</a>.<a class="footnote_link" id="DOCF189" href="#FOOT189"><sup>189</sup></a>  The input stream
+<a href="#Figure-3_002e31">Figure 3.31</a>.<sup><a class="footnote_link" id="DOCF189" href="#FOOT189" epub:type="noteref">189</a></sup>  The input stream
 feeds into an “un<code>cons</code>er” that separates the first element of the
 stream from the rest of the stream.  The first element is used to construct a
 divisibility filter, through which the rest is passed, and the output of the
@@ -642,7 +642,7 @@ evaluate <code>ones</code>, and so on.
 </p>
 <p>We can do more interesting things by manipulating streams with operations such
 as <code>add-streams</code>, which produces the elementwise sum of two given
-streams:<a class="footnote_link" id="DOCF190" href="#FOOT190"><sup>190</sup></a>
+streams:<sup><a class="footnote_link" id="DOCF190" href="#FOOT190" epub:type="noteref">190</a></sup>
 </p>
 <div class="lisp">
 <pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">define</span><span class="pln"> </span><span class="opn">(</span><span class="pln">add-streams s1 s2</span><span class="clo">)</span><span class="pln"> 
@@ -728,7 +728,7 @@ next.  That is, for every <img src="fig/math/0932467390da34555ec70c122d7e915e.sv
 prime (in which case there is a prime already generated that divides it) or
 <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" /> is prime (in which case there is a prime already generated—i.e., a
 prime less than <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" />—that is greater than
-<img src="fig/math/6401acda6e40516e261b2a2cd409285f.svg" class="math-inline" style="height: 0.993em; vertical-align: -0.168em;" alt="\( \sqrt{n} \)" />).<a class="footnote_link" id="DOCF191" href="#FOOT191"><sup>191</sup></a>
+<img src="fig/math/6401acda6e40516e261b2a2cd409285f.svg" class="math-inline" style="height: 0.993em; vertical-align: -0.168em;" alt="\( \sqrt{n} \)" />).<sup><a class="footnote_link" id="DOCF191" href="#FOOT191" epub:type="noteref">191</a></sup>
 </p>
 <blockquote>
 <p><strong><a id="Exercise-3_002e53"></a>Exercise 3.53:</strong> Without running the program,
@@ -824,7 +824,7 @@ when we compute the <img src="fig/math/3b6c232f796b2d291446b22cb38c933e.svg" cla
 additions would be exponentially greater if we had implemented <code>(delay ⟨<var>exp</var>⟩)</code> 
 simply as <code>(lambda () ⟨<var>exp</var>⟩)</code>, without using the
 optimization provided by the <code>memo-proc</code> procedure described in 
-<a href="#g_t3_002e5_002e1">3.5.1</a>.<a class="footnote_link" id="DOCF192" href="#FOOT192"><sup>192</sup></a>
+<a href="#g_t3_002e5_002e1">3.5.1</a>.<sup><a class="footnote_link" id="DOCF192" href="#FOOT192" epub:type="noteref">192</a></sup>
 </p></blockquote>
 
 <blockquote>
@@ -957,7 +957,7 @@ the procedure that improves guesses:
 
 <p>In our original <code>sqrt</code> procedure, we made these guesses be the successive
 values of a state variable. Instead we can generate the infinite stream of
-guesses, starting with an initial guess of 1:<a class="footnote_link" id="DOCF193" href="#FOOT193"><sup>193</sup></a>
+guesses, starting with an initial guess of 1:<sup><a class="footnote_link" id="DOCF193" href="#FOOT193" epub:type="noteref">193</a></sup>
 </p>
 <div class="lisp">
 <pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">define</span><span class="pln"> </span><span class="opn">(</span><span class="pln">sqrt-stream x</span><span class="clo">)</span><span class="pln">
@@ -1166,7 +1166,7 @@ represented as loops, because the “looping” must range over an infinite set.
 of <a href="2_002e2.xhtml#g_t2_002e2_002e3">2.2.3</a> to produce the stream of pairs of <em>all</em> integers
 <img src="fig/math/b3e51b500a677738d763b9243179a091.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.189em;" alt="\( {(i, j)} \)" /> with <img src="fig/math/abd99fa84a4de8dd35d5caa76adaef23.svg" class="math-inline" style="height: 0.808em; vertical-align: -0.195em;" alt="\( {i \le j} \)" /> such that <img src="fig/math/c6ad57c179a45a768d358dff2d5b5da3.svg" class="math-inline" style="height: 0.808em; vertical-align: -0.195em;" alt="\( {i + j} \)" /> is prime.  If
 <code>int-pairs</code> is the sequence of all pairs of integers <img src="fig/math/b3e51b500a677738d763b9243179a091.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.189em;" alt="\( {(i, j)} \)" /> with
-<img src="fig/math/abd99fa84a4de8dd35d5caa76adaef23.svg" class="math-inline" style="height: 0.808em; vertical-align: -0.195em;" alt="\( {i \le j} \)" />, then our required stream is simply<a class="footnote_link" id="DOCF194" href="#FOOT194"><sup>194</sup></a>
+<img src="fig/math/abd99fa84a4de8dd35d5caa76adaef23.svg" class="math-inline" style="height: 0.808em; vertical-align: -0.195em;" alt="\( {i \le j} \)" />, then our required stream is simply<sup><a class="footnote_link" id="DOCF194" href="#FOOT194" epub:type="noteref">194</a></sup>
 </p>
 <div class="lisp">
 <pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="pln">stream-filter 
@@ -1186,7 +1186,7 @@ be our desired stream <code>int-pairs</code>.)
 </p>
 <p>Call the general stream of pairs <code>(pairs S T)</code>, and consider it to be
 composed of three parts: the pair <img src="fig/math/bd66f5cdaad4cea3d736fd9bd57b8e4f.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.189em;" alt="\( {(S_0, T_0)} \)" />, the rest of the pairs in
-the first row, and the remaining pairs:<a class="footnote_link" id="DOCF195" href="#FOOT195"><sup>195</sup></a>
+the first row, and the remaining pairs:<sup><a class="footnote_link" id="DOCF195" href="#FOOT195" epub:type="noteref">195</a></sup>
 <img src="fig/math/222e6625a866defe42456b9ec507580a.svg" class="math-display" style="height: 4.867em;" alt="\[ % :72:&amp;#10; \begin{array}{c|ccc}  (S_0, T_0)   &amp;amp;  (S_0, T_1)   &amp;amp;  (S_0, T_2)   &amp;amp;  \dots  \\ \hline   &amp;amp;  (S_1, T_1)   &amp;amp;  (S_1, T_2)   &amp;amp;  \dots  \\   &amp;amp;   &amp;amp;  (S_2, T_2)   &amp;amp;  \dots  \\   &amp;amp;   &amp;amp;   &amp;amp;  \dots   \end{array} \]" />
 Observe that the third piece in this decomposition (pairs that are not in the
 first row) is (recursively) the pairs formed from <code>(stream-cdr S)</code> and
@@ -1237,7 +1237,7 @@ the first integer.
 <p>To handle infinite streams, we need to devise an order of combination that
 ensures that every element will eventually be reached if we let our program run
 long enough.  An elegant way to accomplish this is with the following
-<code>interleave</code> procedure:<a class="footnote_link" id="DOCF196" href="#FOOT196"><sup>196</sup></a>
+<code>interleave</code> procedure:<sup><a class="footnote_link" id="DOCF196" href="#FOOT196" epub:type="noteref">196</a></sup>
 </p>
 <div class="lisp">
 <pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">define</span><span class="pln"> </span><span class="opn">(</span><span class="pln">interleave s1 s2</span><span class="clo">)</span><span class="pln">
@@ -1321,7 +1321,7 @@ stipulate that <img src="fig/math/4369a830cbdbbc9579d6d56d0951ce88.svg" class="m
 <code>merge-weighted</code> takes an additional argument <code>weight</code>, which is a
 procedure that computes the weight of a pair, and is used to determine the
 order in which elements should appear in the resulting merged
-stream.<a class="footnote_link" id="DOCF197" href="#FOOT197"><sup>197</sup></a>  Using this, generalize <code>pairs</code> to a procedure
+stream.<sup><a class="footnote_link" id="DOCF197" href="#FOOT197" epub:type="noteref">197</a></sup>  Using this, generalize <code>pairs</code> to a procedure
 <code>weighted-pairs</code> that takes two streams, together with a procedure that
 computes a weighting function, and generates the stream of pairs, ordered
 according to weight.  Use your procedure to generate
@@ -1342,7 +1342,7 @@ ordered according to the sum <img src="fig/math/7cf7773f8e26e88b87af89c46bd47bc6
 the sum of two cubes in more than one way are sometimes called
 <a id="index-Ramanujan-numbers"></a>
 <em>Ramanujan numbers</em>, in honor of the mathematician Srinivasa
-Ramanujan.<a class="footnote_link" id="DOCF198" href="#FOOT198"><sup>198</sup></a> Ordered streams of pairs provide an elegant
+Ramanujan.<sup><a class="footnote_link" id="DOCF198" href="#FOOT198" epub:type="noteref">198</a></sup> Ordered streams of pairs provide an elegant
 solution to the problem of computing these numbers.  To find a number that can
 be written as the sum of two cubes in two different ways, we need only generate
 the stream of pairs of integers <img src="fig/math/b3e51b500a677738d763b9243179a091.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.189em;" alt="\( {(i, j)} \)" /> weighted according to the sum
@@ -1609,7 +1609,7 @@ more than the first element of the output stream:
   int</span><span class="clo">)</span></pre></div>
 
 <p>Now we can implement our <code>solve</code> procedure by delaying the evaluation of
-<code>dy</code> in the definition of <code>y</code>:<a class="footnote_link" id="DOCF199" href="#FOOT199"><sup>199</sup></a>
+<code>dy</code> in the definition of <code>y</code>:<sup><a class="footnote_link" id="DOCF199" href="#FOOT199" epub:type="noteref">199</a></sup>
 </p>
 <div class="lisp">
 <pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">define</span><span class="pln"> </span><span class="opn">(</span><span class="pln">solve f y0 dt</span><span class="clo">)</span><span class="pln">
@@ -1746,7 +1746,7 @@ integrand, and every procedure that uses <code>integral</code> must be aware of 
 In effect, we have created two classes of procedures: ordinary procedures and
 procedures that take delayed arguments.  In general, creating separate classes
 of procedures forces us to create separate classes of higher-order procedures
-as well.<a class="footnote_link" id="DOCF200" href="#FOOT200"><sup>200</sup></a>
+as well.<sup><a class="footnote_link" id="DOCF200" href="#FOOT200" epub:type="noteref">200</a></sup>
 </p>
 <p>One way to avoid the need for two different classes of procedures is to make
 all procedures take delayed arguments.  We could adopt a model of evaluation in
@@ -1932,7 +1932,7 @@ perception here is one of interacting with a system that has a changing state.
 One way to resolve this paradox is to realize that it is the user’s temporal
 existence that imposes state on the system.  If the user could step back from
 the interaction and think in terms of streams of balances rather than
-individual transactions, the system would appear stateless.<a class="footnote_link" id="DOCF201" href="#FOOT201"><sup>201</sup></a>
+individual transactions, the system would appear stateless.<sup><a class="footnote_link" id="DOCF201" href="#FOOT201" epub:type="noteref">201</a></sup>
 </p>
 <p>From the point of view of one part of a complex process, the other parts appear
 to change with time.  They have hidden time-varying local state.  If we wish to
@@ -1954,7 +1954,7 @@ development of <a id="index-functional-programming-languages"></a>
 any provision for assignment or mutable data.  In such a language, all
 procedures implement well-defined mathematical functions of their arguments,
 whose behavior does not change.  The functional approach is extremely
-attractive for dealing with concurrent systems.<a class="footnote_link" id="DOCF202" href="#FOOT202"><sup>202</sup></a>
+attractive for dealing with concurrent systems.<sup><a class="footnote_link" id="DOCF202" href="#FOOT202" epub:type="noteref">202</a></sup>
 </p>
 <p>On the other hand, if we look closely, we can see time-related problems
 creeping into functional models as well.  One particularly troublesome area
@@ -1991,7 +1991,7 @@ implemented, it must interleave the two transaction streams in some way that is
 constrained by “real time” as perceived by Peter and Paul, in the sense that,
 if Peter and Paul meet, they can agree that certain transactions were processed
 before the meeting, and other transactions were processed after the
-meeting.<a class="footnote_link" id="DOCF203" href="#FOOT203"><sup>203</sup></a> This
+meeting.<sup><a class="footnote_link" id="DOCF203" href="#FOOT203" epub:type="noteref">203</a></sup> This
 is precisely the same constraint that we had to deal with in 
 <a href="3_002e4.xhtml#g_t3_002e4_002e1">3.4.1</a>, where we found the need to introduce explicit synchronization to
 ensure a “correct” order of events in concurrent processing of objects with
@@ -2004,28 +2004,28 @@ structure matches our perception of the real world we are trying to model.  We
 can model the world as a collection of separate, time-bound, interacting
 objects with state, or we can model the world as a single, timeless, stateless
 unity.  Each view has powerful advantages, but neither view alone is completely
-satisfactory.  A grand unification has yet to emerge.<a class="footnote_link" id="DOCF204" href="#FOOT204"><sup>204</sup></a>
+satisfactory.  A grand unification has yet to emerge.<sup><a class="footnote_link" id="DOCF204" href="#FOOT204" epub:type="noteref">204</a></sup>
 </p>
 <div class="footnote">
 <h4 class="footnotes-heading">Footnotes</h4>
 
-<div id="FOOT180"><p><a class="footnote_backlink" href="#DOCF180"><sup>180</sup></a>
+<div><p id="FOOT180" epub:type="footnote"><a class="footnote_backlink" href="#DOCF180"><sup>180</sup></a>
 Physicists sometimes
 adopt this view by introducing the “world lines” of particles as a device for
 reasoning about motion.  We’ve also already mentioned (<a href="2_002e2.xhtml#g_t2_002e2_002e3">2.2.3</a>)
 that this is the natural way to think about signal-processing systems.  We will
 explore applications of streams to signal processing in <a href="#g_t3_002e5_002e3">3.5.3</a>.</p>
 </div>
-<div id="FOOT181"><p><a class="footnote_backlink" href="#DOCF181"><sup>181</sup></a>
+<div><p id="FOOT181" epub:type="footnote"><a class="footnote_backlink" href="#DOCF181"><sup>181</sup></a>
 Assume that we have a predicate <code>prime?</code> (e.g.,
 as in <a href="1_002e2.xhtml#g_t1_002e2_002e6">1.2.6</a>) that tests for primality.</p>
 </div>
-<div id="FOOT182"><p><a class="footnote_backlink" href="#DOCF182"><sup>182</sup></a>
+<div><p id="FOOT182" epub:type="footnote"><a class="footnote_backlink" href="#DOCF182"><sup>182</sup></a>
 In the <abbr>MIT</abbr>
 implementation, <code>the-empty-stream</code> is the same as the empty list
 <code>'()</code>, and <code>stream-null?</code> is the same as <code>null?</code>.</p>
 </div>
-<div id="FOOT183"><p><a class="footnote_backlink" href="#DOCF183"><sup>183</sup></a>
+<div><p id="FOOT183" epub:type="footnote"><a class="footnote_backlink" href="#DOCF183"><sup>183</sup></a>
 This should bother
 you.  The fact that we are defining such similar procedures for streams and
 lists indicates that we are missing some underlying abstraction.
@@ -2034,7 +2034,7 @@ finer control over the process of evaluation than we can at present.  We will
 discuss this point further at the end of <a href="#g_t3_002e5_002e4">3.5.4</a>.  In 
 <a href="4_002e2.xhtml#g_t4_002e2">4.2</a>, we’ll develop a framework that unifies lists and streams.</p>
 </div>
-<div id="FOOT184"><p><a class="footnote_backlink" href="#DOCF184"><sup>184</sup></a>
+<div><p id="FOOT184" epub:type="footnote"><a class="footnote_backlink" href="#DOCF184"><sup>184</sup></a>
 Although <code>stream-car</code> and
 <code>stream-cdr</code> can be defined as procedures, <code>cons-stream</code> must be a
 special form.  If <code>cons-stream</code> were a procedure, then, according to our
@@ -2043,14 +2043,14 @@ automatically cause <code>⟨</code><var>b</var><code>⟩</code> to be evaluated
 not want to happen.  For the same reason, <code>delay</code> must be a special form,
 though <code>force</code> can be an ordinary procedure.</p>
 </div>
-<div id="FOOT185"><p><a class="footnote_backlink" href="#DOCF185"><sup>185</sup></a>
+<div><p id="FOOT185" epub:type="footnote"><a class="footnote_backlink" href="#DOCF185"><sup>185</sup></a>
 The numbers shown here do not really appear in
 the delayed expression.  What actually appears is the original expression, in
 an environment in which the variables are bound to the appropriate numbers.
 For example, <code>(+ low 1)</code> with <code>low</code> bound to 10,000 actually appears
 where <code>10001</code> is shown.</p>
 </div>
-<div id="FOOT186"><p><a class="footnote_backlink" href="#DOCF186"><sup>186</sup></a>
+<div><p id="FOOT186" epub:type="footnote"><a class="footnote_backlink" href="#DOCF186"><sup>186</sup></a>
 There are many possible
 implementations of streams other than the one described in this section.
 Delayed evaluation, which is the key to making streams practical, was inherent
@@ -2067,7 +2067,7 @@ original delayed objects as <a id="index-call_002dby_002dname-thunks"></a>
 versions as <a id="index-call_002dby_002dneed-thunks"></a>
 <em>call-by-need thunks</em>.</p>
 </div>
-<div id="FOOT187"><p><a class="footnote_backlink" href="#DOCF187"><sup>187</sup></a>
+<div><p id="FOOT187" epub:type="footnote"><a class="footnote_backlink" href="#DOCF187"><sup>187</sup></a>
 Exercises such as <a href="#Exercise-3_002e51">Exercise 3.51</a> and
 <a href="#Exercise-3_002e52">Exercise 3.52</a> are valuable for testing our understanding of how
 <code>delay</code> works.  On the other hand, intermixing delayed evaluation with
@@ -2080,7 +2080,7 @@ order in which events actually happen in our programs.  Unfortunately, this is
 precisely what we cannot afford to do in the presence of assignment, which
 forces us to be concerned with time and change.</p>
 </div>
-<div id="FOOT188"><p><a class="footnote_backlink" href="#DOCF188"><sup>188</sup></a>
+<div><p id="FOOT188" epub:type="footnote"><a class="footnote_backlink" href="#DOCF188"><sup>188</sup></a>
 Eratosthenes, a third-century <abbr>B.C.</abbr>
 Alexandrian Greek philosopher, is famous for giving the first accurate estimate
 of the circumference of the Earth, which he computed by observing shadows cast
@@ -2090,18 +2090,18 @@ that, until recently, were the most powerful tools in existence for locating
 large primes.  Since the 70s, however, these methods have been superseded by
 outgrowths of the probabilistic techniques discussed in <a href="1_002e2.xhtml#g_t1_002e2_002e6">1.2.6</a>.</p>
 </div>
-<div id="FOOT189"><p><a class="footnote_backlink" href="#DOCF189"><sup>189</sup></a>
+<div><p id="FOOT189" epub:type="footnote"><a class="footnote_backlink" href="#DOCF189"><sup>189</sup></a>
 We have named these figures after Peter Henderson, who was the
 first person to show us diagrams of this sort as a way of thinking about stream
 processing.  Each solid line represents a stream of values being transmitted.
 The dashed line from the <code>car</code> to the <code>cons</code> and the <code>filter</code>
 indicates that this is a single value rather than a stream.</p>
 </div>
-<div id="FOOT190"><p><a class="footnote_backlink" href="#DOCF190"><sup>190</sup></a>
+<div><p id="FOOT190" epub:type="footnote"><a class="footnote_backlink" href="#DOCF190"><sup>190</sup></a>
 This uses the generalized version of <code>stream-map</code> from
 <a href="#Exercise-3_002e50">Exercise 3.50</a>.</p>
 </div>
-<div id="FOOT191"><p><a class="footnote_backlink" href="#DOCF191"><sup>191</sup></a>
+<div><p id="FOOT191" epub:type="footnote"><a class="footnote_backlink" href="#DOCF191"><sup>191</sup></a>
 This last point is very subtle and relies on
 the fact that <img src="fig/math/6436915ef69e145d40ea5dfd3337bb17.svg" class="math-inline" style="height: 1.099em; vertical-align: -0.254em;" alt="\( {p_{n+1} \le p_n^2}. \)" />  (Here, <img src="fig/math/b3d6c43da478408539388ac8f8db402c.svg" class="math-inline" style="height: 0.724em; vertical-align: -0.232em;" alt="\( p_k \)" /> denotes the
 <img src="fig/math/a99501773dcc30d9f89e17ff1338d1eb.svg" class="math-inline" style="height: 0.892em; vertical-align: -0.010em;" alt="\( k^{\text{th}} \)" /> prime.)  Estimates such as these are very difficult to establish.  The
@@ -2113,29 +2113,29 @@ This result, originally conjectured in 1845, is known as <a id="index-Bertrand_0
 <em>Bertrand’s hypothesis</em>.  
 A proof can be found in section 22.3 of <a href="References.xhtml#Hardy-and-Wright-1960">Hardy and Wright 1960</a>.</p>
 </div>
-<div id="FOOT192"><p><a class="footnote_backlink" href="#DOCF192"><sup>192</sup></a>
+<div><p id="FOOT192" epub:type="footnote"><a class="footnote_backlink" href="#DOCF192"><sup>192</sup></a>
 This exercise shows how call-by-need is closely related
 to ordinary memoization as described in <a href="3_002e3.xhtml#Exercise-3_002e27">Exercise 3.27</a>.  In that exercise,
 we used assignment to explicitly construct a local table.  Our call-by-need
 stream optimization effectively constructs such a table automatically, storing
 values in the previously forced parts of the stream.</p>
 </div>
-<div id="FOOT193"><p><a class="footnote_backlink" href="#DOCF193"><sup>193</sup></a>
+<div><p id="FOOT193" epub:type="footnote"><a class="footnote_backlink" href="#DOCF193"><sup>193</sup></a>
 We can’t use <code>let</code>
 to bind the local variable <code>guesses</code>, because the value of <code>guesses</code>
 depends on <code>guesses</code> itself.  <a href="#Exercise-3_002e63">Exercise 3.63</a> addresses why we want a
 local variable here.</p>
 </div>
-<div id="FOOT194"><p><a class="footnote_backlink" href="#DOCF194"><sup>194</sup></a>
+<div><p id="FOOT194" epub:type="footnote"><a class="footnote_backlink" href="#DOCF194"><sup>194</sup></a>
 As in 
 <a href="2_002e2.xhtml#g_t2_002e2_002e3">2.2.3</a>, we represent a pair of integers as a list rather than a Lisp
 pair.</p>
 </div>
-<div id="FOOT195"><p><a class="footnote_backlink" href="#DOCF195"><sup>195</sup></a>
+<div><p id="FOOT195" epub:type="footnote"><a class="footnote_backlink" href="#DOCF195"><sup>195</sup></a>
 See <a href="#Exercise-3_002e68">Exercise 3.68</a> for
 some insight into why we chose this decomposition.</p>
 </div>
-<div id="FOOT196"><p><a class="footnote_backlink" href="#DOCF196"><sup>196</sup></a>
+<div><p id="FOOT196" epub:type="footnote"><a class="footnote_backlink" href="#DOCF196"><sup>196</sup></a>
 The precise statement of the required
 property on the order of combination is as follows: There should be a function
 <img src="fig/math/7a8d165d31a04fc319968e0213091ff8.svg" class="math-inline" style="height: 0.929em; vertical-align: -0.234em;" alt="\( f \)" /> of two arguments such that the pair corresponding to element <img src="fig/math/aa5dfb3bb62785181553d83502ccb9ec.svg" class="math-inline" style="height: 0.623em; vertical-align: -0.010em;" alt="\( i \)" /> of the
@@ -2144,12 +2144,12 @@ number <img src="fig/math/f26c98926523adf21133e1fdee541646.svg" class="math-inli
 <code>interleave</code> to accomplish this was shown to us by David Turner, who
 employed it in the language KRC (<a href="References.xhtml#Turner-1981">Turner 1981</a>).</p>
 </div>
-<div id="FOOT197"><p><a class="footnote_backlink" href="#DOCF197"><sup>197</sup></a>
+<div><p id="FOOT197" epub:type="footnote"><a class="footnote_backlink" href="#DOCF197"><sup>197</sup></a>
 We will require that the weighting function be such that the
 weight of a pair increases as we move out along a row or down along a column of
 the array of pairs.</p>
 </div>
-<div id="FOOT198"><p><a class="footnote_backlink" href="#DOCF198"><sup>198</sup></a>
+<div><p id="FOOT198" epub:type="footnote"><a class="footnote_backlink" href="#DOCF198"><sup>198</sup></a>
 To quote from G. H. Hardy’s obituary of Ramanujan (<a href="References.xhtml#Hardy-1921">Hardy 1921</a>): 
 “It was Mr. Littlewood (I believe) who remarked that ‘every positive
 integer was one of his friends.’  I remember once going to see him when he was
@@ -2160,14 +2160,14 @@ the smallest number expressible as the sum of two cubes in two different ways.�
 ” The trick of using weighted pairs to generate the Ramanujan numbers was
 shown to us by Charles Leiserson.</p>
 </div>
-<div id="FOOT199"><p><a class="footnote_backlink" href="#DOCF199"><sup>199</sup></a>
+<div><p id="FOOT199" epub:type="footnote"><a class="footnote_backlink" href="#DOCF199"><sup>199</sup></a>
 This procedure is not
 guaranteed to work in all Scheme implementations, although for any
 implementation there is a simple variation that will work.  The problem has to
 do with subtle differences in the ways that Scheme implementations handle
 internal definitions.  (See <a href="4_002e1.xhtml#g_t4_002e1_002e6">4.1.6</a>.)</p>
 </div>
-<div id="FOOT200"><p><a class="footnote_backlink" href="#DOCF200"><sup>200</sup></a>
+<div><p id="FOOT200" epub:type="footnote"><a class="footnote_backlink" href="#DOCF200"><sup>200</sup></a>
 This is a small reflection, in Lisp, of the difficulties that
 conventional strongly typed languages such as Pascal have in coping with
 higher-order procedures.  In such languages, the programmer must specify the
@@ -2187,13 +2187,13 @@ includes a <a id="index-type_002dinferencing"></a>
 <em>type-inferencing</em> mechanism that uses information in the
 environment to deduce the data types for newly defined procedures.</p>
 </div>
-<div id="FOOT201"><p><a class="footnote_backlink" href="#DOCF201"><sup>201</sup></a>
+<div><p id="FOOT201" epub:type="footnote"><a class="footnote_backlink" href="#DOCF201"><sup>201</sup></a>
 Similarly
 in physics, when we observe a moving particle, we say that the position (state)
 of the particle is changing.  However, from the perspective of the particle’s
 world line in space-time there is no change involved.</p>
 </div>
-<div id="FOOT202"><p><a class="footnote_backlink" href="#DOCF202"><sup>202</sup></a>
+<div><p id="FOOT202" epub:type="footnote"><a class="footnote_backlink" href="#DOCF202"><sup>202</sup></a>
 John Backus, the
 inventor of Fortran, gave high visibility to functional programming when he was
 awarded the <abbr>ACM</abbr> Turing award in 1978.  His acceptance speech 
@@ -2201,7 +2201,7 @@ awarded the <abbr>ACM</abbr> Turing award in 1978.  His acceptance speech
 functional programming is given in <a href="References.xhtml#Henderson-1980">Henderson 1980</a> and in 
 <a href="References.xhtml#Darlington-et-al_002e-1982">Darlington et al. 1982</a>.</p>
 </div>
-<div id="FOOT203"><p><a class="footnote_backlink" href="#DOCF203"><sup>203</sup></a>
+<div><p id="FOOT203" epub:type="footnote"><a class="footnote_backlink" href="#DOCF203"><sup>203</sup></a>
 Observe that, for any two streams, there is in general more
 than one acceptable order of interleaving.  Thus, technically, “merge” is a
 relation rather than a function—the answer is not a deterministic function of
@@ -2210,7 +2210,7 @@ essential when dealing with concurrency.  The merge relation illustrates the
 same essential nondeterminism, from the functional perspective.  In 
 <a href="4_002e3.xhtml#g_t4_002e3">4.3</a>, we will look at nondeterminism from yet another point of view.</p>
 </div>
-<div id="FOOT204"><p><a class="footnote_backlink" href="#DOCF204"><sup>204</sup></a>
+<div><p id="FOOT204" epub:type="footnote"><a class="footnote_backlink" href="#DOCF204"><sup>204</sup></a>
 The object model
 approximates the world by dividing it into separate pieces.  The functional
 model does not modularize along object boundaries.  The object model is useful

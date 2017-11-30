@@ -88,7 +88,7 @@ one application of such <a id="index-address-arithmetic"></a>
 <a id="index-vector"></a>
 <em>vector</em>.  Abstractly, a vector is a compound data object whose
 individual elements can be accessed by means of an integer index in an amount
-of time that is independent of the index.<a class="footnote_link" id="DOCF290" href="#FOOT290"><sup>290</sup></a> In order to describe memory operations, we use two
+of time that is independent of the index.<sup><a class="footnote_link" id="DOCF290" href="#FOOT290" epub:type="noteref">290</a></sup> In order to describe memory operations, we use two
 primitive Scheme procedures for manipulating vectors:
 </p>
 <ul>
@@ -102,7 +102,7 @@ sets the <img src="fig/math/3b6c232f796b2d291446b22cb38c933e.svg" class="math-in
 
 <p>For example, if <code>v</code> is a vector, then <code>(vector-ref v 5)</code> gets the
 fifth entry in the vector <code>v</code> and <code>(vector-set! v 5 7)</code> changes the
-value of the fifth entry of the vector <code>v</code> to 7.<a class="footnote_link" id="DOCF291" href="#FOOT291"><sup>291</sup></a>  For computer memory, this access can
+value of the fifth entry of the vector <code>v</code> to 7.<sup><a class="footnote_link" id="DOCF291" href="#FOOT291" epub:type="noteref">291</a></sup>  For computer memory, this access can
 be implemented through the use of address arithmetic to combine a <a id="index-base-address"></a>
 <em>base address</em> 
 that specifies the beginning location of a vector in memory with an
@@ -124,12 +124,12 @@ designated index.  We also need a representation for objects other than pairs
 another.  There are many methods of accomplishing this, but they all reduce to
 using <a id="index-typed-pointers"></a>
 <em>typed pointers</em>, that is, to extending the notion of “pointer”
-to include information on data type.<a class="footnote_link" id="DOCF292" href="#FOOT292"><sup>292</sup></a> The data type
+to include information on data type.<sup><a class="footnote_link" id="DOCF292" href="#FOOT292" epub:type="noteref">292</a></sup> The data type
 enables the system to distinguish a pointer to a pair (which consists of the
 “pair” data type and an index into the memory vectors) from pointers to other
 kinds of data (which consist of some other data type and whatever is being used
 to represent data of that type).  Two data objects are considered to be the
-same (<code>eq?</code>) if their pointers are identical.<a class="footnote_link" id="DOCF293" href="#FOOT293"><sup>293</sup></a> 
+same (<code>eq?</code>) if their pointers are identical.<sup><a class="footnote_link" id="DOCF293" href="#FOOT293" epub:type="noteref">293</a></sup> 
 <a href="#Figure-5_002e14">Figure 5.14</a> illustrates the use of this method to
 represent the list <code>((1 2) 3 4)</code>, whose box-and-pointer diagram is also
 shown.  We use letter prefixes to denote the data-type information.  Thus, a
@@ -152,11 +152,11 @@ here).
 
 <p>A pointer to a number, such as <code>n4</code>, might consist of a type indicating
 numeric data together with the actual representation of the number
-4.<a class="footnote_link" id="DOCF294" href="#FOOT294"><sup>294</sup></a>  To deal with numbers that are too large to be represented in the
+4.<sup><a class="footnote_link" id="DOCF294" href="#FOOT294" epub:type="noteref">294</a></sup>  To deal with numbers that are too large to be represented in the
 fixed amount of space allocated for a single pointer, we could use a distinct
 <a id="index-bignum"></a>
 <em>bignum</em> data type, for which the pointer designates a list in which
-the parts of the number are stored.<a class="footnote_link" id="DOCF295" href="#FOOT295"><sup>295</sup></a>
+the parts of the number are stored.<sup><a class="footnote_link" id="DOCF295" href="#FOOT295" epub:type="noteref">295</a></sup>
 </p>
 <p>A symbol might be represented as a typed pointer that designates a sequence of
 the characters that form the symbol’s printed representation.  This sequence is
@@ -229,7 +229,7 @@ arguments to <code>cons</code> in <code>the-cars</code> and <code>the-cdrs</code
 vector position.  We presume that there is a special register, <code>free</code>,
 that always holds a pair pointer containing the next available index, and that
 we can increment the index part of that pointer to find the next free
-location.<a class="footnote_link" id="DOCF296" href="#FOOT296"><sup>296</sup></a>  For example, the instruction
+location.<sup><a class="footnote_link" id="DOCF296" href="#FOOT296" epub:type="noteref">296</a></sup>  For example, the instruction
 </p>
 <div class="lisp">
 <pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="pln">assign ⟨</span><var><span class="pln">reg</span><span class="pun">₁</span></var><span class="pln">⟩
@@ -237,7 +237,7 @@ location.<a class="footnote_link" id="DOCF296" href="#FOOT296"><sup>296</sup></a
         </span><span class="opn">(</span><span class="pln">reg ⟨</span><var><span class="pln">reg</span><span class="pun">₂</span></var><span class="pln">⟩</span><span class="clo">)</span><span class="pln">
         </span><span class="opn">(</span><span class="pln">reg ⟨</span><var><span class="pln">reg</span><span class="pun">₃</span></var><span class="pln">⟩</span><span class="clo">))</span></pre></div>
 
-<p>is implemented as the following sequence of vector operations:<a class="footnote_link" id="DOCF297" href="#FOOT297"><sup>297</sup></a>
+<p>is implemented as the following sequence of vector operations:<sup><a class="footnote_link" id="DOCF297" href="#FOOT297" epub:type="noteref">297</a></sup>
 </p>
 <div class="lisp">
 <pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="pln">perform </span><span class="opn">(</span><span class="pln">op vector-set!</span><span class="clo">)</span><span class="pln">
@@ -351,7 +351,7 @@ the list-structure memory operations are available as primitive operations.
 <p>The representation method outlined in <a href="#g_t5_002e3_002e1">5.3.1</a> solves the problem of
 implementing list structure, provided that we have an infinite amount of
 memory.  With a real computer we will eventually run out of free space in which
-to construct new pairs.<a class="footnote_link" id="DOCF298" href="#FOOT298"><sup>298</sup></a>  However,
+to construct new pairs.<sup><a class="footnote_link" id="DOCF298" href="#FOOT298" epub:type="noteref">298</a></sup>  However,
 most of the pairs generated in a typical computation are used only to hold
 intermediate results.  After these results are accessed, the pairs are no
 longer needed—they are <a id="index-garbage"></a>
@@ -378,7 +378,7 @@ this is known as <a id="index-garbage-collection-1"></a>
 the observation that, at any moment in a Lisp interpretation, the only objects
 that can affect the future of the computation are those that can be reached by
 some succession of <code>car</code> and <code>cdr</code> operations starting from the
-pointers that are currently in the machine registers.<a class="footnote_link" id="DOCF299" href="#FOOT299"><sup>299</sup></a>
+pointers that are currently in the machine registers.<sup><a class="footnote_link" id="DOCF299" href="#FOOT299" epub:type="noteref">299</a></sup>
 Any memory cell that is not so accessible may be recycled.
 </p>
 <p>There are many ways to perform garbage collection.  The method we shall examine
@@ -396,7 +396,7 @@ useful pairs in it have been copied.  Thus, if we interchange the roles of
 working memory and free memory, we can continue processing; new pairs will be
 allocated in the new working memory (which was the old free memory).  When this
 is full, we can copy the useful pairs into the new free memory (which was the
-old working memory).<a class="footnote_link" id="DOCF300" href="#FOOT300"><sup>300</sup></a>
+old working memory).<sup><a class="footnote_link" id="DOCF300" href="#FOOT300" epub:type="noteref">300</a></sup>
 </p>
 <a id="Implementation-of-a-stop_002dand_002dcopy-garbage-collector"></a>
 <h5 class="subsubheading">Implementation of a stop-and-copy garbage collector</h5>
@@ -406,7 +406,7 @@ algorithm in more detail.  We will assume that there is a register called
 <code>root</code> that contains a pointer to a structure that eventually points at
 all accessible data.  This can be arranged by storing the contents of all the
 machine registers in a pre-allocated list pointed at by <code>root</code> just before
-starting garbage collection.<a class="footnote_link" id="DOCF301" href="#FOOT301"><sup>301</sup></a> We also assume that, in addition to the current
+starting garbage collection.<sup><a class="footnote_link" id="DOCF301" href="#FOOT301" epub:type="noteref">301</a></sup> We also assume that, in addition to the current
 working memory, there is free memory available into which we can copy the
 useful data.  The current working memory consists of vectors whose base
 addresses are in registers called <code>the-cars</code> and <code>the-cdrs</code>, and the
@@ -444,7 +444,7 @@ pair is marked to show that its contents have been moved.  This marking is done
 as follows: In the <code>car</code> position, we place a special tag that signals
 that this is an already-moved object.  (Such an object is traditionally called
 a <a id="index-broken-heart"></a>
-<em>broken heart</em>.)<a class="footnote_link" id="DOCF302" href="#FOOT302"><sup>302</sup></a>  In the <code>cdr</code> position
+<em>broken heart</em>.)<sup><a class="footnote_link" id="DOCF302" href="#FOOT302" epub:type="noteref">302</a></sup>  In the <code>cdr</code> position
 we place a <a id="index-forwarding-address"></a>
 <em>forwarding address</em> that points at the location to which
 the object has been moved.
@@ -557,7 +557,7 @@ new memory (pointed at by <code>free</code>) and set up the broken heart by stor
 broken-heart tag and forwarding address at the old location.
 <code>Relocate-old-result-in-new</code> uses a register <code>oldcr</code> to hold the
 <code>car</code> or the <code>cdr</code> of the object pointed at by
-<code>old</code>.<a class="footnote_link" id="DOCF303" href="#FOOT303"><sup>303</sup></a>
+<code>old</code>.<sup><a class="footnote_link" id="DOCF303" href="#FOOT303" epub:type="noteref">303</a></sup>
 </p>
 <div class="lisp">
 <pre class="lisp prettyprinted" style=""><span class="pln">relocate-old-result-in-new
@@ -622,25 +622,25 @@ be ready to perform another garbage collection the next time memory runs out.
 <div class="footnote">
 <h4 class="footnotes-heading">Footnotes</h4>
 
-<div id="FOOT290"><p><a class="footnote_backlink" href="#DOCF290"><sup>290</sup></a>
+<div><p id="FOOT290" epub:type="footnote"><a class="footnote_backlink" href="#DOCF290"><sup>290</sup></a>
 We could represent memory as
 lists of items.  However, the access time would then not be independent of the
 index, since accessing the <img src="fig/math/3b6c232f796b2d291446b22cb38c933e.svg" class="math-inline" style="height: 0.892em; vertical-align: -0.010em;" alt="\( n^{\text{th}} \)" /> element of a list requires <img src="fig/math/81eb4f306db699a33b30b99343404a6c.svg" class="math-inline" style="height: 0.652em; vertical-align: -0.009em;" alt="\( {n - 1} \)" />
 <code>cdr</code> operations.</p>
 </div>
-<div id="FOOT291"><p><a class="footnote_backlink" href="#DOCF291"><sup>291</sup></a>
+<div><p id="FOOT291" epub:type="footnote"><a class="footnote_backlink" href="#DOCF291"><sup>291</sup></a>
 For
 completeness, we should specify a <code>make-vector</code> operation that constructs
 vectors.  However, in the present application we will use vectors only to model
 fixed divisions of the computer memory.</p>
 </div>
-<div id="FOOT292"><p><a class="footnote_backlink" href="#DOCF292"><sup>292</sup></a>
+<div><p id="FOOT292" epub:type="footnote"><a class="footnote_backlink" href="#DOCF292"><sup>292</sup></a>
 This is precisely the same
 “tagged data” idea we introduced in <a href="Chapter-2.xhtml#Chapter-2">Chapter 2</a> for dealing with generic
 operations.  Here, however, the data types are included at the primitive
 machine level rather than constructed through the use of lists.</p>
 </div>
-<div id="FOOT293"><p><a class="footnote_backlink" href="#DOCF293"><sup>293</sup></a>
+<div><p id="FOOT293" epub:type="footnote"><a class="footnote_backlink" href="#DOCF293"><sup>293</sup></a>
 Type information
 may be encoded in a variety of ways, depending on the details of the machine on
 which the Lisp system is to be implemented.  The execution efficiency of Lisp
@@ -656,7 +656,7 @@ manipulate the type fields of pointers?  Machines that include special hardware
 for the efficient handling of type fields are said to have <a id="index-tagged-architectures"></a>
 <em>tagged architectures</em>.</p>
 </div>
-<div id="FOOT294"><p><a class="footnote_backlink" href="#DOCF294"><sup>294</sup></a>
+<div><p id="FOOT294" epub:type="footnote"><a class="footnote_backlink" href="#DOCF294"><sup>294</sup></a>
 This decision on the representation of numbers determines whether
 <code>eq?</code>, which tests equality of pointers, can be used to test for equality
 of numbers.  If the pointer contains the number itself, then equal numbers will
@@ -665,12 +665,12 @@ where the number is stored, equal numbers will be guaranteed to have equal
 pointers only if we are careful never to store the same number in more than one
 location.</p>
 </div>
-<div id="FOOT295"><p><a class="footnote_backlink" href="#DOCF295"><sup>295</sup></a>
+<div><p id="FOOT295" epub:type="footnote"><a class="footnote_backlink" href="#DOCF295"><sup>295</sup></a>
 This is just like writing a number
 as a sequence of digits, except that each “digit” is a number between 0 and
 the largest number that can be stored in a single pointer.</p>
 </div>
-<div id="FOOT296"><p><a class="footnote_backlink" href="#DOCF296"><sup>296</sup></a>
+<div><p id="FOOT296" epub:type="footnote"><a class="footnote_backlink" href="#DOCF296"><sup>296</sup></a>
 There are other ways of finding free storage.  For example,
 we could link together all the unused pairs into a <a id="index-free-list"></a>
 <em>free list</em>.  Our
@@ -678,14 +678,14 @@ free locations are consecutive (and hence can be accessed by incrementing a
 pointer) because we are using a compacting garbage collector, as we will see in
 <a href="#g_t5_002e3_002e2">5.3.2</a>.</p>
 </div>
-<div id="FOOT297"><p><a class="footnote_backlink" href="#DOCF297"><sup>297</sup></a>
+<div><p id="FOOT297" epub:type="footnote"><a class="footnote_backlink" href="#DOCF297"><sup>297</sup></a>
 This is
 essentially the implementation of <code>cons</code> in terms of <code>set-car!</code> and
 <code>set-cdr!</code>, as described in <a href="3_002e3.xhtml#g_t3_002e3_002e1">3.3.1</a>.  The operation
 <code>get-new-pair</code> used in that implementation is realized here by the
 <code>free</code> pointer.</p>
 </div>
-<div id="FOOT298"><p><a class="footnote_backlink" href="#DOCF298"><sup>298</sup></a>
+<div><p id="FOOT298" epub:type="footnote"><a class="footnote_backlink" href="#DOCF298"><sup>298</sup></a>
 This may not be true eventually, because
 memories may get large enough so that it would be impossible to run out of free
 memory in the lifetime of the computer.  For example, there are about
@@ -697,12 +697,12 @@ On the other hand, processors are getting faster and a future computer may have
 large numbers of processors operating in parallel on a single memory, so it may
 be possible to use up memory much faster than we have postulated.</p>
 </div>
-<div id="FOOT299"><p><a class="footnote_backlink" href="#DOCF299"><sup>299</sup></a>
+<div><p id="FOOT299" epub:type="footnote"><a class="footnote_backlink" href="#DOCF299"><sup>299</sup></a>
 We assume here
 that the stack is represented as a list as described in <a href="#g_t5_002e3_002e1">5.3.1</a>, so
 that items on the stack are accessible via the pointer in the stack register.</p>
 </div>
-<div id="FOOT300"><p><a class="footnote_backlink" href="#DOCF300"><sup>300</sup></a>
+<div><p id="FOOT300" epub:type="footnote"><a class="footnote_backlink" href="#DOCF300"><sup>300</sup></a>
 This idea was invented and first implemented by
 Minsky, as part of the implementation of Lisp for the PDP-1 at the
 <abbr>MIT</abbr> Research Laboratory of Electronics.  It was further developed by
@@ -733,18 +733,18 @@ extremely important performance consideration in machines with virtual memory,
 in which accesses to widely separated memory addresses may require extra paging
 operations.</p>
 </div>
-<div id="FOOT301"><p><a class="footnote_backlink" href="#DOCF301"><sup>301</sup></a>
+<div><p id="FOOT301" epub:type="footnote"><a class="footnote_backlink" href="#DOCF301"><sup>301</sup></a>
 This list of registers does not include
 the registers used by the storage-allocation system—<code>root</code>,
 <code>the-cars</code>, <code>the-cdrs</code>, and the other registers that will be
 introduced in this section.</p>
 </div>
-<div id="FOOT302"><p><a class="footnote_backlink" href="#DOCF302"><sup>302</sup></a>
+<div><p id="FOOT302" epub:type="footnote"><a class="footnote_backlink" href="#DOCF302"><sup>302</sup></a>
 The term <em>broken heart</em> was coined by
 David Cressey, who wrote a garbage collector for MDL, a dialect of Lisp
 developed at <abbr>MIT</abbr> during the early 1970s.</p>
 </div>
-<div id="FOOT303"><p><a class="footnote_backlink" href="#DOCF303"><sup>303</sup></a>
+<div><p id="FOOT303" epub:type="footnote"><a class="footnote_backlink" href="#DOCF303"><sup>303</sup></a>
 The garbage collector uses the low-level predicate
 <code>pointer-to-pair?</code> instead of the list-structure <code>pair?</code>  operation
 because in a real system there might be various things that are treated as

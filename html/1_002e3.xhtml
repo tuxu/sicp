@@ -99,7 +99,7 @@ integers from <code>a</code> through <code>b</code>:
 
 <img src="fig/math/f316427b55b2cae99386cc31549fae9d.svg" class="math-display" style="height: 2.005em;" alt="\[ % :17:&amp;#10;   \frac{1}{1\cdot 3} +  \frac{1}{5\cdot 7} + \frac{1}{9\cdot 11} + {\dots,} \]" />
 
-which converges to <img src="fig/math/7036f8c43b937dd94b8729faff8921d8.svg" class="math-inline" style="height: 0.827em; vertical-align: -0.153em;" alt="\( {\pi / 8} \)" /> (very slowly):<a class="footnote_link" id="DOCF49" href="#FOOT49"><sup>49</sup></a>
+which converges to <img src="fig/math/7036f8c43b937dd94b8729faff8921d8.svg" class="math-inline" style="height: 0.827em; vertical-align: -0.153em;" alt="\( {\pi / 8} \)" /> (very slowly):<sup><a class="footnote_link" id="DOCF49" href="#FOOT49" epub:type="noteref">49</a></sup>
 </p>
 <div class="lisp">
 <pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">define</span><span class="pln"> </span><span class="opn">(</span><span class="pln">pi-sum a b</span><span class="clo">)</span><span class="pln">
@@ -182,7 +182,7 @@ define <code>sum-cubes</code>:
 </span><i><span class="lit">55</span></i>
 </pre></div>
 
-<p>We can also define <code>pi-sum</code> in the same way:<a class="footnote_link" id="DOCF50" href="#FOOT50"><sup>50</sup></a>
+<p>We can also define <code>pi-sum</code> in the same way:<sup><a class="footnote_link" id="DOCF50" href="#FOOT50" epub:type="noteref">50</a></sup>
 </p>
 <div class="lisp">
 <pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">define</span><span class="pln"> </span><span class="opn">(</span><span class="pln">pi-sum a b</span><span class="clo">)</span><span class="pln">
@@ -260,11 +260,11 @@ expressions in the following definition:
 </p>
 <ol>
 <li> The <code>sum</code> procedure is only the simplest of a vast number of similar
-abstractions that can be captured as higher-order procedures.<a class="footnote_link" id="DOCF51" href="#FOOT51"><sup>51</sup></a>  Write an analogous
+abstractions that can be captured as higher-order procedures.<sup><a class="footnote_link" id="DOCF51" href="#FOOT51" epub:type="noteref">51</a></sup>  Write an analogous
 procedure called <code>product</code> that returns the product of the values of a
 function at points over a given range.  Show how to define <code>factorial</code> in
 terms of <code>product</code>.  Also use <code>product</code> to compute approximations to
-<img src="fig/math/c25469cd205e957b38b51203870f48af.svg" class="math-inline" style="height: 0.438em; vertical-align: -0.000em;" alt="\( \pi \)" /> using the formula<a class="footnote_link" id="DOCF52" href="#FOOT52"><sup>52</sup></a>
+<img src="fig/math/c25469cd205e957b38b51203870f48af.svg" class="math-inline" style="height: 0.438em; vertical-align: -0.000em;" alt="\( \pi \)" /> using the formula<sup><a class="footnote_link" id="DOCF52" href="#FOOT52" epub:type="noteref">52</a></sup>
 
 <img src="fig/math/8e07cb198382e08868967e370efa5f84.svg" class="math-display" style="height: 2.005em;" alt="\[ % :21:&amp;#10;   \frac{\pi}{4} \,=\, {\frac{2\cdot 4\cdot 4\cdot 6\cdot 6\cdot 8\cdot\cdots}                      {3\cdot 3\cdot 5\cdot 5\cdot 7\cdot 7\cdot\cdots}.} \]" />
 
@@ -401,7 +401,7 @@ expression can be used as the operator in a combination such as
 </pre></div>
 
 <p>or, more generally, in any context where we would normally use a procedure
-name.<a class="footnote_link" id="DOCF53" href="#FOOT53"><sup>53</sup></a>
+name.<sup><a class="footnote_link" id="DOCF53" href="#FOOT53" epub:type="noteref">53</a></sup>
 </p>
 <a id="Using-let-to-create-local-variables"></a>
 <h5 class="subsubheading">Using <code>let</code> to create local variables</h5>
@@ -536,7 +536,7 @@ will be 3 and <code>y</code> will be 4 (which is the outer <code>x</code> plus 2
      </span><span class="opn">(</span><span class="pun">*</span><span class="pln"> a b</span><span class="clo">)))</span></pre></div>
 
 <p>We prefer, however, to use <code>let</code> in situations like this and to use
-internal <code>define</code> only for internal procedures.<a class="footnote_link" id="DOCF54" href="#FOOT54"><sup>54</sup></a>
+internal <code>define</code> only for internal procedures.<sup><a class="footnote_link" id="DOCF54" href="#FOOT54" epub:type="noteref">54</a></sup>
 </p>
 <blockquote>
 <p><strong><a id="Exercise-1_002e34"></a>Exercise 1.34:</strong> Suppose we define the procedure
@@ -619,7 +619,7 @@ is itself the root we are searching for.
 </p>
 <p>To test whether the endpoints are “close enough” we can use a procedure
 similar to the one used in <a href="1_002e1.xhtml#g_t1_002e1_002e7">1.1.7</a> for computing square
-roots:<a class="footnote_link" id="DOCF55" href="#FOOT55"><sup>55</sup></a>
+roots:<sup><a class="footnote_link" id="DOCF55" href="#FOOT55" epub:type="noteref">55</a></sup>
 </p>
 <div class="lisp">
 <pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">define</span><span class="pln"> </span><span class="opn">(</span><span class="pln">close-enough? x y</span><span class="clo">)</span><span class="pln"> 
@@ -632,7 +632,7 @@ procedure, which checks to see which of the endpoints has a negative function
 value and which has a positive value, and calls the <code>search</code> procedure
 accordingly.  If the function has the same sign on the two given points, the
 half-interval method cannot be used, in which case the procedure signals an
-error.<a class="footnote_link" id="DOCF56" href="#FOOT56"><sup>56</sup></a>
+error.<sup><a class="footnote_link" id="DOCF56" href="#FOOT56" epub:type="noteref">56</a></sup>
 </p>
 <div class="lisp">
 <pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">define</span><span class="pln"> </span><span class="opn">(</span><span class="pln">half-interval-method f a b</span><span class="clo">)</span><span class="pln">
@@ -699,7 +699,7 @@ less than some prescribed tolerance:
   </span><span class="opn">(</span><span class="pln">try first-guess</span><span class="clo">))</span></pre></div>
 
 <p>For example, we can use this method to approximate the fixed point of the
-cosine function, starting with 1 as an initial approximation:<a class="footnote_link" id="DOCF57" href="#FOOT57"><sup>57</sup></a>
+cosine function, starting with 1 as an initial approximation:<sup><a class="footnote_link" id="DOCF57" href="#FOOT57" epub:type="noteref">57</a></sup>
 </p>
 <div class="lisp">
 <pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="pln">fixed-point cos </span><span class="lit">1.0</span><span class="clo">)</span><span class="pln">
@@ -722,7 +722,7 @@ readily formulate the square-root computation as a fixed-point search.
 Computing the square root of some number <img src="fig/math/2f4b15565d0a1018e90c3e1b30b76acc.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( x \)" /> requires finding a <img src="fig/math/05e4cdb2f26a4f66b68c167423907fea.svg" class="math-inline" style="height: 0.669em; vertical-align: -0.235em;" alt="\( y \)" /> such
 that <img src="fig/math/437588ce11e8725cc98d93e391d57fb8.svg" class="math-inline" style="height: 1.078em; vertical-align: -0.235em;" alt="\( {y^2 = x} \)" />.  Putting this equation into the equivalent form 
 <img src="fig/math/aef045715ec76889ad7e84fd30b5a3da.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.229em;" alt="\( {y = x / y} \)" />, we recognize that we are looking for a fixed point of the
-function<a class="footnote_link" id="DOCF58" href="#FOOT58"><sup>58</sup></a> <img src="fig/math/c4888039e8855b22c0b35c8152532a53.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.229em;" alt="\( {y \mapsto x / y} \)" />, 
+function<sup><a class="footnote_link" id="DOCF58" href="#FOOT58" epub:type="noteref">58</a></sup> <img src="fig/math/c4888039e8855b22c0b35c8152532a53.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.229em;" alt="\( {y \mapsto x / y} \)" />, 
 and we can therefore try to compute square roots as
 </p>
 <div class="lisp">
@@ -874,7 +874,7 @@ that, when applied to a number <code>x</code>, produces the average of <code>x</
 <code>(f x)</code>.  For example, applying <code>average-damp</code> to the <code>square</code>
 procedure produces a procedure whose value at some number <img src="fig/math/2f4b15565d0a1018e90c3e1b30b76acc.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( x \)" /> is the average
 of <img src="fig/math/2f4b15565d0a1018e90c3e1b30b76acc.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( x \)" /> and <img src="fig/math/4067ede5e74e99831d02a03c863d4f61.svg" class="math-inline" style="height: 0.854em; vertical-align: -0.010em;" alt="\( x^2 \)" />.  Applying this resulting procedure to 10 returns the
-average of 10 and 100, or 55:<a class="footnote_link" id="DOCF59" href="#FOOT59"><sup>59</sup></a>
+average of 10 and 100, or 55:<sup><a class="footnote_link" id="DOCF59" href="#FOOT59" epub:type="noteref">59</a></sup>
 </p>
 <div class="lisp">
 <pre class="lisp prettyprinted" style=""><span class="opn">((</span><span class="pln">average-damp square</span><span class="clo">)</span><span class="pln"> </span><span class="lit">10</span><span class="clo">)</span><span class="pln">
@@ -903,7 +903,7 @@ particularly perspicuous, and where useful elements of the process are exposed
 as separate entities that can be reused in other applications.  As a simple
 example of reuse, notice that the cube root of <img src="fig/math/2f4b15565d0a1018e90c3e1b30b76acc.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( x \)" /> is a fixed point of the
 function <img src="fig/math/18bb0b98243514be22ca3fe084b0b07a.svg" class="math-inline" style="height: 1.078em; vertical-align: -0.235em;" alt="\( {y \mapsto x / y^2} \)" />, so we can immediately generalize our
-square-root procedure to one that extracts cube roots:<a class="footnote_link" id="DOCF60" href="#FOOT60"><sup>60</sup></a>
+square-root procedure to one that extracts cube roots:<sup><a class="footnote_link" id="DOCF60" href="#FOOT60" epub:type="noteref">60</a></sup>
 </p>
 <div class="lisp">
 <pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">define</span><span class="pln"> </span><span class="opn">(</span><span class="pln">cube-root x</span><span class="clo">)</span><span class="pln">
@@ -927,10 +927,10 @@ If <img src="fig/math/b8d7965e16f1c2bfd1e3352f2f7b5441.svg" class="math-inline" 
 and <img src="fig/math/9b5f6180b46c2f42142132b6707d8307.svg" class="math-inline" style="height: 0.933em; vertical-align: -0.225em;" alt="\( {Dg(x)} \)" /> is the derivative of <img src="fig/math/658545a813335885e643f33ae78074bc.svg" class="math-inline" style="height: 0.669em; vertical-align: -0.235em;" alt="\( g \)" /> evaluated at <img src="fig/math/2f4b15565d0a1018e90c3e1b30b76acc.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( x \)" />.  Newton’s
 method is the use of the fixed-point method we saw above to approximate a
 solution of the equation by finding a fixed point of the function
-<img src="fig/math/24281a3bb1d277b889b72378360aef7a.svg" class="math-inline" style="height: 0.929em; vertical-align: -0.234em;" alt="\( {f} \)" />.<a class="footnote_link" id="DOCF61" href="#FOOT61"><sup>61</sup></a>
+<img src="fig/math/24281a3bb1d277b889b72378360aef7a.svg" class="math-inline" style="height: 0.929em; vertical-align: -0.234em;" alt="\( {f} \)" />.<sup><a class="footnote_link" id="DOCF61" href="#FOOT61" epub:type="noteref">61</a></sup>
 </p>
 <p>For many functions <img src="fig/math/658545a813335885e643f33ae78074bc.svg" class="math-inline" style="height: 0.669em; vertical-align: -0.235em;" alt="\( g \)" /> and for sufficiently good initial guesses for <img src="fig/math/2f4b15565d0a1018e90c3e1b30b76acc.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( x \)" />,
-Newton’s method converges very rapidly to a solution of <img src="fig/math/1bb87b4a000856347a1692e05ca9bf3f.svg" class="math-inline" style="height: 0.933em; vertical-align: -0.225em;" alt="\( {g(x) = 0} \)" />.<a class="footnote_link" id="DOCF62" href="#FOOT62"><sup>62</sup></a>
+Newton’s method converges very rapidly to a solution of <img src="fig/math/1bb87b4a000856347a1692e05ca9bf3f.svg" class="math-inline" style="height: 0.933em; vertical-align: -0.225em;" alt="\( {g(x) = 0} \)" />.<sup><a class="footnote_link" id="DOCF62" href="#FOOT62" epub:type="noteref">62</a></sup>
 </p>
 <p>In order to implement Newton’s method as a procedure, we must first express the
 idea of derivative.  Note that “derivative,” like average damping, is
@@ -985,7 +985,7 @@ this section, and <code>newtons-method</code> is readily defined in terms of thi
 It takes as arguments a procedure that computes the function for which we want
 to find a zero, together with an initial guess.  For instance, to find the
 square root of <img src="fig/math/2f4b15565d0a1018e90c3e1b30b76acc.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( x \)" />, we can use Newton’s method to find a zero of the function
-<img src="fig/math/9294c125cde969bc121635c17a573a38.svg" class="math-inline" style="height: 1.078em; vertical-align: -0.235em;" alt="\( {y \mapsto y^2 - x} \)" /> starting with an initial guess of 1.<a class="footnote_link" id="DOCF63" href="#FOOT63"><sup>63</sup></a>
+<img src="fig/math/9294c125cde969bc121635c17a573a38.svg" class="math-inline" style="height: 1.078em; vertical-align: -0.235em;" alt="\( {y \mapsto y^2 - x} \)" /> starting with an initial guess of 1.<sup><a class="footnote_link" id="DOCF63" href="#FOOT63" epub:type="noteref">63</a></sup>
 </p>
 <p>This provides yet another form of the square-root procedure:
 </p>
@@ -1058,7 +1058,7 @@ other computational elements.
 computational elements can be manipulated.  Elements with the fewest
 restrictions are said to have <a id="index-first_002dclass"></a>
 <em>first-class</em> status.  Some of the
-“rights and privileges” of first-class elements are:<a class="footnote_link" id="DOCF64" href="#FOOT64"><sup>64</sup></a>
+“rights and privileges” of first-class elements are:<sup><a class="footnote_link" id="DOCF64" href="#FOOT64" epub:type="noteref">64</a></sup>
 </p>
 <ul>
 <li> They may be named by variables.
@@ -1067,13 +1067,13 @@ restrictions are said to have <a id="index-first_002dclass"></a>
 
 </li><li> They may be returned as the results of procedures.
 
-</li><li> They may be included in data structures.<a class="footnote_link" id="DOCF65" href="#FOOT65"><sup>65</sup></a>
+</li><li> They may be included in data structures.<sup><a class="footnote_link" id="DOCF65" href="#FOOT65" epub:type="noteref">65</a></sup>
 
 </li></ul>
 
 <p>Lisp, unlike other common programming languages, awards procedures full
 first-class status.  This poses challenges for efficient implementation, but
-the resulting gain in expressive power is enormous.<a class="footnote_link" id="DOCF66" href="#FOOT66"><sup>66</sup></a>
+the resulting gain in expressive power is enormous.<sup><a class="footnote_link" id="DOCF66" href="#FOOT66" epub:type="noteref">66</a></sup>
 </p>
 <blockquote>
 <p><strong><a id="Exercise-1_002e40"></a>Exercise 1.40:</strong> Define a procedure <code>cubic</code>
@@ -1186,21 +1186,21 @@ Rewrite the <code>sqrt</code> procedure of <a href="1_002e1.xhtml#g_t1_002e1_002
 <div class="footnote">
 <h4 class="footnotes-heading">Footnotes</h4>
 
-<div id="FOOT49"><p><a class="footnote_backlink" href="#DOCF49"><sup>49</sup></a>
+<div><p id="FOOT49" epub:type="footnote"><a class="footnote_backlink" href="#DOCF49"><sup>49</sup></a>
 This series, usually
 written in the equivalent form 
 <img src="fig/math/8fb226294dc22a2a6271b433e09a1435.svg" class="math-inline" style="height: 1.221em; vertical-align: -0.343em;" alt="\( {\pi\over4} = {1 - {1\over3} + {1\over5}} - {{1\over7} + \dots} \)" />, 
 is due to Leibniz.  We’ll see how to use this as the basis for some
 fancy numerical tricks in <a href="3_002e5.xhtml#g_t3_002e5_002e3">3.5.3</a>.</p>
 </div>
-<div id="FOOT50"><p><a class="footnote_backlink" href="#DOCF50"><sup>50</sup></a>
+<div><p id="FOOT50" epub:type="footnote"><a class="footnote_backlink" href="#DOCF50"><sup>50</sup></a>
 Notice that we have
 used block structure (<a href="1_002e1.xhtml#g_t1_002e1_002e8">1.1.8</a>) to embed the definitions of
 <code>pi-next</code> and <code>pi-term</code> within <code>pi-sum</code>, since these procedures
 are unlikely to be useful for any other purpose.  We will see how to get rid of
 them altogether in <a href="#g_t1_002e3_002e2">1.3.2</a>.</p>
 </div>
-<div id="FOOT51"><p><a class="footnote_backlink" href="#DOCF51"><sup>51</sup></a>
+<div><p id="FOOT51" epub:type="footnote"><a class="footnote_backlink" href="#DOCF51"><sup>51</sup></a>
 The
 intent of <a href="#Exercise-1_002e31">Exercise 1.31</a> through <a href="#Exercise-1_002e33">Exercise 1.33</a> is to demonstrate the
 expressive power that is attained by using an appropriate abstraction to
@@ -1214,11 +1214,11 @@ for combining filters and accumulators to build even more powerful
 abstractions.  We will see there how these methods really come into their own
 as a powerful and elegant approach to designing programs.</p>
 </div>
-<div id="FOOT52"><p><a class="footnote_backlink" href="#DOCF52"><sup>52</sup></a>
+<div><p id="FOOT52" epub:type="footnote"><a class="footnote_backlink" href="#DOCF52"><sup>52</sup></a>
 This formula was discovered by the
 seventeenth-century English mathematician John Wallis.</p>
 </div>
-<div id="FOOT53"><p><a class="footnote_backlink" href="#DOCF53"><sup>53</sup></a>
+<div><p id="FOOT53" epub:type="footnote"><a class="footnote_backlink" href="#DOCF53"><sup>53</sup></a>
 It would be clearer and less intimidating to people learning
 Lisp if a name more obvious than <code>lambda</code>, such as <code>make-procedure</code>,
 were used.  But the convention is firmly entrenched.  The notation is adopted
@@ -1229,7 +1229,7 @@ notions of function
 and function application.  The λ-calculus has become a basic tool
 for mathematical investigations of the semantics of programming languages.</p>
 </div>
-<div id="FOOT54"><p><a class="footnote_backlink" href="#DOCF54"><sup>54</sup></a>
+<div><p id="FOOT54" epub:type="footnote"><a class="footnote_backlink" href="#DOCF54"><sup>54</sup></a>
 Understanding
 internal definitions well enough to be sure a program means what we intend it
 to mean requires a more elaborate model of the evaluation process than we have
@@ -1237,7 +1237,7 @@ presented in this chapter.  The subtleties do not arise with internal
 definitions of procedures, however.  We will return to this issue in 
 <a href="4_002e1.xhtml#g_t4_002e1_002e6">4.1.6</a>, after we learn more about evaluation.</p>
 </div>
-<div id="FOOT55"><p><a class="footnote_backlink" href="#DOCF55"><sup>55</sup></a>
+<div><p id="FOOT55" epub:type="footnote"><a class="footnote_backlink" href="#DOCF55"><sup>55</sup></a>
 We have used 0.001 as a representative “small” number to
 indicate a tolerance for the acceptable error in a calculation.  The
 appropriate tolerance for a real calculation depends upon the problem to be
@@ -1245,59 +1245,59 @@ solved and the limitations of the computer and the algorithm.  This is often a
 very subtle consideration, requiring help from a numerical analyst or some
 other kind of magician.</p>
 </div>
-<div id="FOOT56"><p><a class="footnote_backlink" href="#DOCF56"><sup>56</sup></a>
+<div><p id="FOOT56" epub:type="footnote"><a class="footnote_backlink" href="#DOCF56"><sup>56</sup></a>
 This can be accomplished using <code>error</code>, which takes as
 arguments a number of items that are printed as error messages.</p>
 </div>
-<div id="FOOT57"><p><a class="footnote_backlink" href="#DOCF57"><sup>57</sup></a>
+<div><p id="FOOT57" epub:type="footnote"><a class="footnote_backlink" href="#DOCF57"><sup>57</sup></a>
 Try this
 during a boring lecture: Set your calculator to radians mode and then
 repeatedly press the <code>cos</code> button until you obtain the fixed point.</p>
 </div>
-<div id="FOOT58"><p><a class="footnote_backlink" href="#DOCF58"><sup>58</sup></a>
+<div><p id="FOOT58" epub:type="footnote"><a class="footnote_backlink" href="#DOCF58"><sup>58</sup></a>
 <img src="fig/math/0ce91553aad27651969cc77ddd0cb826.svg" class="math-inline" style="height: 0.467em;" alt="\( \mapsto \)" /> (pronounced “maps to”) is the mathematician’s way of
 writing <code>lambda</code>.  <img src="fig/math/c4888039e8855b22c0b35c8152532a53.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.229em;" alt="\( {y \mapsto x / y} \)" /> means <code>(lambda (y) (/ x y))</code>,
 that is, the function whose value at <img src="fig/math/05e4cdb2f26a4f66b68c167423907fea.svg" class="math-inline" style="height: 0.669em; vertical-align: -0.235em;" alt="\( y \)" /> is <img src="fig/math/c243e54e1f37c985a92584d386f5fc01.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.229em;" alt="\( {x / y} \)" />.</p>
 </div>
-<div id="FOOT59"><p><a class="footnote_backlink" href="#DOCF59"><sup>59</sup></a>
+<div><p id="FOOT59" epub:type="footnote"><a class="footnote_backlink" href="#DOCF59"><sup>59</sup></a>
 Observe that this is a combination whose
 operator is itself a combination.  <a href="1_002e1.xhtml#Exercise-1_002e4">Exercise 1.4</a> already demonstrated the
 ability to form such combinations, but that was only a toy example.  Here we
 begin to see the real need for such combinations—when applying a procedure
 that is obtained as the value returned by a higher-order procedure.</p>
 </div>
-<div id="FOOT60"><p><a class="footnote_backlink" href="#DOCF60"><sup>60</sup></a>
+<div><p id="FOOT60" epub:type="footnote"><a class="footnote_backlink" href="#DOCF60"><sup>60</sup></a>
 See
 <a href="#Exercise-1_002e45">Exercise 1.45</a> for a further generalization.</p>
 </div>
-<div id="FOOT61"><p><a class="footnote_backlink" href="#DOCF61"><sup>61</sup></a>
+<div><p id="FOOT61" epub:type="footnote"><a class="footnote_backlink" href="#DOCF61"><sup>61</sup></a>
 Elementary calculus books usually describe Newton’s method in
 terms of the sequence of approximations <img src="fig/math/96cbc64b5b9346071e74621f47f63af6.svg" class="math-inline" style="height: 0.933em; vertical-align: -0.225em;" alt="\( x_{n+1} = x_n - {g(x_n)\,/ Dg(x_n)} \)" />. 
 Having language for talking about processes and using the idea of fixed points 
 simplifies the description of the method.</p>
 </div>
-<div id="FOOT62"><p><a class="footnote_backlink" href="#DOCF62"><sup>62</sup></a>
+<div><p id="FOOT62" epub:type="footnote"><a class="footnote_backlink" href="#DOCF62"><sup>62</sup></a>
 Newton’s
 method does not always converge to an answer, but it can
 be shown that in favorable cases each iteration doubles the number-of-digits
 accuracy of the approximation to the solution.  In such cases, Newton’s method
 will converge much more rapidly than the half-interval method.</p>
 </div>
-<div id="FOOT63"><p><a class="footnote_backlink" href="#DOCF63"><sup>63</sup></a>
+<div><p id="FOOT63" epub:type="footnote"><a class="footnote_backlink" href="#DOCF63"><sup>63</sup></a>
 For
 finding square roots, Newton’s method converges rapidly to the correct solution
 from any starting point.</p>
 </div>
-<div id="FOOT64"><p><a class="footnote_backlink" href="#DOCF64"><sup>64</sup></a>
+<div><p id="FOOT64" epub:type="footnote"><a class="footnote_backlink" href="#DOCF64"><sup>64</sup></a>
 The notion of
 first-class status of programming-language elements is due to the British
 computer scientist Christopher Strachey (1916-1975).</p>
 </div>
-<div id="FOOT65"><p><a class="footnote_backlink" href="#DOCF65"><sup>65</sup></a>
+<div><p id="FOOT65" epub:type="footnote"><a class="footnote_backlink" href="#DOCF65"><sup>65</sup></a>
 We’ll see examples of this
 after we introduce data structures in <a href="Chapter-2.xhtml#Chapter-2">Chapter 2<!-- /@w --></a>.</p>
 </div>
-<div id="FOOT66"><p><a class="footnote_backlink" href="#DOCF66"><sup>66</sup></a>
+<div><p id="FOOT66" epub:type="footnote"><a class="footnote_backlink" href="#DOCF66"><sup>66</sup></a>
 The major
 implementation cost of first-class procedures is that allowing procedures to be
 returned as values requires reserving storage for a procedure’s free variables

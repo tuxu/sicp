@@ -102,7 +102,7 @@ different values.  This is a new kind of behavior for a procedure.  Until now,
 all our procedures could be viewed as specifications for computing mathematical
 functions.  A call to a procedure computed the value of the function applied to
 the given arguments, and two calls to the same procedure with the same
-arguments always produced the same result.<a class="footnote_link" id="DOCF129" href="#FOOT129"><sup>129</sup></a>
+arguments always produced the same result.<sup><a class="footnote_link" id="DOCF129" href="#FOOT129" epub:type="noteref">129</a></sup>
 </p>
 <p>To implement <code>withdraw</code>, we can use a variable <code>balance</code> to indicate
 the balance of money in the account and define <code>withdraw</code> as a procedure
@@ -136,7 +136,7 @@ and <code>withdraw</code>:
 <code>Set!</code> changes <code>⟨</code><var>name</var><code>⟩</code> so that its value is the result obtained by
 evaluating <code>⟨</code><var>new-value</var><code>⟩</code>.  In the case at hand, we are changing
 <code>balance</code> so that its new value will be the result of subtracting
-<code>amount</code> from the previous value of <code>balance</code>.<a class="footnote_link" id="DOCF130" href="#FOOT130"><sup>130</sup></a>
+<code>amount</code> from the previous value of <code>balance</code>.<sup><a class="footnote_link" id="DOCF130" href="#FOOT130" epub:type="noteref">130</a></sup>
 </p>
 <p><code>Withdraw</code> also uses the <code>begin</code> special form to cause two
 expressions to be evaluated in the case where the <code>if</code> test is true: first
@@ -148,7 +148,7 @@ general, evaluating the expression
 
 <p>causes the expressions <img src="fig/math/932e0a83764911cd81a3bc16542a4fc3.svg" class="math-inline" style="height: 0.916em; vertical-align: -0.231em;" alt="\( {⟨exp_1⟩} \)" /> through <img src="fig/math/d3f08810356211380cf625bdbb62d030.svg" class="math-inline" style="height: 0.916em; vertical-align: -0.231em;" alt="\( {⟨exp_k⟩} \)" /> to be evaluated
 in sequence and the value of the final expression <img src="fig/math/d3f08810356211380cf625bdbb62d030.svg" class="math-inline" style="height: 0.916em; vertical-align: -0.231em;" alt="\( {⟨exp_k⟩} \)" /> to be
-returned as the value of the entire <code>begin</code> form.<a class="footnote_link" id="DOCF131" href="#FOOT131"><sup>131</sup></a>
+returned as the value of the entire <code>begin</code> form.<sup><a class="footnote_link" id="DOCF131" href="#FOOT131" epub:type="noteref">131</a></sup>
 </p>
 <p>Although <code>withdraw</code> works as desired, the variable <code>balance</code> presents
 a problem.  As specified above, <code>balance</code> is a name defined in the global
@@ -181,7 +181,7 @@ local environment, we use <code>lambda</code> to create a procedure that takes
 procedure.  This procedure—returned as the result of evaluating the
 <code>let</code> expression—is <code>new-withdraw</code>, which behaves in precisely the
 same way as <code>withdraw</code> but whose variable <code>balance</code> is not accessible
-by any other procedure.<a class="footnote_link" id="DOCF132" href="#FOOT132"><sup>132</sup></a>
+by any other procedure.<sup><a class="footnote_link" id="DOCF132" href="#FOOT132" epub:type="noteref">132</a></sup>
 </p>
 <p>Combining <code>set!</code> with local variables is the general programming technique
 we will use for constructing computational objects with local state.
@@ -202,7 +202,7 @@ examine some variations on the theme established by <code>new-withdraw</code>.
 </p>
 <p>The following procedure, <code>make-withdraw</code>, creates “withdrawal
 processors.”  The formal parameter <code>balance</code> in <code>make-withdraw</code>
-specifies the initial amount of money in the account.<a class="footnote_link" id="DOCF133" href="#FOOT133"><sup>133</sup></a>
+specifies the initial amount of money in the account.<sup><a class="footnote_link" id="DOCF133" href="#FOOT133" epub:type="noteref">133</a></sup>
 </p>
 <div class="lisp">
 <pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">define</span><span class="pln"> </span><span class="opn">(</span><span class="pln">make-withdraw balance</span><span class="clo">)</span><span class="pln">
@@ -397,7 +397,7 @@ start with a given number <img src="fig/math/4e7007fd1b5dc307c428f9f0c386469b.sv
 </span><var><span class="pln">x</span><span class="pun">₃</span></var><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="opn">(</span><span class="pln">rand-update </span><var><span class="pln">x</span><span class="pun">₂</span></var><span class="clo">)</span></pre></div>
 
 <p>then the sequence of values <img src="fig/math/4e7007fd1b5dc307c428f9f0c386469b.svg" class="math-inline" style="height: 0.584em; vertical-align: -0.147em;" alt="\( x_1 \)" />, <img src="fig/math/afda232db9e06069e94f51fabee982dc.svg" class="math-inline" style="height: 0.584em; vertical-align: -0.147em;" alt="\( x_2 \)" />, <img src="fig/math/594aa2432d4c78d8040174831b0e5cde.svg" class="math-inline" style="height: 0.584em; vertical-align: -0.147em;" alt="\( x_3 \)" />, … will have the
-desired statistical properties.<a class="footnote_link" id="DOCF134" href="#FOOT134"><sup>134</sup></a>
+desired statistical properties.<sup><a class="footnote_link" id="DOCF134" href="#FOOT134" epub:type="noteref">134</a></sup>
 </p>
 <p>We can implement <code>rand</code> as a procedure with a local state variable
 <code>x</code> that is initialized to some fixed value <code>random-init</code>.  Each call
@@ -423,7 +423,7 @@ large set and then making deductions on the basis of the probabilities
 estimated from tabulating the results of those experiments.  For example, we
 can approximate <img src="fig/math/c25469cd205e957b38b51203870f48af.svg" class="math-inline" style="height: 0.438em; vertical-align: -0.000em;" alt="\( \pi \)" /> using the fact that <img src="fig/math/dd13f0d4f04db82ae022821e30162865.svg" class="math-inline" style="height: 1.004em; vertical-align: -0.159em;" alt="\( {6/\pi^2} \)" /> is the probability
 that two integers chosen at random will have no factors in common; that is,
-that their greatest common divisor will be 1.<a class="footnote_link" id="DOCF135" href="#FOOT135"><sup>135</sup></a> To
+that their greatest common divisor will be 1.<sup><a class="footnote_link" id="DOCF135" href="#FOOT135" epub:type="noteref">135</a></sup> To
 obtain the approximation to <img src="fig/math/c25469cd205e957b38b51203870f48af.svg" class="math-inline" style="height: 0.438em; vertical-align: -0.000em;" alt="\( \pi \)" />, we perform a large number of experiments.
 In each experiment we choose two integers at random and perform a test to see
 if their <abbr>GCD</abbr> is 1.  The fraction of times that the test is passed
@@ -549,7 +549,7 @@ measuring the area of a unit circle.
 random from a given range.  The following <code>random-in-range</code> procedure
 implements this in terms of the <code>random</code> procedure used in 
 <a href="1_002e2.xhtml#g_t1_002e2_002e6">1.2.6</a>, which returns a nonnegative number less than its
-input.<a class="footnote_link" id="DOCF136" href="#FOOT136"><sup>136</sup></a>
+input.<sup><a class="footnote_link" id="DOCF136" href="#FOOT136" epub:type="noteref">136</a></sup>
 </p>
 <div class="lisp">
 <pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">define</span><span class="pln"> </span><span class="opn">(</span><span class="pln">random-in-range low high</span><span class="clo">)</span><span class="pln">
@@ -657,7 +657,7 @@ with <code>make-simplified-withdraw</code>:
 
 <p>We first simplify the operator by substituting 25 for <code>balance</code> in the
 body of <code>make-simplified-withdraw</code>.  This reduces the expression
-to<a class="footnote_link" id="DOCF137" href="#FOOT137"><sup>137</sup></a>
+to<sup><a class="footnote_link" id="DOCF137" href="#FOOT137" epub:type="noteref">137</a></sup>
 </p>
 <div class="lisp">
 <pre class="lisp prettyprinted" style=""><span class="opn">((</span><span class="kwd">lambda</span><span class="pln"> </span><span class="opn">(</span><span class="pln">amount</span><span class="clo">)</span><span class="pln"> 
@@ -778,7 +778,7 @@ particular, it can be especially confusing that there is one object (the bank
 account) that has two different names (<code>peter-acc</code> and <code>paul-acc</code>);
 if we are searching for all the places in our program where <code>paul-acc</code> can
 be changed, we must remember to look also at things that change
-<code>peter-acc</code>.<a class="footnote_link" id="DOCF138" href="#FOOT138"><sup>138</sup></a>
+<code>peter-acc</code>.<sup><a class="footnote_link" id="DOCF138" href="#FOOT138" epub:type="noteref">138</a></sup>
 </p>
 <p>With reference to the above remarks on “sameness” and “change,” observe
 that if Peter and Paul could only examine their bank balances, and could not
@@ -847,7 +847,7 @@ order
 with assignment forces us to carefully consider the relative orders of the
 assignments to make sure that each statement is using the correct version of
 the variables that have been changed.  This issue simply does not arise in
-functional programs.<a class="footnote_link" id="DOCF139" href="#FOOT139"><sup>139</sup></a>
+functional programs.<sup><a class="footnote_link" id="DOCF139" href="#FOOT139" epub:type="noteref">139</a></sup>
 </p>
 <p>The complexity of imperative programs becomes even worse if we consider
 applications in which several processes execute concurrently.  We will return
@@ -899,7 +899,7 @@ the arguments are evaluated from right to left.
 <div class="footnote">
 <h4 class="footnotes-heading">Footnotes</h4>
 
-<div id="FOOT129"><p><a class="footnote_backlink" href="#DOCF129"><sup>129</sup></a>
+<div><p id="FOOT129" epub:type="footnote"><a class="footnote_backlink" href="#DOCF129"><sup>129</sup></a>
 Actually, this is not quite
 true.  One exception was the random-number generator in <a href="1_002e2.xhtml#g_t1_002e2_002e6">1.2.6</a>.
 Another exception involved the operation/type tables we introduced in 
@@ -908,7 +908,7 @@ arguments depended on intervening calls to <code>put</code>.  On the other hand,
 until we introduce assignment, we have no way to create such procedures
 ourselves.</p>
 </div>
-<div id="FOOT130"><p><a class="footnote_backlink" href="#DOCF130"><sup>130</sup></a>
+<div><p id="FOOT130" epub:type="footnote"><a class="footnote_backlink" href="#DOCF130"><sup>130</sup></a>
 The value of
 a <code>set!</code> expression is implementation-dependent.  <code>Set!</code> should be
 used only for its effect, not for its value.
@@ -919,14 +919,14 @@ see in <a href="3_002e3.xhtml#g_t3_002e3">3.3</a>) are given names that end with
 This is similar to the convention of designating predicates by names that end
 with a question mark.</p>
 </div>
-<div id="FOOT131"><p><a class="footnote_backlink" href="#DOCF131"><sup>131</sup></a>
+<div><p id="FOOT131" epub:type="footnote"><a class="footnote_backlink" href="#DOCF131"><sup>131</sup></a>
 We have already
 used <code>begin</code> implicitly in our programs, because in Scheme the body of a
 procedure can be a sequence of expressions.  Also, the <code>⟨</code><var>consequent</var><code>⟩</code> part
 of each clause in a <code>cond</code> expression can be a sequence of expressions
 rather than a single expression.</p>
 </div>
-<div id="FOOT132"><p><a class="footnote_backlink" href="#DOCF132"><sup>132</sup></a>
+<div><p id="FOOT132" epub:type="footnote"><a class="footnote_backlink" href="#DOCF132"><sup>132</sup></a>
 In programming-language jargon, the variable
 <code>balance</code> is said to be <a id="index-encapsulated"></a>
 <em>encapsulated</em> within the
@@ -937,14 +937,14 @@ system more modular and robust by protecting parts of the system from each
 other; that is, by providing information access only to those parts of the
 system that have a “need to know.”</p>
 </div>
-<div id="FOOT133"><p><a class="footnote_backlink" href="#DOCF133"><sup>133</sup></a>
+<div><p id="FOOT133" epub:type="footnote"><a class="footnote_backlink" href="#DOCF133"><sup>133</sup></a>
 In contrast with
 <code>new-withdraw</code> above, we do not have to use <code>let</code> to make
 <code>balance</code> a local variable, since formal parameters are already local.
 This will be clearer after the discussion of the environment model of
 evaluation in <a href="3_002e2.xhtml#g_t3_002e2">3.2</a>.  (See also <a href="3_002e2.xhtml#Exercise-3_002e10">Exercise 3.10</a>.)</p>
 </div>
-<div id="FOOT134"><p><a class="footnote_backlink" href="#DOCF134"><sup>134</sup></a>
+<div><p id="FOOT134" epub:type="footnote"><a class="footnote_backlink" href="#DOCF134"><sup>134</sup></a>
 One common way to implement
 <code>rand-update</code> is to use the rule that <img src="fig/math/2f4b15565d0a1018e90c3e1b30b76acc.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( x \)" /> is updated to <img src="fig/math/5518447330ac049ee1fec6b9a793f130.svg" class="math-inline" style="height: 0.703em; vertical-align: -0.009em;" alt="\( {ax + b} \)" /> 
 modulo <img src="fig/math/d87e6d0d6a9513640fdd6193cde8b6a3.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( m \)" />, where <img src="fig/math/09009cdd5fc245e05305bc574dcdc97d.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( a \)" />, <img src="fig/math/3e92f417ccfc1f59b0ee22d034c85747.svg" class="math-inline" style="height: 0.703em; vertical-align: -0.009em;" alt="\( b \)" />, and <img src="fig/math/d87e6d0d6a9513640fdd6193cde8b6a3.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( m \)" /> are appropriately chosen
@@ -962,23 +962,23 @@ properties, is a complex question involving difficult issues in mathematics and
 philosophy.  Kolmogorov, Solomonoff, and Chaitin have made great progress in
 clarifying these issues; a discussion can be found in <a href="References.xhtml#Chaitin-1975">Chaitin 1975</a>.</p>
 </div>
-<div id="FOOT135"><p><a class="footnote_backlink" href="#DOCF135"><sup>135</sup></a>
+<div><p id="FOOT135" epub:type="footnote"><a class="footnote_backlink" href="#DOCF135"><sup>135</sup></a>
 This theorem is due to
 E. Cesàro.  See section 4.5.2 of <a href="References.xhtml#Knuth-1981">Knuth 1981</a> for a discussion and a proof.</p>
 </div>
-<div id="FOOT136"><p><a class="footnote_backlink" href="#DOCF136"><sup>136</sup></a>
+<div><p id="FOOT136" epub:type="footnote"><a class="footnote_backlink" href="#DOCF136"><sup>136</sup></a>
 <abbr>MIT</abbr> Scheme provides such a procedure.  If
 <code>random</code> is given an exact integer (as in <a href="1_002e2.xhtml#g_t1_002e2_002e6">1.2.6</a>) it returns
 an exact integer, but if it is given a decimal value (as in this exercise) it
 returns a decimal value.</p>
 </div>
-<div id="FOOT137"><p><a class="footnote_backlink" href="#DOCF137"><sup>137</sup></a>
+<div><p id="FOOT137" epub:type="footnote"><a class="footnote_backlink" href="#DOCF137"><sup>137</sup></a>
 We don’t substitute for the occurrence of <code>balance</code> in the
 <code>set!</code> expression because the <code>⟨</code><var>name</var><code>⟩</code> in a <code>set!</code> is not
 evaluated.  If we did substitute for it, we would get <code>(set! 25 (- 25
 amount))</code>, which makes no sense.</p>
 </div>
-<div id="FOOT138"><p><a class="footnote_backlink" href="#DOCF138"><sup>138</sup></a>
+<div><p id="FOOT138" epub:type="footnote"><a class="footnote_backlink" href="#DOCF138"><sup>138</sup></a>
 The phenomenon of a single computational object
 being accessed by more than one name is known as <a id="index-aliasing"></a>
 <em>aliasing</em>.  The joint
@@ -994,7 +994,7 @@ people have proposed that programming languages be designed in such a way as to
 not allow side effects or aliasing (<a href="References.xhtml#Lampson-et-al_002e-1981">Lampson et al. 1981</a>; 
 <a href="References.xhtml#Morris-et-al_002e-1980">Morris et al. 1980</a>).</p>
 </div>
-<div id="FOOT139"><p><a class="footnote_backlink" href="#DOCF139"><sup>139</sup></a>
+<div><p id="FOOT139" epub:type="footnote"><a class="footnote_backlink" href="#DOCF139"><sup>139</sup></a>
 In view of this, it is ironic that introductory
 programming is most often taught in a highly imperative style.  This may be a
 vestige of a belief, common throughout the 1960s and 1970s, that programs that

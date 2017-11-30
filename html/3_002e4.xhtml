@@ -83,7 +83,7 @@ thus makes programs more modular.
 <p>In addition to making programs more modular, concurrent computation can provide
 a speed advantage over sequential computation.  Sequential computers execute
 only one operation at a time, so the amount of time it takes to perform a task
-is proportional to the total number of operations performed.<a class="footnote_link" id="DOCF162" href="#FOOT162"><sup>162</sup></a>  However, if it is possible to decompose a problem
+is proportional to the total number of operations performed.<sup><a class="footnote_link" id="DOCF162" href="#FOOT162" epub:type="noteref">162</a></sup>  However, if it is possible to decompose a problem
 into pieces that are relatively independent and need to communicate only
 rarely, it may be possible to allocate pieces to separate computing processors,
 producing a speed advantage proportional to the number of processors available.
@@ -99,7 +99,7 @@ entails additional complexity in our understanding of time.
 <h4 class="subsection"><span class="secnum">3.4.1</span><span class="sectitle">The Nature of Time in Concurrent Systems</span></h4>
 
 <p>On the surface, time seems straightforward.  It is an ordering imposed on
-events.<a class="footnote_link" id="DOCF163" href="#FOOT163"><sup>163</sup></a>  For any events <img src="fig/math/0795850a4e18ff44aa3a2868640c29a7.svg" class="math-inline" style="height: 0.656em; vertical-align: -0.004em;" alt="\( A \)" /> and <img src="fig/math/30728d9819efd7caec6b07dd841c7393.svg" class="math-inline" style="height: 0.645em;" alt="\( B \)" />, either <img src="fig/math/0795850a4e18ff44aa3a2868640c29a7.svg" class="math-inline" style="height: 0.656em; vertical-align: -0.004em;" alt="\( A \)" /> occurs before <img src="fig/math/30728d9819efd7caec6b07dd841c7393.svg" class="math-inline" style="height: 0.645em;" alt="\( B \)" />,
+events.<sup><a class="footnote_link" id="DOCF163" href="#FOOT163" epub:type="noteref">163</a></sup>  For any events <img src="fig/math/0795850a4e18ff44aa3a2868640c29a7.svg" class="math-inline" style="height: 0.656em; vertical-align: -0.004em;" alt="\( A \)" /> and <img src="fig/math/30728d9819efd7caec6b07dd841c7393.svg" class="math-inline" style="height: 0.645em;" alt="\( B \)" />, either <img src="fig/math/0795850a4e18ff44aa3a2868640c29a7.svg" class="math-inline" style="height: 0.656em; vertical-align: -0.004em;" alt="\( A \)" /> occurs before <img src="fig/math/30728d9819efd7caec6b07dd841c7393.svg" class="math-inline" style="height: 0.645em;" alt="\( B \)" />,
 <img src="fig/math/0795850a4e18ff44aa3a2868640c29a7.svg" class="math-inline" style="height: 0.656em; vertical-align: -0.004em;" alt="\( A \)" /> and <img src="fig/math/30728d9819efd7caec6b07dd841c7393.svg" class="math-inline" style="height: 0.645em;" alt="\( B \)" /> are simultaneous, or <img src="fig/math/0795850a4e18ff44aa3a2868640c29a7.svg" class="math-inline" style="height: 0.656em; vertical-align: -0.004em;" alt="\( A \)" /> occurs after <img src="fig/math/30728d9819efd7caec6b07dd841c7393.svg" class="math-inline" style="height: 0.645em;" alt="\( B \)" />.  For instance,
 returning to the bank account example, suppose that Peter withdraws $10 and
 Paul withdraws $25 from a joint account that initially contains $100, leaving
@@ -158,7 +158,7 @@ That assumption, however, became invalid when Peter changed <code>balance</code>
 90.  This is a catastrophic failure for the banking system, because the total
 amount of money in the system is not conserved.  Before the transactions, the
 total amount of money was $100.  Afterwards, Peter has $10, Paul has $25, and
-the bank has $75.<a class="footnote_link" id="DOCF164" href="#FOOT164"><sup>164</sup></a>
+the bank has $75.<sup><a class="footnote_link" id="DOCF164" href="#FOOT164" epub:type="noteref">164</a></sup>
 </p>
 <figure class="float">
 <a id="Figure-3_002e29"></a>
@@ -184,7 +184,7 @@ just before the moment of change, the balance is still what he thought it was.
 programs.  The root of this complexity lies in the assignments to variables
 that are shared among the different processes.  We already know that we must be
 careful in writing programs that use <code>set!</code>, because the results of a
-computation depend on the order in which the assignments occur.<a class="footnote_link" id="DOCF165" href="#FOOT165"><sup>165</sup></a>  With concurrent processes we must be especially careful
+computation depend on the order in which the assignments occur.<sup><a class="footnote_link" id="DOCF165" href="#FOOT165" epub:type="noteref">165</a></sup>  With concurrent processes we must be especially careful
 about assignments, because we may not be able to control the order of the
 assignments made by the different processes.  If several such changes might be
 made concurrently (as with two depositors accessing a joint account) we need
@@ -200,7 +200,7 @@ system designer to ensure that only one transaction could proceed at a time.
 This would be both inefficient and overly conservative.  <a href="#Figure-3_002e30">Figure 3.30</a>
 shows Peter and Paul sharing a bank account, where Paul has a private account
 as well.  The diagram illustrates two withdrawals from the shared account (one
-by Peter and one by Paul) and a deposit to Paul’s private account.<a class="footnote_link" id="DOCF166" href="#FOOT166"><sup>166</sup></a>  The two withdrawals from the
+by Peter and one by Paul) and a deposit to Paul’s private account.<sup><a class="footnote_link" id="DOCF166" href="#FOOT166" epub:type="noteref">166</a></sup>  The two withdrawals from the
 shared account must not be concurrent (since both access and update the same
 account), and Paul’s deposit and withdrawal must not be concurrent (since both
 access and update the amount in Paul’s wallet).  But there should be no problem
@@ -230,7 +230,7 @@ the same as for <em>some</em> sequential order.  For example, suppose that Peter
 and Paul’s joint account starts out with $100, and Peter deposits $40 while
 Paul concurrently withdraws half the money in the account.  Then sequential
 execution could result in the account balance being either $70 or $90 (see
-<a href="#Exercise-3_002e38">Exercise 3.38</a>).<a class="footnote_link" id="DOCF167" href="#FOOT167"><sup>167</sup></a>
+<a href="#Exercise-3_002e38">Exercise 3.38</a>).<sup><a class="footnote_link" id="DOCF167" href="#FOOT167" epub:type="noteref">167</a></sup>
 </p>
 <p>There are still weaker requirements for correct execution of concurrent
 programs.  A program for simulating diffusion (say, the flow of heat in an
@@ -336,7 +336,7 @@ to include a procedure called <code>parallel-execute</code>:
 <p>Each <code>⟨</code><var>p</var><code>⟩</code> must be a procedure of no arguments.  <code>Parallel-execute</code>
 creates a separate process for each <code>⟨</code><var>p</var><code>⟩</code>, which applies 
 <code>⟨</code><var>p</var><code>⟩</code> (to no arguments).  These processes all run
-concurrently.<a class="footnote_link" id="DOCF168" href="#FOOT168"><sup>168</sup></a>
+concurrently.<sup><a class="footnote_link" id="DOCF168" href="#FOOT168" epub:type="noteref">168</a></sup>
 </p>
 <p>As an example of how this is used, consider
 </p>
@@ -549,7 +549,7 @@ shared resources.
 the balances in two bank accounts.  We access each account to find the balance,
 compute the difference between the balances, withdraw this difference from one
 account, and deposit it in the other account.  We could implement this as
-follows:<a class="footnote_link" id="DOCF169" href="#FOOT169"><sup>169</sup></a>
+follows:<sup><a class="footnote_link" id="DOCF169" href="#FOOT169" epub:type="noteref">169</a></sup>
 </p>
 <div class="lisp">
 <pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">define</span><span class="pln"> </span><span class="opn">(</span><span class="pln">exchange account1 account2</span><span class="clo">)</span><span class="pln">
@@ -566,7 +566,7 @@ withdrawals serialized for individual accounts (as in the <code>make-account</co
 procedure shown above in this section), <code>exchange</code> can still produce
 incorrect results.  For example, Peter might compute the difference in the
 balances for <img src="fig/math/6741468ac0368d535bc3535a9b2c44d4.svg" class="math-inline" style="height: 0.652em; vertical-align: -0.009em;" alt="\( {a1} \)" /> and <img src="fig/math/36ae81c078c9eaacc43be2cc4caefc2e.svg" class="math-inline" style="height: 0.652em; vertical-align: -0.009em;" alt="\( {a2} \)" />, but then Paul might change the balance in
-<img src="fig/math/6741468ac0368d535bc3535a9b2c44d4.svg" class="math-inline" style="height: 0.652em; vertical-align: -0.009em;" alt="\( {a1} \)" /> before Peter is able to complete the exchange.<a class="footnote_link" id="DOCF170" href="#FOOT170"><sup>170</sup></a>  For correct behavior, we must arrange for the
+<img src="fig/math/6741468ac0368d535bc3535a9b2c44d4.svg" class="math-inline" style="height: 0.652em; vertical-align: -0.009em;" alt="\( {a1} \)" /> before Peter is able to complete the exchange.<sup><a class="footnote_link" id="DOCF170" href="#FOOT170" epub:type="noteref">170</a></sup>  For correct behavior, we must arrange for the
 <code>exchange</code> procedure to lock out any other concurrent accesses to the
 accounts during the entire time of the exchange.
 </p>
@@ -605,7 +605,7 @@ the balance variable, and the serializer is exported via message passing:
 <p>We can use this to do serialized deposits and withdrawals.  However, unlike our
 earlier serialized account, it is now the responsibility of each user of
 bank-account objects to explicitly manage the serialization, for example as
-follows:<a class="footnote_link" id="DOCF171" href="#FOOT171"><sup>171</sup></a>
+follows:<sup><a class="footnote_link" id="DOCF171" href="#FOOT171" epub:type="noteref">171</a></sup>
 </p>
 <div class="lisp">
 <pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">define</span><span class="pln"> </span><span class="opn">(</span><span class="pln">deposit account amount</span><span class="clo">)</span><span class="pln">
@@ -717,7 +717,7 @@ operations—the mutex can be <a id="index-acquired"></a>
 <em>acquired</em>, and the mutex can be
 <a id="index-released"></a>
 <em>released</em>.  Once a mutex has been acquired, no other acquire
-operations on that mutex may proceed until the mutex is released.<a class="footnote_link" id="DOCF172" href="#FOOT172"><sup>172</sup></a> In our implementation, each
+operations on that mutex may proceed until the mutex is released.<sup><a class="footnote_link" id="DOCF172" href="#FOOT172" epub:type="noteref">172</a></sup> In our implementation, each
 serializer has an associated mutex.  Given a procedure <code>p</code>, the serializer
 returns a procedure that acquires the mutex, runs <code>p</code>, and then releases
 the mutex.  This ensures that only one of the procedures produced by the
@@ -746,7 +746,7 @@ must wait.
 contents to false.  To acquire the mutex, we test the cell.  If the mutex is
 available, we set the cell contents to true and proceed.  Otherwise, we wait in
 a loop, attempting to acquire over and over again, until we find that the mutex
-is available.<a class="footnote_link" id="DOCF173" href="#FOOT173"><sup>173</sup></a>  To release the
+is available.<sup><a class="footnote_link" id="DOCF173" href="#FOOT173" epub:type="noteref">173</a></sup>  To release the
 mutex, we set the cell contents to false.
 </p>
 <div class="lisp">
@@ -788,9 +788,9 @@ concurrent processes on a sequential processor using a time-slicing mechanism
 that cycles through the processes, permitting each process to run for a short
 time before interrupting it and moving on to the next process.  In that case,
 <code>test-and-set!</code>  can work by disabling time slicing during the testing and
-setting.<a class="footnote_link" id="DOCF174" href="#FOOT174"><sup>174</sup></a>  Alternatively, multiprocessing computers provide
+setting.<sup><a class="footnote_link" id="DOCF174" href="#FOOT174" epub:type="noteref">174</a></sup>  Alternatively, multiprocessing computers provide
 instructions that support atomic operations directly in
-hardware.<a class="footnote_link" id="DOCF175" href="#FOOT175"><sup>175</sup></a>
+hardware.<sup><a class="footnote_link" id="DOCF175" href="#FOOT175" epub:type="noteref">175</a></sup>
 </p>
 <blockquote>
 <p><strong><a id="Exercise-3_002e46"></a>Exercise 3.46:</strong> Suppose that we implement
@@ -839,7 +839,7 @@ process will always attempt to enter a procedure protecting the lowest-numbered
 account first.  Although this method works well for the exchange problem, there
 are other situations that require more sophisticated deadlock-avoidance
 techniques, or where deadlock cannot be avoided at all.  (See <a href="#Exercise-3_002e48">Exercise 3.48</a> 
-and <a href="#Exercise-3_002e49">Exercise 3.49</a>.)<a class="footnote_link" id="DOCF176" href="#FOOT176"><sup>176</sup></a>
+and <a href="#Exercise-3_002e49">Exercise 3.49</a>.)<sup><a class="footnote_link" id="DOCF176" href="#FOOT176" epub:type="noteref">176</a></sup>
 </p>
 <blockquote>
 <p><strong><a id="Exercise-3_002e48"></a>Exercise 3.48:</strong> Explain in detail why the
@@ -875,7 +875,7 @@ implement in modern high-speed processors, where due to optimization techniques
 such as pipelining and cached memory, the contents of memory may not be in a
 consistent state at every instant.  In contemporary multiprocessing systems,
 therefore, the serializer paradigm is being supplanted by new approaches to
-concurrency control.<a class="footnote_link" id="DOCF177" href="#FOOT177"><sup>177</sup></a>
+concurrency control.<sup><a class="footnote_link" id="DOCF177" href="#FOOT177" epub:type="noteref">177</a></sup>
 </p>
 <p>The problematic aspects of shared state also arise in large, distributed
 systems.  For instance, imagine a distributed banking system where individual
@@ -891,12 +891,12 @@ reasonable constraints to place on the banking system such that the behavior is
 observed by Peter and Paul individually and the “state” of the account
 immediately after synchronization.  Questions about the “real” account
 balance or the order of events between synchronizations may be irrelevant or
-meaningless.<a class="footnote_link" id="DOCF178" href="#FOOT178"><sup>178</sup></a>
+meaningless.<sup><a class="footnote_link" id="DOCF178" href="#FOOT178" epub:type="noteref">178</a></sup>
 </p>
 <p>The basic phenomenon here is that synchronizing different processes,
 establishing shared state, or imposing an order on events requires
 communication among the processes.  In essence, any notion of time in
-concurrency control must be intimately tied to communication.<a class="footnote_link" id="DOCF179" href="#FOOT179"><sup>179</sup></a>  It is intriguing that a
+concurrency control must be intimately tied to communication.<sup><a class="footnote_link" id="DOCF179" href="#FOOT179" epub:type="noteref">179</a></sup>  It is intriguing that a
 similar connection between time and communication also arises in the Theory of
 Relativity, where the speed of light (the fastest signal that can be used to
 synchronize events) is a fundamental constant relating time and space.  The
@@ -906,7 +906,7 @@ models may in fact mirror a fundamental complexity of the physical universe.
 <div class="footnote">
 <h4 class="footnotes-heading">Footnotes</h4>
 
-<div id="FOOT162"><p><a class="footnote_backlink" href="#DOCF162"><sup>162</sup></a>
+<div><p id="FOOT162" epub:type="footnote"><a class="footnote_backlink" href="#DOCF162"><sup>162</sup></a>
 Most real
 processors actually execute a few operations at a time, following a strategy
 called <a id="index-pipelining"></a>
@@ -915,12 +915,12 @@ effective utilization of the hardware, it is used only to speed up the
 execution of a sequential instruction stream, while retaining the behavior of
 the sequential program.</p>
 </div>
-<div id="FOOT163"><p><a class="footnote_backlink" href="#DOCF163"><sup>163</sup></a>
+<div><p id="FOOT163" epub:type="footnote"><a class="footnote_backlink" href="#DOCF163"><sup>163</sup></a>
 To quote some graffiti seen on a Cambridge building wall:
 “Time is a device that was invented to keep everything from happening at
 once.”</p>
 </div>
-<div id="FOOT164"><p><a class="footnote_backlink" href="#DOCF164"><sup>164</sup></a>
+<div><p id="FOOT164" epub:type="footnote"><a class="footnote_backlink" href="#DOCF164"><sup>164</sup></a>
 An even worse failure for this system could occur if
 the two <code>set!</code> operations attempt to change the balance simultaneously, in
 which case the actual data appearing in memory might end up being a random
@@ -935,19 +935,19 @@ view of memory contents, despite the fact that data may be replicated
 (“cached”) among the different processors to increase the speed of memory
 access.</p>
 </div>
-<div id="FOOT165"><p><a class="footnote_backlink" href="#DOCF165"><sup>165</sup></a>
+<div><p id="FOOT165" epub:type="footnote"><a class="footnote_backlink" href="#DOCF165"><sup>165</sup></a>
 The
 factorial program in <a href="3_002e1.xhtml#g_t3_002e1_002e3">3.1.3</a> illustrates this for a single
 sequential process.</p>
 </div>
-<div id="FOOT166"><p><a class="footnote_backlink" href="#DOCF166"><sup>166</sup></a>
+<div><p id="FOOT166" epub:type="footnote"><a class="footnote_backlink" href="#DOCF166"><sup>166</sup></a>
 The
 columns show the contents of Peter’s wallet, the joint account (in Bank1),
 Paul’s wallet, and Paul’s private account (in Bank2), before and after each
 withdrawal (W) and deposit (D).  Peter withdraws $10 from Bank1; Paul deposits
 $5 in Bank2, then withdraws $25 from Bank1.</p>
 </div>
-<div id="FOOT167"><p><a class="footnote_backlink" href="#DOCF167"><sup>167</sup></a>
+<div><p id="FOOT167" epub:type="footnote"><a class="footnote_backlink" href="#DOCF167"><sup>167</sup></a>
 <a id="Footnote-167"></a>A more formal
 way to express this idea is to say that concurrent programs are inherently
 <a id="index-nondeterministic"></a>
@@ -956,7 +956,7 @@ functions, but by functions whose results are sets of possible values.  In
 <a href="4_002e3.xhtml#g_t4_002e3">4.3</a> we will study a language for expressing nondeterministic
 computations.</p>
 </div>
-<div id="FOOT168"><p><a class="footnote_backlink" href="#DOCF168"><sup>168</sup></a>
+<div><p id="FOOT168" epub:type="footnote"><a class="footnote_backlink" href="#DOCF168"><sup>168</sup></a>
 <code>Parallel-execute</code> is not part of standard Scheme,
 but it can be implemented in <abbr>MIT</abbr> Scheme.  In our implementation, the
 new concurrent processes also run concurrently with the original Scheme
@@ -964,23 +964,23 @@ process.  Also, in our implementation, the value returned by
 <code>parallel-execute</code> is a special control object that can be used to halt
 the newly created processes.</p>
 </div>
-<div id="FOOT169"><p><a class="footnote_backlink" href="#DOCF169"><sup>169</sup></a>
+<div><p id="FOOT169" epub:type="footnote"><a class="footnote_backlink" href="#DOCF169"><sup>169</sup></a>
 We have simplified <code>exchange</code> by exploiting the fact
 that our <code>deposit</code> message accepts negative amounts.  (This is a serious
 bug in our banking system!)</p>
 </div>
-<div id="FOOT170"><p><a class="footnote_backlink" href="#DOCF170"><sup>170</sup></a>
+<div><p id="FOOT170" epub:type="footnote"><a class="footnote_backlink" href="#DOCF170"><sup>170</sup></a>
 If the account
 balances start out as $10, $20, and $30, then after any number of concurrent
 exchanges, the balances should still be $10, $20, and $30 in some order.
 Serializing the deposits to individual accounts is not sufficient to guarantee
 this.  See <a href="#Exercise-3_002e43">Exercise 3.43</a>.</p>
 </div>
-<div id="FOOT171"><p><a class="footnote_backlink" href="#DOCF171"><sup>171</sup></a>
+<div><p id="FOOT171" epub:type="footnote"><a class="footnote_backlink" href="#DOCF171"><sup>171</sup></a>
 <a href="#Exercise-3_002e45">Exercise 3.45</a> investigates why deposits and withdrawals
 are no longer automatically serialized by the account.</p>
 </div>
-<div id="FOOT172"><p><a class="footnote_backlink" href="#DOCF172"><sup>172</sup></a>
+<div><p id="FOOT172" epub:type="footnote"><a class="footnote_backlink" href="#DOCF172"><sup>172</sup></a>
 The
 term “mutex” is an abbreviation for <a id="index-mutual-exclusion"></a>
 <em>mutual exclusion</em>.  The general
@@ -997,13 +997,13 @@ systems.  Dijkstra’s classic exposition (<a href="References.xhtml#g_t1968b">1
 present the issues of concurrency control, and showed how to use semaphores to
 handle a variety of concurrency problems.</p>
 </div>
-<div id="FOOT173"><p><a class="footnote_backlink" href="#DOCF173"><sup>173</sup></a>
+<div><p id="FOOT173" epub:type="footnote"><a class="footnote_backlink" href="#DOCF173"><sup>173</sup></a>
 In most time-shared operating systems, processes that
 are blocked by a mutex do not waste time “busy-waiting” as above.  Instead,
 the system schedules another process to run while the first is waiting, and the
 blocked process is awakened when the mutex becomes available.</p>
 </div>
-<div id="FOOT174"><p><a class="footnote_backlink" href="#DOCF174"><sup>174</sup></a>
+<div><p id="FOOT174" epub:type="footnote"><a class="footnote_backlink" href="#DOCF174"><sup>174</sup></a>
 In <abbr>MIT</abbr> Scheme for a single processor, which uses a
 time-slicing model, <code>test-and-set!</code> can be implemented as follows:
 </p>
@@ -1019,7 +1019,7 @@ time-slicing model, <code>test-and-set!</code> can be implemented as follows:
 <p><code>Without-interrupts</code> disables time-slicing interrupts while its procedure
 argument is being executed.</p>
 </div>
-<div id="FOOT175"><p><a class="footnote_backlink" href="#DOCF175"><sup>175</sup></a>
+<div><p id="FOOT175" epub:type="footnote"><a class="footnote_backlink" href="#DOCF175"><sup>175</sup></a>
 There are many variants of such instructions—including
 test-and-set, test-and-clear, swap, compare-and-exchange, load-reserve, and
 store-conditional—whose design must be carefully matched to the machine’s
@@ -1038,7 +1038,7 @@ Buridan argued that a perfectly rational dog placed between two equally
 attractive sources of food will starve to death, because it is incapable of
 deciding which to go to first.</p>
 </div>
-<div id="FOOT176"><p><a class="footnote_backlink" href="#DOCF176"><sup>176</sup></a>
+<div><p id="FOOT176" epub:type="footnote"><a class="footnote_backlink" href="#DOCF176"><sup>176</sup></a>
 The general technique for avoiding
 deadlock by numbering the shared resources and acquiring them in order is due
 to <a href="References.xhtml#Havender-_00281968_0029">Havender (1968)</a>.  Situations where deadlock cannot be avoided require
@@ -1048,7 +1048,7 @@ of the deadlocked state and try again.  Deadlock-recovery mechanisms are widely
 used in database management systems, a topic that is treated in detail in 
 <a href="References.xhtml#Gray-and-Reuter-1993">Gray and Reuter 1993</a>.</p>
 </div>
-<div id="FOOT177"><p><a class="footnote_backlink" href="#DOCF177"><sup>177</sup></a>
+<div><p id="FOOT177" epub:type="footnote"><a class="footnote_backlink" href="#DOCF177"><sup>177</sup></a>
 One such alternative to serialization is called
 <a id="index-barrier-synchronization"></a>
 <em>barrier synchronization</em>.  The programmer permits concurrent processes
@@ -1060,14 +1060,14 @@ consistency is required.  The <abbr>PowerPC</abbr>, for example, includes for
 this purpose two instructions called <abbr>SYNC</abbr> and <abbr>EIEIO</abbr> 
 (Enforced In-order Execution of Input/Output).</p>
 </div>
-<div id="FOOT178"><p><a class="footnote_backlink" href="#DOCF178"><sup>178</sup></a>
+<div><p id="FOOT178" epub:type="footnote"><a class="footnote_backlink" href="#DOCF178"><sup>178</sup></a>
 This may seem like a strange point of view, but there are
 systems that work this way.  International charges to credit-card accounts, for
 example, are normally cleared on a per-country basis, and the charges made in
 different countries are periodically reconciled.  Thus the account balance may
 be different in different countries.</p>
 </div>
-<div id="FOOT179"><p><a class="footnote_backlink" href="#DOCF179"><sup>179</sup></a>
+<div><p id="FOOT179" epub:type="footnote"><a class="footnote_backlink" href="#DOCF179"><sup>179</sup></a>
 For
 distributed systems, this perspective was pursued by <a href="References.xhtml#Lamport-_00281978_0029">Lamport (1978)</a>, who showed
 how to use communication to establish “global clocks” that can be used to

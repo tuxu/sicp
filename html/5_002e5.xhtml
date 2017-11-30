@@ -44,7 +44,7 @@ computational process that can be described in Scheme.  The evaluator’s
 controller orchestrates the use of its data paths to perform the desired
 computation.  Thus, the evaluator’s data paths are universal: They are
 sufficient to perform any computation we desire, given an appropriate
-controller.<a class="footnote_link" id="DOCF318" href="#FOOT318"><sup>318</sup></a>
+controller.<sup><a class="footnote_link" id="DOCF318" href="#FOOT318" epub:type="noteref">318</a></sup>
 </p>
 <p>Commercial general-purpose computers are register machines organized around a
 collection of registers and operations that constitute an efficient and
@@ -82,7 +82,7 @@ into an equivalent program (called the <a id="index-object-program"></a>
 machine’s native language.  The compiler that we implement in this section
 translates programs written in Scheme into sequences of instructions to be
 executed using the explicit-control evaluator machine’s data
-paths.<a class="footnote_link" id="DOCF319" href="#FOOT319"><sup>319</sup></a>
+paths.<sup><a class="footnote_link" id="DOCF319" href="#FOOT319" epub:type="noteref">319</a></sup>
 </p>
 <p>Compared with interpretation, compilation can provide a great increase in the
 efficiency of program execution, as we will explain below in the overview of
@@ -199,7 +199,7 @@ corresponds to the <code>eval</code> procedure of <a href="4_002e1.xhtml#g_t4_00
 <code>analyze</code> procedure of <a href="4_002e1.xhtml#g_t4_002e1_002e7">4.1.7</a>, and the <code>eval-dispatch</code>
 entry point of the explicit-control-evaluator in <a href="5_002e4.xhtml#g_t5_002e4_002e1">5.4.1</a>.  The
 compiler, like the interpreters, uses the expression-syntax procedures defined
-in <a href="4_002e1.xhtml#g_t4_002e1_002e2">4.1.2</a>.<a class="footnote_link" id="DOCF320" href="#FOOT320"><sup>320</sup></a>  <code>Compile</code> performs a
+in <a href="4_002e1.xhtml#g_t4_002e1_002e2">4.1.2</a>.<sup><a class="footnote_link" id="DOCF320" href="#FOOT320" epub:type="noteref">320</a></sup>  <code>Compile</code> performs a
 case analysis on the syntactic type of the expression to be compiled.  For each
 type of expression, it dispatches to a specialized <a id="index-code-generator"></a>
 <em>code generator</em>:
@@ -454,7 +454,7 @@ generate the instruction <code>(goto (reg continue))</code>.  This needs the
 <code>continue</code> register and does not modify any registers.  If the linkage is
 <code>next</code>, then we needn’t include any additional instructions.  Otherwise,
 the linkage is a label, and we generate a <code>goto</code> to that label, an
-instruction that does not need or modify any registers.<a class="footnote_link" id="DOCF321" href="#FOOT321"><sup>321</sup></a>
+instruction that does not need or modify any registers.<sup><a class="footnote_link" id="DOCF321" href="#FOOT321" epub:type="noteref">321</a></sup>
 </p>
 <div class="lisp">
 <pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">define</span><span class="pln"> </span><span class="opn">(</span><span class="pln">compile-linkage linkage</span><span class="clo">)</span><span class="pln">
@@ -608,7 +608,7 @@ after-if</span></pre></div>
 <p>To generate this code, we compile the predicate, consequent, and alternative,
 and combine the resulting code with instructions to test the predicate result
 and with newly generated labels to mark the true and false branches and the end
-of the conditional.<a class="footnote_link" id="DOCF322" href="#FOOT322"><sup>322</sup></a> In this arrangement of code, we must branch around the true branch if the
+of the conditional.<sup><a class="footnote_link" id="DOCF322" href="#FOOT322" epub:type="noteref">322</a></sup> In this arrangement of code, we must branch around the true branch if the
 test is false.  The only slight complication is in how the linkage for the true
 branch should be handled.  If the linkage for the conditional is <code>return</code>
 or a label, then the true and false branches will both use this same linkage.
@@ -717,7 +717,7 @@ after-lambda</span></pre></div>
 followed by the code for the procedure body.  The procedure object will be
 constructed at run time by combining the current environment (the environment
 at the point of definition) with the entry point to the compiled procedure body
-(a newly generated label).<a class="footnote_link" id="DOCF323" href="#FOOT323"><sup>323</sup></a>
+(a newly generated label).<sup><a class="footnote_link" id="DOCF323" href="#FOOT323" epub:type="noteref">323</a></sup>
 </p>
 <div class="lisp">
 <pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">define</span><span class="pln"> </span><span class="opn">(</span><span class="pln">compile-lambda exp target linkage</span><span class="clo">)</span><span class="pln">
@@ -1055,7 +1055,7 @@ linkage.  (The linkage is always <code>return</code> or a label, because
 compound-procedure branch by an <code>after-call</code> label.)
 </p>
 <p>In fact, if the target is not <code>val</code>, that is exactly the code our compiler
-will generate.<a class="footnote_link" id="DOCF324" href="#FOOT324"><sup>324</sup></a>  Usually, however, the target is
+will generate.<sup><a class="footnote_link" id="DOCF324" href="#FOOT324" epub:type="noteref">324</a></sup>  Usually, however, the target is
 <code>val</code> (the only time the compiler specifies a different register is when
 targeting the evaluation of an operator to <code>proc</code>), so the procedure
 result is put directly into the target register and there is no need to return
@@ -1104,13 +1104,13 @@ target.  This would destroy tail recursion.  Our system would still give the
 same value for any expression.  But each time we called a procedure, we would
 save <code>continue</code> and return after the call to undo the (useless) save.
 These extra saves would accumulate during a nest of procedure
-calls.<a class="footnote_link" id="DOCF325" href="#FOOT325"><sup>325</sup></a>
+calls.<sup><a class="footnote_link" id="DOCF325" href="#FOOT325" epub:type="noteref">325</a></sup>
 </p>
 <p><code>Compile-proc-appl</code> generates the above procedure-application code by
 considering four cases, depending on whether the target for the call is
 <code>val</code> and whether the linkage is <code>return</code>.  Observe that the
 instruction sequences are declared to modify all the registers, since executing
-the procedure body can change the registers in arbitrary ways.<a class="footnote_link" id="DOCF326" href="#FOOT326"><sup>326</sup></a>
+the procedure body can change the registers in arbitrary ways.<sup><a class="footnote_link" id="DOCF326" href="#FOOT326" epub:type="noteref">326</a></sup>
 Also note that the code sequence for the case with target <code>val</code> and
 linkage <code>return</code> is declared to need <code>continue</code>: Even though
 <code>continue</code> is not explicitly used in the two-instruction sequence, we must
@@ -1276,7 +1276,7 @@ addition to the registers needed by <code>seq1</code>, and modifies the register
 modified by <code>seq1</code> except for the ones being saved and restored.  This
 augmented sequence and <code>seq2</code> are then appended in the usual way.  The
 following procedure implements this strategy recursively, walking down the list
-of registers to be preserved:<a class="footnote_link" id="DOCF327" href="#FOOT327"><sup>327</sup></a>
+of registers to be preserved:<sup><a class="footnote_link" id="DOCF327" href="#FOOT327" epub:type="noteref">327</a></sup>
 </p>
 <div class="lisp">
 <pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">define</span><span class="pln"> </span><span class="opn">(</span><span class="pln">preserving regs seq1 seq2</span><span class="clo">)</span><span class="pln">
@@ -1835,7 +1835,7 @@ Consider how much less code would be generated if the compiler could
 <a id="index-open_002dcode"></a>
 <em>open-code</em> primitives—that is, if it could generate code to directly
 use these primitive machine operations.  The expression <code>(+ a 1)</code> might be
-compiled into something as simple as<a class="footnote_link" id="DOCF328" href="#FOOT328"><sup>328</sup></a>
+compiled into something as simple as<sup><a class="footnote_link" id="DOCF328" href="#FOOT328" epub:type="noteref">328</a></sup>
 </p>
 <div class="lisp">
 <pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="pln">assign val </span><span class="opn">(</span><span class="pln">op lookup-variable-value</span><span class="clo">)</span><span class="pln"> 
@@ -1857,7 +1857,7 @@ results may be put into <code>val</code>, <code>arg1</code>, or <code>arg2</code
 primitive in the source program.  We will augment the dispatch in the
 <code>compile</code> procedure to recognize the names of these primitives in addition
 to the reserved words (the special forms) it currently
-recognizes.<a class="footnote_link" id="DOCF329" href="#FOOT329"><sup>329</sup></a> For each special
+recognizes.<sup><a class="footnote_link" id="DOCF329" href="#FOOT329" epub:type="noteref">329</a></sup> For each special
 form our compiler has a code generator.  In this exercise we will construct a
 family of code generators for the open-coded primitives.
 </p>
@@ -1927,7 +1927,7 @@ the second frame).  We will assume, for the moment, that our programs do not
 use <code>define</code>—that variables are bound only with <code>lambda</code>.  Because
 our language is lexically scoped, the run-time environment for any expression
 will have a structure that parallels the lexical structure of the program in
-which the expression appears.<a class="footnote_link" id="DOCF330" href="#FOOT330"><sup>330</sup></a> Thus, the
+which the expression appears.<sup><a class="footnote_link" id="DOCF330" href="#FOOT330" epub:type="noteref">330</a></sup> Thus, the
 compiler can know, when it analyzes the above expression, that each time the
 procedure is applied the variable <code>x</code> in <code>(* x y z)</code> will be found
 two frames out from the current frame and will be the first variable in that
@@ -1995,7 +1995,7 @@ compile-time environment.
 should take two arguments—a lexical address and a run-time environment—and
 return the value of the variable stored at the specified lexical address.
 <code>Lexical-address-lookup</code> should signal an error if the value of the
-variable is the symbol <code>*unassigned*</code>.<a class="footnote_link" id="DOCF331" href="#FOOT331"><sup>331</sup></a> Also write a procedure
+variable is the symbol <code>*unassigned*</code>.<sup><a class="footnote_link" id="DOCF331" href="#FOOT331" epub:type="noteref">331</a></sup> Also write a procedure
 <code>lexical-address-set!</code> that implements the operation that changes the
 value of the variable at a specified lexical address.
 </p></blockquote>
@@ -2039,7 +2039,7 @@ variable is not in the compile-time environment), you should have the code
 generators use the evaluator operations, as before, to search for the binding.
 (The only place a variable that is not found at compile time can be is in the
 global environment, which is part of the run-time environment but is not part
-of the compile-time environment.<a class="footnote_link" id="DOCF332" href="#FOOT332"><sup>332</sup></a>  Thus, if you wish, you may have the evaluator operations look
+of the compile-time environment.<sup><a class="footnote_link" id="DOCF332" href="#FOOT332" epub:type="noteref">332</a></sup>  Thus, if you wish, you may have the evaluator operations look
 directly in the global environment, which can be obtained with the operation
 <code>(op get-global-environment)</code>, instead of having them search the whole
 run-time environment found in <code>env</code>.)  Test the modified compiler on a few
@@ -2120,7 +2120,7 @@ it:
 the call to <code>factorial</code> above), we need to change the code at
 <code>apply-dispatch</code> (<a href="5_002e4.xhtml#g_t5_002e4_002e1">5.4.1</a>) so that it recognizes compiled
 procedures (as distinct from compound or primitive procedures) and transfers
-control directly to the entry point of the compiled code:<a class="footnote_link" id="DOCF333" href="#FOOT333"><sup>333</sup></a>
+control directly to the entry point of the compiled code:<sup><a class="footnote_link" id="DOCF333" href="#FOOT333" epub:type="noteref">333</a></sup>
 </p>
 <div class="lisp">
 <pre class="lisp prettyprinted" style=""><span class="pln">apply-dispatch
@@ -2148,7 +2148,7 @@ restored before the compiled code is executed.
 <p>To enable us to run some compiled code when we start the evaluator machine, we
 add a <code>branch</code> instruction at the beginning of the evaluator machine,
 which causes the machine to go to a new entry point if the <code>flag</code> register
-is set.<a class="footnote_link" id="DOCF334" href="#FOOT334"><sup>334</sup></a>
+is set.<sup><a class="footnote_link" id="DOCF334" href="#FOOT334" epub:type="noteref">334</a></sup>
 </p>
 <div class="lisp">
 <pre class="lisp prettyprinted" style=""><span class="roman"><span class="com">;; branches if </span><code><span class="com">flag</span></code><span class="com"> is set:</span></span><span class="pln">
@@ -2164,7 +2164,7 @@ containing the location of an instruction sequence that puts a result into
 point jumps to the location designated by <code>val</code>, but first assigns
 <code>continue</code> so that execution will return to <code>print-result</code>, which
 prints the value in <code>val</code> and then goes to the beginning of the
-evaluator’s read-eval-print loop.<a class="footnote_link" id="DOCF335" href="#FOOT335"><sup>335</sup></a>
+evaluator’s read-eval-print loop.<sup><a class="footnote_link" id="DOCF335" href="#FOOT335" epub:type="noteref">335</a></sup>
 </p>
 <div class="lisp">
 <pre class="lisp prettyprinted" style=""><span class="pln">external-entry
@@ -2233,7 +2233,7 @@ compilation strategy.
 <h5 class="subsubheading">Interpretation and compilation</h5>
 
 <p>With the programs in this section, we can now experiment with the alternative
-execution strategies of interpretation and compilation.<a class="footnote_link" id="DOCF336" href="#FOOT336"><sup>336</sup></a>  An interpreter raises the machine to
+execution strategies of interpretation and compilation.<sup><a class="footnote_link" id="DOCF336" href="#FOOT336" epub:type="noteref">336</a></sup>  An interpreter raises the machine to
 the level of the user program; a compiler lowers the user program to the level
 of the machine language.  We can regard the Scheme language (or any programming
 language) as a coherent family of abstractions erected on the machine language.
@@ -2242,7 +2242,7 @@ the steps of program execution are organized in terms of these abstractions,
 and are therefore more intelligible to the programmer.  Compiled code can
 execute faster, because the steps of program execution are organized in terms
 of the machine language, and the compiler is free to make optimizations that
-cut across the higher-level abstractions.<a class="footnote_link" id="DOCF337" href="#FOOT337"><sup>337</sup></a>
+cut across the higher-level abstractions.<sup><a class="footnote_link" id="DOCF337" href="#FOOT337" epub:type="noteref">337</a></sup>
 </p>
 <p>The alternatives of interpretation and compilation also lead to different
 strategies for porting languages to new computers. Suppose that we wish to
@@ -2253,9 +2253,9 @@ compiler and change the code generators so that they generate code for the new
 machine.  The second strategy allows us to run any Lisp program on the new
 machine by first compiling it with the compiler running on our original Lisp
 system, and linking it with a compiled version of the run-time
-library.<a class="footnote_link" id="DOCF338" href="#FOOT338"><sup>338</sup></a> Better yet, we can
+library.<sup><a class="footnote_link" id="DOCF338" href="#FOOT338" epub:type="noteref">338</a></sup> Better yet, we can
 compile the compiler itself, and run this on the new machine to compile other
-Lisp programs.<a class="footnote_link" id="DOCF339" href="#FOOT339"><sup>339</sup></a>  Or we can compile one of the interpreters of 
+Lisp programs.<sup><a class="footnote_link" id="DOCF339" href="#FOOT339" epub:type="noteref">339</a></sup>  Or we can compile one of the interpreters of 
 <a href="4_002e1.xhtml#g_t4_002e1">4.1</a> to produce an interpreter that runs on the new machine.
 </p>
 <blockquote>
@@ -2404,14 +2404,14 @@ into sequences of C instructions.  Compile the metacircular evaluator of
 <div class="footnote">
 <h4 class="footnotes-heading">Footnotes</h4>
 
-<div id="FOOT318"><p><a class="footnote_backlink" href="#DOCF318"><sup>318</sup></a>
+<div><p id="FOOT318" epub:type="footnote"><a class="footnote_backlink" href="#DOCF318"><sup>318</sup></a>
 This is a theoretical statement.  We are not claiming that
 the evaluator’s data paths are a particularly convenient or efficient set of
 data paths for a general-purpose computer.  For example, they are not very good
 for implementing high-performance floating-point calculations or calculations
 that intensively manipulate bit vectors.</p>
 </div>
-<div id="FOOT319"><p><a class="footnote_backlink" href="#DOCF319"><sup>319</sup></a>
+<div><p id="FOOT319" epub:type="footnote"><a class="footnote_backlink" href="#DOCF319"><sup>319</sup></a>
 Actually, the machine that runs compiled code can be simpler
 than the interpreter machine, because we won’t use the <code>exp</code> and
 <code>unev</code> registers.  The interpreter used these to hold pieces of
@@ -2422,7 +2422,7 @@ But compiled code will use a few additional machine operations (to represent
 compiled procedure objects) that didn’t appear in the explicit-control
 evaluator machine.</p>
 </div>
-<div id="FOOT320"><p><a class="footnote_backlink" href="#DOCF320"><sup>320</sup></a>
+<div><p id="FOOT320" epub:type="footnote"><a class="footnote_backlink" href="#DOCF320"><sup>320</sup></a>
 Notice, however, that our compiler is a Scheme
 program, and the syntax procedures that it uses to manipulate expressions are
 the actual Scheme procedures used with the metacircular evaluator.  For the
@@ -2431,7 +2431,7 @@ operations were available as operations for the register machine.  (Of course,
 when we simulated the register machine in Scheme, we used the actual Scheme
 procedures in our register machine simulation.)</p>
 </div>
-<div id="FOOT321"><p><a class="footnote_backlink" href="#DOCF321"><sup>321</sup></a>
+<div><p id="FOOT321" epub:type="footnote"><a class="footnote_backlink" href="#DOCF321"><sup>321</sup></a>
 This procedure
 uses a feature of Lisp called <a id="index-backquote"></a>
 <em>backquote</em> (or <a id="index-quasiquote"></a>
@@ -2461,7 +2461,7 @@ then the expression
 <div class="lisp">
 <pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="lit">1</span><span class="pln"> </span><span class="lit">2</span><span class="pln"> a</span><span class="clo">)</span></pre></div>
 </div>
-<div id="FOOT322"><p><a class="footnote_backlink" href="#DOCF322"><sup>322</sup></a>
+<div><p id="FOOT322" epub:type="footnote"><a class="footnote_backlink" href="#DOCF322"><sup>322</sup></a>
 We can’t just use the labels <code>true-branch</code>,
 <code>false-branch</code>, and <code>after-if</code> as shown above, because there might be
 more than one <code>if</code> in the program.  The compiler uses the procedure
@@ -2484,7 +2484,7 @@ generation of unique variable names in the query language, as follows:
     </span><span class="opn">(</span><span class="pln">symbol-</span><span class="pun">&gt;</span><span class="pln">string name</span><span class="clo">)</span><span class="pln">
     </span><span class="opn">(</span><span class="pln">number-</span><span class="pun">&gt;</span><span class="pln">string </span><span class="opn">(</span><span class="pln">new-label-number</span><span class="clo">)))))</span></pre></div>
 </div>
-<div id="FOOT323"><p><a class="footnote_backlink" href="#DOCF323"><sup>323</sup></a>
+<div><p id="FOOT323" epub:type="footnote"><a class="footnote_backlink" href="#DOCF323"><sup>323</sup></a>
 <a id="Footnote-323"></a>We need
 machine operations to implement a data structure for representing compiled
 procedures, analogous to the structure for compound procedures described in
@@ -2500,13 +2500,13 @@ procedures, analogous to the structure for compound procedures described in
 </span><span class="opn">(</span><span class="kwd">define</span><span class="pln"> </span><span class="opn">(</span><span class="pln">compiled-procedure-env c-proc</span><span class="clo">)</span><span class="pln">
   </span><span class="opn">(</span><span class="kwd">caddr</span><span class="pln"> c-proc</span><span class="clo">))</span></pre></div>
 </div>
-<div id="FOOT324"><p><a class="footnote_backlink" href="#DOCF324"><sup>324</sup></a>
+<div><p id="FOOT324" epub:type="footnote"><a class="footnote_backlink" href="#DOCF324"><sup>324</sup></a>
 Actually, we signal an error when the target is not
 <code>val</code> and the linkage is <code>return</code>, since the only place we request
 <code>return</code> linkages is in compiling procedures, and our convention is that
 procedures return their values in <code>val</code>.</p>
 </div>
-<div id="FOOT325"><p><a class="footnote_backlink" href="#DOCF325"><sup>325</sup></a>
+<div><p id="FOOT325" epub:type="footnote"><a class="footnote_backlink" href="#DOCF325"><sup>325</sup></a>
 Making a compiler generate tail-recursive code might seem like
 a straightforward idea.  But most compilers for common languages, including C
 and Pascal, do not do this, and therefore these languages cannot represent
@@ -2524,43 +2524,43 @@ actually more efficient than garbage collection in the first place, but the
 details seem to hinge on fine points of computer architecture.  (See <a href="References.xhtml#Appel-1987">Appel 1987</a>
 and <a href="References.xhtml#Miller-and-Rozas-1994">Miller and Rozas 1994</a> for opposing views on this issue.)</p>
 </div>
-<div id="FOOT326"><p><a class="footnote_backlink" href="#DOCF326"><sup>326</sup></a>
+<div><p id="FOOT326" epub:type="footnote"><a class="footnote_backlink" href="#DOCF326"><sup>326</sup></a>
 The
 variable <code>all-regs</code> is bound to the list of names of all the registers:
 </p>
 <div class="lisp">
 <pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">define</span><span class="pln"> all-regs </span><span class="lit">'</span><span class="opn">(</span><span class="pln">env proc val argl continue</span><span class="clo">))</span></pre></div>
 </div>
-<div id="FOOT327"><p><a class="footnote_backlink" href="#DOCF327"><sup>327</sup></a>
+<div><p id="FOOT327" epub:type="footnote"><a class="footnote_backlink" href="#DOCF327"><sup>327</sup></a>
 Note that <code>preserving</code> calls
 <code>append</code> with three arguments.  Though the definition of <code>append</code>
 shown in this book accepts only two arguments, Scheme standardly provides an
 <code>append</code> procedure that takes an arbitrary number of arguments.</p>
 </div>
-<div id="FOOT328"><p><a class="footnote_backlink" href="#DOCF328"><sup>328</sup></a>
+<div><p id="FOOT328" epub:type="footnote"><a class="footnote_backlink" href="#DOCF328"><sup>328</sup></a>
 We have used the same symbol
 <code>+</code> here to denote both the source-language procedure and the machine
 operation.  In general there will not be a one-to-one correspondence between
 primitives of the source language and primitives of the machine.</p>
 </div>
-<div id="FOOT329"><p><a class="footnote_backlink" href="#DOCF329"><sup>329</sup></a>
+<div><p id="FOOT329" epub:type="footnote"><a class="footnote_backlink" href="#DOCF329"><sup>329</sup></a>
 Making the primitives into reserved words is in general a
 bad idea, since a user cannot then rebind these names to different procedures.
 Moreover, if we add reserved words to a compiler that is in use, existing
 programs that define procedures with these names will stop working.  See
 <a href="#Exercise-5_002e44">Exercise 5.44</a> for ideas on how to avoid this problem.</p>
 </div>
-<div id="FOOT330"><p><a class="footnote_backlink" href="#DOCF330"><sup>330</sup></a>
+<div><p id="FOOT330" epub:type="footnote"><a class="footnote_backlink" href="#DOCF330"><sup>330</sup></a>
 This is not true if we allow internal
 definitions, unless we scan them out.  See <a href="#Exercise-5_002e43">Exercise 5.43</a>.  </p>
 </div>
-<div id="FOOT331"><p><a class="footnote_backlink" href="#DOCF331"><sup>331</sup></a>
+<div><p id="FOOT331" epub:type="footnote"><a class="footnote_backlink" href="#DOCF331"><sup>331</sup></a>
 This is the modification
 to variable lookup required if we implement the scanning method to eliminate
 internal definitions (<a href="#Exercise-5_002e43">Exercise 5.43</a>).  We will need to eliminate these
 definitions in order for lexical addressing to work.</p>
 </div>
-<div id="FOOT332"><p><a class="footnote_backlink" href="#DOCF332"><sup>332</sup></a>
+<div><p id="FOOT332" epub:type="footnote"><a class="footnote_backlink" href="#DOCF332"><sup>332</sup></a>
 Lexical addresses cannot be used to
 access variables in the global environment, because these names can be defined
 and redefined interactively at any time.  With internal definitions scanned
@@ -2569,14 +2569,14 @@ those at top level, which act on the global environment.  Compilation of a
 definition does not cause the defined name to be entered in the compile-time
 environment.</p>
 </div>
-<div id="FOOT333"><p><a class="footnote_backlink" href="#DOCF333"><sup>333</sup></a>
+<div><p id="FOOT333" epub:type="footnote"><a class="footnote_backlink" href="#DOCF333"><sup>333</sup></a>
 Of course,
 compiled procedures as well as interpreted procedures are compound
 (nonprimitive).  For compatibility with the terminology used in the
 explicit-control evaluator, in this section we will use “compound” to mean
 interpreted (as opposed to compiled).</p>
 </div>
-<div id="FOOT334"><p><a class="footnote_backlink" href="#DOCF334"><sup>334</sup></a>
+<div><p id="FOOT334" epub:type="footnote"><a class="footnote_backlink" href="#DOCF334"><sup>334</sup></a>
 Now that the evaluator machine starts with a <code>branch</code>, we
 must always initialize the <code>flag</code> register before starting the evaluator
 machine.  To start the machine at its ordinary read-eval-print loop, we could
@@ -2589,7 +2589,7 @@ use
   </span><span class="opn">(</span><span class="pln">set-register-contents! eceval </span><span class="lit">'flag</span><span class="pln"> false</span><span class="clo">)</span><span class="pln">
   </span><span class="opn">(</span><span class="pln">start eceval</span><span class="clo">))</span></pre></div>
 </div>
-<div id="FOOT335"><p><a class="footnote_backlink" href="#DOCF335"><sup>335</sup></a>
+<div><p id="FOOT335" epub:type="footnote"><a class="footnote_backlink" href="#DOCF335"><sup>335</sup></a>
 Since a compiled procedure is an
 object that the system may try to print, we also modify the system print
 operation <code>user-print</code> (from <a href="4_002e1.xhtml#g_t4_002e1_002e4">4.1.4</a>) so that it will not
@@ -2607,12 +2607,12 @@ attempt to print the components of a compiled procedure:
          </span><span class="opn">(</span><span class="pln">display </span><span class="lit">'</span><span class="pun">&lt;</span><span class="pln">compiled-procedure</span><span class="pun">&gt;</span><span class="clo">))</span><span class="pln">
         </span><span class="opn">(</span><span class="kwd">else</span><span class="pln"> </span><span class="opn">(</span><span class="pln">display object</span><span class="clo">))))</span></pre></div>
 </div>
-<div id="FOOT336"><p><a class="footnote_backlink" href="#DOCF336"><sup>336</sup></a>
+<div><p id="FOOT336" epub:type="footnote"><a class="footnote_backlink" href="#DOCF336"><sup>336</sup></a>
 We can do even
 better by extending the compiler to allow compiled code to call interpreted
 procedures.  See <a href="#Exercise-5_002e47">Exercise 5.47</a>.</p>
 </div>
-<div id="FOOT337"><p><a class="footnote_backlink" href="#DOCF337"><sup>337</sup></a>
+<div><p id="FOOT337" epub:type="footnote"><a class="footnote_backlink" href="#DOCF337"><sup>337</sup></a>
 Independent of the strategy
 of execution, we incur significant overhead if we insist that errors
 encountered in execution of a user program be detected and signaled, rather
@@ -2635,7 +2635,7 @@ Internet in 1988 exploited the <abbr>UNIX</abbr>(tm) operating system’s failur
 check whether the input buffer has overflowed in the finger daemon. (See
 <a href="References.xhtml#Spafford-1989">Spafford 1989</a>.)</p>
 </div>
-<div id="FOOT338"><p><a class="footnote_backlink" href="#DOCF338"><sup>338</sup></a>
+<div><p id="FOOT338" epub:type="footnote"><a class="footnote_backlink" href="#DOCF338"><sup>338</sup></a>
 Of course, with either the interpretation or the compilation
 strategy we must also implement for the new machine storage allocation, input
 and output, and all the various operations that we took as “primitive” in our
@@ -2645,7 +2645,7 @@ compile them for the new machine.  Ultimately, everything reduces to a small
 kernel (such as garbage collection and the mechanism for applying actual
 machine primitives) that is hand-coded for the new machine.</p>
 </div>
-<div id="FOOT339"><p><a class="footnote_backlink" href="#DOCF339"><sup>339</sup></a>
+<div><p id="FOOT339" epub:type="footnote"><a class="footnote_backlink" href="#DOCF339"><sup>339</sup></a>
 This strategy leads to amusing tests of correctness of
 the compiler, such as checking whether the compilation of a program on the new
 machine, using the compiled compiler, is identical with the compilation of the

@@ -43,7 +43,7 @@ another member of the Lisp community, we can supply an evaluator that embodies
 the change.  The recipient can then experiment with the new evaluator and send
 back comments as further modifications.  Not only does the high-level
 implementation base make it easier to test and debug the evaluator; in
-addition, the embedding enables the designer to snarf<a class="footnote_link" id="DOCF235" href="#FOOT235"><sup>235</sup></a>
+addition, the embedding enables the designer to snarf<sup><a class="footnote_link" id="DOCF235" href="#FOOT235" epub:type="noteref">235</a></sup>
 features from the underlying language, just as our embedded Lisp evaluator uses
 primitives and control structure from the underlying Lisp.  Only later (if
 ever) need the designer go to the trouble of building a complete implementation
@@ -65,7 +65,7 @@ In contrast, <a id="index-normal_002dorder"></a>
 arguments until the actual argument values are needed.  Delaying evaluation of
 procedure arguments until the last possible moment (e.g., until they are
 required by a primitive operation) is called <a id="index-lazy-evaluation"></a>
-<em>lazy evaluation</em>.<a class="footnote_link" id="DOCF236" href="#FOOT236"><sup>236</sup></a>  Consider the procedure
+<em>lazy evaluation</em>.<sup><a class="footnote_link" id="DOCF236" href="#FOOT236" epub:type="noteref">236</a></sup>  Consider the procedure
 </p>
 <div class="lisp">
 <pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">define</span><span class="pln"> </span><span class="opn">(</span><span class="pln">try a b</span><span class="clo">)</span><span class="pln">
@@ -106,7 +106,7 @@ say that the procedure is <a id="index-non_002dstrict"></a>
 <em>non-strict</em> in that argument.  If the
 argument is evaluated before the body of the procedure is entered we say that
 the procedure is <a id="index-strict"></a>
-<em>strict</em> in that argument.<a class="footnote_link" id="DOCF237" href="#FOOT237"><sup>237</sup></a>  In a purely applicative-order
+<em>strict</em> in that argument.<sup><a class="footnote_link" id="DOCF237" href="#FOOT237" epub:type="noteref">237</a></sup>  In a purely applicative-order
 language, all procedures are strict in each argument.  In a purely normal-order
 language, all compound procedures are non-strict in each argument, and
 primitive procedures may be either strict or non-strict.  There are also
@@ -164,7 +164,7 @@ this way.  Almost all the required changes center around procedure application.
 determine which arguments are to be evaluated and which are to be delayed.  The
 delayed arguments are not evaluated; instead, they are transformed into objects
 called <a id="index-thunks"></a>
-<em>thunks</em>.<a class="footnote_link" id="DOCF238" href="#FOOT238"><sup>238</sup></a> The thunk must
+<em>thunks</em>.<sup><a class="footnote_link" id="DOCF238" href="#FOOT238" epub:type="noteref">238</a></sup> The thunk must
 contain the information required to produce the value of the argument when it
 is needed, as if it had been evaluated at the time of the application.  Thus,
 the thunk must contain the argument expression and the environment in which the
@@ -172,7 +172,7 @@ procedure application is being evaluated.
 </p>
 <p>The process of evaluating the expression in a thunk is called
 <a id="index-forcing"></a>
-<em>forcing</em>.<a class="footnote_link" id="DOCF239" href="#FOOT239"><sup>239</sup></a>
+<em>forcing</em>.<sup><a class="footnote_link" id="DOCF239" href="#FOOT239" epub:type="noteref">239</a></sup>
 In general, a thunk will be forced only when its value is needed: when it is
 passed to a primitive procedure that will use the value of the thunk; when it
 is the value of a predicate of a conditional; and when it is the value of an
@@ -183,7 +183,7 @@ objects in <a href="3_002e5.xhtml#g_t3_002e5_002e1">3.5.1</a>.  With memoization
 forced, it stores the value that is computed.  Subsequent forcings simply
 return the stored value without repeating the computation.  We’ll make our
 interpreter memoize, because this is more efficient for many applications.
-There are tricky considerations here, however.<a class="footnote_link" id="DOCF240" href="#FOOT240"><sup>240</sup></a>
+There are tricky considerations here, however.<sup><a class="footnote_link" id="DOCF240" href="#FOOT240" epub:type="noteref">240</a></sup>
 </p>
 <a id="Modifying-the-evaluator"></a>
 <h5 class="subsubheading">Modifying the evaluator</h5>
@@ -358,7 +358,7 @@ follows:
 that have been memoized.  When a thunk is forced, we will turn it into an
 evaluated thunk by replacing the stored expression with its value and changing
 the <code>thunk</code> tag so that it can be recognized as already
-evaluated.<a class="footnote_link" id="DOCF241" href="#FOOT241"><sup>241</sup></a>
+evaluated.<sup><a class="footnote_link" id="DOCF241" href="#FOOT241" epub:type="noteref">241</a></sup>
 </p>
 <div class="lisp">
 <pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">define</span><span class="pln"> </span><span class="opn">(</span><span class="pln">evaluated-thunk? obj</span><span class="clo">)</span><span class="pln">
@@ -395,7 +395,7 @@ definitions to the lazy evaluator:
 </span><span class="opn">(</span><span class="kwd">define</span><span class="pln"> </span><span class="opn">(</span><span class="pln">id x</span><span class="clo">)</span><span class="pln"> </span><span class="opn">(</span><span class="kwd">set</span><span class="pun">!</span><span class="pln"> count </span><span class="opn">(</span><span class="pun">+</span><span class="pln"> count </span><span class="lit">1</span><span class="clo">))</span><span class="pln"> x</span><span class="clo">)</span></pre></div>
 
 <p>Give the missing values in the following sequence of interactions, and explain
-your answers.<a class="footnote_link" id="DOCF242" href="#FOOT242"><sup>242</sup></a>
+your answers.<sup><a class="footnote_link" id="DOCF242" href="#FOOT242" epub:type="noteref">242</a></sup>
 </p>
 <div class="lisp">
 <pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">define</span><span class="pln"> w </span><span class="opn">(</span><span class="pln">id </span><span class="opn">(</span><span class="pln">id </span><span class="lit">10</span><span class="clo">)))</span><span class="pln">
@@ -567,7 +567,7 @@ actually fulfilling that promise until later.  We could use this general
 technique of introducing special forms whenever we need more control over the
 evaluation process, but this is awkward.  For one thing, a special form is not
 a first-class object like a procedure, so we cannot use it together with
-higher-order procedures.<a class="footnote_link" id="DOCF243" href="#FOOT243"><sup>243</sup></a>  Additionally, we were
+higher-order procedures.<sup><a class="footnote_link" id="DOCF243" href="#FOOT243" epub:type="noteref">243</a></sup>  Additionally, we were
 forced to create streams as a new kind of data object similar but not identical
 to lists, and this required us to reimplement many ordinary list operations
 (<code>map</code>, <code>append</code>, and so on) for use with streams.
@@ -579,7 +579,7 @@ accomplish this is to extend the lazy evaluator to allow for non-strict
 primitives, and to implement <code>cons</code> as one of these.  An easier way is to
 recall (<a href="2_002e1.xhtml#g_t2_002e1_002e3">2.1.3</a>) that there is no fundamental need to implement
 <code>cons</code> as a primitive at all.  Instead, we can represent pairs as
-procedures:<a class="footnote_link" id="DOCF244" href="#FOOT244"><sup>244</sup></a>
+procedures:<sup><a class="footnote_link" id="DOCF244" href="#FOOT244" epub:type="noteref">244</a></sup>
 </p>
 <div class="lisp">
 <pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">define</span><span class="pln"> </span><span class="opn">(</span><span class="kwd">cons</span><span class="pln"> x y</span><span class="clo">)</span><span class="pln"> </span><span class="opn">(</span><span class="kwd">lambda</span><span class="pln"> </span><span class="opn">(</span><span class="pln">m</span><span class="clo">)</span><span class="pln"> </span><span class="opn">(</span><span class="pln">m x y</span><span class="clo">)))</span><span class="pln">
@@ -630,7 +630,7 @@ examples:
 
 <p>Note that these lazy lists are even lazier than the streams of <a href="Chapter-3.xhtml#Chapter-3">Chapter 3</a>:
 The <code>car</code> of the list, as well as the <code>cdr</code>, is
-delayed.<a class="footnote_link" id="DOCF245" href="#FOOT245"><sup>245</sup></a>  In fact, even accessing the <code>car</code> or
+delayed.<sup><a class="footnote_link" id="DOCF245" href="#FOOT245" epub:type="noteref">245</a></sup>  In fact, even accessing the <code>car</code> or
 <code>cdr</code> of a lazy pair need not force the value of a list element.  The
 value will be forced only when it is really needed—e.g., for use as the
 argument of a primitive, or to be printed as an answer.
@@ -695,14 +695,14 @@ order to print them.
 <div class="footnote">
 <h4 class="footnotes-heading">Footnotes</h4>
 
-<div id="FOOT235"><p><a class="footnote_backlink" href="#DOCF235"><sup>235</sup></a>
+<div><p id="FOOT235" epub:type="footnote"><a class="footnote_backlink" href="#DOCF235"><sup>235</sup></a>
 Snarf: “To
 grab, especially a large document or file for the purpose of using it either
 with or without the owner’s permission.”  Snarf down: “To snarf, sometimes
 with the connotation of absorbing, processing, or understanding.”  (These
 definitions were snarfed from <a href="References.xhtml#Steele-et-al_002e-1983">Steele et al. 1983</a>.  See also <a href="References.xhtml#Raymond-1993">Raymond 1993</a>.)</p>
 </div>
-<div id="FOOT236"><p><a class="footnote_backlink" href="#DOCF236"><sup>236</sup></a>
+<div><p id="FOOT236" epub:type="footnote"><a class="footnote_backlink" href="#DOCF236"><sup>236</sup></a>
 The difference 
 between the “lazy” terminology and the
 “normal-order” terminology is somewhat fuzzy.  Generally, “lazy” refers to
@@ -711,7 +711,7 @@ semantics of languages, independent of any particular evaluation strategy.  But
 this is not a hard-and-fast distinction, and the two terminologies are often
 used interchangeably.</p>
 </div>
-<div id="FOOT237"><p><a class="footnote_backlink" href="#DOCF237"><sup>237</sup></a>
+<div><p id="FOOT237" epub:type="footnote"><a class="footnote_backlink" href="#DOCF237"><sup>237</sup></a>
 The “strict”
 versus “non-strict” terminology means essentially the same thing as
 “applicative-order” versus “normal-order,” except that it refers to
@@ -720,7 +720,7 @@ a conference on programming languages you might hear someone say, “The
 normal-order language Hassle has certain strict primitives.  Other procedures
 take their arguments by lazy evaluation.”</p>
 </div>
-<div id="FOOT238"><p><a class="footnote_backlink" href="#DOCF238"><sup>238</sup></a>
+<div><p id="FOOT238" epub:type="footnote"><a class="footnote_backlink" href="#DOCF238"><sup>238</sup></a>
 The word <a id="index-thunk"></a>
 <em>thunk</em> was invented by an
 informal working group that was discussing the implementation of call-by-name
@@ -728,14 +728,14 @@ in Algol 60.  They observed that most of the analysis of (“thinking about”)
 the expression could be done at compile time; thus, at run time, the expression
 would already have been “thunk” about (<a href="References.xhtml#Ingerman-et-al_002e-1960">Ingerman et al. 1960</a>).</p>
 </div>
-<div id="FOOT239"><p><a class="footnote_backlink" href="#DOCF239"><sup>239</sup></a>
+<div><p id="FOOT239" epub:type="footnote"><a class="footnote_backlink" href="#DOCF239"><sup>239</sup></a>
 This is analogous to the use of <code>force</code> on the
 delayed objects that were introduced in <a href="Chapter-3.xhtml#Chapter-3">Chapter 3</a> to represent streams.
 The critical difference between what we are doing here and what we did in
 <a href="Chapter-3.xhtml#Chapter-3">Chapter 3</a> is that we are building delaying and forcing into the
 evaluator, and thus making this uniform and automatic throughout the language.</p>
 </div>
-<div id="FOOT240"><p><a class="footnote_backlink" href="#DOCF240"><sup>240</sup></a>
+<div><p id="FOOT240" epub:type="footnote"><a class="footnote_backlink" href="#DOCF240"><sup>240</sup></a>
 Lazy evaluation
 combined with memoization is sometimes referred to as <a id="index-call_002dby_002dneed-1"></a>
 <em>call-by-need</em>
@@ -749,7 +749,7 @@ both subtle and confusing in the presence of assignments.  (See <a href="#Exerci
 and <a href="#Exercise-4_002e29">Exercise 4.29</a>.)  An excellent article by <a href="References.xhtml#Clinger-_00281982_0029">Clinger (1982)</a>
 attempts to clarify the multiple dimensions of confusion that arise here.</p>
 </div>
-<div id="FOOT241"><p><a class="footnote_backlink" href="#DOCF241"><sup>241</sup></a>
+<div><p id="FOOT241" epub:type="footnote"><a class="footnote_backlink" href="#DOCF241"><sup>241</sup></a>
 Notice that we also erase the <code>env</code> from the thunk
 once the expression’s value has been computed.  This makes no difference in the
 values returned by the interpreter.  It does help save space, however, because
@@ -764,16 +764,16 @@ objects of <a href="3_002e5.xhtml#g_t3_002e5_002e1">3.5.1</a> to be garbage-coll
 procedure <code>proc</code> (which includes the environment in which the <code>delay</code>
 was evaluated) after storing its value.</p>
 </div>
-<div id="FOOT242"><p><a class="footnote_backlink" href="#DOCF242"><sup>242</sup></a>
+<div><p id="FOOT242" epub:type="footnote"><a class="footnote_backlink" href="#DOCF242"><sup>242</sup></a>
 This exercise demonstrates that the interaction between
 lazy evaluation and side effects can be very confusing.  This is just what you
 might expect from the discussion in <a href="Chapter-3.xhtml#Chapter-3">Chapter 3</a>.</p>
 </div>
-<div id="FOOT243"><p><a class="footnote_backlink" href="#DOCF243"><sup>243</sup></a>
+<div><p id="FOOT243" epub:type="footnote"><a class="footnote_backlink" href="#DOCF243"><sup>243</sup></a>
 This is precisely the issue with the
 <code>unless</code> procedure, as in <a href="#Exercise-4_002e26">Exercise 4.26</a>.</p>
 </div>
-<div id="FOOT244"><p><a class="footnote_backlink" href="#DOCF244"><sup>244</sup></a>
+<div><p id="FOOT244" epub:type="footnote"><a class="footnote_backlink" href="#DOCF244"><sup>244</sup></a>
 This is the procedural representation described in
 <a href="2_002e1.xhtml#Exercise-2_002e4">Exercise 2.4</a>.  Essentially any procedural representation (e.g., a
 message-passing implementation) would do as well.  Notice that we can install
@@ -782,7 +782,7 @@ loop.  If we had originally included <code>cons</code>, <code>car</code>, and <c
 primitives in the global environment, they will be redefined.  (Also see
 <a href="#Exercise-4_002e33">Exercise 4.33</a> and <a href="#Exercise-4_002e34">Exercise 4.34</a>.)</p>
 </div>
-<div id="FOOT245"><p><a class="footnote_backlink" href="#DOCF245"><sup>245</sup></a>
+<div><p id="FOOT245" epub:type="footnote"><a class="footnote_backlink" href="#DOCF245"><sup>245</sup></a>
 This permits us to create delayed versions of more general
 kinds of list structures, not just sequences.  <a href="References.xhtml#Hughes-1990">Hughes 1990</a> discusses some
 applications of “lazy trees.”</p>

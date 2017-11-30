@@ -54,7 +54,7 @@ shows such a hardware implementation: a silicon chip that acts as an evaluator
 for Scheme.  The chip designers started with the data-path and controller
 specifications for a register machine similar to the evaluator described in
 this section and used design automation programs to construct the
-integrated-circuit layout.<a class="footnote_link" id="DOCF304" href="#FOOT304"><sup>304</sup></a>
+integrated-circuit layout.<sup><a class="footnote_link" id="DOCF304" href="#FOOT304" epub:type="noteref">304</a></sup>
 </p>
 <figure class="float">
 <a id="Figure-5_002e16"></a>
@@ -114,7 +114,7 @@ starts at <code>eval-dispatch</code>, it evaluates the expression specified by
 complete, the controller will go to the entry point stored in <code>continue</code>,
 and the <code>val</code> register will hold the value of the expression.  As with the
 metacircular <code>eval</code>, the structure of <code>eval-dispatch</code> is a case
-analysis on the syntactic type of the expression to be evaluated.<a class="footnote_link" id="DOCF305" href="#FOOT305"><sup>305</sup></a>
+analysis on the syntactic type of the expression to be evaluated.<sup><a class="footnote_link" id="DOCF305" href="#FOOT305" epub:type="noteref">305</a></sup>
 </p>
 <div class="lisp">
 <pre class="lisp prettyprinted" style=""><span class="pln">eval-dispatch
@@ -194,7 +194,7 @@ application.  The explicit-control evaluator does the same thing; these
 recursive calls are implemented by <code>goto</code> instructions, together with use
 of the stack to save registers that will be restored after the recursive call
 returns.  Before each call we will be careful to identify which registers must
-be saved (because their values will be needed later).<a class="footnote_link" id="DOCF306" href="#FOOT306"><sup>306</sup></a>
+be saved (because their values will be needed later).<sup><a class="footnote_link" id="DOCF306" href="#FOOT306" epub:type="noteref">306</a></sup>
 </p>
 <p>We begin the evaluation of an application by evaluating the operator to produce
 a procedure, which will later be applied to the evaluated operands.  To
@@ -226,7 +226,7 @@ operands and the environment.  We initialize <code>argl</code> to an empty list.
 Then we assign to the <code>proc</code> register the procedure that was produced by
 evaluating the operator.  If there are no operands, we go directly to
 <code>apply-dispatch</code>.  Otherwise we save <code>proc</code> on the stack and start
-the argument-evaluation loop:<a class="footnote_link" id="DOCF307" href="#FOOT307"><sup>307</sup></a>
+the argument-evaluation loop:<sup><a class="footnote_link" id="DOCF307" href="#FOOT307" epub:type="noteref">307</a></sup>
 </p>
 <div class="lisp">
 <pre class="lisp prettyprinted" style=""><span class="pln">ev-appl-did-operator
@@ -286,7 +286,7 @@ save the environment or the list of unevaluated operands before going to
 evaluated.  Thus, we return from the evaluation to a special entry point
 <code>ev-appl-accum-last-arg</code>, which restores the argument list, accumulates
 the new argument, restores the saved procedure, and goes off to perform the
-application.<a class="footnote_link" id="DOCF308" href="#FOOT308"><sup>308</sup></a>
+application.<sup><a class="footnote_link" id="DOCF308" href="#FOOT308" epub:type="noteref">308</a></sup>
 </p>
 <div class="lisp">
 <pre class="lisp prettyprinted" style=""><span class="pln">ev-appl-last-arg
@@ -306,7 +306,7 @@ ev-appl-accum-last-arg
 interpreter evaluates the operands of a combination (e.g., left to right or
 right to left—see <a href="3_002e1.xhtml#Exercise-3_002e8">Exercise 3.8</a>).  This order is not determined by the
 metacircular evaluator, which inherits its control structure from the
-underlying Scheme in which it is implemented.<a class="footnote_link" id="DOCF309" href="#FOOT309"><sup>309</sup></a> Because
+underlying Scheme in which it is implemented.<sup><a class="footnote_link" id="DOCF309" href="#FOOT309" epub:type="noteref">309</a></sup> Because
 the <code>first-operand</code> selector (used in <code>ev-appl-operand-loop</code> to
 extract successive operands from <code>unev</code>) is implemented as <code>car</code> and
 the <code>rest-operands</code> selector is implemented as <code>cdr</code>, the
@@ -473,7 +473,7 @@ ev-sequence-last-exp
 <p>is an iterative process.  Even though the procedure is syntactically recursive
 (defined in terms of itself), it is not logically necessary for an evaluator to
 save information in passing from one call to <code>sqrt-iter</code> to the
-next.<a class="footnote_link" id="DOCF310" href="#FOOT310"><sup>310</sup></a> An evaluator that can execute a procedure such as
+next.<sup><a class="footnote_link" id="DOCF310" href="#FOOT310" epub:type="noteref">310</a></sup> An evaluator that can execute a procedure such as
 <code>sqrt-iter</code> without requiring increasing storage as the procedure
 continues to call itself is called a <a id="index-tail_002drecursive-1"></a>
 <em>tail-recursive</em> evaluator.  The
@@ -490,13 +490,13 @@ saving any information on the stack.  Hence, evaluating the final expression in
 a sequence—even if it is a procedure call (as in <code>sqrt-iter</code>, where the
 <code>if</code> expression, which is the last expression in the procedure body,
 reduces to a call to <code>sqrt-iter</code>)—will not cause any information to be
-accumulated on the stack.<a class="footnote_link" id="DOCF311" href="#FOOT311"><sup>311</sup></a>
+accumulated on the stack.<sup><a class="footnote_link" id="DOCF311" href="#FOOT311" epub:type="noteref">311</a></sup>
 </p>
 <p>If we did not think to take advantage of the fact that it was unnecessary to
 save information in this case, we might have implemented <code>eval-sequence</code>
 by treating all the expressions in a sequence in the same way—saving the
 registers, evaluating the expression, returning to restore the registers, and
-repeating this until all the expressions have been evaluated:<a class="footnote_link" id="DOCF312" href="#FOOT312"><sup>312</sup></a>
+repeating this until all the expressions have been evaluated:<sup><a class="footnote_link" id="DOCF312" href="#FOOT312" epub:type="noteref">312</a></sup>
 </p>
 <div class="lisp">
 <pre class="lisp prettyprinted" style=""><span class="pln">ev-sequence
@@ -653,7 +653,7 @@ ev-definition-1
 <p><strong><a id="Exercise-5_002e23"></a>Exercise 5.23:</strong> Extend the evaluator to handle
 derived expressions such as <code>cond</code>, <code>let</code>, and so on 
 (<a href="4_002e1.xhtml#g_t4_002e1_002e2">4.1.2</a>).  You may “cheat” and assume that the syntax transformers such
-as <code>cond-&gt;if</code> are available as machine operations.<a class="footnote_link" id="DOCF313" href="#FOOT313"><sup>313</sup></a>
+as <code>cond-&gt;if</code> are available as machine operations.<sup><a class="footnote_link" id="DOCF313" href="#FOOT313" epub:type="noteref">313</a></sup>
 </p></blockquote>
 
 <blockquote>
@@ -692,7 +692,7 @@ the <code>driver-loop</code> procedure of <a href="4_002e1.xhtml#g_t4_002e1_002e
 repeatedly print a prompt, read an expression, evaluate the expression by going
 to <code>eval-dispatch</code>, and print the result.  The following instructions form
 the beginning of the explicit-control evaluator’s controller
-sequence:<a class="footnote_link" id="DOCF314" href="#FOOT314"><sup>314</sup></a>
+sequence:<sup><a class="footnote_link" id="DOCF314" href="#FOOT314" epub:type="noteref">314</a></sup>
 </p>
 <div class="lisp">
 <pre class="lisp prettyprinted" style=""><span class="pln">read-eval-print-loop
@@ -711,7 +711,7 @@ print-result
 
 <p>When we encounter an error in a procedure (such as the “unknown procedure type
 error” indicated at <code>apply-dispatch</code>), we print an error message and
-return to the driver loop.<a class="footnote_link" id="DOCF315" href="#FOOT315"><sup>315</sup></a>
+return to the driver loop.<sup><a class="footnote_link" id="DOCF315" href="#FOOT315" epub:type="noteref">315</a></sup>
 </p>
 <div class="lisp">
 <pre class="lisp prettyprinted" style=""><span class="pln">unknown-expression-type
@@ -732,7 +732,7 @@ signal-error
 
 <p>For the purposes of the simulation, we initialize the stack each time through
 the driver loop, since it might not be empty after an error (such as an
-undefined variable) interrupts an evaluation.<a class="footnote_link" id="DOCF316" href="#FOOT316"><sup>316</sup></a>
+undefined variable) interrupts an evaluation.<sup><a class="footnote_link" id="DOCF316" href="#FOOT316" epub:type="noteref">316</a></sup>
 </p>
 <p>If we combine all the code fragments presented in 
 <a href="#g_t5_002e4_002e1">5.4.1</a>–<a href="#g_t5_002e4_002e4">5.4.4</a>, we can create an evaluator machine model that we can
@@ -931,7 +931,7 @@ procedure types.  Other errors will take us out of the evaluator
 read-eval-print loop.  When we run the evaluator using the register-machine
 simulator, these errors are caught by the underlying Scheme system.  This is
 analogous to the computer crashing when a user program makes an
-error.<a class="footnote_link" id="DOCF317" href="#FOOT317"><sup>317</sup></a>  It is a
+error.<sup><a class="footnote_link" id="DOCF317" href="#FOOT317" epub:type="noteref">317</a></sup>  It is a
 large project to make a real error system work, but it is well worth the effort
 to understand what is involved here.
 </p>
@@ -963,11 +963,11 @@ work.  This is a major project.
 <div class="footnote">
 <h4 class="footnotes-heading">Footnotes</h4>
 
-<div id="FOOT304"><p><a class="footnote_backlink" href="#DOCF304"><sup>304</sup></a>
+<div><p id="FOOT304" epub:type="footnote"><a class="footnote_backlink" href="#DOCF304"><sup>304</sup></a>
 See <a href="References.xhtml#Batali-et-al_002e-1982">Batali et al. 1982</a> for more information
 on the chip and the method by which it was designed.</p>
 </div>
-<div id="FOOT305"><p><a class="footnote_backlink" href="#DOCF305"><sup>305</sup></a>
+<div><p id="FOOT305" epub:type="footnote"><a class="footnote_backlink" href="#DOCF305"><sup>305</sup></a>
 In
 our controller, the dispatch is written as a sequence of <code>test</code> and
 <code>branch</code> instructions.  Alternatively, it could have been written in a
@@ -977,7 +977,7 @@ expression types.  A machine designed to run Lisp would probably include a
 <code>dispatch-on-type</code> instruction that would efficiently execute such
 data-directed dispatches.</p>
 </div>
-<div id="FOOT306"><p><a class="footnote_backlink" href="#DOCF306"><sup>306</sup></a>
+<div><p id="FOOT306" epub:type="footnote"><a class="footnote_backlink" href="#DOCF306"><sup>306</sup></a>
 This is an
 important but subtle point in translating algorithms from a procedural
 language, such as Lisp, to a register-machine language.  As an alternative to
@@ -990,7 +990,7 @@ Saving registers whose contents will not be needed later may also hold onto
 useless data that could otherwise be garbage-collected, freeing space to be
 reused.</p>
 </div>
-<div id="FOOT307"><p><a class="footnote_backlink" href="#DOCF307"><sup>307</sup></a>
+<div><p id="FOOT307" epub:type="footnote"><a class="footnote_backlink" href="#DOCF307"><sup>307</sup></a>
 We add to the evaluator data-structure
 procedures in <a href="4_002e1.xhtml#g_t4_002e1_002e3">4.1.3</a> the following two procedures for manipulating
 argument lists:
@@ -1006,7 +1006,7 @@ combination:
 <div class="lisp">
 <pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">define</span><span class="pln"> </span><span class="opn">(</span><span class="pln">last-operand? ops</span><span class="clo">)</span><span class="pln"> </span><span class="opn">(</span><span class="pln">null? </span><span class="opn">(</span><span class="kwd">cdr</span><span class="pln"> ops</span><span class="clo">)))</span></pre></div>
 </div>
-<div id="FOOT308"><p><a class="footnote_backlink" href="#DOCF308"><sup>308</sup></a>
+<div><p id="FOOT308" epub:type="footnote"><a class="footnote_backlink" href="#DOCF308"><sup>308</sup></a>
 The optimization of treating the last operand specially
 is known as <a id="index-evlis-tail-recursion"></a>
 <em>evlis tail recursion</em> (see <a href="References.xhtml#Wand-1980">Wand 1980</a>).  We could be
@@ -1017,18 +1017,18 @@ avoid saving <code>argl</code> in this case.  The compiler in <a href="5_002e5.x
 performs this optimization.  (Compare the <code>construct-arglist</code> procedure of
 <a href="5_002e5.xhtml#g_t5_002e5_002e3">5.5.3</a>.)</p>
 </div>
-<div id="FOOT309"><p><a class="footnote_backlink" href="#DOCF309"><sup>309</sup></a>
+<div><p id="FOOT309" epub:type="footnote"><a class="footnote_backlink" href="#DOCF309"><sup>309</sup></a>
 The order of operand
 evaluation in the metacircular evaluator is determined by the order of
 evaluation of the arguments to <code>cons</code> in the procedure
 <code>list-of-values</code> of <a href="4_002e1.xhtml#g_t4_002e1_002e1">4.1.1</a> (see <a href="4_002e1.xhtml#Exercise-4_002e1">Exercise 4.1</a>).</p>
 </div>
-<div id="FOOT310"><p><a class="footnote_backlink" href="#DOCF310"><sup>310</sup></a>
+<div><p id="FOOT310" epub:type="footnote"><a class="footnote_backlink" href="#DOCF310"><sup>310</sup></a>
 We saw in <a href="5_002e1.xhtml#g_t5_002e1">5.1</a> how to implement such a process with
 a register machine that had no stack; the state of the process was stored in a
 fixed set of registers.</p>
 </div>
-<div id="FOOT311"><p><a class="footnote_backlink" href="#DOCF311"><sup>311</sup></a>
+<div><p id="FOOT311" epub:type="footnote"><a class="footnote_backlink" href="#DOCF311"><sup>311</sup></a>
 This implementation of tail recursion in
 <code>ev-sequence</code> is one variety of a well-known optimization technique used
 by many compilers.  In compiling a procedure that ends with a procedure call,
@@ -1036,21 +1036,21 @@ one can replace the call by a jump to the called procedure’s entry point.
 Building this strategy into the interpreter, as we have done in this section,
 provides the optimization uniformly throughout the language.</p>
 </div>
-<div id="FOOT312"><p><a class="footnote_backlink" href="#DOCF312"><sup>312</sup></a>
+<div><p id="FOOT312" epub:type="footnote"><a class="footnote_backlink" href="#DOCF312"><sup>312</sup></a>
 We can
 define <code>no-more-exps?</code> as follows:
 </p>
 <div class="lisp">
 <pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">define</span><span class="pln"> </span><span class="opn">(</span><span class="pln">no-more-exps? seq</span><span class="clo">)</span><span class="pln"> </span><span class="opn">(</span><span class="pln">null? seq</span><span class="clo">))</span></pre></div>
 </div>
-<div id="FOOT313"><p><a class="footnote_backlink" href="#DOCF313"><sup>313</sup></a>
+<div><p id="FOOT313" epub:type="footnote"><a class="footnote_backlink" href="#DOCF313"><sup>313</sup></a>
 This isn’t
 really cheating.  In an actual implementation built from scratch, we would use
 our explicit-control evaluator to interpret a Scheme program that performs
 source-level transformations like <code>cond-&gt;if</code> in a syntax phase that runs
 before execution.</p>
 </div>
-<div id="FOOT314"><p><a class="footnote_backlink" href="#DOCF314"><sup>314</sup></a>
+<div><p id="FOOT314" epub:type="footnote"><a class="footnote_backlink" href="#DOCF314"><sup>314</sup></a>
 We assume here that <code>read</code> and the various printing
 operations are available as primitive machine operations, which is useful for
 our simulation, but completely unrealistic in practice.  These are actually
@@ -1067,16 +1067,16 @@ from a device.
 </span><span class="opn">(</span><span class="kwd">define</span><span class="pln"> </span><span class="opn">(</span><span class="pln">get-global-environment</span><span class="clo">)</span><span class="pln">
   the-global-environment</span><span class="clo">)</span></pre></div>
 </div>
-<div id="FOOT315"><p><a class="footnote_backlink" href="#DOCF315"><sup>315</sup></a>
+<div><p id="FOOT315" epub:type="footnote"><a class="footnote_backlink" href="#DOCF315"><sup>315</sup></a>
 There are other errors that we would like
 the interpreter to handle, but these are not so simple.  See <a href="#Exercise-5_002e30">Exercise 5.30</a>.</p>
 </div>
-<div id="FOOT316"><p><a class="footnote_backlink" href="#DOCF316"><sup>316</sup></a>
+<div><p id="FOOT316" epub:type="footnote"><a class="footnote_backlink" href="#DOCF316"><sup>316</sup></a>
 We could perform the
 stack initialization only after errors, but doing it in the driver loop will be
 convenient for monitoring the evaluator’s performance, as described below.</p>
 </div>
-<div id="FOOT317"><p><a class="footnote_backlink" href="#DOCF317"><sup>317</sup></a>
+<div><p id="FOOT317" epub:type="footnote"><a class="footnote_backlink" href="#DOCF317"><sup>317</sup></a>
 Regrettably, this is the normal state of affairs in
 conventional compiler-based language systems such as C.  In <abbr>UNIX</abbr>(tm)
 the system “dumps core,” and in <abbr>DOS</abbr>/Windows(tm) it becomes
