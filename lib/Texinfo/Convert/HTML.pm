@@ -1633,6 +1633,10 @@ sub _convert_footnote_command($$$$)
   }
 
   $footnote_text =~ s/<p>//;                    # (A.R) -->
+  # To fix footnote rendering on Kindle, replace newlines by spaces except
+  # when followed/preceded by <p> or </p>, or within <pre> blocks.
+  # (For the regex, see: <https://stackoverflow.com/a/23667180>)
+  $footnote_text =~ s/<pre[^>]*>[^<]*<\/pre(*SKIP)(*F)|(?<!<\/p>)\n(?!<p>)/ /g;
   $foot_lines .= "<div><p id=\"$footid\" epub:type=\"footnote\">" .
    "<a class=\"footnote_backlink\" href=\"$document_filename#$docid\"><sup>$number_in_doc</sup></a>\n"
    . $footnote_text . "</div>\n";               # --> (A.R)
