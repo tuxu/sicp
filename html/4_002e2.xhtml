@@ -696,96 +696,38 @@ order to print them.
 <h4 class="footnotes-heading">Footnotes</h4>
 
 <div><p id="FOOT235" epub:type="footnote"><a class="footnote_backlink" href="#DOCF235"><sup>235</sup></a>
-Snarf: “To
-grab, especially a large document or file for the purpose of using it either
-with or without the owner’s permission.”  Snarf down: “To snarf, sometimes
-with the connotation of absorbing, processing, or understanding.”  (These
-definitions were snarfed from <a href="References.xhtml#Steele-et-al_002e-1983">Steele et al. 1983</a>.  See also <a href="References.xhtml#Raymond-1993">Raymond 1993</a>.)</p>
+Snarf: “To grab, especially a large document or file for the purpose of using it either with or without the owner’s permission.”  Snarf down: “To snarf, sometimes with the connotation of absorbing, processing, or understanding.”  (These definitions were snarfed from <a href="References.xhtml#Steele-et-al_002e-1983">Steele et al. 1983</a>.  See also <a href="References.xhtml#Raymond-1993">Raymond 1993</a>.)</p>
 </div>
 <div><p id="FOOT236" epub:type="footnote"><a class="footnote_backlink" href="#DOCF236"><sup>236</sup></a>
-The difference 
-between the “lazy” terminology and the
-“normal-order” terminology is somewhat fuzzy.  Generally, “lazy” refers to
-the mechanisms of particular evaluators, while “normal-order” refers to the
-semantics of languages, independent of any particular evaluation strategy.  But
-this is not a hard-and-fast distinction, and the two terminologies are often
-used interchangeably.</p>
+The difference  between the “lazy” terminology and the “normal-order” terminology is somewhat fuzzy.  Generally, “lazy” refers to the mechanisms of particular evaluators, while “normal-order” refers to the semantics of languages, independent of any particular evaluation strategy.  But this is not a hard-and-fast distinction, and the two terminologies are often used interchangeably.</p>
 </div>
 <div><p id="FOOT237" epub:type="footnote"><a class="footnote_backlink" href="#DOCF237"><sup>237</sup></a>
-The “strict”
-versus “non-strict” terminology means essentially the same thing as
-“applicative-order” versus “normal-order,” except that it refers to
-individual procedures and arguments rather than to the language as a whole.  At
-a conference on programming languages you might hear someone say, “The
-normal-order language Hassle has certain strict primitives.  Other procedures
-take their arguments by lazy evaluation.”</p>
+The “strict” versus “non-strict” terminology means essentially the same thing as “applicative-order” versus “normal-order,” except that it refers to individual procedures and arguments rather than to the language as a whole.  At a conference on programming languages you might hear someone say, “The normal-order language Hassle has certain strict primitives.  Other procedures take their arguments by lazy evaluation.”</p>
 </div>
 <div><p id="FOOT238" epub:type="footnote"><a class="footnote_backlink" href="#DOCF238"><sup>238</sup></a>
-The word <a id="index-thunk"></a>
-<em>thunk</em> was invented by an
-informal working group that was discussing the implementation of call-by-name
-in Algol 60.  They observed that most of the analysis of (“thinking about”)
-the expression could be done at compile time; thus, at run time, the expression
-would already have been “thunk” about (<a href="References.xhtml#Ingerman-et-al_002e-1960">Ingerman et al. 1960</a>).</p>
+The word <a id="index-thunk"></a> <em>thunk</em> was invented by an informal working group that was discussing the implementation of call-by-name in Algol 60.  They observed that most of the analysis of (“thinking about”) the expression could be done at compile time; thus, at run time, the expression would already have been “thunk” about (<a href="References.xhtml#Ingerman-et-al_002e-1960">Ingerman et al. 1960</a>).</p>
 </div>
 <div><p id="FOOT239" epub:type="footnote"><a class="footnote_backlink" href="#DOCF239"><sup>239</sup></a>
-This is analogous to the use of <code>force</code> on the
-delayed objects that were introduced in <a href="Chapter-3.xhtml#Chapter-3">Chapter 3</a> to represent streams.
-The critical difference between what we are doing here and what we did in
-<a href="Chapter-3.xhtml#Chapter-3">Chapter 3</a> is that we are building delaying and forcing into the
-evaluator, and thus making this uniform and automatic throughout the language.</p>
+This is analogous to the use of <code>force</code> on the delayed objects that were introduced in <a href="Chapter-3.xhtml#Chapter-3">Chapter 3</a> to represent streams. The critical difference between what we are doing here and what we did in <a href="Chapter-3.xhtml#Chapter-3">Chapter 3</a> is that we are building delaying and forcing into the evaluator, and thus making this uniform and automatic throughout the language.</p>
 </div>
 <div><p id="FOOT240" epub:type="footnote"><a class="footnote_backlink" href="#DOCF240"><sup>240</sup></a>
-Lazy evaluation
-combined with memoization is sometimes referred to as <a id="index-call_002dby_002dneed-1"></a>
-<em>call-by-need</em>
-argument passing, in contrast to <a id="index-call_002dby_002dname-1"></a>
-<em>call-by-name</em> argument passing.
-(Call-by-name, introduced in Algol 60, is similar to non-memoized lazy
-evaluation.)  As language designers, we can build our evaluator to memoize, not
-to memoize, or leave this an option for programmers (<a href="#Exercise-4_002e31">Exercise 4.31</a>).  As
-you might expect from <a href="Chapter-3.xhtml#Chapter-3">Chapter 3</a>, these choices raise issues that become
-both subtle and confusing in the presence of assignments.  (See <a href="#Exercise-4_002e27">Exercise 4.27</a> 
-and <a href="#Exercise-4_002e29">Exercise 4.29</a>.)  An excellent article by <a href="References.xhtml#Clinger-_00281982_0029">Clinger (1982)</a>
-attempts to clarify the multiple dimensions of confusion that arise here.</p>
+Lazy evaluation combined with memoization is sometimes referred to as <a id="index-call_002dby_002dneed-1"></a> <em>call-by-need</em> argument passing, in contrast to <a id="index-call_002dby_002dname-1"></a> <em>call-by-name</em> argument passing. (Call-by-name, introduced in Algol 60, is similar to non-memoized lazy evaluation.)  As language designers, we can build our evaluator to memoize, not to memoize, or leave this an option for programmers (<a href="#Exercise-4_002e31">Exercise 4.31</a>).  As you might expect from <a href="Chapter-3.xhtml#Chapter-3">Chapter 3</a>, these choices raise issues that become both subtle and confusing in the presence of assignments.  (See <a href="#Exercise-4_002e27">Exercise 4.27</a>  and <a href="#Exercise-4_002e29">Exercise 4.29</a>.)  An excellent article by <a href="References.xhtml#Clinger-_00281982_0029">Clinger (1982)</a> attempts to clarify the multiple dimensions of confusion that arise here.</p>
 </div>
 <div><p id="FOOT241" epub:type="footnote"><a class="footnote_backlink" href="#DOCF241"><sup>241</sup></a>
-Notice that we also erase the <code>env</code> from the thunk
-once the expression’s value has been computed.  This makes no difference in the
-values returned by the interpreter.  It does help save space, however, because
-removing the reference from the thunk to the <code>env</code> once it is no longer
-needed allows this structure to be <a id="index-garbage_002dcollected"></a>
-<em>garbage-collected</em> and its space
-recycled, as we will discuss in <a href="5_002e3.xhtml#g_t5_002e3">5.3</a>.
-</p>
-<p>Similarly, we could have allowed unneeded environments in the memoized delayed
-objects of <a href="3_002e5.xhtml#g_t3_002e5_002e1">3.5.1</a> to be garbage-collected, by having
-<code>memo-proc</code> do something like <code>(set! proc '())</code> to discard the
-procedure <code>proc</code> (which includes the environment in which the <code>delay</code>
-was evaluated) after storing its value.</p>
+Notice that we also erase the <code>env</code> from the thunk once the expression’s value has been computed.  This makes no difference in the values returned by the interpreter.  It does help save space, however, because removing the reference from the thunk to the <code>env</code> once it is no longer needed allows this structure to be <a id="index-garbage_002dcollected"></a> <em>garbage-collected</em> and its space recycled, as we will discuss in <a href="5_002e3.xhtml#g_t5_002e3">5.3</a>. </p>
+<p>Similarly, we could have allowed unneeded environments in the memoized delayed objects of <a href="3_002e5.xhtml#g_t3_002e5_002e1">3.5.1</a> to be garbage-collected, by having <code>memo-proc</code> do something like <code>(set! proc '())</code> to discard the procedure <code>proc</code> (which includes the environment in which the <code>delay</code> was evaluated) after storing its value.</p>
 </div>
 <div><p id="FOOT242" epub:type="footnote"><a class="footnote_backlink" href="#DOCF242"><sup>242</sup></a>
-This exercise demonstrates that the interaction between
-lazy evaluation and side effects can be very confusing.  This is just what you
-might expect from the discussion in <a href="Chapter-3.xhtml#Chapter-3">Chapter 3</a>.</p>
+This exercise demonstrates that the interaction between lazy evaluation and side effects can be very confusing.  This is just what you might expect from the discussion in <a href="Chapter-3.xhtml#Chapter-3">Chapter 3</a>.</p>
 </div>
 <div><p id="FOOT243" epub:type="footnote"><a class="footnote_backlink" href="#DOCF243"><sup>243</sup></a>
-This is precisely the issue with the
-<code>unless</code> procedure, as in <a href="#Exercise-4_002e26">Exercise 4.26</a>.</p>
+This is precisely the issue with the <code>unless</code> procedure, as in <a href="#Exercise-4_002e26">Exercise 4.26</a>.</p>
 </div>
 <div><p id="FOOT244" epub:type="footnote"><a class="footnote_backlink" href="#DOCF244"><sup>244</sup></a>
-This is the procedural representation described in
-<a href="2_002e1.xhtml#Exercise-2_002e4">Exercise 2.4</a>.  Essentially any procedural representation (e.g., a
-message-passing implementation) would do as well.  Notice that we can install
-these definitions in the lazy evaluator simply by typing them at the driver
-loop.  If we had originally included <code>cons</code>, <code>car</code>, and <code>cdr</code> as
-primitives in the global environment, they will be redefined.  (Also see
-<a href="#Exercise-4_002e33">Exercise 4.33</a> and <a href="#Exercise-4_002e34">Exercise 4.34</a>.)</p>
+This is the procedural representation described in <a href="2_002e1.xhtml#Exercise-2_002e4">Exercise 2.4</a>.  Essentially any procedural representation (e.g., a message-passing implementation) would do as well.  Notice that we can install these definitions in the lazy evaluator simply by typing them at the driver loop.  If we had originally included <code>cons</code>, <code>car</code>, and <code>cdr</code> as primitives in the global environment, they will be redefined.  (Also see <a href="#Exercise-4_002e33">Exercise 4.33</a> and <a href="#Exercise-4_002e34">Exercise 4.34</a>.)</p>
 </div>
 <div><p id="FOOT245" epub:type="footnote"><a class="footnote_backlink" href="#DOCF245"><sup>245</sup></a>
-This permits us to create delayed versions of more general
-kinds of list structures, not just sequences.  <a href="References.xhtml#Hughes-1990">Hughes 1990</a> discusses some
-applications of “lazy trees.”</p>
+This permits us to create delayed versions of more general kinds of list structures, not just sequences.  <a href="References.xhtml#Hughes-1990">Hughes 1990</a> discusses some applications of “lazy trees.”</p>
 </div>
 </div>
 <nav class="header">

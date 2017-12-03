@@ -907,171 +907,66 @@ models may in fact mirror a fundamental complexity of the physical universe.
 <h4 class="footnotes-heading">Footnotes</h4>
 
 <div><p id="FOOT162" epub:type="footnote"><a class="footnote_backlink" href="#DOCF162"><sup>162</sup></a>
-Most real
-processors actually execute a few operations at a time, following a strategy
-called <a id="index-pipelining"></a>
-<em>pipelining</em>.  Although this technique greatly improves the
-effective utilization of the hardware, it is used only to speed up the
-execution of a sequential instruction stream, while retaining the behavior of
-the sequential program.</p>
+Most real processors actually execute a few operations at a time, following a strategy called <a id="index-pipelining"></a> <em>pipelining</em>.  Although this technique greatly improves the effective utilization of the hardware, it is used only to speed up the execution of a sequential instruction stream, while retaining the behavior of the sequential program.</p>
 </div>
 <div><p id="FOOT163" epub:type="footnote"><a class="footnote_backlink" href="#DOCF163"><sup>163</sup></a>
-To quote some graffiti seen on a Cambridge building wall:
-“Time is a device that was invented to keep everything from happening at
-once.”</p>
+To quote some graffiti seen on a Cambridge building wall: “Time is a device that was invented to keep everything from happening at once.”</p>
 </div>
 <div><p id="FOOT164" epub:type="footnote"><a class="footnote_backlink" href="#DOCF164"><sup>164</sup></a>
-An even worse failure for this system could occur if
-the two <code>set!</code> operations attempt to change the balance simultaneously, in
-which case the actual data appearing in memory might end up being a random
-combination of the information being written by the two processes.  Most
-computers have interlocks on the primitive memory-write operations, which
-protect against such simultaneous access.  Even this seemingly simple kind of
-protection, however, raises implementation challenges in the design of
-multiprocessing computers, where elaborate <a id="index-cache_002dcoherence"></a>
-<em>cache-coherence</em> protocols
-are required to ensure that the various processors will maintain a consistent
-view of memory contents, despite the fact that data may be replicated
-(“cached”) among the different processors to increase the speed of memory
-access.</p>
+An even worse failure for this system could occur if the two <code>set!</code> operations attempt to change the balance simultaneously, in which case the actual data appearing in memory might end up being a random combination of the information being written by the two processes.  Most computers have interlocks on the primitive memory-write operations, which protect against such simultaneous access.  Even this seemingly simple kind of protection, however, raises implementation challenges in the design of multiprocessing computers, where elaborate <a id="index-cache_002dcoherence"></a> <em>cache-coherence</em> protocols are required to ensure that the various processors will maintain a consistent view of memory contents, despite the fact that data may be replicated (“cached”) among the different processors to increase the speed of memory access.</p>
 </div>
 <div><p id="FOOT165" epub:type="footnote"><a class="footnote_backlink" href="#DOCF165"><sup>165</sup></a>
-The
-factorial program in <a href="3_002e1.xhtml#g_t3_002e1_002e3">3.1.3</a> illustrates this for a single
-sequential process.</p>
+The factorial program in <a href="3_002e1.xhtml#g_t3_002e1_002e3">3.1.3</a> illustrates this for a single sequential process.</p>
 </div>
 <div><p id="FOOT166" epub:type="footnote"><a class="footnote_backlink" href="#DOCF166"><sup>166</sup></a>
-The
-columns show the contents of Peter’s wallet, the joint account (in Bank1),
-Paul’s wallet, and Paul’s private account (in Bank2), before and after each
-withdrawal (W) and deposit (D).  Peter withdraws $10 from Bank1; Paul deposits
-$5 in Bank2, then withdraws $25 from Bank1.</p>
+The columns show the contents of Peter’s wallet, the joint account (in Bank1), Paul’s wallet, and Paul’s private account (in Bank2), before and after each withdrawal (W) and deposit (D).  Peter withdraws $10 from Bank1; Paul deposits $5 in Bank2, then withdraws $25 from Bank1.</p>
 </div>
 <div><p id="FOOT167" epub:type="footnote"><a class="footnote_backlink" href="#DOCF167"><sup>167</sup></a>
-<a id="Footnote-167"></a>A more formal
-way to express this idea is to say that concurrent programs are inherently
-<a id="index-nondeterministic"></a>
-<em>nondeterministic</em>. That is, they are described not by single-valued
-functions, but by functions whose results are sets of possible values.  In
-<a href="4_002e3.xhtml#g_t4_002e3">4.3</a> we will study a language for expressing nondeterministic
-computations.</p>
+<a id="Footnote-167"></a>A more formal way to express this idea is to say that concurrent programs are inherently <a id="index-nondeterministic"></a> <em>nondeterministic</em>. That is, they are described not by single-valued functions, but by functions whose results are sets of possible values.  In <a href="4_002e3.xhtml#g_t4_002e3">4.3</a> we will study a language for expressing nondeterministic computations.</p>
 </div>
 <div><p id="FOOT168" epub:type="footnote"><a class="footnote_backlink" href="#DOCF168"><sup>168</sup></a>
-<code>Parallel-execute</code> is not part of standard Scheme,
-but it can be implemented in <abbr>MIT</abbr> Scheme.  In our implementation, the
-new concurrent processes also run concurrently with the original Scheme
-process.  Also, in our implementation, the value returned by
-<code>parallel-execute</code> is a special control object that can be used to halt
-the newly created processes.</p>
+<code>Parallel-execute</code> is not part of standard Scheme, but it can be implemented in <abbr>MIT</abbr> Scheme.  In our implementation, the new concurrent processes also run concurrently with the original Scheme process.  Also, in our implementation, the value returned by <code>parallel-execute</code> is a special control object that can be used to halt the newly created processes.</p>
 </div>
 <div><p id="FOOT169" epub:type="footnote"><a class="footnote_backlink" href="#DOCF169"><sup>169</sup></a>
-We have simplified <code>exchange</code> by exploiting the fact
-that our <code>deposit</code> message accepts negative amounts.  (This is a serious
-bug in our banking system!)</p>
+We have simplified <code>exchange</code> by exploiting the fact that our <code>deposit</code> message accepts negative amounts.  (This is a serious bug in our banking system!)</p>
 </div>
 <div><p id="FOOT170" epub:type="footnote"><a class="footnote_backlink" href="#DOCF170"><sup>170</sup></a>
-If the account
-balances start out as $10, $20, and $30, then after any number of concurrent
-exchanges, the balances should still be $10, $20, and $30 in some order.
-Serializing the deposits to individual accounts is not sufficient to guarantee
-this.  See <a href="#Exercise-3_002e43">Exercise 3.43</a>.</p>
+If the account balances start out as $10, $20, and $30, then after any number of concurrent exchanges, the balances should still be $10, $20, and $30 in some order. Serializing the deposits to individual accounts is not sufficient to guarantee this.  See <a href="#Exercise-3_002e43">Exercise 3.43</a>.</p>
 </div>
 <div><p id="FOOT171" epub:type="footnote"><a class="footnote_backlink" href="#DOCF171"><sup>171</sup></a>
-<a href="#Exercise-3_002e45">Exercise 3.45</a> investigates why deposits and withdrawals
-are no longer automatically serialized by the account.</p>
+<a href="#Exercise-3_002e45">Exercise 3.45</a> investigates why deposits and withdrawals are no longer automatically serialized by the account.</p>
 </div>
 <div><p id="FOOT172" epub:type="footnote"><a class="footnote_backlink" href="#DOCF172"><sup>172</sup></a>
-The
-term “mutex” is an abbreviation for <a id="index-mutual-exclusion"></a>
-<em>mutual exclusion</em>.  The general
-problem of arranging a mechanism that permits concurrent processes to safely
-share resources is called the mutual exclusion problem.  Our mutex is a simple
-variant of the <a id="index-semaphore"></a>
-<em>semaphore</em> mechanism (see <a href="#Exercise-3_002e47">Exercise 3.47</a>), which
-was introduced in the “THE” Multiprogramming System developed at the
-Technological University of Eindhoven and named for the university’s initials
-in Dutch (<a href="References.xhtml#Dijkstra-1968a">Dijkstra 1968a</a>).  The acquire and release operations were originally
-called P and V, from the Dutch words <em>passeren</em> (to pass) and
-<em>vrijgeven</em> (to release), in reference to the semaphores used on railroad
-systems.  Dijkstra’s classic exposition (<a href="References.xhtml#g_t1968b">1968b</a>) was one of the first to clearly
-present the issues of concurrency control, and showed how to use semaphores to
-handle a variety of concurrency problems.</p>
+The term “mutex” is an abbreviation for <a id="index-mutual-exclusion"></a> <em>mutual exclusion</em>.  The general problem of arranging a mechanism that permits concurrent processes to safely share resources is called the mutual exclusion problem.  Our mutex is a simple variant of the <a id="index-semaphore"></a> <em>semaphore</em> mechanism (see <a href="#Exercise-3_002e47">Exercise 3.47</a>), which was introduced in the “THE” Multiprogramming System developed at the Technological University of Eindhoven and named for the university’s initials in Dutch (<a href="References.xhtml#Dijkstra-1968a">Dijkstra 1968a</a>).  The acquire and release operations were originally called P and V, from the Dutch words <em>passeren</em> (to pass) and <em>vrijgeven</em> (to release), in reference to the semaphores used on railroad systems.  Dijkstra’s classic exposition (<a href="References.xhtml#g_t1968b">1968b</a>) was one of the first to clearly present the issues of concurrency control, and showed how to use semaphores to handle a variety of concurrency problems.</p>
 </div>
 <div><p id="FOOT173" epub:type="footnote"><a class="footnote_backlink" href="#DOCF173"><sup>173</sup></a>
-In most time-shared operating systems, processes that
-are blocked by a mutex do not waste time “busy-waiting” as above.  Instead,
-the system schedules another process to run while the first is waiting, and the
-blocked process is awakened when the mutex becomes available.</p>
+In most time-shared operating systems, processes that are blocked by a mutex do not waste time “busy-waiting” as above.  Instead, the system schedules another process to run while the first is waiting, and the blocked process is awakened when the mutex becomes available.</p>
 </div>
 <div><p id="FOOT174" epub:type="footnote"><a class="footnote_backlink" href="#DOCF174"><sup>174</sup></a>
-In <abbr>MIT</abbr> Scheme for a single processor, which uses a
-time-slicing model, <code>test-and-set!</code> can be implemented as follows:
-</p>
-<div class="lisp">
-<pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">define</span><span class="pln"> </span><span class="opn">(</span><span class="pln">test-and-set! cell</span><span class="clo">)</span><span class="pln">
+In <abbr>MIT</abbr> Scheme for a single processor, which uses a time-slicing model, <code>test-and-set!</code> can be implemented as follows: </p>
+<div class="lisp"> <pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">define</span><span class="pln"> </span><span class="opn">(</span><span class="pln">test-and-set! cell</span><span class="clo">)</span><span class="pln">
   </span><span class="opn">(</span><span class="pln">without-interrupts
    </span><span class="opn">(</span><span class="kwd">lambda</span><span class="pln"> </span><span class="opn">(</span><span class="clo">)</span><span class="pln">
      </span><span class="opn">(</span><span class="kwd">if</span><span class="pln"> </span><span class="opn">(</span><span class="kwd">car</span><span class="pln"> cell</span><span class="clo">)</span><span class="pln">
          true
          </span><span class="opn">(</span><span class="kwd">begin</span><span class="pln"> </span><span class="opn">(</span><span class="pln">set-car! cell true</span><span class="clo">)</span><span class="pln">
-                false</span><span class="clo">)))))</span></pre></div>
-
-<p><code>Without-interrupts</code> disables time-slicing interrupts while its procedure
-argument is being executed.</p>
+                false</span><span class="clo">)))))</span></pre></div> 
+<p><code>Without-interrupts</code> disables time-slicing interrupts while its procedure argument is being executed.</p>
 </div>
 <div><p id="FOOT175" epub:type="footnote"><a class="footnote_backlink" href="#DOCF175"><sup>175</sup></a>
-There are many variants of such instructions—including
-test-and-set, test-and-clear, swap, compare-and-exchange, load-reserve, and
-store-conditional—whose design must be carefully matched to the machine’s
-processor-memory interface.  One issue that arises here is to determine what
-happens if two processes attempt to acquire the same resource at exactly the
-same time by using such an instruction.  This requires some mechanism for
-making a decision about which process gets control.  Such a mechanism is called
-an <a id="index-arbiter"></a>
-<em>arbiter</em>.  Arbiters usually boil down to some sort of hardware
-device.  Unfortunately, it is possible to prove that one cannot physically
-construct a fair arbiter that works 100% of the time unless one allows the
-arbiter an arbitrarily long time to make its decision.  The fundamental
-phenomenon here was originally observed by the fourteenth-century French
-philosopher Jean Buridan in his commentary on Aristotle’s <i>De caelo</i>.
-Buridan argued that a perfectly rational dog placed between two equally
-attractive sources of food will starve to death, because it is incapable of
-deciding which to go to first.</p>
+There are many variants of such instructions—including test-and-set, test-and-clear, swap, compare-and-exchange, load-reserve, and store-conditional—whose design must be carefully matched to the machine’s processor-memory interface.  One issue that arises here is to determine what happens if two processes attempt to acquire the same resource at exactly the same time by using such an instruction.  This requires some mechanism for making a decision about which process gets control.  Such a mechanism is called an <a id="index-arbiter"></a> <em>arbiter</em>.  Arbiters usually boil down to some sort of hardware device.  Unfortunately, it is possible to prove that one cannot physically construct a fair arbiter that works 100% of the time unless one allows the arbiter an arbitrarily long time to make its decision.  The fundamental phenomenon here was originally observed by the fourteenth-century French philosopher Jean Buridan in his commentary on Aristotle’s <i>De caelo</i>. Buridan argued that a perfectly rational dog placed between two equally attractive sources of food will starve to death, because it is incapable of deciding which to go to first.</p>
 </div>
 <div><p id="FOOT176" epub:type="footnote"><a class="footnote_backlink" href="#DOCF176"><sup>176</sup></a>
-The general technique for avoiding
-deadlock by numbering the shared resources and acquiring them in order is due
-to <a href="References.xhtml#Havender-_00281968_0029">Havender (1968)</a>.  Situations where deadlock cannot be avoided require
-<a id="index-deadlock_002drecovery"></a>
-<em>deadlock-recovery</em> methods, which entail having processes “back out”
-of the deadlocked state and try again.  Deadlock-recovery mechanisms are widely
-used in database management systems, a topic that is treated in detail in 
-<a href="References.xhtml#Gray-and-Reuter-1993">Gray and Reuter 1993</a>.</p>
+The general technique for avoiding deadlock by numbering the shared resources and acquiring them in order is due to <a href="References.xhtml#Havender-_00281968_0029">Havender (1968)</a>.  Situations where deadlock cannot be avoided require <a id="index-deadlock_002drecovery"></a> <em>deadlock-recovery</em> methods, which entail having processes “back out” of the deadlocked state and try again.  Deadlock-recovery mechanisms are widely used in database management systems, a topic that is treated in detail in  <a href="References.xhtml#Gray-and-Reuter-1993">Gray and Reuter 1993</a>.</p>
 </div>
 <div><p id="FOOT177" epub:type="footnote"><a class="footnote_backlink" href="#DOCF177"><sup>177</sup></a>
-One such alternative to serialization is called
-<a id="index-barrier-synchronization"></a>
-<em>barrier synchronization</em>.  The programmer permits concurrent processes
-to execute as they please, but establishes certain synchronization points
-(“barriers”) through which no process can proceed until all the processes
-have reached the barrier.  Modern processors provide machine instructions that
-permit programmers to establish synchronization points at places where
-consistency is required.  The <abbr>PowerPC</abbr>, for example, includes for
-this purpose two instructions called <abbr>SYNC</abbr> and <abbr>EIEIO</abbr> 
-(Enforced In-order Execution of Input/Output).</p>
+One such alternative to serialization is called <a id="index-barrier-synchronization"></a> <em>barrier synchronization</em>.  The programmer permits concurrent processes to execute as they please, but establishes certain synchronization points (“barriers”) through which no process can proceed until all the processes have reached the barrier.  Modern processors provide machine instructions that permit programmers to establish synchronization points at places where consistency is required.  The <abbr>PowerPC</abbr>, for example, includes for this purpose two instructions called <abbr>SYNC</abbr> and <abbr>EIEIO</abbr>  (Enforced In-order Execution of Input/Output).</p>
 </div>
 <div><p id="FOOT178" epub:type="footnote"><a class="footnote_backlink" href="#DOCF178"><sup>178</sup></a>
-This may seem like a strange point of view, but there are
-systems that work this way.  International charges to credit-card accounts, for
-example, are normally cleared on a per-country basis, and the charges made in
-different countries are periodically reconciled.  Thus the account balance may
-be different in different countries.</p>
+This may seem like a strange point of view, but there are systems that work this way.  International charges to credit-card accounts, for example, are normally cleared on a per-country basis, and the charges made in different countries are periodically reconciled.  Thus the account balance may be different in different countries.</p>
 </div>
 <div><p id="FOOT179" epub:type="footnote"><a class="footnote_backlink" href="#DOCF179"><sup>179</sup></a>
-For
-distributed systems, this perspective was pursued by <a href="References.xhtml#Lamport-_00281978_0029">Lamport (1978)</a>, who showed
-how to use communication to establish “global clocks” that can be used to
-establish orderings on events in distributed systems.</p>
+For distributed systems, this perspective was pursued by <a href="References.xhtml#Lamport-_00281978_0029">Lamport (1978)</a>, who showed how to use communication to establish “global clocks” that can be used to establish orderings on events in distributed systems.</p>
 </div>
 </div>
 <nav class="header">

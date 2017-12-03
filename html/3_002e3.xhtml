@@ -2216,170 +2216,65 @@ converter example above.<sup><a class="footnote_link" id="DOCF161" href="#FOOT16
 <h4 class="footnotes-heading">Footnotes</h4>
 
 <div><p id="FOOT144" epub:type="footnote"><a class="footnote_backlink" href="#DOCF144"><sup>144</sup></a>
-<code>Set-car!</code> and
-<code>set-cdr!</code> return implementation-dependent values.  Like <code>set!</code>, they
-should be used only for their effect.</p>
+<code>Set-car!</code> and <code>set-cdr!</code> return implementation-dependent values.  Like <code>set!</code>, they should be used only for their effect.</p>
 </div>
 <div><p id="FOOT145" epub:type="footnote"><a class="footnote_backlink" href="#DOCF145"><sup>145</sup></a>
-We see from
-this that mutation operations on lists can create “garbage” that is not part
-of any accessible structure.  We will see in <a href="5_002e3.xhtml#g_t5_002e3_002e2">5.3.2</a> that Lisp
-memory-management systems include a <a id="index-garbage-collector"></a>
-<em>garbage collector</em>, which
-identifies and recycles the memory space used by unneeded pairs.</p>
+We see from this that mutation operations on lists can create “garbage” that is not part of any accessible structure.  We will see in <a href="5_002e3.xhtml#g_t5_002e3_002e2">5.3.2</a> that Lisp memory-management systems include a <a id="index-garbage-collector"></a> <em>garbage collector</em>, which identifies and recycles the memory space used by unneeded pairs.</p>
 </div>
 <div><p id="FOOT146" epub:type="footnote"><a class="footnote_backlink" href="#DOCF146"><sup>146</sup></a>
-<code>Get-new-pair</code> is one of the operations that
-must be implemented as part of the memory management required by a Lisp
-implementation.  We will discuss this in <a href="5_002e3.xhtml#g_t5_002e3_002e1">5.3.1</a>.</p>
+<code>Get-new-pair</code> is one of the operations that must be implemented as part of the memory management required by a Lisp implementation.  We will discuss this in <a href="5_002e3.xhtml#g_t5_002e3_002e1">5.3.1</a>.</p>
 </div>
 <div><p id="FOOT147" epub:type="footnote"><a class="footnote_backlink" href="#DOCF147"><sup>147</sup></a>
-The two pairs are distinct
-because each call to <code>cons</code> returns a new pair.  The symbols are shared;
-in Scheme there is a unique symbol with any given name.  Since Scheme provides
-no way to mutate a symbol, this sharing is undetectable.  Note also that the
-sharing is what enables us to compare symbols using <code>eq?</code>, which simply
-checks equality of pointers.</p>
+The two pairs are distinct because each call to <code>cons</code> returns a new pair.  The symbols are shared; in Scheme there is a unique symbol with any given name.  Since Scheme provides no way to mutate a symbol, this sharing is undetectable.  Note also that the sharing is what enables us to compare symbols using <code>eq?</code>, which simply checks equality of pointers.</p>
 </div>
 <div><p id="FOOT148" epub:type="footnote"><a class="footnote_backlink" href="#DOCF148"><sup>148</sup></a>
-The subtleties of
-dealing with sharing of mutable data objects reflect the underlying issues of
-“sameness” and “change” that were raised in <a href="3_002e1.xhtml#g_t3_002e1_002e3">3.1.3</a>.  We
-mentioned there that admitting change to our language requires that a compound
-object must have an “identity” that is something different from the pieces
-from which it is composed.  In Lisp, we consider this “identity” to be the
-quality that is tested by <code>eq?</code>, i.e., by equality of pointers.  Since in
-most Lisp implementations a pointer is essentially a memory address, we are
-“solving the problem” of defining the identity of objects by stipulating that
-a data object “itself” is the information stored in some particular set of
-memory locations in the computer.  This suffices for simple Lisp programs, but
-is hardly a general way to resolve the issue of “sameness” in computational
-models.</p>
+The subtleties of dealing with sharing of mutable data objects reflect the underlying issues of “sameness” and “change” that were raised in <a href="3_002e1.xhtml#g_t3_002e1_002e3">3.1.3</a>.  We mentioned there that admitting change to our language requires that a compound object must have an “identity” that is something different from the pieces from which it is composed.  In Lisp, we consider this “identity” to be the quality that is tested by <code>eq?</code>, i.e., by equality of pointers.  Since in most Lisp implementations a pointer is essentially a memory address, we are “solving the problem” of defining the identity of objects by stipulating that a data object “itself” is the information stored in some particular set of memory locations in the computer.  This suffices for simple Lisp programs, but is hardly a general way to resolve the issue of “sameness” in computational models.</p>
 </div>
 <div><p id="FOOT149" epub:type="footnote"><a class="footnote_backlink" href="#DOCF149"><sup>149</sup></a>
-On
-the other hand, from the viewpoint of implementation, assignment requires us to
-modify the environment, which is itself a mutable data structure.  Thus,
-assignment and mutation are equipotent: Each can be implemented in terms of the
-other.</p>
+On the other hand, from the viewpoint of implementation, assignment requires us to modify the environment, which is itself a mutable data structure.  Thus, assignment and mutation are equipotent: Each can be implemented in terms of the other.</p>
 </div>
 <div><p id="FOOT150" epub:type="footnote"><a class="footnote_backlink" href="#DOCF150"><sup>150</sup></a>
-If the first item is the final item in the queue, the front
-pointer will be the empty list after the deletion, which will mark the queue as
-empty; we needn’t worry about updating the rear pointer, which will still point
-to the deleted item, because <code>empty-queue?</code> looks only at the front
-pointer.</p>
+If the first item is the final item in the queue, the front pointer will be the empty list after the deletion, which will mark the queue as empty; we needn’t worry about updating the rear pointer, which will still point to the deleted item, because <code>empty-queue?</code> looks only at the front pointer.</p>
 </div>
 <div><p id="FOOT151" epub:type="footnote"><a class="footnote_backlink" href="#DOCF151"><sup>151</sup></a>
-Be careful not to make the
-interpreter try to print a structure that contains cycles.  (See <a href="#Exercise-3_002e13">Exercise 3.13</a>.)</p>
+Be careful not to make the interpreter try to print a structure that contains cycles.  (See <a href="#Exercise-3_002e13">Exercise 3.13</a>.)</p>
 </div>
 <div><p id="FOOT152" epub:type="footnote"><a class="footnote_backlink" href="#DOCF152"><sup>152</sup></a>
-Because <code>assoc</code>
-uses <code>equal?</code>, it can recognize keys that are symbols, numbers, or list
-structure.</p>
+Because <code>assoc</code> uses <code>equal?</code>, it can recognize keys that are symbols, numbers, or list structure.</p>
 </div>
 <div><p id="FOOT153" epub:type="footnote"><a class="footnote_backlink" href="#DOCF153"><sup>153</sup></a>
-Thus, the first
-backbone pair is the object that represents the table “itself”; that is, a
-pointer to the table is a pointer to this pair.  This same backbone pair always
-starts the table.  If we did not arrange things in this way, <code>insert!</code>
-would have to return a new value for the start of the table when it added a new
-record.</p>
+Thus, the first backbone pair is the object that represents the table “itself”; that is, a pointer to the table is a pointer to this pair.  This same backbone pair always starts the table.  If we did not arrange things in this way, <code>insert!</code> would have to return a new value for the start of the table when it added a new record.</p>
 </div>
 <div><p id="FOOT154" epub:type="footnote"><a class="footnote_backlink" href="#DOCF154"><sup>154</sup></a>
-A full-adder is a basic circuit element used in adding
-two binary numbers.  Here A and B are the bits at corresponding positions in
-the two numbers to be added, and <img src="fig/math/2a821f4faf95cdf11d51a59a446822df.svg" class="math-inline" style="height: 0.831em; vertical-align: -0.147em;" alt="\( \rm C_{in} \)" /> is the carry bit from the
-addition one place to the right.  The circuit generates SUM, which is the sum
-bit in the corresponding position, and <img src="fig/math/f2fc90fc0f0d24986fb847674bba83e8.svg" class="math-inline" style="height: 0.831em; vertical-align: -0.147em;" alt="\( \rm C_{out} \)" />, which is the carry
-bit to be propagated to the left.</p>
+A full-adder is a basic circuit element used in adding two binary numbers.  Here A and B are the bits at corresponding positions in the two numbers to be added, and <img src="fig/math/2a821f4faf95cdf11d51a59a446822df.svg" class="math-inline" style="height: 0.831em; vertical-align: -0.147em;" alt="\( \rm C_{in} \)" /> is the carry bit from the addition one place to the right.  The circuit generates SUM, which is the sum bit in the corresponding position, and <img src="fig/math/f2fc90fc0f0d24986fb847674bba83e8.svg" class="math-inline" style="height: 0.831em; vertical-align: -0.147em;" alt="\( \rm C_{out} \)" />, which is the carry bit to be propagated to the left.</p>
 </div>
 <div><p id="FOOT155" epub:type="footnote"><a class="footnote_backlink" href="#DOCF155"><sup>155</sup></a>
-<a id="Footnote-155"></a>These procedures are simply
-syntactic sugar that allow us to use ordinary procedural syntax to access the
-local procedures of objects.  It is striking that we can interchange the role
-of “procedures” and “data” in such a simple way.  For example, if we write
-<code>(wire 'get-signal)</code> we think of <code>wire</code> as a procedure that is called
-with the message <code>get-signal</code> as input.  Alternatively, writing
-<code>(get-signal wire)</code> encourages us to think of <code>wire</code> as a data object
-that is the input to a procedure <code>get-signal</code>.  The truth of the matter is
-that, in a language in which we can deal with procedures as objects, there is
-no fundamental difference between “procedures” and “data,” and we can
-choose our syntactic sugar to allow us to program in whatever style we choose.</p>
+<a id="Footnote-155"></a>These procedures are simply syntactic sugar that allow us to use ordinary procedural syntax to access the local procedures of objects.  It is striking that we can interchange the role of “procedures” and “data” in such a simple way.  For example, if we write <code>(wire 'get-signal)</code> we think of <code>wire</code> as a procedure that is called with the message <code>get-signal</code> as input.  Alternatively, writing <code>(get-signal wire)</code> encourages us to think of <code>wire</code> as a data object that is the input to a procedure <code>get-signal</code>.  The truth of the matter is that, in a language in which we can deal with procedures as objects, there is no fundamental difference between “procedures” and “data,” and we can choose our syntactic sugar to allow us to program in whatever style we choose.</p>
 </div>
 <div><p id="FOOT156" epub:type="footnote"><a class="footnote_backlink" href="#DOCF156"><sup>156</sup></a>
-The agenda is a headed list, like the tables in 
-<a href="#g_t3_002e3_002e3">3.3.3</a>, but since the list is headed by the time, we do not need an
-additional dummy header (such as the <code>*table*</code> symbol used with tables).</p>
+The agenda is a headed list, like the tables in  <a href="#g_t3_002e3_002e3">3.3.3</a>, but since the list is headed by the time, we do not need an additional dummy header (such as the <code>*table*</code> symbol used with tables).</p>
 </div>
 <div><p id="FOOT157" epub:type="footnote"><a class="footnote_backlink" href="#DOCF157"><sup>157</sup></a>
-Observe
-that the <code>if</code> expression in this procedure has no <code>⟨</code><var>alternative</var><code>⟩</code>
-expression.  Such a “one-armed <code>if</code> statement” is used to decide whether
-to do something, rather than to select between two expressions.  An <code>if</code>
-expression returns an unspecified value if the predicate is false and there is
-no <code>⟨</code><var>alternative</var><code>⟩</code>.</p>
+Observe that the <code>if</code> expression in this procedure has no <code>⟨</code><var>alternative</var><code>⟩</code> expression.  Such a “one-armed <code>if</code> statement” is used to decide whether to do something, rather than to select between two expressions.  An <code>if</code> expression returns an unspecified value if the predicate is false and there is no <code>⟨</code><var>alternative</var><code>⟩</code>.</p>
 </div>
 <div><p id="FOOT158" epub:type="footnote"><a class="footnote_backlink" href="#DOCF158"><sup>158</sup></a>
-In this way, the current time will always be the time of the
-action most recently processed.  Storing this time at the head of the agenda
-ensures that it will still be available even if the associated time segment has
-been deleted.</p>
+In this way, the current time will always be the time of the action most recently processed.  Storing this time at the head of the agenda ensures that it will still be available even if the associated time segment has been deleted.</p>
 </div>
 <div><p id="FOOT159" epub:type="footnote"><a class="footnote_backlink" href="#DOCF159"><sup>159</sup></a>
-Constraint propagation first appeared in the incredibly
-forward-looking <abbr>SKETCHPAD</abbr> system of Ivan <a href="References.xhtml#Sutherland-_00281963_0029">Sutherland (1963)</a>.  A
-beautiful constraint-propagation system based on the Smalltalk language was
-developed by Alan <a href="References.xhtml#Borning-_00281977_0029">Borning (1977)</a> at Xerox Palo Alto Research Center.  Sussman,
-Stallman, and Steele applied constraint propagation to electrical circuit
-analysis (<a href="References.xhtml#Sussman-and-Stallman-1975">Sussman and Stallman 1975</a>; <a href="References.xhtml#Sussman-and-Steele-1980">Sussman and Steele 1980</a>). TK!Solver
-(<a href="References.xhtml#Konopasek-and-Jayaraman-1984">Konopasek and Jayaraman 1984</a>) is an extensive modeling environment based on
-constraints.</p>
+Constraint propagation first appeared in the incredibly forward-looking <abbr>SKETCHPAD</abbr> system of Ivan <a href="References.xhtml#Sutherland-_00281963_0029">Sutherland (1963)</a>.  A beautiful constraint-propagation system based on the Smalltalk language was developed by Alan <a href="References.xhtml#Borning-_00281977_0029">Borning (1977)</a> at Xerox Palo Alto Research Center.  Sussman, Stallman, and Steele applied constraint propagation to electrical circuit analysis (<a href="References.xhtml#Sussman-and-Stallman-1975">Sussman and Stallman 1975</a>; <a href="References.xhtml#Sussman-and-Steele-1980">Sussman and Steele 1980</a>). TK!Solver (<a href="References.xhtml#Konopasek-and-Jayaraman-1984">Konopasek and Jayaraman 1984</a>) is an extensive modeling environment based on constraints.</p>
 </div>
 <div><p id="FOOT160" epub:type="footnote"><a class="footnote_backlink" href="#DOCF160"><sup>160</sup></a>
-The <code>setter</code> might not be a
-constraint.  In our temperature example, we used <code>user</code> as the
-<code>setter</code>.</p>
+The <code>setter</code> might not be a constraint.  In our temperature example, we used <code>user</code> as the <code>setter</code>.</p>
 </div>
 <div><p id="FOOT161" epub:type="footnote"><a class="footnote_backlink" href="#DOCF161"><sup>161</sup></a>
-The expression-oriented format is convenient
-because it avoids the need to name the intermediate expressions in a
-computation.  Our original formulation of the constraint language is cumbersome
-in the same way that many languages are cumbersome when dealing with operations
-on compound data.  For example, if we wanted to compute the product 
-<img src="fig/math/2e2bfaaaa2c75f74ad57669af5ed975a.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.189em;" alt="\( {(a + b) \cdot (c + d)} \)" />, where the variables represent vectors, we could work
-in “imperative style,” using procedures that set the values of designated
-vector arguments but do not themselves return vectors as values:
-</p>
-<div class="lisp">
-<pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="pln">v-sum a b temp1</span><span class="clo">)</span><span class="pln">
+The expression-oriented format is convenient because it avoids the need to name the intermediate expressions in a computation.  Our original formulation of the constraint language is cumbersome in the same way that many languages are cumbersome when dealing with operations on compound data.  For example, if we wanted to compute the product  <img src="fig/math/2e2bfaaaa2c75f74ad57669af5ed975a.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.189em;" alt="\( {(a + b) \cdot (c + d)} \)" />, where the variables represent vectors, we could work in “imperative style,” using procedures that set the values of designated vector arguments but do not themselves return vectors as values: </p>
+<div class="lisp"> <pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="pln">v-sum a b temp1</span><span class="clo">)</span><span class="pln">
 </span><span class="opn">(</span><span class="pln">v-sum c d temp2</span><span class="clo">)</span><span class="pln">
-</span><span class="opn">(</span><span class="pln">v-prod temp1 temp2 answer</span><span class="clo">)</span></pre></div>
-
-<p>Alternatively, we could deal with expressions, using procedures that return
-vectors as values, and thus avoid explicitly mentioning <code>temp1</code> and
-<code>temp2</code>:
-</p>
-<div class="lisp">
-<pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">define</span><span class="pln"> answer 
-  </span><span class="opn">(</span><span class="pln">v-prod </span><span class="opn">(</span><span class="pln">v-sum a b</span><span class="clo">)</span><span class="pln"> </span><span class="opn">(</span><span class="pln">v-sum c d</span><span class="clo">)))</span></pre></div>
-
-<p>Since Lisp allows us to return compound objects as values of procedures, we can
-transform our imperative-style constraint language into an expression-oriented
-style as shown in this exercise.  In languages that are impoverished in
-handling compound objects, such as Algol, Basic, and Pascal (unless one
-explicitly uses Pascal pointer variables), one is usually stuck with the
-imperative style when manipulating compound objects.  Given the advantage of
-the expression-oriented format, one might ask if there is any reason to have
-implemented the system in imperative style, as we did in this section.  One
-reason is that the non-expression-oriented constraint language provides a
-handle on constraint objects (e.g., the value of the <code>adder</code> procedure) as
-well as on connector objects.  This is useful if we wish to extend the system
-with new operations that communicate with constraints directly rather than only
-indirectly via operations on connectors.  Although it is easy to implement the
-expression-oriented style in terms of the imperative implementation, it is very
-difficult to do the converse.</p>
+</span><span class="opn">(</span><span class="pln">v-prod temp1 temp2 answer</span><span class="clo">)</span></pre></div> 
+<p>Alternatively, we could deal with expressions, using procedures that return vectors as values, and thus avoid explicitly mentioning <code>temp1</code> and <code>temp2</code>: </p>
+<div class="lisp"> <pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">define</span><span class="pln"> answer 
+  </span><span class="opn">(</span><span class="pln">v-prod </span><span class="opn">(</span><span class="pln">v-sum a b</span><span class="clo">)</span><span class="pln"> </span><span class="opn">(</span><span class="pln">v-sum c d</span><span class="clo">)))</span></pre></div> 
+<p>Since Lisp allows us to return compound objects as values of procedures, we can transform our imperative-style constraint language into an expression-oriented style as shown in this exercise.  In languages that are impoverished in handling compound objects, such as Algol, Basic, and Pascal (unless one explicitly uses Pascal pointer variables), one is usually stuck with the imperative style when manipulating compound objects.  Given the advantage of the expression-oriented format, one might ask if there is any reason to have implemented the system in imperative style, as we did in this section.  One reason is that the non-expression-oriented constraint language provides a handle on constraint objects (e.g., the value of the <code>adder</code> procedure) as well as on connector objects.  This is useful if we wish to extend the system with new operations that communicate with constraints directly rather than only indirectly via operations on connectors.  Although it is easy to implement the expression-oriented style in terms of the imperative implementation, it is very difficult to do the converse.</p>
 </div>
 </div>
 <nav class="header">

@@ -1139,14 +1139,8 @@ She should then be able to continue execution by saying
 <h4 class="footnotes-heading">Footnotes</h4>
 
 <div><p id="FOOT289" epub:type="footnote"><a class="footnote_backlink" href="#DOCF289"><sup>289</sup></a>
-Using the <code>receive</code> procedure here is a way to
-get <code>extract-labels</code> to effectively return two values—<code>labels</code> and
-<code>insts</code>—without explicitly making a compound data structure to hold
-them.  An alternative implementation, which returns an explicit pair of values,
-is
-</p>
-<div class="lisp">
-<pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">define</span><span class="pln"> </span><span class="opn">(</span><span class="pln">extract-labels text</span><span class="clo">)</span><span class="pln">
+Using the <code>receive</code> procedure here is a way to get <code>extract-labels</code> to effectively return two values—<code>labels</code> and <code>insts</code>—without explicitly making a compound data structure to hold them.  An alternative implementation, which returns an explicit pair of values, is </p>
+<div class="lisp"> <pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">define</span><span class="pln"> </span><span class="opn">(</span><span class="pln">extract-labels text</span><span class="clo">)</span><span class="pln">
   </span><span class="opn">(</span><span class="kwd">if</span><span class="pln"> </span><span class="opn">(</span><span class="pln">null? text</span><span class="clo">)</span><span class="pln">
       </span><span class="opn">(</span><span class="kwd">cons</span><span class="pln"> </span><span class="lit">'</span><span class="opn">(</span><span class="clo">)</span><span class="pln"> </span><span class="lit">'</span><span class="opn">(</span><span class="clo">))</span><span class="pln">
       </span><span class="opn">(</span><span class="kwd">let</span><span class="pln"> </span><span class="opn">((</span><span class="pln">result 
@@ -1165,25 +1159,16 @@ is
                  </span><span class="opn">(</span><span class="kwd">cons</span><span class="pln"> 
                   </span><span class="opn">(</span><span class="pln">make-instruction next-inst</span><span class="clo">)</span><span class="pln"> 
                   insts</span><span class="clo">)</span><span class="pln">
-                 labels</span><span class="clo">)))))))</span></pre></div>
-
-<p>which would be called by <code>assemble</code> as follows:
-</p>
-<div class="lisp">
-<pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">define</span><span class="pln"> </span><span class="opn">(</span><span class="pln">assemble controller-text machine</span><span class="clo">)</span><span class="pln">
+                 labels</span><span class="clo">)))))))</span></pre></div> 
+<p>which would be called by <code>assemble</code> as follows: </p>
+<div class="lisp"> <pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">define</span><span class="pln"> </span><span class="opn">(</span><span class="pln">assemble controller-text machine</span><span class="clo">)</span><span class="pln">
   </span><span class="opn">(</span><span class="kwd">let</span><span class="pln"> </span><span class="opn">((</span><span class="pln">result 
          </span><span class="opn">(</span><span class="pln">extract-labels controller-text</span><span class="clo">)))</span><span class="pln">
     </span><span class="opn">(</span><span class="kwd">let</span><span class="pln"> </span><span class="opn">((</span><span class="pln">insts </span><span class="opn">(</span><span class="kwd">car</span><span class="pln"> result</span><span class="clo">))</span><span class="pln">
           </span><span class="opn">(</span><span class="pln">labels </span><span class="opn">(</span><span class="kwd">cdr</span><span class="pln"> result</span><span class="clo">)))</span><span class="pln">
       </span><span class="opn">(</span><span class="pln">update-insts! insts labels machine</span><span class="clo">)</span><span class="pln">
-      insts</span><span class="clo">)))</span></pre></div>
-
-<p>You can consider our use of <code>receive</code> as demonstrating an elegant way to
-return multiple values, or simply an excuse to show off a programming trick.
-An argument like <code>receive</code> that is the next procedure to be invoked is
-called a “continuation.”  Recall that we also used continuations to implement
-the backtracking control structure in the <code>amb</code> evaluator in 
-<a href="4_002e3.xhtml#g_t4_002e3_002e3">4.3.3</a>.</p>
+      insts</span><span class="clo">)))</span></pre></div> 
+<p>You can consider our use of <code>receive</code> as demonstrating an elegant way to return multiple values, or simply an excuse to show off a programming trick. An argument like <code>receive</code> that is the next procedure to be invoked is called a “continuation.”  Recall that we also used continuations to implement the backtracking control structure in the <code>amb</code> evaluator in  <a href="4_002e3.xhtml#g_t4_002e3_002e3">4.3.3</a>.</p>
 </div>
 </div>
 <nav class="header">

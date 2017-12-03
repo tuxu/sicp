@@ -900,110 +900,38 @@ the arguments are evaluated from right to left.
 <h4 class="footnotes-heading">Footnotes</h4>
 
 <div><p id="FOOT129" epub:type="footnote"><a class="footnote_backlink" href="#DOCF129"><sup>129</sup></a>
-Actually, this is not quite
-true.  One exception was the random-number generator in <a href="1_002e2.xhtml#g_t1_002e2_002e6">1.2.6</a>.
-Another exception involved the operation/type tables we introduced in 
-<a href="2_002e4.xhtml#g_t2_002e4_002e3">2.4.3</a>, where the values of two calls to <code>get</code> with the same
-arguments depended on intervening calls to <code>put</code>.  On the other hand,
-until we introduce assignment, we have no way to create such procedures
-ourselves.</p>
+Actually, this is not quite true.  One exception was the random-number generator in <a href="1_002e2.xhtml#g_t1_002e2_002e6">1.2.6</a>. Another exception involved the operation/type tables we introduced in  <a href="2_002e4.xhtml#g_t2_002e4_002e3">2.4.3</a>, where the values of two calls to <code>get</code> with the same arguments depended on intervening calls to <code>put</code>.  On the other hand, until we introduce assignment, we have no way to create such procedures ourselves.</p>
 </div>
 <div><p id="FOOT130" epub:type="footnote"><a class="footnote_backlink" href="#DOCF130"><sup>130</sup></a>
-The value of
-a <code>set!</code> expression is implementation-dependent.  <code>Set!</code> should be
-used only for its effect, not for its value.
-</p>
-<p>The name <code>set!</code> reflects a naming convention used in Scheme: Operations
-that change the values of variables (or that change data structures, as we will
-see in <a href="3_002e3.xhtml#g_t3_002e3">3.3</a>) are given names that end with an exclamation point.
-This is similar to the convention of designating predicates by names that end
-with a question mark.</p>
+The value of a <code>set!</code> expression is implementation-dependent.  <code>Set!</code> should be used only for its effect, not for its value. </p>
+<p>The name <code>set!</code> reflects a naming convention used in Scheme: Operations that change the values of variables (or that change data structures, as we will see in <a href="3_002e3.xhtml#g_t3_002e3">3.3</a>) are given names that end with an exclamation point. This is similar to the convention of designating predicates by names that end with a question mark.</p>
 </div>
 <div><p id="FOOT131" epub:type="footnote"><a class="footnote_backlink" href="#DOCF131"><sup>131</sup></a>
-We have already
-used <code>begin</code> implicitly in our programs, because in Scheme the body of a
-procedure can be a sequence of expressions.  Also, the <code>⟨</code><var>consequent</var><code>⟩</code> part
-of each clause in a <code>cond</code> expression can be a sequence of expressions
-rather than a single expression.</p>
+We have already used <code>begin</code> implicitly in our programs, because in Scheme the body of a procedure can be a sequence of expressions.  Also, the <code>⟨</code><var>consequent</var><code>⟩</code> part of each clause in a <code>cond</code> expression can be a sequence of expressions rather than a single expression.</p>
 </div>
 <div><p id="FOOT132" epub:type="footnote"><a class="footnote_backlink" href="#DOCF132"><sup>132</sup></a>
-In programming-language jargon, the variable
-<code>balance</code> is said to be <a id="index-encapsulated"></a>
-<em>encapsulated</em> within the
-<code>new-withdraw</code> procedure.  Encapsulation reflects the general
-system-design principle known as the <a id="index-hiding-principle"></a>
-<em>hiding principle</em>: One can make a
-system more modular and robust by protecting parts of the system from each
-other; that is, by providing information access only to those parts of the
-system that have a “need to know.”</p>
+In programming-language jargon, the variable <code>balance</code> is said to be <a id="index-encapsulated"></a> <em>encapsulated</em> within the <code>new-withdraw</code> procedure.  Encapsulation reflects the general system-design principle known as the <a id="index-hiding-principle"></a> <em>hiding principle</em>: One can make a system more modular and robust by protecting parts of the system from each other; that is, by providing information access only to those parts of the system that have a “need to know.”</p>
 </div>
 <div><p id="FOOT133" epub:type="footnote"><a class="footnote_backlink" href="#DOCF133"><sup>133</sup></a>
-In contrast with
-<code>new-withdraw</code> above, we do not have to use <code>let</code> to make
-<code>balance</code> a local variable, since formal parameters are already local.
-This will be clearer after the discussion of the environment model of
-evaluation in <a href="3_002e2.xhtml#g_t3_002e2">3.2</a>.  (See also <a href="3_002e2.xhtml#Exercise-3_002e10">Exercise 3.10</a>.)</p>
+In contrast with <code>new-withdraw</code> above, we do not have to use <code>let</code> to make <code>balance</code> a local variable, since formal parameters are already local. This will be clearer after the discussion of the environment model of evaluation in <a href="3_002e2.xhtml#g_t3_002e2">3.2</a>.  (See also <a href="3_002e2.xhtml#Exercise-3_002e10">Exercise 3.10</a>.)</p>
 </div>
 <div><p id="FOOT134" epub:type="footnote"><a class="footnote_backlink" href="#DOCF134"><sup>134</sup></a>
-One common way to implement
-<code>rand-update</code> is to use the rule that <img src="fig/math/2f4b15565d0a1018e90c3e1b30b76acc.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( x \)" /> is updated to <img src="fig/math/5518447330ac049ee1fec6b9a793f130.svg" class="math-inline" style="height: 0.703em; vertical-align: -0.009em;" alt="\( {ax + b} \)" /> 
-modulo <img src="fig/math/d87e6d0d6a9513640fdd6193cde8b6a3.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( m \)" />, where <img src="fig/math/09009cdd5fc245e05305bc574dcdc97d.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( a \)" />, <img src="fig/math/3e92f417ccfc1f59b0ee22d034c85747.svg" class="math-inline" style="height: 0.703em; vertical-align: -0.009em;" alt="\( b \)" />, and <img src="fig/math/d87e6d0d6a9513640fdd6193cde8b6a3.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( m \)" /> are appropriately chosen
-integers.  Chapter 3 of <a href="References.xhtml#Knuth-1981">Knuth 1981</a> includes an extensive discussion of
-techniques for generating sequences of random numbers and establishing their
-statistical properties.  Notice that the <code>rand-update</code> procedure computes
-a mathematical function: Given the same input twice, it produces the same
-output.  Therefore, the number sequence produced by <code>rand-update</code>
-certainly is not “random,” if by “random” we insist that each number in the
-sequence is unrelated to the preceding number.  The relation between “real
-randomness” and so-called <a id="index-pseudo_002drandom"></a>
-<em>pseudo-random</em> sequences, which are
-produced by well-determined computations and yet have suitable statistical
-properties, is a complex question involving difficult issues in mathematics and
-philosophy.  Kolmogorov, Solomonoff, and Chaitin have made great progress in
-clarifying these issues; a discussion can be found in <a href="References.xhtml#Chaitin-1975">Chaitin 1975</a>.</p>
+One common way to implement <code>rand-update</code> is to use the rule that <img src="fig/math/2f4b15565d0a1018e90c3e1b30b76acc.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( x \)" /> is updated to <img src="fig/math/5518447330ac049ee1fec6b9a793f130.svg" class="math-inline" style="height: 0.703em; vertical-align: -0.009em;" alt="\( {ax + b} \)" />  modulo <img src="fig/math/d87e6d0d6a9513640fdd6193cde8b6a3.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( m \)" />, where <img src="fig/math/09009cdd5fc245e05305bc574dcdc97d.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( a \)" />, <img src="fig/math/3e92f417ccfc1f59b0ee22d034c85747.svg" class="math-inline" style="height: 0.703em; vertical-align: -0.009em;" alt="\( b \)" />, and <img src="fig/math/d87e6d0d6a9513640fdd6193cde8b6a3.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( m \)" /> are appropriately chosen integers.  Chapter 3 of <a href="References.xhtml#Knuth-1981">Knuth 1981</a> includes an extensive discussion of techniques for generating sequences of random numbers and establishing their statistical properties.  Notice that the <code>rand-update</code> procedure computes a mathematical function: Given the same input twice, it produces the same output.  Therefore, the number sequence produced by <code>rand-update</code> certainly is not “random,” if by “random” we insist that each number in the sequence is unrelated to the preceding number.  The relation between “real randomness” and so-called <a id="index-pseudo_002drandom"></a> <em>pseudo-random</em> sequences, which are produced by well-determined computations and yet have suitable statistical properties, is a complex question involving difficult issues in mathematics and philosophy.  Kolmogorov, Solomonoff, and Chaitin have made great progress in clarifying these issues; a discussion can be found in <a href="References.xhtml#Chaitin-1975">Chaitin 1975</a>.</p>
 </div>
 <div><p id="FOOT135" epub:type="footnote"><a class="footnote_backlink" href="#DOCF135"><sup>135</sup></a>
-This theorem is due to
-E. Cesàro.  See section 4.5.2 of <a href="References.xhtml#Knuth-1981">Knuth 1981</a> for a discussion and a proof.</p>
+This theorem is due to E. Cesàro.  See section 4.5.2 of <a href="References.xhtml#Knuth-1981">Knuth 1981</a> for a discussion and a proof.</p>
 </div>
 <div><p id="FOOT136" epub:type="footnote"><a class="footnote_backlink" href="#DOCF136"><sup>136</sup></a>
-<abbr>MIT</abbr> Scheme provides such a procedure.  If
-<code>random</code> is given an exact integer (as in <a href="1_002e2.xhtml#g_t1_002e2_002e6">1.2.6</a>) it returns
-an exact integer, but if it is given a decimal value (as in this exercise) it
-returns a decimal value.</p>
+<abbr>MIT</abbr> Scheme provides such a procedure.  If <code>random</code> is given an exact integer (as in <a href="1_002e2.xhtml#g_t1_002e2_002e6">1.2.6</a>) it returns an exact integer, but if it is given a decimal value (as in this exercise) it returns a decimal value.</p>
 </div>
 <div><p id="FOOT137" epub:type="footnote"><a class="footnote_backlink" href="#DOCF137"><sup>137</sup></a>
-We don’t substitute for the occurrence of <code>balance</code> in the
-<code>set!</code> expression because the <code>⟨</code><var>name</var><code>⟩</code> in a <code>set!</code> is not
-evaluated.  If we did substitute for it, we would get <code>(set! 25 (- 25
-amount))</code>, which makes no sense.</p>
+We don’t substitute for the occurrence of <code>balance</code> in the <code>set!</code> expression because the <code>⟨</code><var>name</var><code>⟩</code> in a <code>set!</code> is not evaluated.  If we did substitute for it, we would get <code>(set! 25 (- 25 amount))</code>, which makes no sense.</p>
 </div>
 <div><p id="FOOT138" epub:type="footnote"><a class="footnote_backlink" href="#DOCF138"><sup>138</sup></a>
-The phenomenon of a single computational object
-being accessed by more than one name is known as <a id="index-aliasing"></a>
-<em>aliasing</em>.  The joint
-bank account situation illustrates a very simple example of an alias.  In
-<a href="3_002e3.xhtml#g_t3_002e3">3.3</a> we will see much more complex examples, such as “distinct”
-compound data structures that share parts.  Bugs can occur in our programs if
-we forget that a change to an object may also, as a “side effect,” change a
-“different” object because the two “different” objects are actually a
-single object appearing under different aliases.  These so-called
-<a id="index-side_002deffect-bugs"></a>
-<em>side-effect bugs</em> are so difficult to locate and to analyze that some
-people have proposed that programming languages be designed in such a way as to
-not allow side effects or aliasing (<a href="References.xhtml#Lampson-et-al_002e-1981">Lampson et al. 1981</a>; 
-<a href="References.xhtml#Morris-et-al_002e-1980">Morris et al. 1980</a>).</p>
+The phenomenon of a single computational object being accessed by more than one name is known as <a id="index-aliasing"></a> <em>aliasing</em>.  The joint bank account situation illustrates a very simple example of an alias.  In <a href="3_002e3.xhtml#g_t3_002e3">3.3</a> we will see much more complex examples, such as “distinct” compound data structures that share parts.  Bugs can occur in our programs if we forget that a change to an object may also, as a “side effect,” change a “different” object because the two “different” objects are actually a single object appearing under different aliases.  These so-called <a id="index-side_002deffect-bugs"></a> <em>side-effect bugs</em> are so difficult to locate and to analyze that some people have proposed that programming languages be designed in such a way as to not allow side effects or aliasing (<a href="References.xhtml#Lampson-et-al_002e-1981">Lampson et al. 1981</a>;  <a href="References.xhtml#Morris-et-al_002e-1980">Morris et al. 1980</a>).</p>
 </div>
 <div><p id="FOOT139" epub:type="footnote"><a class="footnote_backlink" href="#DOCF139"><sup>139</sup></a>
-In view of this, it is ironic that introductory
-programming is most often taught in a highly imperative style.  This may be a
-vestige of a belief, common throughout the 1960s and 1970s, that programs that
-call procedures must inherently be less efficient than programs that perform
-assignments.  (<a href="References.xhtml#Steele-1977">Steele 1977</a> debunks this argument.)  Alternatively it may
-reflect a view that step-by-step assignment is easier for beginners to
-visualize than procedure call.  Whatever the reason, it often saddles beginning
-programmers with “should I set this variable before or after that one”
-concerns that can complicate programming and obscure the important ideas.</p>
+In view of this, it is ironic that introductory programming is most often taught in a highly imperative style.  This may be a vestige of a belief, common throughout the 1960s and 1970s, that programs that call procedures must inherently be less efficient than programs that perform assignments.  (<a href="References.xhtml#Steele-1977">Steele 1977</a> debunks this argument.)  Alternatively it may reflect a view that step-by-step assignment is easier for beginners to visualize than procedure call.  Whatever the reason, it often saddles beginning programmers with “should I set this variable before or after that one” concerns that can complicate programming and obscure the important ideas.</p>
 </div>
 </div>
 <nav class="header">

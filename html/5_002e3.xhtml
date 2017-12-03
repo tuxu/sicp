@@ -623,136 +623,48 @@ be ready to perform another garbage collection the next time memory runs out.
 <h4 class="footnotes-heading">Footnotes</h4>
 
 <div><p id="FOOT290" epub:type="footnote"><a class="footnote_backlink" href="#DOCF290"><sup>290</sup></a>
-We could represent memory as
-lists of items.  However, the access time would then not be independent of the
-index, since accessing the <img src="fig/math/3b6c232f796b2d291446b22cb38c933e.svg" class="math-inline" style="height: 0.892em; vertical-align: -0.010em;" alt="\( n^{\text{th}} \)" /> element of a list requires <img src="fig/math/81eb4f306db699a33b30b99343404a6c.svg" class="math-inline" style="height: 0.652em; vertical-align: -0.009em;" alt="\( {n - 1} \)" />
-<code>cdr</code> operations.</p>
+We could represent memory as lists of items.  However, the access time would then not be independent of the index, since accessing the <img src="fig/math/3b6c232f796b2d291446b22cb38c933e.svg" class="math-inline" style="height: 0.892em; vertical-align: -0.010em;" alt="\( n^{\text{th}} \)" /> element of a list requires <img src="fig/math/81eb4f306db699a33b30b99343404a6c.svg" class="math-inline" style="height: 0.652em; vertical-align: -0.009em;" alt="\( {n - 1} \)" /> <code>cdr</code> operations.</p>
 </div>
 <div><p id="FOOT291" epub:type="footnote"><a class="footnote_backlink" href="#DOCF291"><sup>291</sup></a>
-For
-completeness, we should specify a <code>make-vector</code> operation that constructs
-vectors.  However, in the present application we will use vectors only to model
-fixed divisions of the computer memory.</p>
+For completeness, we should specify a <code>make-vector</code> operation that constructs vectors.  However, in the present application we will use vectors only to model fixed divisions of the computer memory.</p>
 </div>
 <div><p id="FOOT292" epub:type="footnote"><a class="footnote_backlink" href="#DOCF292"><sup>292</sup></a>
-This is precisely the same
-“tagged data” idea we introduced in <a href="Chapter-2.xhtml#Chapter-2">Chapter 2</a> for dealing with generic
-operations.  Here, however, the data types are included at the primitive
-machine level rather than constructed through the use of lists.</p>
+This is precisely the same “tagged data” idea we introduced in <a href="Chapter-2.xhtml#Chapter-2">Chapter 2</a> for dealing with generic operations.  Here, however, the data types are included at the primitive machine level rather than constructed through the use of lists.</p>
 </div>
 <div><p id="FOOT293" epub:type="footnote"><a class="footnote_backlink" href="#DOCF293"><sup>293</sup></a>
-Type information
-may be encoded in a variety of ways, depending on the details of the machine on
-which the Lisp system is to be implemented.  The execution efficiency of Lisp
-programs will be strongly dependent on how cleverly this choice is made, but it
-is difficult to formulate general design rules for good choices.  The most
-straightforward way to implement typed pointers is to allocate a fixed set of
-bits in each pointer to be a <a id="index-type-field"></a>
-<em>type field</em> that encodes the data type.
-Important questions to be addressed in designing such a representation include
-the following: How many type bits are required?  How large must the vector
-indices be?  How efficiently can the primitive machine instructions be used to
-manipulate the type fields of pointers?  Machines that include special hardware
-for the efficient handling of type fields are said to have <a id="index-tagged-architectures"></a>
-<em>tagged architectures</em>.</p>
+Type information may be encoded in a variety of ways, depending on the details of the machine on which the Lisp system is to be implemented.  The execution efficiency of Lisp programs will be strongly dependent on how cleverly this choice is made, but it is difficult to formulate general design rules for good choices.  The most straightforward way to implement typed pointers is to allocate a fixed set of bits in each pointer to be a <a id="index-type-field"></a> <em>type field</em> that encodes the data type. Important questions to be addressed in designing such a representation include the following: How many type bits are required?  How large must the vector indices be?  How efficiently can the primitive machine instructions be used to manipulate the type fields of pointers?  Machines that include special hardware for the efficient handling of type fields are said to have <a id="index-tagged-architectures"></a> <em>tagged architectures</em>.</p>
 </div>
 <div><p id="FOOT294" epub:type="footnote"><a class="footnote_backlink" href="#DOCF294"><sup>294</sup></a>
-This decision on the representation of numbers determines whether
-<code>eq?</code>, which tests equality of pointers, can be used to test for equality
-of numbers.  If the pointer contains the number itself, then equal numbers will
-have the same pointer.  But if the pointer contains the index of a location
-where the number is stored, equal numbers will be guaranteed to have equal
-pointers only if we are careful never to store the same number in more than one
-location.</p>
+This decision on the representation of numbers determines whether <code>eq?</code>, which tests equality of pointers, can be used to test for equality of numbers.  If the pointer contains the number itself, then equal numbers will have the same pointer.  But if the pointer contains the index of a location where the number is stored, equal numbers will be guaranteed to have equal pointers only if we are careful never to store the same number in more than one location.</p>
 </div>
 <div><p id="FOOT295" epub:type="footnote"><a class="footnote_backlink" href="#DOCF295"><sup>295</sup></a>
-This is just like writing a number
-as a sequence of digits, except that each “digit” is a number between 0 and
-the largest number that can be stored in a single pointer.</p>
+This is just like writing a number as a sequence of digits, except that each “digit” is a number between 0 and the largest number that can be stored in a single pointer.</p>
 </div>
 <div><p id="FOOT296" epub:type="footnote"><a class="footnote_backlink" href="#DOCF296"><sup>296</sup></a>
-There are other ways of finding free storage.  For example,
-we could link together all the unused pairs into a <a id="index-free-list"></a>
-<em>free list</em>.  Our
-free locations are consecutive (and hence can be accessed by incrementing a
-pointer) because we are using a compacting garbage collector, as we will see in
-<a href="#g_t5_002e3_002e2">5.3.2</a>.</p>
+There are other ways of finding free storage.  For example, we could link together all the unused pairs into a <a id="index-free-list"></a> <em>free list</em>.  Our free locations are consecutive (and hence can be accessed by incrementing a pointer) because we are using a compacting garbage collector, as we will see in <a href="#g_t5_002e3_002e2">5.3.2</a>.</p>
 </div>
 <div><p id="FOOT297" epub:type="footnote"><a class="footnote_backlink" href="#DOCF297"><sup>297</sup></a>
-This is
-essentially the implementation of <code>cons</code> in terms of <code>set-car!</code> and
-<code>set-cdr!</code>, as described in <a href="3_002e3.xhtml#g_t3_002e3_002e1">3.3.1</a>.  The operation
-<code>get-new-pair</code> used in that implementation is realized here by the
-<code>free</code> pointer.</p>
+This is essentially the implementation of <code>cons</code> in terms of <code>set-car!</code> and <code>set-cdr!</code>, as described in <a href="3_002e3.xhtml#g_t3_002e3_002e1">3.3.1</a>.  The operation <code>get-new-pair</code> used in that implementation is realized here by the <code>free</code> pointer.</p>
 </div>
 <div><p id="FOOT298" epub:type="footnote"><a class="footnote_backlink" href="#DOCF298"><sup>298</sup></a>
-This may not be true eventually, because
-memories may get large enough so that it would be impossible to run out of free
-memory in the lifetime of the computer.  For example, there are about
-<img src="fig/math/0651a966b037441ecc75f36f8e7d7fda.svg" class="math-inline" style="height: 0.845em;" alt="\( {3\cdot10^{13}} \)" /> microseconds in a year, so if we were to <code>cons</code> once per
-microsecond we would need about <img src="fig/math/41bc2aff4794a12dbe4ed08a935ceecb.svg" class="math-inline" style="height: 0.845em;" alt="\( 10^{15} \)" /> cells of memory to build a machine that
-could operate for 30 years without running out of memory.  That much memory
-seems absurdly large by today’s standards, but it is not physically impossible.
-On the other hand, processors are getting faster and a future computer may have
-large numbers of processors operating in parallel on a single memory, so it may
-be possible to use up memory much faster than we have postulated.</p>
+This may not be true eventually, because memories may get large enough so that it would be impossible to run out of free memory in the lifetime of the computer.  For example, there are about <img src="fig/math/0651a966b037441ecc75f36f8e7d7fda.svg" class="math-inline" style="height: 0.845em;" alt="\( {3\cdot10^{13}} \)" /> microseconds in a year, so if we were to <code>cons</code> once per microsecond we would need about <img src="fig/math/41bc2aff4794a12dbe4ed08a935ceecb.svg" class="math-inline" style="height: 0.845em;" alt="\( 10^{15} \)" /> cells of memory to build a machine that could operate for 30 years without running out of memory.  That much memory seems absurdly large by today’s standards, but it is not physically impossible. On the other hand, processors are getting faster and a future computer may have large numbers of processors operating in parallel on a single memory, so it may be possible to use up memory much faster than we have postulated.</p>
 </div>
 <div><p id="FOOT299" epub:type="footnote"><a class="footnote_backlink" href="#DOCF299"><sup>299</sup></a>
-We assume here
-that the stack is represented as a list as described in <a href="#g_t5_002e3_002e1">5.3.1</a>, so
-that items on the stack are accessible via the pointer in the stack register.</p>
+We assume here that the stack is represented as a list as described in <a href="#g_t5_002e3_002e1">5.3.1</a>, so that items on the stack are accessible via the pointer in the stack register.</p>
 </div>
 <div><p id="FOOT300" epub:type="footnote"><a class="footnote_backlink" href="#DOCF300"><sup>300</sup></a>
-This idea was invented and first implemented by
-Minsky, as part of the implementation of Lisp for the PDP-1 at the
-<abbr>MIT</abbr> Research Laboratory of Electronics.  It was further developed by
-<a href="References.xhtml#Fenichel-and-Yochelson-_00281969_0029">Fenichel and Yochelson (1969)</a> for use in the Lisp implementation for the
-Multics time-sharing system.  Later, <a href="References.xhtml#Baker-_00281978_0029">Baker (1978)</a> developed a “real-time”
-version of the method, which does not require the computation to stop during
-garbage collection.  Baker’s idea was extended by Hewitt, Lieberman, and Moon
-(see <a href="References.xhtml#Lieberman-and-Hewitt-1983">Lieberman and Hewitt 1983</a>) to take advantage of the fact that some
-structure is more volatile and other structure is more permanent.
-</p>
-<p>An alternative commonly used garbage-collection technique is the
-<a id="index-mark_002dsweep"></a>
-<em>mark-sweep</em> method.  This consists of tracing all the structure
-accessible from the machine registers and marking each pair we reach.  We then
-scan all of memory, and any location that is unmarked is “swept up” as
-garbage and made available for reuse.  A full discussion of the mark-sweep
-method can be found in <a href="References.xhtml#Allen-1978">Allen 1978</a>.
-</p>
-<p>The Minsky-Fenichel-Yochelson algorithm is the dominant algorithm in use for
-large-memory systems because it examines only the useful part of memory.  This
-is in contrast to mark-sweep, in which the sweep phase must check all of
-memory.  A second advantage of stop-and-copy is that it is a
-<a id="index-compacting"></a>
-<em>compacting</em> garbage collector.  That is, at the end of the
-garbage-collection phase the useful data will have been moved to consecutive
-memory locations, with all garbage pairs compressed out.  This can be an
-extremely important performance consideration in machines with virtual memory,
-in which accesses to widely separated memory addresses may require extra paging
-operations.</p>
+This idea was invented and first implemented by Minsky, as part of the implementation of Lisp for the PDP-1 at the <abbr>MIT</abbr> Research Laboratory of Electronics.  It was further developed by <a href="References.xhtml#Fenichel-and-Yochelson-_00281969_0029">Fenichel and Yochelson (1969)</a> for use in the Lisp implementation for the Multics time-sharing system.  Later, <a href="References.xhtml#Baker-_00281978_0029">Baker (1978)</a> developed a “real-time” version of the method, which does not require the computation to stop during garbage collection.  Baker’s idea was extended by Hewitt, Lieberman, and Moon (see <a href="References.xhtml#Lieberman-and-Hewitt-1983">Lieberman and Hewitt 1983</a>) to take advantage of the fact that some structure is more volatile and other structure is more permanent. </p>
+<p>An alternative commonly used garbage-collection technique is the <a id="index-mark_002dsweep"></a> <em>mark-sweep</em> method.  This consists of tracing all the structure accessible from the machine registers and marking each pair we reach.  We then scan all of memory, and any location that is unmarked is “swept up” as garbage and made available for reuse.  A full discussion of the mark-sweep method can be found in <a href="References.xhtml#Allen-1978">Allen 1978</a>. </p>
+<p>The Minsky-Fenichel-Yochelson algorithm is the dominant algorithm in use for large-memory systems because it examines only the useful part of memory.  This is in contrast to mark-sweep, in which the sweep phase must check all of memory.  A second advantage of stop-and-copy is that it is a <a id="index-compacting"></a> <em>compacting</em> garbage collector.  That is, at the end of the garbage-collection phase the useful data will have been moved to consecutive memory locations, with all garbage pairs compressed out.  This can be an extremely important performance consideration in machines with virtual memory, in which accesses to widely separated memory addresses may require extra paging operations.</p>
 </div>
 <div><p id="FOOT301" epub:type="footnote"><a class="footnote_backlink" href="#DOCF301"><sup>301</sup></a>
-This list of registers does not include
-the registers used by the storage-allocation system—<code>root</code>,
-<code>the-cars</code>, <code>the-cdrs</code>, and the other registers that will be
-introduced in this section.</p>
+This list of registers does not include the registers used by the storage-allocation system—<code>root</code>, <code>the-cars</code>, <code>the-cdrs</code>, and the other registers that will be introduced in this section.</p>
 </div>
 <div><p id="FOOT302" epub:type="footnote"><a class="footnote_backlink" href="#DOCF302"><sup>302</sup></a>
-The term <em>broken heart</em> was coined by
-David Cressey, who wrote a garbage collector for MDL, a dialect of Lisp
-developed at <abbr>MIT</abbr> during the early 1970s.</p>
+The term <em>broken heart</em> was coined by David Cressey, who wrote a garbage collector for MDL, a dialect of Lisp developed at <abbr>MIT</abbr> during the early 1970s.</p>
 </div>
 <div><p id="FOOT303" epub:type="footnote"><a class="footnote_backlink" href="#DOCF303"><sup>303</sup></a>
-The garbage collector uses the low-level predicate
-<code>pointer-to-pair?</code> instead of the list-structure <code>pair?</code>  operation
-because in a real system there might be various things that are treated as
-pairs for garbage-collection purposes.  For example, in a Scheme system that
-conforms to the <abbr>IEEE</abbr> standard a procedure object may be implemented
-as a special kind of “pair” that doesn’t satisfy the <code>pair?</code> predicate.
-For simulation purposes, <code>pointer-to-pair?</code> can be implemented as
-<code>pair?</code>.</p>
+The garbage collector uses the low-level predicate <code>pointer-to-pair?</code> instead of the list-structure <code>pair?</code>  operation because in a real system there might be various things that are treated as pairs for garbage-collection purposes.  For example, in a Scheme system that conforms to the <abbr>IEEE</abbr> standard a procedure object may be implemented as a special kind of “pair” that doesn’t satisfy the <code>pair?</code> predicate. For simulation purposes, <code>pointer-to-pair?</code> can be implemented as <code>pair?</code>.</p>
 </div>
 </div>
 <nav class="header">

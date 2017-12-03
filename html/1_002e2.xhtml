@@ -1188,214 +1188,72 @@ have it return 0.
 <h4 class="footnotes-heading">Footnotes</h4>
 
 <div><p id="FOOT29" epub:type="footnote"><a class="footnote_backlink" href="#DOCF29"><sup>29</sup></a>
-In a real program we would probably use the block
-structure introduced in the last section to hide the definition of
-<code>fact-iter</code>:
-</p>
-<div class="lisp">
-<pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">define</span><span class="pln"> </span><span class="opn">(</span><span class="pln">factorial n</span><span class="clo">)</span><span class="pln">
+In a real program we would probably use the block structure introduced in the last section to hide the definition of <code>fact-iter</code>: </p>
+<div class="lisp"> <pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">define</span><span class="pln"> </span><span class="opn">(</span><span class="pln">factorial n</span><span class="clo">)</span><span class="pln">
   </span><span class="opn">(</span><span class="kwd">define</span><span class="pln"> </span><span class="opn">(</span><span class="pln">iter product counter</span><span class="clo">)</span><span class="pln">
     </span><span class="opn">(</span><span class="kwd">if</span><span class="pln"> </span><span class="opn">(</span><span class="pun">&gt;</span><span class="pln"> counter n</span><span class="clo">)</span><span class="pln">
         product
         </span><span class="opn">(</span><span class="pln">iter </span><span class="opn">(</span><span class="pun">*</span><span class="pln"> counter product</span><span class="clo">)</span><span class="pln">
               </span><span class="opn">(</span><span class="pun">+</span><span class="pln"> counter </span><span class="lit">1</span><span class="clo">))))</span><span class="pln">
-  </span><span class="opn">(</span><span class="pln">iter </span><span class="lit">1</span><span class="pln"> </span><span class="lit">1</span><span class="clo">))</span></pre></div>
-
-<p>We avoided doing this here so as to minimize the number of things to think
-about at once.</p>
+  </span><span class="opn">(</span><span class="pln">iter </span><span class="lit">1</span><span class="pln"> </span><span class="lit">1</span><span class="clo">))</span></pre></div> 
+<p>We avoided doing this here so as to minimize the number of things to think about at once.</p>
 </div>
 <div><p id="FOOT30" epub:type="footnote"><a class="footnote_backlink" href="#DOCF30"><sup>30</sup></a>
-When we discuss the implementation of procedures on
-register machines in <a href="Chapter-5.xhtml#Chapter-5">Chapter 5</a>, we will see that any iterative process
-can be realized “in hardware” as a machine that has a fixed set of registers
-and no auxiliary memory.  In contrast, realizing a recursive process requires a
-machine that uses an auxiliary data structure known as a <a id="index-stack"></a>
-<em>stack</em>.</p>
+When we discuss the implementation of procedures on register machines in <a href="Chapter-5.xhtml#Chapter-5">Chapter 5</a>, we will see that any iterative process can be realized “in hardware” as a machine that has a fixed set of registers and no auxiliary memory.  In contrast, realizing a recursive process requires a machine that uses an auxiliary data structure known as a <a id="index-stack"></a> <em>stack</em>.</p>
 </div>
 <div><p id="FOOT31" epub:type="footnote"><a class="footnote_backlink" href="#DOCF31"><sup>31</sup></a>
-Tail
-recursion has long been known as a compiler optimization trick.  A coherent
-semantic basis for tail recursion was provided by Carl <a href="References.xhtml#Hewitt-_00281977_0029">Hewitt (1977)</a>, who
-explained it in terms of the “message-passing” model of computation that we
-shall discuss in <a href="Chapter-3.xhtml#Chapter-3">Chapter 3</a>.  Inspired by this, Gerald Jay Sussman and Guy
-Lewis Steele Jr. (see <a href="References.xhtml#Steele-and-Sussman-1975">Steele and Sussman 1975</a>) constructed a tail-recursive interpreter for
-Scheme.  Steele later showed how tail recursion is a consequence of the natural
-way to compile procedure calls (<a href="References.xhtml#Steele-1977">Steele 1977</a>).  The <abbr>IEEE</abbr> standard for
-Scheme requires that Scheme implementations be tail-recursive.</p>
+Tail recursion has long been known as a compiler optimization trick.  A coherent semantic basis for tail recursion was provided by Carl <a href="References.xhtml#Hewitt-_00281977_0029">Hewitt (1977)</a>, who explained it in terms of the “message-passing” model of computation that we shall discuss in <a href="Chapter-3.xhtml#Chapter-3">Chapter 3</a>.  Inspired by this, Gerald Jay Sussman and Guy Lewis Steele Jr. (see <a href="References.xhtml#Steele-and-Sussman-1975">Steele and Sussman 1975</a>) constructed a tail-recursive interpreter for Scheme.  Steele later showed how tail recursion is a consequence of the natural way to compile procedure calls (<a href="References.xhtml#Steele-1977">Steele 1977</a>).  The <abbr>IEEE</abbr> standard for Scheme requires that Scheme implementations be tail-recursive.</p>
 </div>
 <div><p id="FOOT32" epub:type="footnote"><a class="footnote_backlink" href="#DOCF32"><sup>32</sup></a>
-An example of this was hinted at in <a href="1_002e1.xhtml#g_t1_002e1_002e3">1.1.3</a>. The
-interpreter itself evaluates expressions using a tree-recursive process.</p>
+An example of this was hinted at in <a href="1_002e1.xhtml#g_t1_002e1_002e3">1.1.3</a>. The interpreter itself evaluates expressions using a tree-recursive process.</p>
 </div>
 <div><p id="FOOT33" epub:type="footnote"><a class="footnote_backlink" href="#DOCF33"><sup>33</sup></a>
-For
-example, work through in detail how the reduction rule applies to the problem
-of making change for 10 cents using pennies and nickels.</p>
+For example, work through in detail how the reduction rule applies to the problem of making change for 10 cents using pennies and nickels.</p>
 </div>
 <div><p id="FOOT34" epub:type="footnote"><a class="footnote_backlink" href="#DOCF34"><sup>34</sup></a>
-One approach to coping with
-redundant computations is to arrange matters so that we automatically construct
-a table of values as they are computed.  Each time we are asked to apply the
-procedure to some argument, we first look to see if the value is already stored
-in the table, in which case we avoid performing the redundant computation.
-This strategy, known as <a id="index-tabulation"></a>
-<em>tabulation</em> or <a id="index-memoization"></a>
-<em>memoization</em>, can be
-implemented in a straightforward way.  Tabulation can sometimes be used to
-transform processes that require an exponential number of steps (such as
-<code>count-change</code>) into processes whose space and time requirements grow
-linearly with the input.  See <a href="3_002e3.xhtml#Exercise-3_002e27">Exercise 3.27</a>.</p>
+One approach to coping with redundant computations is to arrange matters so that we automatically construct a table of values as they are computed.  Each time we are asked to apply the procedure to some argument, we first look to see if the value is already stored in the table, in which case we avoid performing the redundant computation. This strategy, known as <a id="index-tabulation"></a> <em>tabulation</em> or <a id="index-memoization"></a> <em>memoization</em>, can be implemented in a straightforward way.  Tabulation can sometimes be used to transform processes that require an exponential number of steps (such as <code>count-change</code>) into processes whose space and time requirements grow linearly with the input.  See <a href="3_002e3.xhtml#Exercise-3_002e27">Exercise 3.27</a>.</p>
 </div>
 <div><p id="FOOT35" epub:type="footnote"><a class="footnote_backlink" href="#DOCF35"><sup>35</sup></a>
-The elements of
-Pascal’s triangle are called the <a id="index-binomial-coefficients"></a>
-<em>binomial coefficients</em>, because the
-<img src="fig/math/1d26333e30d7ef6a556179ea33325d48.svg" class="math-inline" style="height: 0.892em; vertical-align: -0.010em;" alt="\( {n^{\text{th}}} \)" /> row consists of the coefficients of the terms in the expansion of
-<img src="fig/math/1d548631d553cb5c93d658f0f25d296c.svg" class="math-inline" style="height: 0.933em; vertical-align: -0.225em;" alt="\( {(x + y)^n} \)" />.  This pattern for computing the coefficients appeared in
-Blaise Pascal’s 1653 seminal work on probability theory, <cite>Traité du
-triangle arithmétique</cite>.  According to <a href="References.xhtml#Knuth-_00281973_0029">Knuth (1973)</a>, the same pattern appears
-in the <cite>Szu-yuen Yü-chien</cite> (“The Precious Mirror of the Four
-Elements”), published by the Chinese mathematician Chu Shih-chieh in 1303, in
-the works of the twelfth-century Persian poet and mathematician Omar Khayyam,
-and in the works of the twelfth-century Hindu mathematician Bháscara
-Áchárya.</p>
+The elements of Pascal’s triangle are called the <a id="index-binomial-coefficients"></a> <em>binomial coefficients</em>, because the <img src="fig/math/1d26333e30d7ef6a556179ea33325d48.svg" class="math-inline" style="height: 0.892em; vertical-align: -0.010em;" alt="\( {n^{\text{th}}} \)" /> row consists of the coefficients of the terms in the expansion of <img src="fig/math/1d548631d553cb5c93d658f0f25d296c.svg" class="math-inline" style="height: 0.933em; vertical-align: -0.225em;" alt="\( {(x + y)^n} \)" />.  This pattern for computing the coefficients appeared in Blaise Pascal’s 1653 seminal work on probability theory, <cite>Traité du triangle arithmétique</cite>.  According to <a href="References.xhtml#Knuth-_00281973_0029">Knuth (1973)</a>, the same pattern appears in the <cite>Szu-yuen Yü-chien</cite> (“The Precious Mirror of the Four Elements”), published by the Chinese mathematician Chu Shih-chieh in 1303, in the works of the twelfth-century Persian poet and mathematician Omar Khayyam, and in the works of the twelfth-century Hindu mathematician Bháscara Áchárya.</p>
 </div>
 <div><p id="FOOT36" epub:type="footnote"><a class="footnote_backlink" href="#DOCF36"><sup>36</sup></a>
-These statements mask a great deal of oversimplification.
-For instance, if we count process steps as “machine operations” we are making
-the assumption that the number of machine operations needed to perform, say, a
-multiplication is independent of the size of the numbers to be multiplied,
-which is false if the numbers are sufficiently large.  Similar remarks hold for
-the estimates of space.  Like the design and description of a process, the
-analysis of a process can be carried out at various levels of abstraction.</p>
+These statements mask a great deal of oversimplification. For instance, if we count process steps as “machine operations” we are making the assumption that the number of machine operations needed to perform, say, a multiplication is independent of the size of the numbers to be multiplied, which is false if the numbers are sufficiently large.  Similar remarks hold for the estimates of space.  Like the design and description of a process, the analysis of a process can be carried out at various levels of abstraction.</p>
 </div>
 <div><p id="FOOT37" epub:type="footnote"><a class="footnote_backlink" href="#DOCF37"><sup>37</sup></a>
-More precisely, the number of
-multiplications required is equal to 1 less than the log base 2 of <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" /> plus
-the number of ones in the binary representation of <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" />.  This total is always
-less than twice the log base 2 of <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" />.  The arbitrary constants <img src="fig/math/9e40c899364b3a7bc648f5071c8e501c.svg" class="math-inline" style="height: 0.843em; vertical-align: -0.148em;" alt="\( k_1 \)" /> and
-<img src="fig/math/f770f36651db7f4958828f415118c5e8.svg" class="math-inline" style="height: 0.843em; vertical-align: -0.148em;" alt="\( k_2 \)" /> in the definition of order notation imply that, for a logarithmic
-process, the base to which logarithms are taken does not matter, so all such
-processes are described as <img src="fig/math/48be6efaded27da68b3a4aa70713c562.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.189em;" alt="\( {\Theta(\log n)} \)" />.</p>
+More precisely, the number of multiplications required is equal to 1 less than the log base 2 of <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" /> plus the number of ones in the binary representation of <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" />.  This total is always less than twice the log base 2 of <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" />.  The arbitrary constants <img src="fig/math/9e40c899364b3a7bc648f5071c8e501c.svg" class="math-inline" style="height: 0.843em; vertical-align: -0.148em;" alt="\( k_1 \)" /> and <img src="fig/math/f770f36651db7f4958828f415118c5e8.svg" class="math-inline" style="height: 0.843em; vertical-align: -0.148em;" alt="\( k_2 \)" /> in the definition of order notation imply that, for a logarithmic process, the base to which logarithms are taken does not matter, so all such processes are described as <img src="fig/math/48be6efaded27da68b3a4aa70713c562.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.189em;" alt="\( {\Theta(\log n)} \)" />.</p>
 </div>
 <div><p id="FOOT38" epub:type="footnote"><a class="footnote_backlink" href="#DOCF38"><sup>38</sup></a>
-You may wonder why anyone would care about raising
-numbers to the 1000th power.  See <a href="#g_t1_002e2_002e6">1.2.6</a>.</p>
+You may wonder why anyone would care about raising numbers to the 1000th power.  See <a href="#g_t1_002e2_002e6">1.2.6</a>.</p>
 </div>
 <div><p id="FOOT39" epub:type="footnote"><a class="footnote_backlink" href="#DOCF39"><sup>39</sup></a>
-This
-iterative algorithm is ancient.  It appears in the <cite>Chandah-sutra</cite> by
-Áchárya Pingala, written before 200 <abbr>B.C.</abbr> See <a href="References.xhtml#Knuth-1981">Knuth 1981</a>, section
-4.6.3, for a full discussion and analysis of this and other methods of
-exponentiation.</p>
+This iterative algorithm is ancient.  It appears in the <cite>Chandah-sutra</cite> by Áchárya Pingala, written before 200 <abbr>B.C.</abbr> See <a href="References.xhtml#Knuth-1981">Knuth 1981</a>, section 4.6.3, for a full discussion and analysis of this and other methods of exponentiation.</p>
 </div>
 <div><p id="FOOT40" epub:type="footnote"><a class="footnote_backlink" href="#DOCF40"><sup>40</sup></a>
-This algorithm,
-which is sometimes known as the “Russian peasant method” of multiplication,
-is ancient.  Examples of its use are found in the Rhind Papyrus, one of the two
-oldest mathematical documents in existence, written about 1700 <abbr>B.C.</abbr>
-(and copied from an even older document) by an Egyptian scribe named A’h-mose.</p>
+This algorithm, which is sometimes known as the “Russian peasant method” of multiplication, is ancient.  Examples of its use are found in the Rhind Papyrus, one of the two oldest mathematical documents in existence, written about 1700 <abbr>B.C.</abbr> (and copied from an even older document) by an Egyptian scribe named A’h-mose.</p>
 </div>
 <div><p id="FOOT41" epub:type="footnote"><a class="footnote_backlink" href="#DOCF41"><sup>41</sup></a>
-This exercise was suggested to
-us by Joe Stoy, based on an example in <a href="References.xhtml#Kaldewaij-1990">Kaldewaij 1990</a>.</p>
+This exercise was suggested to us by Joe Stoy, based on an example in <a href="References.xhtml#Kaldewaij-1990">Kaldewaij 1990</a>.</p>
 </div>
 <div><p id="FOOT42" epub:type="footnote"><a class="footnote_backlink" href="#DOCF42"><sup>42</sup></a>
-Euclid’s Algorithm is so called because 
-it appears in Euclid’s <cite>Elements</cite> (Book 7, ca. 300 <abbr>B.C.</abbr>).  
-According to <a href="References.xhtml#Knuth-_00281973_0029">Knuth (1973)</a>, it can be considered the oldest known nontrivial 
-algorithm.  The ancient Egyptian method of multiplication (<a href="#Exercise-1_002e18">Exercise 1.18</a>) is 
-surely older, but, as Knuth explains, Euclid’s algorithm is the oldest known to 
-have been presented as a general algorithm, rather than as a set of illustrative
-examples.</p>
+Euclid’s Algorithm is so called because  it appears in Euclid’s <cite>Elements</cite> (Book 7, ca. 300 <abbr>B.C.</abbr>).   According to <a href="References.xhtml#Knuth-_00281973_0029">Knuth (1973)</a>, it can be considered the oldest known nontrivial  algorithm.  The ancient Egyptian method of multiplication (<a href="#Exercise-1_002e18">Exercise 1.18</a>) is  surely older, but, as Knuth explains, Euclid’s algorithm is the oldest known to  have been presented as a general algorithm, rather than as a set of illustrative examples.</p>
 </div>
 <div><p id="FOOT43" epub:type="footnote"><a class="footnote_backlink" href="#DOCF43"><sup>43</sup></a>
-This
-theorem was proved in 1845 by Gabriel Lamé, a French mathematician and
-engineer known chiefly for his contributions to mathematical physics.  To prove
-the theorem, we consider pairs <img src="fig/math/4f4d9d2c178554d258955b5882886b71.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.189em;" alt="\( {(a_k, b_k)} \)" />, where <img src="fig/math/c2b388f46177fef311a426f168e037d0.svg" class="math-inline" style="height: 0.857em; vertical-align: -0.163em;" alt="\( {a_k \ge b_k} \)" />, 
-for which Euclid’s Algorithm terminates in <img src="fig/math/83054be07bea98353c7cda3290903d5e.svg" class="math-inline" style="height: 0.703em; vertical-align: -0.009em;" alt="\( k \)" /> steps.  The proof
-is based on the claim that, if <img src="fig/math/f91a2e4e97b6d4a9352d940625decdc0.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.189em;" alt="\( {(a_{k+1}, b_{k+1})} \to {(a_k, b_k)} \to {(a_{k-1}, b_{k-1})} \)" /> 
-are three successive pairs 
-in the reduction process, then we must have <img src="fig/math/c02eacd6ed941e61dd6627af23507a75.svg" class="math-inline" style="height: 0.857em; vertical-align: -0.163em;" alt="\( b_{k+1} \ge b_k + b_{k-1} \)" />.  
-To verify the claim, consider that a reduction step is defined by applying the 
-transformation <img src="fig/math/7913884e304c591ea6986727d9c56e66.svg" class="math-inline" style="height: 0.857em; vertical-align: -0.163em;" alt="\( {a_{k-1} = b_k} \)" />, <img src="fig/math/3cc38c0fc219be9688662626a0b0c48b.svg" class="math-inline" style="height: 0.857em; vertical-align: -0.163em;" alt="\( {b_{k-1} =} \)" /> remainder of <img src="fig/math/07febb67a15c456e95ebbdb91c5910b7.svg" class="math-inline" style="height: 0.598em; vertical-align: -0.162em;" alt="\( a_k \)" /> 
-divided by <img src="fig/math/7b7c05b32ae65e232eca6bbe10d21ea1.svg" class="math-inline" style="height: 0.857em; vertical-align: -0.163em;" alt="\( b_k \)" />.  The second equation means that <img src="fig/math/d6d4e2bcb9ab1e420b2a77bdb19d8fb3.svg" class="math-inline" style="height: 0.929em; vertical-align: -0.234em;" alt="\( a_k = {qb_k} + {b_{k-1}} \)" /> 
-for some positive integer <img src="fig/math/55e71917aae71d65907116d02f07c8f8.svg" class="math-inline" style="height: 0.678em; vertical-align: -0.241em;" alt="\( q \)" />.  And since <img src="fig/math/55e71917aae71d65907116d02f07c8f8.svg" class="math-inline" style="height: 0.678em; vertical-align: -0.241em;" alt="\( q \)" /> must be at least 1 we have 
-<img src="fig/math/938e4d2065401215ca379761b3a64e9d.svg" class="math-inline" style="height: 0.929em; vertical-align: -0.234em;" alt="\( a_k = {qb_k} + b_{k-1} \ge b_k + b_{k-1} \)" />.  But in the previous reduction 
-step we have <img src="fig/math/438f8ebb132c2cec5e4312a20d21e1b6.svg" class="math-inline" style="height: 0.857em; vertical-align: -0.163em;" alt="\( b_{k+1} = a_k \)" />.  Therefore, <img src="fig/math/88677bf9dcc1a761dc146cb860233562.svg" class="math-inline" style="height: 0.857em; vertical-align: -0.163em;" alt="\( b_{k+1} = a_k \ge b_k + b_{k-1} \)" />.
-This verifies the claim.  Now we can prove the theorem by induction on <img src="fig/math/83054be07bea98353c7cda3290903d5e.svg" class="math-inline" style="height: 0.703em; vertical-align: -0.009em;" alt="\( k \)" />, 
-the number of steps that the algorithm requires to terminate.  The result is true for 
-<img src="fig/math/bb08cea3f77bfdf5d4c5dd747eeb776d.svg" class="math-inline" style="height: 0.703em; vertical-align: -0.009em;" alt="\( {k = 1} \)" />, since this merely requires that <img src="fig/math/3e92f417ccfc1f59b0ee22d034c85747.svg" class="math-inline" style="height: 0.703em; vertical-align: -0.009em;" alt="\( b \)" /> be at least as large as <img src="fig/math/45b5ef7d699444ab210b863170b7461a.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.189em;" alt="\( {\text{Fib}(1) = 1} \)" />.  
-Now, assume that the result is true for all integers less than or equal
-to <img src="fig/math/83054be07bea98353c7cda3290903d5e.svg" class="math-inline" style="height: 0.703em; vertical-align: -0.009em;" alt="\( k \)" /> and establish the result for <img src="fig/math/17d112fd6f44f2145c3129b029e7ac8b.svg" class="math-inline" style="height: 0.703em; vertical-align: -0.009em;" alt="\( {k + 1} \)" />.  
-Let <img src="fig/math/f91a2e4e97b6d4a9352d940625decdc0.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.189em;" alt="\( {(a_{k+1}, b_{k+1})} \to {(a_k, b_k)} \to {(a_{k-1}, b_{k-1})} \)" /> 
-be successive pairs in the reduction 
-process.  By our induction hypotheses, we have <img src="fig/math/3ef36ea21d5611df87ff2c3d91236e32.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.189em;" alt="\( b_{k-1} \ge {\text{Fib}(k - 1)} \)" /> 
-and <img src="fig/math/1133dbc7a8bdab0aaed8b78933faac11.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.189em;" alt="\( b_k \ge {\text{Fib}(k)} \)" />.  Thus, applying the claim we just proved together with 
-the definition of the Fibonacci numbers gives 
-<img src="fig/math/b54c123a3fd5277f0165afffbbc74c83.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.189em;" alt="\( b_{k+1} \ge b_k + b_{k-1} \ge {\text{Fib}(k)} + {\text{Fib}(k-1)} = {\text{Fib}(k+1)} \)" />, 
-which completes the proof of Lamé’s Theorem.</p>
+This theorem was proved in 1845 by Gabriel Lamé, a French mathematician and engineer known chiefly for his contributions to mathematical physics.  To prove the theorem, we consider pairs <img src="fig/math/4f4d9d2c178554d258955b5882886b71.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.189em;" alt="\( {(a_k, b_k)} \)" />, where <img src="fig/math/c2b388f46177fef311a426f168e037d0.svg" class="math-inline" style="height: 0.857em; vertical-align: -0.163em;" alt="\( {a_k \ge b_k} \)" />,  for which Euclid’s Algorithm terminates in <img src="fig/math/83054be07bea98353c7cda3290903d5e.svg" class="math-inline" style="height: 0.703em; vertical-align: -0.009em;" alt="\( k \)" /> steps.  The proof is based on the claim that, if <img src="fig/math/f91a2e4e97b6d4a9352d940625decdc0.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.189em;" alt="\( {(a_{k+1}, b_{k+1})} \to {(a_k, b_k)} \to {(a_{k-1}, b_{k-1})} \)" />  are three successive pairs  in the reduction process, then we must have <img src="fig/math/c02eacd6ed941e61dd6627af23507a75.svg" class="math-inline" style="height: 0.857em; vertical-align: -0.163em;" alt="\( b_{k+1} \ge b_k + b_{k-1} \)" />.   To verify the claim, consider that a reduction step is defined by applying the  transformation <img src="fig/math/7913884e304c591ea6986727d9c56e66.svg" class="math-inline" style="height: 0.857em; vertical-align: -0.163em;" alt="\( {a_{k-1} = b_k} \)" />, <img src="fig/math/3cc38c0fc219be9688662626a0b0c48b.svg" class="math-inline" style="height: 0.857em; vertical-align: -0.163em;" alt="\( {b_{k-1} =} \)" /> remainder of <img src="fig/math/07febb67a15c456e95ebbdb91c5910b7.svg" class="math-inline" style="height: 0.598em; vertical-align: -0.162em;" alt="\( a_k \)" />  divided by <img src="fig/math/7b7c05b32ae65e232eca6bbe10d21ea1.svg" class="math-inline" style="height: 0.857em; vertical-align: -0.163em;" alt="\( b_k \)" />.  The second equation means that <img src="fig/math/d6d4e2bcb9ab1e420b2a77bdb19d8fb3.svg" class="math-inline" style="height: 0.929em; vertical-align: -0.234em;" alt="\( a_k = {qb_k} + {b_{k-1}} \)" />  for some positive integer <img src="fig/math/55e71917aae71d65907116d02f07c8f8.svg" class="math-inline" style="height: 0.678em; vertical-align: -0.241em;" alt="\( q \)" />.  And since <img src="fig/math/55e71917aae71d65907116d02f07c8f8.svg" class="math-inline" style="height: 0.678em; vertical-align: -0.241em;" alt="\( q \)" /> must be at least 1 we have  <img src="fig/math/938e4d2065401215ca379761b3a64e9d.svg" class="math-inline" style="height: 0.929em; vertical-align: -0.234em;" alt="\( a_k = {qb_k} + b_{k-1} \ge b_k + b_{k-1} \)" />.  But in the previous reduction  step we have <img src="fig/math/438f8ebb132c2cec5e4312a20d21e1b6.svg" class="math-inline" style="height: 0.857em; vertical-align: -0.163em;" alt="\( b_{k+1} = a_k \)" />.  Therefore, <img src="fig/math/88677bf9dcc1a761dc146cb860233562.svg" class="math-inline" style="height: 0.857em; vertical-align: -0.163em;" alt="\( b_{k+1} = a_k \ge b_k + b_{k-1} \)" />. This verifies the claim.  Now we can prove the theorem by induction on <img src="fig/math/83054be07bea98353c7cda3290903d5e.svg" class="math-inline" style="height: 0.703em; vertical-align: -0.009em;" alt="\( k \)" />,  the number of steps that the algorithm requires to terminate.  The result is true for  <img src="fig/math/bb08cea3f77bfdf5d4c5dd747eeb776d.svg" class="math-inline" style="height: 0.703em; vertical-align: -0.009em;" alt="\( {k = 1} \)" />, since this merely requires that <img src="fig/math/3e92f417ccfc1f59b0ee22d034c85747.svg" class="math-inline" style="height: 0.703em; vertical-align: -0.009em;" alt="\( b \)" /> be at least as large as <img src="fig/math/45b5ef7d699444ab210b863170b7461a.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.189em;" alt="\( {\text{Fib}(1) = 1} \)" />.   Now, assume that the result is true for all integers less than or equal to <img src="fig/math/83054be07bea98353c7cda3290903d5e.svg" class="math-inline" style="height: 0.703em; vertical-align: -0.009em;" alt="\( k \)" /> and establish the result for <img src="fig/math/17d112fd6f44f2145c3129b029e7ac8b.svg" class="math-inline" style="height: 0.703em; vertical-align: -0.009em;" alt="\( {k + 1} \)" />.   Let <img src="fig/math/f91a2e4e97b6d4a9352d940625decdc0.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.189em;" alt="\( {(a_{k+1}, b_{k+1})} \to {(a_k, b_k)} \to {(a_{k-1}, b_{k-1})} \)" />  be successive pairs in the reduction  process.  By our induction hypotheses, we have <img src="fig/math/3ef36ea21d5611df87ff2c3d91236e32.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.189em;" alt="\( b_{k-1} \ge {\text{Fib}(k - 1)} \)" />  and <img src="fig/math/1133dbc7a8bdab0aaed8b78933faac11.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.189em;" alt="\( b_k \ge {\text{Fib}(k)} \)" />.  Thus, applying the claim we just proved together with  the definition of the Fibonacci numbers gives  <img src="fig/math/b54c123a3fd5277f0165afffbbc74c83.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.189em;" alt="\( b_{k+1} \ge b_k + b_{k-1} \ge {\text{Fib}(k)} + {\text{Fib}(k-1)} = {\text{Fib}(k+1)} \)" />,  which completes the proof of Lamé’s Theorem.</p>
 </div>
 <div><p id="FOOT44" epub:type="footnote"><a class="footnote_backlink" href="#DOCF44"><sup>44</sup></a>
-If <img src="fig/math/94022487faed4226073f19cc394c11d0.svg" class="math-inline" style="height: 0.703em; vertical-align: -0.009em;" alt="\( d \)" /> is a divisor of <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" />, then so is
-<img src="fig/math/9101f115e5e93ec5cec5de214927fb7f.svg" class="math-inline" style="height: 0.852em; vertical-align: -0.159em;" alt="\( {n \,/\, d} \)" />.  But <img src="fig/math/94022487faed4226073f19cc394c11d0.svg" class="math-inline" style="height: 0.703em; vertical-align: -0.009em;" alt="\( d \)" /> and <img src="fig/math/9101f115e5e93ec5cec5de214927fb7f.svg" class="math-inline" style="height: 0.852em; vertical-align: -0.159em;" alt="\( {n \,/\, d} \)" /> cannot both be greater than
-<img src="fig/math/6401acda6e40516e261b2a2cd409285f.svg" class="math-inline" style="height: 0.993em; vertical-align: -0.168em;" alt="\( \sqrt{n} \)" />.</p>
+If <img src="fig/math/94022487faed4226073f19cc394c11d0.svg" class="math-inline" style="height: 0.703em; vertical-align: -0.009em;" alt="\( d \)" /> is a divisor of <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" />, then so is <img src="fig/math/9101f115e5e93ec5cec5de214927fb7f.svg" class="math-inline" style="height: 0.852em; vertical-align: -0.159em;" alt="\( {n \,/\, d} \)" />.  But <img src="fig/math/94022487faed4226073f19cc394c11d0.svg" class="math-inline" style="height: 0.703em; vertical-align: -0.009em;" alt="\( d \)" /> and <img src="fig/math/9101f115e5e93ec5cec5de214927fb7f.svg" class="math-inline" style="height: 0.852em; vertical-align: -0.159em;" alt="\( {n \,/\, d} \)" /> cannot both be greater than <img src="fig/math/6401acda6e40516e261b2a2cd409285f.svg" class="math-inline" style="height: 0.993em; vertical-align: -0.168em;" alt="\( \sqrt{n} \)" />.</p>
 </div>
 <div><p id="FOOT45" epub:type="footnote"><a class="footnote_backlink" href="#DOCF45"><sup>45</sup></a>
-Pierre de Fermat
-(1601-1665) is considered to be the founder of modern number theory.  He
-obtained many important number-theoretic results, but he usually announced just
-the results, without providing his proofs.  Fermat’s Little Theorem was stated
-in a letter he wrote in 1640.  The first published proof was given by Euler in
-1736 (and an earlier, identical proof was discovered in the unpublished
-manuscripts of Leibniz).  The most famous of Fermat’s results—known as
-Fermat’s Last Theorem—was jotted down in 1637 in his copy of the book
-<cite>Arithmetic</cite> (by the third-century Greek mathematician Diophantus) with
-the remark “I have discovered a truly remarkable proof, but this margin is too
-small to contain it.”  Finding a proof of Fermat’s Last Theorem became one of
-the most famous challenges in number theory.  A complete solution was finally
-given in 1995 by Andrew Wiles of Princeton University.</p>
+Pierre de Fermat (1601-1665) is considered to be the founder of modern number theory.  He obtained many important number-theoretic results, but he usually announced just the results, without providing his proofs.  Fermat’s Little Theorem was stated in a letter he wrote in 1640.  The first published proof was given by Euler in 1736 (and an earlier, identical proof was discovered in the unpublished manuscripts of Leibniz).  The most famous of Fermat’s results—known as Fermat’s Last Theorem—was jotted down in 1637 in his copy of the book <cite>Arithmetic</cite> (by the third-century Greek mathematician Diophantus) with the remark “I have discovered a truly remarkable proof, but this margin is too small to contain it.”  Finding a proof of Fermat’s Last Theorem became one of the most famous challenges in number theory.  A complete solution was finally given in 1995 by Andrew Wiles of Princeton University.</p>
 </div>
 <div><p id="FOOT46" epub:type="footnote"><a class="footnote_backlink" href="#DOCF46"><sup>46</sup></a>
-The reduction steps in the cases where the exponent
-<img src="fig/math/debcc3e84db401938012afdc2ced88f1.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( e \)" /> is greater than 1 are based on the fact that, for any integers <img src="fig/math/2f4b15565d0a1018e90c3e1b30b76acc.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( x \)" />,
-<img src="fig/math/05e4cdb2f26a4f66b68c167423907fea.svg" class="math-inline" style="height: 0.669em; vertical-align: -0.235em;" alt="\( y \)" />, and <img src="fig/math/d87e6d0d6a9513640fdd6193cde8b6a3.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( m \)" />, we can find the remainder of <img src="fig/math/2f4b15565d0a1018e90c3e1b30b76acc.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( x \)" /> times <img src="fig/math/05e4cdb2f26a4f66b68c167423907fea.svg" class="math-inline" style="height: 0.669em; vertical-align: -0.235em;" alt="\( y \)" /> modulo <img src="fig/math/d87e6d0d6a9513640fdd6193cde8b6a3.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( m \)" />
-by computing separately the remainders of <img src="fig/math/2f4b15565d0a1018e90c3e1b30b76acc.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( x \)" /> modulo <img src="fig/math/d87e6d0d6a9513640fdd6193cde8b6a3.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( m \)" /> and <img src="fig/math/05e4cdb2f26a4f66b68c167423907fea.svg" class="math-inline" style="height: 0.669em; vertical-align: -0.235em;" alt="\( y \)" /> modulo
-<img src="fig/math/d87e6d0d6a9513640fdd6193cde8b6a3.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( m \)" />, multiplying these, and then taking the remainder of the result modulo
-<img src="fig/math/d87e6d0d6a9513640fdd6193cde8b6a3.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( m \)" />.  For instance, in the case where <img src="fig/math/debcc3e84db401938012afdc2ced88f1.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( e \)" /> is even, we compute the remainder
-of <img src="fig/math/074fefd2a5f678baa3f4dfd220035e99.svg" class="math-inline" style="height: 0.862em; vertical-align: -0.006em;" alt="\( b^{e / 2} \)" /> modulo <img src="fig/math/d87e6d0d6a9513640fdd6193cde8b6a3.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( m \)" />, square this, and take the remainder modulo
-<img src="fig/math/d87e6d0d6a9513640fdd6193cde8b6a3.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( m \)" />.  This technique is useful because it means we can perform our
-computation without ever having to deal with numbers much larger than <img src="fig/math/d87e6d0d6a9513640fdd6193cde8b6a3.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( m \)" />.
-(Compare <a href="#Exercise-1_002e25">Exercise 1.25</a>.)</p>
+The reduction steps in the cases where the exponent <img src="fig/math/debcc3e84db401938012afdc2ced88f1.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( e \)" /> is greater than 1 are based on the fact that, for any integers <img src="fig/math/2f4b15565d0a1018e90c3e1b30b76acc.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( x \)" />, <img src="fig/math/05e4cdb2f26a4f66b68c167423907fea.svg" class="math-inline" style="height: 0.669em; vertical-align: -0.235em;" alt="\( y \)" />, and <img src="fig/math/d87e6d0d6a9513640fdd6193cde8b6a3.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( m \)" />, we can find the remainder of <img src="fig/math/2f4b15565d0a1018e90c3e1b30b76acc.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( x \)" /> times <img src="fig/math/05e4cdb2f26a4f66b68c167423907fea.svg" class="math-inline" style="height: 0.669em; vertical-align: -0.235em;" alt="\( y \)" /> modulo <img src="fig/math/d87e6d0d6a9513640fdd6193cde8b6a3.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( m \)" /> by computing separately the remainders of <img src="fig/math/2f4b15565d0a1018e90c3e1b30b76acc.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( x \)" /> modulo <img src="fig/math/d87e6d0d6a9513640fdd6193cde8b6a3.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( m \)" /> and <img src="fig/math/05e4cdb2f26a4f66b68c167423907fea.svg" class="math-inline" style="height: 0.669em; vertical-align: -0.235em;" alt="\( y \)" /> modulo <img src="fig/math/d87e6d0d6a9513640fdd6193cde8b6a3.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( m \)" />, multiplying these, and then taking the remainder of the result modulo <img src="fig/math/d87e6d0d6a9513640fdd6193cde8b6a3.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( m \)" />.  For instance, in the case where <img src="fig/math/debcc3e84db401938012afdc2ced88f1.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( e \)" /> is even, we compute the remainder of <img src="fig/math/074fefd2a5f678baa3f4dfd220035e99.svg" class="math-inline" style="height: 0.862em; vertical-align: -0.006em;" alt="\( b^{e / 2} \)" /> modulo <img src="fig/math/d87e6d0d6a9513640fdd6193cde8b6a3.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( m \)" />, square this, and take the remainder modulo <img src="fig/math/d87e6d0d6a9513640fdd6193cde8b6a3.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( m \)" />.  This technique is useful because it means we can perform our computation without ever having to deal with numbers much larger than <img src="fig/math/d87e6d0d6a9513640fdd6193cde8b6a3.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( m \)" />. (Compare <a href="#Exercise-1_002e25">Exercise 1.25</a>.)</p>
 </div>
 <div><p id="FOOT47" epub:type="footnote"><a class="footnote_backlink" href="#DOCF47"><sup>47</sup></a>
-<a id="Footnote-47"></a>Numbers
-that fool the Fermat test are called <a id="index-Carmichael-numbers"></a>
-<em>Carmichael numbers</em>, and little
-is known about them other than that they are extremely rare.  There are 255
-Carmichael numbers below 100,000,000.  The smallest few are 561, 1105, 1729,
-2465, 2821, and 6601.  In testing primality of very large numbers chosen at
-random, the chance of stumbling upon a value that fools the Fermat test is less
-than the chance that cosmic radiation will cause the computer to make an error
-in carrying out a “correct” algorithm.  Considering an algorithm to be
-inadequate for the first reason but not for the second illustrates the
-difference between mathematics and engineering.</p>
+<a id="Footnote-47"></a>Numbers that fool the Fermat test are called <a id="index-Carmichael-numbers"></a> <em>Carmichael numbers</em>, and little is known about them other than that they are extremely rare.  There are 255 Carmichael numbers below 100,000,000.  The smallest few are 561, 1105, 1729, 2465, 2821, and 6601.  In testing primality of very large numbers chosen at random, the chance of stumbling upon a value that fools the Fermat test is less than the chance that cosmic radiation will cause the computer to make an error in carrying out a “correct” algorithm.  Considering an algorithm to be inadequate for the first reason but not for the second illustrates the difference between mathematics and engineering.</p>
 </div>
 <div><p id="FOOT48" epub:type="footnote"><a class="footnote_backlink" href="#DOCF48"><sup>48</sup></a>
-One of the most striking
-applications of probabilistic prime testing has been to the field of
-cryptography.  Although it is now computationally infeasible to factor an
-arbitrary 200-digit number, the primality of such a number can be checked in a
-few seconds with the Fermat test.  This fact forms the basis of a technique for
-constructing “unbreakable codes” suggested by <a href="References.xhtml#Rivest-et-al_002e-_00281977_0029">Rivest et al. (1977)</a>.  
-The resulting <a id="index-RSA-algorithm"></a>
-<em>RSA algorithm</em> has become a widely used
-technique for enhancing the security of electronic communications.  Because of
-this and related developments, the study of prime numbers, once considered the
-epitome of a topic in “pure” mathematics to be studied only for its own sake,
-now turns out to have important practical applications to cryptography,
-electronic funds transfer, and information retrieval.</p>
+One of the most striking applications of probabilistic prime testing has been to the field of cryptography.  Although it is now computationally infeasible to factor an arbitrary 200-digit number, the primality of such a number can be checked in a few seconds with the Fermat test.  This fact forms the basis of a technique for constructing “unbreakable codes” suggested by <a href="References.xhtml#Rivest-et-al_002e-_00281977_0029">Rivest et al. (1977)</a>.   The resulting <a id="index-RSA-algorithm"></a> <em>RSA algorithm</em> has become a widely used technique for enhancing the security of electronic communications.  Because of this and related developments, the study of prime numbers, once considered the epitome of a topic in “pure” mathematics to be studied only for its own sake, now turns out to have important practical applications to cryptography, electronic funds transfer, and information retrieval.</p>
 </div>
 </div>
 <nav class="header">

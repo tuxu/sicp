@@ -1809,286 +1809,90 @@ that is spent in analysis versus execution for various procedures.
 <h4 class="footnotes-heading">Footnotes</h4>
 
 <div><p id="FOOT207" epub:type="footnote"><a class="footnote_backlink" href="#DOCF207"><sup>207</sup></a>
-Even so, there will remain
-important aspects of the evaluation process that are not elucidated by our
-evaluator.  The most important of these are the detailed mechanisms by which
-procedures call other procedures and return values to their callers.  We will
-address these issues in <a href="Chapter-5.xhtml#Chapter-5">Chapter 5</a>, where we take a closer look at the
-evaluation process by implementing the evaluator as a simple register machine.</p>
+Even so, there will remain important aspects of the evaluation process that are not elucidated by our evaluator.  The most important of these are the detailed mechanisms by which procedures call other procedures and return values to their callers.  We will address these issues in <a href="Chapter-5.xhtml#Chapter-5">Chapter 5</a>, where we take a closer look at the evaluation process by implementing the evaluator as a simple register machine.</p>
 </div>
 <div><p id="FOOT208" epub:type="footnote"><a class="footnote_backlink" href="#DOCF208"><sup>208</sup></a>
-If we grant ourselves the
-ability to apply primitives, then what remains for us to implement in the
-evaluator?  The job of the evaluator is not to specify the primitives of the
-language, but rather to provide the connective tissue—the means of
-combination and the means of abstraction—that binds a collection of
-primitives to form a language. Specifically:
-</p>
-<ul>
-<li> The evaluator enables us to deal with nested expressions.  For example,
-although simply applying primitives would suffice for evaluating the expression
-<code>(+ 1 6)</code>, it is not adequate for handling <code>(+ 1 (* 2 3))</code>.  As far
-as the primitive procedure <code>+</code> is concerned, its arguments must be
-numbers, and it would choke if we passed it the expression <code>(* 2 3)</code> as an
-argument.  One important role of the evaluator is to choreograph procedure
-composition so that <code>(* 2 3)</code> is reduced to 6 before being passed as an
-argument to <code>+</code>.
-
-</li><li> The evaluator allows us to use variables.  For example, the primitive procedure
-for addition has no way to deal with expressions such as <code>(+ x 1)</code>.  We
-need an evaluator to keep track of variables and obtain their values before
-invoking the primitive procedures.
-
-</li><li> The evaluator allows us to define compound procedures.  This involves keeping
-track of procedure definitions, knowing how to use these definitions in
-evaluating expressions, and providing a mechanism that enables procedures to
-accept arguments.
-
-</li><li> The evaluator provides the special forms, which must be evaluated differently
-from procedure calls.
-
-</li></ul>
-</div>
+If we grant ourselves the ability to apply primitives, then what remains for us to implement in the evaluator?  The job of the evaluator is not to specify the primitives of the language, but rather to provide the connective tissue—the means of combination and the means of abstraction—that binds a collection of primitives to form a language. Specifically: </p>
+<ul> <li> The evaluator enables us to deal with nested expressions.  For example, although simply applying primitives would suffice for evaluating the expression <code>(+ 1 6)</code>, it is not adequate for handling <code>(+ 1 (* 2 3))</code>.  As far as the primitive procedure <code>+</code> is concerned, its arguments must be numbers, and it would choke if we passed it the expression <code>(* 2 3)</code> as an argument.  One important role of the evaluator is to choreograph procedure composition so that <code>(* 2 3)</code> is reduced to 6 before being passed as an argument to <code>+</code>.  </li><li> The evaluator allows us to use variables.  For example, the primitive procedure for addition has no way to deal with expressions such as <code>(+ x 1)</code>.  We need an evaluator to keep track of variables and obtain their values before invoking the primitive procedures.  </li><li> The evaluator allows us to define compound procedures.  This involves keeping track of procedure definitions, knowing how to use these definitions in evaluating expressions, and providing a mechanism that enables procedures to accept arguments.  </li><li> The evaluator provides the special forms, which must be evaluated differently from procedure calls.  </li></ul> </div>
 <div><p id="FOOT209" epub:type="footnote"><a class="footnote_backlink" href="#DOCF209"><sup>209</sup></a>
-We could have simplified the <code>application?</code>
-clause in <code>eval</code> by using <code>map</code> (and stipulating that <code>operands</code>
-returns a list) rather than writing an explicit <code>list-of-values</code>
-procedure.  We chose not to use <code>map</code> here to emphasize the fact that the
-evaluator can be implemented without any use of higher-order procedures (and
-thus could be written in a language that doesn’t have higher-order procedures),
-even though the language that it supports will include higher-order
-procedures.</p>
+We could have simplified the <code>application?</code> clause in <code>eval</code> by using <code>map</code> (and stipulating that <code>operands</code> returns a list) rather than writing an explicit <code>list-of-values</code> procedure.  We chose not to use <code>map</code> here to emphasize the fact that the evaluator can be implemented without any use of higher-order procedures (and thus could be written in a language that doesn’t have higher-order procedures), even though the language that it supports will include higher-order procedures.</p>
 </div>
 <div><p id="FOOT210" epub:type="footnote"><a class="footnote_backlink" href="#DOCF210"><sup>210</sup></a>
-In this case, the language
-being implemented and the implementation language are the same.  Contemplation
-of the meaning of <code>true?</code> here yields expansion of consciousness without
-the abuse of substance.</p>
+In this case, the language being implemented and the implementation language are the same.  Contemplation of the meaning of <code>true?</code> here yields expansion of consciousness without the abuse of substance.</p>
 </div>
 <div><p id="FOOT211" epub:type="footnote"><a class="footnote_backlink" href="#DOCF211"><sup>211</sup></a>
-This
-implementation of <code>define</code> ignores a subtle issue in the handling of
-internal definitions, although it works correctly in most cases.  We will see
-what the problem is and how to solve it in <a href="#g_t4_002e1_002e6">4.1.6</a>.</p>
+This implementation of <code>define</code> ignores a subtle issue in the handling of internal definitions, although it works correctly in most cases.  We will see what the problem is and how to solve it in <a href="#g_t4_002e1_002e6">4.1.6</a>.</p>
 </div>
 <div><p id="FOOT212" epub:type="footnote"><a class="footnote_backlink" href="#DOCF212"><sup>212</sup></a>
-As we said when we introduced
-<code>define</code> and <code>set!</code>, these values are implementation-dependent in
-Scheme—that is, the implementor can choose what value to return.</p>
+As we said when we introduced <code>define</code> and <code>set!</code>, these values are implementation-dependent in Scheme—that is, the implementor can choose what value to return.</p>
 </div>
 <div><p id="FOOT213" epub:type="footnote"><a class="footnote_backlink" href="#DOCF213"><sup>213</sup></a>
-As
-mentioned in <a href="2_002e3.xhtml#g_t2_002e3_002e1">2.3.1</a>, the evaluator sees a quoted expression as a
-list beginning with <code>quote</code>, even if the expression is typed with the
-quotation mark.  For example, the expression <code>'a</code> would be seen by the
-evaluator as <code>(quote a)</code>.  See <a href="2_002e3.xhtml#Exercise-2_002e55">Exercise 2.55</a>.</p>
+As mentioned in <a href="2_002e3.xhtml#g_t2_002e3_002e1">2.3.1</a>, the evaluator sees a quoted expression as a list beginning with <code>quote</code>, even if the expression is typed with the quotation mark.  For example, the expression <code>'a</code> would be seen by the evaluator as <code>(quote a)</code>.  See <a href="2_002e3.xhtml#Exercise-2_002e55">Exercise 2.55</a>.</p>
 </div>
 <div><p id="FOOT214" epub:type="footnote"><a class="footnote_backlink" href="#DOCF214"><sup>214</sup></a>
-The value of an <code>if</code> expression
-when the predicate is false and there is no alternative is unspecified in
-Scheme; we have chosen here to make it false.  We will support the use of the
-variables <code>true</code> and <code>false</code> in expressions to be evaluated by
-binding them in the global environment.  See <a href="#g_t4_002e1_002e4">4.1.4</a>.</p>
+The value of an <code>if</code> expression when the predicate is false and there is no alternative is unspecified in Scheme; we have chosen here to make it false.  We will support the use of the variables <code>true</code> and <code>false</code> in expressions to be evaluated by binding them in the global environment.  See <a href="#g_t4_002e1_002e4">4.1.4</a>.</p>
 </div>
 <div><p id="FOOT215" epub:type="footnote"><a class="footnote_backlink" href="#DOCF215"><sup>215</sup></a>
-These selectors for a list of expressions—and the
-corresponding ones for a list of operands—are not intended as a data
-abstraction.  They are introduced as mnemonic names for the basic list
-operations in order to make it easier to understand the explicit-control
-evaluator in <a href="5_002e4.xhtml#g_t5_002e4">5.4</a>.</p>
+These selectors for a list of expressions—and the corresponding ones for a list of operands—are not intended as a data abstraction.  They are introduced as mnemonic names for the basic list operations in order to make it easier to understand the explicit-control evaluator in <a href="5_002e4.xhtml#g_t5_002e4">5.4</a>.</p>
 </div>
 <div><p id="FOOT216" epub:type="footnote"><a class="footnote_backlink" href="#DOCF216"><sup>216</sup></a>
-The
-value of a <code>cond</code> expression when all the predicates are false and there
-is no <code>else</code> clause is unspecified in Scheme; we have chosen here to make
-it false.</p>
+The value of a <code>cond</code> expression when all the predicates are false and there is no <code>else</code> clause is unspecified in Scheme; we have chosen here to make it false.</p>
 </div>
 <div><p id="FOOT217" epub:type="footnote"><a class="footnote_backlink" href="#DOCF217"><sup>217</sup></a>
-Practical Lisp systems provide a mechanism that allows a user
-to add new derived expressions and specify their implementation as syntactic
-transformations without modifying the evaluator.  Such a user-defined
-transformation is called a <a id="index-macro"></a>
-<em>macro</em>.  Although it is easy to add an
-elementary mechanism for defining macros, the resulting language has subtle
-name-conflict problems.  There has been much research on mechanisms for macro
-definition that do not cause these difficulties.  See, for example, <a href="References.xhtml#Kohlbecker-1986">Kohlbecker 1986</a>, 
-<a href="References.xhtml#Clinger-and-Rees-1991">Clinger and Rees 1991</a>, and <a href="References.xhtml#Hanson-1991">Hanson 1991</a>.</p>
+Practical Lisp systems provide a mechanism that allows a user to add new derived expressions and specify their implementation as syntactic transformations without modifying the evaluator.  Such a user-defined transformation is called a <a id="index-macro"></a> <em>macro</em>.  Although it is easy to add an elementary mechanism for defining macros, the resulting language has subtle name-conflict problems.  There has been much research on mechanisms for macro definition that do not cause these difficulties.  See, for example, <a href="References.xhtml#Kohlbecker-1986">Kohlbecker 1986</a>,  <a href="References.xhtml#Clinger-and-Rees-1991">Clinger and Rees 1991</a>, and <a href="References.xhtml#Hanson-1991">Hanson 1991</a>.</p>
 </div>
 <div><p id="FOOT218" epub:type="footnote"><a class="footnote_backlink" href="#DOCF218"><sup>218</sup></a>
-Frames are not really a data abstraction in the following
-code: <code>Set-variable-value!</code> and <code>define-variable!</code> use
-<code>set-car!</code>  to directly modify the values in a frame.  The purpose of the
-frame procedures is to make the environment-manipulation procedures easy to
-read.</p>
+Frames are not really a data abstraction in the following code: <code>Set-variable-value!</code> and <code>define-variable!</code> use <code>set-car!</code>  to directly modify the values in a frame.  The purpose of the frame procedures is to make the environment-manipulation procedures easy to read.</p>
 </div>
 <div><p id="FOOT219" epub:type="footnote"><a class="footnote_backlink" href="#DOCF219"><sup>219</sup></a>
-The drawback of this representation (as well as the
-variant in <a href="#Exercise-4_002e11">Exercise 4.11</a>) is that the evaluator may have to search
-through many frames in order to find the binding for a given variable.  (Such
-an approach is referred to as <a id="index-deep-binding"></a>
-<em>deep binding</em>.)  One way to avoid this
-inefficiency is to make use of a strategy called <a id="index-lexical-addressing"></a>
-<em>lexical addressing</em>,
-which will be discussed in <a href="5_002e5.xhtml#g_t5_002e5_002e6">5.5.6</a>.</p>
+The drawback of this representation (as well as the variant in <a href="#Exercise-4_002e11">Exercise 4.11</a>) is that the evaluator may have to search through many frames in order to find the binding for a given variable.  (Such an approach is referred to as <a id="index-deep-binding"></a> <em>deep binding</em>.)  One way to avoid this inefficiency is to make use of a strategy called <a id="index-lexical-addressing"></a> <em>lexical addressing</em>, which will be discussed in <a href="5_002e5.xhtml#g_t5_002e5_002e6">5.5.6</a>.</p>
 </div>
 <div><p id="FOOT220" epub:type="footnote"><a class="footnote_backlink" href="#DOCF220"><sup>220</sup></a>
-Any procedure defined in the underlying Lisp
-can be used as a primitive for the metacircular evaluator.  The name of a
-primitive installed in the evaluator need not be the same as the name of its
-implementation in the underlying Lisp; the names are the same here because the
-metacircular evaluator implements Scheme itself.  Thus, for example, we could
-put <code>(list 'first car)</code> or <code>(list 'square (lambda (x) (* x x)))</code> in
-the list of <code>primitive-procedures</code>.</p>
+Any procedure defined in the underlying Lisp can be used as a primitive for the metacircular evaluator.  The name of a primitive installed in the evaluator need not be the same as the name of its implementation in the underlying Lisp; the names are the same here because the metacircular evaluator implements Scheme itself.  Thus, for example, we could put <code>(list 'first car)</code> or <code>(list 'square (lambda (x) (* x x)))</code> in the list of <code>primitive-procedures</code>.</p>
 </div>
 <div><p id="FOOT221" epub:type="footnote"><a class="footnote_backlink" href="#DOCF221"><sup>221</sup></a>
-<code>Apply-in-underlying-scheme</code> is the <code>apply</code>
-procedure we have used in earlier chapters.  The metacircular evaluator’s
-<code>apply</code> procedure (<a href="#g_t4_002e1_002e1">4.1.1</a>) models the working of this
-primitive.  Having two different things called <code>apply</code> leads to a
-technical problem in running the metacircular evaluator, because defining the
-metacircular evaluator’s <code>apply</code> will mask the definition of the
-primitive.  One way around this is to rename the metacircular <code>apply</code> to
-avoid conflict with the name of the primitive procedure.  We have assumed
-instead that we have saved a reference to the underlying <code>apply</code> by doing
-</p>
-<div class="lisp">
-<pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">define</span><span class="pln"> apply-in-underlying-scheme apply</span><span class="clo">)</span></pre></div>
-
-<p>before defining the metacircular <code>apply</code>.  This allows us to access the
-original version of <code>apply</code> under a different name.</p>
+<code>Apply-in-underlying-scheme</code> is the <code>apply</code> procedure we have used in earlier chapters.  The metacircular evaluator’s <code>apply</code> procedure (<a href="#g_t4_002e1_002e1">4.1.1</a>) models the working of this primitive.  Having two different things called <code>apply</code> leads to a technical problem in running the metacircular evaluator, because defining the metacircular evaluator’s <code>apply</code> will mask the definition of the primitive.  One way around this is to rename the metacircular <code>apply</code> to avoid conflict with the name of the primitive procedure.  We have assumed instead that we have saved a reference to the underlying <code>apply</code> by doing </p>
+<div class="lisp"> <pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">define</span><span class="pln"> apply-in-underlying-scheme apply</span><span class="clo">)</span></pre></div> 
+<p>before defining the metacircular <code>apply</code>.  This allows us to access the original version of <code>apply</code> under a different name.</p>
 </div>
 <div><p id="FOOT222" epub:type="footnote"><a class="footnote_backlink" href="#DOCF222"><sup>222</sup></a>
-The
-primitive procedure <code>read</code> waits for input from the user, and returns the
-next complete expression that is typed.  For example, if the user types
-<code>(+ 23 x)</code>, <code>read</code> returns a three-element list containing the symbol
-<code>+</code>, the number 23, and the symbol <code>x</code>.  If the user types <code>'x</code>,
-<code>read</code> returns a two-element list containing the symbol <code>quote</code> and
-the symbol <code>x</code>.</p>
+The primitive procedure <code>read</code> waits for input from the user, and returns the next complete expression that is typed.  For example, if the user types <code>(+ 23 x)</code>, <code>read</code> returns a three-element list containing the symbol <code>+</code>, the number 23, and the symbol <code>x</code>.  If the user types <code>'x</code>, <code>read</code> returns a two-element list containing the symbol <code>quote</code> and the symbol <code>x</code>.</p>
 </div>
 <div><p id="FOOT223" epub:type="footnote"><a class="footnote_backlink" href="#DOCF223"><sup>223</sup></a>
-The fact that the machines are described in Lisp is
-inessential.  If we give our evaluator a Lisp program that behaves as an
-evaluator for some other language, say C, the Lisp evaluator will emulate the C
-evaluator, which in turn can emulate any machine described as a C program.
-Similarly, writing a Lisp evaluator in C produces a C program that can execute
-any Lisp program.  The deep idea here is that any evaluator can emulate any
-other.  Thus, the notion of “what can in principle be computed” (ignoring
-practicalities of time and memory required) is independent of the language or
-the computer, and instead reflects an underlying notion of
-<a id="index-computability"></a>
-<em>computability</em>.  This was first demonstrated in a clear way by Alan
-M. Turing (1912-1954), whose 1936 paper laid the foundations for theoretical
-computer science.  In the paper, Turing presented a simple computational
-model—now known as a <a id="index-Turing-machine"></a>
-<em>Turing machine</em>—and argued that any
-“effective process” can be formulated as a program for such a machine.  (This
-argument is known as the <a id="index-Church_002dTuring-thesis"></a>
-<em>Church-Turing thesis</em>.)  Turing then
-implemented a universal machine, i.e., a Turing machine that behaves as an
-evaluator for Turing-machine programs.  He used this framework to demonstrate
-that there are well-posed problems that cannot be computed by Turing machines
-(see <a href="#Exercise-4_002e15">Exercise 4.15</a>), and so by implication cannot be formulated as
-“effective processes.”  Turing went on to make fundamental contributions to
-practical computer science as well.  For example, he invented the idea of
-structuring programs using general-purpose subroutines.  See <a href="References.xhtml#Hodges-1983">Hodges 1983</a> for a
-biography of Turing.</p>
+The fact that the machines are described in Lisp is inessential.  If we give our evaluator a Lisp program that behaves as an evaluator for some other language, say C, the Lisp evaluator will emulate the C evaluator, which in turn can emulate any machine described as a C program. Similarly, writing a Lisp evaluator in C produces a C program that can execute any Lisp program.  The deep idea here is that any evaluator can emulate any other.  Thus, the notion of “what can in principle be computed” (ignoring practicalities of time and memory required) is independent of the language or the computer, and instead reflects an underlying notion of <a id="index-computability"></a> <em>computability</em>.  This was first demonstrated in a clear way by Alan M. Turing (1912-1954), whose 1936 paper laid the foundations for theoretical computer science.  In the paper, Turing presented a simple computational model—now known as a <a id="index-Turing-machine"></a> <em>Turing machine</em>—and argued that any “effective process” can be formulated as a program for such a machine.  (This argument is known as the <a id="index-Church_002dTuring-thesis"></a> <em>Church-Turing thesis</em>.)  Turing then implemented a universal machine, i.e., a Turing machine that behaves as an evaluator for Turing-machine programs.  He used this framework to demonstrate that there are well-posed problems that cannot be computed by Turing machines (see <a href="#Exercise-4_002e15">Exercise 4.15</a>), and so by implication cannot be formulated as “effective processes.”  Turing went on to make fundamental contributions to practical computer science as well.  For example, he invented the idea of structuring programs using general-purpose subroutines.  See <a href="References.xhtml#Hodges-1983">Hodges 1983</a> for a biography of Turing.</p>
 </div>
 <div><p id="FOOT224" epub:type="footnote"><a class="footnote_backlink" href="#DOCF224"><sup>224</sup></a>
-Some people find it counterintuitive that an evaluator, which
-is implemented by a relatively simple procedure, can emulate programs that are
-more complex than the evaluator itself.  The existence of a universal evaluator
-machine is a deep and wonderful property of computation.  <a id="index-Recursion-theory"></a>
-<em>Recursion theory</em>, 
-a branch of mathematical logic, is concerned with logical limits of
-computation.  Douglas Hofstadter’s beautiful book <cite>Gödel, Escher, Bach</cite>
-explores some of these ideas (<a href="References.xhtml#Hofstadter-1979">Hofstadter 1979</a>).</p>
+Some people find it counterintuitive that an evaluator, which is implemented by a relatively simple procedure, can emulate programs that are more complex than the evaluator itself.  The existence of a universal evaluator machine is a deep and wonderful property of computation.  <a id="index-Recursion-theory"></a> <em>Recursion theory</em>,  a branch of mathematical logic, is concerned with logical limits of computation.  Douglas Hofstadter’s beautiful book <cite>Gödel, Escher, Bach</cite> explores some of these ideas (<a href="References.xhtml#Hofstadter-1979">Hofstadter 1979</a>).</p>
 </div>
 <div><p id="FOOT225" epub:type="footnote"><a class="footnote_backlink" href="#DOCF225"><sup>225</sup></a>
-Warning: This <code>eval</code> primitive is not identical to
-the <code>eval</code> procedure we implemented in <a href="#g_t4_002e1_002e1">4.1.1</a>, because it
-uses <em>actual</em> Scheme environments rather than the sample environment
-structures we built in <a href="#g_t4_002e1_002e3">4.1.3</a>.  These actual environments cannot
-be manipulated by the user as ordinary lists; they must be accessed via
-<code>eval</code> or other special operations.  Similarly, the <code>apply</code> primitive
-we saw earlier is not identical to the metacircular <code>apply</code>, because it
-uses actual Scheme procedures rather than the procedure objects we constructed
-in <a href="#g_t4_002e1_002e3">4.1.3</a> and <a href="#g_t4_002e1_002e4">4.1.4</a>.</p>
+Warning: This <code>eval</code> primitive is not identical to the <code>eval</code> procedure we implemented in <a href="#g_t4_002e1_002e1">4.1.1</a>, because it uses <em>actual</em> Scheme environments rather than the sample environment structures we built in <a href="#g_t4_002e1_002e3">4.1.3</a>.  These actual environments cannot be manipulated by the user as ordinary lists; they must be accessed via <code>eval</code> or other special operations.  Similarly, the <code>apply</code> primitive we saw earlier is not identical to the metacircular <code>apply</code>, because it uses actual Scheme procedures rather than the procedure objects we constructed in <a href="#g_t4_002e1_002e3">4.1.3</a> and <a href="#g_t4_002e1_002e4">4.1.4</a>.</p>
 </div>
 <div><p id="FOOT226" epub:type="footnote"><a class="footnote_backlink" href="#DOCF226"><sup>226</sup></a>
-The <abbr>MIT</abbr> implementation of Scheme
-includes <code>eval</code>, as well as a symbol <code>user-initial-environment</code> that
-is bound to the initial environment in which the user’s input expressions are
-evaluated.</p>
+The <abbr>MIT</abbr> implementation of Scheme includes <code>eval</code>, as well as a symbol <code>user-initial-environment</code> that is bound to the initial environment in which the user’s input expressions are evaluated.</p>
 </div>
 <div><p id="FOOT227" epub:type="footnote"><a class="footnote_backlink" href="#DOCF227"><sup>227</sup></a>
-Although we stipulated that <code>halts?</code>
-is given a procedure object, notice that this reasoning still applies even if
-<code>halts?</code> can gain access to the procedure’s text and its environment.
-This is Turing’s celebrated <a id="index-Halting-Theorem"></a>
-<em>Halting Theorem</em>, which gave the first
-clear example of a <a id="index-non_002dcomputable"></a>
-<em>non-computable</em> problem, i.e., a well-posed task
-that cannot be carried out as a computational procedure.</p>
+Although we stipulated that <code>halts?</code> is given a procedure object, notice that this reasoning still applies even if <code>halts?</code> can gain access to the procedure’s text and its environment. This is Turing’s celebrated <a id="index-Halting-Theorem"></a> <em>Halting Theorem</em>, which gave the first clear example of a <a id="index-non_002dcomputable"></a> <em>non-computable</em> problem, i.e., a well-posed task that cannot be carried out as a computational procedure.</p>
 </div>
 <div><p id="FOOT228" epub:type="footnote"><a class="footnote_backlink" href="#DOCF228"><sup>228</sup></a>
-Wanting programs
-to not depend on this evaluation mechanism is the reason for the “management
-is not responsible” remark in <a href="1_002e1.xhtml#Footnote-28">Footnote 28</a> of <a href="Chapter-1.xhtml#Chapter-1">Chapter 1</a>.  By
-insisting that internal definitions come first and do not use each other while
-the definitions are being evaluated, the <abbr>IEEE</abbr> standard for Scheme
-leaves implementors some choice in the mechanism used to evaluate these
-definitions.  The choice of one evaluation rule rather than another here may
-seem like a small issue, affecting only the interpretation of “badly formed”
-programs.  However, we will see in <a href="5_002e5.xhtml#g_t5_002e5_002e6">5.5.6</a> that moving to a model
-of simultaneous scoping for internal definitions avoids some nasty difficulties
-that would otherwise arise in implementing a compiler.</p>
+Wanting programs to not depend on this evaluation mechanism is the reason for the “management is not responsible” remark in <a href="1_002e1.xhtml#Footnote-28">Footnote 28</a> of <a href="Chapter-1.xhtml#Chapter-1">Chapter 1</a>.  By insisting that internal definitions come first and do not use each other while the definitions are being evaluated, the <abbr>IEEE</abbr> standard for Scheme leaves implementors some choice in the mechanism used to evaluate these definitions.  The choice of one evaluation rule rather than another here may seem like a small issue, affecting only the interpretation of “badly formed” programs.  However, we will see in <a href="5_002e5.xhtml#g_t5_002e5_002e6">5.5.6</a> that moving to a model of simultaneous scoping for internal definitions avoids some nasty difficulties that would otherwise arise in implementing a compiler.</p>
 </div>
 <div><p id="FOOT229" epub:type="footnote"><a class="footnote_backlink" href="#DOCF229"><sup>229</sup></a>
-The <abbr>IEEE</abbr> standard for Scheme
-allows for different implementation strategies by specifying that it is up to
-the programmer to obey this restriction, not up to the implementation to
-enforce it.  Some Scheme implementations, including <abbr>MIT</abbr> Scheme, use
-the transformation shown above.  Thus, some programs that don’t obey this
-restriction will in fact run in such implementations.</p>
+The <abbr>IEEE</abbr> standard for Scheme allows for different implementation strategies by specifying that it is up to the programmer to obey this restriction, not up to the implementation to enforce it.  Some Scheme implementations, including <abbr>MIT</abbr> Scheme, use the transformation shown above.  Thus, some programs that don’t obey this restriction will in fact run in such implementations.</p>
 </div>
 <div><p id="FOOT230" epub:type="footnote"><a class="footnote_backlink" href="#DOCF230"><sup>230</sup></a>
-The <abbr>MIT</abbr>
-implementors of Scheme support Alyssa on the following grounds: Eva is in
-principle correct—the definitions should be regarded as simultaneous.  But
-it seems difficult to implement a general, efficient mechanism that does what
-Eva requires.  In the absence of such a mechanism, it is better to generate an
-error in the difficult cases of simultaneous definitions (Alyssa’s notion) than
-to produce an incorrect answer (as Ben would have it).</p>
+The <abbr>MIT</abbr> implementors of Scheme support Alyssa on the following grounds: Eva is in principle correct—the definitions should be regarded as simultaneous.  But it seems difficult to implement a general, efficient mechanism that does what Eva requires.  In the absence of such a mechanism, it is better to generate an error in the difficult cases of simultaneous definitions (Alyssa’s notion) than to produce an incorrect answer (as Ben would have it).</p>
 </div>
 <div><p id="FOOT231" epub:type="footnote"><a class="footnote_backlink" href="#DOCF231"><sup>231</sup></a>
-This example illustrates a programming trick for
-formulating recursive procedures without using <code>define</code>.  The most general
-trick of this sort is the <img src="fig/math/e4262a87f8871ebce3cb99ff25f06e73.svg" class="math-inline" style="height: 0.645em;" alt="\( Y \)" /> <a id="index-operator-1"></a>
-<em>operator</em>, which can be used to give a
-“pure λ-calculus” implementation of recursion.  (See <a href="References.xhtml#Stoy-1977">Stoy 1977</a> for
-details on the λ-calculus, and <a href="References.xhtml#Gabriel-1988">Gabriel 1988</a> for an exposition of the
-<img src="fig/math/e4262a87f8871ebce3cb99ff25f06e73.svg" class="math-inline" style="height: 0.645em;" alt="\( Y \)" /> operator in Scheme.)</p>
+This example illustrates a programming trick for formulating recursive procedures without using <code>define</code>.  The most general trick of this sort is the <img src="fig/math/e4262a87f8871ebce3cb99ff25f06e73.svg" class="math-inline" style="height: 0.645em;" alt="\( Y \)" /> <a id="index-operator-1"></a> <em>operator</em>, which can be used to give a “pure λ-calculus” implementation of recursion.  (See <a href="References.xhtml#Stoy-1977">Stoy 1977</a> for details on the λ-calculus, and <a href="References.xhtml#Gabriel-1988">Gabriel 1988</a> for an exposition of the <img src="fig/math/e4262a87f8871ebce3cb99ff25f06e73.svg" class="math-inline" style="height: 0.645em;" alt="\( Y \)" /> operator in Scheme.)</p>
 </div>
 <div><p id="FOOT232" epub:type="footnote"><a class="footnote_backlink" href="#DOCF232"><sup>232</sup></a>
-This
-technique is an integral part of the compilation process, which we shall
-discuss in <a href="Chapter-5.xhtml#Chapter-5">Chapter 5</a>.  Jonathan Rees wrote a Scheme interpreter like this
-in about 1982 for the T project (<a href="References.xhtml#Rees-and-Adams-1982">Rees and Adams 1982</a>).  Marc <a href="References.xhtml#Feeley-_00281986_0029">Feeley (1986)</a> (see
-also <a href="References.xhtml#Feeley-and-Lapalme-1987">Feeley and Lapalme 1987</a>) independently invented this technique in his
-master’s thesis.</p>
+This technique is an integral part of the compilation process, which we shall discuss in <a href="Chapter-5.xhtml#Chapter-5">Chapter 5</a>.  Jonathan Rees wrote a Scheme interpreter like this in about 1982 for the T project (<a href="References.xhtml#Rees-and-Adams-1982">Rees and Adams 1982</a>).  Marc <a href="References.xhtml#Feeley-_00281986_0029">Feeley (1986)</a> (see also <a href="References.xhtml#Feeley-and-Lapalme-1987">Feeley and Lapalme 1987</a>) independently invented this technique in his master’s thesis.</p>
 </div>
 <div><p id="FOOT233" epub:type="footnote"><a class="footnote_backlink" href="#DOCF233"><sup>233</sup></a>
-There is, however, an
-important part of the variable search that <em>can</em> be done as part of the
-syntactic analysis.  As we will show in <a href="5_002e5.xhtml#g_t5_002e5_002e6">5.5.6</a>, one can determine
-the position in the environment structure where the value of the variable will
-be found, thus obviating the need to scan the environment for the entry that
-matches the variable.</p>
+There is, however, an important part of the variable search that <em>can</em> be done as part of the syntactic analysis.  As we will show in <a href="5_002e5.xhtml#g_t5_002e5_002e6">5.5.6</a>, one can determine the position in the environment structure where the value of the variable will be found, thus obviating the need to scan the environment for the entry that matches the variable.</p>
 </div>
 <div><p id="FOOT234" epub:type="footnote"><a class="footnote_backlink" href="#DOCF234"><sup>234</sup></a>
-See <a href="#Exercise-4_002e23">Exercise 4.23</a>
-for some insight into the processing of sequences.</p>
+See <a href="#Exercise-4_002e23">Exercise 4.23</a> for some insight into the processing of sequences.</p>
 </div>
 </div>
 <nav class="header">

@@ -2405,74 +2405,26 @@ into sequences of C instructions.  Compile the metacircular evaluator of
 <h4 class="footnotes-heading">Footnotes</h4>
 
 <div><p id="FOOT318" epub:type="footnote"><a class="footnote_backlink" href="#DOCF318"><sup>318</sup></a>
-This is a theoretical statement.  We are not claiming that
-the evaluator’s data paths are a particularly convenient or efficient set of
-data paths for a general-purpose computer.  For example, they are not very good
-for implementing high-performance floating-point calculations or calculations
-that intensively manipulate bit vectors.</p>
+This is a theoretical statement.  We are not claiming that the evaluator’s data paths are a particularly convenient or efficient set of data paths for a general-purpose computer.  For example, they are not very good for implementing high-performance floating-point calculations or calculations that intensively manipulate bit vectors.</p>
 </div>
 <div><p id="FOOT319" epub:type="footnote"><a class="footnote_backlink" href="#DOCF319"><sup>319</sup></a>
-Actually, the machine that runs compiled code can be simpler
-than the interpreter machine, because we won’t use the <code>exp</code> and
-<code>unev</code> registers.  The interpreter used these to hold pieces of
-unevaluated expressions.  With the compiler, however, these expressions get
-built into the compiled code that the register machine will run.  For the same
-reason, we don’t need the machine operations that deal with expression syntax.
-But compiled code will use a few additional machine operations (to represent
-compiled procedure objects) that didn’t appear in the explicit-control
-evaluator machine.</p>
+Actually, the machine that runs compiled code can be simpler than the interpreter machine, because we won’t use the <code>exp</code> and <code>unev</code> registers.  The interpreter used these to hold pieces of unevaluated expressions.  With the compiler, however, these expressions get built into the compiled code that the register machine will run.  For the same reason, we don’t need the machine operations that deal with expression syntax. But compiled code will use a few additional machine operations (to represent compiled procedure objects) that didn’t appear in the explicit-control evaluator machine.</p>
 </div>
 <div><p id="FOOT320" epub:type="footnote"><a class="footnote_backlink" href="#DOCF320"><sup>320</sup></a>
-Notice, however, that our compiler is a Scheme
-program, and the syntax procedures that it uses to manipulate expressions are
-the actual Scheme procedures used with the metacircular evaluator.  For the
-explicit-control evaluator, in contrast, we assumed that equivalent syntax
-operations were available as operations for the register machine.  (Of course,
-when we simulated the register machine in Scheme, we used the actual Scheme
-procedures in our register machine simulation.)</p>
+Notice, however, that our compiler is a Scheme program, and the syntax procedures that it uses to manipulate expressions are the actual Scheme procedures used with the metacircular evaluator.  For the explicit-control evaluator, in contrast, we assumed that equivalent syntax operations were available as operations for the register machine.  (Of course, when we simulated the register machine in Scheme, we used the actual Scheme procedures in our register machine simulation.)</p>
 </div>
 <div><p id="FOOT321" epub:type="footnote"><a class="footnote_backlink" href="#DOCF321"><sup>321</sup></a>
-This procedure
-uses a feature of Lisp called <a id="index-backquote"></a>
-<em>backquote</em> (or <a id="index-quasiquote"></a>
-<em>quasiquote</em>)
-that is handy for constructing lists.  Preceding a list with a backquote symbol
-is much like quoting it, except that anything in the list that is flagged with
-a comma is evaluated.
-</p>
-<p>For example, if the value of <code>linkage</code> is the symbol <code>branch25</code>,
-then the expression 
-</p>
-<div class="lisp">
-<pre class="lisp prettyprinted" style=""><span class="pun">`</span><span class="opn">((</span><span class="pln">goto </span><span class="opn">(</span><span class="pln">label </span><span class="pun">,</span><span class="pln">linkage</span><span class="clo">)))</span></pre></div>
-
-<p>evaluates to the list 
-</p>	
-<div class="lisp">
-<pre class="lisp prettyprinted" style=""><span class="opn">((</span><span class="pln">goto </span><span class="opn">(</span><span class="pln">label branch25</span><span class="clo">)))</span><span class="pln"> </span></pre></div>
-
-<p>Similarly, if the value of <code>x</code> is the list <code>(a b c)</code>, then 
-</p>
-<div class="lisp">
-<pre class="lisp prettyprinted" style=""><span class="pun">`</span><span class="opn">(</span><span class="lit">1</span><span class="pln"> </span><span class="lit">2</span><span class="pln"> </span><span class="pun">,</span><span class="opn">(</span><span class="kwd">car</span><span class="pln"> x</span><span class="clo">))</span><span class="pln"> </span></pre></div>
-
-<p>evaluates to the list 
-</p>
-<div class="lisp">
-<pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="lit">1</span><span class="pln"> </span><span class="lit">2</span><span class="pln"> a</span><span class="clo">)</span></pre></div>
-</div>
+This procedure uses a feature of Lisp called <a id="index-backquote"></a> <em>backquote</em> (or <a id="index-quasiquote"></a> <em>quasiquote</em>) that is handy for constructing lists.  Preceding a list with a backquote symbol is much like quoting it, except that anything in the list that is flagged with a comma is evaluated. </p>
+<p>For example, if the value of <code>linkage</code> is the symbol <code>branch25</code>, then the expression  </p>
+<div class="lisp"> <pre class="lisp prettyprinted" style=""><span class="pun">`</span><span class="opn">((</span><span class="pln">goto </span><span class="opn">(</span><span class="pln">label </span><span class="pun">,</span><span class="pln">linkage</span><span class="clo">)))</span></pre></div> 
+<p>evaluates to the list  </p>	 <div class="lisp"> <pre class="lisp prettyprinted" style=""><span class="opn">((</span><span class="pln">goto </span><span class="opn">(</span><span class="pln">label branch25</span><span class="clo">)))</span><span class="pln"> </span></pre></div> 
+<p>Similarly, if the value of <code>x</code> is the list <code>(a b c)</code>, then  </p>
+<div class="lisp"> <pre class="lisp prettyprinted" style=""><span class="pun">`</span><span class="opn">(</span><span class="lit">1</span><span class="pln"> </span><span class="lit">2</span><span class="pln"> </span><span class="pun">,</span><span class="opn">(</span><span class="kwd">car</span><span class="pln"> x</span><span class="clo">))</span><span class="pln"> </span></pre></div> 
+<p>evaluates to the list  </p>
+<div class="lisp"> <pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="lit">1</span><span class="pln"> </span><span class="lit">2</span><span class="pln"> a</span><span class="clo">)</span></pre></div> </div>
 <div><p id="FOOT322" epub:type="footnote"><a class="footnote_backlink" href="#DOCF322"><sup>322</sup></a>
-We can’t just use the labels <code>true-branch</code>,
-<code>false-branch</code>, and <code>after-if</code> as shown above, because there might be
-more than one <code>if</code> in the program.  The compiler uses the procedure
-<code>make-label</code> to generate labels.  <code>Make-label</code> takes a symbol as
-argument and returns a new symbol that begins with the given symbol.  For
-example, successive calls to <code>(make-label 'a)</code> would return <code>a1</code>,
-<code>a2</code>, and so on.  <code>Make-label</code> can be implemented similarly to the
-generation of unique variable names in the query language, as follows:
-</p>
-<div class="lisp">
-<pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">define</span><span class="pln"> label-counter </span><span class="lit">0</span><span class="clo">)</span><span class="pln">
+We can’t just use the labels <code>true-branch</code>, <code>false-branch</code>, and <code>after-if</code> as shown above, because there might be more than one <code>if</code> in the program.  The compiler uses the procedure <code>make-label</code> to generate labels.  <code>Make-label</code> takes a symbol as argument and returns a new symbol that begins with the given symbol.  For example, successive calls to <code>(make-label 'a)</code> would return <code>a1</code>, <code>a2</code>, and so on.  <code>Make-label</code> can be implemented similarly to the generation of unique variable names in the query language, as follows: </p>
+<div class="lisp"> <pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">define</span><span class="pln"> label-counter </span><span class="lit">0</span><span class="clo">)</span><span class="pln">
 
 </span><span class="opn">(</span><span class="kwd">define</span><span class="pln"> </span><span class="opn">(</span><span class="pln">new-label-number</span><span class="clo">)</span><span class="pln">
   </span><span class="opn">(</span><span class="kwd">set</span><span class="pun">!</span><span class="pln"> label-counter </span><span class="opn">(</span><span class="pun">+</span><span class="pln"> </span><span class="lit">1</span><span class="pln"> label-counter</span><span class="clo">))</span><span class="pln">
@@ -2482,121 +2434,57 @@ generation of unique variable names in the query language, as follows:
   </span><span class="opn">(</span><span class="pln">string-</span><span class="pun">&gt;</span><span class="pln">symbol
    </span><span class="opn">(</span><span class="pln">string-append 
     </span><span class="opn">(</span><span class="pln">symbol-</span><span class="pun">&gt;</span><span class="pln">string name</span><span class="clo">)</span><span class="pln">
-    </span><span class="opn">(</span><span class="pln">number-</span><span class="pun">&gt;</span><span class="pln">string </span><span class="opn">(</span><span class="pln">new-label-number</span><span class="clo">)))))</span></pre></div>
-</div>
+    </span><span class="opn">(</span><span class="pln">number-</span><span class="pun">&gt;</span><span class="pln">string </span><span class="opn">(</span><span class="pln">new-label-number</span><span class="clo">)))))</span></pre></div> </div>
 <div><p id="FOOT323" epub:type="footnote"><a class="footnote_backlink" href="#DOCF323"><sup>323</sup></a>
-<a id="Footnote-323"></a>We need
-machine operations to implement a data structure for representing compiled
-procedures, analogous to the structure for compound procedures described in
-<a href="4_002e1.xhtml#g_t4_002e1_002e3">4.1.3</a>:
-</p>
-<div class="lisp">
-<pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">define</span><span class="pln"> </span><span class="opn">(</span><span class="pln">make-compiled-procedure entry env</span><span class="clo">)</span><span class="pln">
+<a id="Footnote-323"></a>We need machine operations to implement a data structure for representing compiled procedures, analogous to the structure for compound procedures described in <a href="4_002e1.xhtml#g_t4_002e1_002e3">4.1.3</a>: </p>
+<div class="lisp"> <pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">define</span><span class="pln"> </span><span class="opn">(</span><span class="pln">make-compiled-procedure entry env</span><span class="clo">)</span><span class="pln">
   </span><span class="opn">(</span><span class="pln">list </span><span class="lit">'compiled-procedure</span><span class="pln"> entry env</span><span class="clo">))</span><span class="pln">
 </span><span class="opn">(</span><span class="kwd">define</span><span class="pln"> </span><span class="opn">(</span><span class="pln">compiled-procedure? proc</span><span class="clo">)</span><span class="pln">
   </span><span class="opn">(</span><span class="pln">tagged-list? proc </span><span class="lit">'compiled-procedure</span><span class="clo">))</span><span class="pln">
 </span><span class="opn">(</span><span class="kwd">define</span><span class="pln"> </span><span class="opn">(</span><span class="pln">compiled-procedure-entry c-proc</span><span class="clo">)</span><span class="pln"> 
   </span><span class="opn">(</span><span class="kwd">cadr</span><span class="pln"> c-proc</span><span class="clo">))</span><span class="pln">
 </span><span class="opn">(</span><span class="kwd">define</span><span class="pln"> </span><span class="opn">(</span><span class="pln">compiled-procedure-env c-proc</span><span class="clo">)</span><span class="pln">
-  </span><span class="opn">(</span><span class="kwd">caddr</span><span class="pln"> c-proc</span><span class="clo">))</span></pre></div>
-</div>
+  </span><span class="opn">(</span><span class="kwd">caddr</span><span class="pln"> c-proc</span><span class="clo">))</span></pre></div> </div>
 <div><p id="FOOT324" epub:type="footnote"><a class="footnote_backlink" href="#DOCF324"><sup>324</sup></a>
-Actually, we signal an error when the target is not
-<code>val</code> and the linkage is <code>return</code>, since the only place we request
-<code>return</code> linkages is in compiling procedures, and our convention is that
-procedures return their values in <code>val</code>.</p>
+Actually, we signal an error when the target is not <code>val</code> and the linkage is <code>return</code>, since the only place we request <code>return</code> linkages is in compiling procedures, and our convention is that procedures return their values in <code>val</code>.</p>
 </div>
 <div><p id="FOOT325" epub:type="footnote"><a class="footnote_backlink" href="#DOCF325"><sup>325</sup></a>
-Making a compiler generate tail-recursive code might seem like
-a straightforward idea.  But most compilers for common languages, including C
-and Pascal, do not do this, and therefore these languages cannot represent
-iterative processes in terms of procedure call alone.  The difficulty with tail
-recursion in these languages is that their implementations use the stack to
-store procedure arguments and local variables as well as return addresses.  The
-Scheme implementations described in this book store arguments and variables in
-memory to be garbage-collected.  The reason for using the stack for variables
-and arguments is that it avoids the need for garbage collection in languages
-that would not otherwise require it, and is generally believed to be more
-efficient.  Sophisticated Lisp compilers can, in fact, use the stack for
-arguments without destroying tail recursion.  (See <a href="References.xhtml#Hanson-1990">Hanson 1990</a> for a
-description.)  There is also some debate about whether stack allocation is
-actually more efficient than garbage collection in the first place, but the
-details seem to hinge on fine points of computer architecture.  (See <a href="References.xhtml#Appel-1987">Appel 1987</a>
-and <a href="References.xhtml#Miller-and-Rozas-1994">Miller and Rozas 1994</a> for opposing views on this issue.)</p>
+Making a compiler generate tail-recursive code might seem like a straightforward idea.  But most compilers for common languages, including C and Pascal, do not do this, and therefore these languages cannot represent iterative processes in terms of procedure call alone.  The difficulty with tail recursion in these languages is that their implementations use the stack to store procedure arguments and local variables as well as return addresses.  The Scheme implementations described in this book store arguments and variables in memory to be garbage-collected.  The reason for using the stack for variables and arguments is that it avoids the need for garbage collection in languages that would not otherwise require it, and is generally believed to be more efficient.  Sophisticated Lisp compilers can, in fact, use the stack for arguments without destroying tail recursion.  (See <a href="References.xhtml#Hanson-1990">Hanson 1990</a> for a description.)  There is also some debate about whether stack allocation is actually more efficient than garbage collection in the first place, but the details seem to hinge on fine points of computer architecture.  (See <a href="References.xhtml#Appel-1987">Appel 1987</a> and <a href="References.xhtml#Miller-and-Rozas-1994">Miller and Rozas 1994</a> for opposing views on this issue.)</p>
 </div>
 <div><p id="FOOT326" epub:type="footnote"><a class="footnote_backlink" href="#DOCF326"><sup>326</sup></a>
-The
-variable <code>all-regs</code> is bound to the list of names of all the registers:
-</p>
-<div class="lisp">
-<pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">define</span><span class="pln"> all-regs </span><span class="lit">'</span><span class="opn">(</span><span class="pln">env proc val argl continue</span><span class="clo">))</span></pre></div>
-</div>
+The variable <code>all-regs</code> is bound to the list of names of all the registers: </p>
+<div class="lisp"> <pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">define</span><span class="pln"> all-regs </span><span class="lit">'</span><span class="opn">(</span><span class="pln">env proc val argl continue</span><span class="clo">))</span></pre></div> </div>
 <div><p id="FOOT327" epub:type="footnote"><a class="footnote_backlink" href="#DOCF327"><sup>327</sup></a>
-Note that <code>preserving</code> calls
-<code>append</code> with three arguments.  Though the definition of <code>append</code>
-shown in this book accepts only two arguments, Scheme standardly provides an
-<code>append</code> procedure that takes an arbitrary number of arguments.</p>
+Note that <code>preserving</code> calls <code>append</code> with three arguments.  Though the definition of <code>append</code> shown in this book accepts only two arguments, Scheme standardly provides an <code>append</code> procedure that takes an arbitrary number of arguments.</p>
 </div>
 <div><p id="FOOT328" epub:type="footnote"><a class="footnote_backlink" href="#DOCF328"><sup>328</sup></a>
-We have used the same symbol
-<code>+</code> here to denote both the source-language procedure and the machine
-operation.  In general there will not be a one-to-one correspondence between
-primitives of the source language and primitives of the machine.</p>
+We have used the same symbol <code>+</code> here to denote both the source-language procedure and the machine operation.  In general there will not be a one-to-one correspondence between primitives of the source language and primitives of the machine.</p>
 </div>
 <div><p id="FOOT329" epub:type="footnote"><a class="footnote_backlink" href="#DOCF329"><sup>329</sup></a>
-Making the primitives into reserved words is in general a
-bad idea, since a user cannot then rebind these names to different procedures.
-Moreover, if we add reserved words to a compiler that is in use, existing
-programs that define procedures with these names will stop working.  See
-<a href="#Exercise-5_002e44">Exercise 5.44</a> for ideas on how to avoid this problem.</p>
+Making the primitives into reserved words is in general a bad idea, since a user cannot then rebind these names to different procedures. Moreover, if we add reserved words to a compiler that is in use, existing programs that define procedures with these names will stop working.  See <a href="#Exercise-5_002e44">Exercise 5.44</a> for ideas on how to avoid this problem.</p>
 </div>
 <div><p id="FOOT330" epub:type="footnote"><a class="footnote_backlink" href="#DOCF330"><sup>330</sup></a>
-This is not true if we allow internal
-definitions, unless we scan them out.  See <a href="#Exercise-5_002e43">Exercise 5.43</a>.  </p>
+This is not true if we allow internal definitions, unless we scan them out.  See <a href="#Exercise-5_002e43">Exercise 5.43</a>.  </p>
 </div>
 <div><p id="FOOT331" epub:type="footnote"><a class="footnote_backlink" href="#DOCF331"><sup>331</sup></a>
-This is the modification
-to variable lookup required if we implement the scanning method to eliminate
-internal definitions (<a href="#Exercise-5_002e43">Exercise 5.43</a>).  We will need to eliminate these
-definitions in order for lexical addressing to work.</p>
+This is the modification to variable lookup required if we implement the scanning method to eliminate internal definitions (<a href="#Exercise-5_002e43">Exercise 5.43</a>).  We will need to eliminate these definitions in order for lexical addressing to work.</p>
 </div>
 <div><p id="FOOT332" epub:type="footnote"><a class="footnote_backlink" href="#DOCF332"><sup>332</sup></a>
-Lexical addresses cannot be used to
-access variables in the global environment, because these names can be defined
-and redefined interactively at any time.  With internal definitions scanned
-out, as in <a href="#Exercise-5_002e43">Exercise 5.43</a>, the only definitions the compiler sees are
-those at top level, which act on the global environment.  Compilation of a
-definition does not cause the defined name to be entered in the compile-time
-environment.</p>
+Lexical addresses cannot be used to access variables in the global environment, because these names can be defined and redefined interactively at any time.  With internal definitions scanned out, as in <a href="#Exercise-5_002e43">Exercise 5.43</a>, the only definitions the compiler sees are those at top level, which act on the global environment.  Compilation of a definition does not cause the defined name to be entered in the compile-time environment.</p>
 </div>
 <div><p id="FOOT333" epub:type="footnote"><a class="footnote_backlink" href="#DOCF333"><sup>333</sup></a>
-Of course,
-compiled procedures as well as interpreted procedures are compound
-(nonprimitive).  For compatibility with the terminology used in the
-explicit-control evaluator, in this section we will use “compound” to mean
-interpreted (as opposed to compiled).</p>
+Of course, compiled procedures as well as interpreted procedures are compound (nonprimitive).  For compatibility with the terminology used in the explicit-control evaluator, in this section we will use “compound” to mean interpreted (as opposed to compiled).</p>
 </div>
 <div><p id="FOOT334" epub:type="footnote"><a class="footnote_backlink" href="#DOCF334"><sup>334</sup></a>
-Now that the evaluator machine starts with a <code>branch</code>, we
-must always initialize the <code>flag</code> register before starting the evaluator
-machine.  To start the machine at its ordinary read-eval-print loop, we could
-use
-</p>
-<div class="lisp">
-<pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">define</span><span class="pln"> </span><span class="opn">(</span><span class="pln">start-eceval</span><span class="clo">)</span><span class="pln">
+Now that the evaluator machine starts with a <code>branch</code>, we must always initialize the <code>flag</code> register before starting the evaluator machine.  To start the machine at its ordinary read-eval-print loop, we could use </p>
+<div class="lisp"> <pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">define</span><span class="pln"> </span><span class="opn">(</span><span class="pln">start-eceval</span><span class="clo">)</span><span class="pln">
   </span><span class="opn">(</span><span class="kwd">set</span><span class="pun">!</span><span class="pln"> the-global-environment
         </span><span class="opn">(</span><span class="pln">setup-environment</span><span class="clo">))</span><span class="pln">
   </span><span class="opn">(</span><span class="pln">set-register-contents! eceval </span><span class="lit">'flag</span><span class="pln"> false</span><span class="clo">)</span><span class="pln">
-  </span><span class="opn">(</span><span class="pln">start eceval</span><span class="clo">))</span></pre></div>
-</div>
+  </span><span class="opn">(</span><span class="pln">start eceval</span><span class="clo">))</span></pre></div> </div>
 <div><p id="FOOT335" epub:type="footnote"><a class="footnote_backlink" href="#DOCF335"><sup>335</sup></a>
-Since a compiled procedure is an
-object that the system may try to print, we also modify the system print
-operation <code>user-print</code> (from <a href="4_002e1.xhtml#g_t4_002e1_002e4">4.1.4</a>) so that it will not
-attempt to print the components of a compiled procedure:
-</p>
-<div class="lisp">
-<pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">define</span><span class="pln"> </span><span class="opn">(</span><span class="pln">user-print object</span><span class="clo">)</span><span class="pln">
+Since a compiled procedure is an object that the system may try to print, we also modify the system print operation <code>user-print</code> (from <a href="4_002e1.xhtml#g_t4_002e1_002e4">4.1.4</a>) so that it will not attempt to print the components of a compiled procedure: </p>
+<div class="lisp"> <pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">define</span><span class="pln"> </span><span class="opn">(</span><span class="pln">user-print object</span><span class="clo">)</span><span class="pln">
   </span><span class="opn">(</span><span class="kwd">cond</span><span class="pln"> </span><span class="opn">((</span><span class="pln">compound-procedure? object</span><span class="clo">)</span><span class="pln">
          </span><span class="opn">(</span><span class="pln">display 
           </span><span class="opn">(</span><span class="pln">list </span><span class="lit">'compound-procedure</span><span class="pln">
@@ -2605,53 +2493,19 @@ attempt to print the components of a compiled procedure:
                 </span><span class="lit">'</span><span class="pun">&lt;</span><span class="pln">procedure-env</span><span class="pun">&gt;</span><span class="clo">)))</span><span class="pln">
         </span><span class="opn">((</span><span class="pln">compiled-procedure? object</span><span class="clo">)</span><span class="pln">
          </span><span class="opn">(</span><span class="pln">display </span><span class="lit">'</span><span class="pun">&lt;</span><span class="pln">compiled-procedure</span><span class="pun">&gt;</span><span class="clo">))</span><span class="pln">
-        </span><span class="opn">(</span><span class="kwd">else</span><span class="pln"> </span><span class="opn">(</span><span class="pln">display object</span><span class="clo">))))</span></pre></div>
-</div>
+        </span><span class="opn">(</span><span class="kwd">else</span><span class="pln"> </span><span class="opn">(</span><span class="pln">display object</span><span class="clo">))))</span></pre></div> </div>
 <div><p id="FOOT336" epub:type="footnote"><a class="footnote_backlink" href="#DOCF336"><sup>336</sup></a>
-We can do even
-better by extending the compiler to allow compiled code to call interpreted
-procedures.  See <a href="#Exercise-5_002e47">Exercise 5.47</a>.</p>
+We can do even better by extending the compiler to allow compiled code to call interpreted procedures.  See <a href="#Exercise-5_002e47">Exercise 5.47</a>.</p>
 </div>
 <div><p id="FOOT337" epub:type="footnote"><a class="footnote_backlink" href="#DOCF337"><sup>337</sup></a>
-Independent of the strategy
-of execution, we incur significant overhead if we insist that errors
-encountered in execution of a user program be detected and signaled, rather
-than being allowed to kill the system or produce wrong answers.  For example,
-an out-of-bounds array reference can be detected by checking the validity of
-the reference before performing it.  The overhead of checking, however, can be
-many times the cost of the array reference itself, and a programmer should
-weigh speed against safety in determining whether such a check is desirable.  A
-good compiler should be able to produce code with such checks, should avoid
-redundant checks, and should allow programmers to control the extent and type
-of error checking in the compiled code.
-</p>
-<p>Compilers for popular languages, such as C and C++, put hardly any
-error-checking operations into running code, so as to make things run as fast
-as possible.  As a result, it falls to programmers to explicitly provide error
-checking.  Unfortunately, people often neglect to do this, even in critical
-applications where speed is not a constraint.  Their programs lead fast and
-dangerous lives.  For example, the notorious “Worm” that paralyzed the
-Internet in 1988 exploited the <abbr>UNIX</abbr>(tm) operating system’s failure to
-check whether the input buffer has overflowed in the finger daemon. (See
-<a href="References.xhtml#Spafford-1989">Spafford 1989</a>.)</p>
+Independent of the strategy of execution, we incur significant overhead if we insist that errors encountered in execution of a user program be detected and signaled, rather than being allowed to kill the system or produce wrong answers.  For example, an out-of-bounds array reference can be detected by checking the validity of the reference before performing it.  The overhead of checking, however, can be many times the cost of the array reference itself, and a programmer should weigh speed against safety in determining whether such a check is desirable.  A good compiler should be able to produce code with such checks, should avoid redundant checks, and should allow programmers to control the extent and type of error checking in the compiled code. </p>
+<p>Compilers for popular languages, such as C and C++, put hardly any error-checking operations into running code, so as to make things run as fast as possible.  As a result, it falls to programmers to explicitly provide error checking.  Unfortunately, people often neglect to do this, even in critical applications where speed is not a constraint.  Their programs lead fast and dangerous lives.  For example, the notorious “Worm” that paralyzed the Internet in 1988 exploited the <abbr>UNIX</abbr>(tm) operating system’s failure to check whether the input buffer has overflowed in the finger daemon. (See <a href="References.xhtml#Spafford-1989">Spafford 1989</a>.)</p>
 </div>
 <div><p id="FOOT338" epub:type="footnote"><a class="footnote_backlink" href="#DOCF338"><sup>338</sup></a>
-Of course, with either the interpretation or the compilation
-strategy we must also implement for the new machine storage allocation, input
-and output, and all the various operations that we took as “primitive” in our
-discussion of the evaluator and compiler.  One strategy for minimizing work
-here is to write as many of these operations as possible in Lisp and then
-compile them for the new machine.  Ultimately, everything reduces to a small
-kernel (such as garbage collection and the mechanism for applying actual
-machine primitives) that is hand-coded for the new machine.</p>
+Of course, with either the interpretation or the compilation strategy we must also implement for the new machine storage allocation, input and output, and all the various operations that we took as “primitive” in our discussion of the evaluator and compiler.  One strategy for minimizing work here is to write as many of these operations as possible in Lisp and then compile them for the new machine.  Ultimately, everything reduces to a small kernel (such as garbage collection and the mechanism for applying actual machine primitives) that is hand-coded for the new machine.</p>
 </div>
 <div><p id="FOOT339" epub:type="footnote"><a class="footnote_backlink" href="#DOCF339"><sup>339</sup></a>
-This strategy leads to amusing tests of correctness of
-the compiler, such as checking whether the compilation of a program on the new
-machine, using the compiled compiler, is identical with the compilation of the
-program on the original Lisp system.  Tracking down the source of differences
-is fun but often frustrating, because the results are extremely sensitive to
-minuscule details.</p>
+This strategy leads to amusing tests of correctness of the compiler, such as checking whether the compilation of a program on the new machine, using the compiled compiler, is identical with the compilation of the program on the original Lisp system.  Tracking down the source of differences is fun but often frustrating, because the results are extremely sensitive to minuscule details.</p>
 </div>
 </div>
 <nav class="header">

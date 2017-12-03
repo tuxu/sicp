@@ -730,66 +730,22 @@ task impossible?  (Warning: This problem is very difficult.)
 <h4 class="footnotes-heading">Footnotes</h4>
 
 <div><p id="FOOT68" epub:type="footnote"><a class="footnote_backlink" href="#DOCF68"><sup>68</sup></a>
-The name <code>cons</code> stands for
-“construct.”  The names <code>car</code> and <code>cdr</code> derive from the original
-implementation of Lisp on the IBM 704.  That machine had an addressing scheme
-that allowed one to reference the “address” and “decrement” parts of a
-memory location.  <code>Car</code> stands for “Contents of Address part of
-Register” and <code>cdr</code> (pronounced “could-er”) stands for “Contents of
-Decrement part of Register.”</p>
+The name <code>cons</code> stands for “construct.”  The names <code>car</code> and <code>cdr</code> derive from the original implementation of Lisp on the IBM 704.  That machine had an addressing scheme that allowed one to reference the “address” and “decrement” parts of a memory location.  <code>Car</code> stands for “Contents of Address part of Register” and <code>cdr</code> (pronounced “could-er”) stands for “Contents of Decrement part of Register.”</p>
 </div>
 <div><p id="FOOT69" epub:type="footnote"><a class="footnote_backlink" href="#DOCF69"><sup>69</sup></a>
-Another way to define the selectors and
-constructor is
-</p>
-<div class="lisp">
-<pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">define</span><span class="pln"> make-rat </span><span class="kwd">cons</span><span class="clo">)</span><span class="pln">
+Another way to define the selectors and constructor is </p>
+<div class="lisp"> <pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">define</span><span class="pln"> make-rat </span><span class="kwd">cons</span><span class="clo">)</span><span class="pln">
 </span><span class="opn">(</span><span class="kwd">define</span><span class="pln"> numer </span><span class="kwd">car</span><span class="clo">)</span><span class="pln">
-</span><span class="opn">(</span><span class="kwd">define</span><span class="pln"> denom </span><span class="kwd">cdr</span><span class="clo">)</span></pre></div>
-
-<p>The first definition associates the name <code>make-rat</code> with the value of the
-expression <code>cons</code>, which is the primitive procedure that constructs pairs.
-Thus <code>make-rat</code> and <code>cons</code> are names for the same primitive
-constructor.
-</p>
-<p>Defining selectors and constructors in this way is efficient: Instead of
-<code>make-rat</code> <em>calling</em> <code>cons</code>, <code>make-rat</code> <em>is</em>
-<code>cons</code>, so there is only one procedure called, not two, when
-<code>make-rat</code> is called.  On the other hand, doing this defeats debugging
-aids that trace procedure calls or put breakpoints on procedure calls: You may
-want to watch <code>make-rat</code> being called, but you certainly don’t want to
-watch every call to <code>cons</code>.
-</p>
+</span><span class="opn">(</span><span class="kwd">define</span><span class="pln"> denom </span><span class="kwd">cdr</span><span class="clo">)</span></pre></div> 
+<p>The first definition associates the name <code>make-rat</code> with the value of the expression <code>cons</code>, which is the primitive procedure that constructs pairs. Thus <code>make-rat</code> and <code>cons</code> are names for the same primitive constructor. </p>
+<p>Defining selectors and constructors in this way is efficient: Instead of <code>make-rat</code> <em>calling</em> <code>cons</code>, <code>make-rat</code> <em>is</em> <code>cons</code>, so there is only one procedure called, not two, when <code>make-rat</code> is called.  On the other hand, doing this defeats debugging aids that trace procedure calls or put breakpoints on procedure calls: You may want to watch <code>make-rat</code> being called, but you certainly don’t want to watch every call to <code>cons</code>. </p>
 <p>We have chosen not to use this style of definition in this book.</p>
 </div>
 <div><p id="FOOT70" epub:type="footnote"><a class="footnote_backlink" href="#DOCF70"><sup>70</sup></a>
-<code>Display</code> is the Scheme primitive for printing data.
-The Scheme primitive <code>newline</code> starts a new line for printing.  Neither of
-these procedures returns a useful value, so in the uses of <code>print-rat</code>
-below, we show only what <code>print-rat</code> prints, not what the interpreter
-prints as the value returned by <code>print-rat</code>.</p>
+<code>Display</code> is the Scheme primitive for printing data. The Scheme primitive <code>newline</code> starts a new line for printing.  Neither of these procedures returns a useful value, so in the uses of <code>print-rat</code> below, we show only what <code>print-rat</code> prints, not what the interpreter prints as the value returned by <code>print-rat</code>.</p>
 </div>
 <div><p id="FOOT71" epub:type="footnote"><a class="footnote_backlink" href="#DOCF71"><sup>71</sup></a>
-Surprisingly, this idea is very difficult to formulate
-rigorously. There are two approaches to giving such a formulation.  One,
-pioneered by C. A. R. <a href="References.xhtml#Hoare-_00281972_0029">Hoare (1972)</a>, is known as the method of <a id="index-abstract-models"></a>
-<em>abstract models</em>.  
-It formalizes the “procedures plus conditions” specification as
-outlined in the rational-number example above.  Note that the condition on the
-rational-number representation was stated in terms of facts about integers
-(equality and division).  In general, abstract models define new kinds of data
-objects in terms of previously defined types of data objects.  Assertions about
-data objects can therefore be checked by reducing them to assertions about
-previously defined data objects.  Another approach, introduced by Zilles at
-<abbr>MIT</abbr>, by Goguen, Thatcher, Wagner, and Wright at IBM 
-(see <a href="References.xhtml#Thatcher-et-al_002e-1978">Thatcher et al. 1978</a>), 
-and by Guttag at Toronto (see <a href="References.xhtml#Guttag-1977">Guttag 1977</a>), is called
-<a id="index-algebraic-specification"></a>
-<em>algebraic specification</em>.  It regards the “procedures” as elements
-of an abstract algebraic system whose behavior is specified by axioms that
-correspond to our “conditions,” and uses the techniques of abstract algebra
-to check assertions about data objects.  Both methods are surveyed in the paper
-by <a href="References.xhtml#Liskov-and-Zilles-_00281975_0029">Liskov and Zilles (1975)</a>.</p>
+Surprisingly, this idea is very difficult to formulate rigorously. There are two approaches to giving such a formulation.  One, pioneered by C. A. R. <a href="References.xhtml#Hoare-_00281972_0029">Hoare (1972)</a>, is known as the method of <a id="index-abstract-models"></a> <em>abstract models</em>.   It formalizes the “procedures plus conditions” specification as outlined in the rational-number example above.  Note that the condition on the rational-number representation was stated in terms of facts about integers (equality and division).  In general, abstract models define new kinds of data objects in terms of previously defined types of data objects.  Assertions about data objects can therefore be checked by reducing them to assertions about previously defined data objects.  Another approach, introduced by Zilles at <abbr>MIT</abbr>, by Goguen, Thatcher, Wagner, and Wright at IBM  (see <a href="References.xhtml#Thatcher-et-al_002e-1978">Thatcher et al. 1978</a>),  and by Guttag at Toronto (see <a href="References.xhtml#Guttag-1977">Guttag 1977</a>), is called <a id="index-algebraic-specification"></a> <em>algebraic specification</em>.  It regards the “procedures” as elements of an abstract algebraic system whose behavior is specified by axioms that correspond to our “conditions,” and uses the techniques of abstract algebra to check assertions about data objects.  Both methods are surveyed in the paper by <a href="References.xhtml#Liskov-and-Zilles-_00281975_0029">Liskov and Zilles (1975)</a>.</p>
 </div>
 </div>
 <nav class="header">

@@ -909,48 +909,25 @@ operations must often be added?
 <h4 class="footnotes-heading">Footnotes</h4>
 
 <div><p id="FOOT109" epub:type="footnote"><a class="footnote_backlink" href="#DOCF109"><sup>109</sup></a>
-In actual computational systems, rectangular
-form is preferable to polar form most of the time because of roundoff errors in
-conversion between rectangular and polar form.  This is why the complex-number
-example is unrealistic.  Nevertheless, it provides a clear illustration of the
-design of a system using generic operations and a good introduction to the more
-substantial systems to be developed later in this chapter.</p>
+In actual computational systems, rectangular form is preferable to polar form most of the time because of roundoff errors in conversion between rectangular and polar form.  This is why the complex-number example is unrealistic.  Nevertheless, it provides a clear illustration of the design of a system using generic operations and a good introduction to the more substantial systems to be developed later in this chapter.</p>
 </div>
 <div><p id="FOOT110" epub:type="footnote"><a class="footnote_backlink" href="#DOCF110"><sup>110</sup></a>
-The arctangent function referred to here,
-computed by Scheme’s <code>atan</code> procedure, is defined so as to take two
-arguments <img src="fig/math/05e4cdb2f26a4f66b68c167423907fea.svg" class="math-inline" style="height: 0.669em; vertical-align: -0.235em;" alt="\( y \)" /> and <img src="fig/math/2f4b15565d0a1018e90c3e1b30b76acc.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( x \)" /> and to return the angle whose tangent is <img src="fig/math/da452c1d7d02bfb45f61a717cc8b22cf.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.229em;" alt="\( {y / x} \)" />.
-The signs of the arguments determine the quadrant of the angle.</p>
+The arctangent function referred to here, computed by Scheme’s <code>atan</code> procedure, is defined so as to take two arguments <img src="fig/math/05e4cdb2f26a4f66b68c167423907fea.svg" class="math-inline" style="height: 0.669em; vertical-align: -0.235em;" alt="\( y \)" /> and <img src="fig/math/2f4b15565d0a1018e90c3e1b30b76acc.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( x \)" /> and to return the angle whose tangent is <img src="fig/math/da452c1d7d02bfb45f61a717cc8b22cf.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.229em;" alt="\( {y / x} \)" />. The signs of the arguments determine the quadrant of the angle.</p>
 </div>
 <div><p id="FOOT111" epub:type="footnote"><a class="footnote_backlink" href="#DOCF111"><sup>111</sup></a>
-We use the list <code>(rectangular)</code> rather than the symbol
-<code>rectangular</code> to allow for the possibility of operations with multiple
-arguments, not all of the same type.</p>
+We use the list <code>(rectangular)</code> rather than the symbol <code>rectangular</code> to allow for the possibility of operations with multiple arguments, not all of the same type.</p>
 </div>
 <div><p id="FOOT112" epub:type="footnote"><a class="footnote_backlink" href="#DOCF112"><sup>112</sup></a>
-The type the
-constructors are installed under needn’t be a list because a constructor is
-always used to make an object of one particular type.</p>
+The type the constructors are installed under needn’t be a list because a constructor is always used to make an object of one particular type.</p>
 </div>
 <div><p id="FOOT113" epub:type="footnote"><a class="footnote_backlink" href="#DOCF113"><sup>113</sup></a>
-<code>Apply-generic</code> uses the dotted-tail
-notation described in <a href="2_002e2.xhtml#Exercise-2_002e20">Exercise 2.20</a>, because different generic operations
-may take different numbers of arguments.  In <code>apply-generic</code>, <code>op</code>
-has as its value the first argument to <code>apply-generic</code> and <code>args</code> has
-as its value a list of the remaining arguments.
-</p>
-<p><code>Apply-generic</code> also uses the primitive procedure <code>apply</code>, which
-takes two arguments, a procedure and a list.  <code>Apply</code> applies the
-procedure, using the elements in the list as arguments.  For example,
-</p>
-<div class="lisp">
-<pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="pln">apply </span><span class="pun">+</span><span class="pln"> </span><span class="opn">(</span><span class="pln">list </span><span class="lit">1</span><span class="pln"> </span><span class="lit">2</span><span class="pln"> </span><span class="lit">3</span><span class="pln"> </span><span class="lit">4</span><span class="clo">))</span></pre></div>
-
+<code>Apply-generic</code> uses the dotted-tail notation described in <a href="2_002e2.xhtml#Exercise-2_002e20">Exercise 2.20</a>, because different generic operations may take different numbers of arguments.  In <code>apply-generic</code>, <code>op</code> has as its value the first argument to <code>apply-generic</code> and <code>args</code> has as its value a list of the remaining arguments. </p>
+<p><code>Apply-generic</code> also uses the primitive procedure <code>apply</code>, which takes two arguments, a procedure and a list.  <code>Apply</code> applies the procedure, using the elements in the list as arguments.  For example, </p>
+<div class="lisp"> <pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="pln">apply </span><span class="pun">+</span><span class="pln"> </span><span class="opn">(</span><span class="pln">list </span><span class="lit">1</span><span class="pln"> </span><span class="lit">2</span><span class="pln"> </span><span class="lit">3</span><span class="pln"> </span><span class="lit">4</span><span class="clo">))</span></pre></div> 
 <p>returns 10.</p>
 </div>
 <div><p id="FOOT114" epub:type="footnote"><a class="footnote_backlink" href="#DOCF114"><sup>114</sup></a>
-One limitation of this
-organization is it permits only generic procedures of one argument.</p>
+One limitation of this organization is it permits only generic procedures of one argument.</p>
 </div>
 </div>
 <nav class="header">

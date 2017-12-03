@@ -1349,151 +1349,58 @@ expressions.  Complete the following definition of <code>analyze-require</code>.
 <h4 class="footnotes-heading">Footnotes</h4>
 
 <div><p id="FOOT246" epub:type="footnote"><a class="footnote_backlink" href="#DOCF246"><sup>246</sup></a>
-We assume that we have previously defined a
-procedure <code>prime?</code> that tests whether numbers are prime.  Even with
-<code>prime?</code> defined, the <code>prime-sum-pair</code> procedure may look
-suspiciously like the unhelpful “pseudo-Lisp” attempt to define the
-square-root function, which we described at the beginning of 
-<a href="1_002e1.xhtml#g_t1_002e1_002e7">1.1.7</a>.  In fact, a square-root procedure along those lines can actually
-be formulated as a nondeterministic program.  By incorporating a search
-mechanism into the evaluator, we are eroding the distinction between purely
-declarative descriptions and imperative specifications of how to compute
-answers.  We’ll go even farther in this direction in <a href="4_002e4.xhtml#g_t4_002e4">4.4</a>.</p>
+We assume that we have previously defined a procedure <code>prime?</code> that tests whether numbers are prime.  Even with <code>prime?</code> defined, the <code>prime-sum-pair</code> procedure may look suspiciously like the unhelpful “pseudo-Lisp” attempt to define the square-root function, which we described at the beginning of  <a href="1_002e1.xhtml#g_t1_002e1_002e7">1.1.7</a>.  In fact, a square-root procedure along those lines can actually be formulated as a nondeterministic program.  By incorporating a search mechanism into the evaluator, we are eroding the distinction between purely declarative descriptions and imperative specifications of how to compute answers.  We’ll go even farther in this direction in <a href="4_002e4.xhtml#g_t4_002e4">4.4</a>.</p>
 </div>
 <div><p id="FOOT247" epub:type="footnote"><a class="footnote_backlink" href="#DOCF247"><sup>247</sup></a>
-The idea of <code>amb</code> for nondeterministic
-programming was first described in 1961 by John McCarthy (see <a href="References.xhtml#McCarthy-1963">McCarthy 1963</a>).</p>
+The idea of <code>amb</code> for nondeterministic programming was first described in 1961 by John McCarthy (see <a href="References.xhtml#McCarthy-1963">McCarthy 1963</a>).</p>
 </div>
 <div><p id="FOOT248" epub:type="footnote"><a class="footnote_backlink" href="#DOCF248"><sup>248</sup></a>
-In
-actuality, the distinction between nondeterministically returning a single
-choice and returning all choices depends somewhat on our point of view.  From
-the perspective of the code that uses the value, the nondeterministic choice
-returns a single value.  From the perspective of the programmer designing the
-code, the nondeterministic choice potentially returns all possible values, and
-the computation branches so that each value is investigated separately.</p>
+In actuality, the distinction between nondeterministically returning a single choice and returning all choices depends somewhat on our point of view.  From the perspective of the code that uses the value, the nondeterministic choice returns a single value.  From the perspective of the programmer designing the code, the nondeterministic choice potentially returns all possible values, and the computation branches so that each value is investigated separately.</p>
 </div>
 <div><p id="FOOT249" epub:type="footnote"><a class="footnote_backlink" href="#DOCF249"><sup>249</sup></a>
-One
-might object that this is a hopelessly inefficient mechanism.  It might require
-millions of processors to solve some easily stated problem this way, and most
-of the time most of those processors would be idle.  This objection should be
-taken in the context of history.  Memory used to be considered just such an
-expensive commodity.  In 1964 a megabyte of <abbr>RAM</abbr> cost about $400,000.  Now every
-personal computer has many megabytes of <abbr>RAM</abbr>, and most of the time most of that
-<abbr>RAM</abbr> is unused.  It is hard to underestimate the cost of mass-produced
-electronics.</p>
+One might object that this is a hopelessly inefficient mechanism.  It might require millions of processors to solve some easily stated problem this way, and most of the time most of those processors would be idle.  This objection should be taken in the context of history.  Memory used to be considered just such an expensive commodity.  In 1964 a megabyte of <abbr>RAM</abbr> cost about $400,000.  Now every personal computer has many megabytes of <abbr>RAM</abbr>, and most of the time most of that <abbr>RAM</abbr> is unused.  It is hard to underestimate the cost of mass-produced electronics.</p>
 </div>
 <div><p id="FOOT250" epub:type="footnote"><a class="footnote_backlink" href="#DOCF250"><sup>250</sup></a>
-<a id="Footnote-250"></a>Automagically: “Automatically, but
-in a way which, for some reason (typically because it is too complicated, or
-too ugly, or perhaps even too trivial), the speaker doesn’t feel like
-explaining.”  (<a href="References.xhtml#Steele-et-al_002e-1983">Steele et al. 1983</a>, <a href="References.xhtml#Raymond-1993">Raymond 1993</a>)</p>
+<a id="Footnote-250"></a>Automagically: “Automatically, but in a way which, for some reason (typically because it is too complicated, or too ugly, or perhaps even too trivial), the speaker doesn’t feel like explaining.”  (<a href="References.xhtml#Steele-et-al_002e-1983">Steele et al. 1983</a>, <a href="References.xhtml#Raymond-1993">Raymond 1993</a>)</p>
 </div>
 <div><p id="FOOT251" epub:type="footnote"><a class="footnote_backlink" href="#DOCF251"><sup>251</sup></a>
-The integration of 
-automatic search strategies into programming languages has had a long and
-checkered history.  The first suggestions that nondeterministic algorithms
-might be elegantly encoded in a programming language with search and automatic
-backtracking came from Robert <a href="References.xhtml#Floyd-_00281967_0029">Floyd (1967)</a>.  Carl <a href="References.xhtml#Hewitt-_00281969_0029">Hewitt (1969)</a> invented a
-programming language called Planner that explicitly supported automatic
-chronological backtracking, providing for a built-in depth-first search
-strategy.  <a href="References.xhtml#Sussman-et-al_002e-_00281971_0029">Sussman et al. (1971)</a> implemented a subset of this
-language, called MicroPlanner, which was used to support work in problem
-solving and robot planning.  Similar ideas, arising from logic and theorem
-proving, led to the genesis in Edinburgh and Marseille of the elegant language
-Prolog (which we will discuss in <a href="4_002e4.xhtml#g_t4_002e4">4.4</a>).  After sufficient
-frustration with automatic search, <a href="References.xhtml#McDermott-and-Sussman-_00281972_0029">McDermott and Sussman (1972)</a> developed a
-language called Conniver, which included mechanisms for placing the search
-strategy under programmer control.  This proved unwieldy, however, and <a href="References.xhtml#Sussman-and-Stallman-1975">Sussman and Stallman 1975</a> 
-found a more tractable approach while investigating methods
-of symbolic analysis for electrical circuits.  They developed a
-non-chronological backtracking scheme that was based on tracing out the logical
-dependencies connecting facts, a technique that has come to be known as
-<a id="index-dependency_002ddirected-backtracking"></a>
-<em>dependency-directed backtracking</em>.  Although their method was complex,
-it produced reasonably efficient programs because it did little redundant
-search.  <a href="References.xhtml#Doyle-_00281979_0029">Doyle (1979)</a> and <a href="References.xhtml#McAllester-_00281978_003b-1980_0029">McAllester (1978; 1980)</a> generalized and clarified the
-methods of Stallman and Sussman, developing a new paradigm for formulating
-search that is now called <a id="index-truth-maintenance"></a>
-<em>truth maintenance</em>.  Modern problem-solving
-systems all use some form of truth-maintenance system as a substrate.  See
-<a href="References.xhtml#Forbus-and-deKleer-1993">Forbus and deKleer 1993</a> for a discussion of elegant ways to build
-truth-maintenance systems and applications using truth maintenance.  
-<a href="References.xhtml#Zabih-et-al_002e-1987">Zabih et al. 1987</a> describes a nondeterministic extension to Scheme
-that is based on <code>amb</code>; it is similar to the interpreter described in this
-section, but more sophisticated, because it uses dependency-directed
-backtracking rather than chronological backtracking.  <a href="References.xhtml#Winston-1992">Winston 1992</a> gives an
-introduction to both kinds of backtracking.</p>
+The integration of  automatic search strategies into programming languages has had a long and checkered history.  The first suggestions that nondeterministic algorithms might be elegantly encoded in a programming language with search and automatic backtracking came from Robert <a href="References.xhtml#Floyd-_00281967_0029">Floyd (1967)</a>.  Carl <a href="References.xhtml#Hewitt-_00281969_0029">Hewitt (1969)</a> invented a programming language called Planner that explicitly supported automatic chronological backtracking, providing for a built-in depth-first search strategy.  <a href="References.xhtml#Sussman-et-al_002e-_00281971_0029">Sussman et al. (1971)</a> implemented a subset of this language, called MicroPlanner, which was used to support work in problem solving and robot planning.  Similar ideas, arising from logic and theorem proving, led to the genesis in Edinburgh and Marseille of the elegant language Prolog (which we will discuss in <a href="4_002e4.xhtml#g_t4_002e4">4.4</a>).  After sufficient frustration with automatic search, <a href="References.xhtml#McDermott-and-Sussman-_00281972_0029">McDermott and Sussman (1972)</a> developed a language called Conniver, which included mechanisms for placing the search strategy under programmer control.  This proved unwieldy, however, and <a href="References.xhtml#Sussman-and-Stallman-1975">Sussman and Stallman 1975</a>  found a more tractable approach while investigating methods of symbolic analysis for electrical circuits.  They developed a non-chronological backtracking scheme that was based on tracing out the logical dependencies connecting facts, a technique that has come to be known as <a id="index-dependency_002ddirected-backtracking"></a> <em>dependency-directed backtracking</em>.  Although their method was complex, it produced reasonably efficient programs because it did little redundant search.  <a href="References.xhtml#Doyle-_00281979_0029">Doyle (1979)</a> and <a href="References.xhtml#McAllester-_00281978_003b-1980_0029">McAllester (1978; 1980)</a> generalized and clarified the methods of Stallman and Sussman, developing a new paradigm for formulating search that is now called <a id="index-truth-maintenance"></a> <em>truth maintenance</em>.  Modern problem-solving systems all use some form of truth-maintenance system as a substrate.  See <a href="References.xhtml#Forbus-and-deKleer-1993">Forbus and deKleer 1993</a> for a discussion of elegant ways to build truth-maintenance systems and applications using truth maintenance.   <a href="References.xhtml#Zabih-et-al_002e-1987">Zabih et al. 1987</a> describes a nondeterministic extension to Scheme that is based on <code>amb</code>; it is similar to the interpreter described in this section, but more sophisticated, because it uses dependency-directed backtracking rather than chronological backtracking.  <a href="References.xhtml#Winston-1992">Winston 1992</a> gives an introduction to both kinds of backtracking.</p>
 </div>
 <div><p id="FOOT252" epub:type="footnote"><a class="footnote_backlink" href="#DOCF252"><sup>252</sup></a>
-Our program uses the following procedure to determine if
-the elements of a list are distinct:
-</p>
-<div class="lisp">
-<pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">define</span><span class="pln"> </span><span class="opn">(</span><span class="pln">distinct? items</span><span class="clo">)</span><span class="pln">
+Our program uses the following procedure to determine if the elements of a list are distinct: </p>
+<div class="lisp"> <pre class="lisp prettyprinted" style=""><span class="opn">(</span><span class="kwd">define</span><span class="pln"> </span><span class="opn">(</span><span class="pln">distinct? items</span><span class="clo">)</span><span class="pln">
   </span><span class="opn">(</span><span class="kwd">cond</span><span class="pln"> </span><span class="opn">((</span><span class="pln">null? items</span><span class="clo">)</span><span class="pln"> true</span><span class="clo">)</span><span class="pln">
         </span><span class="opn">((</span><span class="pln">null? </span><span class="opn">(</span><span class="kwd">cdr</span><span class="pln"> items</span><span class="clo">))</span><span class="pln"> true</span><span class="clo">)</span><span class="pln">
         </span><span class="opn">((</span><span class="pln">member </span><span class="opn">(</span><span class="kwd">car</span><span class="pln"> items</span><span class="clo">)</span><span class="pln"> </span><span class="opn">(</span><span class="kwd">cdr</span><span class="pln"> items</span><span class="clo">))</span><span class="pln"> false</span><span class="clo">)</span><span class="pln">
-        </span><span class="opn">(</span><span class="kwd">else</span><span class="pln"> </span><span class="opn">(</span><span class="pln">distinct? </span><span class="opn">(</span><span class="kwd">cdr</span><span class="pln"> items</span><span class="clo">)))))</span></pre></div>
-
-<p><code>Member</code> is like <code>memq</code> except that it uses <code>equal?</code> instead
-of <code>eq?</code> to test for equality.</p>
+        </span><span class="opn">(</span><span class="kwd">else</span><span class="pln"> </span><span class="opn">(</span><span class="pln">distinct? </span><span class="opn">(</span><span class="kwd">cdr</span><span class="pln"> items</span><span class="clo">)))))</span></pre></div> 
+<p><code>Member</code> is like <code>memq</code> except that it uses <code>equal?</code> instead of <code>eq?</code> to test for equality.</p>
 </div>
 <div><p id="FOOT253" epub:type="footnote"><a class="footnote_backlink" href="#DOCF253"><sup>253</sup></a>
-This is taken from a booklet called
-“Problematical Recreations,” published in the 1960s by Litton Industries,
-where it is attributed to the <cite>Kansas State Engineer</cite>.</p>
+This is taken from a booklet called “Problematical Recreations,” published in the 1960s by Litton Industries, where it is attributed to the <cite>Kansas State Engineer</cite>.</p>
 </div>
 <div><p id="FOOT254" epub:type="footnote"><a class="footnote_backlink" href="#DOCF254"><sup>254</sup></a>
-Here we use the convention that the
-first element of each list designates the part of speech for the rest of the
-words in the list.</p>
+Here we use the convention that the first element of each list designates the part of speech for the rest of the words in the list.</p>
 </div>
 <div><p id="FOOT255" epub:type="footnote"><a class="footnote_backlink" href="#DOCF255"><sup>255</sup></a>
-Notice that <code>parse-word</code> uses <code>set!</code> to
-modify the unparsed input list.  For this to work, our <code>amb</code> evaluator
-must undo the effects of <code>set!</code> operations when it backtracks.</p>
+Notice that <code>parse-word</code> uses <code>set!</code> to modify the unparsed input list.  For this to work, our <code>amb</code> evaluator must undo the effects of <code>set!</code> operations when it backtracks.</p>
 </div>
 <div><p id="FOOT256" epub:type="footnote"><a class="footnote_backlink" href="#DOCF256"><sup>256</sup></a>
-Observe that this definition is recursive—a
-verb may be followed by any number of prepositional phrases.</p>
+Observe that this definition is recursive—a verb may be followed by any number of prepositional phrases.</p>
 </div>
 <div><p id="FOOT257" epub:type="footnote"><a class="footnote_backlink" href="#DOCF257"><sup>257</sup></a>
-This kind of grammar can become arbitrarily complex, but it
-is only a toy as far as real language understanding is concerned.  Real
-natural-language understanding by computer requires an elaborate mixture of
-syntactic analysis and interpretation of meaning.  On the other hand, even toy
-parsers can be useful in supporting flexible command languages for programs
-such as information-retrieval systems.  <a href="References.xhtml#Winston-1992">Winston 1992</a> discusses computational
-approaches to real language understanding and also the applications of simple
-grammars to command languages.</p>
+This kind of grammar can become arbitrarily complex, but it is only a toy as far as real language understanding is concerned.  Real natural-language understanding by computer requires an elaborate mixture of syntactic analysis and interpretation of meaning.  On the other hand, even toy parsers can be useful in supporting flexible command languages for programs such as information-retrieval systems.  <a href="References.xhtml#Winston-1992">Winston 1992</a> discusses computational approaches to real language understanding and also the applications of simple grammars to command languages.</p>
 </div>
 <div><p id="FOOT258" epub:type="footnote"><a class="footnote_backlink" href="#DOCF258"><sup>258</sup></a>
-Although Alyssa’s idea works just fine (and is
-surprisingly simple), the sentences that it generates are a bit boring—they
-don’t sample the possible sentences of this language in a very interesting way.
-In fact, the grammar is highly recursive in many places, and Alyssa’s technique
-“falls into” one of these recursions and gets stuck.  See <a href="#Exercise-4_002e50">Exercise 4.50</a>
-for a way to deal with this.</p>
+Although Alyssa’s idea works just fine (and is surprisingly simple), the sentences that it generates are a bit boring—they don’t sample the possible sentences of this language in a very interesting way. In fact, the grammar is highly recursive in many places, and Alyssa’s technique “falls into” one of these recursions and gets stuck.  See <a href="#Exercise-4_002e50">Exercise 4.50</a> for a way to deal with this.</p>
 </div>
 <div><p id="FOOT259" epub:type="footnote"><a class="footnote_backlink" href="#DOCF259"><sup>259</sup></a>
-We chose to
-implement the lazy evaluator in <a href="4_002e2.xhtml#g_t4_002e2">4.2</a> as a modification of the
-ordinary metacircular evaluator of <a href="4_002e1.xhtml#g_t4_002e1_002e1">4.1.1</a>.  In contrast, we will
-base the <code>amb</code> evaluator on the analyzing evaluator of 
-<a href="4_002e1.xhtml#g_t4_002e1_002e7">4.1.7</a>, because the execution procedures in that evaluator provide a
-convenient framework for implementing backtracking.</p>
+We chose to implement the lazy evaluator in <a href="4_002e2.xhtml#g_t4_002e2">4.2</a> as a modification of the ordinary metacircular evaluator of <a href="4_002e1.xhtml#g_t4_002e1_002e1">4.1.1</a>.  In contrast, we will base the <code>amb</code> evaluator on the analyzing evaluator of  <a href="4_002e1.xhtml#g_t4_002e1_002e7">4.1.7</a>, because the execution procedures in that evaluator provide a convenient framework for implementing backtracking.</p>
 </div>
 <div><p id="FOOT260" epub:type="footnote"><a class="footnote_backlink" href="#DOCF260"><sup>260</sup></a>
-We assume
-that the evaluator supports <code>let</code> (see <a href="4_002e1.xhtml#Exercise-4_002e22">Exercise 4.22</a>), which we have
-used in our nondeterministic programs.</p>
+We assume that the evaluator supports <code>let</code> (see <a href="4_002e1.xhtml#Exercise-4_002e22">Exercise 4.22</a>), which we have used in our nondeterministic programs.</p>
 </div>
 <div><p id="FOOT261" epub:type="footnote"><a class="footnote_backlink" href="#DOCF261"><sup>261</sup></a>
-We
-didn’t worry about undoing definitions, since we can assume that internal
-definitions are scanned out (<a href="4_002e1.xhtml#g_t4_002e1_002e6">4.1.6</a>).</p>
+We didn’t worry about undoing definitions, since we can assume that internal definitions are scanned out (<a href="4_002e1.xhtml#g_t4_002e1_002e6">4.1.6</a>).</p>
 </div>
 </div>
 <nav class="header">

@@ -1187,123 +1187,58 @@ Rewrite the <code>sqrt</code> procedure of <a href="1_002e1.xhtml#g_t1_002e1_002
 <h4 class="footnotes-heading">Footnotes</h4>
 
 <div><p id="FOOT49" epub:type="footnote"><a class="footnote_backlink" href="#DOCF49"><sup>49</sup></a>
-This series, usually
-written in the equivalent form 
-<img src="fig/math/8fb226294dc22a2a6271b433e09a1435.svg" class="math-inline" style="height: 1.221em; vertical-align: -0.343em;" alt="\( {\pi\over4} = {1 - {1\over3} + {1\over5}} - {{1\over7} + \dots} \)" />, 
-is due to Leibniz.  We’ll see how to use this as the basis for some
-fancy numerical tricks in <a href="3_002e5.xhtml#g_t3_002e5_002e3">3.5.3</a>.</p>
+This series, usually written in the equivalent form  <img src="fig/math/8fb226294dc22a2a6271b433e09a1435.svg" class="math-inline" style="height: 1.221em; vertical-align: -0.343em;" alt="\( {\pi\over4} = {1 - {1\over3} + {1\over5}} - {{1\over7} + \dots} \)" />,  is due to Leibniz.  We’ll see how to use this as the basis for some fancy numerical tricks in <a href="3_002e5.xhtml#g_t3_002e5_002e3">3.5.3</a>.</p>
 </div>
 <div><p id="FOOT50" epub:type="footnote"><a class="footnote_backlink" href="#DOCF50"><sup>50</sup></a>
-Notice that we have
-used block structure (<a href="1_002e1.xhtml#g_t1_002e1_002e8">1.1.8</a>) to embed the definitions of
-<code>pi-next</code> and <code>pi-term</code> within <code>pi-sum</code>, since these procedures
-are unlikely to be useful for any other purpose.  We will see how to get rid of
-them altogether in <a href="#g_t1_002e3_002e2">1.3.2</a>.</p>
+Notice that we have used block structure (<a href="1_002e1.xhtml#g_t1_002e1_002e8">1.1.8</a>) to embed the definitions of <code>pi-next</code> and <code>pi-term</code> within <code>pi-sum</code>, since these procedures are unlikely to be useful for any other purpose.  We will see how to get rid of them altogether in <a href="#g_t1_002e3_002e2">1.3.2</a>.</p>
 </div>
 <div><p id="FOOT51" epub:type="footnote"><a class="footnote_backlink" href="#DOCF51"><sup>51</sup></a>
-The
-intent of <a href="#Exercise-1_002e31">Exercise 1.31</a> through <a href="#Exercise-1_002e33">Exercise 1.33</a> is to demonstrate the
-expressive power that is attained by using an appropriate abstraction to
-consolidate many seemingly disparate operations.  However, though accumulation
-and filtering are elegant ideas, our hands are somewhat tied in using them at
-this point since we do not yet have data structures to provide suitable means
-of combination for these abstractions.  We will return to these ideas in
-<a href="2_002e2.xhtml#g_t2_002e2_002e3">2.2.3</a> when we show how to use <a id="index-sequences"></a>
-<em>sequences</em> as interfaces
-for combining filters and accumulators to build even more powerful
-abstractions.  We will see there how these methods really come into their own
-as a powerful and elegant approach to designing programs.</p>
+The intent of <a href="#Exercise-1_002e31">Exercise 1.31</a> through <a href="#Exercise-1_002e33">Exercise 1.33</a> is to demonstrate the expressive power that is attained by using an appropriate abstraction to consolidate many seemingly disparate operations.  However, though accumulation and filtering are elegant ideas, our hands are somewhat tied in using them at this point since we do not yet have data structures to provide suitable means of combination for these abstractions.  We will return to these ideas in <a href="2_002e2.xhtml#g_t2_002e2_002e3">2.2.3</a> when we show how to use <a id="index-sequences"></a> <em>sequences</em> as interfaces for combining filters and accumulators to build even more powerful abstractions.  We will see there how these methods really come into their own as a powerful and elegant approach to designing programs.</p>
 </div>
 <div><p id="FOOT52" epub:type="footnote"><a class="footnote_backlink" href="#DOCF52"><sup>52</sup></a>
-This formula was discovered by the
-seventeenth-century English mathematician John Wallis.</p>
+This formula was discovered by the seventeenth-century English mathematician John Wallis.</p>
 </div>
 <div><p id="FOOT53" epub:type="footnote"><a class="footnote_backlink" href="#DOCF53"><sup>53</sup></a>
-It would be clearer and less intimidating to people learning
-Lisp if a name more obvious than <code>lambda</code>, such as <code>make-procedure</code>,
-were used.  But the convention is firmly entrenched.  The notation is adopted
-from the λ-calculus, a mathematical formalism introduced by the
-mathematical logician Alonzo <a href="References.xhtml#Church-_00281941_0029">Church (1941)</a>.  Church developed the 
-λ-calculus to provide a rigorous foundation for studying the 
-notions of function
-and function application.  The λ-calculus has become a basic tool
-for mathematical investigations of the semantics of programming languages.</p>
+It would be clearer and less intimidating to people learning Lisp if a name more obvious than <code>lambda</code>, such as <code>make-procedure</code>, were used.  But the convention is firmly entrenched.  The notation is adopted from the λ-calculus, a mathematical formalism introduced by the mathematical logician Alonzo <a href="References.xhtml#Church-_00281941_0029">Church (1941)</a>.  Church developed the  λ-calculus to provide a rigorous foundation for studying the  notions of function and function application.  The λ-calculus has become a basic tool for mathematical investigations of the semantics of programming languages.</p>
 </div>
 <div><p id="FOOT54" epub:type="footnote"><a class="footnote_backlink" href="#DOCF54"><sup>54</sup></a>
-Understanding
-internal definitions well enough to be sure a program means what we intend it
-to mean requires a more elaborate model of the evaluation process than we have
-presented in this chapter.  The subtleties do not arise with internal
-definitions of procedures, however.  We will return to this issue in 
-<a href="4_002e1.xhtml#g_t4_002e1_002e6">4.1.6</a>, after we learn more about evaluation.</p>
+Understanding internal definitions well enough to be sure a program means what we intend it to mean requires a more elaborate model of the evaluation process than we have presented in this chapter.  The subtleties do not arise with internal definitions of procedures, however.  We will return to this issue in  <a href="4_002e1.xhtml#g_t4_002e1_002e6">4.1.6</a>, after we learn more about evaluation.</p>
 </div>
 <div><p id="FOOT55" epub:type="footnote"><a class="footnote_backlink" href="#DOCF55"><sup>55</sup></a>
-We have used 0.001 as a representative “small” number to
-indicate a tolerance for the acceptable error in a calculation.  The
-appropriate tolerance for a real calculation depends upon the problem to be
-solved and the limitations of the computer and the algorithm.  This is often a
-very subtle consideration, requiring help from a numerical analyst or some
-other kind of magician.</p>
+We have used 0.001 as a representative “small” number to indicate a tolerance for the acceptable error in a calculation.  The appropriate tolerance for a real calculation depends upon the problem to be solved and the limitations of the computer and the algorithm.  This is often a very subtle consideration, requiring help from a numerical analyst or some other kind of magician.</p>
 </div>
 <div><p id="FOOT56" epub:type="footnote"><a class="footnote_backlink" href="#DOCF56"><sup>56</sup></a>
-This can be accomplished using <code>error</code>, which takes as
-arguments a number of items that are printed as error messages.</p>
+This can be accomplished using <code>error</code>, which takes as arguments a number of items that are printed as error messages.</p>
 </div>
 <div><p id="FOOT57" epub:type="footnote"><a class="footnote_backlink" href="#DOCF57"><sup>57</sup></a>
-Try this
-during a boring lecture: Set your calculator to radians mode and then
-repeatedly press the <code>cos</code> button until you obtain the fixed point.</p>
+Try this during a boring lecture: Set your calculator to radians mode and then repeatedly press the <code>cos</code> button until you obtain the fixed point.</p>
 </div>
 <div><p id="FOOT58" epub:type="footnote"><a class="footnote_backlink" href="#DOCF58"><sup>58</sup></a>
-<img src="fig/math/0ce91553aad27651969cc77ddd0cb826.svg" class="math-inline" style="height: 0.467em;" alt="\( \mapsto \)" /> (pronounced “maps to”) is the mathematician’s way of
-writing <code>lambda</code>.  <img src="fig/math/c4888039e8855b22c0b35c8152532a53.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.229em;" alt="\( {y \mapsto x / y} \)" /> means <code>(lambda (y) (/ x y))</code>,
-that is, the function whose value at <img src="fig/math/05e4cdb2f26a4f66b68c167423907fea.svg" class="math-inline" style="height: 0.669em; vertical-align: -0.235em;" alt="\( y \)" /> is <img src="fig/math/c243e54e1f37c985a92584d386f5fc01.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.229em;" alt="\( {x / y} \)" />.</p>
+<img src="fig/math/0ce91553aad27651969cc77ddd0cb826.svg" class="math-inline" style="height: 0.467em;" alt="\( \mapsto \)" /> (pronounced “maps to”) is the mathematician’s way of writing <code>lambda</code>.  <img src="fig/math/c4888039e8855b22c0b35c8152532a53.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.229em;" alt="\( {y \mapsto x / y} \)" /> means <code>(lambda (y) (/ x y))</code>, that is, the function whose value at <img src="fig/math/05e4cdb2f26a4f66b68c167423907fea.svg" class="math-inline" style="height: 0.669em; vertical-align: -0.235em;" alt="\( y \)" /> is <img src="fig/math/c243e54e1f37c985a92584d386f5fc01.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.229em;" alt="\( {x / y} \)" />.</p>
 </div>
 <div><p id="FOOT59" epub:type="footnote"><a class="footnote_backlink" href="#DOCF59"><sup>59</sup></a>
-Observe that this is a combination whose
-operator is itself a combination.  <a href="1_002e1.xhtml#Exercise-1_002e4">Exercise 1.4</a> already demonstrated the
-ability to form such combinations, but that was only a toy example.  Here we
-begin to see the real need for such combinations—when applying a procedure
-that is obtained as the value returned by a higher-order procedure.</p>
+Observe that this is a combination whose operator is itself a combination.  <a href="1_002e1.xhtml#Exercise-1_002e4">Exercise 1.4</a> already demonstrated the ability to form such combinations, but that was only a toy example.  Here we begin to see the real need for such combinations—when applying a procedure that is obtained as the value returned by a higher-order procedure.</p>
 </div>
 <div><p id="FOOT60" epub:type="footnote"><a class="footnote_backlink" href="#DOCF60"><sup>60</sup></a>
-See
-<a href="#Exercise-1_002e45">Exercise 1.45</a> for a further generalization.</p>
+See <a href="#Exercise-1_002e45">Exercise 1.45</a> for a further generalization.</p>
 </div>
 <div><p id="FOOT61" epub:type="footnote"><a class="footnote_backlink" href="#DOCF61"><sup>61</sup></a>
-Elementary calculus books usually describe Newton’s method in
-terms of the sequence of approximations <img src="fig/math/96cbc64b5b9346071e74621f47f63af6.svg" class="math-inline" style="height: 0.933em; vertical-align: -0.225em;" alt="\( x_{n+1} = x_n - {g(x_n)\,/ Dg(x_n)} \)" />. 
-Having language for talking about processes and using the idea of fixed points 
-simplifies the description of the method.</p>
+Elementary calculus books usually describe Newton’s method in terms of the sequence of approximations <img src="fig/math/96cbc64b5b9346071e74621f47f63af6.svg" class="math-inline" style="height: 0.933em; vertical-align: -0.225em;" alt="\( x_{n+1} = x_n - {g(x_n)\,/ Dg(x_n)} \)" />.  Having language for talking about processes and using the idea of fixed points  simplifies the description of the method.</p>
 </div>
 <div><p id="FOOT62" epub:type="footnote"><a class="footnote_backlink" href="#DOCF62"><sup>62</sup></a>
-Newton’s
-method does not always converge to an answer, but it can
-be shown that in favorable cases each iteration doubles the number-of-digits
-accuracy of the approximation to the solution.  In such cases, Newton’s method
-will converge much more rapidly than the half-interval method.</p>
+Newton’s method does not always converge to an answer, but it can be shown that in favorable cases each iteration doubles the number-of-digits accuracy of the approximation to the solution.  In such cases, Newton’s method will converge much more rapidly than the half-interval method.</p>
 </div>
 <div><p id="FOOT63" epub:type="footnote"><a class="footnote_backlink" href="#DOCF63"><sup>63</sup></a>
-For
-finding square roots, Newton’s method converges rapidly to the correct solution
-from any starting point.</p>
+For finding square roots, Newton’s method converges rapidly to the correct solution from any starting point.</p>
 </div>
 <div><p id="FOOT64" epub:type="footnote"><a class="footnote_backlink" href="#DOCF64"><sup>64</sup></a>
-The notion of
-first-class status of programming-language elements is due to the British
-computer scientist Christopher Strachey (1916-1975).</p>
+The notion of first-class status of programming-language elements is due to the British computer scientist Christopher Strachey (1916-1975).</p>
 </div>
 <div><p id="FOOT65" epub:type="footnote"><a class="footnote_backlink" href="#DOCF65"><sup>65</sup></a>
-We’ll see examples of this
-after we introduce data structures in <a href="Chapter-2.xhtml#Chapter-2">Chapter 2<!-- /@w --></a>.</p>
+We’ll see examples of this after we introduce data structures in <a href="Chapter-2.xhtml#Chapter-2">Chapter 2<!-- /@w --></a>.</p>
 </div>
 <div><p id="FOOT66" epub:type="footnote"><a class="footnote_backlink" href="#DOCF66"><sup>66</sup></a>
-The major
-implementation cost of first-class procedures is that allowing procedures to be
-returned as values requires reserving storage for a procedure’s free variables
-even while the procedure is not executing.  In the Scheme implementation we
-will study in <a href="4_002e1.xhtml#g_t4_002e1">4.1</a>, these variables are stored in the procedure’s
-environment.</p>
+The major implementation cost of first-class procedures is that allowing procedures to be returned as values requires reserving storage for a procedure’s free variables even while the procedure is not executing.  In the Scheme implementation we will study in <a href="4_002e1.xhtml#g_t4_002e1">4.1</a>, these variables are stored in the procedure’s environment.</p>
 </div>
 </div>
 <nav class="header">

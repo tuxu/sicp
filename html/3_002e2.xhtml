@@ -681,37 +681,16 @@ the environment structure are shared between <code>acc</code> and <code>acc2</co
 <h4 class="footnotes-heading">Footnotes</h4>
 
 <div><p id="FOOT140" epub:type="footnote"><a class="footnote_backlink" href="#DOCF140"><sup>140</sup></a>
-Assignment introduces a
-subtlety into step 1 of the evaluation rule.  As shown in <a href="3_002e1.xhtml#Exercise-3_002e8">Exercise 3.8</a>,
-the presence of assignment allows us to write expressions that will produce
-different values depending on the order in which the subexpressions in a
-combination are evaluated.  Thus, to be precise, we should specify an
-evaluation order in step 1 (e.g., left to right or right to left).  However,
-this order should always be considered to be an implementation detail, and one
-should never write programs that depend on some particular order.  For
-instance, a sophisticated compiler might optimize a program by varying the
-order in which subexpressions are evaluated.</p>
+Assignment introduces a subtlety into step 1 of the evaluation rule.  As shown in <a href="3_002e1.xhtml#Exercise-3_002e8">Exercise 3.8</a>, the presence of assignment allows us to write expressions that will produce different values depending on the order in which the subexpressions in a combination are evaluated.  Thus, to be precise, we should specify an evaluation order in step 1 (e.g., left to right or right to left).  However, this order should always be considered to be an implementation detail, and one should never write programs that depend on some particular order.  For instance, a sophisticated compiler might optimize a program by varying the order in which subexpressions are evaluated.</p>
 </div>
 <div><p id="FOOT141" epub:type="footnote"><a class="footnote_backlink" href="#DOCF141"><sup>141</sup></a>
-If there is already a binding for the variable in the current
-frame, then the binding is changed.  This is convenient because it allows
-redefinition of symbols; however, it also means that <code>define</code> can be used
-to change values, and this brings up the issues of assignment without
-explicitly using <code>set!</code>.  Because of this, some people prefer
-redefinitions of existing symbols to signal errors or warnings.</p>
+If there is already a binding for the variable in the current frame, then the binding is changed.  This is convenient because it allows redefinition of symbols; however, it also means that <code>define</code> can be used to change values, and this brings up the issues of assignment without explicitly using <code>set!</code>.  Because of this, some people prefer redefinitions of existing symbols to signal errors or warnings.</p>
 </div>
 <div><p id="FOOT142" epub:type="footnote"><a class="footnote_backlink" href="#DOCF142"><sup>142</sup></a>
-The environment
-model will not clarify our claim in <a href="1_002e2.xhtml#g_t1_002e2_002e1">1.2.1</a> that the interpreter
-can execute a procedure such as <code>fact-iter</code> in a constant amount of space
-using tail recursion.  We will discuss tail recursion when we deal with the
-control structure of the interpreter in <a href="5_002e4.xhtml#g_t5_002e4">5.4</a>.</p>
+The environment model will not clarify our claim in <a href="1_002e2.xhtml#g_t1_002e2_002e1">1.2.1</a> that the interpreter can execute a procedure such as <code>fact-iter</code> in a constant amount of space using tail recursion.  We will discuss tail recursion when we deal with the control structure of the interpreter in <a href="5_002e4.xhtml#g_t5_002e4">5.4</a>.</p>
 </div>
 <div><p id="FOOT143" epub:type="footnote"><a class="footnote_backlink" href="#DOCF143"><sup>143</sup></a>
-Whether <code>W1</code> and <code>W2</code> share the same
-physical code stored in the computer, or whether they each keep a copy of the
-code, is a detail of the implementation.  For the interpreter we implement in
-<a href="Chapter-4.xhtml#Chapter-4">Chapter 4</a>, the code is in fact shared.</p>
+Whether <code>W1</code> and <code>W2</code> share the same physical code stored in the computer, or whether they each keep a copy of the code, is a detail of the implementation.  For the interpreter we implement in <a href="Chapter-4.xhtml#Chapter-4">Chapter 4</a>, the code is in fact shared.</p>
 </div>
 </div>
 <nav class="header">
