@@ -241,7 +241,7 @@ outside world.
   </span><span class="opn">((</span><span class="pln">get </span><span class="lit">'make-from-mag-ang</span><span class="pln"> </span><span class="lit">'complex</span><span class="clo">)</span><span class="pln"> r a</span><span class="clo">))</span></pre></div>
 
 <p>What we have here is a two-level tag system.  A typical complex number, such as
-\( {3 + 4i} \) in rectangular form, would be represented as shown in <a href="#Figure-2_002e24">Figure 2.24</a>.  
+<img src="fig/math/7eae13a80997d163d12272db2c6a09f8.svg" class="math-inline" style="height: 0.652em; vertical-align: -0.009em;" alt="\( {3 + 4i} \)" /> in rectangular form, would be represented as shown in <a href="#Figure-2_002e24">Figure 2.24</a>.  
 The outer tag (<code>complex</code>) is used to direct the number to the
 complex package.  Once within the complex package, the next tag
 (<code>rectangular</code>) is used to direct the number to the rectangular package.
@@ -256,7 +256,7 @@ package is stripped off (by applying <code>contents</code>) and the next level o
 <img style="width: 41.53ex; max-width: 100%; display: inline;" src="fig/chap2/Fig2.24d.std.svg" />
 
 <figcaption class="float-caption">
-<p><strong>Figure 2.24:</strong> Representation of \( {3 + 4i} \) in rectangular form.</p>
+<p><strong>Figure 2.24:</strong> Representation of <img src="fig/math/7eae13a80997d163d12272db2c6a09f8.svg" class="math-inline" style="height: 0.652em; vertical-align: -0.009em;" alt="\( {3 + 4i} \)" /> in rectangular form.</p>
 </figcaption>
 </figure>
 
@@ -462,8 +462,8 @@ procedure:
 
 <p>This coercion scheme has many advantages over the method of defining explicit
 cross-type operations, as outlined above.  Although we still need to write
-coercion procedures to relate the types (possibly \( n^2 \) procedures for a
-system with \( n \) types), we need to write only one procedure for each pair of
+coercion procedures to relate the types (possibly <img src="fig/math/8749316e3d02c5d953690375757e639e.svg" class="math-inline" style="height: 0.854em; vertical-align: -0.010em;" alt="\( n^2 \)" /> procedures for a
+system with <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" /> types), we need to write only one procedure for each pair of
 types rather than a different procedure for each collection of types and each
 generic operation.<sup><a class="footnote_link" id="DOCF117" href="#FOOT117" epub:type="noteref">117</a></sup>  What we are counting on here is the fact
 that the appropriate transformation between types depends only on the types
@@ -541,11 +541,11 @@ hit the top (in which case we give up).
 </p>
 <p>Yet another advantage of a tower over a more general hierarchy is that it gives
 us a simple way to “lower” a data object to the simplest representation.  For
-example, if we add \( {2 + 3i} \) to \( {4 - 3i} \), it would be nice to obtain the
-answer as the integer 6 rather than as the complex number \( {6 + 0i} \).
+example, if we add <img src="fig/math/896720fe540d05796e158eb7902c2dcd.svg" class="math-inline" style="height: 0.652em; vertical-align: -0.009em;" alt="\( {2 + 3i} \)" /> to <img src="fig/math/20d30ca8769ff13b9e8ae77eba2c3eac.svg" class="math-inline" style="height: 0.652em; vertical-align: -0.009em;" alt="\( {4 - 3i} \)" />, it would be nice to obtain the
+answer as the integer 6 rather than as the complex number <img src="fig/math/9fbb612d7509ff4c9b5b760e1d2860cf.svg" class="math-inline" style="height: 0.652em; vertical-align: -0.009em;" alt="\( {6 + 0i} \)" />.
 <a href="#Exercise-2_002e85">Exercise 2.85</a> discusses a way to implement such a lowering operation.
 (The trick is that we need a general way to distinguish those objects that can
-be lowered, such as \( {6 + 0i} \), from those that cannot, such as \( {6 + 2i} \).)
+be lowered, such as <img src="fig/math/9fbb612d7509ff4c9b5b760e1d2860cf.svg" class="math-inline" style="height: 0.652em; vertical-align: -0.009em;" alt="\( {6 + 0i} \)" />, from those that cannot, such as <img src="fig/math/0bff3b1d2534c92bded492af7acbeb27.svg" class="math-inline" style="height: 0.652em; vertical-align: -0.009em;" alt="\( {6 + 2i} \)" />.)
 </p>
 <a id="Inadequacies-of-hierarchies"></a>
 <h5 class="subsubheading">Inadequacies of hierarchies</h5>
@@ -667,8 +667,8 @@ for “simplifying” a data object by lowering it in the tower of types as far
 as possible.  Design a procedure <code>drop</code> that accomplishes this for the
 tower described in <a href="#Exercise-2_002e83">Exercise 2.83</a>.  The key is to decide, in some general
 way, whether an object can be lowered.  For example, the complex number 
-\( {1.5 + 0i} \) can be lowered as far as <code>real</code>, the complex number \( {1 + 0i} \) can
-be lowered as far as <code>integer</code>, and the complex number \( {2 + 3i} \) cannot
+<img src="fig/math/f108a7376d8069ac46b95c000d9db464.svg" class="math-inline" style="height: 0.654em; vertical-align: -0.009em;" alt="\( {1.5 + 0i} \)" /> can be lowered as far as <code>real</code>, the complex number <img src="fig/math/f3b2c35bccebe2534866d7718b9828c7.svg" class="math-inline" style="height: 0.652em; vertical-align: -0.009em;" alt="\( {1 + 0i} \)" /> can
+be lowered as far as <code>integer</code>, and the complex number <img src="fig/math/896720fe540d05796e158eb7902c2dcd.svg" class="math-inline" style="height: 0.652em; vertical-align: -0.009em;" alt="\( {2 + 3i} \)" /> cannot
 be lowered at all.  Here is a plan for determining whether an object can be
 lowered: Begin by defining a generic operation <code>project</code> that “pushes”
 an object down in the tower.  For example, projecting a complex number would
@@ -709,10 +709,9 @@ Typical abstractions in symbolic algebra are ideas such as linear combination,
 polynomial, rational function, or trigonometric function.  We can regard these
 as compound “types,” which are often useful for directing the processing of
 expressions.  For example, we could describe the expression
-\[ % :49:
-  {x^2 \sin (y^2 + 1)} + {x \cos 2y} + {\cos(y^3 - 2y^2)}  \]
-as a polynomial in \( x \) with coefficients that are trigonometric functions of
-polynomials in \( y \) whose coefficients are integers.
+<img src="fig/math/81f14f6ceef13162c7f61575a5e06c97.svg" class="math-display" style="height: 1.128em;" alt="\[ % :49:&amp;#10;  {x^2 \sin (y^2 + 1)} + {x \cos 2y} + {\cos(y^3 - 2y^2)}  \]" />
+as a polynomial in <img src="fig/math/2f4b15565d0a1018e90c3e1b30b76acc.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( x \)" /> with coefficients that are trigonometric functions of
+polynomials in <img src="fig/math/05e4cdb2f26a4f66b68c167423907fea.svg" class="math-inline" style="height: 0.669em; vertical-align: -0.235em;" alt="\( y \)" /> whose coefficients are integers.
 </p>
 <p>We will not attempt to develop a complete algebraic-manipulation system here.
 Such systems are exceedingly complex programs, embodying deep algebraic
@@ -736,19 +735,17 @@ which is either a coefficient, a power of the indeterminate, or a product of a
 coefficient and a power of the indeterminate.  A coefficient is defined as an
 algebraic expression that is not dependent upon the indeterminate of the
 polynomial.  For example,
-\[ % :50:
-  {5x^2} + {3x} + 7  \]
-is a simple polynomial in \( x \), and
-\[ % :51:
-  {(y^2 + 1)x^3} + {(2y)x + 1}  \]
-is a polynomial in \( x \) whose coefficients are polynomials in \( y \).
+<img src="fig/math/a93bff68150cd93a68235a3b11ec2d10.svg" class="math-display" style="height: 0.904em;" alt="\[ % :50:&amp;#10;  {5x^2} + {3x} + 7  \]" />
+is a simple polynomial in <img src="fig/math/2f4b15565d0a1018e90c3e1b30b76acc.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( x \)" />, and
+<img src="fig/math/51689a7b0341562899231d977ab42069.svg" class="math-display" style="height: 1.128em;" alt="\[ % :51:&amp;#10;  {(y^2 + 1)x^3} + {(2y)x + 1}  \]" />
+is a polynomial in <img src="fig/math/2f4b15565d0a1018e90c3e1b30b76acc.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( x \)" /> whose coefficients are polynomials in <img src="fig/math/05e4cdb2f26a4f66b68c167423907fea.svg" class="math-inline" style="height: 0.669em; vertical-align: -0.235em;" alt="\( y \)" />.
 </p>
 <p>Already we are skirting some thorny issues.  Is the first of these polynomials
-the same as the polynomial \( {5y^2 + 3y + 7} \), or not?  A reasonable answer
+the same as the polynomial <img src="fig/math/f4ad289774aefc0e1edb52002c1e2a65.svg" class="math-inline" style="height: 1.078em; vertical-align: -0.235em;" alt="\( {5y^2 + 3y + 7} \)" />, or not?  A reasonable answer
 might be “yes, if we are considering a polynomial purely as a mathematical
 function, but no, if we are considering a polynomial to be a syntactic form.”
-The second polynomial is algebraically equivalent to a polynomial in \( y \)
-whose coefficients are polynomials in \( x \).  Should our system recognize this,
+The second polynomial is algebraically equivalent to a polynomial in <img src="fig/math/05e4cdb2f26a4f66b68c167423907fea.svg" class="math-inline" style="height: 0.669em; vertical-align: -0.235em;" alt="\( y \)" />
+whose coefficients are polynomials in <img src="fig/math/2f4b15565d0a1018e90c3e1b30b76acc.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( x \)" />.  Should our system recognize this,
 or not?  Furthermore, there are other ways to represent a polynomial—for
 example, as a product of factors, or (for a univariate polynomial) as the set
 of roots, or as a listing of the values of the polynomial at a specified set of
@@ -925,17 +922,15 @@ coefficient that is known about by the generic arithmetic package.  If we
 include a coercion mechanism such as one of those discussed in 
 <a href="#g_t2_002e5_002e2">2.5.2</a>, then we also are automatically able to handle operations on
 polynomials of different coefficient types, such as
-\[ % :52:
-  {[3x^2 + (2 + 3i)x + 7] \cdot} {\left[ x^4 + {2\over3} x^2 + (5 + 3i) \right].}  \]
+<img src="fig/math/02de194853718f9dec3d2d7a32df226c.svg" class="math-display" style="height: 2.017em;" alt="\[ % :52:&amp;#10;  {[3x^2 + (2 + 3i)x + 7] \cdot} {\left[ x^4 + {2\over3} x^2 + (5 + 3i) \right].}  \]" />
 Because we installed the polynomial addition and multiplication procedures
 <code>add-poly</code> and <code>mul-poly</code> in the generic arithmetic system as the
 <code>add</code> and <code>mul</code> operations for type <code>polynomial</code>, our system is
 also automatically able to handle polynomial operations such as
-\[ % :53:
-  {\Big[(y + 1)x^2} + {(y^2 + 1)x} + {(y - 1)\Big] \cdot} {\Big[(y - 2)x} + {(y^3 + 7)\Big].}  \]
+<img src="fig/math/1434325bcb81c727eb0374c32d3d3e8f.svg" class="math-display" style="height: 1.925em;" alt="\[ % :53:&amp;#10;  {\Big[(y + 1)x^2} + {(y^2 + 1)x} + {(y - 1)\Big] \cdot} {\Big[(y - 2)x} + {(y^3 + 7)\Big].}  \]" />
 The reason is that when the system tries to combine coefficients, it will
 dispatch through <code>add</code> and <code>mul</code>.  Since the coefficients are
-themselves polynomials (in \( y \)), these will be combined using <code>add-poly</code>
+themselves polynomials (in <img src="fig/math/05e4cdb2f26a4f66b68c167423907fea.svg" class="math-inline" style="height: 0.669em; vertical-align: -0.235em;" alt="\( y \)" />), these will be combined using <code>add-poly</code>
 and <code>mul-poly</code>.  The result is a kind of “data-directed recursion” in
 which, for example, a call to <code>mul-poly</code> will result in recursive calls to
 <code>mul-poly</code> in order to multiply the coefficients.  If the coefficients of
@@ -962,23 +957,21 @@ polynomial is said to be <a id="index-dense"></a>
 terms of most orders.  If it has many zero terms it is said to be
 <a id="index-sparse"></a>
 <em>sparse</em>.  For example,
-\[ % :55:
-  A: \quad {x^5} + {2x^4} + {3x^2} - {2x} - 5  \]
+<img src="fig/math/bfb07702220f64b88d69cac0841daa46.svg" class="math-display" style="height: 0.904em;" alt="\[ % :55:&amp;#10;  A: \quad {x^5} + {2x^4} + {3x^2} - {2x} - 5  \]" />
 is a dense polynomial, whereas
-\[ % :56:
-  B: \quad x^{100} + {2x^2} + 1  \]
+<img src="fig/math/79a5a7720bbe1febcace163875eef193.svg" class="math-display" style="height: 0.904em;" alt="\[ % :56:&amp;#10;  B: \quad x^{100} + {2x^2} + 1  \]" />
 is sparse.
 </p>
 <p>The term lists of dense polynomials are most efficiently represented as lists
-of the coefficients.  For example, \( A \) above would be nicely represented as
+of the coefficients.  For example, <img src="fig/math/0795850a4e18ff44aa3a2868640c29a7.svg" class="math-inline" style="height: 0.656em; vertical-align: -0.004em;" alt="\( A \)" /> above would be nicely represented as
 <code>(1 2 0 3 -2 -5)</code>.  The order of a term in this representation is the
 length of the sublist beginning with that term’s coefficient, decremented by
 1.<sup><a class="footnote_link" id="DOCF124" href="#FOOT124" epub:type="noteref">124</a></sup>  This would be a terrible representation for
-a sparse polynomial such as \( B \): There would be a giant list of zeros
+a sparse polynomial such as <img src="fig/math/30728d9819efd7caec6b07dd841c7393.svg" class="math-inline" style="height: 0.645em;" alt="\( B \)" />: There would be a giant list of zeros
 punctuated by a few lonely nonzero terms.  A more reasonable representation of
 the term list of a sparse polynomial is as a list of the nonzero terms, where
 each term is a list containing the order of the term and the coefficient for
-that order.  In such a scheme, polynomial \( B \) is efficiently represented as
+that order.  In such a scheme, polynomial <img src="fig/math/30728d9819efd7caec6b07dd841c7393.svg" class="math-inline" style="height: 0.645em;" alt="\( B \)" /> is efficiently represented as
 <code>((100 1) (2 2) (0 1))</code>.  As most polynomial manipulations are performed
 on sparse polynomials, we will use this method.  We will assume that term lists
 are represented as lists of terms, arranged from highest-order to lowest-order
@@ -1044,8 +1037,7 @@ generalization.  This is a major effort, not a local change.
 <p><strong><a id="Exercise-2_002e91"></a>Exercise 2.91:</strong> A univariate polynomial can be
 divided by another one to produce a polynomial quotient and a polynomial
 remainder.  For example,
-\[ % :57:
-  {x^5 - 1 \over x^2 - 1} \,=\, {x^3 + x,} \text{  remainder  } {x - 1.}  \]
+<img src="fig/math/2cfb10efd998b43e49e9476cb72bc9f4.svg" class="math-display" style="height: 2.243em;" alt="\[ % :57:&amp;#10;  {x^5 - 1 \over x^2 - 1} \,=\, {x^3 + x,} \text{  remainder  } {x - 1.}  \]" />
 Division can be performed via long division.  That is, divide the highest-order
 term of the dividend by the highest-order term of the divisor.  The result is
 the first term of the quotient.  Next, multiply the result by the divisor,
@@ -1103,9 +1095,9 @@ trouble.
 </p>
 <p>On the other hand, polynomial algebra is a system for which the data types
 cannot be naturally arranged in a tower.  For instance, it is possible to have
-polynomials in \( x \) whose coefficients are polynomials in \( y \).  It is also
-possible to have polynomials in \( y \) whose coefficients are polynomials in
-\( x \).  Neither of these types is “above” the other in any natural way, yet
+polynomials in <img src="fig/math/2f4b15565d0a1018e90c3e1b30b76acc.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( x \)" /> whose coefficients are polynomials in <img src="fig/math/05e4cdb2f26a4f66b68c167423907fea.svg" class="math-inline" style="height: 0.669em; vertical-align: -0.235em;" alt="\( y \)" />.  It is also
+possible to have polynomials in <img src="fig/math/05e4cdb2f26a4f66b68c167423907fea.svg" class="math-inline" style="height: 0.669em; vertical-align: -0.235em;" alt="\( y \)" /> whose coefficients are polynomials in
+<img src="fig/math/2f4b15565d0a1018e90c3e1b30b76acc.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( x \)" />.  Neither of these types is “above” the other in any natural way, yet
 it is often necessary to add together elements from each set.  There are
 several ways to do this.  One possibility is to convert one polynomial to the
 type of the other by expanding and rearranging terms so that both polynomials
@@ -1140,13 +1132,10 @@ polynomials works for polynomials in different variables.  (This is not easy!)
 <em>rational functions</em>.  
 These are “fractions” whose numerator and denominator are
 polynomials, such as
-\[ % :58:
-  {{x + 1 \over x^3 - 1}.}  \]
+<img src="fig/math/e34f52d248c8672c612e1ad6339a4f96.svg" class="math-display" style="height: 2.040em;" alt="\[ % :58:&amp;#10;  {{x + 1 \over x^3 - 1}.}  \]" />
 The system should be able to add, subtract, multiply, and divide rational
 functions, and to perform such computations as
-\[ % :59:
-  {x + 1 \over x^3 - 1} + {x \over x^2 - 1} \,=\, 
-  {{x^3 + 2x^2 + 3x + 1 \over x^4 + x^3 - x - 1}.}  \]
+<img src="fig/math/5a7443c2b4f42e583e93e5471f7d1559.svg" class="math-display" style="height: 2.243em;" alt="\[ % :59:&amp;#10;  {x + 1 \over x^3 - 1} + {x \over x^2 - 1} \,=\,    {{x^3 + 2x^2 + 3x + 1 \over x^4 + x^3 - x - 1}.}  \]" />
 (Here the sum has been simplified by removing common factors.  Ordinary “cross
 multiplication” would have produced a fourth-degree polynomial over a
 fifth-degree polynomial.)
@@ -1220,19 +1209,13 @@ and to ordinary <code>gcd</code> for ordinary numbers.  As a test, try
 </p></blockquote>
 
 <blockquote>
-<p><strong><a id="Exercise-2_002e95"></a>Exercise 2.95:</strong> Define \( P_1 \), \( P_2 \), and
-\( P_3 \) to be the polynomials
-\[ % :60:
-\begin{array}{rl}
-  P_1:  &amp;   x^2 - 2x + 1, \\
-  P_2:  &amp;   11x^2 + 7,    \\
-  P_3:  &amp;   13x + 5.
-\end{array}
-\]
-Now define \( Q_1 \) to be the product of \( P_1 \) and \( P_2 \), and \( Q_2 \) to be
-the product of \( P_1 \) and \( P_3 \), and use <code>greatest-common-divisor</code>
-(<a href="#Exercise-2_002e94">Exercise 2.94</a>) to compute the <abbr>GCD</abbr> of \( Q_1 \) and \( Q_2 \).
-Note that the answer is not the same as \( P_1 \).  This example introduces
+<p><strong><a id="Exercise-2_002e95"></a>Exercise 2.95:</strong> Define <img src="fig/math/5a381de74cdf01dabc7cbdc48593893a.svg" class="math-inline" style="height: 0.797em; vertical-align: -0.144em;" alt="\( P_1 \)" />, <img src="fig/math/4c7e1eb37b5af1272939421d1e46d21d.svg" class="math-inline" style="height: 0.797em; vertical-align: -0.144em;" alt="\( P_2 \)" />, and
+<img src="fig/math/2ab496a384e0293a34c372146ad4fbe6.svg" class="math-inline" style="height: 0.797em; vertical-align: -0.144em;" alt="\( P_3 \)" /> to be the polynomials
+<img src="fig/math/c2a635277a75538f1f1d6306edefe96a.svg" class="math-display" style="height: 3.412em;" alt="\[ % :60:&amp;#10;\begin{array}{rl}   P_1:  &amp;amp;   x^2 - 2x + 1, \\   P_2:  &amp;amp;   11x^2 + 7,    \\   P_3:  &amp;amp;   13x + 5. \end{array} \]" />
+Now define <img src="fig/math/750aa9077e8cdbd0a4e193eb495b10bf.svg" class="math-inline" style="height: 0.862em; vertical-align: -0.210em;" alt="\( Q_1 \)" /> to be the product of <img src="fig/math/5a381de74cdf01dabc7cbdc48593893a.svg" class="math-inline" style="height: 0.797em; vertical-align: -0.144em;" alt="\( P_1 \)" /> and <img src="fig/math/4c7e1eb37b5af1272939421d1e46d21d.svg" class="math-inline" style="height: 0.797em; vertical-align: -0.144em;" alt="\( P_2 \)" />, and <img src="fig/math/6350e2376db888398db88e20bd855b67.svg" class="math-inline" style="height: 0.862em; vertical-align: -0.210em;" alt="\( Q_2 \)" /> to be
+the product of <img src="fig/math/5a381de74cdf01dabc7cbdc48593893a.svg" class="math-inline" style="height: 0.797em; vertical-align: -0.144em;" alt="\( P_1 \)" /> and <img src="fig/math/2ab496a384e0293a34c372146ad4fbe6.svg" class="math-inline" style="height: 0.797em; vertical-align: -0.144em;" alt="\( P_3 \)" />, and use <code>greatest-common-divisor</code>
+(<a href="#Exercise-2_002e94">Exercise 2.94</a>) to compute the <abbr>GCD</abbr> of <img src="fig/math/750aa9077e8cdbd0a4e193eb495b10bf.svg" class="math-inline" style="height: 0.862em; vertical-align: -0.210em;" alt="\( Q_1 \)" /> and <img src="fig/math/6350e2376db888398db88e20bd855b67.svg" class="math-inline" style="height: 0.862em; vertical-align: -0.210em;" alt="\( Q_2 \)" />.
+Note that the answer is not the same as <img src="fig/math/5a381de74cdf01dabc7cbdc48593893a.svg" class="math-inline" style="height: 0.797em; vertical-align: -0.144em;" alt="\( P_1 \)" />.  This example introduces
 noninteger operations into the computation, causing difficulties with the
 <abbr>GCD</abbr> algorithm.<sup><a class="footnote_link" id="DOCF127" href="#FOOT127" epub:type="noteref">127</a></sup>  To understand what is happening, try tracing
 <code>gcd-terms</code> while computing the <abbr>GCD</abbr> or try performing the
@@ -1250,16 +1233,16 @@ case of reducing rational functions to lowest terms; the <abbr>GCD</abbr> will b
 used to divide both the numerator and denominator, so the integer constant
 factor will cancel out.
 </p>
-<p>More precisely, if \( P \) and \( Q \) are polynomials, let \( O_1 \) be the order of
-\( P \) (i.e., the order of the largest term of \( P \)) and let \( O_2 \) be the
-order of \( Q \).  Let \( c \) be the leading coefficient of \( Q \).  Then it can be
-shown that, if we multiply \( P \) by the <a id="index-integerizing-factor"></a>
+<p>More precisely, if <img src="fig/math/51e14234cf17ac37770614a2ec2663da.svg" class="math-inline" style="height: 0.649em;" alt="\( P \)" /> and <img src="fig/math/a88316e55aaa375b917f8a9af7abf818.svg" class="math-inline" style="height: 0.862em; vertical-align: -0.210em;" alt="\( Q \)" /> are polynomials, let <img src="fig/math/f3b09a564ccb1f65fb05d23c74ffc4d0.svg" class="math-inline" style="height: 0.804em; vertical-align: -0.151em;" alt="\( O_1 \)" /> be the order of
+<img src="fig/math/51e14234cf17ac37770614a2ec2663da.svg" class="math-inline" style="height: 0.649em;" alt="\( P \)" /> (i.e., the order of the largest term of <img src="fig/math/51e14234cf17ac37770614a2ec2663da.svg" class="math-inline" style="height: 0.649em;" alt="\( P \)" />) and let <img src="fig/math/88da9e7e6fc37fa713e227879852d55e.svg" class="math-inline" style="height: 0.804em; vertical-align: -0.151em;" alt="\( O_2 \)" /> be the
+order of <img src="fig/math/a88316e55aaa375b917f8a9af7abf818.svg" class="math-inline" style="height: 0.862em; vertical-align: -0.210em;" alt="\( Q \)" />.  Let <img src="fig/math/b98937403abaaeb001eed7d68959205d.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( c \)" /> be the leading coefficient of <img src="fig/math/a88316e55aaa375b917f8a9af7abf818.svg" class="math-inline" style="height: 0.862em; vertical-align: -0.210em;" alt="\( Q \)" />.  Then it can be
+shown that, if we multiply <img src="fig/math/51e14234cf17ac37770614a2ec2663da.svg" class="math-inline" style="height: 0.649em;" alt="\( P \)" /> by the <a id="index-integerizing-factor"></a>
 <em>integerizing<!-- /@w --> factor<!-- /@w --></em>
-\( c^{1 + O_1 - O_2} \), the resulting polynomial can be divided by \( Q \) by
+<img src="fig/math/12afe88ff19214cad039025e5dce15e3.svg" class="math-inline" style="height: 0.854em; vertical-align: -0.010em;" alt="\( c^{1 + O_1 - O_2} \)" />, the resulting polynomial can be divided by <img src="fig/math/a88316e55aaa375b917f8a9af7abf818.svg" class="math-inline" style="height: 0.862em; vertical-align: -0.210em;" alt="\( Q \)" /> by
 using the <code>div-terms</code> algorithm without introducing any fractions.  The
 operation of multiplying the dividend by this constant and then dividing is
 sometimes called the <a id="index-pseudodivision"></a>
-<em>pseudodivision</em> of \( P \) by \( Q \).  The remainder
+<em>pseudodivision</em> of <img src="fig/math/51e14234cf17ac37770614a2ec2663da.svg" class="math-inline" style="height: 0.649em;" alt="\( P \)" /> by <img src="fig/math/a88316e55aaa375b917f8a9af7abf818.svg" class="math-inline" style="height: 0.862em; vertical-align: -0.210em;" alt="\( Q \)" />.  The remainder
 of the division is called the <a id="index-pseudoremainder"></a>
 <em>pseudoremainder</em>.
 </p>
@@ -1274,7 +1257,7 @@ integerizing factor described above before calling <code>div-terms</code>.  Modi
 on the example in <a href="#Exercise-2_002e95">Exercise 2.95</a>.
 
 </li><li> The <abbr>GCD</abbr> now has integer coefficients, but they are larger than those
-of \( P_1 \).  Modify <code>gcd-terms</code> so that it removes common factors from the
+of <img src="fig/math/5a381de74cdf01dabc7cbdc48593893a.svg" class="math-inline" style="height: 0.797em; vertical-align: -0.144em;" alt="\( P_1 \)" />.  Modify <code>gcd-terms</code> so that it removes common factors from the
 coefficients of the answer by dividing all the coefficients by their (integer)
 greatest common divisor.
 
@@ -1291,8 +1274,8 @@ of <code>gcd-terms</code> from <a href="#Exercise-2_002e96">Exercise 2.96</a>.
 the same integerizing factor before dividing through by the <abbr>GCD</abbr>, so
 that division by the <abbr>GCD</abbr> will not introduce any noninteger
 coefficients.  As the factor you can use the leading coefficient of the
-<abbr>GCD</abbr> raised to the power \( {1 + O_1 - O_2} \), where \( O_2 \) is the
-order of the <abbr>GCD</abbr> and \( O_1 \) is the maximum of the orders of the
+<abbr>GCD</abbr> raised to the power <img src="fig/math/74eb04deeaf0d41ea6e0c26a7357d627.svg" class="math-inline" style="height: 0.804em; vertical-align: -0.151em;" alt="\( {1 + O_1 - O_2} \)" />, where <img src="fig/math/88da9e7e6fc37fa713e227879852d55e.svg" class="math-inline" style="height: 0.804em; vertical-align: -0.151em;" alt="\( O_2 \)" /> is the
+order of the <abbr>GCD</abbr> and <img src="fig/math/f3b09a564ccb1f65fb05d23c74ffc4d0.svg" class="math-inline" style="height: 0.804em; vertical-align: -0.151em;" alt="\( O_1 \)" /> is the maximum of the orders of the
 numerator and denominator.  This will ensure that dividing the numerator and
 denominator by the <abbr>GCD</abbr> will not introduce any fractions.
 
@@ -1369,7 +1352,7 @@ We also have to supply an almost identical procedure to handle the types <code>(
 See <a href="#Exercise-2_002e82">Exercise 2.82</a> for generalizations.</p>
 </div>
 <div><p id="FOOT117" epub:type="footnote"><a class="footnote_backlink" href="#DOCF117"><sup>117</sup></a>
-If we are clever, we can usually get by with fewer than \( n^2 \) coercion procedures.  For instance, if we know how to convert from type 1 to type 2 and from type 2 to type 3, then we can use this knowledge to convert from type 1 to type 3.  This can greatly decrease the number of coercion procedures we need to supply explicitly when we add a new type to the system.  If we are willing to build the required amount of sophistication into our system, we can have it search the “graph” of relations among types and automatically generate those coercion procedures that can be inferred from the ones that are supplied explicitly.</p>
+If we are clever, we can usually get by with fewer than <img src="fig/math/8749316e3d02c5d953690375757e639e.svg" class="math-inline" style="height: 0.854em; vertical-align: -0.010em;" alt="\( n^2 \)" /> coercion procedures.  For instance, if we know how to convert from type 1 to type 2 and from type 2 to type 3, then we can use this knowledge to convert from type 1 to type 3.  This can greatly decrease the number of coercion procedures we need to supply explicitly when we add a new type to the system.  If we are willing to build the required amount of sophistication into our system, we can have it search the “graph” of relations among types and automatically generate those coercion procedures that can be inferred from the ones that are supplied explicitly.</p>
 </div>
 <div><p id="FOOT118" epub:type="footnote"><a class="footnote_backlink" href="#DOCF118"><sup>118</sup></a>
 This statement, which also appears in the first edition of this book, is just as true now as it was when we wrote it twelve years ago.  Developing a useful, general framework for expressing the relations among different types of entities (what philosophers call “ontology”) seems intractably difficult.  The main difference between the confusion that existed ten years ago and the confusion that exists now is that now a variety of inadequate ontological theories have been embodied in a plethora of correspondingly inadequate programming languages.  For example, much of the complexity of object-oriented programming languages—and the subtle and confusing differences among contemporary object-oriented languages—centers on the treatment of generic operations on interrelated types.  Our own discussion of computational objects in <a href="Chapter-3.xhtml#Chapter-3">Chapter 3</a> avoids these issues entirely.  Readers familiar with object-oriented programming will notice that we have much to say in chapter 3 about local state, but we do not even mention “classes” or “inheritance.”  In fact, we suspect that these problems cannot be adequately addressed in terms of computer-language design alone, without also drawing on work in knowledge representation and automated reasoning.</p>
@@ -1381,13 +1364,13 @@ A real number can be projected to an integer using the <code>round</code> primit
 On the other hand, we will allow polynomials whose coefficients are themselves polynomials in other variables.  This will give us essentially the same representational power as a full multivariate system, although it does lead to coercion problems, as discussed below.</p>
 </div>
 <div><p id="FOOT121" epub:type="footnote"><a class="footnote_backlink" href="#DOCF121"><sup>121</sup></a>
-For univariate polynomials, giving the value of a polynomial at a given set of points can be a particularly good representation.  This makes polynomial arithmetic extremely simple.  To obtain, for example, the sum of two polynomials represented in this way, we need only add the values of the polynomials at corresponding points.  To transform back to a more familiar representation, we can use the Lagrange interpolation formula, which shows how to recover the coefficients of a polynomial of degree \( n \) given the values of the polynomial at \( {n + 1} \) points.</p>
+For univariate polynomials, giving the value of a polynomial at a given set of points can be a particularly good representation.  This makes polynomial arithmetic extremely simple.  To obtain, for example, the sum of two polynomials represented in this way, we need only add the values of the polynomials at corresponding points.  To transform back to a more familiar representation, we can use the Lagrange interpolation formula, which shows how to recover the coefficients of a polynomial of degree <img src="fig/math/0932467390da34555ec70c122d7e915e.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( n \)" /> given the values of the polynomial at <img src="fig/math/c09177a287583da634d642d340852664.svg" class="math-inline" style="height: 0.652em; vertical-align: -0.009em;" alt="\( {n + 1} \)" /> points.</p>
 </div>
 <div><p id="FOOT122" epub:type="footnote"><a class="footnote_backlink" href="#DOCF122"><sup>122</sup></a>
 This operation is very much like the ordered <code>union-set</code> operation we developed in <a href="2_002e3.xhtml#Exercise-2_002e62">Exercise 2.62</a>.  In fact, if we think of the terms of the polynomial as a set ordered according to the power of the indeterminate, then the program that produces the term list for a sum is almost identical to <code>union-set</code>.</p>
 </div>
 <div><p id="FOOT123" epub:type="footnote"><a class="footnote_backlink" href="#DOCF123"><sup>123</sup></a>
-To make this work completely smoothly, we should also add to our generic arithmetic system the ability to coerce a “number” to a polynomial by regarding it as a polynomial of degree zero whose coefficient is the number.  This is necessary if we are going to perform operations such as \[ % :54:   {[x^2 + (y + 1)x + 5]} + {[x^2 + 2x + 1],}  \] which requires adding the coefficient \( {y + 1} \) to the coefficient 2.</p>
+To make this work completely smoothly, we should also add to our generic arithmetic system the ability to coerce a “number” to a polynomial by regarding it as a polynomial of degree zero whose coefficient is the number.  This is necessary if we are going to perform operations such as <img src="fig/math/07e72415eafd72bf53fa61fc328001ae.svg" class="math-display" style="height: 1.144em;" alt="\[ % :54:&amp;#10;  {[x^2 + (y + 1)x + 5]} + {[x^2 + 2x + 1],}  \]" /> which requires adding the coefficient <img src="fig/math/7c28d7a388bdf0b035107889269329d1.svg" class="math-inline" style="height: 0.875em; vertical-align: -0.234em;" alt="\( {y + 1} \)" /> to the coefficient 2.</p>
 </div>
 <div><p id="FOOT124" epub:type="footnote"><a class="footnote_backlink" href="#DOCF124"><sup>124</sup></a>
 In these polynomial examples, we assume that we have implemented the generic arithmetic system using the type mechanism suggested in <a href="#Exercise-2_002e78">Exercise 2.78</a>.  Thus, coefficients that are ordinary numbers will be represented as the numbers themselves rather than as pairs whose <code>car</code> is the symbol <code>scheme-number</code>.</p>
@@ -1396,10 +1379,10 @@ In these polynomial examples, we assume that we have implemented the generic ari
 Although we are assuming that term lists are ordered, we have implemented <code>adjoin-term</code> to simply <code>cons</code> the new term onto the existing term list.  We can get away with this so long as we guarantee that the procedures (such as <code>add-terms</code>) that use <code>adjoin-term</code> always call it with a higher-order term than appears in the list.  If we did not want to make such a guarantee, we could have implemented <code>adjoin-term</code> to be similar to the <code>adjoin-set</code> constructor for the ordered-list representation of sets (<a href="2_002e3.xhtml#Exercise-2_002e61">Exercise 2.61</a>).</p>
 </div>
 <div><p id="FOOT126" epub:type="footnote"><a class="footnote_backlink" href="#DOCF126"><sup>126</sup></a>
-The fact that Euclid’s Algorithm works for polynomials is formalized in algebra by saying that polynomials form a kind of algebraic domain called a <a id="index-Euclidean-ring"></a> <em>Euclidean ring</em>.  A Euclidean ring is a domain that admits addition, subtraction, and commutative multiplication, together with a way of assigning to each element \( x \) of the ring a positive integer “measure” \( {m(x)} \) with the properties that  \( {m(xy) \ge m(x)} \) for any nonzero \( x \) and \( y \) and that, given any \( x \) and \( y \), there exists a \( q \) such that \( {y = qx + r} \) and either \( {r = 0} \) or \( {m(r) &lt; m(x)} \).  From an abstract point of view, this is what is needed to prove that Euclid’s Algorithm works.  For the domain of integers, the measure \( m \) of an integer is the absolute value of the integer itself.  For the domain of polynomials, the measure of a polynomial is its degree.</p>
+The fact that Euclid’s Algorithm works for polynomials is formalized in algebra by saying that polynomials form a kind of algebraic domain called a <a id="index-Euclidean-ring"></a> <em>Euclidean ring</em>.  A Euclidean ring is a domain that admits addition, subtraction, and commutative multiplication, together with a way of assigning to each element <img src="fig/math/2f4b15565d0a1018e90c3e1b30b76acc.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( x \)" /> of the ring a positive integer “measure” <img src="fig/math/fdbb823eeb2b62528131748896bd9355.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.189em;" alt="\( {m(x)} \)" /> with the properties that  <img src="fig/math/65e816cc92c815c55df40711b5913919.svg" class="math-inline" style="height: 0.933em; vertical-align: -0.225em;" alt="\( {m(xy) \ge m(x)} \)" /> for any nonzero <img src="fig/math/2f4b15565d0a1018e90c3e1b30b76acc.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( x \)" /> and <img src="fig/math/05e4cdb2f26a4f66b68c167423907fea.svg" class="math-inline" style="height: 0.669em; vertical-align: -0.235em;" alt="\( y \)" /> and that, given any <img src="fig/math/2f4b15565d0a1018e90c3e1b30b76acc.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( x \)" /> and <img src="fig/math/05e4cdb2f26a4f66b68c167423907fea.svg" class="math-inline" style="height: 0.669em; vertical-align: -0.235em;" alt="\( y \)" />, there exists a <img src="fig/math/55e71917aae71d65907116d02f07c8f8.svg" class="math-inline" style="height: 0.678em; vertical-align: -0.241em;" alt="\( q \)" /> such that <img src="fig/math/852c18e52e099b27a0b15bfc289fee01.svg" class="math-inline" style="height: 0.742em; vertical-align: -0.231em;" alt="\( {y = qx + r} \)" /> and either <img src="fig/math/1d7dd0710639b760ea86ad65b3fa972f.svg" class="math-inline" style="height: 0.652em; vertical-align: -0.009em;" alt="\( {r = 0} \)" /> or <img src="fig/math/3efac6847474697e9b31ccca2c4768ec.svg" class="math-inline" style="height: 0.901em; vertical-align: -0.189em;" alt="\( {m(r) &amp;lt; m(x)} \)" />.  From an abstract point of view, this is what is needed to prove that Euclid’s Algorithm works.  For the domain of integers, the measure <img src="fig/math/d87e6d0d6a9513640fdd6193cde8b6a3.svg" class="math-inline" style="height: 0.444em; vertical-align: -0.008em;" alt="\( m \)" /> of an integer is the absolute value of the integer itself.  For the domain of polynomials, the measure of a polynomial is its degree.</p>
 </div>
 <div><p id="FOOT127" epub:type="footnote"><a class="footnote_backlink" href="#DOCF127"><sup>127</sup></a>
-In an implementation like <abbr>MIT</abbr> Scheme, this produces a polynomial that is indeed a divisor of \( Q_1 \) and \( Q_2 \), but with rational coefficients.  In many other Scheme systems, in which division of integers can produce limited-precision decimal numbers, we may fail to get a valid divisor.</p>
+In an implementation like <abbr>MIT</abbr> Scheme, this produces a polynomial that is indeed a divisor of <img src="fig/math/750aa9077e8cdbd0a4e193eb495b10bf.svg" class="math-inline" style="height: 0.862em; vertical-align: -0.210em;" alt="\( Q_1 \)" /> and <img src="fig/math/6350e2376db888398db88e20bd855b67.svg" class="math-inline" style="height: 0.862em; vertical-align: -0.210em;" alt="\( Q_2 \)" />, but with rational coefficients.  In many other Scheme systems, in which division of integers can produce limited-precision decimal numbers, we may fail to get a valid divisor.</p>
 </div>
 <div><p id="FOOT128" epub:type="footnote"><a class="footnote_backlink" href="#DOCF128"><sup>128</sup></a>
 One extremely efficient and elegant method for computing polynomial <abbr>GCD</abbr>s was discovered by Richard <a href="References.xhtml#Zippel-_00281979_0029">Zippel (1979)</a>.  The method is a probabilistic algorithm, as is the fast test for primality that we discussed in <a href="Chapter-1.xhtml#Chapter-1">Chapter 1</a>.  Zippel’s book (<a href="References.xhtml#Zippel-1993">Zippel 1993</a>) describes this method, together with other ways to compute polynomial <abbr>GCD</abbr>s.</p>
